@@ -54,9 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`scroll-smooth ${jakarta.variable}`}>
-      <head>
-        <link rel="icon" href="/images/brand/logo.png" />
-      </head>
+      <head></head>
       <body className="min-h-screen flex flex-col font-sans bg-[#F8F9FA] text-[#102A43] antialiased">
         <Header />
         <main className="flex-grow">{children}</main>
