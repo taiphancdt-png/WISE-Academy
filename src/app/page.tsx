@@ -903,8 +903,8 @@ export default function HomePage() {
                 </div>
                 <div>
                   <span className="text-xs uppercase text-white/60 tracking-wider">Gọi điện trực tiếp để trao đổi nhanh</span>
-                  <a href="tel:+84932090075" className="block text-xl font-extrabold text-white hover:text-[#F76011] transition-colors">
-                    0932 090 075 (Ms. Thủy)
+                  <a href="tel:+84989002121" className="block text-xl font-extrabold text-white hover:text-[#F76011] transition-colors">
+                    0989 002 121 (Ms. Thủy)
                   </a>
                 </div>
               </div>

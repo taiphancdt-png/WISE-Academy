@@ -116,7 +116,7 @@ export default function ContactPage() {
                 <div>
                   <strong className="block text-sm font-bold text-[#002F5B]">Hotline tư vấn:</strong>
                   <div className="text-xs text-[#486581] mt-0.5 space-y-0.5">
-                    <p><a href="tel:+84932090075" className="hover:text-[#F76011] font-bold text-sm text-[#002F5B]">0932 090 075</a> (Ms. Thủy)</p>
+                    <p><a href="tel:+84989002121" className="hover:text-[#F76011] font-bold text-sm text-[#002F5B]">0989 002 121</a> (Ms. Thủy)</p>
                   </div>
                 </div>
               </div>

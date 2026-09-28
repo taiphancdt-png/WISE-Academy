@@ -61,9 +61,9 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="tel:+84932090075" className="flex items-center gap-1.5 hover:text-[#F76011] transition-colors text-white/90">
+            <a href="tel:+84989002121" className="flex items-center gap-1.5 hover:text-[#F76011] transition-colors text-white/90">
               <Phone className="w-3.5 h-3.5 text-[#F76011]" />
-              <span>Hotline: <strong>0932 090 075</strong></span>
+              <span>Hotline: <strong>0989 002 121</strong></span>
             </a>
             <a href="mailto:contact@wisedemy.com.vn" className="flex items-center gap-1.5 hover:text-[#F76011] transition-colors text-white/90">
               <Mail className="w-3.5 h-3.5 text-[#F76011]" />
@@ -178,8 +178,8 @@ export default function Header() {
                 <span>Đặt lịch tư vấn trực tiếp</span>
               </Link>
               <div className="flex justify-between items-center text-xs text-white/70 px-2 pt-2">
-                <a href="tel:+84932090075" className="flex items-center gap-1 hover:text-[#F76011]">
-                  <Phone className="w-3.5 h-3.5 text-[#F76011]" /> 0932 090 075
+                <a href="tel:+84989002121" className="flex items-center gap-1 hover:text-[#F76011]">
+                  <Phone className="w-3.5 h-3.5 text-[#F76011]" /> 0989 002 121
                 </a>
                 <a href="mailto:contact@wisedemy.com.vn" className="flex items-center gap-1 hover:text-[#F76011]">
                   <Mail className="w-3.5 h-3.5 text-[#F76011]" /> contact@wisedemy.com.vn
