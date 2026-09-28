@@ -159,11 +159,11 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                   Đặt lịch tư vấn miễn phí
                 </Link>
                 <a
-                  href="tel:0989002121"
+                  href="tel:0932090075"
                   className="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm px-6 py-3 rounded-full transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-[#FF7A30]" />
-                  <span>Hotline: 0989 002 121</span>
+                  <span>Hotline: 0932 090 075</span>
                 </a>
               </div>
             </div>
@@ -224,11 +224,11 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               </p>
               <div className="space-y-2 pt-1">
                 <a
-                  href="tel:0989002121"
+                  href="tel:0932090075"
                   className="flex items-center gap-2 p-3 rounded-xl bg-[#F8F9FA] hover:bg-slate-100 text-xs font-bold text-[#002F5B] transition-colors border border-slate-200"
                 >
                   <Phone className="w-4 h-4 text-[#F76011]" />
-                  <span>0989 002 121 (Hotline / Zalo)</span>
+                  <span>0932 090 075 (Hotline / Zalo)</span>
                 </a>
                 <Link
                   href="/lien-he"
