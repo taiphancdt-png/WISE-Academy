@@ -15,6 +15,7 @@ import {
   BarChart3
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường — WISE Academy",
@@ -112,18 +113,12 @@ export default function ConsultingPage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <SectionBadge number="SERVICES" title="DỊCH VỤ TƯ VẤN DOANH NGHIỆP" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Giải Pháp Tư Vấn <br />
-            <span className="text-[#F76011]">Vận Hành Tinh Gọn</span> Hiện Trường.
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            WISE cam kết mang lại giá trị có thể đo lường trực tiếp trên bảng cân đối kế toán thông qua việc giảm lãng phí, tăng năng suất chuyền và phát triển nội lực cải tiến của tổ chức.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="DỊCH VỤ TƯ VẤN DOANH NGHIỆP"
+        image="/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp"
+        title={<>Giải Pháp Tư Vấn <span className="text-[#FF7A30]">Vận Hành Tinh Gọn</span> Hiện Trường.</>}
+        description="WISE cam kết mang lại giá trị có thể đo lường trực tiếp trên bảng cân đối kế toán thông qua việc giảm lãng phí, tăng năng suất chuyền và phát triển nội lực cải tiến của tổ chức."
+      />
 
       {/* 4 Pillars in Detail */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1600px] mx-auto space-y-16">

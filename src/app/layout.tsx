@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -54,11 +55,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`scroll-smooth ${jakarta.variable}`}>
-      <head></head>
-      <body className="min-h-screen flex flex-col font-sans bg-[#F8F9FA] text-[#102A43] antialiased">
+      <head>
+        {/* Google Translate rewrites text nodes; keep React's DOM ops from throwing when nodes were swapped. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(typeof Node!=="function")return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(c){if(c.parentNode!==this)return c;return r.apply(this,arguments)};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(n,ref){if(ref&&ref.parentNode!==this)return n;return i.apply(this,arguments)}})();`,
+          }}
+        />
+      </head>
+      <body id="top" className="min-h-screen flex flex-col font-sans bg-white text-[#102A43] antialiased">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+
+        {/* Automatic Vietnamese → English / Chinese translation (toggled by LanguageSwitcher via the googtrans cookie) */}
+        <div id="google_translate_element" className="hidden" />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'vi,en,zh-CN',autoDisplay:false},'google_translate_element')};`}
+        </Script>
+        <Script
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
 
         {/* Structured Data (JSON-LD) for SEO */}
         <script

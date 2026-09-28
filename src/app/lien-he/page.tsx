@@ -13,6 +13,7 @@ import {
   HelpCircle
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,18 +55,12 @@ export default function ContactPage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="w-full max-w-[1600px] mx-auto space-y-4">
-          <SectionBadge number="CONTACT" title="LIÊN HỆ & ĐẶT LỊCH TƯ VẤN" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Kết Nối Cùng Đội Ngũ <br />
-            <span className="text-[#F76011]">Chuyên Gia WISE Academy.</span>
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            Chúng tôi luôn sẵn sàng lắng nghe bài toán vận hành của bạn và cùng đồng hành tại hiện trường để tạo ra những thay đổi đo lường được.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="LIÊN HỆ & ĐẶT LỊCH TƯ VẤN"
+        image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp"
+        title={<>Kết Nối Cùng Đội Ngũ <span className="text-[#FF7A30]">Chuyên Gia WISE Academy.</span></>}
+        description="Chúng tôi luôn sẵn sàng lắng nghe bài toán vận hành của bạn và cùng đồng hành tại hiện trường để tạo ra những thay đổi đo lường được."
+      />
 
       {/* Main Grid: Info + Form */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

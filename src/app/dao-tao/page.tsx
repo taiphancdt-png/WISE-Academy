@@ -16,6 +16,7 @@ import {
   Sparkles
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 import coursesData from "@/data/courses.json";
 import type { Course } from "@/types";
 
@@ -45,21 +46,15 @@ export default function TrainingPage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="w-full max-w-[1600px] mx-auto space-y-4">
-          <SectionBadge number="ACADEMY" title="CHƯƠNG TRÌNH ĐÀO TẠO THỰC CHIẾN" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Chương Trình Đào Tạo Nâng Cao Năng Suất & <br />
-            <span className="text-[#F76011]">Tối Ưu Vận Hành</span> Nhà Xưởng.
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            Hơn 35 chuyên đề đào tạo dễ hiểu, cầm tay chỉ việc ngay trên chuyền sản xuất. Giúp quản đốc, tổ trưởng và kỹ sư biết cách phát hiện lãng phí, giảm phế phẩm và làm chủ quy trình.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO THỰC CHIẾN"
+        image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp"
+        title={<>Chương Trình Đào Tạo Nâng Cao Năng Suất & <span className="text-[#FF7A30]">Tối Ưu Vận Hành</span> Nhà Xưởng.</>}
+        description="Hơn 35 chuyên đề đào tạo dễ hiểu, cầm tay chỉ việc ngay trên chuyền sản xuất. Giúp quản đốc, tổ trưởng và kỹ sư biết cách phát hiện lãng phí, giảm phế phẩm và làm chủ quy trình."
+      />
 
       {/* Filter and Search Bar */}
-      <section className="sticky top-16 z-30 bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-sm">
+      <section className="sticky top-[61px] z-30 bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-sm">
         <div className="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Category Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">

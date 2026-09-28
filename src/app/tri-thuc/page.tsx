@@ -10,6 +10,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 import articlesData from "@/data/articles.json";
 import type { Article } from "@/types";
 
@@ -26,21 +27,15 @@ export default function KnowledgePage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="w-full max-w-[1600px] mx-auto space-y-4">
-          <SectionBadge number="INSIGHTS" title="KINH NGHIỆM VẬN HÀNH NHÀ XƯỞNG" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Góc Chia Sẻ Kinh Nghiệm Quản Lý Sản Xuất & <br />
-            <span className="text-[#F76011]">Tối Ưu Năng Suất</span> Thực Tế.
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            Tổng hợp các bài viết hướng dẫn thực tế, dễ hiểu về cách sắp xếp nhà xưởng gọn gàng (5S), bảo trì máy móc tránh hỏng đột xuất, cân bằng chuyền và giảm tỷ lệ hàng lỗi.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="KINH NGHIỆM VẬN HÀNH NHÀ XƯỞNG"
+        image="/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_10.webp"
+        title={<>Góc Chia Sẻ Kinh Nghiệm Quản Lý Sản Xuất & <span className="text-[#FF7A30]">Tối Ưu Năng Suất</span> Thực Tế.</>}
+        description="Tổng hợp các bài viết hướng dẫn thực tế, dễ hiểu về cách sắp xếp nhà xưởng gọn gàng (5S), bảo trì máy móc tránh hỏng đột xuất, cân bằng chuyền và giảm tỷ lệ hàng lỗi."
+      />
 
       {/* Search and Count */}
-      <section className="sticky top-16 z-30 bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-sm">
+      <section className="sticky top-[61px] z-30 bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-sm">
         <div className="w-full max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs font-bold uppercase tracking-wider text-[#486581]">
             Đang hiển thị <strong className="text-[#002F5B]">{filtered.length}</strong> bài viết chia sẻ

@@ -11,6 +11,7 @@ import {
   Award
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 import projectsData from "@/data/projects.json";
 import type { Project } from "@/types";
 
@@ -25,18 +26,12 @@ export default function ProjectsPage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="w-full max-w-[1600px] mx-auto space-y-4">
-          <SectionBadge number="PROJECTS" title="CASE STUDIES & KẾT QUẢ THỰC TẾ" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Dự Án Đã Triển Khai: <br />
-            <span className="text-[#F76011]">Kết Quả Đo Lường Được</span> Tại Nhà Máy.
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE và ban giám đốc nhà máy, giúp tăng sản lượng xuất xưởng, giảm phế phẩm và tiết kiệm hàng tỷ đồng chi phí lãng phí.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="CASE STUDIES & KẾT QUẢ THỰC TẾ"
+        image="/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group/photo_1.webp"
+        title={<>Dự Án Đã Triển Khai: <span className="text-[#FF7A30]">Kết Quả Đo Lường Được</span> Tại Nhà Máy.</>}
+        description="Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE và ban giám đốc nhà máy, giúp tăng sản lượng xuất xưởng, giảm phế phẩm và tiết kiệm hàng tỷ đồng chi phí lãng phí."
+      />
 
       {/* Featured Big 3 Case Studies */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1600px] mx-auto space-y-16">

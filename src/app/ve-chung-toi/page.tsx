@@ -12,6 +12,7 @@ import {
   Factory
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PageHero from "@/components/PageHero";
 
 export const metadata = {
   title: "Về Chúng Tôi & Triết Lý RGPDCA — WISE Academy",
@@ -94,18 +95,12 @@ export default function AboutPage() {
   return (
     <div className="bg-[#F8F9FA]">
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <SectionBadge number="ABOUT" title="CÂU CHUYỆN & SỨ MỆNH" light={true} />
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-            Về WISE Academy: <br />
-            <span className="text-[#F76011]">Đồng Hành Kiến Tạo</span> Năng Lực Vận Hành Xuất Sắc.
-          </h1>
-          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
-            WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="CÂU CHUYỆN & SỨ MỆNH"
+        image="/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_10.webp"
+        title={<>Về WISE Academy: <span className="text-[#FF7A30]">Đồng Hành Kiến Tạo</span> Năng Lực Vận Hành Xuất Sắc.</>}
+        description="WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững."
+      />
 
       {/* Quote Banner */}
       <section className="bg-white border-b border-slate-200 py-12 px-4 sm:px-6 lg:px-8">
