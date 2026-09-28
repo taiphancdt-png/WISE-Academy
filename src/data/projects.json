@@ -1,0 +1,517 @@
+[
+  {
+    "id": "pou-chen-group",
+    "client": "Pou Chen Group",
+    "industry": "Sản xuất Giày dép & Thời trang thể thao",
+    "title": "Chương trình Đào tạo & Huấn luyện Hiện trường Lean Six Sigma",
+    "description": "Triển khai đào tạo và kèm cặp dự án Kaizen thực tế tại các xưởng sản xuất, chuẩn hóa ngôn ngữ cải tiến chung từ cấp quản đốc đến kỹ sư IE.",
+    "results": [
+      {
+        "metric": "300+",
+        "label": "Học viên & Quản đốc tham gia"
+      },
+      {
+        "metric": "4",
+        "label": "Cấp độ năng lực hoàn thành"
+      },
+      {
+        "metric": "95%",
+        "label": "Tỷ lệ dự án Kaizen áp dụng thành công"
+      }
+    ],
+    "highlight": "Từ các công cụ rời rạc chuyển thành ngôn ngữ văn hóa cải tiến chung cho toàn bộ nhà máy quy mô hàng nghìn công nhân.",
+    "tags": [
+      "Lean Six Sigma",
+      "Kaizen Mindset",
+      "Simulation Game",
+      "Hiện trường Gemba"
+    ],
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
+    ]
+  },
+  {
+    "id": "geodis-vietnam",
+    "client": "GEODIS Vietnam",
+    "industry": "Chuỗi cung ứng & Logistics quốc tế",
+    "title": "Chuẩn hóa Quản trị Trực quan & 5S Kho bãi Chuyên nghiệp",
+    "description": "Đánh giá luồng di chuyển vật tư, loại bỏ lãng phí thao tác thừa và xây dựng hệ thống quản lý trực quan Visual Management theo tiêu chuẩn 5S toàn cầu.",
+    "results": [
+      {
+        "metric": "-25%",
+        "label": "Thời gian tìm kiếm và soạn hàng"
+      },
+      {
+        "metric": "100%",
+        "label": "Khu vực kho được trực quan hóa"
+      },
+      {
+        "metric": "Zero",
+        "label": "Sự cố an toàn lao động trong chu kỳ"
+      }
+    ],
+    "highlight": "Không gian làm việc và kho bãi trở thành một hệ thống quản trị minh bạch, kiểm soát lỗi tức thì tại điểm phát sinh.",
+    "tags": [
+      "5S",
+      "Visual Management",
+      "Logistics",
+      "Warehouse Safety"
+    ],
+    "cover": "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+    "gallery": [
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+    ]
+  },
+  {
+    "id": "huali-group",
+    "client": "Huali Industrial Group",
+    "industry": "Gia công & Sản xuất Da giày Xuất khẩu",
+    "title": "Tăng Năng Suất Chuyền Sản Xuất Bằng Work Engineering",
+    "description": "Phân tích chi tiết chu kỳ công việc (Cycle Time), cân bằng chuyền lắp ráp và loại bỏ điểm nghẽn cổ chai (Bottleneck) tại 12 chuyền may thí điểm.",
+    "results": [
+      {
+        "metric": "+18%",
+        "label": "Năng suất lao động bình quân"
+      },
+      {
+        "metric": "12",
+        "label": "Chuyền sản xuất thí điểm thành công"
+      },
+      {
+        "metric": "-30%",
+        "label": "Hàng dở dang trên chuyền (WIP)"
+      }
+    ],
+    "highlight": "Kết quả đo lường thuyết phục tại các chuyền mẫu đã tạo đà nhân rộng mạnh mẽ ra toàn bộ hệ thống nhà xưởng.",
+    "tags": [
+      "Work Engineering",
+      "Line Balancing",
+      "Cycle Time",
+      "Năng suất"
+    ],
+    "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+    "gallery": [
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_2.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
+    ]
+  },
+  {
+    "id": "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana",
+    "client": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ)",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ)",
+    "description": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/](https://wisedemy.com.vn/project/chuo...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/chuong-trinh-dao-tao-con...",
+    "images": [
+      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_0.webp",
+      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_1.webp",
+      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+    "gallery": [
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_2.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
+    ]
+  },
+  {
+    "id": "geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan",
+    "client": "[GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
+    "description": "# [GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/](https://wisedemy.com.vn/...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/geodis-vietnam-dao-tao-thuc-...",
+    "images": [
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_0.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_1.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+    "gallery": [
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+    ]
+  },
+  {
+    "id": "huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen",
+    "client": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\"",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\"",
+    "description": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/](https://wisedemy....",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/huali-group-khoa-dao-tao-tu-d...",
+    "images": [
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_0.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_1.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+    "gallery": [
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_2.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
+    ]
+  },
+  {
+    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt",
+    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt",
+    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/](https://wisedemy.com.vn/project/pouchen-group-khoa-da...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-green-...",
+    "images": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_0.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
+    ]
+  },
+  {
+    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt",
+    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt",
+    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/](https://wisedemy.com.vn/project/pouchen-group-khoa-...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-yello...",
+    "images": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_0.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
+    ]
+  },
+  {
+    "id": "project-lean-six-sigma-yellow-belt-pouchen-group",
+    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ)",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ)",
+    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/project-lean-six-sigma-yellow-belt-pouchen-group/](https://wisedemy.com.vn/project/project-lean-six-si...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/project-lean-six-sigma-yellow-belt-pouchen...",
+    "images": [
+      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_0.webp",
+      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_1.webp",
+      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
+    ]
+  },
+  {
+    "id": "samho-ag-lean-six-sigma-yellow-belt",
+    "client": "[AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt",
+    "description": "# [AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-belt/](https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-be...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-belt/](https...",
+    "images": [
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_0.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_1.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_6.webp"
+    ]
+  },
+  {
+    "id": "ty-bach-chuong-trinh-dao-tao-lean-cell-layout",
+    "client": "[TỶ BÁCH] Chương trình đào tạo Lean Cell Layout",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[TỶ BÁCH] Chương trình đào tạo Lean Cell Layout",
+    "description": "# [TỶ BÁCH] Chương trình đào tạo Lean Cell Layout - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/](https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-c...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [TỶ BÁCH] Chương trình đào tạo Lean Cell Layout - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/](https:/...",
+    "images": [
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_0.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_1.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
+    "gallery": [
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_2.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_3.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_4.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_5.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_6.webp"
+    ]
+  },
+  {
+    "id": "victory-lean-dianogtics-and-lean-fundamental-training",
+    "client": "[VICTORY] Lean Dianogtics and Lean fundamental Training",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[VICTORY] Lean Dianogtics and Lean fundamental Training",
+    "description": "# [VICTORY] Lean Dianogtics and Lean fundamental Training - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/victory-lean-dianogtics-and-lean-fundamental-training/](https://wisedemy.com.vn/project/victory-lean-dianog...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [VICTORY] Lean Dianogtics and Lean fundamental Training - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/victory-lean-dianogtics-and-lean-fundamental-tr...",
+    "images": [
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_0.webp",
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_1.webp",
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
+    "gallery": [
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_2.webp",
+      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_3.webp"
+    ]
+  },
+  {
+    "id": "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan",
+    "client": "[YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
+    "description": "# [YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/](https://wisedemy.com.vn/project...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s...",
+    "images": [
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_0.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_1.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+    "gallery": [
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+    ]
+  },
+  {
+    "id": "yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan",
+    "client": "[YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ)",
+    "industry": "Sản xuất & Vận hành Công nghiệp",
+    "title": "[YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ)",
+    "description": "# [YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan/](https://wisedemy.com.vn/project/yujin-kreves...",
+    "results": [
+      {
+        "metric": "100%",
+        "label": "Hoàn thành mục tiêu cam kết"
+      },
+      {
+        "metric": "Đo lường",
+        "label": "Gemba tại hiện trường"
+      }
+    ],
+    "highlight": "# [YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-quan...",
+    "images": [
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_0.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_1.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_2.webp"
+    ],
+    "tags": [
+      "Tư vấn Lean",
+      "Hiện trường Nhà máy",
+      "Kaizen"
+    ],
+    "cover": "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+    "gallery": [
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "nguyen-thi-thuy",
+    "name": "Nguyễn Thị Thủy (Kate)",
+    "role": "Giám đốc Điều hành · LSSI Facilitator",
+    "title": "Chuyên gia Chẩn đoán Vận hành Doanh nghiệp (MPI & AED) · Lean Sensei (Nike NOS Training Center) · Lean Six Sigma Black Belt (SSMI)",
+    "bio": "Hơn 15 năm kinh nghiệm thực chiến trong quản trị vận hành, từng phụ trách vị trí Training Manager tại KD Consulting, Lean Specialist tại South Island Garment, Lean Practitioner tại Dean Shoes. Đã trực tiếp đào tạo và tư vấn cho hàng chục tập đoàn lớn như Pou Chen, Geodis, Huali.",
+    "tags": [
+      "Lean Six Sigma Black Belt",
+      "Nike Sensei",
+      "MPI Certified",
+      "Gemba Diagnostic"
+    ],
+    "image": "/images/experts/nguyen-thi-thuy.webp"
+  },
+  {
+    "id": "phan-tan-tai",
+    "name": "Phan Tấn Tài",
+    "role": "Đồng Sáng Lập · Automation & Lean Facilitator",
+    "title": "Chuyên gia Tự động hóa & Lean Manufacturing · Lean Sensei (Nike NOS)",
+    "bio": "Nguyên Giám đốc Lean tại AG Samho, Chuyên gia tự động hóa sản xuất giày dép cho các dự án tự động của Nike tại Dean Shoes. Chuyên sâu về cân bằng chuyền, thiết kế Lean Cell Layout và cải tiến năng suất Work Engineering.",
+    "tags": [
+      "Automation 4.0",
+      "Work Engineering",
+      "Lean Cell",
+      "Nike Sensei"
+    ],
+    "image": "/images/experts/phan-tan-tai.webp"
+  },
+  {
+    "id": "hoang-minh-nghiep",
+    "name": "Hoàng Minh Nghiệp",
+    "role": "Cố vấn Cấp cao · Sr. Quality Management Consultant",
+    "title": "Thạc sĩ Quản lý Chất lượng · LSSI Lean Six Sigma Facilitator",
+    "bio": "Hơn 30 năm kinh nghiệm quản lý sản xuất, quản trị chất lượng toàn diện và nhà máy thông minh tại các tập đoàn sản xuất đa quốc gia. Chuyên gia đào tạo thế hệ quản lý cấp trung và cấp cao.",
+    "tags": [
+      "TQM",
+      "Lean Six Sigma",
+      "Smart Factory",
+      "30+ Năm Kinh Nghiệm"
+    ],
+    "image": "/images/experts/hoang-minh-nghiep.webp"
+  },
+  {
+    "id": "nguyen-hoang-son",
+    "name": "Nguyễn Hoàng Sơn",
+    "role": "Chuyên gia Tư vấn · Lean Management Consultant",
+    "title": "Chuyên gia Quản trị Tinh gọn & Coaching Hiện trường",
+    "bio": "Tập trung sâu vào quản trị Lean, cải tiến năng suất hiện trường, xây dựng dòng chảy liên tục (Continuous Flow) và huấn luyện thực hành văn hóa Kaizen cho cấp giám sát.",
+    "tags": [
+      "Gemba Coaching",
+      "5S & Visual",
+      "Continuous Flow",
+      "Kaizen Culture"
+    ],
+    "image": "/images/experts/nguyen-hoang-son.webp"
+  },
+  {
+    "id": "tran-nguyen-ha",
+    "name": "Trần Nguyên Hà",
+    "role": "Chuyên gia Tư vấn Cao cấp · Senior Management Consultant",
+    "title": "Chuyên gia Quản trị Chiến lược & Chuyển đổi Số ESG",
+    "bio": "Chuyên gia tư vấn và đào tạo quản trị với nền tảng chuyên sâu về chuyển đổi số, tích hợp hệ thống quản lý tinh gọn với các tiêu chuẩn phát triển bền vững và ESG cho doanh nghiệp xuất khẩu.",
+    "tags": [
+      "Digital Transformation",
+      "ESG",
+      "Strategic Ops"
+    ],
+    "image": "/images/experts/tran-nguyen-ha.webp"
+  },
+  {
+    "id": "pham-the-linh",
+    "name": "Phạm Thế Linh",
+    "role": "Chuyên gia Năng suất · Productivity Consultant & Trainer",
+    "title": "Chuyên gia Cải tiến Năng suất & Phát triển Nhà máy",
+    "bio": "Dày dạn kinh nghiệm thực tiễn tại nhiều tập đoàn sản xuất may mặc và cơ khí chế tạo, chuyên gia tối ưu hóa định mức lao động và giảm thiểu thời gian chuyển đổi mã hàng (SMED).",
+    "tags": [
+      "Productivity",
+      "SMED",
+      "Plant Optimization"
+    ],
+    "image": "/images/experts/pham-the-linh.webp"
+  },
+  {
+    "id": "tu-ngoc-tung",
+    "name": "Từ Ngọc Tùng",
+    "role": "Chuyên gia Đào tạo · Lean Six Sigma Consultant & Trainer",
+    "title": "Hơn 13 năm kinh nghiệm trong Lean & Tối ưu Quy trình",
+    "bio": "Chuyên gia giảng dạy Lean Six Sigma Green Belt, phương pháp giải quyết vấn đề 8D/A3 Thinking và ứng dụng công cụ kiểm soát quá trình bằng thống kê (SPC).",
+    "tags": [
+      "SPC",
+      "A3 Problem Solving",
+      "8D",
+      "Process Optimization"
+    ],
+    "image": "/images/experts/tu-ngoc-tung.webp"
+  }
+]

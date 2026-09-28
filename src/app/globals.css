@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy-primary: #002F5B;
+    --navy-deep: #001E38;
+    --navy-surface: #073866;
+    --navy-light: #EBF3FA;
+    
+    --orange-primary: #F76011;
+    --orange-hover: #FF6712;
+    --orange-tint: #FFF5EC;
+    --orange-glow: rgba(247, 96, 17, 0.25);
+
+    --cream-bg: #F8F9FA;
+    --surface-white: #FFFFFF;
+    
+    --text-ink: #102A43;
+    --text-muted: #486581;
+    --text-light: #829AB1;
+    
+    --border-subtle: #E2E8F0;
+    --border-navy: rgba(255, 255, 255, 0.15);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  }
+
+  body {
+    background-color: var(--surface-white);
+    color: var(--text-ink);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #002f5b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f76011;
+}
+
+/* Utility Animations & Highlights */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism Classes */
+.glass-navy {
+  background: rgba(0, 30, 56, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Gradient accents */
+.bg-gradient-navy {
+  background: linear-gradient(135deg, #001E38 0%, #002F5B 50%, #073866 100%);
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #F76011 0%, #FF7A30 100%);
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #F76011 0%, #FF8A4C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card hover elevations & Growth Micro-interactions */
+.card-consulting {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-consulting:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(0, 47, 91, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Growth Animations (Tăng trưởng) */
+@keyframes growthGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(247, 96, 17, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(247, 96, 17, 0.35);
+  }
+}
+
+.growth-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease;
+}
+
+.growth-card:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 24px 45px -12px rgba(0, 47, 91, 0.16), 0 0 20px rgba(247, 96, 17, 0.18);
+  border-color: rgba(247, 96, 17, 0.45);
+}
+
+.growth-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #F76011, #FF7A30);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growth-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Growth Indicator Badge */
+.growth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.growth-card:hover .growth-badge {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Growth Arrow Icon Lift */
+.growth-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growth-card:hover .growth-arrow,
+a:hover .growth-arrow,
+button:hover .growth-arrow {
+  transform: translate(3px, -3px);
+}
+

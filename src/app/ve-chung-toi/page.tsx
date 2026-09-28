@@ -1,0 +1,242 @@
+import React from "react";
+import Link from "next/link";
+import { 
+  CheckCircle2, 
+  ArrowRight, 
+  ShieldCheck, 
+  Target, 
+  Users, 
+  TrendingUp, 
+  Award,
+  Globe2,
+  Factory
+} from "lucide-react";
+import SectionBadge from "@/components/SectionBadge";
+
+export const metadata = {
+  title: "Về Chúng Tôi & Triết Lý RGPDCA — WISE Academy",
+  description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
+};
+
+export default function AboutPage() {
+  const values = [
+    {
+      letter: "W",
+      word: "WORKABLE",
+      title: "Dễ Làm & Hiệu Quả Thực Tế",
+      desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phải đơn giản, thực tế và áp dụng được ngay trên sàn xưởng."
+    },
+    {
+      letter: "I",
+      word: "IMPROVEMENT",
+      title: "Cải Tiến Liên Tục Mỗi Ngày",
+      desc: "WISE cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong nhà máy."
+    },
+    {
+      letter: "S",
+      word: "SHARE",
+      title: "Chia Sẻ Kinh Nghiệm Thật",
+      desc: "Chúng tôi nỗ lực đóng góp giá trị chung cho cộng đồng sản xuất Việt Nam, phụng sự nền công nghiệp nước nhà với tinh thần trách nhiệm cao nhất."
+    },
+    {
+      letter: "E",
+      word: "EXCELLENCE",
+      title: "Gọn Gàng & Tiết Kiệm Chi Phí",
+      desc: "WISE kiên định tìm kiếm giải pháp tối ưu nhất, giúp đối tác đạt được hiệu quả vận hành vượt trội trong khi tiết kiệm tối đa nguồn lực và chi phí."
+    }
+  ];
+
+  const rgpdcaDetails = [
+    {
+      phase: "BƯỚC 01",
+      code: "R - RESEARCH",
+      name: "Khảo Sát Thực Tế Tại Phân Xưởng",
+      action: "Xuống Tận Nơi Quan Sát Thao Tác & Đánh Giá Hiện Trạng",
+      content: "Chuyên gia WISE trực tiếp đến phân xưởng, quan sát luồng nguyên vật liệu và dòng thông tin. Quan sát tỉ mỉ các động tác thừa, phỏng vấn sâu ban lãnh đạo và quản đốc để xây dựng bức tranh hiện trạng toàn diện."
+    },
+    {
+      phase: "BƯỚC 02",
+      code: "G - GOALS",
+      name: "Xác Lập Mục Tiêu & Định Lượng Kết Quả",
+      action: "Gắn Kết Cải Tiến Vận Hành Với Bảng Cân Đối Tài Chính",
+      content: "Cùng Ban Giám Đốc xác định rõ các chỉ số đo lường thành công: Tỷ lệ nâng OEE, rút ngắn Lead Time, giảm hàng tồn kho trên chuyền (WIP), giảm tỷ lệ phế phẩm (PPM/Defect Rate) và tính toán giá trị tiết kiệm tài chính (Cost Savings) cụ thể."
+    },
+    {
+      phase: "BƯỚC 03",
+      code: "P - PLAN",
+      name: "Thiết Kế Lộ Trình Chuyển Đổi Tinh Gọn (Roadmap)",
+      action: "Lean House & Lộ Trình 3 Giai Đoạn Chuẩn MIT",
+      content: "Xây dựng bản kế hoạch chi tiết gồm 3 giai đoạn: Khám phá nhận thức (Explore) -> Xây dựng nền móng (Foundation) -> Nhân rộng toàn diện (Scale). Kế hoạch phân bổ nguồn lực rõ ràng theo từng tháng, xác định dây chuyền thí điểm mẫu (Model Line) và thiết lập ban chỉ đạo cải tiến."
+    },
+    {
+      phase: "BƯỚC 04",
+      code: "D - DO",
+      name: "Triển Khai Thí Điểm & Huấn Luyện Tại Hiện Trường",
+      action: "Simulation Game + Kèm Cặp Dự Án Thực Chiến",
+      content: "Tổ chức đào tạo gắn liền với thực hành xưởng. Ứng dụng Lean Simulation Game để xóa bỏ tư duy lối mòn, sau đó chuyên gia cùng đội ngũ kỹ sư trực tiếp triển khai 5S, Lean Cell, SMED, Kanban tại chuyền mẫu để đạt được Quick Wins ngay trong 60 - 90 ngày đầu tiên."
+    },
+    {
+      phase: "BƯỚC 05",
+      code: "C - CHECK",
+      name: "Đo Lường, Đánh Giá & Phân Tích Khoảng Cách",
+      action: "Đo Lường Before/After & Kiểm Toán Tiến Độ Định Kỳ",
+      content: "Hàng tuần và hàng tháng, ban chỉ đạo tiến hành đo lường các chỉ số Before/After trên chuyền sản xuất thực tế. Đối chiếu với mục tiêu ban đầu, phân tích nguyên nhân gốc rễ (Root Cause Analysis) nếu có độ lệch và điều chỉnh biện pháp can thiệp kịp thời."
+    },
+    {
+      phase: "BƯỚC 06",
+      code: "A - ACTION & ADJUST",
+      name: "Chuẩn Hóa (Standardize) & Nhân Rộng Bền Vững",
+      action: "Ban Hành SOP, Hệ Thống DMS & Đào Tạo Lean Leaders",
+      content: "Đóng gói các giải pháp thành công thành Tiêu chuẩn công việc (Standard Work/SOP). Thiết lập hệ thống quản lý hàng ngày (Daily Management System - DMS) để giữ vững kết quả và chuyển giao năng lực cho các Lean Leaders tự nhân rộng ra toàn bộ nhà máy."
+    }
+  ];
+
+  return (
+    <div className="bg-[#F8F9FA]">
+      {/* Page Header */}
+      <section className="bg-gradient-to-br from-[#001426] via-[#002F5B] to-[#041E35] text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-4">
+          <SectionBadge number="ABOUT" title="CÂU CHUYỆN & SỨ MỆNH" light={true} />
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+            Về WISE Academy: <br />
+            <span className="text-[#F76011]">Đồng Hành Kiến Tạo</span> Năng Lực Vận Hành Xuất Sắc.
+          </h1>
+          <p className="text-base sm:text-lg text-[#C7D8E4] max-w-3xl leading-relaxed">
+            WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững.
+          </p>
+        </div>
+      </section>
+
+      {/* Quote Banner */}
+      <section className="bg-white border-b border-slate-200 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center space-y-4">
+          <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full" />
+          <blockquote className="text-xl sm:text-2xl font-serif italic text-[#002F5B] leading-relaxed">
+            “Sự phát triển và trưởng thành của nguồn nhân lực là trách nhiệm cao cả nhất của lãnh đạo.”
+          </blockquote>
+          <p className="text-xs uppercase font-extrabold tracking-widest text-[#486581]">
+            — Harvey S. Firestone (Triết lý cốt lõi của WISE Academy)
+          </p>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
+              <Target className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#002F5B]">Tầm Nhìn Của Chúng Tôi</h3>
+            <p className="text-base text-[#486581] leading-relaxed">
+              WISE định vị là <strong>đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất trên hành trình tối ưu hóa vận hành, xây dựng nhà máy thông minh và nâng tầm năng lực cạnh tranh quốc tế.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-[#002F5B] text-white flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6 text-[#F76011]" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#002F5B]">Sứ Mệnh Phụng Sự</h3>
+            <p className="text-base text-[#486581] leading-relaxed">
+              WISE khai thác triệt để mọi cơ hội để <strong>phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values W-I-S-E in depth */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-200">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <SectionBadge number="VALUES" title="GIÁ TRỊ CỐT LÕI" />
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002F5B]">
+              Bốn Trụ Cột <span className="text-[#F76011]">W - I - S - E</span>
+            </h2>
+            <p className="text-base text-[#486581]">
+              Bộ gen định hình cách các chuyên gia WISE tư vấn, tương tác và cùng đồng hành với khách hàng.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => (
+              <div 
+                key={v.letter}
+                className="bg-[#F8F9FA] border border-slate-200 rounded-3xl p-8 hover:border-[#F76011] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-[#002F5B] text-white flex items-center justify-center font-black text-2xl mb-6 shadow-md shadow-[#002F5B]/20">
+                    <span className="text-[#F76011]">{v.letter}</span>
+                  </div>
+                  <span className="text-xs uppercase font-extrabold tracking-widest text-[#F76011] block mb-1">
+                    {v.word}
+                  </span>
+                  <h4 className="text-lg font-bold text-[#002F5B] mb-3">
+                    {v.title}
+                  </h4>
+                  <p className="text-sm text-[#486581] leading-relaxed">
+                    {v.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Full RGPDCA Methodology Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001E38] text-white">
+        <div className="max-w-7xl mx-auto space-y-14">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <SectionBadge number="METHOD" title="PHƯƠNG PHÁP LUẬN RGPDCA" light={true} />
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              Lộ Trình 6 Giai Đoạn <span className="text-[#F76011]">Khoa Học & Bền Vững</span>
+            </h2>
+            <p className="text-base text-white/70">
+              Không áp dụng một công thức rập khuôn cho mọi nhà máy. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {rgpdcaDetails.map((item) => (
+              <div 
+                key={item.phase}
+                className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-[#F76011]/60 hover:bg-white/10 transition-all duration-300 space-y-3"
+              >
+                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                  <span className="text-xs font-mono font-bold text-[#F76011]">{item.phase}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-white/50">{item.code}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white pt-1">
+                  {item.name}
+                </h3>
+                <span className="inline-block text-xs font-semibold text-[#FF7A30] bg-[#FF7A30]/10 px-2.5 py-1 rounded">
+                  {item.action}
+                </span>
+                <p className="text-xs text-white/75 leading-relaxed pt-2">
+                  {item.content}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-[#002F5B] to-[#073866] p-8 sm:p-10 rounded-3xl border border-white/20 text-center space-y-4">
+            <h3 className="text-2xl font-bold text-white">Bạn Muốn Chuyên Gia Xuống Khảo Sát Thực Tế Tại Nhà Máy Cùng WISE?</h3>
+            <p className="text-sm text-white/80 max-w-2xl mx-auto">
+              Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống phân xưởng quan sát để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/lien-he"
+                className="inline-flex items-center gap-2 bg-[#F76011] hover:bg-[#FF6712] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all group"
+              >
+                <span>Đặt lịch hẹn khảo sát miễn phí</span>
+                <ArrowRight className="w-4 h-4 growth-arrow" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,603 @@
+[
+  {
+    "id": "lean-six-sigma-yellow-belt",
+    "title": "Lean Six Sigma Yellow Belt (Đai Vàng Quốc Tế)",
+    "belt": "yellow",
+    "category": "Lean Six Sigma",
+    "duration": "2 Ngày (16 Giờ)",
+    "target": "Trưởng nhóm, Giám sát sản xuất, Kỹ sư cải tiến, Nhân viên nòng cốt",
+    "summary": "Trang bị tư duy nhận diện 8 loại lãng phí (DOWNTIME), phương pháp luận DMAIC cơ bản và làm chủ các công cụ giải quyết vấn đề hiệu quả tại hiện trường.",
+    "outcomes": [
+      "Hiểu bản chất tư duy dữ liệu và triết lý Lean Six Sigma",
+      "Nhận diện và loại bỏ lãng phí tại khu vực phụ trách",
+      "Biết cách thu thập dữ liệu và ứng dụng công cụ Pareto, Fishbone, 5-Why",
+      "Đủ điều kiện tham gia và chủ trì các dự án cải tiến Kaizen cấp nhóm"
+    ],
+    "badge": "YELLOW BELT",
+    "accent_color": "#E2B808",
+    "image": "/images/courses/lean-six-sigma-yellow-belt/cover.webp"
+  },
+  {
+    "id": "lean-six-sigma-green-belt",
+    "title": "Lean Six Sigma Green Belt (Đai Xanh Quốc Tế)",
+    "belt": "green",
+    "category": "Lean Six Sigma",
+    "duration": "5 - 7 Ngày + Coaching Dự án Thực Tế",
+    "target": "Quản đốc, Trưởng phòng QA/QC, Kỹ sư IE, Trưởng bộ phận Cải tiến liên tục (CI)",
+    "summary": "Đào tạo chuyên sâu lộ trình DMAIC, phân tích thống kê quá trình (SPC, Minitab), năng lực quá trình (Cpk, Ppk) và dẫn dắt các dự án giảm lỗi, nâng hiệu suất mang lại lợi ích tài chính trực tiếp.",
+    "outcomes": [
+      "Dẫn dắt độc lập các dự án Lean Six Sigma tiết kiệm chi phí từ 100M - 1 tỷ VNĐ",
+      "Làm chủ các công cụ phân tích thống kê chuyên sâu: Đo lường hệ thống Gage R&R, Hypothesis Testing",
+      "Thiết kế kế hoạch kiểm soát quá trình (Control Plan) bền vững",
+      "Cấp chứng nhận hoàn thành và chứng chỉ dự án Green Belt chuẩn quốc tế"
+    ],
+    "badge": "GREEN BELT",
+    "accent_color": "#00BE62",
+    "image": "/images/courses/lean-six-sigma-green-belt/cover.webp"
+  },
+  {
+    "id": "5s-visual-management-safety",
+    "title": "5S · Quản Trị Trực Quan & An Toàn Hiện Trường (Gemba)",
+    "belt": "none",
+    "category": "Quản trị Hiện trường",
+    "duration": "2 Ngày + 1 Ngày Audit Hiện trường",
+    "target": "Toàn thể cán bộ quản lý sản xuất, quản đốc xưởng, tổ trưởng, phụ trách an toàn HSE",
+    "summary": "Không dừng lại ở việc dọn dẹp vệ sinh thông thường, khóa học đưa 5S trở thành một hệ thống quản trị trực quan tự động cảnh báo lỗi và xây dựng ý thức tự giác kỷ luật.",
+    "outcomes": [
+      "Chuẩn hóa nguyên tắc Sàng lọc - Sắp xếp - Sạch sẽ - Săn sóc - Sẵn sàng theo chuẩn Nhật Bản",
+      "Thiết kế bảng kiểm soát trực quan (Visual Board) và hệ thống Andon",
+      "Giảm thời gian tìm kiếm công cụ/vật tư từ 30% - 50%",
+      "Thiết lập cơ chế kiểm tra chéo (Audit 5S) định kỳ có chấm điểm xếp hạng"
+    ],
+    "badge": "GEMBA 5S",
+    "accent_color": "#002F5B",
+    "image": "/images/courses/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/cover.webp"
+  },
+  {
+    "id": "tpm-oee-equipment-excellence",
+    "title": "TPM & OEE · Quản Trị Thiết Bị Toàn Phần & Tối Ưu Năng Suất",
+    "belt": "none",
+    "category": "Bảo trì & Kỹ thuật",
+    "duration": "3 Ngày (24 Giờ)",
+    "target": "Kỹ sư bảo trì cơ điện, Giám đốc kỹ thuật xưởng, Quản đốc vận hành máy",
+    "summary": "Nâng cao chỉ số hiệu suất thiết bị toàn phần (OEE), xóa bỏ tình trạng máy dừng đột xuất bằng bảo trì tự quản (Autonomous Maintenance) và kỹ thuật chuyển đổi nhanh (SMED).",
+    "outcomes": [
+      "Đo lường chính xác 6 tổn thất lớn của thiết bị và tính toán OEE thời gian thực",
+      "Chuyển giao 7 bước bảo trì tự quản (AM) cho công nhân vận hành máy",
+      "Áp dụng kỹ thuật SMED rút ngắn thời gian thay khuôn/mã hàng trên 40%",
+      "Kéo dài tuổi thọ máy móc và ngăn ngừa rủi ro dừng chuyền sản xuất"
+    ],
+    "badge": "TPM / OEE",
+    "accent_color": "#F76011",
+    "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp"
+  },
+  {
+    "id": "lean-simulation-game-workshop",
+    "title": "Lean Simulation Game · Trải Nghiệm Mô Phỏng Dòng Chảy Vận Hành",
+    "belt": "none",
+    "category": "Workshop Thực chiến",
+    "duration": "1 - 2 Ngày Workshop Tương Tác",
+    "target": "Ban Giám đốc, Lãnh đạo cấp cao, Toàn thể quản lý các phòng ban chuỗi giá trị",
+    "summary": "Học qua trải nghiệm thực tế với mô hình lắp ráp nhà máy giả lập 3 vòng: từ sản xuất truyền thống hỗn loạn đến dòng chảy tinh gọn Continuous Flow và kéo Kanban.",
+    "outcomes": [
+      "Thấy rõ nỗi đau của hàng tồn kho dở dang (WIP), điểm nghẽn và giao hàng trễ",
+      "Tự tay thiết kế lại chuyền sản xuất và cảm nhận năng suất tăng vọt sau mỗi vòng",
+      "Phá vỡ rào cản phòng ban (Silo), tạo sự đồng thuận tuyệt đối trong ban lãnh đạo",
+      "Truyền cảm hứng mạnh mẽ để bắt tay vào chuyển đổi Lean tại doanh nghiệp"
+    ],
+    "badge": "SIMULATION",
+    "accent_color": "#FF5A14",
+    "image": "/images/courses/cong-thuc-tinh-gia-thanh-va-giam-chi-phi/cover.webp"
+  },
+  {
+    "id": "production-4-0-digital-lean",
+    "title": "Production 4.0 · Quản Lý Sản Xuất & Tinh Gọn Kỷ Nguyên Số",
+    "belt": "none",
+    "category": "Chuyển đổi số",
+    "duration": "2 Ngày (16 Giờ)",
+    "target": "Giám đốc Sản xuất, Giám đốc Chuyển đổi số, Kỹ sư hệ thống IT/OT, Giám đốc Nhà máy",
+    "summary": "Tích hợp công cụ Lean truyền thống với công nghệ IoT, Dashboard điều hành thời gian thực và AI phân tích dữ liệu sản xuất để ra quyết định tức thì.",
+    "outcomes": [
+      "Xác định đúng các bài toán số hóa hiện trường tránh bẫy lãng phí công nghệ",
+      "Thiết kế Dashboard quản trị sản xuất thời gian thực (Real-time Gemba)",
+      "Ứng dụng AI/RPA trong báo cáo sản xuất, cân bằng chuyền tự động",
+      "Xây dựng lộ trình chuyển đổi Nhà máy Thông minh (Smart Factory Roadmap)"
+    ],
+    "badge": "LEAN 4.0",
+    "accent_color": "#073866",
+    "image": "/images/courses/dao-tao-giam-doc-san-xuat-4-0/cover.webp"
+  },
+  {
+    "id": "cac-dai-luong-do-luong-nang-luc-he-thong-quan-ly-chat-luong-quality-kpis",
+    "title": "Các đại lượng đo lường năng lực hệ thống quản lý chất lượng (Quality KPIs)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Các đại lượng đo lường năng lực hệ thống quản lý chất lượng (Quality KPIs) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/cac-dai-luong-do-luong-nang-luc-he-thong-quan-ly-chat-luong-quality-kp...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/cac-dai-luong-do-luong-nang-luc-he-thong-quan-ly-chat-luong-quality-kpis/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "cac-dai-luong-do-luong-nang-luc-quan-tri-van-hanh-xuat-sac-lean-kpis",
+    "title": "Các đại lượng đo lường năng lực quản trị vận hành xuất sắc (Lean KPIs)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Các đại lượng đo lường năng lực quản trị vận hành xuất sắc (Lean KPIs) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/cac-dai-luong-do-luong-nang-luc-quan-tri-van-hanh-xuat-sac-lean-kpis/](htt...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/cac-dai-luong-do-luong-nang-luc-quan-tri-van-hanh-xuat-sac-lean-kpis/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac",
+    "title": "Chẩn đoán và Đánh giá doanh nghiệp Quản trị vận hành xuất sắc",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Chẩn đoán và Đánh giá doanh nghiệp Quản trị vận hành xuất sắc - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/](https://wisedemy.com.vn/cour...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "chuyen-doi-san-xuat-nhanh-smed-qco",
+    "title": "Chuyển đổi sản xuất nhanh SMED/ QCO",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Chuyển đổi sản xuất nhanh SMED/ QCO - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/chuyen-doi-san-xuat-nhanh-smed-qco/](https://wisedemy.com.vn/course/chuyen-doi-san-xuat-nhanh-smed-qco/) --- ...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "cong-thuc-tinh-gia-thanh-va-giam-chi-phi",
+    "title": "Công thức tính giá thành và giảm chi phí",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Công thức tính giá thành và giảm chi phí - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/cong-thuc-tinh-gia-thanh-va-giam-chi-phi/](https://wisedemy.com.vn/course/cong-thuc-tinh-gia-thanh-va-gi...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/cong-thuc-tinh-gia-thanh-va-giam-chi-phi/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "dao-tao-giam-doc-san-xuat-4-0",
+    "title": "Đào tạo Giám đốc Sản xuất 4.0",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Đào tạo Giám đốc Sản xuất 4.0 - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/dao-tao-giam-doc-san-xuat-4-0/](https://wisedemy.com.vn/course/dao-tao-giam-doc-san-xuat-4-0/) --- #### INSTRUCTORS...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/dao-tao-giam-doc-san-xuat-4-0/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "hoach-dinh-va-trien-khai-chien-luoc-hoshin-kanri",
+    "title": "Hoạch định và triển khai chiến lược (Hoshin Kanri)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Hoạch định và triển khai chiến lược (Hoshin Kanri) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/hoach-dinh-va-trien-khai-chien-luoc-hoshin-kanri/](https://wisedemy.com.vn/course/hoach-dinh-v...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/hoach-dinh-va-trien-khai-chien-luoc-hoshin-kanri/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "kien-thuc-co-ban-ve-quan-tri-van-hanh-xuat-sac",
+    "title": "Kiến thức cơ bản về quản trị vận hành xuất sắc",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Kiến thức cơ bản về quản trị vận hành xuất sắc - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/kien-thuc-co-ban-ve-quan-tri-van-hanh-xuat-sac/](https://wisedemy.com.vn/course/kien-thuc-co-ban-v...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/kien-thuc-co-ban-ve-quan-tri-van-hanh-xuat-sac/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "ky-nang-giao-tiep-va-quan-ly-xung-dot-hieu-qua",
+    "title": "Kỹ năng giao tiếp và quản lý xung đột hiệu quả",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Kỹ năng giao tiếp và quản lý xung đột hiệu quả - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/ky-nang-giao-tiep-va-quan-ly-xung-dot-hieu-qua/](https://wisedemy.com.vn/course/ky-nang-giao-tiep-...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/ky-nang-giao-tiep-va-quan-ly-xung-dot-hieu-qua/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "ky-thuat-cai-tien-hieu-suat-su-dung-thiet-bi-toan-phan-oee",
+    "title": "Kỹ thuật cải tiến Hiệu suất sử dụng thiết bị toàn phần OEE",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Kỹ thuật cải tiến Hiệu suất sử dụng thiết bị toàn phần OEE - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/ky-thuat-cai-tien-hieu-suat-su-dung-thiet-bi-toan-phan-oee/](https://wisedemy.com.vn/c...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/ky-thuat-cai-tien-hieu-suat-su-dung-thiet-bi-toan-phan-oee/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "lean-six-sigma-white-belt",
+    "title": "Lean Six Sigma White Belt",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Lean Six Sigma White Belt - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/lean-six-sigma-white-belt/](https://wisedemy.com.vn/course/lean-six-sigma-white-belt/) --- Nôi dung chương trình chi ti...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/lean-six-sigma-white-belt/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "nang-cao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen",
+    "title": "Nâng cao tư duy và kỹ thuật cải tiến năng suất chuyền",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Nâng cao tư duy và kỹ thuật cải tiến năng suất chuyền - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/nang-cao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/](https://wisedemy.com.vn/course/nang...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/nang-cao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-nang-luc-doi-ngu-van-hanh-chuyen-nghiep-theo-twi-training-within-industry",
+    "title": "Phát triển năng lực đội ngũ vận hành chuyên nghiệp theo TWI (Training Within Industry)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển năng lực đội ngũ vận hành chuyên nghiệp theo TWI (Training Within Industry) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-nang-luc-doi-ngu-van-hanh-chuyen-nghiep-theo-tw...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-nang-luc-doi-ngu-van-hanh-chuyen-nghiep-theo-twi-training-within-industry/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-nang-luc-giang-vien-noi-bo-chuyen-nghiep-train-the-trainer",
+    "title": "Phát triển năng lực giảng viên nội bộ chuyên nghiệp (Train The Trainer)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển năng lực giảng viên nội bộ chuyên nghiệp (Train The Trainer) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-nang-luc-giang-vien-noi-bo-chuyen-nghiep-train-the-trainer/](h...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-nang-luc-giang-vien-noi-bo-chuyen-nghiep-train-the-trainer/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-nang-luc-lam-viec-tu-chu",
+    "title": "Phát triển năng lực làm việc tự chủ",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển năng lực làm việc tự chủ - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-nang-luc-lam-viec-tu-chu/](https://wisedemy.com.vn/course/phat-trien-nang-luc-lam-viec-tu-chu/) --...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-nang-luc-lam-viec-tu-chu/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-nang-luc-quan-ly-san-xuat",
+    "title": "Phát triển năng lực Quản lý sản xuất",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển năng lực Quản lý sản xuất - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-nang-luc-quan-ly-san-xuat/](https://wisedemy.com.vn/course/phat-trien-nang-luc-quan-ly-san-xuat/)...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-nang-luc-quan-ly-san-xuat/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-nang-luc-tu-duy",
+    "title": "Phát triển năng lực tư duy",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển năng lực tư duy - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-nang-luc-tu-duy/](https://wisedemy.com.vn/course/phat-trien-nang-luc-tu-duy/) --- #### INSTRUCTORS: Nguyễn ...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-nang-luc-tu-duy/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "phat-trien-tu-duy-va-nang-luc-giai-quyet-van-de-theo-chu-trinh-pdca",
+    "title": "Phát triển Tư duy và Năng lực giải quyết vấn đề theo chu trình PDCA",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Phát triển Tư duy và Năng lực giải quyết vấn đề theo chu trình PDCA - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/phat-trien-tu-duy-va-nang-luc-giai-quyet-van-de-theo-chu-trinh-pdca/](https:/...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/phat-trien-tu-duy-va-nang-luc-giai-quyet-van-de-theo-chu-trinh-pdca/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "quy-trinh-va-ky-nang-hoach-dinh-thiet-lap-va-trien-khai-ke-hoach-san-xuat",
+    "title": "Quy trình và kỹ năng hoạch định, thiết lập và triển khai kế hoạch sản xuất",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Quy trình và kỹ năng hoạch định, thiết lập và triển khai kế hoạch sản xuất - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/quy-trinh-va-ky-nang-hoach-dinh-thiet-lap-va-trien-khai-ke-hoach-san-x...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/quy-trinh-va-ky-nang-hoach-dinh-thiet-lap-va-trien-khai-ke-hoach-san-xuat/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "to-chuc-khu-vuc-lam-viec-hieu-qua-va-khoa-hoc-bang-phuong-phap-5s-an-toan-va-quan-ly-truc-quan",
+    "title": "Tổ chức khu vực làm việc hiệu quả & khoa học bằng 5S, An toàn & Quản lý trực quan",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tổ chức khu vực làm việc hiệu quả & khoa học bằng 5S, An toàn & Quản lý trực quan - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/to-chuc-khu-vuc-lam-viec-hieu-qua-va-khoa-h...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/to-chuc-khu-vuc-lam-viec-hieu-qua-va-khoa-hoc-bang-phuong-phap-5s-an-toan-va-quan-ly-truc-quan/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "toi-uu-hoa-quy-trinh-bang-ky-thuat-ve-so-do-chuoi-gia-tri-vsm-va-so-do-quy-trinh-process-mapping",
+    "title": "Tối ưu hoá quy trình bằng kỹ thuật vẽ sơ đồ chuỗi giá trị (VSM) và Sơ đồ quy trình (Process Mapping)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tối ưu hoá quy trình bằng kỹ thuật vẽ sơ đồ chuỗi giá trị (VSM) và Sơ đồ quy trình (Process Mapping) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/toi-uu-hoa-quy-trinh-bang-ky-thuat-ve-so-do-...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/toi-uu-hoa-quy-trinh-bang-ky-thuat-ve-so-do-chuoi-gia-tri-vsm-va-so-do-quy-trinh-process-mapping/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tong-quan-ve-bao-tri-nang-suat-tong-the-total-productive-mantenance",
+    "title": "Tổng quan về Bảo trì năng suất tổng thể (Total Productive Mantenance - TPM)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tổng quan về Bảo trì năng suất tổng thể (Total Productive Mantenance - TPM) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tong-quan-ve-bao-tri-nang-suat-tong-the-total-productive-mantenance/]...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tong-quan-ve-bao-tri-nang-suat-tong-the-total-productive-mantenance/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tong-quan-ve-he-thong-quan-ly-chat-luong-total-quality-management-tqm",
+    "title": "Tổng quan về hệ thống quản lý chất lượng (Total Quality Management - TQM)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tổng quan về hệ thống quản lý chất lượng (Total Quality Management - TQM) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tong-quan-ve-he-thong-quan-ly-chat-luong-total-quality-management-tqm/]...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tong-quan-ve-he-thong-quan-ly-chat-luong-total-quality-management-tqm/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tong-quan-ve-phuong-thuc-quan-tri-van-hanh-xuat-sac-va-5-nguyen-ly-lean-co-ban",
+    "title": "Tổng quan về phương thức quản trị vận hành xuất sắc và 5 nguyên lý Lean cơ bản",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tổng quan về phương thức quản trị vận hành xuất sắc và 5 nguyên lý Lean cơ bản - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tong-quan-ve-phuong-thuc-quan-tri-van-hanh-xuat-sac-va-5-nguyen-ly...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tong-quan-ve-phuong-thuc-quan-tri-van-hanh-xuat-sac-va-5-nguyen-ly-lean-co-ban/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tu-duy-va-ky-thuat-can-bang-chuyen-san-xuat-theo-quy-trinh-cong-nghe-chuan",
+    "title": "Tư duy và kỹ thuật cân bằng chuyền sản xuất theo quy trình công nghệ chuẩn",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tư duy và kỹ thuật cân bằng chuyền sản xuất theo quy trình công nghệ chuẩn - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tu-duy-va-ky-thuat-can-bang-chuyen-san-xuat-theo-quy-trinh-cong-nghe-c...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tu-duy-va-ky-thuat-can-bang-chuyen-san-xuat-theo-quy-trinh-cong-nghe-chuan/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tu-duy-va-ky-thuat-nhan-dien-va-loai-bo-8-lang-phi",
+    "title": "Tư duy và kỹ thuật nhận diện và loại bỏ 8 lãng phí",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tư duy và kỹ thuật nhận diện và loại bỏ 8 lãng phí - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tu-duy-va-ky-thuat-nhan-dien-va-loai-bo-8-lang-phi/](https://wisedemy.com.vn/course/tu-duy-va-...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tu-duy-va-ky-thuat-nhan-dien-va-loai-bo-8-lang-phi/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tu-duy-va-nguyen-tac-thiet-lap-quy-trinh-cong-nghe-chuan",
+    "title": "Tư duy và nguyên tắc thiết lập quy trình công nghệ chuẩn",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tư duy và nguyên tắc thiết lập quy trình công nghệ chuẩn - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tu-duy-va-nguyen-tac-thiet-lap-quy-trinh-cong-nghe-chuan/](https://wisedemy.com.vn/cours...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tu-duy-va-nguyen-tac-thiet-lap-quy-trinh-cong-nghe-chuan/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tu-van-trien-khai-giai-phap-ket-hop-lean-va-ai-de-toi-uu-hoa-quy-trinh-va-ra-quyet-dinh",
+    "title": "Tư vấn và Triển khai giải pháp kết hợp Lean và AI để tối ưu hóa quy trình và ra quyết định",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tư vấn và Triển khai giải pháp kết hợp Lean và AI để tối ưu hóa quy trình và ra quyết định - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tu-van-trien-khai-giai-phap-ket-hop-lean-va-ai-de-toi-...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tu-van-trien-khai-giai-phap-ket-hop-lean-va-ai-de-toi-uu-hoa-quy-trinh-va-ra-quyet-dinh/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  },
+  {
+    "id": "tu-van-va-trien-khai-he-thong-quan-tri-van-hanh-xuat-sac-tich-hop-cong-nghe-iot-ai-rpa",
+    "title": "Tư vấn và Triển khai hệ thống quản trị vận hành xuất sắc tích hợp công nghệ (IoT, AI, RPA)",
+    "belt": "none",
+    "category": "Chuyên đề Nâng cao",
+    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
+    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
+    "summary": "# Tư vấn và Triển khai hệ thống quản trị vận hành xuất sắc tích hợp công nghệ (IoT, AI, RPA) - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/tu-van-va-trien-khai-he-thong-quan-tri-van-hanh-xuat-s...",
+    "outcomes": [
+      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
+      "Áp dụng trực tiếp vào công việc hằng ngày",
+      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+    ],
+    "image": "/images/courses/tu-van-va-trien-khai-he-thong-quan-tri-van-hanh-xuat-sac-tich-hop-cong-nghe-iot-ai-rpa/cover.webp",
+    "badge": "CHUYÊN ĐỀ",
+    "accent_color": "#002F5B"
+  }
+]
