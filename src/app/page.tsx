@@ -474,14 +474,14 @@ export default function HomePage() {
               sẽ gọi lại trao đổi cụ thể trong vòng 24 giờ làm việc.
             </p>
             <div className="mt-8 space-y-5">
-              <a href="tel:+84932090075" className="flex items-center gap-4 group">
+              <a href="tel:+84989002121" className="flex items-center gap-4 group">
                 <span className="w-11 h-11 rounded-full bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </span>
                 <span>
                   <span className="block text-xs text-[#486581]">Gọi trực tiếp</span>
                   <span className="block text-lg font-bold text-[#002F5B] group-hover:text-[#F76011] transition-colors">
-                    0932 090 075 (Ms. Thủy)
+                    0989 002 121 (Ms. Thủy)
                   </span>
                 </span>
               </a>

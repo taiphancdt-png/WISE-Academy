@@ -113,9 +113,9 @@ export default function Footer() {
               <Building2 className="w-4 h-4 text-[#F76011] shrink-0 mt-0.5" />
               <span>Số 86 Song Hành, KĐT Lakeview City, P. An Phú, TP. Thủ Đức, TP.HCM</span>
             </div>
-            <a href="tel:+84932090075" className="flex items-center gap-2.5 hover:text-[#FF7A30] transition-colors">
+            <a href="tel:+84989002121" className="flex items-center gap-2.5 hover:text-[#FF7A30] transition-colors">
               <Phone className="w-4 h-4 text-[#F76011] shrink-0" />
-              0932 090 075
+              0989 002 121
             </a>
             <a href="mailto:contact@wisedemy.com.vn" className="flex items-center gap-2.5 hover:text-[#FF7A30] transition-colors">
               <Mail className="w-4 h-4 text-[#F76011] shrink-0" />

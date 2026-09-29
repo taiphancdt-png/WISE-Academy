@@ -89,7 +89,7 @@ export default function RootLayout({
               "alternateName": "Wisedemy",
               "url": "https://wisedemy.com.vn",
               "logo": "https://wisedemy.com.vn/images/brand/logo.png",
-              "telephone": "+84932090075",
+              "telephone": "+84989002121",
               "email": "contact@wisedemy.com.vn",
               "taxID": "0317485522",
               "address": {
