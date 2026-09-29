@@ -43,10 +43,10 @@ export default function Header() {
       {/* Top Contact Bar */}
       <div className="bg-[#001E38] text-white text-xs sm:text-[13px] py-2.5 px-4 sm:px-8 xl:px-12 hidden md:block">
         <div className="w-full max-w-[1400px] mx-auto flex justify-between items-center">
-          <a href="tel:+84989002121" className="flex items-center gap-2 font-semibold group">
+          <a href="tel:+84932090075" className="flex items-center gap-2 font-semibold group">
             <Phone className="w-3.5 h-3.5 text-[#F76011]" />
             <span>Hotline tư vấn:</span>
-            <span className="text-[#FF7A30] group-hover:underline">0989 002 121</span>
+            <span className="text-[#FF7A30] group-hover:underline">0932 090 075</span>
           </a>
           <div className="flex items-center gap-8">
             <a href="mailto:contact@wisedemy.com.vn" className="flex items-center gap-2 font-semibold group">
@@ -138,8 +138,8 @@ export default function Header() {
               <span className="notranslate" translate="no">{ctaLabel}</span>
             </Link>
             <div className="flex flex-col gap-2 text-sm text-[#486581] pt-4 px-2">
-              <a href="tel:+84989002121" className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#F76011]" /> 0989 002 121
+              <a href="tel:+84932090075" className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#F76011]" /> 0932 090 075
               </a>
               <a href="mailto:contact@wisedemy.com.vn" className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#F76011]" /> contact@wisedemy.com.vn
