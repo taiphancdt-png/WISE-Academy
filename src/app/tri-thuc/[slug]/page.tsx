@@ -1,16 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { OG_IMAGE, SITE_URL, jsonLd, metaDescription } from "@/lib/seo";
+import { cleanExcerpt, plainText } from "@/lib/text";
 import { 
   Calendar, 
   Clock, 
   ArrowLeft, 
-  ArrowRight, 
   ChevronRight, 
-  Share2, 
   BookOpen, 
   Phone, 
-  ShieldCheck, 
   Sparkles,
   ArrowUpRight
 } from "lucide-react";
@@ -40,13 +39,26 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const description = metaDescription(cleanExcerpt(article.title, article.excerpt) || plainText(article.content));
+  const url = `/tri-thuc/${article.slug || article.id}`;
   return {
-    title: `${article.title} — Góc Tri Thức WISE Academy`,
-    description: article.excerpt.slice(0, 160),
+    title: `${article.title} — Góc tri thức WISE Academy`,
+    description,
+    alternates: { canonical: url },
     openGraph: {
+      type: "article",
+      url,
       title: article.title,
-      description: article.excerpt.slice(0, 160),
-      images: article.thumbnail ? [article.thumbnail] : [],
+      description,
+      publishedTime: article.date,
+      section: article.category,
+      images: article.thumbnail ? [{ url: article.thumbnail, alt: article.title }] : [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description,
+      images: [article.thumbnail || OG_IMAGE.url],
     },
   };
 }
@@ -67,8 +79,39 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     ...others.filter((a) => a.category !== article.category).sort((a, b) => b.date.localeCompare(a.date)),
   ].slice(0, 3);
 
+  const articleUrl = `${SITE_URL}/tri-thuc/${article.slug || article.id}`;
+
   return (
     <div className="bg-[#F8F9FA] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BlogPosting",
+              headline: article.title,
+              description: metaDescription(cleanExcerpt(article.title, article.excerpt) || plainText(article.content)),
+              image: article.thumbnail ? `${SITE_URL}${article.thumbnail}` : `${SITE_URL}${OG_IMAGE.url}`,
+              datePublished: article.date,
+              inLanguage: "vi",
+              articleSection: article.category,
+              keywords: [article.category, ...(article.topics || [])].join(", "),
+              mainEntityOfPage: articleUrl,
+              author: { "@type": "Organization", name: article.author || "WISE Academy", url: SITE_URL },
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Trang chủ", item: SITE_URL },
+                { "@type": "ListItem", position: 2, name: "Góc tri thức", item: `${SITE_URL}/tri-thuc` },
+                { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+              ],
+            },
+          ],
+        })}
+      />
       {/* Breadcrumb Header */}
       <section className="bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="w-full max-w-[1600px] mx-auto flex items-center justify-between text-xs text-[#486581]">
@@ -237,7 +280,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 </a>
                 <Link
                   href="/lien-he"
-                  className="growth-arrow flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#002F5B] hover:bg-[#F76011] text-white text-xs font-bold transition-all shadow-sm"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#002F5B] hover:bg-[#F76011] text-white text-xs font-bold transition-all shadow-sm"
                 >
                   <span>Đặt lịch trao đổi</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -307,7 +350,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               <Link
                 key={art.id}
                 href={`/tri-thuc/${art.slug || art.id}`}
-                className="growth-card bg-[#F8F9FA] rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between group hover:border-[#002F5B] transition-all"
+                className="card-soft bg-[#F8F9FA] rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between group hover:border-[#002F5B] transition-all"
               >
                 <div className="aspect-[16/9] bg-slate-100 overflow-hidden relative">
                   {art.thumbnail ? (

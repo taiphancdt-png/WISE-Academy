@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4 space-y-5">
           <Link href="/" className="inline-block bg-white px-4 py-3 rounded-xl">
-            <img src="/images/brand/logo.png" alt="WISE Academy Logo" className="h-10 w-auto object-contain" />
+            <img src="/images/brand/logo.webp" width={800} height={282} alt="WISE Academy Logo" className="h-10 w-auto object-contain" />
           </Link>
           <p className="text-sm leading-relaxed max-w-sm">
             <strong className="text-white">CÔNG TY TNHH TƯ VẤN & ĐÀO TẠO WISE ACADEMY</strong> — đồng hành cùng các nhà máy

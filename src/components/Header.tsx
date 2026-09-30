@@ -73,7 +73,9 @@ export default function Header() {
         >
           <Link href="/" className="shrink-0">
             <img
-              src="/images/brand/logo.png"
+              src="/images/brand/logo.webp"
+              width={800}
+              height={282}
               alt="WISE Academy Logo"
               className={`w-auto object-contain transition-all duration-300 ${isScrolled ? "h-10" : "h-12"}`}
             />

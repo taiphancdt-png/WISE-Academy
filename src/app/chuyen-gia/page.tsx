@@ -8,6 +8,7 @@ import type { Expert } from "@/types";
 export const metadata = {
   title: "Đội Ngũ Chuyên Gia Thực Chiến — WISE Academy",
   description: "Đội ngũ chuyên gia Lean Six Sigma, chẩn đoán vận hành doanh nghiệp, tự động hóa và quản lý chất lượng với nhiều năm kinh nghiệm tại các tập đoàn đa quốc gia.",
+  alternates: { canonical: "/chuyen-gia" },
 };
 
 export default function ExpertsPage() {

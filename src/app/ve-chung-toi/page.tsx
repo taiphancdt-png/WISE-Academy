@@ -6,6 +6,7 @@ import { Section, SectionHeader, CtaBand } from "@/components/ui";
 export const metadata = {
   title: "Về Chúng Tôi & Triết Lý RGPDCA — WISE Academy",
   description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
+  alternates: { canonical: "/ve-chung-toi" },
 };
 
 export default function AboutPage() {

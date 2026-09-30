@@ -4,6 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import { OG_IMAGE, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "vietnamese"],
@@ -13,39 +15,42 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wisedemy.com.vn"),
-  title: "WISE Academy — Viện Đào Tạo & Tư Vấn Quản Trị Tinh Gọn (Lean Six Sigma & Ops Excellence)",
-  description: "WISE Academy đồng hành cùng các tập đoàn sản xuất hàng đầu (Pou Chen, GEODIS, Huali) chuyển đổi hệ thống vận hành tinh gọn, áp dụng phương pháp luận RGPDCA, đào tạo Lean Six Sigma Belts và tối ưu hóa năng suất nhà máy.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho nhà máy",
+    template: "%s",
+  },
+  description:
+    "WISE Academy — đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma Yellow/Green Belt, 5S, TPM cho nhà máy sản xuất.",
   keywords: [
     "Lean Six Sigma",
-    "Tư vấn Lean",
-    "Đào tạo Lean",
-    "Quản trị sản xuất",
-    "5S hiện trường",
+    "đào tạo Lean Six Sigma",
+    "Green Belt",
+    "Yellow Belt",
+    "tư vấn Lean",
+    "tối ưu vận hành nhà máy",
+    "5S",
     "Kaizen",
     "TPM OEE",
-    "Chuyển đổi số nhà máy",
-    "Lean Belt Yellow Green Black",
+    "DMAIC",
+    "LSSI Vietnam",
     "WISE Academy",
-    "Wisedemy"
   ],
-  authors: [{ name: "WISE Academy Consulting & Training Co., Ltd" }],
+  authors: [{ name: "WISE Academy" }],
   openGraph: {
-    title: "WISE Academy — Practical Lean Training & Consultancy",
-    description: "Biến vận hành thành lợi thế cạnh tranh bền vững với phương pháp luận RGPDCA chuẩn quốc tế.",
-    url: "https://wisedemy.com.vn",
-    siteName: "WISE Academy",
-    images: [
-      {
-        url: "/images/brand/logo.png",
-        width: 800,
-        height: 600,
-        alt: "WISE Academy Logo",
-      },
-    ],
+    siteName: SITE_NAME,
+    title: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho nhà máy",
+    description: "Tối ưu vận hành, tăng năng suất bền vững. Đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
+    images: [OG_IMAGE],
     locale: "vi_VN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_IMAGE.url],
+  },
+  robots: { index: true, follow: true },
+  formatDetection: { telephone: false },
 };
 
 export default function RootLayout({
@@ -67,6 +72,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <ScrollReveal />
 
         {/* Automatic Vietnamese → English / Chinese translation (toggled by LanguageSwitcher via the googtrans cookie) */}
         <div id="google_translate_element" className="hidden" />
@@ -81,28 +87,48 @@ export default function RootLayout({
         {/* Structured Data (JSON-LD) for SEO */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "EducationalOrganization",
-              "name": "WISE Academy Consulting & Training",
-              "alternateName": "Wisedemy",
-              "url": "https://wisedemy.com.vn",
-              "logo": "https://wisedemy.com.vn/images/brand/logo.png",
-              "telephone": "+84989002121",
-              "email": "contact@wisedemy.com.vn",
-              "taxID": "0317485522",
-              "address": {
+          dangerouslySetInnerHTML={jsonLd({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "Công ty TNHH Tư vấn & Đào tạo WISE Academy",
+            alternateName: ["WISE Academy", "Wisedemy"],
+            url: SITE_URL,
+            logo: `${SITE_URL}/images/brand/logo.png`,
+            image: `${SITE_URL}${OG_IMAGE.url}`,
+            description: "Tư vấn tối ưu vận hành và đào tạo Lean Six Sigma cho nhà máy sản xuất; đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
+            telephone: "+84989002121",
+            email: "contact@wisedemy.com.vn",
+            taxID: "0317485522",
+            areaServed: ["VN", "Asia"],
+            address: [
+              {
                 "@type": "PostalAddress",
-                "streetAddress": "Số 86 Song Hành, KĐT Lakeview City, P. An Phú",
-                "addressLocality": "TP. Thủ Đức, TP. Hồ Chí Minh",
-                "addressCountry": "VN"
+                streetAddress: "14 Đường Số 2, Khu Xáng Thổi, P. Chánh Hưng, Quận 8",
+                addressLocality: "TP. Hồ Chí Minh",
+                addressCountry: "VN",
               },
-              "sameAs": [
-                "https://wisedemy.com.vn"
-              ]
-            }),
-          }}
+              {
+                "@type": "PostalAddress",
+                streetAddress: "Số 86 Song Hành, KĐT Lakeview City, P. An Phú",
+                addressLocality: "TP. Thủ Đức, TP. Hồ Chí Minh",
+                addressCountry: "VN",
+              },
+            ],
+            sameAs: ["https://www.facebook.com/1003927162429125"],
+          })}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            url: SITE_URL,
+            name: SITE_NAME,
+            inLanguage: "vi",
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          })}
         />
       </body>
     </html>

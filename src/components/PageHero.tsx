@@ -13,9 +13,9 @@ interface PageHeroProps {
 export default function PageHero({ eyebrow, title, description, image, children }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden text-white">
-      <img src={image} alt="" className="absolute inset-0 -z-20 w-full h-full object-cover" />
+      <img src={image} alt="" className="hero-zoom absolute inset-0 -z-20 w-full h-full object-cover" />
       <div className="absolute inset-0 -z-10 bg-[#001E38]/80" />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-20 sm:py-24 text-center">
+      <div className="hero-enter max-w-4xl mx-auto px-4 sm:px-6 py-20 sm:py-24 text-center">
         <SectionBadge title={eyebrow} light />
         <h1 className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight">{title}</h1>
         {description && (

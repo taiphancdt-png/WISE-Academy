@@ -7,6 +7,7 @@ import type { Project } from "@/types";
 export const metadata = {
   title: "Dự Án & Câu Chuyện Chuyển Đổi Thực Tế — WISE Academy",
   description: "Tổng hợp các case study dự án tư vấn Lean Six Sigma, chuẩn hóa 5S, Work Engineering và cải tiến năng suất tại các tập đoàn sản xuất lớn.",
+  alternates: { canonical: "/du-an" },
 };
 
 export default function ProjectsPage() {

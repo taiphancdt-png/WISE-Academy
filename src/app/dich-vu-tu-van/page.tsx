@@ -14,6 +14,7 @@ const pillarImages = [
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường — WISE Academy",
   description: "Các giải pháp tư vấn tối ưu hóa sản xuất, khảo sát thực tế tại xưởng, sắp xếp dây chuyền, nâng cao năng suất công nhân và giảm chi phí.",
+  alternates: { canonical: "/dich-vu-tu-van" },
 };
 
 export default function ConsultingPage() {

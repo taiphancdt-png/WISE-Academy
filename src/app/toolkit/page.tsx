@@ -9,6 +9,7 @@ import type { LeanTool } from "@/types";
 export const metadata = {
   title: "Toolkit — Công cụ Lean thực hành — WISE Academy",
   description: "Bộ công cụ Lean tương tác do WISE Academy xây dựng từ các dự án thực tế: tính toán, biểu mẫu và mô phỏng dùng ngay trên trình duyệt.",
+  alternates: { canonical: "/toolkit" },
 };
 
 export default function ToolkitPage() {

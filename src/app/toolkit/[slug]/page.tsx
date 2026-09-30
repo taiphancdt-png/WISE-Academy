@@ -14,7 +14,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const tool = tools.find((t) => t.slug === slug);
-  return tool ? { title: `${tool.title} — Toolkit — WISE Academy`, description: tool.summary } : {};
+  return tool
+    ? { title: `${tool.title} — Toolkit — WISE Academy`, description: tool.summary, alternates: { canonical: `/toolkit/${tool.slug}` } }
+    : {};
 }
 
 export default async function LeanToolPage({ params }: { params: Promise<{ slug: string }> }) {
