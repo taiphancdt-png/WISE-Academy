@@ -14,6 +14,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
+import PartnerLogos from "@/components/PartnerLogos";
 import coursesData from "@/data/courses.json";
 import projectsData from "@/data/projects.json";
 import expertsData from "@/data/experts.json";
@@ -33,18 +34,7 @@ const IMG = {
   why: "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_11.webp",
 };
 
-// Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
-const clients = [
-  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 104, h: 42 },
-  { name: "GEODIS", logo: "geodis", w: 69, h: 62 },
-  { name: "HuaLi Industrial Group", logo: "huali", w: 179, h: 44 },
-  { name: "KREVES", logo: "kreves", w: 131, h: 34 },
-  { name: "APACHE Footwear Group", logo: "apache", w: 179, h: 55 },
-  { name: "AQUA Smart Home", logo: "aqua", w: 100, h: 44 },
-  { name: "Pou Chen (PCD)", logo: "pcd", w: 56, h: 55 },
-  { name: "Tỷ Bách", logo: "ty-bach", w: 62, h: 47 },
-  { name: "AG Samho", logo: "samho", w: 56, h: 47 },
-];
+
 
 const solutions = [
   "Khảo sát & tìm điểm nghẽn tại xưởng",
@@ -155,34 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. CLIENT / PARTNER LOGOS */}
-      <section className="bg-white py-12 px-4 sm:px-6 border-b border-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#486581] mb-8">
-            Được tin tưởng bởi các doanh nghiệp & tổ chức hàng đầu
-          </p>
-          <div className="logo-marquee overflow-hidden">
-            <ul className="animate-ticker items-center">
-              {[...clients, ...clients].map((c, i) => (
-                <li
-                  key={`${c.logo}-${i}`}
-                  className="shrink-0 w-[200px] sm:w-[240px] flex items-center justify-center h-16"
-                  aria-hidden={i >= clients.length || undefined}
-                >
-                  <img
-                    src={`/images/clients/${c.logo}.png`}
-                    alt={i >= clients.length ? "" : c.name}
-                    title={c.name}
-                    width={c.w}
-                    height={c.h}
-                    style={{ width: c.w, height: c.h }}
-                    className="object-contain"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <PartnerLogos />
 
       {/* 3. TRAINING PROGRAM */}
       <section className="bg-white py-20 px-4 sm:px-6">

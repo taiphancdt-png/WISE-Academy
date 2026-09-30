@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Building2, Send, CheckCircle2, ChevronDown } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import PartnerLogos from "@/components/PartnerLogos";
 import { Section, SectionHeader } from "@/components/ui";
 
 const inputClass =
@@ -206,6 +207,8 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
+
+      <PartnerLogos className="border-t" />
 
       {/* FAQ */}
       <Section>
