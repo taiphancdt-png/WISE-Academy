@@ -32,6 +32,7 @@ export default function Header() {
     { label: "Dự án thực tế", en: "Case Studies", zh: "项目案例", href: "/du-an" },
     { label: "Chuyên gia", en: "Experts", zh: "专家团队", href: "/chuyen-gia" },
     { label: "Góc tri thức", en: "Insights", zh: "知识中心", href: "/tri-thuc" },
+    { label: "Toolkit", en: "Toolkit", zh: "工具包", href: "/toolkit" },
     { label: "Liên hệ", en: "Contact", zh: "联系我们", href: "/lien-he" },
   ];
   const ctaLabel = { vi: "Đặt lịch tư vấn", en: "Book a Consultation", zh: "预约咨询" }[lang];
@@ -84,7 +85,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 xl:px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`px-2 xl:px-4 py-2 text-[13px] xl:text-sm font-medium transition-colors ${
                     isActive(item.href) ? "text-[#F76011]" : "text-[#486581] hover:text-[#002F5B]"
                   }`}
                 >
@@ -96,7 +97,7 @@ export default function Header() {
             </nav>
             <Link
               href="/lien-he"
-              className="ml-2 inline-flex items-center bg-[#002F5B] hover:bg-[#F76011] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
+              className="ml-2 inline-flex items-center bg-[#002F5B] hover:bg-[#F76011] text-white text-[13px] xl:text-sm font-semibold px-4 xl:px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
             >
               <span className="notranslate" translate="no">{ctaLabel}</span>
             </Link>

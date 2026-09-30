@@ -62,3 +62,17 @@ export interface Article {
   toc?: TocItem[];
   author?: string;
 }
+
+export interface LeanTool {
+  slug: string;
+  title: string;
+  category: string;
+  summary: string;
+  /** Card image under /public, optional */
+  thumbnail?: string | null;
+  /** Self-contained HTML exported from Claude Design, served from /public/tools/<slug>/index.html */
+  file?: string | null;
+  /** External link used instead of an embedded file */
+  url?: string | null;
+  tags?: string[];
+}

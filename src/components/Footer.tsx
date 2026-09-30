@@ -25,6 +25,7 @@ const companyLinks = [
   { label: "Dự án thực tế", href: "/du-an" },
   { label: "Chuyên gia", href: "/chuyen-gia" },
   { label: "Góc tri thức", href: "/tri-thuc" },
+  { label: "Toolkit", href: "/toolkit" },
   { label: "Liên hệ", href: "/lien-he" },
 ];
 
