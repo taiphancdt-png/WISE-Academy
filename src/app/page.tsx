@@ -160,10 +160,30 @@ export default function HomePage() {
       {/* 3. TRAINING PROGRAM */}
       <section className="bg-white py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <SectionBadge title="Đối tác ủy quyền của LSSI Global" />
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B]">Chương trình đào tạo Lean Six Sigma</h2>
             <p className="mt-3 text-sm sm:text-base text-[#486581]">
               Lộ trình đào tạo thực hành theo cấp độ, học xong là áp dụng được ngay trên chuyền sản xuất.
+            </p>
+          </div>
+
+          {/* LSSI authorized partner */}
+          <div className="card-soft !transform-none mb-14 px-6 py-7 sm:px-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <a
+              href="https://leansixsigmainstitute.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0"
+              aria-label="Lean Six Sigma Institute (LSSI Global)"
+            >
+              <img src="/images/brand/lssi-logo.png" alt="Lean Six Sigma Institute (LSSI) logo" className="h-16 sm:h-20 w-auto" />
+            </a>
+            <div className="hidden md:block w-px self-stretch bg-slate-200" />
+            <p className="text-sm sm:text-base text-[#486581] leading-relaxed text-center md:text-left">
+              <strong className="text-[#002F5B]">WISE Academy là đối tác được ủy quyền (Authorized Partner) của Lean Six Sigma Institute – LSSI Global</strong>{" "}
+              tại Việt Nam và châu Á. Học viên được đào tạo theo giáo trình chuẩn quốc tế của LSSI và nhận chứng nhận Lean Six Sigma
+              có giá trị toàn cầu.
             </p>
           </div>
 
