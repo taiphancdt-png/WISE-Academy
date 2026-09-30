@@ -247,3 +247,9 @@ font[style] {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* Partner logo marquee: soft fade at both edges */
+.logo-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}

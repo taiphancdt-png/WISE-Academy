@@ -33,16 +33,17 @@ const IMG = {
   why: "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_11.webp",
 };
 
+// Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
 const clients = [
-  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi" },
-  { name: "GEODIS", logo: "geodis" },
-  { name: "HuaLi Industrial Group", logo: "huali" },
-  { name: "KREVES", logo: "kreves" },
-  { name: "APACHE Footwear Group", logo: "apache" },
-  { name: "AQUA Smart Home", logo: "aqua" },
-  { name: "PCD", logo: "pcd" },
-  { name: "Tỷ Bách", logo: "ty-bach" },
-  { name: "Đối tác của WISE Academy", logo: "partner-s" },
+  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 133, h: 54 },
+  { name: "GEODIS", logo: "geodis", w: 66, h: 60 },
+  { name: "HuaLi Industrial Group", logo: "huali", w: 172, h: 42 },
+  { name: "KREVES", logo: "kreves", w: 169, h: 43 },
+  { name: "APACHE Footwear Group", logo: "apache", w: 153, h: 47 },
+  { name: "AQUA Smart Home", logo: "aqua", w: 129, h: 56 },
+  { name: "PCD", logo: "pcd", w: 61, h: 60 },
+  { name: "Tỷ Bách", logo: "ty-bach", w: 80, h: 60 },
+  { name: "Đối tác của WISE Academy", logo: "partner-s", w: 71, h: 60 },
 ];
 
 const solutions = [
@@ -159,19 +160,27 @@ export default function HomePage() {
           <p className="text-center text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#486581] mb-8">
             Được tin tưởng bởi các doanh nghiệp & tổ chức hàng đầu
           </p>
-          <ul className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 items-center gap-x-6 gap-y-8 lg:gap-x-8">
-            {clients.map((c) => (
-              <li key={c.logo} className="h-14 lg:h-16 flex items-center justify-center">
-                <img
-                  src={`/images/clients/${c.logo}.png`}
-                  alt={c.name}
-                  title={c.name}
-                  className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity"
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="logo-marquee overflow-hidden">
+            <ul className="animate-ticker items-center">
+              {[...clients, ...clients].map((c, i) => (
+                <li
+                  key={`${c.logo}-${i}`}
+                  className="shrink-0 px-8 sm:px-10 flex items-center justify-center h-16"
+                  aria-hidden={i >= clients.length || undefined}
+                >
+                  <img
+                    src={`/images/clients/${c.logo}.png`}
+                    alt={i >= clients.length ? "" : c.name}
+                    title={c.name}
+                    width={c.w}
+                    height={c.h}
+                    style={{ width: c.w, height: c.h }}
+                    className="object-contain"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
