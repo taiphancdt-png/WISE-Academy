@@ -36,12 +36,12 @@ const IMG = {
 // Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
 const clients = [
   { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 80, h: 32 },
-  { name: "GEODIS", logo: "geodis", w: 66, h: 60 },
-  { name: "HuaLi Industrial Group", logo: "huali", w: 172, h: 42 },
+  { name: "GEODIS", logo: "geodis", w: 53, h: 48 },
+  { name: "HuaLi Industrial Group", logo: "huali", w: 138, h: 34 },
   { name: "KREVES", logo: "kreves", w: 101, h: 26 },
-  { name: "APACHE Footwear Group", logo: "apache", w: 153, h: 47 },
+  { name: "APACHE Footwear Group", logo: "apache", w: 138, h: 42 },
   { name: "AQUA Smart Home", logo: "aqua", w: 77, h: 34 },
-  { name: "PCD", logo: "pcd", w: 61, h: 60 },
+  { name: "Pou Chen (PCD)", logo: "pcd", w: 43, h: 42 },
   { name: "Tỷ Bách", logo: "ty-bach", w: 48, h: 36 },
   { name: "AG Samho", logo: "samho", w: 43, h: 36 },
 ];
@@ -165,7 +165,7 @@ export default function HomePage() {
               {[...clients, ...clients].map((c, i) => (
                 <li
                   key={`${c.logo}-${i}`}
-                  className="shrink-0 px-12 sm:px-[60px] flex items-center justify-center h-16"
+                  className="shrink-0 w-[200px] sm:w-[240px] flex items-center justify-center h-16"
                   aria-hidden={i >= clients.length || undefined}
                 >
                   <img
