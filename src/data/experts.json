@@ -94,5 +94,33 @@
       "Process Optimization"
     ],
     "image": "/images/experts/tu-ngoc-tung.webp"
+  },
+  {
+    "id": "edward-zhu",
+    "name": "Edward Zhu",
+    "role": "Chuyên gia Cấp cao LSSI · Six Sigma Master Black Belt",
+    "title": "Six Sigma Master Black Belt · MBA (Tsinghua University) · LSSI Senior Consultant, Trainer & Coach khu vực Trung Quốc",
+    "bio": "Hơn 25 năm kinh nghiệm trong quản lý chất lượng và vận hành. Là Lean Facilitator đầu tiên của nhà máy Nokia Trung Quốc và Master Black Belt của Nokia khu vực châu Á – Thái Bình Dương, từng giữ vị trí Phó Chủ tịch Chất lượng và Giám đốc nhà máy. Đã dẫn dắt hơn 25 dự án Lean Six Sigma, mang lại hơn 50 triệu NDT tiết kiệm và đạt Giải thưởng Chất lượng Toàn cầu Nokia 2008.",
+    "tags": [
+      "Six Sigma MBB",
+      "Hoshin Kanri",
+      "Lean Facilitator",
+      "Quality Assurance"
+    ],
+    "image": "/images/experts/edward-zhu.webp"
+  },
+  {
+    "id": "leo-li",
+    "name": "Leo Li",
+    "role": "Chuyên gia Cấp cao · Lean Six Sigma Consultant, Trainer & Coach",
+    "title": "Li Huiwei · Motorola Six Sigma Master Black Belt · ASQ Certified Quality Manager & Certified Quality Engineer",
+    "bio": "Hơn 30 năm kinh nghiệm quản lý chất lượng và vận hành tại các tập đoàn đa quốc gia như Motorola, Emerson, Kadant và Bitron, đi lên từ kỹ sư chất lượng đến Giám đốc Chất lượng và Tổng Giám đốc. Từ năm 2020 là chuyên gia tư vấn Lean Six Sigma độc lập, đào tạo và kèm cặp dự án Black Belt / Green Belt cho các doanh nghiệp như Haidilao, Langege Milk và Jingfeng Glass.",
+    "tags": [
+      "Six Sigma MBB (Motorola)",
+      "ASQ CQM / CQE",
+      "TPM · SMED · 5S",
+      "DMAIC · DFSS"
+    ],
+    "image": null
   }
 ]
