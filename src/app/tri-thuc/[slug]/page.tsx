@@ -60,10 +60,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  // Related articles (other articles)
-  const relatedArticles = articles
-    .filter((a) => (a.slug || a.id) !== slug)
-    .slice(0, 3);
+  // Related articles: same topic first, then the newest of the rest
+  const others = articles.filter((a) => (a.slug || a.id) !== slug);
+  const relatedArticles = [
+    ...others.filter((a) => a.category === article.category),
+    ...others.filter((a) => a.category !== article.category).sort((a, b) => b.date.localeCompare(a.date)),
+  ].slice(0, 3);
 
   return (
     <div className="bg-[#F8F9FA] min-h-screen">
@@ -98,9 +100,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             {/* Header Details */}
             <div className="space-y-4 border-b border-slate-100 pb-8">
               <div className="flex flex-wrap items-center gap-3 text-xs">
-                <span className="font-semibold uppercase tracking-wider text-[#C9500E] bg-[#FFF5EC] px-3 py-1 rounded-full border border-[#F76011]/20">
+                <Link
+                  href={`/tri-thuc?chu-de=${encodeURIComponent(article.category)}`}
+                  className="font-semibold uppercase tracking-wider text-[#C9500E] bg-[#FFF5EC] hover:bg-[#F76011] hover:text-white px-3 py-1 rounded-full border border-[#F76011]/20 transition-colors"
+                >
                   {article.category}
-                </span>
+                </Link>
                 <span className="text-[#486581] flex items-center gap-1 font-medium">
                   <Calendar className="w-3.5 h-3.5 text-slate-400" /> {article.date}
                 </span>
