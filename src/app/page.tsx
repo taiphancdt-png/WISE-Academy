@@ -35,15 +35,15 @@ const IMG = {
 
 // Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
 const clients = [
-  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 133, h: 54 },
+  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 80, h: 32 },
   { name: "GEODIS", logo: "geodis", w: 66, h: 60 },
   { name: "HuaLi Industrial Group", logo: "huali", w: 172, h: 42 },
-  { name: "KREVES", logo: "kreves", w: 169, h: 43 },
+  { name: "KREVES", logo: "kreves", w: 101, h: 26 },
   { name: "APACHE Footwear Group", logo: "apache", w: 153, h: 47 },
-  { name: "AQUA Smart Home", logo: "aqua", w: 129, h: 56 },
+  { name: "AQUA Smart Home", logo: "aqua", w: 77, h: 34 },
   { name: "PCD", logo: "pcd", w: 61, h: 60 },
-  { name: "Tỷ Bách", logo: "ty-bach", w: 80, h: 60 },
-  { name: "Đối tác của WISE Academy", logo: "partner-s", w: 71, h: 60 },
+  { name: "Tỷ Bách", logo: "ty-bach", w: 48, h: 36 },
+  { name: "AG Samho", logo: "samho", w: 43, h: 36 },
 ];
 
 const solutions = [
