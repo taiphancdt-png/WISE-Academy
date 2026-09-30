@@ -100,7 +100,7 @@ export default function HomePage() {
   const articles: Article[] = articlesData as Article[];
 
   const featuredCourses = courses.slice(0, 6);
-  const featuredArticles = articles.slice(0, 3);
+  const featuredArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
   const featuredProjects = projects.slice(0, 3);
   const activeProject = featuredProjects[activeProjectIdx] || projects[0];
 
@@ -434,12 +434,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredArticles.map((art) => (
               <Link key={art.id} href={`/tri-thuc/${art.slug || art.id}`} className="card-soft group overflow-hidden flex flex-col">
-                <div className="aspect-[16/9] bg-slate-100 overflow-hidden">
+                <div className="aspect-[4/3] bg-[#F1F4F8] overflow-hidden">
                   {art.thumbnail ? (
                     <img
                       src={art.thumbnail}
                       alt={art.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain"
                       loading="lazy"
                     />
                   ) : (

@@ -8,6 +8,9 @@ import articlesData from "@/data/articles.json";
 import type { Article } from "@/types";
 
 const ALL = "Tất cả";
+const PAGE_SIZE = 20;
+
+const inTopic = (a: Article, topic: string) => a.category === topic || (a.topics || []).includes(topic);
 
 // Lowercase and strip Vietnamese diacritics so "5s quan ly" matches "5S & Quản lý".
 function normalize(text: string) {
@@ -51,6 +54,7 @@ export default function KnowledgePage() {
   const [search, setSearch] = useState("");
   const [topic, setTopic] = useState(ALL);
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
   // Restore filters from the URL so a filtered list can be shared or bookmarked.
   useEffect(() => {
@@ -71,7 +75,9 @@ export default function KnowledgePage() {
 
   const topics = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const a of articles) counts.set(a.category, (counts.get(a.category) || 0) + 1);
+    for (const a of articles) {
+      for (const t of new Set([a.category, ...(a.topics || [])])) counts.set(t, (counts.get(t) || 0) + 1);
+    }
     return [...counts.entries()].sort((a, b) => b[1] - a[1]);
   }, [articles]);
 
@@ -86,7 +92,7 @@ export default function KnowledgePage() {
   // Match the whole phrase (diacritics ignored); title hits rank above body hits.
   const filtered = useMemo(() => {
     const q = normalize(search).trim().replace(/\s+/g, " ");
-    const byTopic = articles.filter((a) => topic === ALL || a.category === topic);
+    const byTopic = articles.filter((a) => topic === ALL || inTopic(a, topic));
     const byDate = (x: Article, y: Article) =>
       sort === "newest" ? y.date.localeCompare(x.date) : x.date.localeCompare(y.date);
     if (!q) return byTopic.sort(byDate);
@@ -103,6 +109,8 @@ export default function KnowledgePage() {
       .sort((x, y) => y.s - x.s || byDate(x.a, y.a))
       .map((x) => x.a);
   }, [articles, searchIndex, topic, search, sort]);
+
+  useEffect(() => setVisible(PAGE_SIZE), [topic, search, sort]);
 
   const hasFilters = topic !== ALL || search !== "";
   const clearFilters = () => {
@@ -150,9 +158,9 @@ export default function KnowledgePage() {
       </PageHero>
 
       <section className="py-12 lg:py-16 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)] gap-8 lg:gap-10">
           {/* Topics: sidebar on desktop, swipeable chips on mobile */}
-          <aside className="lg:col-span-3">
+          <aside>
             <div className="lg:sticky lg:top-24">
               <h2 className="hidden lg:block text-xs font-bold uppercase tracking-wider text-[#486581] mb-3 px-4">Chủ đề</h2>
               <nav aria-label="Lọc theo chủ đề" className="hidden lg:flex flex-col gap-1">
@@ -180,7 +188,7 @@ export default function KnowledgePage() {
           </aside>
 
           {/* Results */}
-          <div className="lg:col-span-9">
+          <div>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <p className="text-sm text-[#486581]" aria-live="polite">
                 <strong className="text-[#002F5B]">{filtered.length}</strong> bài viết
@@ -228,21 +236,18 @@ export default function KnowledgePage() {
                 </button>
               </div>
             ) : (
-              <ul className="space-y-5">
-                {filtered.map((art) => (
+              <>
+              <ul className="grid grid-cols-1 2xl:grid-cols-2 gap-5">
+                {filtered.slice(0, visible).map((art) => (
                   <li key={art.id}>
                     <Link
                       href={`/tri-thuc/${art.slug || art.id}`}
                       className="card-soft group flex flex-col sm:flex-row overflow-hidden"
                     >
-                      <div className="sm:w-60 shrink-0 aspect-[16/9] sm:aspect-auto bg-slate-100 overflow-hidden">
+                      <div className="sm:w-48 lg:w-52 shrink-0 aspect-[16/10] sm:aspect-auto sm:min-h-48 bg-[#F1F4F8] flex items-center justify-center overflow-hidden">
                         {art.thumbnail ? (
-                          <img
-                            src={art.thumbnail}
-                            alt=""
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
+                          // object-contain: post images are infographics, never crop them
+                          <img src={art.thumbnail} alt="" className="w-full h-full object-contain" loading="lazy" />
                         ) : (
                           <div className="w-full h-full min-h-32 flex items-center justify-center bg-[#002F5B]">
                             <BookOpen className="w-8 h-8 text-[#FF7A30]" />
@@ -268,6 +273,18 @@ export default function KnowledgePage() {
                   </li>
                 ))}
               </ul>
+              {visible < filtered.length && (
+                <div className="mt-10 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                    className="inline-flex items-center gap-2 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
+                  >
+                    Xem thêm {Math.min(PAGE_SIZE, filtered.length - visible)} bài ({filtered.length - visible} còn lại)
+                  </button>
+                </div>
+              )}
+              </>
             )}
           </div>
         </div>

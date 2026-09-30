@@ -262,7 +262,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                         <img
                           src={rel.thumbnail}
                           alt={rel.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                     ) : (
@@ -314,7 +314,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                     <img
                       src={art.thumbnail}
                       alt={art.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-[#002F5B] text-white">

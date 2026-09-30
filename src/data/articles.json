@@ -1,5 +1,1546 @@
 [
   {
+    "id": "lean-hay-six-sigma-chon-cong-cu-theo-4-dang-van-de",
+    "slug": "lean-hay-six-sigma-chon-cong-cu-theo-4-dang-van-de",
+    "title": "Lean hay Six Sigma? Chọn công cụ theo 4 dạng vấn đề",
+    "date": "2026-06-28",
+    "excerpt": "Nhiều năm làm cải tiến, rồi chuyển sang tư vấn, tôi nhận ra một pattern lặp đi lặp lại.",
+    "content": "Nhiều năm làm cải tiến, rồi chuyển sang tư vấn, tôi nhận ra một pattern lặp đi lặp lại.\n\nAnh chị em trong nghề — những người rất giỏi, rất nhiệt huyết — thường có xu hướng cầm ngay các công cụ \"xịn\" của Six Sigma vào mọi dự án. DMAIC, Control Charts, Regression Analysis, DOE...\n\nKhông phải vì sai. Mà vì những công cụ đó được dạy nhiều, được nhắc nhiều, và nghe có vẻ... chuyên nghiệp.\n\nTôi hiểu cảm giác đó. Tôi đã từng như vậy.\n\nNhưng có điều tôi dần nhận ra sau nhiều dự án thực tế:\n\nKhông phải vấn đề nào cũng cần đến Six Sigma. Và cũng không phải vấn đề nào chỉ cần Lean.\n\nCâu hỏi đúng không phải \"dùng công cụ nào?\" — mà là \"vấn đề này thuộc loại nào?\"\n\nCó 4 dạng vấn đề trong thực tế:\n\nDạng 1 — Làm ngay: Vấn đề rõ, giải pháp rõ. Đừng phân tích. Cứ làm.\n\nDạng 2 — Lean: Quy trình chậm, lãng phí nhiều, luồng đi vòng vèo. Nguyên nhân thường thấy được bằng mắt. Lean và Kaizen là đủ.\n\nDạng 3 — Six Sigma / DMAIC: Chất lượng không ổn định, lỗi nhiều nhưng không biết tại sao. Cần dữ liệu, cần thống kê để tìm gốc rễ.\n\nDạng 4 — Thiết kế lại: Quy trình hiện tại không thể cải tiến được nữa — cần xây mới từ đầu.\n\nKhi biết vấn đề thuộc dạng nào, công cụ cần dùng tự nhiên sẽ rõ.\n\nÁp Six Sigma vào dạng 1 là lãng phí 3 tháng để phân tích thứ mà ai cũng biết câu trả lời.\n\nDùng Lean cho dạng 3 là đẩy nhanh một quy trình đang tạo ra lỗi — bạn sẽ có lỗi nhanh hơn, nhiều hơn.\n\nĐiều tôi muốn nhắn với anh chị em đang làm cải tiến:\n\nCông cụ xịn nhất không phải công cụ phức tạp nhất. Mà là công cụ đúng với đúng loại vấn đề.\n\nThe same pattern, seen across many years of practice and consulting:\n\nPractitioners often reach for Six Sigma tools on every project — DMAIC, Control Charts, DOE — because that's what gets taught most, and it sounds rigorous.\n\nBut rigor isn't the same as fit.\n\nIn practice, problems come in 4 types:\n\nType 1 — Just do it. Problem clear, solution clear. No analysis needed. Act.\n\nType 2 — Lean. Process is slow, wasteful, messy. Causes are usually visible. Lean and Kaizen are enough.\n\nType 3 — Six Sigma. Quality is inconsistent, defects are high, root cause is unknown. You need data and statistics to find out why.\n\nType 4 — Redesign. The current process can't be improved anymore. Build new from scratch.\n\nKnow which type you're dealing with — and the right tools become obvious.\n\nThe most powerful tool isn't the most complex one. It's the right one for the right problem.",
+    "thumbnail": "/images/posts/lean-hay-six-sigma-chon-cong-cu-theo-4-dang-van-de/cover.webp",
+    "images": [
+      "/images/posts/lean-hay-six-sigma-chon-cong-cu-theo-4-dang-van-de/cover.webp"
+    ],
+    "toc": [],
+    "category": "Giải quyết vấn đề",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "5s-sap-xep-nha-xuong-de-ngung-mat-tien-moi-ngay",
+    "slug": "5s-sap-xep-nha-xuong-de-ngung-mat-tien-moi-ngay",
+    "title": "5S: Sắp xếp nhà xưởng để ngừng mất tiền mỗi ngày",
+    "date": "2026-06-29",
+    "excerpt": "Nhà máy của bạn đang mất tiền mỗi ngày — và bạn không hề biết.",
+    "content": "Nhà máy của bạn đang mất tiền mỗi ngày — và bạn không hề biết.\n\nMỗi lần nhân viên mất 5 phút tìm dụng cụ, mỗi lần nguyên liệu bị để sai chỗ, mỗi lần lỗi xảy ra vì khu vực làm việc lộn xộn — đó là tiền thật đang bốc hơi.\n\nPhương pháp 5S là bước đầu tiên để ngăn điều đó.\n\n📌 5S là gì?\n- Sort (Sàng lọc) — Loại bỏ mọi thứ không cần thiết\n- Set in Order (Sắp xếp) — Mọi thứ có vị trí, mọi vị trí có thứ\n- Shine (Sạch sẽ) — Vệ sinh là kiểm tra, không chỉ là dọn dẹp\n- Standardize (Tiêu chuẩn hoá) — Biến kết quả tốt thành quy trình cố định\n- Sustain (Duy trì) — Xây dựng thói quen, không phải chiến dịch nhất thời\n\n5S không phải là \"dọn dẹp\". 5S là nền tảng để mọi công cụ cải tiến khác hoạt động hiệu quả.\n\nDoanh nghiệp muốn cải tiến mà bỏ qua 5S giống như xây nhà trên nền cát.\n\nYour factory is losing money every day — and you don't even know it.\n\nEvery time an employee spends 5 minutes searching for a tool, every time materials are misplaced, every time errors occur because of a disorganized workspace — that's real money evaporating.\n\nThe 5S methodology is the first step to stop it.\n\n📌 What is 5S?\n- Sort — Remove everything unnecessary from the workspace\n- Set in Order — A place for everything, everything in its place\n- Shine — Cleaning is inspection, not just tidying up\n- Standardize — Turn good results into fixed, repeatable processes\n- Sustain — Build habits, not one-time campaigns\n\n5S isn't \"cleaning up.\" It's the foundation that makes every other improvement tool work effectively — from Kaizen to Six Sigma.\n\nAny business that wants to improve but skips 5S is building on sand.",
+    "thumbnail": "/images/posts/5s-sap-xep-nha-xuong-de-ngung-mat-tien-moi-ngay/cover.webp",
+    "images": [
+      "/images/posts/5s-sap-xep-nha-xuong-de-ngung-mat-tien-moi-ngay/cover.webp"
+    ],
+    "toc": [],
+    "category": "5S & Quản lý trực quan",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "dmaic-giai-quyet-van-de-bang-dung-cau-hoi-dung-thu-tu",
+    "slug": "dmaic-giai-quyet-van-de-bang-dung-cau-hoi-dung-thu-tu",
+    "title": "DMAIC: Giải quyết vấn đề bằng đúng câu hỏi, đúng thứ tự",
+    "date": "2026-06-30",
+    "excerpt": "Mọi vấn đề trong kinh doanh đều có thể giải quyết — nếu bạn đặt đúng câu hỏi theo đúng thứ tự.",
+    "content": "Mọi vấn đề trong kinh doanh đều có thể giải quyết — nếu bạn đặt đúng câu hỏi theo đúng thứ tự.\n\nHầu hết doanh nghiệp thất bại trong cải tiến vì họ nhảy thẳng vào giải pháp mà không hiểu vấn đề. Kết quả: tốn tiền, tốn thời gian, lỗi vẫn quay lại.\n\nDMAIC là vũ khí của Six Sigma — quy trình 5 bước giải quyết vấn đề dựa trên dữ liệu:\n\n🔵 Define — Xác định vấn đề và mục tiêu rõ ràng\n🔵 Measure — Đo lường hiện trạng bằng số liệu thực tế\n🔵 Analyze — Phân tích dữ liệu tìm nguyên nhân gốc rễ\n🔵 Improve — Thiết kế và thử nghiệm giải pháp\n🔵 Control — Kiểm soát để vấn đề không tái phát\n\nKhông đoán. Không cảm tính. Không vá víu.\n\nApollo Sprayers áp dụng DMAIC → giảm thời gian giao hàng từ 3 tuần xuống còn 2–3 ngày. Không phải may mắn. Đó là phương pháp.\n\nEvery business problem can be solved — if you ask the right questions in the right order.\n\nMost businesses fail at improvement because they jump straight to solutions without understanding the problem. The result: wasted money, wasted time, and the same errors coming back.\n\nDMAIC is Six Sigma's weapon — a 5-step data-driven problem-solving process:\n\n🔵 Define — Clearly define the problem and objectives\n🔵 Measure — Measure the current state with real data\n🔵 Analyze — Analyze data to find root causes\n🔵 Improve — Design and test solutions\n🔵 Control — Ensure the problem doesn't recur\n\nNo guessing. No gut feelings. No band-aids.\n\nApollo Sprayers applied DMAIC → reduced delivery time from 3 weeks to 2–3 days. Not luck. That's methodology.",
+    "thumbnail": "/images/posts/dmaic-giai-quyet-van-de-bang-dung-cau-hoi-dung-thu-tu/cover.webp",
+    "images": [
+      "/images/posts/dmaic-giai-quyet-van-de-bang-dung-cau-hoi-dung-thu-tu/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "value-stream-mapping-vsm-nhin-thay-lang-phi-trong-quy-trinh",
+    "slug": "value-stream-mapping-vsm-nhin-thay-lang-phi-trong-quy-trinh",
+    "title": "Value Stream Mapping (VSM): Nhìn thấy lãng phí trong quy trình",
+    "date": "2026-07-01",
+    "excerpt": "Bạn có biết bao nhiêu % thời gian trong quy trình của mình thực sự tạo ra giá trị cho khách hàng?",
+    "content": "Bạn có biết bao nhiêu % thời gian trong quy trình của mình thực sự tạo ra giá trị cho khách hàng?\n\nCâu trả lời trung bình trong ngành sản xuất: dưới 5%.\n\nPhần còn lại — 95% — là chờ đợi, di chuyển, kiểm tra lại, sửa lỗi, lưu kho... Tất cả là lãng phí.\n\nValue Stream Mapping (VSM) là công cụ giúp bạn NHÌN THẤY điều đó.\n\n### VSM cho bạn thấy\n\n- Mỗi bước mất bao lâu (Value-Added vs Non-Value-Added Time)\n- Thông tin và nguyên liệu di chuyển như thế nào\n- Điểm tắc nghẽn nằm ở đâu\n- Cơ hội loại bỏ lãng phí ở đâu\n\nBạn không thể cải tiến thứ bạn không nhìn thấy. VSM biến quy trình vô hình thành bản đồ có thể hành động ngay.",
+    "thumbnail": "/images/posts/value-stream-mapping-vsm-nhin-thay-lang-phi-trong-quy-trinh/cover.webp",
+    "images": [
+      "/images/posts/value-stream-mapping-vsm-nhin-thay-lang-phi-trong-quy-trinh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "kaizen-dot-pha-lon-den-tu-nhung-cai-tien-nho-moi-ngay",
+    "slug": "kaizen-dot-pha-lon-den-tu-nhung-cai-tien-nho-moi-ngay",
+    "title": "Kaizen: Đột phá lớn đến từ những cải tiến nhỏ mỗi ngày",
+    "date": "2026-07-02",
+    "excerpt": "Sự thật mà hầu hết CEO không muốn thừa nhận: các đột phá lớn không đến từ dự án triệu đô.",
+    "content": "Sự thật mà hầu hết CEO không muốn thừa nhận: các đột phá lớn không đến từ dự án triệu đô.\n\nChúng đến từ hàng trăm cải tiến nhỏ, mỗi ngày, từ mọi người trong tổ chức.\n\nĐó là Kaizen — triết lý \"cải tiến liên tục\" của Nhật Bản đã thay đổi nền sản xuất toàn cầu.\n\n### Kaizen KHÔNG phải là\n\n❌ Dự án lớn chỉ dành cho lãnh đạo\n❌ Thay đổi một lần rồi thôi\n❌ Chỉ áp dụng trong sản xuất\n\n- Kaizen LÀ:\n- Cải tiến nhỏ, liên tục, mỗi ngày\n- Mọi người đều tham gia — từ công nhân đến giám đốc\n- Không cần ngân sách lớn, cần tư duy đúng\n- Áp dụng được ở mọi ngành, mọi bộ phận\n\nToyota không trở thành nhà sản xuất xe hơi lớn nhất thế giới bằng một đột phá duy nhất. Họ làm điều đó bằng hàng triệu Kaizen nhỏ trong suốt 70 năm.\n\nĐang chờ \"đủ điều kiện\" để bắt đầu cải tiến? Kaizen nói: bắt đầu ngay hôm nay, dù nhỏ.",
+    "thumbnail": "/images/posts/kaizen-dot-pha-lon-den-tu-nhung-cai-tien-nho-moi-ngay/cover.webp",
+    "images": [
+      "/images/posts/kaizen-dot-pha-lon-den-tu-nhung-cai-tien-nho-moi-ngay/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "kanban-quan-ly-luong-cong-viec-truc-quan",
+    "slug": "kanban-quan-ly-luong-cong-viec-truc-quan",
+    "title": "Kanban: Quản lý luồng công việc trực quan",
+    "date": "2026-07-03",
+    "excerpt": "Bạn có bao giờ cảm thấy: team bận liên tục nhưng không biết ai đang làm gì, và tại sao mọi thứ vẫn bị trễ deadline?",
+    "content": "Bạn có bao giờ cảm thấy: team bận liên tục nhưng không biết ai đang làm gì, và tại sao mọi thứ vẫn bị trễ deadline?\n\nĐó là dấu hiệu của hệ thống không có luồng công việc rõ ràng.\n\nKanban là giải pháp — và nó đơn giản đến bất ngờ.\n\n📋 Kanban hoạt động thế nào?\n- Cột \"Cần làm\" — công việc đang chờ\n- Cột \"Đang làm\" — có giới hạn WIP (Work In Progress)\n- Cột \"Hoàn thành\" — công việc đã xong\n\nNguyên tắc cốt lõi: giới hạn số task đang làm cùng lúc. Khi WIP bị giới hạn, tắc nghẽn trở nên visible và team tập trung giải quyết — thay vì mở thêm task mới.\n\n## Kết quả\n\nít trễ deadline, ít stress, chất lượng cao hơn.\n\nTừ Toyota đến Microsoft đều dùng Kanban. Không phải vì nó phức tạp — mà vì nó hoạt động.",
+    "thumbnail": "/images/posts/kanban-quan-ly-luong-cong-viec-truc-quan/cover.webp",
+    "images": [
+      "/images/posts/kanban-quan-ly-luong-cong-viec-truc-quan/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "bieu-do-xuong-ca-fishbone-tim-dung-nguyen-nhan-goc-re",
+    "slug": "bieu-do-xuong-ca-fishbone-tim-dung-nguyen-nhan-goc-re",
+    "title": "Biểu đồ xương cá (Fishbone): Tìm đúng nguyên nhân gốc rễ",
+    "date": "2026-07-04",
+    "excerpt": "Bạn đã bao giờ \"sửa\" một vấn đề 3 lần mà nó vẫn quay lại không?",
+    "content": "Bạn đã bao giờ \"sửa\" một vấn đề 3 lần mà nó vẫn quay lại không?\n\nĐó là vì bạn đang xử lý triệu chứng, không phải nguyên nhân. Và đây là công cụ để thoát khỏi vòng lặp đó.\n\n🐟 Fishbone Diagram — còn gọi là Ishikawa Diagram hay Cause & Effect Diagram.\n\n- \"Đầu cá\" = Vấn đề cần giải quyết\n- \"Xương cá\" = 6 nhóm nguyên nhân (6M: Man, Machine, Method, Material, Measurement, Mother Nature)\n- Mỗi nhánh đào sâu vào nguyên nhân cụ thể\n\nKết hợp với \"5 Whys\" (hỏi Tại sao? 5 lần liên tiếp), Fishbone giúp tìm ra nguyên nhân gốc rễ thực sự — không phải \"ai đó làm sai\" mà là \"hệ thống nào tạo ra điều kiện để sai xảy ra.\"\n\n## Ví dụ thực tế\n\nKhách hàng khiếu nại sản phẩm lỗi → dùng Fishbone + 5 Whys → phát hiện không phải công nhân cẩu thả, mà là quy trình kiểm tra đầu vào nguyên liệu có lỗ hổng từ nhà cung cấp.\n\nSửa đúng chỗ. Lỗi không quay lại.",
+    "thumbnail": "/images/posts/bieu-do-xuong-ca-fishbone-tim-dung-nguyen-nhan-goc-re/cover.webp",
+    "images": [
+      "/images/posts/bieu-do-xuong-ca-fishbone-tim-dung-nguyen-nhan-goc-re/cover.webp"
+    ],
+    "toc": [],
+    "category": "Giải quyết vấn đề",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "poka-yoke-chong-sai-loi-ngay-tu-thiet-ke-quy-trinh",
+    "slug": "poka-yoke-chong-sai-loi-ngay-tu-thiet-ke-quy-trinh",
+    "title": "Poka-Yoke: Chống sai lỗi ngay từ thiết kế quy trình",
+    "date": "2026-07-05",
+    "excerpt": "Nếu bạn đang dựa vào sự tập trung của nhân viên để tránh lỗi — bạn đang xây dựng quy trình trên nền tảng sẽ sụp đổ.",
+    "content": "Nếu bạn đang dựa vào sự tập trung của nhân viên để tránh lỗi — bạn đang xây dựng quy trình trên nền tảng sẽ sụp đổ.\n\nCon người không thể tập trung 100% trong 8 giờ liên tục. Hệ thống có thể.\n\nPoka-Yoke (防错) — nghĩa đen: \"tránh sai lầm vô ý\" — là nguyên tắc thiết kế hệ thống sao cho lỗi không thể xảy ra, hoặc được phát hiện ngay lập tức.\n\n### Poka-Yoke trong thực tế\n\n- Ổ USB chỉ cắm được một chiều — bạn không thể cắm sai\n- Máy giặt không chạy khi cửa chưa đóng — lỗi bị ngăn trước khi xảy ra\n- Dây an toàn xe hơi kêu bíp khi chưa thắt — cảnh báo ngay lập tức\n\nTrong sản xuất và dịch vụ:\n- Fixture định vị chi tiết chỉ theo một hướng đúng\n- Checklist bắt buộc trước khi chuyển sang bước tiếp theo\n- Phần mềm không cho phép nhập dữ liệu sai định dạng\n\nMục tiêu: không phụ thuộc vào sự cẩn thận. Thiết kế để lỗi không thể xảy ra.",
+    "thumbnail": "/images/posts/poka-yoke-chong-sai-loi-ngay-tu-thiet-ke-quy-trinh/cover.webp",
+    "images": [
+      "/images/posts/poka-yoke-chong-sai-loi-ngay-tu-thiet-ke-quy-trinh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "spc-bieu-do-kiem-soat-phat-hien-quy-trinh-lech-truoc-khi-ra-loi",
+    "slug": "spc-bieu-do-kiem-soat-phat-hien-quy-trinh-lech-truoc-khi-ra-loi",
+    "title": "SPC & biểu đồ kiểm soát: Phát hiện quy trình lệch trước khi ra lỗi",
+    "date": "2026-07-06",
+    "excerpt": "Nhà máy của bạn đang sản xuất 10.000 sản phẩm mỗi ngày. Làm sao bạn biết khi nào quy trình bắt đầu \"lệch\" — trước khi có sản phẩm lỗi?",
+    "content": "Nhà máy của bạn đang sản xuất 10.000 sản phẩm mỗi ngày. Làm sao bạn biết khi nào quy trình bắt đầu \"lệch\" — trước khi có sản phẩm lỗi?\n\nCâu trả lời: Control Charts — công cụ nền tảng của Statistical Process Control (SPC).\n\n📊 Control Chart hoạt động thế nào?\nMỗi sản phẩm được đo và vẽ lên biểu đồ theo thời gian, với:\n- UCL (Upper Control Limit) — giới hạn trên\n- LCL (Lower Control Limit) — giới hạn dưới\n- Center Line — trung bình quy trình\n\nKhi điểm dữ liệu vượt ra ngoài giới hạn → quy trình đang có vấn đề → dừng lại điều tra NGAY, trước khi lỗi xảy ra hàng loạt.\n\n### Ví dụ thực tế — Toyota\n\nToyota dùng Control Charts tại mỗi trạm lắp ráp. Khi biểu đồ phát hiện xu hướng bất thường (7 điểm liên tiếp tăng dần), dây chuyền dừng tự động. Kết quả: tỷ lệ lỗi dưới 0.001% — trong khi trung bình ngành là 1-2%.\n\nSự khác biệt giữa \"kiểm tra sau khi lỗi xảy ra\" và \"phát hiện trước khi lỗi xảy ra\" là ở đây.",
+    "thumbnail": "/images/posts/spc-bieu-do-kiem-soat-phat-hien-quy-trinh-lech-truoc-khi-ra-loi/cover.webp",
+    "images": [
+      "/images/posts/spc-bieu-do-kiem-soat-phat-hien-quy-trinh-lech-truoc-khi-ra-loi/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-1-15-ra-quyet-dinh-quan-ly-dua-tren-tu-duy-he-thong-dai-han-tham",
+    "slug": "the-toyota-way-1-15-ra-quyet-dinh-quan-ly-dua-tren-tu-duy-he-thong-dai-han-tham",
+    "title": "The Toyota Way (1/15): Ra quyết định quản lý dựa trên tư duy hệ thống dài hạn, thậm chí phải hy sinh các...",
+    "date": "2026-07-06",
+    "excerpt": "Nguyên tắc số 1: Ra quyết định quản lý dựa trên tư duy hệ thống dài hạn, thậm chí phải hy sinh các mục tiêu tài chính ngắn hạn.",
+    "content": "Nguyên tắc số 1: Ra quyết định quản lý dựa trên tư duy hệ thống dài hạn, thậm chí phải hy sinh các mục tiêu tài chính ngắn hạn.\n\nKhác với nhiều doanh nghiệp vận hành theo tư duy \"cổ đông là trên hết\", sự vĩ đại của Toyota được xây dựng trên ba điểm khác biệt cốt lõi sau đây.\n\n1. Sứ mệnh lớn hơn lợi nhuận\nLợi nhuận, đối với Toyota, không phải là đích đến cuối cùng mà là nguồn lực để tổ chức tiếp tục tồn tại. Mục tiêu tối thượng của công ty là tạo ra giá trị cho khách hàng, đóng góp cho xã hội, và chăm lo cho sự phát triển của đội ngũ nhân viên.\n\n2. Bảo vệ người lao động trong khủng hoảng\nTrong cuộc Đại suy thoái 2008–2009, dù chịu khoản lỗ kỷ lục 4 tỷ USD, Toyota vẫn quyết định không sa thải bất kỳ công nhân chính thức nào tại các nhà máy bị ảnh hưởng ở Mỹ. Thay vào đó, công ty tận dụng thời gian dây chuyền ngừng hoạt động để đào tạo nhân viên và tập trung vào các hoạt động cải tiến quy trình.\n\n3. Năm giá trị văn hoá nền tảng (Toyota Way, 2001)\n- Thử thách (Challenge): sẵn sàng đối diện với những vấn đề khó khăn để hiện thực hoá tầm nhìn dài hạn.\n- Cải tiến liên tục (Kaizen): không ngừng cải thiện hiệu suất thông qua tư duy khoa học.\n- Đến tận nơi tìm hiểu (Genchi Genbutsu): thấu hiểu vấn đề tận gốc rễ và ra quyết định dựa trên quan sát thực tế tại hiện trường.\n- Làm việc nhóm (Teamwork): đề cao đóng góp của tập thể song song với trách nhiệm cá nhân.\n- Tôn trọng con người (Respect for People): không ngừng thách thức để rèn luyện nhân viên trở thành những người giải quyết vấn đề xuất sắc.\n\n## Bài học rút ra\n\nsự vĩ đại của một tổ chức không nằm ở các biện pháp cắt giảm chi phí ngắn hạn, mà ở văn hoá quản trị lấy con người làm trung tâm. Khi tổ chức theo đuổi đúng những giá trị cho sự phát triển dài hạn, kết quả tài chính vượt trội sẽ là hệ quả tất yếu.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.",
+    "thumbnail": "/images/posts/the-toyota-way-1-15-ra-quyet-dinh-quan-ly-dua-tren-tu-duy-he-thong-dai-han-tham/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-1-15-ra-quyet-dinh-quan-ly-dua-tren-tu-duy-he-thong-dai-han-tham/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-toyota-way-2-15-ket-noi-con-nguoi-va-quy-trinh-thong-qua-dong-chay-lien-tuc",
+    "slug": "the-toyota-way-2-15-ket-noi-con-nguoi-va-quy-trinh-thong-qua-dong-chay-lien-tuc",
+    "title": "The Toyota Way (2/15): Kết nối con người và quy trình thông qua dòng chảy liên tục để làm bộc lộ các vấn đề",
+    "date": "2026-07-06",
+    "excerpt": "Nguyên tắc số 2: Kết nối con người và quy trình thông qua dòng chảy liên tục để làm bộc lộ các vấn đề.",
+    "content": "Nguyên tắc số 2: Kết nối con người và quy trình thông qua dòng chảy liên tục để làm bộc lộ các vấn đề.\n\nNhiều người cho rằng \"dòng chảy liên tục\" (continuous flow) chỉ là công cụ giúp sản xuất hoặc làm việc nhanh hơn. Triết lý đằng sau Phương thức Toyota sâu sắc hơn thế.\n\n1. Một hệ thống được thiết kế có chủ đích để dễ \"vỡ\"\nDòng chảy một sản phẩm (one-piece flow) được thiết kế để dễ bị phá vỡ. Bằng cách loại bỏ hàng tồn kho đệm, những điểm yếu và sự kém hiệu quả trong quy trình lập tức lộ diện. Bất kỳ sự cố nào xảy ra cũng buộc toàn bộ chuỗi quy trình dừng lại, tạo áp lực để giải quyết vấn đề tận gốc ngay lập tức thay vì che giấu chúng.\n\n2. Không chỉ dành cho nhà máy, mà áp dụng cho cả công việc trí óc\nMột nhóm kỹ sư thực hiện Phân tích phần tử hữu hạn (FEA) từng mất trung bình 38 ngày cho một dự án, phần lớn thời gian là chờ đợi và làm lại. Bằng cách giới hạn mỗi người chỉ nhận tối đa 6 dự án cùng lúc, thời gian chờ giảm xuống còn 16 ngày và năng suất được giải phóng thêm 25% mà không cần thuê thêm nhân sự.\n\n3. Cẩn thận với \"dòng chảy giả tạo\" (Fake Flow)\nNhiều tổ chức nhầm lẫn giữa việc sắp xếp bàn ghế/máy móc gần nhau với dòng chảy liên tục thực sự, trong khi công việc vẫn bị ứ đọng theo lô ở mỗi trạm. Công ty Will-Burt từng mất gần 38 ngày để hoàn thành sản phẩm do vẫn vận chuyển theo lô bằng xe nâng; sau khi chuyển sang dòng chảy từng sản phẩm thực sự, thời gian hoàn thành giảm xuống dưới 1 ngày.\n\n## Bài học rút ra\n\ndòng chảy liên tục không phải là một công cụ có thể mua về và lắp đặt, mà là một tầm nhìn để tổ chức cùng hướng tới thông qua tư duy khoa học và cải tiến không ngừng.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.",
+    "thumbnail": "/images/posts/the-toyota-way-2-15-ket-noi-con-nguoi-va-quy-trinh-thong-qua-dong-chay-lien-tuc/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-2-15-ket-noi-con-nguoi-va-quy-trinh-thong-qua-dong-chay-lien-tuc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "fmea-ngan-loi-truoc-khi-no-xay-ra",
+    "slug": "fmea-ngan-loi-truoc-khi-no-xay-ra",
+    "title": "FMEA: Ngăn lỗi trước khi nó xảy ra",
+    "date": "2026-07-07",
+    "excerpt": "Điều gì có thể sai? Sai theo cách nào? Hậu quả là gì? Làm sao ngăn chặn?",
+    "content": "Điều gì có thể sai? Sai theo cách nào? Hậu quả là gì? Làm sao ngăn chặn?\n\n4 câu hỏi này — được hỏi TRƯỚC khi vấn đề xảy ra — là bản chất của FMEA.\n\n🔍 FMEA là gì?\nFailure Mode and Effects Analysis — phân tích chế độ lỗi và tác động.\n\nMỗi bước trong quy trình được đánh giá theo 3 tiêu chí:\n- S (Severity) — mức độ nghiêm trọng nếu lỗi xảy ra (1-10)\n- O (Occurrence) — xác suất lỗi xảy ra (1-10)\n- D (Detection) — khả năng phát hiện trước khi đến khách hàng (1-10)\n\nRPN = S × O × D → điểm rủi ro. RPN càng cao → ưu tiên xử lý trước.\n\n### Ví dụ thực tế — NASA\n\nNASA dùng FMEA cho mỗi bộ phận tàu vũ trụ. Trước khi phóng tàu Apollo, FMEA đã xác định hơn 1.000 điểm lỗi tiềm năng và 200 điểm được xử lý trước khi phóng.\n\nTrong kinh doanh: FMEA giúp một nhà máy thực phẩm tại Việt Nam giảm 60% sự cố máy móc bằng cách xác định và xử lý 15 điểm rủi ro cao trước mùa cao điểm.\n\nĐừng chờ vấn đề xảy ra rồi mới xử lý.",
+    "thumbnail": "/images/posts/fmea-ngan-loi-truoc-khi-no-xay-ra/cover.webp",
+    "images": [
+      "/images/posts/fmea-ngan-loi-truoc-khi-no-xay-ra/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-3-15-su-dung-he-thong-keo-pull-de-tranh-san-xuat-thua",
+    "slug": "the-toyota-way-3-15-su-dung-he-thong-keo-pull-de-tranh-san-xuat-thua",
+    "title": "The Toyota Way (3/15): Sử dụng hệ thống \"Kéo\" (Pull) để tránh sản xuất thừa",
+    "date": "2026-07-07",
+    "excerpt": "Nguyên tắc số 3: Sử dụng hệ thống \"Kéo\" (Pull) để tránh sản xuất thừa.",
+    "content": "Nguyên tắc số 3: Sử dụng hệ thống \"Kéo\" (Pull) để tránh sản xuất thừa.\n\nSản xuất thừa (Overproduction) được Toyota coi là lãng phí tồi tệ nhất, vì đây là nguyên nhân gốc rễ sinh ra mọi lãng phí khác.\n\n1. Hệ thống Đẩy và hệ thống Kéo\nCác công ty truyền thống thường \"đẩy\" sản phẩm sang công đoạn tiếp theo dựa trên lịch trình dự báo, tạo ra tồn kho lớn và che đậy các vấn đề chất lượng. Hệ thống \"Kéo\" tuân theo nguyên lý ngược lại: cung cấp cho khách hàng chính xác những gì họ cần, khi họ cần, với đúng số lượng.\n\n2. Cảm hứng từ mô hình siêu thị\nQuan sát các siêu thị ở Mỹ những năm 1950, Taiichi Ohno nhận thấy khách hàng chỉ lấy những gì họ cần, còn nhân viên chỉ bổ sung những khoảng trống trên kệ. Toyota áp dụng nguyên lý này vào nhà máy thông qua thẻ Kanban: khi một công đoạn sử dụng hết một thùng linh kiện, thẻ Kanban được gửi ngược lại để yêu cầu sản xuất bổ sung; nếu không có thẻ, không công đoạn nào được phép sản xuất thêm.\n\n3. Áp dụng ngoài phạm vi nhà máy\nMột văn phòng đào tạo của General Motors từng áp dụng Kanban cho vật dụng văn phòng — ví dụ dán thẻ báo hiệu khi lọ thuốc vơi còn 1/4 — giúp văn phòng không bao giờ thiếu đồ trong khi vẫn giảm được chi phí tồn kho.\n\n## Bài học rút ra\n\nmục đích của Kanban không phải để duy trì tồn kho, mà để tạo áp lực liên tục cải tiến quy trình, hướng tới việc loại bỏ dần chính những chiếc thẻ đó — tiệm cận trạng thái lý tưởng là dòng chảy một sản phẩm.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-3-15-su-dung-he-thong-keo-pull-de-tranh-san-xuat-thua/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-3-15-su-dung-he-thong-keo-pull-de-tranh-san-xuat-thua/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "nang-luc-quy-trinh-cp-cpk-quy-trinh-cua-ban-tot-den-muc-nao",
+    "slug": "nang-luc-quy-trinh-cp-cpk-quy-trinh-cua-ban-tot-den-muc-nao",
+    "title": "Năng lực quy trình (Cp, Cpk): Quy trình của bạn tốt đến mức nào?",
+    "date": "2026-07-08",
+    "excerpt": "Quy trình của bạn \"đạt yêu cầu\" — nhưng bạn có thực sự biết nó tốt đến mức nào không?",
+    "content": "Quy trình của bạn \"đạt yêu cầu\" — nhưng bạn có thực sự biết nó tốt đến mức nào không?\n\n\"Đạt\" và \"tốt\" là hai chuyện khác nhau. Và khoảng cách đó có thể đang ngốn hàng triệu đồng mỗi tháng.\n\n📐 Process Capability là gì?\nCp và Cpk đo lường quy trình của bạn \"khít\" đến mức nào so với yêu cầu của khách hàng.\n\nCp cao nhưng Cpk thấp = quy trình có khả năng tốt nhưng đang lệch tâm → vẫn tạo ra lỗi.\n\n### Tiêu chuẩn thực tế\n\nCpk < 1.0 → Quy trình KHÔNG ĐẠT — đang sản xuất lỗi\nCpk 1.0–1.33 → Tạm chấp nhận\nCpk ≥ 1.33 → Tốt\nCpk ≥ 1.67 → Six Sigma level — < 3.4 lỗi / triệu sản phẩm\n\n### Ví dụ thực tế — General Electric\n\nTrước khi Jack Welch triển khai Six Sigma năm 1995, Cpk trung bình của GE là 0.87 — đang sản xuất lỗi mỗi ngày. Sau 5 năm: Cpk trung bình lên 1.8 → tiết kiệm $12 tỷ đô.\n\nBạn không thể cải tiến thứ bạn không đo được.",
+    "thumbnail": "/images/posts/nang-luc-quy-trinh-cp-cpk-quy-trinh-cua-ban-tot-den-muc-nao/cover.webp",
+    "images": [
+      "/images/posts/nang-luc-quy-trinh-cp-cpk-quy-trinh-cua-ban-tot-den-muc-nao/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-4-15-can-bang-khoi-luong-cong-viec-heijunka-hay-nhu-rua-dung-nhu",
+    "slug": "the-toyota-way-4-15-can-bang-khoi-luong-cong-viec-heijunka-hay-nhu-rua-dung-nhu",
+    "title": "The Toyota Way (4/15): Cân bằng khối lượng công việc (Heijunka) — hãy như Rùa, đừng như Thỏ",
+    "date": "2026-07-08",
+    "excerpt": "Nguyên tắc số 4: Cân bằng khối lượng công việc (Heijunka) — hãy như Rùa, đừng như Thỏ.",
+    "content": "Nguyên tắc số 4: Cân bằng khối lượng công việc (Heijunka) — hãy như Rùa, đừng như Thỏ.\n\nChạy theo nhịp độ đặt hàng thất thường của khách hàng trong kỷ nguyên \"on-demand\" có thể phá vỡ hệ thống sản xuất của một tổ chức. Nguyên tắc này ra đời để ổn định hệ thống.\n\n1. Đừng chỉ tập trung vào Muda (lãng phí)\nHầu hết các công ty áp dụng Lean chỉ chú trọng cắt giảm Muda. Tuy nhiên, nếu để lịch trình trồi sụt, tổ chức sẽ vướng vào Mura (sự không đồng đều) và Muri (sự quá tải) — việc vắt kiệt sức người và máy móc lúc cao điểm chính là nguyên nhân trực tiếp sinh ra lỗi, hỏng hóc và lãng phí.\n\n2. Trở thành Rùa thay vì Thỏ\nTaiichi Ohno ví von: một chú rùa chậm rãi nhưng ổn định sẽ ít gây lãng phí hơn một chú thỏ chạy thục mạng rồi dừng lại nghỉ. Thay vì sản xuất đúng trình tự đơn hàng, Toyota san phẳng khối lượng thành một trình tự lặp lại đều đặn để tối ưu hoá nguồn lực.\n\n3. Chủ đích duy trì tồn kho để bảo vệ hệ thống\nMột nhà máy sản xuất máng xối nhôm có nhu cầu tăng vọt vào mùa hè và giảm mạnh vào mùa đông. Thay vì sa thải nhân công vào mùa thấp điểm, họ chủ động sản xuất và dự trữ hàng đệm cho các mặt hàng bán chạy nhất. Kết quả: năng suất tăng vọt, thời gian hoàn thành giảm 40%, và lượng hàng tồn kho lỗi thời giảm tới 60%.\n\n## Bài học rút ra\n\nchấp nhận đi chậm lại một chút để sắp xếp công việc thật ổn định sẽ tạo đà cho một tổ chức bền vững — rất khó có một dòng chảy mượt mà nếu khối lượng công việc không được cân bằng.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-4-15-can-bang-khoi-luong-cong-viec-heijunka-hay-nhu-rua-dung-nhu/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-4-15-can-bang-khoi-luong-cong-viec-heijunka-hay-nhu-rua-dung-nhu/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "gage-r-r-msa-thiet-bi-do-cua-ban-co-noi-that",
+    "slug": "gage-r-r-msa-thiet-bi-do-cua-ban-co-noi-that",
+    "title": "Gage R&R (MSA): Thiết bị đo của bạn có nói thật?",
+    "date": "2026-07-09",
+    "excerpt": "Bạn đang đo đúng — nhưng bạn có chắc thiết bị đo của mình đang nói thật không?",
+    "content": "Bạn đang đo đúng — nhưng bạn có chắc thiết bị đo của mình đang nói thật không?\n\nĐây là câu hỏi mà 80% doanh nghiệp chưa từng đặt ra.\n\n🔬 Gage R&R là gì?\nGage Repeatability and Reproducibility — một phần của Measurement System Analysis (MSA).\n\n- Repeatability: Cùng một người, cùng thiết bị, đo cùng sản phẩm nhiều lần → kết quả có nhất quán không?\n- Reproducibility: Nhiều người khác nhau dùng cùng thiết bị → kết quả có nhất quán không?\n\n### Tiêu chuẩn\n\n%GRR < 10% → Hệ thống đo lường ổn\n%GRR 10-30% → Cần xem xét\n%GRR > 30% → Hệ thống đo lường KHÔNG đáng tin cậy\n\n### Ví dụ thực tế\n\nMột nhà máy cơ khí liên tục thải loại chi tiết \"tốt\" và chấp nhận chi tiết \"xấu\". Sau khi làm Gage R&R, phát hiện: %GRR = 45% — 45% biến động trong dữ liệu đến từ thiết bị đo và người đo, không phải từ sản phẩm.\n\nHọ đã đưa ra quyết định dựa trên dữ liệu sai trong nhiều tháng.\n\nDữ liệu tốt bắt đầu từ hệ thống đo lường tốt.",
+    "thumbnail": "/images/posts/gage-r-r-msa-thiet-bi-do-cua-ban-co-noi-that/cover.webp",
+    "images": [
+      "/images/posts/gage-r-r-msa-thiet-bi-do-cua-ban-co-noi-that/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-5-15-xay-dung-quy-trinh-chuan-hoa-lam-nen-tang-cho-su-cai-tien-li",
+    "slug": "the-toyota-way-5-15-xay-dung-quy-trinh-chuan-hoa-lam-nen-tang-cho-su-cai-tien-li",
+    "title": "The Toyota Way (5/15): Xây dựng quy trình chuẩn hoá làm nền tảng cho sự cải tiến liên tục",
+    "date": "2026-07-09",
+    "excerpt": "Nguyên tắc số 5: Xây dựng quy trình chuẩn hoá làm nền tảng cho sự cải tiến liên tục.",
+    "content": "Nguyên tắc số 5: Xây dựng quy trình chuẩn hoá làm nền tảng cho sự cải tiến liên tục.\n\nNhiều người, đặc biệt là lao động trí óc, không ưa sự \"chuẩn hoá\" vì cho rằng nó kìm hãm sáng tạo. Nhưng tại Toyota, chuẩn hoá là công cụ để giải phóng tiềm năng con người.\n\n1. Chuẩn hoá là vạch xuất phát, không phải điểm kết thúc\nChịu ảnh hưởng từ Henry Ford, Toyota tin rằng nếu coi \"chuẩn hoá\" là cách tốt nhất hiện tại để cải tiến vào ngày mai, tổ chức sẽ tiến xa. Không thể cải tiến một quy trình nếu nó liên tục thay đổi — quy trình chuẩn được xem là phương pháp hiệu quả nhất hiện tại, làm đường cơ sở để đo lường các cải tiến tiếp theo.\n\n2. Quan liêu \"Hỗ trợ\" thay vì Quan liêu \"Cưỡng chế\"\nTrong mô hình Taylorism, chuyên gia kỹ thuật nghĩ ra luật, quản lý giám sát, công nhân làm theo. Toyota lật ngược mô hình này: chính người lao động trực tiếp là người phân tích và viết ra quy trình chuẩn cho mình, biến chuẩn hoá thành công cụ kiểm soát công việc chứ không phải gông cùm quản lý.\n\n3. Bài học chuẩn hoá tại Starbucks\nVới 87.000 biến thể đồ uống, Starbucks từng gặp khủng hoảng chất lượng do nhân viên pha sẵn cà phê để đối phó giờ cao điểm. Sau khi áp dụng tư duy Lean và thiết lập quy trình chuẩn với nhịp điệu pha cà phê mới mỗi 8 phút, quy trình trở nên nhịp nhàng hơn, giảm phế phẩm, và giúp nhân viên có nhiều thời gian hơn để kết nối với khách hàng.\n\n## Bài học rút ra\n\nquy trình chuẩn hoá là chìa khoá để duy trì sự ổn định — không có quy trình chuẩn, sẽ không bao giờ có cái gọi là \"cải tiến liên tục\" thực sự.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-5-15-xay-dung-quy-trinh-chuan-hoa-lam-nen-tang-cho-su-cai-tien-li/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-5-15-xay-dung-quy-trinh-chuan-hoa-lam-nen-tang-cho-su-cai-tien-li/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "doe-thiet-ke-thuc-nghiem-thu-nhieu-yeu-to-cung-luc",
+    "slug": "doe-thiet-ke-thuc-nghiem-thu-nhieu-yeu-to-cung-luc",
+    "title": "DOE – Thiết kế thực nghiệm: Thử nhiều yếu tố cùng lúc",
+    "date": "2026-07-10",
+    "excerpt": "Bạn đang thử nghiệm cải tiến bằng cách thay đổi từng yếu tố một — một lần một yếu tố, chờ kết quả, rồi thử yếu tố tiếp theo?",
+    "content": "Bạn đang thử nghiệm cải tiến bằng cách thay đổi từng yếu tố một — một lần một yếu tố, chờ kết quả, rồi thử yếu tố tiếp theo?\n\nCách đó tốn thời gian gấp 10 lần. Và có thể bỏ sót kết quả tốt nhất.\n\n🧪 Design of Experiments (DOE) là gì?\nDOE thay đổi nhiều yếu tố cùng lúc theo kế hoạch có cấu trúc để tìm ra:\n- Yếu tố nào ảnh hưởng nhiều nhất đến kết quả\n- Mức độ tối ưu của mỗi yếu tố\n- Tương tác giữa các yếu tố (yếu tố A × yếu tố B)\n\nVí dụ: Thay vì thử 3 nhiệt độ × 3 áp suất × 3 thời gian = 27 thí nghiệm riêng → DOE chỉ cần 9 thí nghiệm để tìm kết quả tương đương.\n\n### Ví dụ thực tế — Caterpillar\n\nCaterpillar dùng DOE để tối ưu công thức hợp kim động cơ. Thay vì thử từng thành phần một (mất 2 năm), DOE chỉ cần 3 tháng → tìm ra công thức tối ưu, tăng tuổi thọ động cơ 40%.\n\nTrong thực phẩm: DOE giúp tối ưu 4 thông số (nhiệt độ, thời gian, độ ẩm, đường) → tìm điều kiện tối ưu trong 2 tuần thay vì 6 tháng.",
+    "thumbnail": "/images/posts/doe-thiet-ke-thuc-nghiem-thu-nhieu-yeu-to-cung-luc/cover.webp",
+    "images": [
+      "/images/posts/doe-thiet-ke-thuc-nghiem-thu-nhieu-yeu-to-cung-luc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-6-15-xay-dung-van-hoa-dung-lai-de-xac-dinh-bat-thuong-va-tich-hop",
+    "slug": "the-toyota-way-6-15-xay-dung-van-hoa-dung-lai-de-xac-dinh-bat-thuong-va-tich-hop",
+    "title": "The Toyota Way (6/15): Xây dựng văn hoá dừng lại để xác định bất thường và tích hợp sẵn chất lượng (Jidoka)",
+    "date": "2026-07-10",
+    "excerpt": "Nguyên tắc số 6: Xây dựng văn hoá dừng lại để xác định bất thường và tích hợp sẵn chất lượng (Jidoka).",
+    "content": "Nguyên tắc số 6: Xây dựng văn hoá dừng lại để xác định bất thường và tích hợp sẵn chất lượng (Jidoka).\n\nQuy tắc vàng của Toyota: chất lượng là số một. Đừng cố sản xuất thật nhanh rồi để dành việc sửa lỗi về sau.\n\n1. Jidoka — tự động hoá mang tính con người\nKhái niệm này bắt nguồn từ chiếc máy dệt của Sakichi Toyoda, có khả năng tự động dừng lại khi đứt một sợi chỉ. Trang bị cho máy móc khả năng tự phát hiện lỗi giúp giải phóng con người khỏi việc đứng canh chừng, cho phép họ quản lý nhiều máy móc và tập trung giải quyết vấn đề.\n\n2. Quyền lực của dây Andon\nMọi nhân viên Toyota đều có quyền kéo dây Andon để báo hiệu khi phát hiện lỗi. Việc kéo dây không làm đình trệ ngay lập tức toàn bộ nhà máy — dây chuyền tiếp tục di chuyển đến cuối trạm, cho Trưởng nhóm khoảng 10-20 giây để đến kiểm tra và quyết định xử lý ngay hoặc dừng hẳn dây chuyền.\n\n3. Bài học \"em bé tím tái\" tại bệnh viện\nNguyên tắc xác định nguyên nhân gốc rễ được áp dụng cả trong y tế. Một bệnh viện từng định chi 5 triệu USD thay hệ thống máy tính vì báo động cấp cứu chậm trễ. Khi quan sát tận nơi, họ phát hiện gốc rễ là các cảm biến báo động giả khiến y tá có thói quen tự tắt chuông. Sửa quy trình tại chỗ đã giải quyết triệt để vấn đề mà không tốn hàng triệu đô la.\n\n## Bài học rút ra\n\ngiải quyết dứt điểm vấn đề ngay từ gốc rễ giúp chất lượng được \"tích hợp\" vào sản phẩm. Một dây chuyền không bao giờ dừng lại không có nghĩa là nó hoàn hảo, mà có nghĩa là nó đang che giấu rất nhiều vấn đề.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-6-15-xay-dung-van-hoa-dung-lai-de-xac-dinh-bat-thuong-va-tich-hop/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-6-15-xay-dung-van-hoa-dung-lai-de-xac-dinh-bat-thuong-va-tich-hop/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "phan-tich-hoi-quy-yeu-to-nao-anh-huong-nhieu-nhat",
+    "slug": "phan-tich-hoi-quy-yeu-to-nao-anh-huong-nhieu-nhat",
+    "title": "Phân tích hồi quy: Yếu tố nào ảnh hưởng nhiều nhất?",
+    "date": "2026-07-11",
+    "excerpt": "Doanh số của bạn tăng giảm theo mùa — bạn có biết chính xác YẾU TỐ NÀO ảnh hưởng nhiều nhất không?",
+    "content": "Doanh số của bạn tăng giảm theo mùa — bạn có biết chính xác YẾU TỐ NÀO ảnh hưởng nhiều nhất không?\n\nCảm giác và kinh nghiệm chỉ đưa ra dự đoán. Regression Analysis đưa ra bằng chứng.\n\n📈 Regression Analysis là gì?\nPhân tích hồi quy — tìm mối quan hệ toán học giữa các biến:\n- Y = kết quả muốn tối ưu (doanh số, chất lượng, thời gian giao hàng...)\n- X = các yếu tố đầu vào (nhiệt độ, chi phí quảng cáo, số nhân viên...)\n\nR² = 0.85 → 85% biến động trong Y được giải thích bởi mô hình.\n\n### Ví dụ thực tế — Retail\n\nMột chuỗi cửa hàng tại TP.HCM chạy regression với Y = doanh số ngày. Kết quả bất ngờ: yếu tố ảnh hưởng nhất không phải khuyến mãi — mà là nhiệt độ ngoài trời (ngày nóng +23% doanh số) và giờ mở cửa sớm (+8% mỗi giờ).\n\nHọ điều chỉnh giờ mở cửa và chuẩn bị hàng theo dự báo thời tiết → tăng doanh số 15% mà không tốn thêm chi phí marketing.",
+    "thumbnail": "/images/posts/phan-tich-hoi-quy-yeu-to-nao-anh-huong-nhieu-nhat/cover.webp",
+    "images": [
+      "/images/posts/phan-tich-hoi-quy-yeu-to-nao-anh-huong-nhieu-nhat/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-7-15-su-dung-quan-ly-truc-quan-de-ho-tro-con-nguoi-ra-quyet-dinh",
+    "slug": "the-toyota-way-7-15-su-dung-quan-ly-truc-quan-de-ho-tro-con-nguoi-ra-quyet-dinh",
+    "title": "The Toyota Way (7/15): Sử dụng quản lý trực quan để hỗ trợ con người ra quyết định và giải quyết vấn đề",
+    "date": "2026-07-11",
+    "excerpt": "Nguyên tắc số 7: Sử dụng quản lý trực quan để hỗ trợ con người ra quyết định và giải quyết vấn đề.",
+    "content": "Nguyên tắc số 7: Sử dụng quản lý trực quan để hỗ trợ con người ra quyết định và giải quyết vấn đề.\n\nThị giác là giác quan mạnh mẽ nhất của con người — bộ não xử lý hình ảnh nhanh và hiệu quả hơn nhiều so với văn bản chữ viết.\n\n1. Rõ ràng trong nháy mắt\nQuản lý trực quan giúp bất kỳ ai nhìn vào quy trình cũng biết ngay trạng thái đang đạt chuẩn hay có bất thường — hoạt động giống như đèn giao thông: đỏ là dừng, xanh là đi, không cần dừng lại để phân tích phức tạp.\n\n2. Vượt xa hơn việc dọn dẹp của 5S\n5S (Sàng lọc, Sắp xếp, Sạch sẽ, Chuẩn hoá, Duy trì) không chỉ để nơi làm việc trông gọn gàng. Mục đích thật sự tại Toyota là làm bộc lộ các vấn đề: một khay vật tư thiếu đồ mà không có thẻ Kanban sẽ lập tức phát ra tín hiệu trực quan báo động sự bất thường.\n\n3. Obeya — sức mạnh của \"căn phòng lớn\"\nTrong phát triển sản phẩm mới như dòng xe Prius, Toyota sử dụng Obeya — một phòng họp lớn dán kín các biểu đồ trực quan về tiến độ, chất lượng, chi phí. Các chuyên gia tương tác trực tiếp với luồng thông tin trên tường, giúp việc ra quyết định nhanh chóng, chính xác và có tính đồng thuận cao.\n\n## Bài học rút ra\n\nnên hạn chế các báo cáo chữ viết, thay vào đó thiết kế hệ thống thông tin trực quan tích hợp ngay tại nơi làm việc để bất kỳ ai cũng có thể nhận diện ngay lập tức sự sai lệch khỏi tiêu chuẩn.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-7-15-su-dung-quan-ly-truc-quan-de-ho-tro-con-nguoi-ra-quyet-dinh/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-7-15-su-dung-quan-ly-truc-quan-de-ho-tro-con-nguoi-ra-quyet-dinh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "sipoc-hieu-quy-trinh-tu-dau-den-cuoi-truoc-khi-cai-tien",
+    "slug": "sipoc-hieu-quy-trinh-tu-dau-den-cuoi-truoc-khi-cai-tien",
+    "title": "SIPOC: Hiểu quy trình từ đầu đến cuối trước khi cải tiến",
+    "date": "2026-07-12",
+    "excerpt": "Trước khi giải quyết bất kỳ vấn đề nào — bạn có thực sự hiểu quy trình từ đầu đến cuối chưa?",
+    "content": "Trước khi giải quyết bất kỳ vấn đề nào — bạn có thực sự hiểu quy trình từ đầu đến cuối chưa?\n\nNhiều dự án cải tiến thất bại không phải vì thiếu giải pháp — mà vì team chưa đồng thuận về quy trình thực sự là gì.\n\nSIPOC giải quyết vấn đề đó trong 30 phút.\n\n📋 SIPOC = Suppliers → Inputs → Process → Outputs → Customers\n\n- S: Ai cung cấp đầu vào?\n- I: Đầu vào cần thiết là gì?\n- P: Các bước chính của quy trình (4-7 bước)\n- O: Kết quả đầu ra là gì?\n- C: Ai nhận kết quả? Họ cần gì?\n\n### Ví dụ thực tế — Quy trình xuất viện\n\nS: Bác sĩ, dược sĩ, bảo hiểm\nI: Hồ sơ bệnh án, đơn thuốc, giấy tờ\nP: Xác nhận xuất viện → Chuẩn bị hóa đơn → Dược phát thuốc → Hoàn thiện giấy tờ → Bàn giao\nO: Bệnh nhân được xuất viện hoàn chỉnh\nC: Bệnh nhân & gia đình\n\nSau khi vẽ SIPOC, team phát hiện: 2 bước trong Process không ai chịu trách nhiệm rõ ràng. Đó là nguyên nhân chính của sự chậm trễ — không phải thiếu nhân lực như ban đầu nghĩ.",
+    "thumbnail": "/images/posts/sipoc-hieu-quy-trinh-tu-dau-den-cuoi-truoc-khi-cai-tien/cover.webp",
+    "images": [
+      "/images/posts/sipoc-hieu-quy-trinh-tu-dau-den-cuoi-truoc-khi-cai-tien/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-8-15-ap-dung-va-dieu-chinh-cong-nghe-nham-ho-tro-con-nguoi-va-quy",
+    "slug": "the-toyota-way-8-15-ap-dung-va-dieu-chinh-cong-nghe-nham-ho-tro-con-nguoi-va-quy",
+    "title": "The Toyota Way (8/15): Áp dụng và điều chỉnh công nghệ nhằm hỗ trợ con người và quy trình",
+    "date": "2026-07-12",
+    "excerpt": "Nguyên tắc số 8: Áp dụng và điều chỉnh công nghệ nhằm hỗ trợ con người và quy trình.",
+    "content": "Nguyên tắc số 8: Áp dụng và điều chỉnh công nghệ nhằm hỗ trợ con người và quy trình.\n\nCông nghệ sinh ra để phục vụ con người, không phải để thay thế con người một cách mù quáng.\n\n1. Con người trước, máy móc sau\nĐưa tự động hoá vào một quy trình đang lộn xộn chỉ làm khuếch đại sự lộn xộn đó. Toyota luôn tối ưu quy trình thủ công trước, chứng minh được hiệu quả rồi mới áp dụng công nghệ để hỗ trợ. Bài học từ việc lạm dụng tự động hoá 100% cho thấy điều này có thể tạo ra gánh nặng chi phí cố định khổng lồ và đánh mất sự linh hoạt.\n\n2. Rèn luyện tư duy kỹ sư qua dây chuyền thủ công\nMitsuru Kawai, Phó Chủ tịch Toyota, lo ngại công nhân chỉ biết \"bấm nút\" ở dây chuyền tự động sẽ mất khả năng sáng tạo. Ông đưa một dây chuyền thủ công cũ từ Brazil về Nhật Bản, yêu cầu kỹ sư tự tay lắp ráp để học cách loại bỏ lãng phí trước khi được phép cải tiến máy móc tự động.\n\n3. Tích hợp AI để nâng tầm, không phải để thay thế\nTrong kỷ nguyên Công nghiệp 4.0, các đối tác của Toyota sử dụng AI và camera để phân tích thao tác con người trong thời gian thực, cảnh báo ngay khi công nhân làm sai quy trình — cung cấp dữ liệu tức thời để con người sáng tạo và thực hiện các chu trình PDCA nhanh hơn.\n\n## Bài học rút ra\n\nkhông nên đưa công nghệ mới vào tổ chức chỉ vì đó là xu hướng. Hãy sử dụng công nghệ như một đòn bẩy để nâng cao khả năng phân tích và sáng tạo của chính đội ngũ nhân viên.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-8-15-ap-dung-va-dieu-chinh-cong-nghe-nham-ho-tro-con-nguoi-va-quy/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-8-15-ap-dung-va-dieu-chinh-cong-nghe-nham-ho-tro-con-nguoi-va-quy/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "a3-problem-solving-mot-to-giay-a3-va-ca-mot-tu-duy-giai-quyet-van-de",
+    "slug": "a3-problem-solving-mot-to-giay-a3-va-ca-mot-tu-duy-giai-quyet-van-de",
+    "title": "A3 Problem Solving: Một tờ giấy A3 và cả một tư duy giải quyết vấn đề",
+    "date": "2026-07-13",
+    "excerpt": "Bạn đã bao giờ ngồi trong một cuộc họp xử lý sự cố mà cả team mỗi người nói một hướng, không ai thống nhất được nguyên nhân gốc rễ, và cuối cùng giải pháp đưa ra chỉ là \"làm cẩn thận hơn\"?",
+    "content": "Bạn đã bao giờ ngồi trong một cuộc họp xử lý sự cố mà cả team mỗi người nói một hướng, không ai thống nhất được nguyên nhân gốc rễ, và cuối cùng giải pháp đưa ra chỉ là \"làm cẩn thận hơn\"?\n\nĐó là lúc bạn cần A3 Problem Solving.\n\nA3 là phương pháp giải quyết vấn đề có cấu trúc do Toyota phát triển — tên gọi đến từ khổ giấy A3 (29,7 × 42 cm) mà toàn bộ quá trình phân tích được trình bày trên đó. Nguyên tắc: mọi vấn đề phức tạp đều có thể — và phải — được tóm gọn trên một tờ giấy duy nhất, buộc team phải tư duy rõ ràng và ưu tiên đúng.\n\n### Cấu trúc A3 gồm 8 bước\n\n1️⃣ Xác định vấn đề (Background)\n2️⃣ Mô tả hiện trạng (Current Condition)\n3️⃣ Đặt mục tiêu (Target Condition)\n4️⃣ Phân tích nguyên nhân gốc rễ (Root Cause Analysis)\n5️⃣ Đề xuất giải pháp phản biện (Countermeasures)\n6️⃣ Kế hoạch thực hiện (Implementation Plan)\n7️⃣ Kiểm tra kết quả (Effect Confirmation)\n8️⃣ Tiêu chuẩn hóa (Standardization & Follow-up)\n\n🏭 Case study thực tế: Toyota Georgetown (Mỹ) ứng dụng A3 cho vấn đề tỷ lệ lỗi sơn tăng đột biến 2,3% trên dòng Camry. Thay vì họp liên tục nhiều ngày, team hoàn thành A3 trong 48 giờ — phát hiện nguyên nhân gốc rễ là dao động nhiệt độ phòng sơn vào ca đêm. Sau khi chuẩn hóa nhiệt độ: lỗi giảm 78% trong 3 tuần.\n\n💡 A3 không chỉ là công cụ — đó là ngôn ngữ chung để team cùng nhìn vào một vấn đề, cùng phân tích, và cùng cam kết giải pháp.\n\nBạn đang dùng phương pháp gì để giải quyết vấn đề trong tổ chức? Chia sẻ bên dưới nhé! 👇",
+    "thumbnail": "/images/posts/a3-problem-solving-mot-to-giay-a3-va-ca-mot-tu-duy-giai-quyet-van-de/cover.webp",
+    "images": [
+      "/images/posts/a3-problem-solving-mot-to-giay-a3-va-ca-mot-tu-duy-giai-quyet-van-de/cover.webp"
+    ],
+    "toc": [],
+    "category": "Giải quyết vấn đề",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-9-15-phat-trien-nhung-nha-lanh-dao-thau-hieu-cong-viec-song-voi-t",
+    "slug": "the-toyota-way-9-15-phat-trien-nhung-nha-lanh-dao-thau-hieu-cong-viec-song-voi-t",
+    "title": "The Toyota Way (9/15): Phát triển những nhà lãnh đạo thấu hiểu công việc, sống với triết lý và truyền đạt...",
+    "date": "2026-07-13",
+    "excerpt": "Nguyên tắc số 9: Phát triển những nhà lãnh đạo thấu hiểu công việc, sống với triết lý và truyền đạt nó cho người khác.",
+    "content": "Nguyên tắc số 9: Phát triển những nhà lãnh đạo thấu hiểu công việc, sống với triết lý và truyền đạt nó cho người khác.\n\nKhác với nhiều công ty phương Tây thường \"săn\" CEO từ bên ngoài mỗi khi gặp khủng hoảng, sức mạnh của Toyota đến từ việc tự \"trồng\" lãnh đạo từ bên trong.\n\n1. Hình mẫu \"Lãnh đạo cấp độ 5\"\nNghiên cứu của Jim Collins cho thấy các nhà lãnh đạo vĩ đại nhất thường có sự khiêm tốn cá nhân sâu sắc nhưng sở hữu ý chí chuyên môn mãnh liệt. Lãnh đạo của Toyota đều đi lên từ nội bộ, trưởng thành nhờ kiên trì vượt qua thử thách, chú trọng thực tế hơn là sự lôi cuốn hào nhoáng.\n\n2. Thấu hiểu tận gốc rễ (Genchi Genbutsu)\nLãnh đạo Toyota phải đến tận hiện trường để thấu hiểu công việc, không ngồi trong phòng máy lạnh ra chỉ thị. Câu chuyện nhà sáng lập Kiichiro Toyoda tự tay thò vào chảo dầu đầy cặn kim loại để tìm nguyên nhân kẹt máy là minh chứng kinh điển cho tinh thần này.\n\n3. Báo cáo, cập nhật và tham vấn (Hourensou)\nLãnh đạo Toyota không quản lý vi mô, nhưng yêu cầu thông tin được truyền đạt liên tục và hiệu quả — các cấp quản lý gửi báo cáo tóm tắt tình hình thực tế mỗi ngày, giúp lãnh đạo nắm bắt nhịp đập hệ thống và hỗ trợ kịp thời.\n\n## Bài học rút ra\n\nsự nhất quán về văn hoá đến từ việc duy trì các lãnh đạo thấm nhuần triết lý công ty. Lãnh đạo giỏi nhất là người thấu hiểu công việc đến từng chi tiết nhỏ và coi việc huấn luyện nhân viên là trách nhiệm cao cả nhất.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-9-15-phat-trien-nhung-nha-lanh-dao-thau-hieu-cong-viec-song-voi-t/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-9-15-phat-trien-nhung-nha-lanh-dao-thau-hieu-cong-viec-song-voi-t/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "oee-may-moc-cua-ban-thuc-su-hoat-dong-bao-nhieu-thoi-gian",
+    "slug": "oee-may-moc-cua-ban-thuc-su-hoat-dong-bao-nhieu-thoi-gian",
+    "title": "OEE: Máy móc của bạn thực sự hoạt động bao nhiêu % thời gian?",
+    "date": "2026-07-14",
+    "excerpt": "Hầu hết các nhà quản lý sản xuất trả lời câu hỏi này bằng cảm tính: \"Khoảng 80–85%.\"",
+    "content": "Hầu hết các nhà quản lý sản xuất trả lời câu hỏi này bằng cảm tính: \"Khoảng 80–85%.\"\n\nKhi áp dụng OEE để đo thực tế, con số thường dao động từ 45–55%.\n\nKhoảng cách đó — 30 điểm phần trăm — chính là tiền bạn đang để trên bàn mỗi ngày.\n\n📊 OEE (Overall Equipment Effectiveness) là chỉ số đo hiệu suất tổng thể của thiết bị, được tính bằng tích của 3 thành phần:\n\n🔹 Availability (Mức độ sẵn sàng): Thiết bị hoạt động bao nhiêu % thời gian dự kiến?\n- Mất điểm do: dừng máy đột xuất, setup, bảo trì ngoài kế hoạch\n\n🔸 Performance (Hiệu suất tốc độ): Khi chạy, thiết bị đạt bao nhiêu % tốc độ thiết kế?\n- Mất điểm do: chạy chậm, dừng ngắn (micro-stops), vận hành dưới công suất\n\n🔹 Quality (Chất lượng đầu ra): Bao nhiêu % sản phẩm đạt tiêu chuẩn ngay lần đầu?\n- Mất điểm do: phế phẩm, hàng cần rework\n\nOEE = Availability × Performance × Quality\n\n🏭 Case study: Bosch tại nhà máy Stuttgart áp dụng OEE monitoring real-time cho dây chuyền lắp ráp. Baseline ban đầu: OEE = 52%. Sau 18 tháng tập trung vào giảm micro-stops (Performance) và chuẩn hóa changeover (Availability): OEE đạt 74% — tương đương thêm 12 triệu EUR sản lượng mỗi năm mà không đầu tư thêm thiết bị.\n\n### World-class OEE benchmark\n\n- OEE > 85%: Đẳng cấp thế giới\n- OEE 60–85%: Trung bình ngành\n- OEE < 60%: Cần cải thiện ngay\n\nThiết bị của bạn đang ở đâu trong thang này? 🤔",
+    "thumbnail": "/images/posts/oee-may-moc-cua-ban-thuc-su-hoat-dong-bao-nhieu-thoi-gian/cover.webp",
+    "images": [
+      "/images/posts/oee-may-moc-cua-ban-thuc-su-hoat-dong-bao-nhieu-thoi-gian/cover.webp"
+    ],
+    "toc": [],
+    "category": "TPM & Bảo trì",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-10-15-phat-trien-cac-ca-nhan-va-nhom-xuat-sac-tuan-theo-triet-ly",
+    "slug": "the-toyota-way-10-15-phat-trien-cac-ca-nhan-va-nhom-xuat-sac-tuan-theo-triet-ly",
+    "title": "The Toyota Way (10/15): Phát triển các cá nhân và nhóm xuất sắc tuân theo triết lý của công ty",
+    "date": "2026-07-14",
+    "excerpt": "Nguyên tắc số 10: Phát triển các cá nhân và nhóm xuất sắc tuân theo triết lý của công ty.",
+    "content": "Nguyên tắc số 10: Phát triển các cá nhân và nhóm xuất sắc tuân theo triết lý của công ty.\n\nNhiều doanh nghiệp cắt giảm quản lý cấp trung để \"trao quyền\" một cách hời hợt. Toyota làm điều ngược lại: đầu tư mạnh mẽ vào các nhóm làm việc nhỏ.\n\n1. Sơ đồ tổ chức lộn ngược (servant leadership)\nTại Toyota, những người trực tiếp tạo ra giá trị nằm ở đỉnh kim tự tháp. Các cấp quản lý, từ Trưởng nhóm đến Giám đốc, đóng vai trò \"lãnh đạo phục vụ\" — hỗ trợ, dọn dẹp chướng ngại vật và cung cấp nguồn lực để nhân viên hoàn thành tốt công việc.\n\n2. Tỷ lệ vàng 1:4 và vai trò của Trưởng nhóm\nToyota duy trì tỷ lệ một Trưởng nhóm hỗ trợ khoảng 4-5 nhân viên. Trưởng nhóm không làm nhiệm vụ kỷ luật hay đánh giá hiệu suất, mà phản hồi ngay lập tức các tín hiệu Andon, đào tạo chéo và dẫn dắt hoạt động cải tiến mỗi ngày.\n\n3. Động lực nội tại quan trọng hơn phần thưởng vật chất\nNhiều công ty dùng tiền thưởng để thúc đẩy sáng kiến. Tuy nhiên, với các công việc đòi hỏi tư duy sáng tạo, phần thưởng tài chính trực tiếp thực chất có thể làm giảm hiệu suất. Động lực lớn nhất tại Toyota đến từ việc đảm bảo an toàn việc làm, xây dựng sự tin tưởng và công nhận thành tích tập thể.\n\n## Bài học rút ra\n\nlàm việc nhóm không có nghĩa là mọi người chỉ yêu mến nhau — nó bắt nguồn từ sự tin tưởng, tôn trọng năng lực trí tuệ lẫn nhau và cam kết phát triển nhân sự thành những người giải quyết vấn đề xuất sắc.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-10-15-phat-trien-cac-ca-nhan-va-nhom-xuat-sac-tuan-theo-triet-ly/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-10-15-phat-trien-cac-ca-nhan-va-nhom-xuat-sac-tuan-theo-triet-ly/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "smed-doi-khuon-doi-ma-hang-trong-duoi-10-phut",
+    "slug": "smed-doi-khuon-doi-ma-hang-trong-duoi-10-phut",
+    "title": "SMED: Đổi khuôn, đổi mã hàng trong dưới 10 phút",
+    "date": "2026-07-15",
+    "excerpt": "Hãy tưởng tượng đội pit stop của Formula 1: thay 4 bánh xe, tra xăng, điều chỉnh cánh gió — tất cả trong dưới 3 giây. Điều này không xảy ra nhờ may mắn. Nó xảy ra nhờ SMED.",
+    "content": "Hãy tưởng tượng đội pit stop của Formula 1: thay 4 bánh xe, tra xăng, điều chỉnh cánh gió — tất cả trong dưới 3 giây. Điều này không xảy ra nhờ may mắn. Nó xảy ra nhờ SMED.\n\nSMED (Single Minute Exchange of Die) là phương pháp giảm thời gian chuyển đổi sản xuất (changeover) xuống dưới 10 phút — \"single minute\" nghĩa là dưới 10 phút, không phải dưới 1 phút. Được phát triển bởi Shigeo Shingo tại Toyota, SMED đã trở thành nền tảng của sản xuất linh hoạt.\n\n### Nguyên lý cốt lõi của SMED\n\nPhân loại hoạt động thành 2 loại:\n🟢 External Setup: Việc có thể làm TRƯỚC khi máy dừng\n🔴 Internal Setup: Việc CHỈ làm được khi máy đang dừng\n\nChiến lược SMED:\n1. Tách biệt Internal và External setup\n2. Chuyển tối đa Internal sang External\n3. Rút ngắn thời gian Internal còn lại (chuẩn hóa, song song hóa, đơn giản hóa)\n\n📊 Case study: Công ty Wiremold (Connecticut, USA) áp dụng SMED cho dây chuyền ép kim loại. Trước: changeover trung bình 3 giờ 30 phút. Sau 6 tháng triển khai SMED: giảm xuống còn 18 phút. Kết quả: WIP giảm 88%, lead time giảm từ 4 tuần xuống 2 ngày, on-time delivery tăng từ 55% lên 98%.\n\n💡 Tại sao SMED quan trọng với doanh nghiệp hiện đại?\n\nKhách hàng ngày nay muốn đa dạng + giao hàng nhanh. Changeover dài = batch lớn để bù chi phí = tồn kho cao = phản ứng chậm với thị trường. SMED phá vỡ vòng luẩn quẩn này.\n\nChangeover hiện tại của bạn mất bao lâu? 🤔",
+    "thumbnail": "/images/posts/smed-doi-khuon-doi-ma-hang-trong-duoi-10-phut/cover.webp",
+    "images": [
+      "/images/posts/smed-doi-khuon-doi-ma-hang-trong-duoi-10-phut/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-11-15-ton-trong-doi-tac-trong-chuoi-gia-tri-bang-cach-thach-thuc",
+    "slug": "the-toyota-way-11-15-ton-trong-doi-tac-trong-chuoi-gia-tri-bang-cach-thach-thuc",
+    "title": "The Toyota Way (11/15): Tôn trọng đối tác trong chuỗi giá trị bằng cách thách thức và giúp họ cải tiến",
+    "date": "2026-07-15",
+    "excerpt": "Nguyên tắc số 11: Tôn trọng đối tác trong chuỗi giá trị bằng cách thách thức và giúp họ cải tiến.",
+    "content": "Nguyên tắc số 11: Tôn trọng đối tác trong chuỗi giá trị bằng cách thách thức và giúp họ cải tiến.\n\nMột chiếc xe hơi chỉ có thể xuất sắc nếu các linh kiện cấu thành đạt chất lượng hoàn hảo. Tại Toyota, 70% giá trị chiếc xe đến từ các nhà cung cấp bên ngoài.\n\n1. Đối tác chiến lược thay vì bắt nạt nhà cung cấp\nKhác với các công ty thường ép giá và dùng hợp đồng ngắn hạn để đe doạ nhà cung cấp, Toyota xây dựng mối quan hệ dài hạn. Khi một đối tác gặp khủng hoảng tài chính trong Đại suy thoái, Toyota đã trả trước chi phí dụng cụ và điều chỉnh giá mua để giúp đối tác vượt qua khó khăn.\n\n2. Sức mạnh của mạng lưới gắn kết (Keiretsu) trong khủng hoảng\nKhi nhà máy Aisin — nhà cung cấp độc quyền van phanh cho Toyota — bị thiêu rụi năm 1997, hệ thống JIT tưởng chừng sụp đổ vì chỉ còn tồn kho đủ dùng 2 ngày. Một mạng lưới gồm 200 nhà cung cấp khác đã tự tổ chức lại và phục hồi nguồn cung chỉ trong 2 ngày.\n\n3. Xây dựng mạng lưới doanh nghiệp học hỏi\nToyota cử đội ngũ chuyên gia xuất sắc nhất đến tận nhà máy đối tác để cùng giải quyết vấn đề. Các nhà cung cấp tham gia các nhóm học tập tự nguyện với mục tiêu cải tiến khắt khe, thúc đẩy tư duy đột phá và giảm chi phí cho toàn chuỗi cung ứng.\n\n## Bài học rút ra\n\nđừng đẩy rủi ro về phía đối tác để tối ưu hoá bảng cân đối kế toán ngắn hạn. Hãy xây dựng một mạng lưới doanh nghiệp học hỏi bằng cách đặt ra kỳ vọng cao và cung cấp nguồn lực trực tiếp giúp đối tác vươn tới kỳ vọng đó.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-11-15-ton-trong-doi-tac-trong-chuoi-gia-tri-bang-cach-thach-thuc/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-11-15-ton-trong-doi-tac-trong-chuoi-gia-tri-bang-cach-thach-thuc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "tpm-khi-nguoi-van-hanh-may-cung-la-nguoi-bao-tri-may",
+    "slug": "tpm-khi-nguoi-van-hanh-may-cung-la-nguoi-bao-tri-may",
+    "title": "TPM: Khi người vận hành máy cũng là người bảo trì máy",
+    "date": "2026-07-16",
+    "excerpt": "Trong nhiều nhà máy truyền thống, có một ranh giới vô hình: bộ phận sản xuất vận hành, bộ phận bảo trì sửa chữa. Khi máy hỏng, sản xuất gọi bảo trì. Rồi chờ. Rồi năng suất mất.",
+    "content": "Trong nhiều nhà máy truyền thống, có một ranh giới vô hình: bộ phận sản xuất vận hành, bộ phận bảo trì sửa chữa. Khi máy hỏng, sản xuất gọi bảo trì. Rồi chờ. Rồi năng suất mất.\n\nTPM (Total Productive Maintenance) phá vỡ ranh giới đó.\n\nTPM là triết lý bảo trì tổng thể, trong đó mọi thành viên — từ operator đến manager — đều có trách nhiệm đảm bảo thiết bị hoạt động tối ưu. Mục tiêu: Zero Breakdowns, Zero Defects, Zero Accidents.\n\n### TPM được xây dựng trên 8 trụ cột (8 Pillars)\n\n1. Autonomous Maintenance — Operator tự bảo trì cơ bản\n2. Planned Maintenance — Bảo trì theo lịch trình khoa học\n3. Quality Maintenance — Bảo trì hướng đến chất lượng sản phẩm\n4. Focused Improvement (Kobetsu Kaizen) — Cải tiến tập trung\n5. Early Equipment Management — Quản lý thiết bị từ giai đoạn thiết kế\n6. Training & Education — Phát triển năng lực liên tục\n7. Safety, Health & Environment — An toàn lao động\n8. TPM in Office — Mở rộng TPM sang khối văn phòng\n\n🏭 Case study: Denso (nhà cung cấp linh kiện Toyota tại Nhật) triển khai TPM toàn diện trong 3 năm. Kết quả:\n- Downtime giảm 65%\n- Số lần hỏng hóc giảm từ 1.000+/tháng xuống dưới 50/tháng\n- OEE tăng từ 59% lên 83%\n- Tiết kiệm chi phí bảo trì: 30%\n\n💡 Pillar quan trọng nhất để bắt đầu: Autonomous Maintenance.\n\nKhi operator hiểu máy của mình — tiếng kêu bất thường, nhiệt độ, độ rung — họ phát hiện vấn đề TRƯỚC khi hỏng. Đây là sự khác biệt giữa Reactive và Proactive Maintenance.\n\nTổ chức của bạn đang ở đâu trên hành trình TPM? 🛠️",
+    "thumbnail": "/images/posts/tpm-khi-nguoi-van-hanh-may-cung-la-nguoi-bao-tri-may/cover.webp",
+    "images": [
+      "/images/posts/tpm-khi-nguoi-van-hanh-may-cung-la-nguoi-bao-tri-may/cover.webp"
+    ],
+    "toc": [],
+    "category": "TPM & Bảo trì",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-12-15-quan-sat-sau-sac-va-hoc-hoi-lap-di-lap-lai-pdca-de-giai-quy",
+    "slug": "the-toyota-way-12-15-quan-sat-sau-sac-va-hoc-hoi-lap-di-lap-lai-pdca-de-giai-quy",
+    "title": "The Toyota Way (12/15): Quan sát sâu sắc và học hỏi lặp đi lặp lại (PDCA) để giải quyết từng thử thách",
+    "date": "2026-07-16",
+    "excerpt": "Nguyên tắc số 12: Quan sát sâu sắc và học hỏi lặp đi lặp lại (PDCA) để giải quyết từng thử thách.",
+    "content": "Nguyên tắc số 12: Quan sát sâu sắc và học hỏi lặp đi lặp lại (PDCA) để giải quyết từng thử thách.\n\nĐừng cố giải quyết các vấn đề phức tạp bằng cách ngồi trong phòng họp và phán đoán dựa trên định kiến có sẵn.\n\n1. Hỏi \"Tại sao?\" năm lần tại hiện trường (Gemba)\nTại một bệnh viện, hệ thống báo động cấp cứu mất trung bình 150 giây để phản hồi. Đội ngũ chuyên gia định chi 5 triệu USD mua phần mềm mới. Nhưng khi xuống tận nơi quan sát, họ phát hiện gốc rễ là cảm biến quá nhạy gây báo động giả — chỉ vài điều chỉnh quy trình nội bộ đã giảm thời gian phản hồi xuống còn 20 giây.\n\n2. Tư duy nhanh và tư duy chậm\nCon người thường đưa ra phán đoán chớp nhoáng (Tư duy Nhanh). Môi trường kinh doanh hiện đại đòi hỏi Tư duy Chậm: cẩn trọng, phân tích dựa trên dữ liệu thực tế và liên tục thử nghiệm giả thuyết. Toyota rèn luyện tư duy này qua quy trình 8 bước giải quyết vấn đề (Toyota Business Practices).\n\n3. Sức mạnh của Toyota Kata\nMike Rother mô hình hoá cách Toyota rèn luyện tư duy khoa học qua \"Improvement Kata\": thay vì lập kế hoạch cố định từ đầu đến cuối, Toyota dạy nhân viên thiết lập một thử thách lớn, chia nhỏ thành các tình trạng mục tiêu ngắn hạn, rồi liên tục thực hiện các chu trình PDCA nhỏ để thử nghiệm, thất bại, rút kinh nghiệm và tiến dần tới mục tiêu.\n\n## Bài học rút ra\n\nsự vĩ đại không đến từ việc triển khai mù quáng các giải pháp có sẵn, mà từ việc huấn luyện bộ não thực hành tư duy khoa học mỗi ngày — đi đến tận nơi, xác định tình trạng hiện tại, thử nghiệm quy mô nhỏ và học hỏi lặp đi lặp lại.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-12-15-quan-sat-sau-sac-va-hoc-hoi-lap-di-lap-lai-pdca-de-giai-quy/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-12-15-quan-sat-sau-sac-va-hoc-hoi-lap-di-lap-lai-pdca-de-giai-quy/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "7-loai-lang-phi-dang-am-tham-lay-di-loi-nhuan-cua-ban-moi-ngay",
+    "slug": "7-loai-lang-phi-dang-am-tham-lay-di-loi-nhuan-cua-ban-moi-ngay",
+    "title": "7 loại lãng phí đang âm thầm lấy đi lợi nhuận của bạn mỗi ngày",
+    "date": "2026-07-17",
+    "excerpt": "Lean Manufacturing có một câu hỏi gốc rễ: \"Khách hàng của bạn đang trả tiền cho cái gì?\"",
+    "content": "Lean Manufacturing có một câu hỏi gốc rễ: \"Khách hàng của bạn đang trả tiền cho cái gì?\"\n\nCâu trả lời thường gây sốc: Chỉ khoảng 5–15% hoạt động trong quy trình của bạn thực sự tạo ra giá trị mà khách hàng sẵn lòng trả tiền. Phần còn lại? Lãng phí — hay \"Muda\" trong tiếng Nhật.\n\nToyota đã hệ thống hóa 7 loại lãng phí, ghi nhớ dễ qua từ viết tắt **TIMWOOD**:\n\n🔴 **T — Transportation (Vận chuyển không cần thiết)**\nDi chuyển nguyên vật liệu, sản phẩm giữa các điểm mà không tạo ra giá trị.\n*VD: Bán thành phẩm phải đi qua 3 kho trước khi đến công đoạn tiếp theo*\n\n🟠 **I — Inventory (Tồn kho dư thừa)**\nNguyên liệu, WIP, thành phẩm nhiều hơn mức cần thiết tức thời.\n*VD: Mua nguyên liệu cho 3 tháng vì sợ thiếu — tiền đọng trong kho*\n\n🟡 **M — Motion (Chuyển động thừa)**\nChuyển động của con người không tạo ra giá trị.\n*VD: Operator phải đi bộ 50m để lấy dụng cụ 20 lần/ca*\n\n🟢 **W — Waiting (Chờ đợi)**\nThời gian người, máy, nguyên liệu chờ bước tiếp theo.\n*VD: Máy đứng chờ setup; nhân viên chờ phê duyệt*\n\n🔵 **O — Overproduction (Sản xuất thừa)**\nSản xuất nhiều hơn, sớm hơn nhu cầu thực tế — lãng phí nguy hiểm nhất.\n*VD: Chạy máy hết công suất vì \"máy mới\" — kho tràn hàng tồn*\n\n🟣 **O — Overprocessing (Gia công thừa)**\nLàm nhiều hơn yêu cầu của khách hàng.\n*VD: Đánh bóng bề mặt không ai nhìn thấy; báo cáo 10 trang không ai đọc*\n\n⚫ **D — Defects (Lỗi sản phẩm)**\nSản phẩm không đạt tiêu chuẩn, cần rework hoặc phế liệu.\n*VD: Tỷ lệ lỗi 3% = 3% chi phí sản xuất bị ném đi*\n\n📊 Con số đáng suy nghĩ: Theo nghiên cứu của Lean Enterprise Institute, một nhà máy sản xuất trung bình có **65–70% thời gian là lãng phí thuần túy** (non-value-added).\n\nBạn nhận ra loại lãng phí nào phổ biến nhất trong tổ chức mình? Comment nhé! 👇",
+    "thumbnail": "/images/posts/7-loai-lang-phi-dang-am-tham-lay-di-loi-nhuan-cua-ban-moi-ngay/cover.webp",
+    "images": [
+      "/images/posts/7-loai-lang-phi-dang-am-tham-lay-di-loi-nhuan-cua-ban-moi-ngay/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-13-15-tap-trung-nang-luong-cai-tien-cua-nhan-vien-thong-qua-cac-m",
+    "slug": "the-toyota-way-13-15-tap-trung-nang-luong-cai-tien-cua-nhan-vien-thong-qua-cac-m",
+    "title": "The Toyota Way (13/15): Tập trung năng lượng cải tiến của nhân viên thông qua các mục tiêu được liên kết ở...",
+    "date": "2026-07-17",
+    "excerpt": "Nguyên tắc số 13: Tập trung năng lượng cải tiến của nhân viên thông qua các mục tiêu được liên kết ở mọi cấp độ.",
+    "content": "Nguyên tắc số 13: Tập trung năng lượng cải tiến của nhân viên thông qua các mục tiêu được liên kết ở mọi cấp độ.\n\nNăng lượng cải tiến của tổ chức sẽ bị lãng phí nếu các phòng ban chạy theo hàng tá mục tiêu khác nhau một cách rời rạc.\n\n1. Hoshin Kanri — không phải áp đặt từ trên xuống\nỞ các công ty kiểu cũ, lãnh đạo tự ra mục tiêu rồi giao xuống cho cấp dưới thi hành. Hoshin Kanri của Toyota giống một quá trình leo núi: lãnh đạo cấp cao đặt mục tiêu chiến lược, sau đó trực tiếp xuống hỗ trợ nhân viên từng bước dọn dẹp chướng ngại vật — thông qua quá trình \"tung bóng\" (Catchball) xây dựng sự đồng thuận.\n\n2. Liên kết PDCA với SDCA\nNhững trở ngại lớn cản đường chiến lược được giải quyết bằng chu trình PDCA đột phá do cấp quản lý đảm nhiệm. Các việc nhỏ hàng ngày được xử lý bằng SDCA (Standard-Do-Check-Act) do công nhân trực tiếp thực hiện. Nếu thiếu SDCA, những cải tiến lớn sẽ nhanh chóng bị bào mòn.\n\n3. Báo cáo A3 để làm cho tư duy trở nên trực quan\nBáo cáo A3 là công cụ giao tiếp cốt lõi để kể một câu chuyện bằng dữ liệu trên một trang giấy. Nó ép người viết tinh lọc tư duy, tìm hiểu bối cảnh và thu thập ý kiến từ các bên liên quan (Nemawashi) trước khi ra quyết định.\n\n## Bài học rút ra\n\nsức mạnh thực sự bùng nổ khi mọi cá nhân, từ cấp cao nhất đến người công nhân, đều hiểu rõ công việc nhỏ bé hàng ngày của mình đang đóng góp trực tiếp như thế nào vào bức tranh chiến lược của tổ chức.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-13-15-tap-trung-nang-luong-cai-tien-cua-nhan-vien-thong-qua-cac-m/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-13-15-tap-trung-nang-luong-cai-tien-cua-nhan-vien-thong-qua-cac-m/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "jit-san-xuat-dung-thu-dung-so-luong-dung-luc",
+    "slug": "jit-san-xuat-dung-thu-dung-so-luong-dung-luc",
+    "title": "JIT: Sản xuất đúng thứ, đúng số lượng, đúng lúc",
+    "date": "2026-07-18",
+    "excerpt": "Bạn đặt hàng một chiếc pizza. Nếu nhà hàng làm pizza của bạn từ 3 giờ trước lúc bạn gọi điện — đó là Push. Nếu họ chỉ bắt đầu làm khi bạn gọi — đó là Pull và đó là triết lý của JIT.",
+    "content": "Bạn đặt hàng một chiếc pizza. Nếu nhà hàng làm pizza của bạn từ 3 giờ trước lúc bạn gọi điện — đó là Push. Nếu họ chỉ bắt đầu làm khi bạn gọi — đó là Pull và đó là triết lý của JIT.\n\nJust-In-Time (JIT) là một trong những trụ cột cốt lõi của Toyota Production System: sản xuất và cung cấp đúng sản phẩm, đúng số lượng, đúng thời điểm — không sớm hơn, không muộn hơn.\n\n### JIT hoạt động thông qua Pull System\n\nThay vì đẩy sản phẩm từ đầu quy trình xuống cuối (Push), Pull System để nhu cầu từ cuối quy trình kéo ngược lên. Tín hiệu kéo này thường được thực hiện qua Kanban.\n\n### 3 yếu tố nền tảng của JIT\n\n1. **Takt Time** — Nhịp độ sản xuất đồng bộ với nhu cầu khách hàng\n2. **Continuous Flow** — Luồng một sản phẩm (One-Piece Flow) thay vì lô hàng lớn\n3. **Pull System** — Sản xuất theo tín hiệu từ phía sau\n\n🏭 Case study: Dell Computer (những năm 2000) áp dụng JIT triệt để trong chuỗi cung ứng. Máy tính chỉ được lắp ráp SAU khi khách hàng đặt hàng. Kết quả:\n- Tồn kho nguyên liệu: 4 ngày (so với đối thủ: 30–45 ngày)\n- Tiền mặt lưu thông nhanh hơn: cash-to-cash cycle giảm 50%\n- Giảm rủi ro obsolescence linh kiện: tiết kiệm hàng trăm triệu USD mỗi năm\n\n### Nhưng JIT cũng có rủi ro\n\nĐại dịch COVID-19 đã phơi bày điểm yếu của JIT thuần túy — chuỗi cung ứng mỏng manh khi có gián đoạn. Bài học: JIT cần kết hợp với Supply Chain Resilience — không phải từ bỏ JIT, mà là JIT thông minh hơn.\n\nJIT không phải là zero inventory — mà là *right* inventory.\n\nTổ chức bạn đang Push hay Pull? 🤔",
+    "thumbnail": "/images/posts/jit-san-xuat-dung-thu-dung-so-luong-dung-luc/cover.webp",
+    "images": [
+      "/images/posts/jit-san-xuat-dung-thu-dung-so-luong-dung-luc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-14-15-hoc-hoi-con-duong-huong-toi-tuong-lai-thong-qua-chien-luoc",
+    "slug": "the-toyota-way-14-15-hoc-hoi-con-duong-huong-toi-tuong-lai-thong-qua-chien-luoc",
+    "title": "The Toyota Way (14/15): Học hỏi con đường hướng tới tương lai thông qua chiến lược táo bạo, những bước...",
+    "date": "2026-07-18",
+    "excerpt": "Nguyên tắc số 14: Học hỏi con đường hướng tới tương lai thông qua chiến lược táo bạo, những bước nhảy lớn và vô số bước đi nhỏ.",
+    "content": "Nguyên tắc số 14: Học hỏi con đường hướng tới tương lai thông qua chiến lược táo bạo, những bước nhảy lớn và vô số bước đi nhỏ.\n\nChiến lược vĩ đại trên giấy sẽ vô nghĩa nếu thiếu khả năng thực thi xuất sắc tại hiện trường.\n\n1. Tầm nhìn lớn, thực thi tỉ mỉ — sự ra đời của Prius\nNăm 1993, Toyota khởi xướng dự án G21 với tham vọng tạo ra chiếc xe của thế kỷ 21. Dù chịu áp lực rút ngắn tiến độ, kỹ sư trưởng Uchiyamada vẫn kiên định với quy trình \"thiết kế dựa trên tập hợp\" — đánh giá một loạt công nghệ trước khi chốt phương án — và thương mại hoá thành công chiếc xe hybrid Prius.\n\n2. Toyota và Tesla — hai chiến lược khác biệt\nTesla là kẻ thách thức hệ thống mở, dùng mô hình khởi nghiệp với dòng xe thuần điện. Toyota cân bằng danh mục sản phẩm đồ sộ, đầu tư đồng thời vào xe Hybrid, Plug-in Hybrid, xe hydro và xe thuần điện. Không có chiến lược nào đúng tuyệt đối — mỗi tổ chức cần định hình tương lai dựa trên điểm mạnh nội tại của mình.\n\n3. Giữ trọng tâm vào con người trong kỷ nguyên số\nKhi phát triển công nghệ xe tự lái, Toyota vẫn kiên định triết lý \"Guardian first\" — hệ thống tự lái chỉ đóng vai trò giám hộ bảo vệ an toàn, tôn trọng niềm vui cầm lái của con người, đồng thời áp dụng kỷ luật của TPS vào việc phát triển phần mềm.\n\n## Bài học rút ra\n\ncần kết hợp những tầm nhìn chiến lược táo bạo với những cải tiến nhỏ bé lặp đi lặp lại (PDCA) mỗi ngày để tồn tại và phát triển trong một thế giới đầy biến động.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-14-15-hoc-hoi-con-duong-huong-toi-tuong-lai-thong-qua-chien-luoc/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-14-15-hoc-hoi-con-duong-huong-toi-tuong-lai-thong-qua-chien-luoc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "standard-work-tieu-chuan-cong-viec-la-nen-tang-cua-moi-cai-tien",
+    "slug": "standard-work-tieu-chuan-cong-viec-la-nen-tang-cua-moi-cai-tien",
+    "title": "Standard Work: Tiêu chuẩn công việc là nền tảng của mọi cải tiến",
+    "date": "2026-07-19",
+    "excerpt": "\"Không có tiêu chuẩn thì không có Kaizen.\" — Taiichi Ohno",
+    "content": "\"Không có tiêu chuẩn thì không có Kaizen.\" — Taiichi Ohno\n\nCâu nói này nghe đơn giản. Nhưng hàm ý của nó rất sâu: Nếu bạn muốn cải tiến liên tục, bạn phải có một baseline — một cách làm được chuẩn hóa — để biết bạn đang cải tiến gì và đã cải tiến được bao nhiêu.\n\nĐó chính là Standard Work.\n\n📋 Standard Work là gì?\nStandard Work là tài liệu mô tả cách thực hiện một công việc theo phương pháp tốt nhất hiện tại (best known method), bao gồm:\n\n🕐 **Takt Time** — Thời gian theo nhịp nhu cầu khách hàng\n🔄 **Work Sequence** — Thứ tự bước công việc chính xác\n📦 **Standard WIP** — Lượng bán thành phẩm tối thiểu cần thiết trong quy trình\n\n🔑 Điểm quan trọng: Standard Work không phải SOP tĩnh. Nó là \"tiêu chuẩn hiện tại tốt nhất\" — và khi có cải tiến, tiêu chuẩn được cập nhật. Đây là sự khác biệt căn bản giữa Standard Work và ISO procedures truyền thống.\n\n🏭 Case study: Alcoa (nhà sản xuất nhôm hàng đầu thế giới) dưới thời CEO Paul O'Neill (1987–2000) đã xây dựng Standard Work bắt đầu từ an toàn lao động. Mỗi sự cố được chuẩn hóa → báo cáo → cải tiến → cập nhật tiêu chuẩn. Kết quả trong 13 năm:\n- Tỷ lệ tai nạn lao động: giảm 90%+\n- Năng suất tổng thể tăng mạnh\n- Lợi nhuận ròng tăng từ $48.8M (1987) lên $1.5B (2000)\n\n### 3 lợi ích thực tế của Standard Work\n\n1. **Giảm biến động** — Kết quả nhất quán dù operator nào thực hiện\n2. **Nền tảng training** — Nhân viên mới học đúng ngay từ đầu\n3. **Đo lường cải tiến** — So sánh được trước và sau\n\nTổ chức bạn có Standard Work cho các quy trình quan trọng không? Hay vẫn đang phụ thuộc vào \"người biết việc\"? 🤔",
+    "thumbnail": "/images/posts/standard-work-tieu-chuan-cong-viec-la-nen-tang-cua-moi-cai-tien/cover.webp",
+    "images": [
+      "/images/posts/standard-work-tieu-chuan-cong-viec-la-nen-tang-cua-moi-cai-tien/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-toyota-way-15-15-tong-ket-14-nguyen-tac",
+    "slug": "the-toyota-way-15-15-tong-ket-14-nguyen-tac",
+    "title": "The Toyota Way (15/15): Tổng kết 14 nguyên tắc",
+    "date": "2026-07-19",
+    "excerpt": "Qua 14 bài viết, chuỗi bài đã cùng khám phá chiều sâu của Phương thức Toyota. Điều làm nên thành công bền vững của tổ chức này không đơn thuần là các công cụ cắt giảm lãng phí, mà là một hệ thống sống động được xây dựng...",
+    "content": "Qua 14 bài viết, chuỗi bài đã cùng khám phá chiều sâu của Phương thức Toyota. Điều làm nên thành công bền vững của tổ chức này không đơn thuần là các công cụ cắt giảm lãng phí, mà là một hệ thống sống động được xây dựng dựa trên sự thấu hiểu về con người và động lực vươn tới sự hoàn hảo.\n\nTrong phiên bản mới nhất, tác giả Jeffrey Liker cấu trúc lại 14 nguyên lý thành Mô hình 4P (Philosophy, Process, People, Problem Solving), tất cả xoay quanh một lõi trung tâm: Tư duy Khoa học — tiếp cận thách thức dựa trên thực tế, liên tục thử nghiệm và học hỏi lặp đi lặp lại (PDCA), thay vì vội vã áp đặt các giải pháp có sẵn.\n\n1. Philosophy (Triết lý) — Tư duy hệ thống dài hạn\nNguyên lý 1: ra quyết định quản lý dựa trên tư duy hệ thống dài hạn, thậm chí phải hy sinh mục tiêu tài chính ngắn hạn. Tổ chức tồn tại để mang lại giá trị cho xã hội, khách hàng và nhân viên — không chỉ để làm giàu cho cổ đông.\n\n2. Process (Quy trình) — Tạo dòng chảy giá trị cho khách hàng\nNguyên lý 2-8: dòng chảy liên tục, hệ thống Kéo, cân bằng khối lượng công việc (Heijunka), chuẩn hoá, Jidoka, quản lý trực quan, và công nghệ phục vụ con người.\n\n3. People (Con người) — Tôn trọng, thử thách và phát triển nhân sự và đối tác\nNguyên lý 9-11: phát triển lãnh đạo thấu hiểu công việc tận gốc rễ, xây dựng cá nhân và đội nhóm xuất sắc theo triết lý công ty, tôn trọng đối tác trong chuỗi giá trị bằng cách thách thức và giúp họ cải tiến.\n\n4. Problem Solving (Giải quyết vấn đề) — Tư duy và hành động khoa học hướng tới tương lai\nNguyên lý 12-14: quan sát sâu sắc và học hỏi lặp đi lặp lại (PDCA), tập trung năng lượng cải tiến qua các mục tiêu liên kết mọi cấp độ (Hoshin Kanri), và học hỏi hướng tới tương lai qua chiến lược táo bạo cùng vô số bước đi nhỏ.\n\nBài học chốt lại: Mô hình 4P và 14 Nguyên lý của Phương thức Toyota không phải một bản thiết kế cứng nhắc để sao chép rập khuôn. Đó là nguồn cảm hứng giúp tổ chức rèn luyện tư duy khoa học mỗi ngày, xây dựng một văn hoá chú trọng vào con người để linh hoạt thích ứng với mọi biến động. Khi xây dựng được một \"tổ chức học tập\" thực thụ, kết quả tài chính và kinh doanh vượt trội sẽ tự động nối bước.\n\n> — Trích từ chuỗi bài chia sẻ \"The Toyota Way\" (Jeffrey Liker), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-toyota-way-15-15-tong-ket-14-nguyen-tac/cover.webp",
+    "images": [
+      "/images/posts/the-toyota-way-15-15-tong-ket-14-nguyen-tac/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "hoshin-kanri-khi-muc-tieu-khong-con-la-khau-hieu-tren-tuong",
+    "slug": "hoshin-kanri-khi-muc-tieu-khong-con-la-khau-hieu-tren-tuong",
+    "title": "Hoshin Kanri: Khi mục tiêu không còn là khẩu hiệu trên tường",
+    "date": "2026-07-20",
+    "excerpt": "Bạn đã bao giờ thấy bảng mục tiêu chiến lược treo trang trọng trong phòng họp, nhưng nhân viên tuyến đầu không biết mình đang làm việc để hướng đến điều gì?",
+    "content": "Bạn đã bao giờ thấy bảng mục tiêu chiến lược treo trang trọng trong phòng họp, nhưng nhân viên tuyến đầu không biết mình đang làm việc để hướng đến điều gì?\n\nĐó là dấu hiệu của một tổ chức thiếu Hoshin Kanri.\n\nHoshin Kanri (方針管理) là phương pháp hoạch định chiến lược xuất phát từ Nhật Bản, giúp toàn bộ tổ chức – từ CEO đến công nhân sản xuất – đều hiểu và hành động vì cùng một mục tiêu ưu tiên.\n\n### 3 nguyên lý cốt lõi\n\n1️⃣ Catchball: Mục tiêu được 'ném đi – bắt lại' giữa các cấp để đảm bảo sự đồng thuận\n2️⃣ X-Matrix: Công cụ trực quan kết nối chiến lược ↔ chiến thuật ↔ KPI ↔ trách nhiệm\n3️⃣ Bowler Chart: Theo dõi tiến độ hàng tháng so với mục tiêu năm\n\n### Khác biệt then chốt với MBO (Management by Objectives)\n\nHoshin Kanri tập trung vào 3–5 ưu tiên đột phá, không dàn trải sang hàng chục chỉ tiêu.\n\nTổ chức bạn đang áp dụng phương pháp gì để gắn kết chiến lược với hành động? Chia sẻ bên dưới nhé! 👇",
+    "thumbnail": "/images/posts/hoshin-kanri-khi-muc-tieu-khong-con-la-khau-hieu-tren-tuong/cover.webp",
+    "images": [
+      "/images/posts/hoshin-kanri-khi-muc-tieu-khong-con-la-khau-hieu-tren-tuong/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "pdca-vong-tron-cai-tien-don-gian-nhat-nhung-manh-me-nhat",
+    "slug": "pdca-vong-tron-cai-tien-don-gian-nhat-nhung-manh-me-nhat",
+    "title": "PDCA: Vòng tròn cải tiến đơn giản nhất nhưng mạnh mẽ nhất",
+    "date": "2026-07-21",
+    "excerpt": "Bạn đã bao giờ giải quyết một vấn đề, tưởng như xong, rồi vài tháng sau nó lại xuất hiện?",
+    "content": "Bạn đã bao giờ giải quyết một vấn đề, tưởng như xong, rồi vài tháng sau nó lại xuất hiện?\n\nĐó là vì thiếu vòng Check và Act trong PDCA.\n\nPDCA (Plan – Do – Check – Act) là triết lý cải tiến liên tục do W. Edwards Deming phổ biến, là nền tảng của mọi hệ thống quản lý chất lượng hiện đại.\n\n### 4 bước thực hành\n\n1️⃣ PLAN: Xác định vấn đề, phân tích nguyên nhân gốc rễ, đặt mục tiêu, lên kế hoạch hành động\n2️⃣ DO: Triển khai thí điểm ở quy mô nhỏ\n3️⃣ CHECK: Đo lường kết quả, so sánh với mục tiêu đề ra\n4️⃣ ACT: Chuẩn hoá nếu thành công, hoặc quay lại Plan nếu chưa đạt\n\n### Sai lầm phổ biến nhất\n\nNhiều tổ chức làm tốt P và D, nhưng bỏ qua C và A — dẫn đến cải tiến không bền vững.\n\nTổ chức bạn đang sử dụng PDCA như thế nào? Chia sẻ kinh nghiệm nhé! 👇",
+    "thumbnail": "/images/posts/pdca-vong-tron-cai-tien-don-gian-nhat-nhung-manh-me-nhat/cover.webp",
+    "images": [
+      "/images/posts/pdca-vong-tron-cai-tien-don-gian-nhat-nhung-manh-me-nhat/cover.webp"
+    ],
+    "toc": [],
+    "category": "Giải quyết vấn đề",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "phan-tich-pareto-80-van-de-den-tu-20-nguyen-nhan",
+    "slug": "phan-tich-pareto-80-van-de-den-tu-20-nguyen-nhan",
+    "title": "Phân tích Pareto: 80% vấn đề đến từ 20% nguyên nhân",
+    "date": "2026-07-22",
+    "excerpt": "Khi có quá nhiều vấn đề cần giải quyết, bạn bắt đầu từ đâu?",
+    "content": "Khi có quá nhiều vấn đề cần giải quyết, bạn bắt đầu từ đâu?\n\nNguyên tắc Pareto (hay Quy tắc 80/20) được nhà kinh tế người Ý Vilfredo Pareto đặt nền tảng, sau đó Joseph Juran ứng dụng vào quản lý chất lượng: 80% hậu quả thường xuất phát từ 20% nguyên nhân.\n\n### Cách tạo Biểu đồ Pareto\n\n1️⃣ Thu thập dữ liệu về tần suất/chi phí của từng loại lỗi/vấn đề\n2️⃣ Sắp xếp từ cao xuống thấp\n3️⃣ Tính % tích lũy\n4️⃣ Vẽ biểu đồ cột + đường % tích lũy\n5️⃣ Xác định 'vital few' (vài nguyên nhân quan trọng) so với 'trivial many' (nhiều nguyên nhân nhỏ)\n\n### Ứng dụng thực tế\n\n- Phân tích lỗi sản xuất\n- Ưu tiên khiếu nại khách hàng\n- Tối ưu danh mục sản phẩm\n- Phân bổ nguồn lực R&D\n\nTập trung vào 20% đúng chỗ có thể tạo ra 80% kết quả cải tiến. Bạn đã từng áp dụng Pareto vào lĩnh vực nào?",
+    "thumbnail": "/images/posts/phan-tich-pareto-80-van-de-den-tu-20-nguyen-nhan/cover.webp",
+    "images": [
+      "/images/posts/phan-tich-pareto-80-van-de-den-tu-20-nguyen-nhan/cover.webp"
+    ],
+    "toc": [],
+    "category": "Công cụ chất lượng",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "takt-time-nhip-dap-cua-day-chuyen-san-xuat",
+    "slug": "takt-time-nhip-dap-cua-day-chuyen-san-xuat",
+    "title": "Takt Time: Nhịp đập của dây chuyền sản xuất",
+    "date": "2026-07-23",
+    "excerpt": "Takt Time là gì và tại sao nó quan trọng hơn cả năng suất tổng thể?",
+    "content": "Takt Time là gì và tại sao nó quan trọng hơn cả năng suất tổng thể?\n\nTakt Time (từ tiếng Đức 'Takt' nghĩa là nhịp) là tốc độ sản xuất cần thiết để đáp ứng đúng nhu cầu khách hàng — không nhanh hơn, không chậm hơn.\n\n### Công thức\n\nTakt Time = Thời gian sản xuất khả dụng / Nhu cầu khách hàng\n\nVí dụ: Một ca 480 phút, khách hàng cần 120 sản phẩm\n- Takt Time = 480 / 120 = 4 phút/sản phẩm\n\n🔍 Tại sao Takt Time quan trọng?\n- Sản xuất nhanh hơn Takt Time = tồn kho dư thừa, lãng phí\n- Sản xuất chậm hơn Takt Time = trễ hàng, khách hàng không hài lòng\n- Đúng Takt Time = dòng chảy mượt mà, không lãng phí\n\n💡 Takt Time là la bàn giúp đội sản xuất luôn đồng bộ với nhịp thị trường.\n\nDây chuyền của bạn đang chạy đúng Takt Time chưa? 👇",
+    "thumbnail": "/images/posts/takt-time-nhip-dap-cua-day-chuyen-san-xuat/cover.webp",
+    "images": [
+      "/images/posts/takt-time-nhip-dap-cua-day-chuyen-san-xuat/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "gemba-walk-lanh-dao-hoc-tu-noi-cong-viec-thuc-su-xay-ra",
+    "slug": "gemba-walk-lanh-dao-hoc-tu-noi-cong-viec-thuc-su-xay-ra",
+    "title": "Gemba Walk: Lãnh đạo học từ nơi công việc thực sự xảy ra",
+    "date": "2026-07-24",
+    "excerpt": "'Gemba' (現場) trong tiếng Nhật có nghĩa là 'nơi thực sự' — nơi giá trị thực sự được tạo ra.",
+    "content": "'Gemba' (現場) trong tiếng Nhật có nghĩa là 'nơi thực sự' — nơi giá trị thực sự được tạo ra.\n\nGemba Walk là thực hành quản lý Lean: lãnh đạo đến trực tiếp nơi làm việc để quan sát, học hỏi và hỗ trợ — không phải để kiểm tra hay phán xét.\n\n### Nguyên tắc Gemba Walk hiệu quả\n\n👁️ GO: Đến tận nơi, không ngồi nhìn qua màn hình hay báo cáo\n👀 SEE: Quan sát thực tế quy trình đang diễn ra\n🤝 RESPECT: Tôn trọng người làm việc — họ là chuyên gia của quy trình\n\n### Gemba Walk KHÔNG phải\n\n❌ Kiểm tra lỗi nhân viên\n❌ Cuộc họp đứng\n❌ Cơ hội để ra lệnh giải pháp ngay tại chỗ\n\n- Gemba Walk LÀ:\n- Cơ hội học hỏi cho lãnh đạo\n- Bằng chứng thực tế (Genchi Genbutsu) thay vì dữ liệu trừu tượng\n- Xây dựng văn hoá cải tiến từ tuyến đầu\n\nBạn có đang dành thời gian đến Gemba không? 👇",
+    "thumbnail": "/images/posts/gemba-walk-lanh-dao-hoc-tu-noi-cong-viec-thuc-su-xay-ra/cover.webp",
+    "images": [
+      "/images/posts/gemba-walk-lanh-dao-hoc-tu-noi-cong-viec-thuc-su-xay-ra/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "heijunka-nghe-thuat-san-bang-san-xuat-de-loai-bo-bien-dong",
+    "slug": "heijunka-nghe-thuat-san-bang-san-xuat-de-loai-bo-bien-dong",
+    "title": "Heijunka: Nghệ thuật san bằng sản xuất để loại bỏ biến động",
+    "date": "2026-07-25",
+    "excerpt": "Tại sao một số nhà máy luôn chạy nước rút cuối tháng, trong khi những nơi khác vận hành đều đặn suốt 30 ngày?",
+    "content": "Tại sao một số nhà máy luôn chạy nước rút cuối tháng, trong khi những nơi khác vận hành đều đặn suốt 30 ngày?\n\nCâu trả lời: Heijunka.\n\nHeijunka (平準化) là kỹ thuật san bằng sản xuất của Toyota, giúp phân phối đều đặn khối lượng và chủng loại sản phẩm theo thời gian, thay vì sản xuất theo lô lớn.\n\n### Hai loại san bằng\n\n1️⃣ San bằng theo khối lượng: Chia đều tổng nhu cầu tháng thành mục tiêu ngày/giờ nhất quán\n2️⃣ San bằng theo chủng loại: Xen kẽ nhiều mẫu sản phẩm trong một chu kỳ ngắn (EPEI - Every Part Every Interval)\n\n### Lợi ích\n\n- Giảm tồn kho thành phẩm\n- Ổn định tải nhà cung cấp\n- Phát hiện vấn đề sớm hơn\n- Giảm áp lực cuối kỳ cho nhân viên\n\nNhà máy bạn đang sản xuất theo lô lớn hay đã áp dụng Heijunka? 👇",
+    "thumbnail": "/images/posts/heijunka-nghe-thuat-san-bang-san-xuat-de-loai-bo-bien-dong/cover.webp",
+    "images": [
+      "/images/posts/heijunka-nghe-thuat-san-bang-san-xuat-de-loai-bo-bien-dong/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lean & Chuỗi giá trị",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "andon-visual-management-khi-moi-nguoi-deu-thay-tinh-trang-thuc-te",
+    "slug": "andon-visual-management-khi-moi-nguoi-deu-thay-tinh-trang-thuc-te",
+    "title": "Andon & Visual Management: Khi mọi người đều thấy tình trạng thực tế",
+    "date": "2026-07-26",
+    "excerpt": "Bạn có biết: tại Toyota, bất kỳ công nhân nào cũng có quyền dừng cả dây chuyền sản xuất?",
+    "content": "Bạn có biết: tại Toyota, bất kỳ công nhân nào cũng có quyền dừng cả dây chuyền sản xuất?\n\nĐó là triết lý đằng sau Andon.\n\nAndon (行灯) ban đầu là hệ thống đèn cảnh báo trên dây chuyền Toyota. Ngày nay nó đại diện cho toàn bộ hệ thống Visual Management: làm cho trạng thái thực tế của quy trình trở nên rõ ràng với mọi người liên quan, ngay lập tức.\n\n### Các công cụ Visual Management phổ biến\n\n- Andon board: Hiển thị trạng thái từng trạm (xanh/vàng/đỏ)\n- Obeya Room: Phòng quản lý trực quan tích hợp\n- Heijunka Box: Lịch sản xuất trực quan\n- Shadow boards: Vị trí cố định cho từng công cụ (5S)\n- KPI dashboards: Chỉ số hiệu quả theo thời gian thực\n\n💡 Nguyên tắc vàng: Nếu cần giải thích, thiết kế chưa đủ trực quan.\n\nNhà máy/văn phòng bạn đang áp dụng Visual Management ở mức độ nào? 👇",
+    "thumbnail": "/images/posts/andon-visual-management-khi-moi-nguoi-deu-thay-tinh-trang-thuc-te/cover.webp",
+    "images": [
+      "/images/posts/andon-visual-management-khi-moi-nguoi-deu-thay-tinh-trang-thuc-te/cover.webp"
+    ],
+    "toc": [],
+    "category": "5S & Quản lý trực quan",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "dfss-thiet-ke-san-pham-dung-ngay-tu-dau",
+    "slug": "dfss-thiet-ke-san-pham-dung-ngay-tu-dau",
+    "title": "DFSS: Thiết kế sản phẩm đúng ngay từ đầu",
+    "date": "2026-07-27",
+    "excerpt": "Bạn có biết: 80% chi phí chất lượng của một sản phẩm được quyết định ngay trong giai đoạn thiết kế?",
+    "content": "Bạn có biết: 80% chi phí chất lượng của một sản phẩm được quyết định ngay trong giai đoạn thiết kế?\n\nĐó là lý do DFSS ra đời.\n\nDFSS (Design for Six Sigma) là phương pháp luận thiết kế sản phẩm/dịch vụ mới với mục tiêu đạt chất lượng Six Sigma ngay từ lần đầu — thay vì cải tiến sau khi đã sản xuất đại trà.\n\n📋 Phương pháp luận phổ biến nhất: DMADV\n- Define: Xác định mục tiêu và yêu cầu khách hàng (CTQ)\n- Measure: Đo lường và phân tích nhu cầu khách hàng\n- Analyze: Phân tích các phương án thiết kế\n- Design: Thiết kế chi tiết sản phẩm/quy trình\n- Verify: Kiểm nghiệm và xác nhận thiết kế\n\n💡 Khi nào dùng DFSS thay vì DMAIC?\n- Khi phát triển sản phẩm/dịch vụ hoàn toàn mới\n- Khi quy trình hiện tại không thể cải tiến đủ để đáp ứng yêu cầu\n- Khi thiết kế lại từ đầu hiệu quả hơn cải tiến từng bước\n\nTổ chức bạn đã áp dụng DFSS trong giai đoạn nào? 👇",
+    "thumbnail": "/images/posts/dfss-thiet-ke-san-pham-dung-ngay-tu-dau/cover.webp",
+    "images": [
+      "/images/posts/dfss-thiet-ke-san-pham-dung-ngay-tu-dau/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "mo-hinh-kano-khong-phai-tinh-nang-nao-cung-tao-ra-su-hai-long-nhu-nhau",
+    "slug": "mo-hinh-kano-khong-phai-tinh-nang-nao-cung-tao-ra-su-hai-long-nhu-nhau",
+    "title": "Mô hình Kano: Không phải tính năng nào cũng tạo ra sự hài lòng như nhau",
+    "date": "2026-07-28",
+    "excerpt": "Tại sao một số tính năng sản phẩm khiến khách hàng vui mừng, trong khi những tính năng khác — dù tốt đến đâu — cũng không tạo ra sự khác biệt?",
+    "content": "Tại sao một số tính năng sản phẩm khiến khách hàng vui mừng, trong khi những tính năng khác — dù tốt đến đâu — cũng không tạo ra sự khác biệt?\n\nCâu trả lời nằm trong Mô hình Kano.\n\nGiáo sư Noriaki Kano (1984) phân loại tính năng sản phẩm thành 5 nhóm theo tác động đến sự hài lòng:\n\n### 5 nhóm tính năng Kano\n\n1️⃣ Must-be (Phải có): Không có = bất mãn; có = bình thường (ví dụ: phanh xe)\n2️⃣ Performance (Một chiều): Càng tốt → sự hài lòng càng tăng tuyến tính\n3️⃣ Attractive/Delighters (Hấp dẫn): Bất ngờ dễ chịu; không có cũng không sao\n4️⃣ Indifferent (Thờ ơ): Không ảnh hưởng sự hài lòng dù có hay không\n5️⃣ Reverse (Ngược chiều): Một số khách hàng thích, một số lại không\n\n### Bẫy phổ biến\n\nĐầu tư cải thiện Must-be không tạo ra lợi thế cạnh tranh.\nĐầu tư vào Delighters đúng chỗ tạo ra sự trung thành mạnh mẽ.\n\nSản phẩm của bạn đang tập trung vào nhóm tính năng nào? 👇",
+    "thumbnail": "/images/posts/mo-hinh-kano-khong-phai-tinh-nang-nao-cung-tao-ra-su-hai-long-nhu-nhau/cover.webp",
+    "images": [
+      "/images/posts/mo-hinh-kano-khong-phai-tinh-nang-nao-cung-tao-ra-su-hai-long-nhu-nhau/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "5-why-cong-cu-don-gian-nhat-de-tim-nguyen-nhan-goc-re",
+    "slug": "5-why-cong-cu-don-gian-nhat-de-tim-nguyen-nhan-goc-re",
+    "title": "5 Why: Công cụ đơn giản nhất để tìm nguyên nhân gốc rễ",
+    "date": "2026-07-29",
+    "excerpt": "Bạn đã bao giờ sửa một vấn đề, chỉ để thấy nó quay trở lại vài tuần sau?",
+    "content": "Bạn đã bao giờ sửa một vấn đề, chỉ để thấy nó quay trở lại vài tuần sau?\n\nĐó là vì bạn đang giải quyết triệu chứng, không phải nguyên nhân gốc rễ.\n\n5 Why là kỹ thuật phân tích nguyên nhân do Sakichi Toyoda phát triển, hỏi 'Tại sao?' liên tiếp cho đến khi tìm ra nguyên nhân thực sự.\n\n### Ví dụ thực tế\n\n🔴 Vấn đề: Máy sản xuất bị dừng đột ngột\n❓ Tại sao? → Cầu chì bị đứt\n❓ Tại sao? → Tải điện vượt định mức\n❓ Tại sao? → Ổ bi bị mòn, ma sát tăng\n❓ Tại sao? → Không có lịch bôi trơn định kỳ\n❓ Tại sao? → Không có quy trình bảo trì phòng ngừa\n\n- Giải pháp thực sự: Xây dựng quy trình bảo trì phòng ngừa\n❌ Giải pháp sai: Thay cầu chì mới\n\n💡 Lưu ý: Không phải lúc nào cũng cần đúng 5 lần. Quan trọng là tìm đến nguyên nhân hệ thống.\n\nBạn đã từng áp dụng 5 Why và tìm ra điều gì bất ngờ? 👇",
+    "thumbnail": "/images/posts/5-why-cong-cu-don-gian-nhat-de-tim-nguyen-nhan-goc-re/cover.webp",
+    "images": [
+      "/images/posts/5-why-cong-cu-don-gian-nhat-de-tim-nguyen-nhan-goc-re/cover.webp"
+    ],
+    "toc": [],
+    "category": "Giải quyết vấn đề",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "van-hoa-lean-vi-sao-cong-cu-thoi-la-chua-du-de-thay-doi-ben-vung",
+    "slug": "van-hoa-lean-vi-sao-cong-cu-thoi-la-chua-du-de-thay-doi-ben-vung",
+    "title": "Văn hoá Lean: Vì sao công cụ thôi là chưa đủ để thay đổi bền vững?",
+    "date": "2026-07-30",
+    "excerpt": "Nhiều tổ chức triển khai 5S, Kanban, DMAIC đầy đủ — nhưng 3 năm sau, mọi thứ quay về điểm xuất phát.",
+    "content": "Nhiều tổ chức triển khai 5S, Kanban, DMAIC đầy đủ — nhưng 3 năm sau, mọi thứ quay về điểm xuất phát.\n\nLý do: họ thay đổi công cụ nhưng không thay đổi văn hoá.\n\nVăn hoá Lean không phải là kết quả của việc áp dụng công cụ — nó là nền tảng quyết định công cụ nào tồn tại được.\n\n### 4 trụ cột của Văn hoá Lean\n\n1️⃣ Tư duy dài hạn: Quyết định đặt mục tiêu dài hạn lên trên lợi nhuận ngắn hạn\n2️⃣ Tôn trọng con người: Coi nhân viên là tài sản, không phải chi phí\n3️⃣ Học tập liên tục: Thất bại là cơ hội học hỏi, không phải để trừng phạt\n4️⃣ Cải tiến liên tục (Kaizen): Mọi người đều có trách nhiệm cải tiến mỗi ngày\n\n### Câu hỏi chẩn đoán\n\nKhi có lỗi xảy ra ở tổ chức bạn — phản ứng đầu tiên là tìm người đổ lỗi, hay tìm nguyên nhân hệ thống?\n\nCâu trả lời đó nói lên rất nhiều về văn hoá của tổ chức bạn. 👇",
+    "thumbnail": "/images/posts/van-hoa-lean-vi-sao-cong-cu-thoi-la-chua-du-de-thay-doi-ben-vung/cover.webp",
+    "images": [
+      "/images/posts/van-hoa-lean-vi-sao-cong-cu-thoi-la-chua-du-de-thay-doi-ben-vung/cover.webp"
+    ],
+    "toc": [],
+    "category": "Lãnh đạo & Con người",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "the-goal-1-7-muc-tieu-thuc-su-cua-mot-doanh-nghiep-la-gi",
+    "slug": "the-goal-1-7-muc-tieu-thuc-su-cua-mot-doanh-nghiep-la-gi",
+    "title": "The Goal (1/7): Mục tiêu thực sự của một doanh nghiệp là gì?",
+    "date": "2026-08-10",
+    "excerpt": "Mục tiêu thực sự của một doanh nghiệp là gì?",
+    "content": "Mục tiêu thực sự của một doanh nghiệp là gì?\n\nTrong tiểu thuyết quản trị kinh điển \"The Goal\", giám đốc nhà máy Alex Rogo đứng trước nguy cơ đóng cửa sau 3 tháng. Người thầy Jonah đặt cho anh một câu hỏi tưởng đơn giản nhưng làm lung lay mọi giả định: \"Mục tiêu thực sự của nhà máy anh là gì?\"\n\nKhông phải năng suất. Không phải công nghệ hiện đại. Không phải tỷ lệ sử dụng máy móc cao. Tất cả chỉ là phương tiện. Mục tiêu cuối cùng của doanh nghiệp là kiếm ra tiền — hôm nay và cả trong tương lai.\n\nVấn đề là: hầu hết nhà máy đo lường sai. Họ tối ưu từng chỉ số cục bộ (hiệu suất máy, sản lượng từng công đoạn) mà quên mất bức tranh tổng thể. Goldratt đề xuất 3 thước đo vận hành đơn giản mà bất kỳ quyết định nào cũng nên soi vào:\n\n1. Throughput (Thông lượng) — tốc độ hệ thống tạo ra tiền thông qua bán hàng (không phải sản xuất để tồn kho).\n\n2. Inventory (Tồn kho) — toàn bộ tiền đang bị \"giam\" trong những thứ ta định bán.\n\n3. Operational Expense (Chi phí vận hành) — tiền ta chi để biến tồn kho thành thông lượng.\n\nMột quyết định tốt phải đồng thời: tăng Throughput, giảm Inventory, giảm Operational Expense. Nếu một cải tiến làm tăng hiệu suất một máy nhưng chỉ tạo thêm tồn kho chờ, nó không đưa ta đến gần mục tiêu hơn — nó chỉ tạo ảo giác về sự bận rộn.\n\nBài học: Trước khi tối ưu bất cứ điều gì, hãy hỏi: điều này có thực sự giúp doanh nghiệp kiếm được nhiều tiền hơn không?\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-1-7-muc-tieu-thuc-su-cua-mot-doanh-nghiep-la-gi/cover.webp",
+    "images": [
+      "/images/posts/the-goal-1-7-muc-tieu-thuc-su-cua-mot-doanh-nghiep-la-gi/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-2-7-herbie-va-bai-hoc-ve-diem-nghen",
+    "slug": "the-goal-2-7-herbie-va-bai-hoc-ve-diem-nghen",
+    "title": "The Goal (2/7): Herbie và bài học về điểm nghẽn",
+    "date": "2026-08-11",
+    "excerpt": "Herbie và bài học về điểm nghẽn",
+    "content": "Herbie và bài học về điểm nghẽn\n\nTrong \"The Goal\", Alex Rogo dẫn đoàn hướng đạo sinh đi bộ đường dài. Anh nhận ra một điều kỳ lạ: dù cố gắng thế nào, cả đoàn cũng không thể đi nhanh hơn cậu bé chậm nhất — Herbie. Mỗi khi Herbie tụt lại, cả hàng giãn ra và tốc độ chung của đoàn luôn bị ghìm bởi đúng một người.\n\nNhà máy cũng vậy. Trong mọi hệ thống sản xuất luôn tồn tại ít nhất một điểm nghẽn (bottleneck / constraint) — nguồn lực có năng lực bằng hoặc thấp hơn nhu cầu đặt lên nó. Và đây là chân lý cốt lõi của Lý thuyết điểm hạn chế:\n\nNăng lực của cả nhà máy chính bằng năng lực của điểm nghẽn — không hơn.\n\nĐiều này dẫn tới hai hệ quả mà nhiều nhà quản lý bỏ qua:\n\n1. Một giờ mất ở điểm nghẽn là một giờ mất của cả hệ thống. Không thể lấy lại được, vì không có nguồn lực nào bù đắp cho phần năng lực đã mất tại đây.\n\n2. Một giờ tiết kiệm ở điểm KHÔNG nghẽn chỉ là ảo giác. Nó không làm tăng thông lượng, mà thường chỉ tạo thêm tồn kho chờ trước điểm nghẽn.\n\nVì vậy, thay vì dàn trải nỗ lực cải tiến khắp nhà máy, người quản lý giỏi tập trung vào đúng \"Herbie\" của mình. Tìm ra điểm nghẽn, dồn nguồn lực bảo vệ và khai thác nó tối đa — đó là đòn bẩy lớn nhất cho toàn hệ thống.\n\nCâu hỏi cho nhà máy của bạn: Bạn đã biết chính xác \"Herbie\" của mình nằm ở công đoạn nào chưa?\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-2-7-herbie-va-bai-hoc-ve-diem-nghen/cover.webp",
+    "images": [
+      "/images/posts/the-goal-2-7-herbie-va-bai-hoc-ve-diem-nghen/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-3-7-vi-sao-mot-day-chuyen-can-bang-hoan-hao-van-tre-hang",
+    "slug": "the-goal-3-7-vi-sao-mot-day-chuyen-can-bang-hoan-hao-van-tre-hang",
+    "title": "The Goal (3/7): Vì sao một dây chuyền \"cân bằng hoàn hảo\" vẫn trễ hàng?",
+    "date": "2026-08-12",
+    "excerpt": "Vì sao một dây chuyền \"cân bằng hoàn hảo\" vẫn trễ hàng?",
+    "content": "Vì sao một dây chuyền \"cân bằng hoàn hảo\" vẫn trễ hàng?\n\nNhiều nhà máy tin rằng nếu cân bằng năng lực mọi công đoạn cho khớp với nhu cầu thị trường, hệ thống sẽ chạy trơn tru. \"The Goal\" chỉ ra đây là một trong những ngộ nhận tốn kém nhất của quản trị sản xuất.\n\nGoldratt dùng hai hiện tượng luôn tồn tại song song để giải thích:\n\n1. Sự kiện phụ thuộc (Dependent Events): công đoạn sau không thể bắt đầu trước khi công đoạn trước hoàn thành. Chúng nối tiếp nhau như một chuỗi mắt xích.\n\n2. Biến động thống kê (Statistical Fluctuations): không công đoạn nào cho ra kết quả giống hệt nhau mỗi lần — luôn có dao động nhanh chậm ngẫu nhiên.\n\nKhi hai yếu tố này kết hợp, điều nghịch lý xảy ra: độ trễ thì tích lũy, còn phần chạy nhanh lại không bù được cho nhau. Trong trò chơi tung xúc xắc chuyển hạt (matchstick game) mà Alex chơi cùng đoàn, dù mỗi khâu có năng lực trung bình như nhau, hàng vẫn dồn ứ ở khâu sau và cả chuỗi tụt lại so với kỳ vọng.\n\nLý do: khi một khâu chạy chậm, khâu sau buộc phải chờ (mất mát được truyền đi). Nhưng khi một khâu chạy nhanh, nó không thể \"trả lại\" thời gian cho khâu trước đã chậm. Sai lệch chỉ dồn về một hướng.\n\nHệ quả thực tiễn: Đừng theo đuổi một dây chuyền cân bằng tuyệt đối. Thay vào đó, hãy quản lý dao động quanh điểm nghẽn bằng vùng đệm hợp lý — đây chính là nền tảng cho cơ chế Drum-Buffer-Rope ở bài sau.\n\nBài học: Trong thế giới thực có biến động, \"cân bằng năng lực\" không đảm bảo \"cân bằng dòng chảy\".\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-3-7-vi-sao-mot-day-chuyen-can-bang-hoan-hao-van-tre-hang/cover.webp",
+    "images": [
+      "/images/posts/the-goal-3-7-vi-sao-mot-day-chuyen-can-bang-hoan-hao-van-tre-hang/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-4-7-5-buoc-tap-trung-quy-trinh-cai-tien-cua-ly-thuyet-diem-han-che",
+    "slug": "the-goal-4-7-5-buoc-tap-trung-quy-trinh-cai-tien-cua-ly-thuyet-diem-han-che",
+    "title": "The Goal (4/7): 5 bước tập trung — quy trình cải tiến của Lý thuyết điểm hạn chế",
+    "date": "2026-08-13",
+    "excerpt": "5 bước tập trung — quy trình cải tiến của Lý thuyết điểm hạn chế",
+    "content": "5 bước tập trung — quy trình cải tiến của Lý thuyết điểm hạn chế\n\nKhi đã hiểu rằng điểm nghẽn quyết định năng lực cả hệ thống, câu hỏi tiếp theo là: làm gì với nó? Goldratt đúc kết thành 5 bước tập trung (Five Focusing Steps) — một chu trình lặp lại, đơn giản mà mạnh mẽ:\n\n1. Xác định (Identify) — Tìm ra điểm nghẽn thực sự của hệ thống. Nó thường lộ diện ở nơi tồn kho bán thành phẩm dồn ứ nhiều nhất, hoặc nơi đơn hàng luôn phải chờ.\n\n2. Khai thác (Exploit) — Vắt kiệt năng lực điểm nghẽn hiện có mà chưa cần đầu tư thêm. Đảm bảo nó không bao giờ dừng vì thiếu nguyên liệu, không gia công hàng lỗi, không nghỉ giữa ca. Mỗi phút của nó đều quý.\n\n3. Điều phối phục vụ (Subordinate) — Bắt mọi nguồn lực khác chạy theo nhịp của điểm nghẽn, không nhanh hơn. Đây là bước phản trực giác nhất: chấp nhận để một số máy \"nhàn\" thay vì chạy hết công suất tạo tồn kho thừa.\n\n4. Nâng năng lực (Elevate) — Nếu sau 3 bước trên vẫn chưa đủ, lúc này mới đầu tư: thêm ca, thêm máy, thuê ngoài, cải tiến công nghệ để nâng trần năng lực điểm nghẽn.\n\n5. Lặp lại (Repeat) — Khi điểm nghẽn cũ được giải phóng, một điểm nghẽn mới sẽ xuất hiện ở nơi khác. Quay lại bước 1. Và quan trọng: đừng để quán tính trở thành điểm nghẽn — nhiều quy định cũ vẫn được giữ lại dù nguyên nhân đã biến mất.\n\nBài học: Cải tiến không phải là làm mọi thứ tốt hơn cùng lúc, mà là làm đúng thứ quan trọng nhất — theo đúng thứ tự.\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-4-7-5-buoc-tap-trung-quy-trinh-cai-tien-cua-ly-thuyet-diem-han-che/cover.webp",
+    "images": [
+      "/images/posts/the-goal-4-7-5-buoc-tap-trung-quy-trinh-cai-tien-cua-ly-thuyet-diem-han-che/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-5-7-drum-buffer-rope-de-ca-nha-may-chay-theo-mot-nhip",
+    "slug": "the-goal-5-7-drum-buffer-rope-de-ca-nha-may-chay-theo-mot-nhip",
+    "title": "The Goal (5/7): Drum-Buffer-Rope: để cả nhà máy chạy theo một nhịp",
+    "date": "2026-08-14",
+    "excerpt": "Drum-Buffer-Rope: để cả nhà máy chạy theo một nhịp",
+    "content": "Drum-Buffer-Rope: để cả nhà máy chạy theo một nhịp\n\nTrở lại chuyến đi bộ của đoàn hướng đạo. Để cả đoàn không bị giãn ra vô tận, Alex làm hai việc: cho Herbie (người chậm nhất) đi đầu để định nhịp, và buộc một sợi dây nối những người phía trước với Herbie để không ai vượt quá xa. Đó chính là hình ảnh trực quan của cơ chế Drum-Buffer-Rope (Trống–Đệm–Dây) — phương pháp lập kế hoạch sản xuất của Lý thuyết điểm hạn chế.\n\n🥁 Drum (Trống) — Nhịp của điểm nghẽn\nĐiểm nghẽn quyết định nhịp sản xuất của toàn hệ thống, như tiếng trống giữ nhịp cho cả đoàn quân. Lịch sản xuất của cả nhà máy được xây dựng quanh năng lực thực của điểm nghẽn, chứ không phải quanh nhu cầu lý thuyết của từng máy.\n\n🛡️ Buffer (Đệm) — Vùng tồn kho bảo vệ\nĐặt một lượng tồn kho đệm ngay trước điểm nghẽn, để nó không bao giờ phải dừng vì thiếu nguyên liệu — kể cả khi các công đoạn phía trước gặp biến động. Đệm ở đây được tính bằng thời gian, không phải để tích trữ tràn lan.\n\n🪢 Rope (Dây) — Tín hiệu ghìm phát nguyên liệu\nMột \"sợi dây\" thông tin nối điểm nghẽn với khâu phát nguyên liệu đầu vào: chỉ đưa nguyên liệu vào hệ thống theo đúng nhịp điểm nghẽn tiêu thụ. Nhờ vậy tồn kho không phình to, dòng chảy được kéo căng vừa đủ.\n\n## Kết quả\n\ntồn kho giảm mạnh, thời gian giao hàng rút ngắn, mà thông lượng vẫn tăng — vì cả hệ thống đã đồng bộ quanh đúng nút thắt của nó.\n\nBài học: Đừng bắt mọi công đoạn chạy hết sức. Hãy để cả nhà máy chạy theo một nhịp — nhịp của điểm nghẽn.\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-5-7-drum-buffer-rope-de-ca-nha-may-chay-theo-mot-nhip/cover.webp",
+    "images": [
+      "/images/posts/the-goal-5-7-drum-buffer-rope-de-ca-nha-may-chay-theo-mot-nhip/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-6-7-vi-sao-moi-may-chay-het-cong-suat-lai-la-mot-cai-bay",
+    "slug": "the-goal-6-7-vi-sao-moi-may-chay-het-cong-suat-lai-la-mot-cai-bay",
+    "title": "The Goal (6/7): Vì sao \"mọi máy chạy hết công suất\" lại là một cái bẫy?",
+    "date": "2026-08-15",
+    "excerpt": "Vì sao \"mọi máy chạy hết công suất\" lại là một cái bẫy?",
+    "content": "Vì sao \"mọi máy chạy hết công suất\" lại là một cái bẫy?\n\nỞ nhiều nhà máy, thước đo thành công của một quản đốc là hiệu suất máy móc: máy phải chạy càng nhiều càng tốt, công nhân không được \"rảnh tay\". Nghe hợp lý — nhưng \"The Goal\" chỉ ra đây là một trong những cái bẫy nguy hiểm nhất của quản trị vận hành.\n\nGoldratt phân biệt rạch ròi:\n\nTối ưu cục bộ (Local Optima) — làm cho từng bộ phận riêng lẻ đạt hiệu suất cao nhất.\n\nTối ưu toàn cục (Global Optimum) — làm cho cả hệ thống tạo ra nhiều tiền nhất.\n\nVà chân lý phản trực giác: Tổng của các tối ưu cục bộ KHÔNG bằng tối ưu toàn cục.\n\nKhi bắt một máy không phải điểm nghẽn chạy hết công suất, ta không tạo thêm thông lượng — vì đầu ra cuối cùng vẫn bị chặn bởi điểm nghẽn. Ta chỉ tạo ra núi tồn kho bán thành phẩm nằm chờ, giam vốn, kéo dài thời gian giao hàng và che giấu vấn đề chất lượng.\n\nNói cách khác: mức độ vận hành của một nguồn lực không-nghẽn không nên do tiềm năng riêng của nó quyết định, mà do một ràng buộc khác trong hệ thống quyết định. Một công nhân đứng chờ đôi khi lại tốt cho hệ thống hơn là một công nhân bận rộn sản xuất thứ chưa cần đến.\n\nĐây cũng là cầu nối tự nhiên sang tư duy Lean: tồn kho thừa và sản xuất dư (overproduction) là lãng phí — dù các con số hiệu suất cục bộ trông rất đẹp.\n\nBài học: Một nhà máy gồm những bộ phận \"hiệu quả\" chưa chắc là một nhà máy hiệu quả. Hãy đo lường thành công bằng dòng chảy của cả hệ thống, không phải bằng sự bận rộn của từng khâu.\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-6-7-vi-sao-moi-may-chay-het-cong-suat-lai-la-mot-cai-bay/cover.webp",
+    "images": [
+      "/images/posts/the-goal-6-7-vi-sao-moi-may-chay-het-cong-suat-lai-la-mot-cai-bay/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "the-goal-7-7-tu-mot-nha-may-sap-dong-cua-den-mot-to-chuc-cai-tien-khong-ngung",
+    "slug": "the-goal-7-7-tu-mot-nha-may-sap-dong-cua-den-mot-to-chuc-cai-tien-khong-ngung",
+    "title": "The Goal (7/7): Từ một nhà máy sắp đóng cửa đến một tổ chức cải tiến không ngừng",
+    "date": "2026-08-16",
+    "excerpt": "Từ một nhà máy sắp đóng cửa đến một tổ chức cải tiến không ngừng",
+    "content": "Từ một nhà máy sắp đóng cửa đến một tổ chức cải tiến không ngừng\n\nCuối \"The Goal\", nhà máy của Alex Rogo không chỉ thoát khỏi nguy cơ đóng cửa — nó trở thành hình mẫu của tập đoàn. Nhưng bài học lớn nhất Alex rút ra không phải là một công cụ, mà là một quá trình tư duy: Process Of Ongoing Improvement (POOGI) — quá trình cải tiến không ngừng.\n\nAlex nhận ra rằng câu hỏi thật sự không phải \"sửa cái gì?\", mà là ba câu hỏi nền tảng của mọi thay đổi:\n- Cần thay đổi điều gì? (What to change?)\n- Thay đổi thành cái gì? (What to change to?)\n- Làm sao tạo ra sự thay đổi? (How to cause the change?)\n\nNhìn lại cả hành trình 7 bài:\n1. Xác định mục tiêu — kiếm tiền (Throughput, Inventory, Operational Expense)\n2. Điểm nghẽn quyết định năng lực cả hệ thống\n3. Sự kiện phụ thuộc & biến động thống kê\n4. 5 bước tập trung cải tiến\n5. Drum-Buffer-Rope\n6. Tối ưu cục bộ ≠ tối ưu toàn cục\n\nTOC bổ sung cho Lean và Six Sigma như thế nào?\n- Lean loại bỏ lãng phí. Six Sigma giảm biến động. Nhưng cả hai đều cần trả lời câu hỏi: bắt đầu từ đâu?\n- Theory of Constraints chính là chiếc la bàn đó — nó chỉ ra điểm nghẽn là nơi mọi nỗ lực cải tiến nên bắt đầu, để mỗi giờ công và mỗi đồng vốn đầu tư tạo ra tác động lớn nhất cho toàn hệ thống.\n\nBa trường phái không loại trừ nhau — chúng cộng hưởng. Đó là lý do các chương trình Lean Six Sigma hiện đại luôn tích hợp tư duy điểm hạn chế.\n\nLời kết: Cải tiến không phải là một dự án có điểm dừng, mà là một văn hoá không có vạch đích. Cảm ơn bạn đã đồng hành cùng chuỗi \"The Goal\" — hẹn gặp ở chủ đề tiếp theo.\n\n> — Trích từ chuỗi bài chia sẻ \"The Goal\" (Eliyahu Goldratt), WISE Academy tổng hợp.\n\n### Tham gia cộng đồng Lean Six Sigma Excellence Hub — Join our community\n\n👉 https://zalo.me/g/hlmxdb544",
+    "thumbnail": "/images/posts/the-goal-7-7-tu-mot-nha-may-sap-dong-cua-den-mot-to-chuc-cai-tien-khong-ngung/cover.webp",
+    "images": [
+      "/images/posts/the-goal-7-7-tu-mot-nha-may-sap-dong-cua-den-mot-to-chuc-cai-tien-khong-ngung/cover.webp"
+    ],
+    "toc": [],
+    "category": "Chia sẻ sách",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Lean & Chuỗi giá trị"
+    ]
+  },
+  {
+    "id": "case-study-giam-loi-man-tinh-o-linh-kien-nhom-duc-bang-dmaic-brazil",
+    "slug": "case-study-giam-loi-man-tinh-o-linh-kien-nhom-duc-bang-dmaic-brazil",
+    "title": "Case study: Giảm lỗi mãn tính ở linh kiện nhôm đúc bằng DMAIC (Brazil)",
+    "date": "2026-08-18",
+    "excerpt": "Một lỗi tồn tại nhiều năm trong một nhà máy hiện đại. Không phải vì không ai nhận ra — mà vì không ai chứng minh được nguyên nhân thật sự. Người thì đổ lỗi cho khuôn cũ, người thì nghi ngờ tay nghề công nhân, người khác...",
+    "content": "Một lỗi tồn tại nhiều năm trong một nhà máy hiện đại. Không phải vì không ai nhận ra — mà vì không ai chứng minh được nguyên nhân thật sự. Người thì đổ lỗi cho khuôn cũ, người thì nghi ngờ tay nghề công nhân, người khác lại cho là do nguyên liệu. Không ai đúng hẳn, không ai sai hẳn — và lỗi thì vẫn ở đó, mỗi ngày.\n\nMọi thứ chỉ thay đổi khi một nhóm kỹ sư quyết định ngừng đoán, và bắt đầu đo.\n\nTại một nhà máy đúc khuôn và gia công nhôm ở Brazil — chuyên cung cấp linh kiện cho các hãng ô tô lớn — có một chi tiết tên là Rearview Housing Support (RHS): phần giá đỡ bằng nhôm giữ cụm gương chiếu hậu gắn vào thân xe. Chi tiết này trải qua hai công đoạn: đúc khuôn (die-casting) để tạo hình, rồi gia công cơ khí (machining) để hoàn thiện kích thước chính xác.\n\n## Vấn đề\n\ntỷ lệ lỗi của linh kiện này duy trì ở mức cao kéo dài — không phải một đợt lỗi bất thường, mà là tình trạng \"chronically high\" (cao mãn tính) đã tồn tại đủ lâu để trở thành chi phí ẩn thường trực của nhà máy. Đây chính là kiểu vấn đề dễ bị bỏ qua nhất trong sản xuất: không đủ nghiêm trọng để dừng dây chuyền, nhưng đủ dai dẳng để ăn mòn lợi nhuận mỗi ngày.\n\nNhóm dự án đã không xử lý theo cách thông thường — họp bàn, đổ lỗi cho công nhân hoặc máy móc, rồi đưa ra vài điều chỉnh theo kinh nghiệm. Thay vào đó, họ áp dụng đầy đủ chu trình DMAIC:\n\nDefine & Measure — Khoanh đúng vùng vấn đề. Thay vì cải tiến dàn trải toàn bộ dây chuyền, nhóm xác định chính xác: vấn đề nằm ở linh kiện RHS, tại hai công đoạn đúc khuôn và gia công. Đo lường hiện trạng trước khi động vào bất cứ điều gì.\n\nAnalyze — Để dữ liệu trả lời, không phải phỏng đoán. Đây là phần đáng chú ý nhất: nhóm dự án dùng thí nghiệm giai thừa (factorial Design of Experiments) kết hợp kiểm định giả thuyết (hypothesis testing) để xác định chính xác biến đầu vào nào trong quy trình đúc/gia công thực sự là nguyên nhân gây lỗi — thay vì tin vào \"kinh nghiệm nhiều năm\" của ai đó trong xưởng. DOE cho phép thử nghiệm có kiểm soát nhiều biến cùng lúc (nhiệt độ khuôn, áp lực ép, tốc độ gia công...) để tách bạch đâu là nguyên nhân thật, đâu chỉ là trùng hợp.\n\nImprove & Control — Sửa đúng chỗ, giữ được lâu. Sau khi xác định đúng biến gây lỗi, giải pháp cải tiến được triển khai tại chính những điểm đó, và được kiểm soát bằng công cụ thống kê để đảm bảo kết quả không \"trồi sụt\" trở lại sau vài tuần — một rủi ro rất phổ biến khi cải tiến chỉ dựa vào nhắc nhở hoặc quy định miệng.\n\n## Kết quả\n\nmức Sigma của quy trình tăng từ 3,4σ lên 4,0σ một cách bền vững. Đây không phải một con số trừu tượng — Sigma level chính là thước đo năng lực quy trình (process capability): quy trình có khả năng tạo ra sản phẩm đúng yêu cầu một cách ổn định đến đâu. Từ 3,4σ lên 4,0σ nghĩa là tỷ lệ lỗi trên một triệu cơ hội giảm đi rõ rệt — một bước tiến năng lực đo lường được bằng số liệu, không phải bằng cảm nhận \"có vẻ tốt hơn.\"\n\nĐiều khiến case study này đáng chú ý không phải là con số Sigma, mà là cách tiếp cận: định vị đúng vấn đề, để dữ liệu chỉ ra nguyên nhân thay vì phỏng đoán, và kiểm soát để cải tiến không bị \"trôi\" trở lại. Đây chính xác là năng lực mà chương trình Lean Six Sigma Green Belt của WISE Academy trang bị cho học viên — không dừng ở lý thuyết DMAIC trên lớp, mà coaching trực tiếp trên dự án cải tiến thật tại nơi làm việc, như đã triển khai tại Pou Chen Corporation.\n\nNếu quy trình của bạn cũng đang có một \"tỷ lệ lỗi mãn tính\" mà chưa ai giải quyết được tận gốc, đây có thể là lúc bắt đầu bằng đúng phương pháp — không phải bằng thêm một cuộc họp nữa.\n\n— WISE Academy · wisedemy.com.vn\nNguồn case study: Condé et al. (2023), International Journal of Quality & Reliability Management (Emerald). DOI: 10.1108/IJQRM-05-2022-0157",
+    "thumbnail": "/images/posts/case-study-giam-loi-man-tinh-o-linh-kien-nhom-duc-bang-dmaic-brazil/cover.webp",
+    "images": [
+      "/images/posts/case-study-giam-loi-man-tinh-o-linh-kien-nhom-duc-bang-dmaic-brazil/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "4 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "case-study-six-sigma-giam-61-5-loi-cong-doan-cat-tai-nha-may-may-viet-nam",
+    "slug": "case-study-six-sigma-giam-61-5-loi-cong-doan-cat-tai-nha-may-may-viet-nam",
+    "title": "Case study: Six Sigma giảm 61,5% lỗi công đoạn cắt tại nhà máy may Việt Nam",
+    "date": "2026-08-24",
+    "excerpt": "Không phải case study ở đâu xa — đây là một nhà máy may tại chính Việt Nam. Vấn đề: chọn sai vải, nhãn bó hàng sai, độ căng chỉ không đều. Nghe quen không?",
+    "content": "Không phải case study ở đâu xa — đây là một nhà máy may tại chính Việt Nam. Vấn đề: chọn sai vải, nhãn bó hàng sai, độ căng chỉ không đều. Nghe quen không?\n\nKhác với các case study quốc tế xa xôi, đây là câu chuyện ngay tại Việt Nam — tại Vinatex, một trong những nhà sản xuất dệt may lớn của đất nước.\n\nVấn đề nằm ở công đoạn cắt: tỷ lệ lỗi và thời gian dừng máy cao, kéo theo chi phí làm lại tốn kém. Ba nguyên nhân chính lộ diện — những vấn đề quen thuộc với bất kỳ ai từng làm việc trong ngành may: chọn sai loại vải, nhãn bó hàng (bundle label) ghi không chính xác, và độ căng vải không đồng đều giữa các lô.\n\nGiải pháp không phức tạp về công nghệ: đào tạo lại nhân viên vận hành theo quy trình kiểm tra vải chuẩn hoá trước khi cắt, hiệu chỉnh máy móc định kỳ theo lịch cố định, và tự động hoá khâu kiểm soát độ căng vải bằng cảm biến — vốn trước đó phụ thuộc hoàn toàn vào cảm nhận thủ công của thợ đứng máy.\n\n## Kết quả\n\ntỷ lệ lỗi giảm 61,5%, thời gian dừng máy trong công đoạn cắt giảm 66,7%, và tỷ lệ làm lại sản phẩm giảm 55,6%.\n\nCase study này đặc biệt phù hợp với các nhà máy may tại Việt Nam vì vấn đề gốc rễ — chọn vải, ghi nhãn, kiểm soát căng chỉ — là những thách thức vận hành rất thực tế, không phải lý thuyết xa vời.\n\n> Nguồn: Mojumder, M.U. & Saad, H. (2025), \"Process Optimization Using Six Sigma Strategy in Garment Manufacturing: A Case from Vietnam\", Crimson Publishers\n\nhttps://crimsonpublishers.com/tteft/fulltext/TTEFT.000752.php\n\nĐây chính xác là năng lực mà chương trình Lean Six Sigma của WISE Academy trang bị: đọc đúng vấn đề bằng dữ liệu, không phải bằng kinh nghiệm cảm tính — dù bạn đang ở ngành nào.",
+    "thumbnail": "/images/posts/case-study-six-sigma-giam-61-5-loi-cong-doan-cat-tai-nha-may-may-viet-nam/cover.webp",
+    "images": [
+      "/images/posts/case-study-six-sigma-giam-61-5-loi-cong-doan-cat-tai-nha-may-may-viet-nam/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "case-study-giam-loi-dut-chi-ho-duong-may-bang-doe-nha-may-may-bangladesh",
+    "slug": "case-study-giam-loi-dut-chi-ho-duong-may-bang-doe-nha-may-may-bangladesh",
+    "title": "Case study: Giảm lỗi đứt chỉ, hở đường may bằng DOE (nhà máy may Bangladesh)",
+    "date": "2026-08-25",
+    "excerpt": "Đường chỉ đứt và đường may hở là hai lỗi phổ biến nhất ngành may — phổ biến đến mức nhiều nhà máy coi đó là \"chuyện đương nhiên\". Một nhà máy may xuất khẩu tại Bangladesh đã chứng minh nó không đương nhiên chút nào.",
+    "content": "Đường chỉ đứt và đường may hở là hai lỗi phổ biến nhất ngành may — phổ biến đến mức nhiều nhà máy coi đó là \"chuyện đương nhiên\". Một nhà máy may xuất khẩu tại Bangladesh đã chứng minh nó không đương nhiên chút nào.\n\nNghiên cứu của Rahman và cộng sự, công bố trên Independent Journal of Management & Production, thực hiện tại Snowtex Outerwear Ltd. — nhà máy may xuất khẩu thuộc Snowtex Group ở Dhamrai, Dhaka, Bangladesh — trên dây chuyền sản xuất C-14, trong giai đoạn tháng 11/2016 đến tháng 1/2017.\n\n## Vấn đề\n\nđường chỉ đứt (broken stitch) và đường may hở (open seam), hai lỗi phổ biến đến mức nhiều xưởng sản xuất coi đó gần như \"chi phí đương nhiên\" của nghề. Nhóm dự án đo chính xác mức Sigma của quy trình — chỉ đạt 1,7σ, một con số phản ánh năng lực quy trình khá thấp.\n\nĐiểm khác biệt trong cách tiếp cận: họ kết hợp thiết kế thí nghiệm (Design of Experiments) với phân tích phương sai (ANOVA) để xác định chính xác mối tương quan giữa các biến quy trình (tốc độ máy may, độ căng chỉ, loại kim sử dụng) và hai loại lỗi phổ biến nhất, thay vì chỉ dựa vào phỏng đoán của thợ lành nghề.\n\nSau khi điều chỉnh đúng các thông số đã xác định qua phân tích, tổng số lỗi giảm khoảng 35%, và mức Sigma của quy trình tăng từ 1,7σ lên 3,4σ.\n\nCase study này quan trọng vì nhắm vào đúng loại lỗi mà nhiều nhà máy coi là \"không thể tránh khỏi\" — và chứng minh rằng ngay cả những lỗi tưởng như hiển nhiên vẫn có nguyên nhân đo lường được.\n\n> Nguồn: Rahman, A. và cộng sự, \"A Case Study of Six Sigma Define-Measure-Analyze-Improve-Control (DMAIC) Methodology in Garment Sector\", Independent Journal of Management & Production, 8(4)\n\nhttps://doi.org/10.14807/ijmp.v8i4.650\n\nĐây chính xác là năng lực mà chương trình Lean Six Sigma của WISE Academy trang bị: đọc đúng vấn đề bằng dữ liệu, không phải bằng kinh nghiệm cảm tính — dù bạn đang ở ngành nào.",
+    "thumbnail": "/images/posts/case-study-giam-loi-dut-chi-ho-duong-may-bang-doe-nha-may-may-bangladesh/cover.webp",
+    "images": [
+      "/images/posts/case-study-giam-loi-dut-chi-ho-duong-may-bang-doe-nha-may-may-bangladesh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "case-study-nang-muc-sigma-cho-nha-may-giay-xuat-khau-bangladesh",
+    "slug": "case-study-nang-muc-sigma-cho-nha-may-giay-xuat-khau-bangladesh",
+    "title": "Case study: Nâng mức Sigma cho nhà máy giày xuất khẩu Bangladesh",
+    "date": "2026-08-26",
+    "excerpt": "26.435 lỗi trên mỗi triệu cơ hội — con số nghe trừu tượng, nhưng đó là mức Sigma 3, tức là quy trình đang chấp nhận một tỷ lệ lỗi mà ít khách hàng nào sẽ hài lòng nếu biết.",
+    "content": "26.435 lỗi trên mỗi triệu cơ hội — con số nghe trừu tượng, nhưng đó là mức Sigma 3, tức là quy trình đang chấp nhận một tỷ lệ lỗi mà ít khách hàng nào sẽ hài lòng nếu biết.\n\nNghiên cứu của Mia và cộng sự (Hilaris Publisher) không nêu tên nhà máy cụ thể — chỉ mô tả là \"một nhà máy giày xuất khẩu hàng đầu tại Bangladesh\", với hai dây chuyền sản xuất được khảo sát là \"court shoe\" và \"oxford shoe\".\n\nTỷ lệ lỗi ban đầu: 26.435 lỗi trên mỗi một triệu cơ hội (DPMO), tương ứng mức năng lực quy trình Sigma 3 — khá phổ biến trong ngành sản xuất truyền thống nhưng còn cách xa chuẩn \"world-class\". Con số DPMO nghe trừu tượng, nhưng ý nghĩa thực tế rất cụ thể: hiệu suất chu trình thấp và lead time sản xuất kéo dài, ảnh hưởng trực tiếp đến khả năng đáp ứng đơn hàng đúng hạn — yếu tố sống còn với các nhà máy gia công xuất khẩu.\n\nNhóm dự án áp dụng đầy đủ chu trình DMAIC để phân tích quy trình sản xuất giày qua từng công đoạn, xác định các công đoạn đóng góp nhiều nhất vào tỷ lệ lỗi, rồi triển khai cải tiến có mục tiêu rõ ràng nhằm đưa quy trình từ Sigma 3 lên Sigma 4.\n\nMục tiêu kiểm soát đặt ra là giảm DPMO từ 26.435 xuống còn khoảng 3.365 — tương đương giảm gần 8 lần tỷ lệ lỗi trên cùng một triệu cơ hội sản xuất.\n\nVới các nhà máy giày da tại Việt Nam đang cung ứng cho các thương hiệu quốc tế, chỉ số DPMO và mức Sigma chính là ngôn ngữ mà khách hàng quốc tế dùng để đánh giá năng lực nhà cung cấp.\n\n> Nguồn: Mia, M.A.S. và cộng sự, \"Footwear Industry in Bangladesh: Implementation of Six Sigma Methodology\", Hilaris Publisher\n\nhttps://www.hilarispublisher.com/abstract/footwear-industry-in-bangladesh-implementation-of-six-sigma-methodology-21137.html\n\nĐây chính xác là năng lực mà chương trình Lean Six Sigma của WISE Academy trang bị: đọc đúng vấn đề bằng dữ liệu, không phải bằng kinh nghiệm cảm tính — dù bạn đang ở ngành nào.",
+    "thumbnail": "/images/posts/case-study-nang-muc-sigma-cho-nha-may-giay-xuat-khau-bangladesh/cover.webp",
+    "images": [
+      "/images/posts/case-study-nang-muc-sigma-cho-nha-may-giay-xuat-khau-bangladesh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "case-study-giam-7-hao-hut-wafer-o-buoc-quang-khac-bang-doe",
+    "slug": "case-study-giam-7-hao-hut-wafer-o-buoc-quang-khac-bang-doe",
+    "title": "Case study: Giảm 7% hao hụt wafer ở bước quang khắc bằng DOE",
+    "date": "2026-08-27",
+    "excerpt": "Trong ngành bán dẫn, 1% hiệu suất (yield) có thể là chênh lệch hàng triệu đô la. Một nhà máy chip từng mất tới 7% wafer vì lỗi ở một bước quang khắc (lithography) duy nhất.",
+    "content": "Trong ngành bán dẫn, 1% hiệu suất (yield) có thể là chênh lệch hàng triệu đô la. Một nhà máy chip từng mất tới 7% wafer vì lỗi ở một bước quang khắc (lithography) duy nhất.\n\nTác giả Gangidi, trong chương sách xuất bản trên IntechOpen, nói rõ ngay từ đầu: vì lý do bảo mật, tên nhà cung cấp/thiết bị thực tế không được nêu (chỉ gọi là \"Tool 1/2/3\"), và các số liệu trình bày là giá trị đã được làm tròn gần đúng, không phải số liệu tuyệt đối của nhà máy thật.\n\nVấn đề mô tả: một nhà máy sản xuất chip đối mặt với tỷ lệ die yield loss (tỷ lệ wafer bị mất do lỗi) lên tới 7%, xuất phát từ khiếm khuyết trong dòng (in-line defect contamination) tại bước quang khắc (lithography) — các khiếm khuyết tập trung quanh rìa wafer, gây lỗi bin và mất die trên một số dòng công nghệ.\n\nVì mức độ chính xác cần thiết, nhóm kỹ sư không thể chỉ điều chỉnh theo kinh nghiệm — họ dùng thiết kế thí nghiệm giai thừa đa cấp (multilevel factorial DOE), thử nghiệm có kiểm soát nhiều thông số công cụ quang khắc cùng lúc để xác định thông số nào thực sự gây ra khiếm khuyết.\n\nMục tiêu cải tiến: giảm tỷ lệ die yield loss từ 7% xuống còn khoảng 1-2% — cải thiện tưởng nhỏ về phần trăm nhưng có tác động tài chính lớn ở quy mô sản xuất hàng loạt.\n\nCase study này cho thấy DMAIC không chỉ dùng cho quy trình \"thô\" như đúc, may, đóng gói — mà còn là công cụ chuẩn trong các ngành đòi hỏi độ chính xác cao nhất như bán dẫn. Việc tác giả minh bạch về giới hạn bảo mật/làm tròn số liệu cũng là điều đáng học khi đọc bất kỳ case study nào.\n\n> Nguồn: Gangidi, P.R. (2019), \"Application of Six Sigma in Semiconductor Manufacturing: A Case Study in Yield Improvement\", trong Applications of Design for Manufacturing and Assembly, IntechOpen\n\nhttps://doi.org/10.5772/intechopen.81058\n\nĐây chính xác là năng lực mà chương trình Lean Six Sigma của WISE Academy trang bị: đọc đúng vấn đề bằng dữ liệu, không phải bằng kinh nghiệm cảm tính — dù bạn đang ở ngành nào.",
+    "thumbnail": "/images/posts/case-study-giam-7-hao-hut-wafer-o-buoc-quang-khac-bang-doe/cover.webp",
+    "images": [
+      "/images/posts/case-study-giam-7-hao-hut-wafer-o-buoc-quang-khac-bang-doe/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "case-study-nang-mot-muc-sigma-tai-xuong-det-pakistan",
+    "slug": "case-study-nang-mot-muc-sigma-tai-xuong-det-pakistan",
+    "title": "Case study: Nâng một mức Sigma tại xưởng dệt Pakistan",
+    "date": "2026-08-28",
+    "excerpt": "Không phải mọi cải tiến lớn đều cần một dự án hoành tráng. Đôi khi, nâng một mức Sigma ở một xưởng dệt cũng đủ tạo ra khoản lợi nhuận tăng thêm sáu con số mỗi năm.",
+    "content": "Không phải mọi cải tiến lớn đều cần một dự án hoành tráng. Đôi khi, nâng một mức Sigma ở một xưởng dệt cũng đủ tạo ra khoản lợi nhuận tăng thêm sáu con số mỗi năm.\n\nNghiên cứu của Hussain, Jamshaid và Sohail (2014) không nêu tên xưởng dệt cụ thể — chỉ mô tả là \"một đơn vị dệt vải đại diện\" tại Pakistan, quốc gia mà dệt may chiếm hơn 50% kim ngạch xuất khẩu, theo chính lời mở đầu của bài báo.\n\nTrước cải tiến, mức năng lực quy trình chỉ ở Sigma 2,2, với tỷ lệ vải bị loại 2,0% — thấp hơn đáng kể so với kỳ vọng chất lượng của khách hàng.\n\nNhóm dự án không cần phát minh công cụ mới. Họ áp dụng đúng phương pháp luận Six Sigma tiêu chuẩn: đo tỷ lệ lỗi vải hiện tại theo từng loại lỗi, phân tích để xác định nguyên nhân gốc rễ — chủ yếu liên quan đến độ căng sợi không đồng đều trên khung dệt — rồi can thiệp trực tiếp bằng cách chuẩn hoá quy trình căn chỉnh độ căng sợi trước mỗi ca sản xuất.\n\n## Kết quả\n\nmức Sigma tăng từ 2,2 lên 3,0, tỷ lệ vải bị loại giảm từ 2,0% xuống 0,75%. Khi nhân với quy mô sản xuất hàng ngày, lợi nhuận tăng thêm ước tính khoảng 26.000 USD mỗi tháng.\n\nCase study này là lời nhắc quan trọng: không phải cải tiến nào cũng cần dự án hoành tráng. Áp dụng đúng và kiên trì với những công cụ cơ bản nhất đã đủ tạo ra tác động tài chính rõ rệt.\n\n> Nguồn: Hussain, T., Jamshaid, H., Sohail, A. (2014), \"Reducing defects in textile weaving by applying Six Sigma methodology: a case study\", International Journal of Six Sigma and Competitive Advantage, 8(2), 95-104\n\nhttps://doi.org/10.1504/IJSSCA.2014.064254\n\nĐây chính xác là năng lực mà chương trình Lean Six Sigma của WISE Academy trang bị: đọc đúng vấn đề bằng dữ liệu, không phải bằng kinh nghiệm cảm tính — dù bạn đang ở ngành nào.",
+    "thumbnail": "/images/posts/case-study-nang-mot-muc-sigma-tai-xuong-det-pakistan/cover.webp",
+    "images": [
+      "/images/posts/case-study-nang-mot-muc-sigma-tai-xuong-det-pakistan/cover.webp"
+    ],
+    "toc": [],
+    "category": "Case study",
+    "readTime": "2 phút đọc",
+    "author": "WISE Academy",
+    "source": "social",
+    "topics": [
+      "Six Sigma"
+    ]
+  },
+  {
+    "id": "project-charter-tam-ve-cap-phep-cho-mot-du-an-six-sigma",
+    "slug": "project-charter-tam-ve-cap-phep-cho-mot-du-an-six-sigma",
+    "title": "PROJECT CHARTER — tấm vé \"cấp phép\" cho một dự án Six Sigma",
+    "date": "2026-09-07",
+    "excerpt": "Văn kiện ngắn chốt vấn đề, CTQ, vai trò nhóm, phạm vi, sponsor và timeline — chính thức \"cấp phép\" cho một dự án Six Sigma.",
+    "content": "## Định nghĩa\n\nVăn kiện ngắn chốt vấn đề, CTQ, vai trò nhóm, phạm vi, sponsor và timeline — chính thức \"cấp phép\" cho một dự án Six Sigma.\n\n## Mục đích\n\nThống nhất giữa sponsor và nhóm dự án về CTQ, phạm vi, vai trò, thời gian và lợi ích kỳ vọng — trước khi bắt tay làm.\n\n## Ứng dụng\n\nKý duyệt đầu giai đoạn Define; dùng làm \"hợp đồng\" tham chiếu xuyên suốt dự án khi có tranh cãi về phạm vi.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear khởi động dự án giảm lỗi hở keo với CTQ rõ ràng — tỷ lệ lỗi ≤2% trong 6 tháng, lợi ích tài chính kỳ vọng 1,5–2 tỷ VNĐ/năm.",
+    "thumbnail": "/images/posts/project-charter-tam-ve-cap-phep-cho-mot-du-an-six-sigma/cover.webp",
+    "images": [
+      "/images/posts/project-charter-tam-ve-cap-phep-cho-mot-du-an-six-sigma/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "problem-statement-van-de-noi-dung-thi-da-giai-quyet-duoc-mot-nua",
+    "slug": "problem-statement-van-de-noi-dung-thi-da-giai-quyet-duoc-mot-nua",
+    "title": "PROBLEM STATEMENT — vấn đề nói đúng thì đã giải quyết được một nửa",
+    "date": "2026-09-08",
+    "excerpt": "Câu tuyên bố cô đọng nêu vấn đề đang xảy ra, đo lường được — không hàm ý sẵn nguyên nhân hay giải pháp.",
+    "content": "## Định nghĩa\n\nCâu tuyên bố cô đọng nêu vấn đề đang xảy ra, đo lường được — không hàm ý sẵn nguyên nhân hay giải pháp.\n\n## Mục đích\n\nBuộc cả nhóm thống nhất chính xác vấn đề cần giải quyết, trước khi lao vào tìm giải pháp.\n\n## Ứng dụng\n\nViết ở đầu Charter; dùng để kiểm tra xem một hoạt động cải tiến có thật sự nhắm đúng vấn đề hay không.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\n\"ABC Footwear sản xuất 3.000 đôi/ngày, tỷ lệ lỗi hở keo 6,9% (~207 đôi/ngày), gây thiệt hại ước tính 2,36 tỷ VNĐ/năm — tương ứng năng lực quy trình chỉ ~2,98 Sigma.\" Một câu, đủ What – How much – So what.",
+    "thumbnail": "/images/posts/problem-statement-van-de-noi-dung-thi-da-giai-quyet-duoc-mot-nua/cover.webp",
+    "images": [
+      "/images/posts/problem-statement-van-de-noi-dung-thi-da-giai-quyet-duoc-mot-nua/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "sipoc-buc-tranh-toan-canh-quy-trinh-trong-1-trang",
+    "slug": "sipoc-buc-tranh-toan-canh-quy-trinh-trong-1-trang",
+    "title": "SIPOC — bức tranh toàn cảnh quy trình trong 1 trang",
+    "date": "2026-09-09",
+    "excerpt": "Sơ đồ cấp cao Suppliers – Inputs – Process – Outputs – Customers của một quy trình.",
+    "content": "## Định nghĩa\n\nSơ đồ cấp cao Suppliers – Inputs – Process – Outputs – Customers của một quy trình.\n\n## Mục đích\n\nThống nhất ranh giới và bức tranh tổng thể quy trình trước khi vẽ chi tiết (value stream, flowchart...).\n\n## Ứng dụng\n\nDùng đầu Define để cả nhóm liên chức năng cùng \"nhìn thấy\" quy trình theo cùng một cách.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nNCC keo A/B → Keo, mũ giày, đế → Quét keo→Sấy→Ép đế → Giày đã dán đế → Khách hàng OEM. 5 chữ, thống nhất cả nhóm chỉ trong một cuộc họp.",
+    "thumbnail": "/images/posts/sipoc-buc-tranh-toan-canh-quy-trinh-trong-1-trang/cover.webp",
+    "images": [
+      "/images/posts/sipoc-buc-tranh-toan-canh-quy-trinh-trong-1-trang/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "stakeholder-analysis-biet-ai-de-noi-dung-cach-dung-luc",
+    "slug": "stakeholder-analysis-biet-ai-de-noi-dung-cach-dung-luc",
+    "title": "STAKEHOLDER ANALYSIS — biết ai để nói đúng cách, đúng lúc",
+    "date": "2026-09-10",
+    "excerpt": "Ma trận 2×2 xếp loại các bên liên quan theo Quyền lực × Mức độ quan tâm.",
+    "content": "## Định nghĩa\n\nMa trận 2×2 xếp loại các bên liên quan theo Quyền lực × Mức độ quan tâm.\n\n## Mục đích\n\nXác định ai cần được quản lý sát sao, ai chỉ cần thông báo — để phân bổ đúng công sức giao tiếp.\n\n## Ứng dụng\n\nLập kế hoạch truyền thông/thay đổi (change management) trước khi triển khai giải pháp.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nGiám đốc Sản xuất (quyền lực cao, quan tâm cao) cần quản lý chặt; công nhân line (quyền lực thấp, quan tâm cao) chỉ cần thông báo thường xuyên — hai cách tiếp cận hoàn toàn khác nhau.",
+    "thumbnail": "/images/posts/stakeholder-analysis-biet-ai-de-noi-dung-cach-dung-luc/cover.webp",
+    "images": [
+      "/images/posts/stakeholder-analysis-biet-ai-de-noi-dung-cach-dung-luc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "in-and-out-of-the-box-chan-phinh-pham-vi-ngay-tu-dau",
+    "slug": "in-and-out-of-the-box-chan-phinh-pham-vi-ngay-tu-dau",
+    "title": "IN AND OUT OF THE BOX — chặn \"phình phạm vi\" ngay từ đầu",
+    "date": "2026-09-11",
+    "excerpt": "Kỹ thuật phân loại các thành phần quy trình vào 3 nhóm: trong phạm vi, trên biên, ngoài phạm vi.",
+    "content": "## Định nghĩa\n\nKỹ thuật phân loại các thành phần quy trình vào 3 nhóm: trong phạm vi, trên biên, ngoài phạm vi.\n\n## Mục đích\n\nNgăn dự án phình to (scope creep) bằng cách thống nhất sớm cái gì KHÔNG thuộc dự án.\n\n## Ứng dụng\n\nBổ sung cho SIPOC/Charter khi ranh giới phạm vi còn mơ hồ giữa các phòng ban.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\n\"Quét keo → sấy → ép đế\" — trong phạm vi. \"Đóng gói, kho vận, thiết kế kiểu dáng\" — ngoài phạm vi. Rõ ràng từ ngày đầu, đỡ tranh cãi về sau.",
+    "thumbnail": "/images/posts/in-and-out-of-the-box-chan-phinh-pham-vi-ngay-tu-dau/cover.webp",
+    "images": [
+      "/images/posts/in-and-out-of-the-box-chan-phinh-pham-vi-ngay-tu-dau/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "is-is-not-matrix-khoanh-vung-van-de-bang-phep-loai-tru",
+    "slug": "is-is-not-matrix-khoanh-vung-van-de-bang-phep-loai-tru",
+    "title": "IS / IS NOT MATRIX — khoanh vùng vấn đề bằng phép loại trừ",
+    "date": "2026-09-12",
+    "excerpt": "Bảng đối chiếu nhanh \"Là\" và \"Không phải\" (Where/What/When...) để khoanh phạm vi vấn đề thật sắc nét.",
+    "content": "## Định nghĩa\n\nBảng đối chiếu nhanh \"Là\" và \"Không phải\" (Where/What/When...) để khoanh phạm vi vấn đề thật sắc nét.\n\n## Mục đích\n\nKhoanh vùng vấn đề thật sắc nét bằng cách loại trừ có hệ thống các khả năng không liên quan.\n\n## Ứng dụng\n\nDùng ngay sau Problem Statement, trước khi vẽ Fishbone, để tránh brainstorm nguyên nhân lan man.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nLỗi hở keo LÀ tập trung ở mũi & hông giày (81,5%) — KHÔNG PHẢI ở đế giữa/gót giày. LÀ ở cả 2 chuyền — KHÔNG PHẢI riêng 1 chuyền. Vài dòng, loại bỏ ngay nhiều giả thuyết sai.",
+    "thumbnail": "/images/posts/is-is-not-matrix-khoanh-vung-van-de-bang-phep-loai-tru/cover.webp",
+    "images": [
+      "/images/posts/is-is-not-matrix-khoanh-vung-van-de-bang-phep-loai-tru/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "ctq-tree-dich-loi-khach-hang-thanh-con-so-do-duoc",
+    "slug": "ctq-tree-dich-loi-khach-hang-thanh-con-so-do-duoc",
+    "title": "CTQ TREE — dịch lời khách hàng thành con số đo được",
+    "date": "2026-09-13",
+    "excerpt": "Sơ đồ cây bóc tách một nhu cầu khách hàng (VOC) chung chung thành yêu cầu đo lường được.",
+    "content": "## Định nghĩa\n\nSơ đồ cây bóc tách một nhu cầu khách hàng (VOC) chung chung thành yêu cầu đo lường được.\n\n## Mục đích\n\nBiến ngôn ngữ cảm tính của khách hàng (\"bền\", \"chắc chắn\") thành chỉ tiêu kỹ thuật cụ thể có ngưỡng số.\n\n## Ứng dụng\n\nCầu nối giữa VOC và việc chọn chỉ số Y để đo trong giai đoạn Measure.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nNhu cầu \"giày không bong đế\" → Driver \"độ bền liên kết đế\" → Requirement đo được: lực bong keo ≥25N (peel test). Đây chính là ngưỡng dùng xuyên suốt các bài tiếp theo.",
+    "thumbnail": "/images/posts/ctq-tree-dich-loi-khach-hang-thanh-con-so-do-duoc/cover.webp",
+    "images": [
+      "/images/posts/ctq-tree-dich-loi-khach-hang-thanh-con-so-do-duoc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "cost-of-quality-coq-copq-cai-gia-that-cua-viec-lam-sai",
+    "slug": "cost-of-quality-coq-copq-cai-gia-that-cua-viec-lam-sai",
+    "title": "COST OF QUALITY (CoQ / CoPQ) — cái giá thật của việc \"làm sai\"",
+    "date": "2026-09-14",
+    "excerpt": "Khung phân loại chi phí chất lượng thành 4 nhóm: Phòng ngừa, Thẩm định, Lỗi nội bộ, Lỗi bên ngoài (PAF Model).",
+    "content": "## Định nghĩa\n\nKhung phân loại chi phí chất lượng thành 4 nhóm: Phòng ngừa, Thẩm định, Lỗi nội bộ, Lỗi bên ngoài (PAF Model).\n\n## Mục đích\n\nĐịnh lượng bằng tiền cái giá của việc \"làm sai\" để thuyết phục ban lãnh đạo đầu tư cải tiến.\n\n## Ứng dụng\n\nXây luận điểm tài chính (business case) cho Charter; theo dõi CoPQ giảm dần sau khi cải tiến.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear ước tính tổng CoQ ≈ 2,66 tỷ đ/năm, trong đó chi phí Lỗi (nội bộ + bên ngoài) chiếm tới 89% — con số đủ mạnh để thuyết phục đầu tư vào Phòng ngừa & Thẩm định.",
+    "thumbnail": "/images/posts/cost-of-quality-coq-copq-cai-gia-that-cua-viec-lam-sai/cover.webp",
+    "images": [
+      "/images/posts/cost-of-quality-coq-copq-cai-gia-that-cua-viec-lam-sai/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "voice-of-the-customer-voc-nghe-dung-dieu-khach-hang-that-su-can",
+    "slug": "voice-of-the-customer-voc-nghe-dung-dieu-khach-hang-that-su-can",
+    "title": "VOICE OF THE CUSTOMER (VOC) — nghe đúng điều khách hàng thật sự cần",
+    "date": "2026-09-15",
+    "excerpt": "Quy trình thu thập có hệ thống phản hồi/nhu cầu khách hàng qua khảo sát, phỏng vấn, dữ liệu than phiền.",
+    "content": "## Định nghĩa\n\nQuy trình thu thập có hệ thống phản hồi/nhu cầu khách hàng qua khảo sát, phỏng vấn, dữ liệu than phiền.\n\n## Mục đích\n\nĐảm bảo dự án giải quyết đúng thứ khách hàng thật sự quan tâm, không phải điều nội bộ đoán định.\n\n## Ứng dụng\n\nĐầu vào cho CTQ Tree; nguồn dữ liệu định tính chạy song song với dữ liệu định lượng nội bộ.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\n3 nguồn VOC của ABC Footwear (khảo sát định kỳ, log khiếu nại, phỏng vấn khách OEM) đều quy về cùng 1 driver — độ bền liên kết đế-mũi giày.",
+    "thumbnail": "/images/posts/voice-of-the-customer-voc-nghe-dung-dieu-khach-hang-that-su-can/cover.webp",
+    "images": [
+      "/images/posts/voice-of-the-customer-voc-nghe-dung-dieu-khach-hang-that-su-can/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "project-selection-matrix-chon-dung-tran-de-danh-truoc",
+    "slug": "project-selection-matrix-chon-dung-tran-de-danh-truoc",
+    "title": "PROJECT SELECTION MATRIX — chọn đúng trận để đánh trước",
+    "date": "2026-09-16",
+    "excerpt": "Ma trận chấm điểm có trọng số nhiều tiêu chí để so sánh và ưu tiên các dự án ứng viên.",
+    "content": "## Định nghĩa\n\nMa trận chấm điểm có trọng số nhiều tiêu chí để so sánh và ưu tiên các dự án ứng viên.\n\n## Mục đích\n\nChọn đúng dự án đáng làm trước, tránh phân tán nguồn lực Black Belt vào việc ít giá trị.\n\n## Ứng dụng\n\nDùng ở cấp portfolio, trước khi một dự án cụ thể được chính thức khởi động bằng Charter.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nTrong 3 dự án ứng viên của ABC Footwear, \"Giảm lỗi hở keo\" đạt 4,60/5 điểm có trọng số — cao nhất về tác động tài chính lẫn liên kết chiến lược — và được chọn triển khai trước.",
+    "thumbnail": "/images/posts/project-selection-matrix-chon-dung-tran-de-danh-truoc/cover.webp",
+    "images": [
+      "/images/posts/project-selection-matrix-chon-dung-tran-de-danh-truoc/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "gantt-chart-nhin-thay-ca-du-an-trong-mot-bieu-do",
+    "slug": "gantt-chart-nhin-thay-ca-du-an-trong-mot-bieu-do",
+    "title": "GANTT CHART — nhìn thấy cả dự án trong một biểu đồ",
+    "date": "2026-09-17",
+    "excerpt": "Biểu đồ thanh ngang thể hiện thời lượng và trình tự các giai đoạn/hoạt động dự án theo thời gian.",
+    "content": "## Định nghĩa\n\nBiểu đồ thanh ngang thể hiện thời lượng và trình tự các giai đoạn/hoạt động dự án theo thời gian.\n\n## Mục đích\n\nTrực quan hoá lịch trình để theo dõi tiến độ và phát hiện sớm nguy cơ trễ hạn.\n\n## Ứng dụng\n\nĐưa vào Charter làm timeline sơ bộ; cập nhật xuyên suốt dự án để báo cáo tiến độ cho sponsor.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nDự án ABC Footwear kéo dài 6 tháng (03/03–31/08/2026), trong đó Improve là giai đoạn dài nhất (2 tháng) vì cần chạy DOE và thử nghiệm thực tế trên chuyền.",
+    "thumbnail": "/images/posts/gantt-chart-nhin-thay-ca-du-an-trong-mot-bieu-do/cover.webp",
+    "images": [
+      "/images/posts/gantt-chart-nhin-thay-ca-du-an-trong-mot-bieu-do/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "critical-path-method-cpm-biet-chinh-xac-dau-la-mat-xich-khong-duoc-tre",
+    "slug": "critical-path-method-cpm-biet-chinh-xac-dau-la-mat-xich-khong-duoc-tre",
+    "title": "CRITICAL PATH METHOD (CPM) — biết chính xác đâu là mắt xích không được trễ",
+    "date": "2026-09-18",
+    "excerpt": "Kỹ thuật xác định chuỗi hoạt động dài nhất (đường găng) quyết định thời gian tối thiểu hoàn thành dự án.",
+    "content": "## Định nghĩa\n\nKỹ thuật xác định chuỗi hoạt động dài nhất (đường găng) quyết định thời gian tối thiểu hoàn thành dự án.\n\n## Mục đích\n\nBiết chính xác hoạt động nào không có \"thời gian đệm\" để tập trung quản lý rủi ro trễ tiến độ.\n\n## Ứng dụng\n\nLập lịch chi tiết hơn Gantt khi dự án có nhiều nhánh song song phụ thuộc lẫn nhau.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nĐường găng của ABC Footwear (Thu thập baseline → Đánh giá đổi NCC keo → Chạy DOE → Chuẩn hoá SOP → Control Plan) dài 36 ngày, không có slack — trong khi nhánh Pareto/Fishbone → Thiết kế DOE còn dư 2 ngày đệm.",
+    "thumbnail": "/images/posts/critical-path-method-cpm-biet-chinh-xac-dau-la-mat-xich-khong-duoc-tre/cover.webp",
+    "images": [
+      "/images/posts/critical-path-method-cpm-biet-chinh-xac-dau-la-mat-xich-khong-duoc-tre/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "swot-analysis-nhin-toan-canh-truoc-khi-quyet-dinh",
+    "slug": "swot-analysis-nhin-toan-canh-truoc-khi-quyet-dinh",
+    "title": "SWOT ANALYSIS — nhìn toàn cảnh trước khi quyết định",
+    "date": "2026-09-19",
+    "excerpt": "Khung phân tích 4 góc: Điểm mạnh, Điểm yếu, Cơ hội, Thách thức của một sáng kiến hoặc tổ chức.",
+    "content": "## Định nghĩa\n\nKhung phân tích 4 góc: Điểm mạnh, Điểm yếu, Cơ hội, Thách thức của một sáng kiến hoặc tổ chức.\n\n## Mục đích\n\nNhìn toàn diện cả yếu tố nội tại lẫn bối cảnh bên ngoài trước khi quyết định hướng đi.\n\n## Ứng dụng\n\nĐánh giá một giải pháp cải tiến lớn trước khi cam kết nguồn lực triển khai toàn diện.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear có đội QA giàu kinh nghiệm (Strength) nhưng SOP quét keo chưa chuẩn hoá (Weakness) — trong khi khách OEM sẵn sàng tăng đơn nếu chất lượng ổn định (Opportunity).",
+    "thumbnail": "/images/posts/swot-analysis-nhin-toan-canh-truoc-khi-quyet-dinh/cover.webp",
+    "images": [
+      "/images/posts/swot-analysis-nhin-toan-canh-truoc-khi-quyet-dinh/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "affinity-diagram-gom-hang-chuc-y-tuong-roi-rac-thanh-vai-chu-de",
+    "slug": "affinity-diagram-gom-hang-chuc-y-tuong-roi-rac-thanh-vai-chu-de",
+    "title": "AFFINITY DIAGRAM — gom hàng chục ý tưởng rời rạc thành vài chủ đề",
+    "date": "2026-09-20",
+    "excerpt": "Kỹ thuật gom nhóm im lặng (silent grouping) hàng chục ý tưởng rời rạc thành vài chủ đề chính.",
+    "content": "## Định nghĩa\n\nKỹ thuật gom nhóm im lặng (silent grouping) hàng chục ý tưởng rời rạc thành vài chủ đề chính.\n\n## Mục đích\n\nTìm ra cấu trúc/chủ đề ẩn trong một lượng lớn ý tưởng brainstorm mà không để một cá nhân áp đặt cách phân loại.\n\n## Ứng dụng\n\nXử lý kết quả sau một phiên brainstorm đông người (VOC, nguyên nhân, ý tưởng cải tiến).\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nCác ý tưởng brainstorm về lỗi hở keo của ABC Footwear được gom thành đúng 4 nhóm quen thuộc: Con người, Máy móc, Nguyên liệu, Phương pháp — nền tảng để vẽ Fishbone sau đó.",
+    "thumbnail": "/images/posts/affinity-diagram-gom-hang-chuc-y-tuong-roi-rac-thanh-vai-chu-de/cover.webp",
+    "images": [
+      "/images/posts/affinity-diagram-gom-hang-chuc-y-tuong-roi-rac-thanh-vai-chu-de/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "starburst-brainstorming-dat-cau-hoi-truoc-khi-voi-tra-loi",
+    "slug": "starburst-brainstorming-dat-cau-hoi-truoc-khi-voi-tra-loi",
+    "title": "STARBURST BRAINSTORMING — đặt câu hỏi trước khi vội trả lời",
+    "date": "2026-09-21",
+    "excerpt": "Kỹ thuật đặt câu hỏi 5W1H (Ai/Cái gì/Ở đâu/Khi nào/Tại sao/Thế nào) quanh một chủ đề trung tâm.",
+    "content": "## Định nghĩa\n\nKỹ thuật đặt câu hỏi 5W1H (Ai/Cái gì/Ở đâu/Khi nào/Tại sao/Thế nào) quanh một chủ đề trung tâm.\n\n## Mục đích\n\nMở rộng góc nhìn về một chủ đề bằng câu hỏi trước khi vội tìm câu trả lời.\n\n## Ứng dụng\n\nKhởi động một phiên họp dự án hoặc giai đoạn mới khi nhóm chưa rõ nên bắt đầu từ đâu.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nQuanh chủ đề \"Lỗi hở keo mũi giày\", nhóm ABC Footwear đặt đủ 6 câu hỏi 5W1H trước khi đi tìm nguyên nhân — tránh kết luận vội vàng.",
+    "thumbnail": "/images/posts/starburst-brainstorming-dat-cau-hoi-truoc-khi-voi-tra-loi/cover.webp",
+    "images": [
+      "/images/posts/starburst-brainstorming-dat-cau-hoi-truoc-khi-voi-tra-loi/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "brainwriting-6-3-5-method-y-tuong-dong-deu-khong-ai-bi-lan-at",
+    "slug": "brainwriting-6-3-5-method-y-tuong-dong-deu-khong-ai-bi-lan-at",
+    "title": "BRAINWRITING (6-3-5 Method) — ý tưởng đồng đều, không ai bị lấn át",
+    "date": "2026-09-22",
+    "excerpt": "Kỹ thuật tạo ý tưởng bằng chữ viết theo vòng (Pool hoặc Card method), không nói ra miệng.",
+    "content": "## Định nghĩa\n\nKỹ thuật tạo ý tưởng bằng chữ viết theo vòng (Pool hoặc Card method), không nói ra miệng.\n\n## Mục đích\n\nThu thập ý tưởng đồng đều từ mọi thành viên, tránh hiện tượng người nói to lấn át người rụt rè.\n\n## Ứng dụng\n\nThay thế brainstorm truyền thống khi nhóm có văn hoá ngại phát biểu hoặc có thành viên cấp bậc chênh lệch.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\n6 thành viên nhóm cải tiến ABC Footwear, mỗi người viết 3 ý tưởng/vòng, chuyền qua 6 vòng — tạo ra 108 ý tưởng cải tiến chỉ trong 30 phút.",
+    "thumbnail": "/images/posts/brainwriting-6-3-5-method-y-tuong-dong-deu-khong-ai-bi-lan-at/cover.webp",
+    "images": [
+      "/images/posts/brainwriting-6-3-5-method-y-tuong-dong-deu-khong-ai-bi-lan-at/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "fmea-tim-loi-truoc-khi-no-xay-ra",
+    "slug": "fmea-tim-loi-truoc-khi-no-xay-ra",
+    "title": "FMEA — tìm lỗi trước khi nó xảy ra",
+    "date": "2026-09-23",
+    "excerpt": "Bảng phân tích có hệ thống mọi lỗi tiềm ẩn của quy trình, chấm điểm Mức nghiêm trọng × Tần suất × Khả năng phát hiện.",
+    "content": "## Định nghĩa\n\nBảng phân tích có hệ thống mọi lỗi tiềm ẩn của quy trình, chấm điểm Mức nghiêm trọng × Tần suất × Khả năng phát hiện.\n\n## Mục đích\n\nXếp ưu tiên xử lý lỗi tiềm ẩn theo RPN, thay vì xử lý cảm tính theo lỗi mới xảy ra gần nhất.\n\n## Ứng dụng\n\nDùng ở Measure/Analyze để định hướng đo lường; cập nhật lại ở Control sau khi có giải pháp giảm RPN.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nTrong 3 lỗi tiềm ẩn ở công đoạn quét keo/sấy của ABC Footwear, \"định lượng keo không đều\" có RPN=245 cao nhất — trực tiếp dẫn tới giải pháp súng định lượng bán tự động ở Improve.",
+    "thumbnail": "/images/posts/fmea-tim-loi-truoc-khi-no-xay-ra/cover.webp",
+    "images": [
+      "/images/posts/fmea-tim-loi-truoc-khi-no-xay-ra/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "basic-six-sigma-metrics-ngon-ngu-chung-de-do-chat-luong",
+    "slug": "basic-six-sigma-metrics-ngon-ngu-chung-de-do-chat-luong",
+    "title": "BASIC SIX SIGMA METRICS — ngôn ngữ chung để đo \"chất lượng\"",
+    "date": "2026-09-24",
+    "excerpt": "Nhóm công thức nền tảng: DPU (lỗi/đơn vị), DPMO (lỗi/triệu cơ hội), FTY (năng suất lần đầu), RTY (năng suất tích luỹ).",
+    "content": "## Định nghĩa\n\nNhóm công thức nền tảng: DPU (lỗi/đơn vị), DPMO (lỗi/triệu cơ hội), FTY (năng suất lần đầu), RTY (năng suất tích luỹ).\n\n## Mục đích\n\nChuẩn hoá cách đo \"chất lượng\" để so sánh được giữa các quy trình khác nhau, không phụ thuộc quy mô.\n\n## Ứng dụng\n\nTính Sigma level baseline ở Measure và so sánh lại ở Control để chứng minh cải tiến bằng con số chung.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear có DPU=0,069, DPMO=69.033, FTY lý thuyết theo chuỗi 3 bước ≈92,2% — bộ số baseline dùng xuyên suốt để chứng minh cải tiến ở Control.",
+    "thumbnail": "/images/posts/basic-six-sigma-metrics-ngon-ngu-chung-de-do-chat-luong/cover.webp",
+    "images": [
+      "/images/posts/basic-six-sigma-metrics-ngon-ngu-chung-de-do-chat-luong/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "measurement-systems-analysis-msa-do-sai-thi-phan-tich-gi-cung-sai",
+    "slug": "measurement-systems-analysis-msa-do-sai-thi-phan-tich-gi-cung-sai",
+    "title": "MEASUREMENT SYSTEMS ANALYSIS (MSA) — đo sai thì phân tích gì cũng sai",
+    "date": "2026-09-25",
+    "excerpt": "Bộ phương pháp đánh giá độ tin cậy của một hệ thống đo: độ chính xác, độ phân giải, độ tuyến tính, độ ổn định.",
+    "content": "## Định nghĩa\n\nBộ phương pháp đánh giá độ tin cậy của một hệ thống đo: độ chính xác, độ phân giải, độ tuyến tính, độ ổn định.\n\n## Mục đích\n\nĐảm bảo dữ liệu thu thập được là đáng tin trước khi dùng nó để ra quyết định.\n\n## Ứng dụng\n\nThực hiện bắt buộc đầu giai đoạn Measure, trước khi lấy bất kỳ số liệu nào làm baseline.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear kiểm tra độ tuyến tính của lực kế đo peel test tại 4 mức tải chuẩn (10–40N) trước khi tin dùng nó để xác nhận ngưỡng ≥25N — bias dao động trong ±0,6N, chấp nhận được nhưng cần hiệu chuẩn định kỳ.",
+    "thumbnail": "/images/posts/measurement-systems-analysis-msa-do-sai-thi-phan-tich-gi-cung-sai/cover.webp",
+    "images": [
+      "/images/posts/measurement-systems-analysis-msa-do-sai-thi-phan-tich-gi-cung-sai/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "gage-r-r-he-thong-do-co-dang-tin-khong",
+    "slug": "gage-r-r-he-thong-do-co-dang-tin-khong",
+    "title": "GAGE R&R — hệ thống đo có đáng tin không?",
+    "date": "2026-09-26",
+    "excerpt": "Nghiên cứu định lượng phần biến động do hệ thống đo (Repeatability + Reproducibility) chiếm bao nhiêu % biến động tổng.",
+    "content": "## Định nghĩa\n\nNghiên cứu định lượng phần biến động do hệ thống đo (Repeatability + Reproducibility) chiếm bao nhiêu % biến động tổng.\n\n## Mục đích\n\nTách bạch biến động thật của quy trình khỏi \"nhiễu\" do người đo/thiết bị đo gây ra.\n\n## Ứng dụng\n\nThực hiện trên các gauge quan trọng (lực kế, thước đo màng, nhiệt kế) trước khi tin dữ liệu để tính Cpk.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nGage R&R cho thước đo màng keo của ABC Footwear (6 mẫu × 2 KTV × 3 lần đo) cho %StudyVar=14,56% (đạt chuẩn AIAG) nhưng %Tolerance=85,38% (vượt ngưỡng 30%) — đạt để phân biệt sản phẩm nhưng chưa đủ tin cậy để tự kiểm soát dung sai hẹp.",
+    "thumbnail": "/images/posts/gage-r-r-he-thong-do-co-dang-tin-khong/cover.webp",
+    "images": [
+      "/images/posts/gage-r-r-he-thong-do-co-dang-tin-khong/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "sampling-techniques-khong-can-do-het-chi-can-do-dung",
+    "slug": "sampling-techniques-khong-can-do-het-chi-can-do-dung",
+    "title": "SAMPLING TECHNIQUES — không cần đo hết, chỉ cần đo đúng",
+    "date": "2026-09-27",
+    "excerpt": "Các phương pháp chọn mẫu đại diện (ngẫu nhiên, phân tầng, hệ thống) khi không thể đo toàn bộ tổng thể.",
+    "content": "## Định nghĩa\n\nCác phương pháp chọn mẫu đại diện (ngẫu nhiên, phân tầng, hệ thống) khi không thể đo toàn bộ tổng thể.\n\n## Mục đích\n\nĐảm bảo mẫu phản ánh đúng tổng thể, tránh kết luận sai lệch do lấy mẫu thiên vị.\n\n## Ứng dụng\n\nThiết kế kế hoạch thu thập dữ liệu ở Measure khi tổng thể lớn/không đồng nhất (nhiều chuyền, nhiều ca).\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nABC Footwear dùng lấy mẫu phân tầng cho 3.000 đôi/ngày qua 3 chuyền (theo tỷ lệ sản lượng), và lấy mẫu hệ thống 1 đôi mỗi 50 đôi trên băng chuyền để đo nhiệt độ bề mặt.",
+    "thumbnail": "/images/posts/sampling-techniques-khong-can-do-het-chi-can-do-dung/cover.webp",
+    "images": [
+      "/images/posts/sampling-techniques-khong-can-do-het-chi-can-do-dung/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "run-chart-nhin-du-lieu-theo-thoi-gian-truoc-khi-voi-ket-luan",
+    "slug": "run-chart-nhin-du-lieu-theo-thoi-gian-truoc-khi-voi-ket-luan",
+    "title": "RUN CHART — nhìn dữ liệu theo thời gian trước khi vội kết luận",
+    "date": "2026-09-28",
+    "excerpt": "Biểu đồ đường theo trình tự thời gian, thường kèm đường trung vị, để xem xu hướng/lệch thô của dữ liệu.",
+    "content": "## Định nghĩa\n\nBiểu đồ đường theo trình tự thời gian, thường kèm đường trung vị, để xem xu hướng/lệch thô của dữ liệu.\n\n## Mục đích\n\nPhát hiện nhanh bất thường (tăng/giảm, chu kỳ) trước khi dựng Control Chart đầy đủ với giới hạn kiểm soát.\n\n## Ứng dụng\n\nBước đầu tiên khi có một chuỗi dữ liệu theo thời gian, trước khi áp thống kê phức tạp hơn.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nTỷ lệ lỗi hở keo của ABC Footwear dao động 4,7%–18,0% qua 30 ngày baseline, trung vị 5,93% — hai điểm đột biến (ngày 4 và 22) được phát hiện ngay từ Run Chart, trước khi đi sâu phân tích nguyên nhân.",
+    "thumbnail": "/images/posts/run-chart-nhin-du-lieu-theo-thoi-gian-truoc-khi-voi-ket-luan/cover.webp",
+    "images": [
+      "/images/posts/run-chart-nhin-du-lieu-theo-thoi-gian-truoc-khi-voi-ket-luan/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "sample-size-calculation-do-bao-nhieu-la-du",
+    "slug": "sample-size-calculation-do-bao-nhieu-la-du",
+    "title": "SAMPLE SIZE CALCULATION — đo bao nhiêu là đủ?",
+    "date": "2026-09-29",
+    "excerpt": "Công thức/phần mềm xác định cỡ mẫu tối thiểu cần thiết để phát hiện một chênh lệch với độ tin cậy và power mong muốn.",
+    "content": "## Định nghĩa\n\nCông thức/phần mềm xác định cỡ mẫu tối thiểu cần thiết để phát hiện một chênh lệch với độ tin cậy và power mong muốn.\n\n## Mục đích\n\nTránh hai cực đoan: mẫu quá nhỏ (không đủ sức phát hiện khác biệt thật) hoặc quá lớn (lãng phí nguồn lực).\n\n## Ứng dụng\n\nTính trước khi thu thập dữ liệu cho một kiểm định giả thuyết hoặc một thí nghiệm DOE.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nVới chênh lệch lực bong keo Keo A vs Keo B (7,54N, SD gộp 5,07N), ABC Footwear chỉ cần n=9/nhóm để đạt power 80% — nhưng đã chủ động dùng n=60/nhóm trong DOE để dư sức phát hiện cả tương tác nhỏ hơn.",
+    "thumbnail": "/images/posts/sample-size-calculation-do-bao-nhieu-la-du/cover.webp",
+    "images": [
+      "/images/posts/sample-size-calculation-do-bao-nhieu-la-du/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
+    "id": "bar-chart-cong-cu-truc-quan-de-doc-nhat",
+    "slug": "bar-chart-cong-cu-truc-quan-de-doc-nhat",
+    "title": "BAR CHART — công cụ trực quan dễ đọc nhất",
+    "date": "2026-09-30",
+    "excerpt": "Biểu đồ cột thể hiện giá trị của các nhóm dữ liệu định danh/thứ bậc, chiều cao/độ dài tỷ lệ với giá trị.",
+    "content": "## Định nghĩa\n\nBiểu đồ cột thể hiện giá trị của các nhóm dữ liệu định danh/thứ bậc, chiều cao/độ dài tỷ lệ với giá trị.\n\n## Mục đích\n\nSo sánh trực quan, nhanh giữa các nhóm rời rạc.\n\n## Ứng dụng\n\nDùng ở hầu hết mọi giai đoạn để trình bày số liệu so sánh cho người không chuyên thống kê.\n\n## Ví dụ thực tế (mô phỏng đào tạo)\n\nTổ 1 (thao tác thủ công) có tỷ lệ lỗi hở keo 9,7% — cao hơn rõ rệt Tổ 2 (dùng súng bán tự động, 7,9%) trên cùng mẫu baseline, củng cố nhánh \"Con người\" trong Fishbone.",
+    "thumbnail": "/images/posts/bar-chart-cong-cu-truc-quan-de-doc-nhat/cover.webp",
+    "images": [
+      "/images/posts/bar-chart-cong-cu-truc-quan-de-doc-nhat/cover.webp"
+    ],
+    "toc": [],
+    "category": "Six Sigma",
+    "readTime": "1 phút đọc",
+    "author": "WISE Academy",
+    "source": "social"
+  },
+  {
     "id": "11-phan-ung-khi-doi-mat-voi-van-de-va-chi-co-mot-cach-tot-nhat",
     "slug": "11-phan-ung-khi-doi-mat-voi-van-de-va-chi-co-mot-cach-tot-nhat",
     "title": "11 Phản Ứng Khi Đối Mặt Với Vấn Đề – Và Chỉ Có Một Cách Tốt Nhất!",
@@ -169,7 +1710,10 @@
     "toc": [],
     "category": "Công cụ chất lượng",
     "readTime": "3 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "bieu-do-pareto-cach-ve-bieu-do-tren-excel",
@@ -215,7 +1759,10 @@
     ],
     "category": "Công cụ chất lượng",
     "readTime": "6 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "bieu-do-phan-tan-cach-ve-bieu-do-bang-excel",
@@ -265,7 +1812,10 @@
     ],
     "category": "Công cụ chất lượng",
     "readTime": "4 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "fashion-on-demand-tinh-trang-thoi-trang-theo-nhu-cau-van-tiep-tuc-phat-trien-den-nam-2023-theo-mackinsey",
@@ -314,7 +1864,10 @@
     ],
     "category": "Công cụ chất lượng",
     "readTime": "3 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "hoi-va-dap-ve-tam-ly-hoc-cong-nghiep-va-to-chuc-i-o-psychology-industrial-and-organizational-psychology",
@@ -479,7 +2032,10 @@
     ],
     "category": "Công cụ chất lượng",
     "readTime": "3 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "pyv-phv-homepage",
@@ -516,7 +2072,10 @@
     "toc": [],
     "category": "Công cụ chất lượng",
     "readTime": "4 phút đọc",
-    "author": "Ban Cố Vấn Kỹ Thuật WISE"
+    "author": "Ban Cố Vấn Kỹ Thuật WISE",
+    "topics": [
+      "Six Sigma"
+    ]
   },
   {
     "id": "tai-ebook-lean-ai-how-innovative-startups-use-artificial-intelligence-to-grow",

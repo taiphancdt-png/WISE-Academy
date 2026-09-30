@@ -61,6 +61,10 @@ export interface Article {
   images?: string[];
   toc?: TocItem[];
   author?: string;
+  /** Extra topics the article also appears under (e.g. "Six Sigma"), besides its main category */
+  topics?: string[];
+  /** "social" for posts imported from Facebook / LinkedIn */
+  source?: string;
 }
 
 export interface LeanTool {
