@@ -35,15 +35,15 @@ const IMG = {
 
 // Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
 const clients = [
-  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 80, h: 32 },
-  { name: "GEODIS", logo: "geodis", w: 53, h: 48 },
-  { name: "HuaLi Industrial Group", logo: "huali", w: 138, h: 34 },
-  { name: "KREVES", logo: "kreves", w: 101, h: 26 },
-  { name: "APACHE Footwear Group", logo: "apache", w: 138, h: 42 },
-  { name: "AQUA Smart Home", logo: "aqua", w: 77, h: 34 },
-  { name: "Pou Chen (PCD)", logo: "pcd", w: 43, h: 42 },
-  { name: "Tỷ Bách", logo: "ty-bach", w: 48, h: 36 },
-  { name: "AG Samho", logo: "samho", w: 43, h: 36 },
+  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 104, h: 42 },
+  { name: "GEODIS", logo: "geodis", w: 69, h: 62 },
+  { name: "HuaLi Industrial Group", logo: "huali", w: 179, h: 44 },
+  { name: "KREVES", logo: "kreves", w: 131, h: 34 },
+  { name: "APACHE Footwear Group", logo: "apache", w: 179, h: 55 },
+  { name: "AQUA Smart Home", logo: "aqua", w: 100, h: 44 },
+  { name: "Pou Chen (PCD)", logo: "pcd", w: 56, h: 55 },
+  { name: "Tỷ Bách", logo: "ty-bach", w: 62, h: 47 },
+  { name: "AG Samho", logo: "samho", w: 56, h: 47 },
 ];
 
 const solutions = [
