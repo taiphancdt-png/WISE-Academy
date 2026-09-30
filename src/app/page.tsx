@@ -165,7 +165,7 @@ export default function HomePage() {
               {[...clients, ...clients].map((c, i) => (
                 <li
                   key={`${c.logo}-${i}`}
-                  className="shrink-0 px-8 sm:px-10 flex items-center justify-center h-16"
+                  className="shrink-0 px-12 sm:px-[60px] flex items-center justify-center h-16"
                   aria-hidden={i >= clients.length || undefined}
                 >
                   <img
