@@ -1,18 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  ShieldCheck, 
-  Target, 
-  Users, 
-  TrendingUp, 
-  Award,
-  Globe2,
-  Factory
-} from "lucide-react";
-import SectionBadge from "@/components/SectionBadge";
+import { ShieldCheck, Target } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
 export const metadata = {
   title: "Về Chúng Tôi & Triết Lý RGPDCA — WISE Academy",
@@ -93,145 +82,99 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="bg-[#F8F9FA]">
-      {/* Page Header */}
+    <div>
       <PageHero
-        eyebrow="CÂU CHUYỆN & SỨ MỆNH"
+        eyebrow="Câu chuyện & sứ mệnh"
         image="/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_10.webp"
-        title={<>Về WISE Academy: <span className="text-[#FF7A30]">Đồng Hành Kiến Tạo</span> Năng Lực Vận Hành Xuất Sắc.</>}
+        title={<>Về WISE Academy: <span className="text-[#FF7A30]">đồng hành kiến tạo</span> năng lực vận hành xuất sắc</>}
         description="WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững."
       />
 
-      {/* Quote Banner */}
-      <section className="bg-white border-b border-slate-200 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center space-y-4">
-          <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full" />
-          <blockquote className="text-xl sm:text-2xl font-serif italic text-[#002F5B] leading-relaxed">
+      {/* Quote */}
+      <section className="bg-white border-b border-slate-200 py-14 px-4 sm:px-6">
+        <figure className="max-w-3xl mx-auto text-center">
+          <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full mb-6" />
+          <blockquote className="text-xl sm:text-2xl italic text-[#002F5B] leading-relaxed">
             “Sự phát triển và trưởng thành của nguồn nhân lực là trách nhiệm cao cả nhất của lãnh đạo.”
           </blockquote>
-          <p className="text-xs uppercase font-extrabold tracking-widest text-[#486581]">
-            — Harvey S. Firestone (Triết lý cốt lõi của WISE Academy)
-          </p>
-        </div>
+          <figcaption className="mt-4 text-xs uppercase font-bold tracking-widest text-[#486581]">
+            Harvey S. Firestone · Triết lý cốt lõi của WISE Academy
+          </figcaption>
+        </figure>
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <Section tone="muted">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
+          <div className="card-soft !transform-none p-8 sm:p-10">
+            <span className="w-12 h-12 rounded-full bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
               <Target className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-bold text-[#002F5B]">Tầm Nhìn Của Chúng Tôi</h3>
-            <p className="text-base text-[#486581] leading-relaxed">
-              WISE định vị là <strong>đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất trên hành trình tối ưu hóa vận hành, xây dựng nhà máy thông minh và nâng tầm năng lực cạnh tranh quốc tế.
+            </span>
+            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Tầm nhìn</h2>
+            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
+              WISE định vị là <strong className="text-[#102A43]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất trên hành trình tối ưu hóa vận hành, xây dựng nhà máy thông minh và nâng tầm năng lực cạnh tranh quốc tế.
             </p>
           </div>
-
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#002F5B] text-white flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 text-[#F76011]" />
-            </div>
-            <h3 className="text-2xl font-bold text-[#002F5B]">Sứ Mệnh Phụng Sự</h3>
-            <p className="text-base text-[#486581] leading-relaxed">
-              WISE khai thác triệt để mọi cơ hội để <strong>phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
+          <div className="card-soft !transform-none p-8 sm:p-10">
+            <span className="w-12 h-12 rounded-full bg-[#002F5B] text-[#FF7A30] flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6" />
+            </span>
+            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Sứ mệnh</h2>
+            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
+              WISE khai thác triệt để mọi cơ hội để <strong className="text-[#102A43]">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
             </p>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Core Values W-I-S-E in depth */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <SectionBadge number="VALUES" title="GIÁ TRỊ CỐT LÕI" />
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002F5B]">
-              Bốn Trụ Cột <span className="text-[#F76011]">W - I - S - E</span>
-            </h2>
-            <p className="text-base text-[#486581]">
-              Bộ gen định hình cách các chuyên gia WISE tư vấn, tương tác và cùng đồng hành với khách hàng.
-            </p>
-          </div>
+      {/* Core values */}
+      <Section>
+        <SectionHeader
+          eyebrow="Giá trị cốt lõi"
+          title={<>Bốn trụ cột <span className="text-[#F76011]">W · I · S · E</span></>}
+          description="Bộ gen định hình cách các chuyên gia WISE tư vấn, tương tác và đồng hành cùng khách hàng."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {values.map((v) => (
+            <div key={v.letter} className="card-soft p-7">
+              <span className="w-12 h-12 rounded-full bg-[#002F5B] text-[#FF7A30] flex items-center justify-center font-extrabold text-xl">
+                {v.letter}
+              </span>
+              <span className="mt-5 block text-[11px] font-bold uppercase tracking-widest text-[#C9500E]">{v.word}</span>
+              <h3 className="mt-1 text-lg font-semibold text-[#002F5B]">{v.title}</h3>
+              <p className="mt-3 text-sm text-[#486581] leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v) => (
-              <div 
-                key={v.letter}
-                className="bg-[#F8F9FA] border border-slate-200 rounded-3xl p-8 hover:border-[#F76011] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-14 h-14 rounded-2xl bg-[#002F5B] text-white flex items-center justify-center font-black text-2xl mb-6 shadow-md shadow-[#002F5B]/20">
-                    <span className="text-[#F76011]">{v.letter}</span>
-                  </div>
-                  <span className="text-xs uppercase font-extrabold tracking-widest text-[#F76011] block mb-1">
-                    {v.word}
-                  </span>
-                  <h4 className="text-lg font-bold text-[#002F5B] mb-3">
-                    {v.title}
-                  </h4>
-                  <p className="text-sm text-[#486581] leading-relaxed">
-                    {v.desc}
-                  </p>
-                </div>
+      {/* RGPDCA */}
+      <Section tone="muted">
+        <SectionHeader
+          eyebrow="Phương pháp luận RGPDCA"
+          title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
+          description="Không áp dụng một công thức rập khuôn cho mọi nhà máy. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
+        />
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rgpdcaDetails.map((item, i) => (
+            <li key={item.phase} className="card-soft p-7">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-bold text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#486581]">{item.code}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
+              <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
+              <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
 
-      {/* Full RGPDCA Methodology Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001E38] text-white">
-        <div className="max-w-7xl mx-auto space-y-14">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <SectionBadge number="METHOD" title="PHƯƠNG PHÁP LUẬN RGPDCA" light={true} />
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-              Lộ Trình 6 Giai Đoạn <span className="text-[#F76011]">Khoa Học & Bền Vững</span>
-            </h2>
-            <p className="text-base text-white/70">
-              Không áp dụng một công thức rập khuôn cho mọi nhà máy. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rgpdcaDetails.map((item) => (
-              <div 
-                key={item.phase}
-                className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-[#F76011]/60 hover:bg-white/10 transition-all duration-300 space-y-3"
-              >
-                <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                  <span className="text-xs font-mono font-bold text-[#F76011]">{item.phase}</span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-white/50">{item.code}</span>
-                </div>
-                <h3 className="text-lg font-bold text-white pt-1">
-                  {item.name}
-                </h3>
-                <span className="inline-block text-xs font-semibold text-[#FF7A30] bg-[#FF7A30]/10 px-2.5 py-1 rounded">
-                  {item.action}
-                </span>
-                <p className="text-xs text-white/75 leading-relaxed pt-2">
-                  {item.content}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-gradient-to-r from-[#002F5B] to-[#073866] p-8 sm:p-10 rounded-3xl border border-white/20 text-center space-y-4">
-            <h3 className="text-2xl font-bold text-white">Bạn Muốn Chuyên Gia Xuống Khảo Sát Thực Tế Tại Nhà Máy Cùng WISE?</h3>
-            <p className="text-sm text-white/80 max-w-2xl mx-auto">
-              Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống phân xưởng quan sát để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến.
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/lien-he"
-                className="inline-flex items-center gap-2 bg-[#F76011] hover:bg-[#FF6712] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all group"
-              >
-                <span>Đặt lịch hẹn khảo sát miễn phí</span>
-                <ArrowRight className="w-4 h-4 growth-arrow" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaBand
+        title="Bạn muốn chuyên gia xuống khảo sát thực tế tại nhà máy cùng WISE?"
+        description="Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống phân xưởng để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến."
+        label="Đặt lịch khảo sát miễn phí"
+      />
     </div>
   );
 }

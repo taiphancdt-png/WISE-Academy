@@ -12,7 +12,7 @@ export default function SectionBadge({ title, light = false }: SectionBadgeProps
   return (
     <span
       className={`block text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-3 ${
-        light ? "text-[#FF7A30]" : "text-[#F76011]"
+        light ? "text-[#FF7A30]" : "text-[#C9500E]"
       }`}
     >
       {title}

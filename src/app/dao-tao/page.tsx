@@ -2,21 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { 
-  GraduationCap, 
-  Clock, 
-  Users, 
-  CheckCircle2, 
-  ArrowRight, 
-  ArrowUpRight, 
-  Filter, 
-  Search,
-  BookOpen,
-  Award,
-  Sparkles
-} from "lucide-react";
-import SectionBadge from "@/components/SectionBadge";
+import { Clock, Search } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import { CtaBand } from "@/components/ui";
 import coursesData from "@/data/courses.json";
 import type { Course } from "@/types";
 
@@ -45,177 +33,117 @@ export default function TrainingPage() {
 
   return (
     <div className="bg-[#F8F9FA]">
-      {/* Page Header */}
       <PageHero
-        eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO THỰC CHIẾN"
+        eyebrow="Chương trình đào tạo thực chiến"
         image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp"
-        title={<>Chương Trình Đào Tạo Nâng Cao Năng Suất & <span className="text-[#FF7A30]">Tối Ưu Vận Hành</span> Nhà Xưởng.</>}
+        title={<>Đào tạo nâng cao năng suất & <span className="text-[#FF7A30]">tối ưu vận hành</span> nhà xưởng</>}
         description="Hơn 35 chuyên đề đào tạo dễ hiểu, cầm tay chỉ việc ngay trên chuyền sản xuất. Giúp quản đốc, tổ trưởng và kỹ sư biết cách phát hiện lãng phí, giảm phế phẩm và làm chủ quy trình."
       />
 
-      {/* Filter and Search Bar */}
-      <section className="sticky top-[61px] z-30 bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 xl:px-12 shadow-sm">
-        <div className="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Category Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+      {/* Filter and search */}
+      <section className="sticky top-[61px] z-30 bg-white border-b border-slate-200 py-3 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none w-full md:w-auto" role="tablist" aria-label="Lọc theo chủ đề">
             {categories.map((cat) => (
               <button
                 key={cat.id}
+                role="tab"
+                aria-selected={activeCategory === cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap border transition-colors ${
                   activeCategory === cat.id
-                    ? "bg-[#002F5B] text-white shadow-sm"
-                    : "bg-[#F8F9FA] text-[#486581] hover:bg-slate-200"
+                    ? "bg-[#002F5B] border-[#002F5B] text-white"
+                    : "bg-white border-slate-200 text-[#486581] hover:border-[#002F5B] hover:text-[#002F5B]"
                 }`}
               >
                 {cat.name}
               </button>
             ))}
           </div>
-
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
+          <label className="relative w-full md:w-72">
+            <span className="sr-only">Tìm kiếm chuyên đề đào tạo</span>
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
-              type="text"
+              type="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm kiếm chuyên đề đào tạo..."
-              className="w-full pl-9 pr-4 py-2 rounded-full bg-[#F8F9FA] border border-slate-200 text-xs focus:outline-none focus:border-[#F76011]"
+              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-[#F8F9FA] border border-slate-200 text-sm focus:outline-none focus:border-[#F76011] focus:ring-2 focus:ring-[#F76011]/15"
             />
-          </div>
+          </label>
         </div>
       </section>
 
-      {/* Courses Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1600px] mx-auto">
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-xs uppercase font-bold tracking-wider text-[#486581]">
-            Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chuyên đề đào tạo
+      {/* Courses grid */}
+      <section className="py-14 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="mb-8 text-sm text-[#486581]" aria-live="polite">
+            Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chuyên đề
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map((course) => (
-            <div
-              key={course.id}
-              id={course.id}
-              className="growth-card bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between group hover:border-[#002F5B] transition-all"
-            >
-              <div>
-                {/* Course Cover Image */}
-                {course.image && (
-                  <div className="aspect-[16/9] bg-slate-100 overflow-hidden relative border-b border-slate-100">
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                    <span
-                      className="absolute top-3 left-3 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider text-white shadow-sm"
-                      style={{ backgroundColor: course.accent_color || "#002F5B" }}
-                    >
+          {filteredCourses.length === 0 ? (
+            <div className="text-center py-20 text-[#486581]">
+              <p className="text-base font-semibold text-[#002F5B]">Không tìm thấy chuyên đề phù hợp</p>
+              <p className="mt-2 text-sm">Thử từ khóa khác hoặc chọn &ldquo;Tất cả chuyên đề&rdquo;.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredCourses.map((course) => (
+                <article key={course.id} id={course.id} className="card-soft flex flex-col p-5 scroll-mt-40">
+                  {course.image && (
+                    <div className="aspect-[16/10] rounded-lg overflow-hidden bg-slate-100">
+                      <img src={course.image} alt={course.title} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  )}
+                  <div className="pt-5 flex flex-col flex-grow">
+                    <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#102A43]">
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
                       {course.badge}
                     </span>
-                  </div>
-                )}
+                    <h3 className="mt-2 text-lg font-semibold text-[#002F5B] leading-snug">{course.title}</h3>
+                    <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{course.summary}</p>
 
-                <div className="p-7 space-y-4">
-                  <div className="flex items-center justify-between gap-2">
-                    {!course.image && (
-                      <span
-                        className="text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider text-white"
-                        style={{ backgroundColor: course.accent_color || "#002F5B" }}
-                      >
-                        {course.badge}
+                    <dl className="mt-4 space-y-3 text-sm">
+                      <div>
+                        <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Đối tượng</dt>
+                        <dd className="mt-1 text-[#486581]">{course.target}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Kết quả đạt được</dt>
+                        <dd>
+                          <ul className="mt-1">
+                            {course.outcomes.slice(0, 3).map((out) => (
+                              <li key={out} className="plus-item !py-1.5 !border-0 !font-normal !text-[#486581]">
+                                {out}
+                              </li>
+                            ))}
+                          </ul>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
+                      <span className="flex items-center gap-1.5 text-xs text-[#486581] min-w-0">
+                        <Clock className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
+                        <span className="truncate">{course.duration}</span>
                       </span>
-                    )}
-                    {course.image && (
-                      <span className="text-[10px] font-bold text-[#002F5B] uppercase tracking-wider">
-                        CHƯƠNG TRÌNH THỰC CHIẾN
-                      </span>
-                    )}
-                    <span className="text-xs text-[#486581] flex items-center gap-1 font-semibold">
-                      <Clock className="w-3.5 h-3.5 text-[#F76011]" /> {course.duration}
-                    </span>
+                      <Link href="/lien-he" className="shrink-0 text-sm font-semibold text-[#C9500E] hover:underline">
+                        Tư vấn khóa học
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-xl font-extrabold text-[#002F5B] group-hover:text-[#F76011] transition-colors leading-snug">
-                    {course.title}
-                  </h3>
-
-                  <p className="text-xs text-[#486581] leading-relaxed">
-                    {course.summary}
-                  </p>
-
-                  {/* Target */}
-                  <div className="bg-[#F8F9FA] p-3.5 rounded-xl border border-slate-200 space-y-1">
-                    <span className="text-[10px] uppercase font-bold text-[#002F5B] tracking-wider block">
-                      Đối tượng tham gia:
-                    </span>
-                    <p className="text-xs text-[#486581]">{course.target}</p>
-                  </div>
-
-                  {/* Outcomes */}
-                  <div className="space-y-2 pt-1">
-                    <span className="text-[10px] uppercase font-bold text-[#002F5B] tracking-wider block">
-                      Mục tiêu & Kết quả đạt được:
-                    </span>
-                    <ul className="space-y-1.5 text-xs text-[#486581]">
-                      {course.outcomes.slice(0, 3).map((out, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-[#00BE62] shrink-0 mt-0.5" />
-                          <span>{out}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action bottom */}
-              <div className="p-7 pt-0">
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <Link
-                    href="/lien-he"
-                    className="growth-arrow inline-flex items-center gap-1.5 text-xs font-bold text-[#F76011] hover:text-[#002F5B] transition-colors"
-                  >
-                    <span>Yêu cầu tư vấn khóa học</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    WISE CERTIFIED
-                  </span>
-                </div>
-              </div>
+                </article>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </section>
 
-      {/* In-house Training Banner */}
-      <section className="bg-[#001E38] text-white py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-          <SectionBadge number="CUSTOM" title="ĐÀO TẠO IN-HOUSE MAY ĐO" light={true} />
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Bạn Cần Thiết Kế Khóa Học Riêng <br />
-            Cho <span className="text-[#F76011]">Nhà Máy Của Mình?</span>
-          </h2>
-          <p className="text-sm sm:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Chúng tôi trực tiếp khảo sát thực tế tại phân xưởng, lấy ví dụ từ chính sản phẩm lỗi và dữ liệu của nhà máy để xây dựng giáo trình đào tạo riêng cho đội ngũ của bạn.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/lien-he"
-              className="inline-flex items-center gap-2 bg-[#F76011] hover:bg-[#FF6712] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-[#F76011]/30 transition-all"
-            >
-              <span>Liên hệ thiết kế khóa học In-house</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaBand
+        title="Bạn cần khóa học thiết kế riêng cho nhà máy của mình?"
+        description="Chúng tôi khảo sát thực tế tại phân xưởng, lấy ví dụ từ chính sản phẩm và dữ liệu của nhà máy để xây dựng giáo trình đào tạo riêng cho đội ngũ của bạn."
+        label="Liên hệ thiết kế khóa học in-house"
+      />
     </div>
   );
 }

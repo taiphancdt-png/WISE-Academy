@@ -129,13 +129,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/dao-tao"
-              className="inline-flex items-center bg-[#F76011] hover:bg-[#FF6712] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
+              className="inline-flex items-center bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
             >
               Chương trình đào tạo
             </Link>
             <Link
               href="/dich-vu-tu-van"
-              className="inline-flex items-center bg-[#F76011] hover:bg-[#FF6712] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
+              className="inline-flex items-center bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
             >
               Tư vấn cho doanh nghiệp
             </Link>
@@ -181,14 +181,12 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="pt-5 flex flex-col flex-grow">
-                  <span
-                    className="text-[11px] font-bold uppercase tracking-wider"
-                    style={{ color: course.accent_color || "#002F5B" }}
-                  >
+                  <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#102A43]">
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
                     {course.badge}
                   </span>
                   <h3 className="mt-2 text-base font-semibold text-[#102A43] leading-snug line-clamp-2">{course.title}</h3>
-                  <span className="mt-3 text-sm font-medium text-[#F76011] group-hover:underline">Xem chi tiết khóa học</span>
+                  <span className="mt-3 text-sm font-medium text-[#C9500E] group-hover:underline">Xem chi tiết khóa học</span>
                   <div className="mt-auto pt-5 flex items-center gap-5 text-xs text-[#486581]">
                     <span className="flex items-center gap-1.5 min-w-0">
                       <Layers className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
@@ -207,7 +205,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/dao-tao"
-              className="inline-flex items-center gap-2 border border-[#F76011] text-[#F76011] hover:bg-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
             >
               Xem tất cả {courses.length} khóa học <ArrowRight className="w-4 h-4" />
             </Link>
@@ -378,7 +376,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/chuyen-gia"
-              className="self-start sm:self-auto shrink-0 border border-[#F76011] text-[#F76011] hover:bg-[#F76011] hover:text-white font-medium text-sm px-6 py-2.5 rounded-full transition-colors"
+              className="self-start sm:self-auto shrink-0 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-medium text-sm px-6 py-2.5 rounded-full transition-colors"
             >
               Xem toàn bộ chuyên gia
             </Link>
@@ -397,7 +395,7 @@ export default function HomePage() {
                   )}
                 </div>
                 <h3 className="text-base font-semibold text-[#002F5B]">{expert.name}</h3>
-                <p className="mt-1 text-xs font-medium text-[#F76011]">{expert.role}</p>
+                <p className="mt-1 text-xs font-medium text-[#C9500E]">{expert.role}</p>
                 <p className="mt-3 text-xs text-[#486581] leading-relaxed line-clamp-4">{expert.bio}</p>
               </div>
             ))}
@@ -417,7 +415,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/tri-thuc"
-              className="self-start sm:self-auto shrink-0 border border-[#F76011] text-[#F76011] hover:bg-[#F76011] hover:text-white font-medium text-sm px-6 py-2.5 rounded-full transition-colors"
+              className="self-start sm:self-auto shrink-0 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-medium text-sm px-6 py-2.5 rounded-full transition-colors"
             >
               Xem tất cả bài viết ({articles.length})
             </Link>
@@ -441,7 +439,7 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#F76011]">{art.category}</span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">{art.category}</span>
                   <h3 className="mt-2 text-base font-semibold text-[#102A43] leading-snug line-clamp-2 group-hover:text-[#F76011] transition-colors">
                     {art.title}
                   </h3>
@@ -519,8 +517,9 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-[#002F5B]">Đặt lịch tư vấn nhà máy</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Họ và tên *</label>
+                      <label htmlFor="h-name" className="block text-xs font-semibold text-[#102A43] mb-1.5">Họ và tên *</label>
                       <input
+                        id="h-name"
                         type="text"
                         required
                         value={formData.name}
@@ -530,8 +529,9 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Số điện thoại *</label>
+                      <label htmlFor="h-phone" className="block text-xs font-semibold text-[#102A43] mb-1.5">Số điện thoại *</label>
                       <input
+                        id="h-phone"
                         type="tel"
                         required
                         value={formData.phone}
@@ -541,8 +541,9 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Email doanh nghiệp *</label>
+                      <label htmlFor="h-email" className="block text-xs font-semibold text-[#102A43] mb-1.5">Email doanh nghiệp *</label>
                       <input
+                        id="h-email"
                         type="email"
                         required
                         value={formData.email}
@@ -552,8 +553,9 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Tên công ty / nhà máy</label>
+                      <label htmlFor="h-company" className="block text-xs font-semibold text-[#102A43] mb-1.5">Tên công ty / nhà máy</label>
                       <input
+                        id="h-company"
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -563,8 +565,9 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Nhu cầu cần hỗ trợ</label>
+                    <label htmlFor="h-need" className="block text-xs font-semibold text-[#102A43] mb-1.5">Nhu cầu cần hỗ trợ</label>
                     <select
+                      id="h-need"
                       value={formData.need}
                       onChange={(e) => setFormData({ ...formData, need: e.target.value })}
                       className={inputClass}
@@ -578,8 +581,9 @@ export default function HomePage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#102A43] mb-1.5">Mô tả vấn đề hiện tại</label>
+                    <label htmlFor="h-message" className="block text-xs font-semibold text-[#102A43] mb-1.5">Mô tả vấn đề hiện tại</label>
                     <textarea
+                      id="h-message"
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -589,7 +593,7 @@ export default function HomePage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#FF6712] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+                    className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
                   >
                     <Send className="w-4 h-4" />
                     Gửi yêu cầu đặt lịch tư vấn

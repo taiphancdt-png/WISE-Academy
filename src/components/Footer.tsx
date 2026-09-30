@@ -31,22 +31,6 @@ const companyLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#001E38] text-white/75">
-      {/* CTA strip */}
-      <div className="bg-[#F76011]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Sẵn sàng tối ưu vận hành nhà máy của bạn?</h3>
-            <p className="text-sm text-white/90 mt-1">Đặt lịch khảo sát hiện trường miễn phí cùng chuyên gia WISE.</p>
-          </div>
-          <Link
-            href="/lien-he"
-            className="shrink-0 inline-flex items-center bg-white text-[#F76011] hover:bg-[#002F5B] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
-          >
-            Đặt lịch tư vấn
-          </Link>
-        </div>
-      </div>
-
       {/* Main Footer Links */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4 space-y-5">

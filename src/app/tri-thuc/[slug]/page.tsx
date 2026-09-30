@@ -80,7 +80,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
           <Link
             href="/tri-thuc"
-            className="hidden sm:inline-flex items-center gap-1 font-bold text-[#F76011] hover:text-[#002F5B] transition-colors shrink-0"
+            className="hidden sm:inline-flex items-center gap-1 font-bold text-[#C9500E] hover:text-[#002F5B] transition-colors shrink-0"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Tất cả bài viết</span>
@@ -93,25 +93,25 @@ export default async function ArticleDetailPage({ params }: PageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Content Area (8 Cols) */}
-          <div className="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 lg:p-12 shadow-sm space-y-8">
+          <div className="lg:col-span-8 bg-white rounded-2xl p-6 sm:p-10 lg:p-12 shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)] space-y-8">
             
             {/* Header Details */}
             <div className="space-y-4 border-b border-slate-100 pb-8">
               <div className="flex flex-wrap items-center gap-3 text-xs">
-                <span className="font-extrabold uppercase tracking-wider text-[#F76011] bg-[#FFF5EC] px-3 py-1 rounded-full border border-[#F76011]/20">
+                <span className="font-semibold uppercase tracking-wider text-[#C9500E] bg-[#FFF5EC] px-3 py-1 rounded-full border border-[#F76011]/20">
                   {article.category}
                 </span>
                 <span className="text-[#486581] flex items-center gap-1 font-medium">
                   <Calendar className="w-3.5 h-3.5 text-slate-400" /> {article.date}
                 </span>
                 <span className="text-[#486581] flex items-center gap-1 font-medium">
-                  <Clock className="w-3.5 h-3.5 text-[#F76011]" /> {article.readTime}
+                  <Clock className="w-3.5 h-3.5 text-[#C9500E]" /> {article.readTime}
                 </span>
                 <span className="text-slate-400">•</span>
                 <span className="text-[#002F5B] font-semibold">{article.author || "WISE Academy"}</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl lg:text-4xl font-extrabold text-[#002F5B] leading-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-4xl font-semibold text-[#002F5B] leading-tight">
                 {article.title}
               </h1>
 
@@ -140,7 +140,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             </div>
 
             {/* Post CTA Box */}
-            <div className="mt-12 bg-gradient-to-br from-[#002F5B] to-[#001E38] rounded-2xl p-6 sm:p-8 text-white space-y-4">
+            <div className="mt-12 bg-[#002F5B] rounded-2xl p-6 sm:p-8 text-white space-y-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF7A30]">
                 <Sparkles className="w-4 h-4" />
                 <span>Ứng Dụng Thực Tế Tại Nhà Xưởng</span>
@@ -154,7 +154,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   href="/lien-he"
-                  className="w-full sm:w-auto text-center bg-[#F76011] hover:bg-[#FF6712] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all shadow-md"
+                  className="w-full sm:w-auto text-center bg-[#F76011] hover:bg-[#C9500E] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all shadow-md"
                 >
                   Đặt lịch tư vấn miễn phí
                 </Link>
@@ -172,7 +172,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
               <Link
                 href="/tri-thuc"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#002F5B] hover:text-[#F76011] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#002F5B] hover:text-[#C9500E] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Quay lại danh sách bài viết</span>
@@ -188,10 +188,10 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             
             {/* Table of Contents Box */}
             {article.toc && article.toc.length > 0 && (
-              <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-4">
+              <div className="bg-white rounded-2xl p-6 shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)] space-y-4">
                 <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-                  <BookOpen className="w-4 h-4 text-[#F76011]" />
-                  <h3 className="text-sm font-extrabold text-[#002F5B] uppercase tracking-wider">
+                  <BookOpen className="w-4 h-4 text-[#C9500E]" />
+                  <h3 className="text-sm font-semibold text-[#002F5B] uppercase tracking-wider">
                     Mục Lục Bài Viết
                   </h3>
                 </div>
@@ -200,7 +200,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                     <a
                       key={idx}
                       href={`#${item.anchor}`}
-                      className={`block py-1 text-[#486581] hover:text-[#F76011] transition-colors leading-snug ${
+                      className={`block py-1 text-[#486581] hover:text-[#C9500E] transition-colors leading-snug ${
                         item.level === 3 ? "pl-4 text-[11px]" : "font-semibold text-xs"
                       }`}
                     >
@@ -212,11 +212,11 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             )}
 
             {/* Fast Consultation Box */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-4">
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#F76011] bg-[#FFF5EC] px-2.5 py-0.5 rounded">
+            <div className="bg-white rounded-2xl p-6 shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)] space-y-4">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#C9500E] bg-[#FFF5EC] px-2.5 py-0.5 rounded">
                 TƯ VẤN TRỰC TIẾP
               </span>
-              <h4 className="text-base font-extrabold text-[#002F5B]">
+              <h4 className="text-base font-semibold text-[#002F5B]">
                 Cần Giải Đáp Vấn Đề Nhà Xưởng?
               </h4>
               <p className="text-xs text-[#486581] leading-relaxed">
@@ -227,7 +227,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                   href="tel:0989002121"
                   className="flex items-center gap-2 p-3 rounded-xl bg-[#F8F9FA] hover:bg-slate-100 text-xs font-bold text-[#002F5B] transition-colors border border-slate-200"
                 >
-                  <Phone className="w-4 h-4 text-[#F76011]" />
+                  <Phone className="w-4 h-4 text-[#C9500E]" />
                   <span>0989 002 121 (Hotline / Zalo)</span>
                 </a>
                 <Link
@@ -241,8 +241,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             </div>
 
             {/* Related Articles Mini List */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-4">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#002F5B] border-b border-slate-100 pb-3">
+            <div className="bg-white rounded-2xl p-6 shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)] space-y-4">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#002F5B] border-b border-slate-100 pb-3">
                 Bài Viết Cùng Chuyên Mục
               </h4>
               <div className="space-y-4">
@@ -262,11 +262,11 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                       </div>
                     ) : (
                       <div className="w-16 h-12 rounded-lg bg-[#002F5B]/10 flex items-center justify-center shrink-0 text-[#002F5B]">
-                        <BookOpen className="w-5 h-5 text-[#F76011]" />
+                        <BookOpen className="w-5 h-5 text-[#C9500E]" />
                       </div>
                     )}
                     <div className="space-y-1">
-                      <h5 className="text-xs font-bold text-[#002F5B] group-hover:text-[#F76011] transition-colors line-clamp-2 leading-snug">
+                      <h5 className="text-xs font-bold text-[#002F5B] group-hover:text-[#C9500E] transition-colors line-clamp-2 leading-snug">
                         {rel.title}
                       </h5>
                       <span className="text-[10px] text-slate-400 block">{rel.date}</span>
@@ -285,12 +285,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
         <div className="w-full max-w-[1600px] mx-auto space-y-8">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-xs uppercase font-extrabold tracking-widest text-[#F76011]">KHÁM PHÁ THÊM</span>
-              <h2 className="text-2xl font-extrabold text-[#002F5B] mt-1">Bài Viết Chuyên Đề Khác</h2>
+              <span className="text-xs uppercase font-semibold tracking-widest text-[#C9500E]">KHÁM PHÁ THÊM</span>
+              <h2 className="text-2xl font-semibold text-[#002F5B] mt-1">Bài Viết Chuyên Đề Khác</h2>
             </div>
             <Link
               href="/tri-thuc"
-              className="text-xs font-bold text-[#F76011] hover:text-[#002F5B] transition-colors flex items-center gap-1"
+              className="text-xs font-bold text-[#C9500E] hover:text-[#002F5B] transition-colors flex items-center gap-1"
             >
               <span>Xem tất cả ({articles.length})</span>
               <ChevronRight className="w-4 h-4" />
@@ -312,7 +312,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#002F5B] to-[#073866] text-white">
+                    <div className="w-full h-full flex items-center justify-center bg-[#002F5B] text-white">
                       <BookOpen className="w-8 h-8 text-[#FF7A30]" />
                     </div>
                   )}
@@ -322,12 +322,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 </div>
 
                 <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
-                  <h3 className="text-sm font-bold text-[#002F5B] group-hover:text-[#F76011] transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-sm font-bold text-[#002F5B] group-hover:text-[#C9500E] transition-colors line-clamp-2 leading-snug">
                     {art.title}
                   </h3>
                   <div className="flex items-center justify-between text-[11px] text-[#486581] pt-2 border-t border-slate-200">
                     <span>{art.date}</span>
-                    <span className="font-semibold text-[#F76011] flex items-center gap-0.5">
+                    <span className="font-semibold text-[#C9500E] flex items-center gap-0.5">
                       Đọc tiếp <ChevronRight className="w-3 h-3" />
                     </span>
                   </div>

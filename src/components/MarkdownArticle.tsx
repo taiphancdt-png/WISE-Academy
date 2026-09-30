@@ -121,7 +121,7 @@ export default function MarkdownArticle({ content }: MarkdownArticleProps) {
         <h2
           key={`h2-${elements.length}`}
           id={anchor}
-          className="text-xl sm:text-2xl font-extrabold text-[#002F5B] mt-10 mb-4 pt-4 border-t border-slate-100 scroll-mt-24"
+          className="text-xl sm:text-2xl font-semibold text-[#002F5B] mt-10 mb-4 pt-4 border-t border-slate-100 scroll-mt-24"
         >
           {title}
         </h2>

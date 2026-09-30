@@ -10,6 +10,8 @@
     --orange-primary: #F76011;
     --orange-hover: #FF6712;
     --orange-tint: #FFF5EC;
+    /* Darker orange for small text on white (4.5:1 contrast, WCAG AA) */
+    --orange-ink: #C9500E;
     --orange-glow: rgba(247, 96, 17, 0.25);
 
     --cream-bg: #F8F9FA;
@@ -221,4 +223,27 @@ body {
 font[style] {
   background: none !important;
   box-shadow: none !important;
+}
+
+/* Accessibility: visible keyboard focus and reduced motion */
+:focus-visible {
+  outline: 2px solid #F76011;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Horizontal chip rows: keep swipe scrolling, hide the scrollbar */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
