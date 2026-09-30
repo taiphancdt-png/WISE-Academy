@@ -38,7 +38,7 @@ export default function Footer() {
             <img src="/images/brand/logo.png" alt="WISE Academy Logo" className="h-10 w-auto object-contain" />
           </Link>
           <p className="text-sm leading-relaxed max-w-sm">
-            <strong className="text-white">CÔNG TY TNHH TƯ VẤN & ĐÀO TẠO WISE</strong> — đồng hành cùng các nhà máy
+            <strong className="text-white">CÔNG TY TNHH TƯ VẤN & ĐÀO TẠO WISE ACADEMY</strong> — đồng hành cùng các nhà máy
             sản xuất tối ưu quy trình, loại bỏ lãng phí, đào tạo quản đốc và nâng cao năng suất chuyền.
           </p>
           <div className="text-xs text-white/55 space-y-1">
