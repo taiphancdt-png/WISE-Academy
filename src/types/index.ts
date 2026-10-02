@@ -43,6 +43,8 @@ export interface Course {
   image?: string | null;
   /** Optional downloadable program brochure (PDF under /public) */
   brochure?: string;
+  /** Topic sub-group within the practitioner programs (e.g. "Năng suất") */
+  topic?: string;
 }
 
 export interface TocItem {

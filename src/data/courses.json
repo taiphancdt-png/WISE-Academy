@@ -16,7 +16,8 @@
     "image": "/images/courses/a-guide-to-kaizen-event/cover.webp",
     "badge": "WORKSHOP & ĐỒNG HÀNH",
     "accent_color": "#F76011",
-    "brochure": "/brochures/a-guide-to-kaizen-event.pdf"
+    "brochure": "/brochures/a-guide-to-kaizen-event.pdf",
+    "topic": "Kaizen mindset"
   },
   {
     "id": "lean-fundamental-kaizen-mindset",
@@ -35,7 +36,68 @@
     "image": "/images/courses/lean-fundamental-kaizen-mindset/cover.webp",
     "brochure": "/brochures/lean-fundamental-kaizen-mindset.pdf",
     "badge": "NỀN TẢNG & THỰC HÀNH",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
+  },
+  {
+    "id": "work-engineering-productivity-improvement",
+    "title": "Work Engineering for Productivity Improvement: Tư duy & kỹ thuật cải tiến năng suất",
+    "belt": "none",
+    "category": "Chuyên viên thực hành Lean",
+    "duration": "5 ngày đào tạo nâng cao, kết hợp thực hành tại hiện trường",
+    "target": "Tổ trưởng, giám sát chuyền, kỹ sư IE / quy trình, quản lý sản xuất – vận hành, đội Lean / Kaizen / CI",
+    "summary": "Chương trình nâng cao giúp học viên xây dựng cả tư duy lẫn kỹ thuật cải tiến năng suất chuyền một cách bài bản và bền vững: nền tảng Lean & Work Engineering, nhận diện lãng phí (Muda – Mura – Muri, 8 lãng phí), nghiên cứu thao tác và đo lường công việc, ECRS, sơ đồ quy trình và spaghetti, cân bằng chuyền với takt time và biểu đồ Yamazumi, thiết kế layout và cell sản xuất, công việc tiêu chuẩn, Kaizen Event và đo lường hiệu quả trước – sau. Nội dung có thể tùy chỉnh theo đặc thù ngành và mục tiêu của doanh nghiệp.",
+    "outcomes": [
+      "Nhận diện lãng phí và tổn thất năng suất ngay tại hiện trường (Gemba, vòng tròn Ohno)",
+      "Cải tiến phương pháp làm việc bằng ECRS, nghiên cứu thao tác và công thái học",
+      "Phân tích điểm nghẽn, cân bằng chuyền với takt time, Yamazumi và tối ưu nhân lực",
+      "Thiết kế layout, cell sản xuất hiệu quả và đo lường kết quả cải tiến trước – sau"
+    ],
+    "image": "/images/courses/work-engineering-productivity-improvement/cover.webp",
+    "brochure": "/brochures/work-engineering-productivity-improvement.pdf",
+    "badge": "NÂNG CAO · IE & LEAN",
+    "accent_color": "#F76011",
+    "topic": "Năng suất"
+  },
+  {
+    "id": "5s-safety-visual-management",
+    "title": "5S, Safety & Visual Management: Tổ chức nơi làm việc khoa học, an toàn và trực quan",
+    "belt": "none",
+    "category": "Chuyên viên thực hành Lean",
+    "duration": "3 ngày, kết hợp lớp học và triển khai tại khu vực thí điểm",
+    "target": "Tổ trưởng, giám sát, công nhân sản xuất, bảo trì – kỹ thuật, kho vận – logistics, đại diện an toàn, đội Lean / CI, trưởng bộ phận",
+    "summary": "Chương trình giúp doanh nghiệp xây dựng nơi làm việc an toàn, ngăn nắp và hiệu quả theo phương pháp 6S (Sàng lọc – Sắp xếp – Sạch sẽ – Săn sóc – Sẵn sàng – An toàn) kết hợp quản lý trực quan. Học viên vừa học trên lớp vừa triển khai trực tiếp tại khu vực thí điểm: thực hành S1–S4, xây dựng tiêu chuẩn trực quan, hệ thống đánh giá 5S, phân công trách nhiệm, đánh giá rủi ro an toàn, an toàn máy móc – PPE và lập kế hoạch duy trì. Nội dung có thể tùy chỉnh theo đặc thù ngành và mục tiêu của doanh nghiệp.",
+    "outcomes": [
+      "Hiểu đúng 5S/6S, an toàn và quản lý trực quan; tránh các ngộ nhận phổ biến về 5S",
+      "Triển khai S1–S4 thực tế tại khu vực thí điểm, so sánh trước – sau",
+      "Xây dựng tiêu chuẩn trực quan, hệ thống đánh giá 5S và phân công trách nhiệm rõ ràng",
+      "Nhận diện rủi ro an toàn, kiểm soát an toàn máy móc – PPE và xây dựng văn hóa an toàn"
+    ],
+    "image": "/images/courses/5s-safety-visual-management/cover.webp",
+    "brochure": "/brochures/5s-safety-visual-management.pdf",
+    "badge": "GEMBA 5S · AN TOÀN",
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
+  },
+  {
+    "id": "growth-mindset-kaizen-skills",
+    "title": "Growth Mindset & Continuous Improvement (Kaizen) Skills: Tư duy phát triển và kỹ năng cải tiến liên tục",
+    "belt": "none",
+    "category": "Chuyên viên thực hành Lean",
+    "duration": "1 ngày",
+    "target": "Senior, trưởng nhóm, giám sát (khối sản xuất và văn phòng) đã có nền tảng công cụ cải tiến",
+    "summary": "Với đội ngũ trực tiếp điều hành hằng ngày, thách thức không còn là “biết công cụ” mà là vận hành một hệ thống cải tiến liên tục nhất quán và bền vững. Chương trình tập trung vào hai tư duy cốt lõi: Growth mindset (năng lực có thể phát triển) và Kaizen mindset (cải tiến là hệ thống vận hành mỗi ngày), dựa trên tư duy hệ thống và khung RG-PDCA của WISE Academy. Học viên chuyển từ người “chữa cháy” thành người xây dựng hệ thống, biết nhận diện đúng vấn đề, đi từ triệu chứng đến nguyên nhân gốc rễ và dẫn dắt văn hóa Kaizen.",
+    "outcomes": [
+      "Phân biệt tư duy cố định – tư duy phát triển, tư duy xử lý triệu chứng – tư duy cải tiến hệ thống",
+      "Hiểu Kaizen là hệ thống cải tiến hằng ngày với 3 cấp độ: Fix – Improve – Prevent",
+      "Giải quyết vấn đề từ triệu chứng → nguyên nhân gốc rễ → hệ thống",
+      "Thực hành 3 hành vi của người lãnh đạo Kaizen: hỏi tại sao, đi quan sát, huấn luyện; lập kế hoạch hành động cá nhân"
+    ],
+    "image": "/images/courses/growth-mindset-kaizen-skills/cover.webp",
+    "brochure": "/brochures/growth-mindset-kaizen-skills.pdf",
+    "badge": "TƯ DUY & KỸ NĂNG",
+    "accent_color": "#F76011",
+    "topic": "Kaizen mindset"
   },
   {
     "id": "lean-six-sigma-yellow-belt",
@@ -89,7 +151,8 @@
     ],
     "badge": "GEMBA 5S",
     "accent_color": "#002F5B",
-    "image": "/images/courses/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/cover.webp"
+    "image": "/images/courses/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/cover.webp",
+    "topic": "Tổng quan về Lean"
   },
   {
     "id": "tpm-oee-equipment-excellence",
@@ -107,7 +170,46 @@
     ],
     "badge": "TPM / OEE",
     "accent_color": "#F76011",
-    "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp"
+    "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp",
+    "topic": "TPM – Quản lý năng suất thiết bị toàn phần"
+  },
+  {
+    "id": "lean-management-system-roadmap",
+    "title": "Lean Management System: Lộ trình chuyển đổi Lean 5 giai đoạn",
+    "belt": "none",
+    "category": "Chương trình cho lãnh đạo",
+    "duration": "Lộ trình tư vấn & đào tạo theo giai đoạn (6–18 tháng mỗi giai đoạn)",
+    "target": "Ban lãnh đạo, giám đốc nhà máy, quản lý vận hành và đội Lean / CI của doanh nghiệp muốn chuyển đổi Lean bài bản",
+    "summary": "Lean không chỉ là phương pháp tăng năng suất mà là một triết lý vận hành giúp tạo nhiều giá trị hơn với ít nguồn lực hơn. Chương trình đưa ra mô hình ngôi nhà chuyển đổi Lean và lộ trình 5 giai đoạn: (1) Nhận thức Lean & đồng thuận lãnh đạo, (2) Ổn định sản xuất & xây nền tảng (6S, loại bỏ lãng phí, công việc tiêu chuẩn, TPM, TWI), (3) Triển khai Lean & tác động kinh doanh (VSM, dòng chảy, Kanban, Heijunka), (4) Quản lý hằng ngày & chất lượng tại nguồn, (5) Văn hóa Lean & cải tiến liên tục, cùng 10 tiêu chí của một chuyền Lean đạt chuẩn.",
+    "outcomes": [
+      "Xác định đúng giai đoạn hiện tại của doanh nghiệp trên hành trình Lean",
+      "Có lộ trình chuyển đổi 5 giai đoạn gắn với chiến lược và KPI kinh doanh",
+      "Biết các mô-đun đào tạo – tư vấn phù hợp cho từng giai đoạn",
+      "Nắm 10 tiêu chí của một chuyền sản xuất Lean đạt chuẩn"
+    ],
+    "image": "/images/courses/lean-management-system-roadmap/cover.webp",
+    "brochure": "/brochures/lean-management-system-roadmap.pdf",
+    "badge": "LỘ TRÌNH CHUYỂN ĐỔI",
+    "accent_color": "#F76011"
+  },
+  {
+    "id": "lean-leadership-lean-awareness",
+    "title": "Lean Leadership & Lean Awareness: Đồng thuận lãnh đạo và nhận thức Lean",
+    "belt": "none",
+    "category": "Chương trình cho lãnh đạo",
+    "duration": "5 ngày: 2 ngày workshop lãnh đạo + 3 ngày thực hành cho giám sát chuyền",
+    "target": "CEO, COO, CFO, giám đốc nhà máy, trưởng bộ phận, Lean Champion / trưởng nhóm CI – IE – Kaizen, quản lý chủ chốt và giám sát chuyền",
+    "summary": "Chương trình kết hợp hiểu biết chiến lược với thực hành vận hành. Hai ngày đầu dành cho lãnh đạo: trải nghiệm tư duy dòng chảy qua mô phỏng, nhìn doanh nghiệp theo chuỗi giá trị (VSM), phân tích khoảng cách hiện trạng – tương lai, ưu tiên sáng kiến chuyển đổi và xây dựng lộ trình Lean 6–12 tháng. Ba ngày tiếp theo dành cho giám sát chuyền: 5 nguyên lý Lean, nhận diện 8 lãng phí, quan sát Gemba, lập và triển khai Single-point Kaizen, báo cáo kết quả trước lãnh đạo.",
+    "outcomes": [
+      "Hiểu Lean là triết lý quản trị, vai trò của Lean trong bối cảnh VUCA và Công nghiệp 4.0",
+      "Nhìn doanh nghiệp theo chuỗi giá trị, xác định điểm nghẽn và lãng phí lớn nhất",
+      "Xây dựng lộ trình chuyển đổi Lean 6–12 tháng với cam kết rõ ràng của từng lãnh đạo",
+      "Giám sát chuyền thực hiện Single-point Kaizen tại hiện trường và trình bày kết quả trước lãnh đạo"
+    ],
+    "image": "/images/courses/lean-leadership-lean-awareness/cover.webp",
+    "brochure": "/brochures/lean-leadership-lean-awareness.pdf",
+    "badge": "LÃNH ĐẠO & THỰC HÀNH",
+    "accent_color": "#002F5B"
   },
   {
     "id": "lean-simulation-game-workshop",
@@ -160,7 +262,8 @@
     ],
     "image": "/images/courses/cac-dai-luong-do-luong-nang-luc-he-thong-quan-ly-chat-luong-quality-kpis/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Chất lượng"
   },
   {
     "id": "cac-dai-luong-do-luong-nang-luc-quan-tri-van-hanh-xuat-sac-lean-kpis",
@@ -211,7 +314,8 @@
     ],
     "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Năng suất"
   },
   {
     "id": "cong-thuc-tinh-gia-thanh-va-giam-chi-phi",
@@ -279,7 +383,8 @@
     ],
     "image": "/images/courses/kien-thuc-co-ban-ve-quan-tri-van-hanh-xuat-sac/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
   },
   {
     "id": "ky-nang-giao-tiep-va-quan-ly-xung-dot-hieu-qua",
@@ -313,7 +418,8 @@
     ],
     "image": "/images/courses/ky-thuat-cai-tien-hieu-suat-su-dung-thiet-bi-toan-phan-oee/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "TPM – Quản lý năng suất thiết bị toàn phần"
   },
   {
     "id": "nang-cao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen",
@@ -330,7 +436,8 @@
     ],
     "image": "/images/courses/nang-cao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Năng suất"
   },
   {
     "id": "phat-trien-nang-luc-doi-ngu-van-hanh-chuyen-nghiep-theo-twi-training-within-industry",
@@ -381,7 +488,8 @@
     ],
     "image": "/images/courses/phat-trien-nang-luc-lam-viec-tu-chu/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Kỹ năng"
   },
   {
     "id": "phat-trien-nang-luc-quan-ly-san-xuat",
@@ -432,7 +540,8 @@
     ],
     "image": "/images/courses/phat-trien-tu-duy-va-nang-luc-giai-quyet-van-de-theo-chu-trinh-pdca/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Problem solving"
   },
   {
     "id": "quy-trinh-va-ky-nang-hoach-dinh-thiet-lap-va-trien-khai-ke-hoach-san-xuat",
@@ -449,7 +558,8 @@
     ],
     "image": "/images/courses/quy-trinh-va-ky-nang-hoach-dinh-thiet-lap-va-trien-khai-ke-hoach-san-xuat/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Kỹ năng"
   },
   {
     "id": "to-chuc-khu-vuc-lam-viec-hieu-qua-va-khoa-hoc-bang-phuong-phap-5s-an-toan-va-quan-ly-truc-quan",
@@ -466,7 +576,8 @@
     ],
     "image": "/images/courses/to-chuc-khu-vuc-lam-viec-hieu-qua-va-khoa-hoc-bang-phuong-phap-5s-an-toan-va-quan-ly-truc-quan/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
   },
   {
     "id": "toi-uu-hoa-quy-trinh-bang-ky-thuat-ve-so-do-chuoi-gia-tri-vsm-va-so-do-quy-trinh-process-mapping",
@@ -483,7 +594,8 @@
     ],
     "image": "/images/courses/toi-uu-hoa-quy-trinh-bang-ky-thuat-ve-so-do-chuoi-gia-tri-vsm-va-so-do-quy-trinh-process-mapping/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Năng suất"
   },
   {
     "id": "tong-quan-ve-bao-tri-nang-suat-tong-the-total-productive-mantenance",
@@ -500,7 +612,8 @@
     ],
     "image": "/images/courses/tong-quan-ve-bao-tri-nang-suat-tong-the-total-productive-mantenance/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "TPM – Quản lý năng suất thiết bị toàn phần"
   },
   {
     "id": "tong-quan-ve-he-thong-quan-ly-chat-luong-total-quality-management-tqm",
@@ -517,7 +630,8 @@
     ],
     "image": "/images/courses/tong-quan-ve-he-thong-quan-ly-chat-luong-total-quality-management-tqm/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Chất lượng"
   },
   {
     "id": "tong-quan-ve-phuong-thuc-quan-tri-van-hanh-xuat-sac-va-5-nguyen-ly-lean-co-ban",
@@ -534,7 +648,8 @@
     ],
     "image": "/images/courses/tong-quan-ve-phuong-thuc-quan-tri-van-hanh-xuat-sac-va-5-nguyen-ly-lean-co-ban/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
   },
   {
     "id": "tu-duy-va-ky-thuat-can-bang-chuyen-san-xuat-theo-quy-trinh-cong-nghe-chuan",
@@ -551,7 +666,8 @@
     ],
     "image": "/images/courses/tu-duy-va-ky-thuat-can-bang-chuyen-san-xuat-theo-quy-trinh-cong-nghe-chuan/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Năng suất"
   },
   {
     "id": "tu-duy-va-ky-thuat-nhan-dien-va-loai-bo-8-lang-phi",
@@ -568,7 +684,8 @@
     ],
     "image": "/images/courses/tu-duy-va-ky-thuat-nhan-dien-va-loai-bo-8-lang-phi/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Tổng quan về Lean"
   },
   {
     "id": "tu-duy-va-nguyen-tac-thiet-lap-quy-trinh-cong-nghe-chuan",
@@ -585,7 +702,8 @@
     ],
     "image": "/images/courses/tu-duy-va-nguyen-tac-thiet-lap-quy-trinh-cong-nghe-chuan/cover.webp",
     "badge": "CHUYÊN ĐỀ",
-    "accent_color": "#002F5B"
+    "accent_color": "#002F5B",
+    "topic": "Năng suất"
   },
   {
     "id": "tu-van-trien-khai-giai-phap-ket-hop-lean-va-ai-de-toi-uu-hoa-quy-trinh-va-ra-quyet-dinh",

@@ -14,6 +14,16 @@ import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 const ALL = "all";
 const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
 const PRACTITIONER_GROUP = "Chuyên viên thực hành Lean";
+// Topic sub-groups of the practitioner programs, in display order (matches `topic` in courses.json).
+const PRACTITIONER_TOPICS = [
+  "Tổng quan về Lean",
+  "Kaizen mindset",
+  "Problem solving",
+  "Kỹ năng",
+  "Chất lượng",
+  "Năng suất",
+  "TPM – Quản lý năng suất thiết bị toàn phần",
+];
 
 // The four program groups; `id` matches the `category` value in courses.json.
 const GROUPS = [
@@ -180,11 +190,26 @@ function PractitionerSection({ courses }: { courses: Course[] }) {
   return (
     <div className="space-y-10">
       <LeanHouse />
-      <ul className="space-y-3">
-        {courses.map((c) => (
-          <CourseAccordionItem key={c.id} course={c} open={openId === c.id} onToggle={() => setOpenId(openId === c.id ? null : c.id)} />
-        ))}
-      </ul>
+      {[...PRACTITIONER_TOPICS, "Chương trình khác"].map((topic, ti) => {
+        const list = courses.filter((c) => (PRACTITIONER_TOPICS.includes(c.topic || "") ? c.topic : "Chương trình khác") === topic);
+        if (list.length === 0) return null;
+        return (
+          <section key={topic} aria-label={topic}>
+            <h3 className="mb-3 flex items-center gap-3 text-lg sm:text-xl font-semibold text-[#002F5B]">
+              <span className="w-8 h-8 rounded-full bg-[#F76011] text-white text-sm font-bold flex items-center justify-center shrink-0">
+                {ti + 1}
+              </span>
+              {topic}
+              <span className="text-xs font-medium text-[#829AB1]">{list.length} chương trình</span>
+            </h3>
+            <ul className="space-y-3">
+              {list.map((c) => (
+                <CourseAccordionItem key={c.id} course={c} open={openId === c.id} onToggle={() => setOpenId(openId === c.id ? null : c.id)} />
+              ))}
+            </ul>
+          </section>
+        );
+      })}
     </div>
   );
 }
