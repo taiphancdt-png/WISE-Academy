@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Award, CheckCircle2, Clock, Laptop, MonitorPlay, Users } from "lucide-react";
+import { ArrowUpRight, Award, CheckCircle2, Clock, Download, Laptop, MonitorPlay, Users } from "lucide-react";
 import { CSSC_LISTING, LSSI_HOME, LSSI_PROGRAMS } from "@/data/lssi-programs";
 
 // The three ways every LSSI program can be taken.
@@ -80,8 +80,8 @@ export function LssiProgramGrid() {
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {LSSI_PROGRAMS.map((p) => (
-        <li key={p.id}>
-          <a href={p.url} target="_blank" rel="noopener noreferrer" className="card-soft group h-full overflow-hidden flex flex-col">
+        <li key={p.id} className="card-soft group h-full overflow-hidden flex flex-col">
+          <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-grow">
             <div className="aspect-[8/5] bg-[#F1F4F8] overflow-hidden border-t-4" style={{ borderColor: p.color }}>
               <img
                 src={p.image}
@@ -92,7 +92,7 @@ export function LssiProgramGrid() {
                 loading="lazy"
               />
             </div>
-            <div className="p-6 flex flex-col flex-grow">
+            <div className="p-6 pb-0 flex flex-col flex-grow">
               <h3 className="text-lg font-semibold text-[#002F5B] leading-snug group-hover:text-[#C9500E] transition-colors">{p.title}</h3>
               <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-2">{p.tagline}</p>
               <p className="mt-auto pt-5 flex items-center gap-1.5 text-xs text-[#486581]">
@@ -101,11 +101,20 @@ export function LssiProgramGrid() {
                 {p.id.endsWith("bundle") && <span className="text-slate-300">·</span>}
                 {p.id.endsWith("bundle") && <span>{p.includes.length} cấp độ</span>}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#C9500E]">
-                Xem chi tiết tại LSSI <ArrowUpRight className="w-4 h-4" />
-              </span>
             </div>
           </a>
+          <div className="p-6 pt-4 flex items-center justify-between gap-3">
+            <a
+              href={`/brochures/${p.id}.pdf`}
+              download={`WISE-Academy-${p.id}-brochure.pdf`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#002F5B] hover:bg-[#073866] text-white text-xs font-semibold px-4 py-2 transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" /> Tải brochure
+            </a>
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-[#C9500E] hover:underline">
+              Chi tiết tại LSSI <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </li>
       ))}
     </ul>
