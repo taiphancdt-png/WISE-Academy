@@ -1,4 +1,5 @@
 import HomeClient from "@/components/HomeClient";
+import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 import coursesData from "@/data/courses.json";
 import projectsData from "@/data/projects.json";
 import expertsData from "@/data/experts.json";
@@ -13,10 +14,6 @@ export const metadata = {
 export default function HomePage() {
   const courses = coursesData as Course[];
   const articles = articlesData as Article[];
-
-  const featuredCourses = courses
-    .slice(0, 6)
-    .map(({ id, title, image, badge, accent_color, category, duration }) => ({ id, title, image, badge, accent_color, category, duration }));
 
   const featuredProjects = (projectsData as Project[])
     .filter((p) => !p.client.includes("(bỏ)"))
@@ -49,8 +46,7 @@ export default function HomePage() {
 
   return (
     <HomeClient
-      featuredCourses={featuredCourses}
-      courseCount={courses.length}
+      courseCount={courses.filter((c) => c.category !== "Lean Six Sigma chuẩn quốc tế").length + LSSI_PROGRAMS.length}
       featuredProjects={featuredProjects}
       experts={experts}
       featuredArticles={featuredArticles}

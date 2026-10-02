@@ -6,7 +6,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock,
-  Layers,
   Phone,
   Mail,
   Send,
@@ -15,17 +14,16 @@ import {
 } from "lucide-react";
 import SectionBadge from "@/components/SectionBadge";
 import PartnerLogos from "@/components/PartnerLogos";
+import { LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import CountUp from "@/components/CountUp";
-import type { Course, Project, Expert, Article } from "@/types";
+import type { Project, Expert, Article } from "@/types";
 
 // Only the fields the homepage renders; selected on the server in app/page.tsx to keep the client bundle small.
-export type HomeCourse = Pick<Course, "id" | "title" | "image" | "badge" | "accent_color" | "category" | "duration">;
 export type HomeProject = Pick<Project, "id" | "client" | "title" | "highlight" | "results" | "cover" | "gallery">;
 export type HomeExpert = Pick<Expert, "id" | "name" | "image" | "role" | "bio">;
 export type HomeArticle = Pick<Article, "id" | "slug" | "title" | "thumbnail" | "category" | "excerpt" | "date" | "readTime">;
 
 export interface HomeProps {
-  featuredCourses: HomeCourse[];
   courseCount: number;
   featuredProjects: HomeProject[];
   experts: HomeExpert[];
@@ -95,7 +93,6 @@ const stats = [
 ];
 
 export default function HomeClient({
-  featuredCourses,
   courseCount,
   featuredProjects,
   experts,
@@ -165,62 +162,18 @@ export default function HomeClient({
             <SectionBadge title="Đối tác ủy quyền của LSSI Global" />
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B]">Chương trình đào tạo Lean Six Sigma</h2>
             <p className="mt-3 text-sm sm:text-base text-[#486581]">
-              Lộ trình đào tạo thực hành theo cấp độ, học xong là áp dụng được ngay trên chuyền sản xuất.
+              Chương trình chứng nhận quốc tế của LSSI Global, từ Yellow Belt đến Master Black Belt, học theo 3 hình thức: self-paced, face to face và virtual live.
             </p>
           </div>
 
-          {/* LSSI authorized partner */}
-          <div className="card-soft !transform-none mb-14 px-6 py-7 sm:px-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <a
-              href="https://leansixsigmainstitute.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0"
-              aria-label="Lean Six Sigma Institute (LSSI Global)"
-            >
-              <img src="/images/brand/lssi-logo.png" alt="Lean Six Sigma Institute (LSSI) logo" className="h-16 sm:h-20 w-auto" />
-            </a>
-            <div className="hidden md:block w-px self-stretch bg-slate-200" />
-            <p className="text-sm sm:text-base text-[#486581] leading-relaxed text-center md:text-left">
-              <strong className="text-[#002F5B]">WISE Academy là đối tác được ủy quyền (Authorized Partner) của Lean Six Sigma Institute – LSSI Global</strong>{" "}
-              tại Việt Nam và châu Á. Học viên được đào tạo theo giáo trình chuẩn quốc tế của LSSI và nhận chứng nhận Lean Six Sigma
-              có giá trị toàn cầu.
-            </p>
+          <div className="mb-14">
+            <LssiPartnerIntro />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCourses.map((course) => (
-              <Link key={course.id} href={`/dao-tao#${course.id}`} className="card-soft group flex flex-col p-5">
-                <div className="aspect-[16/10] rounded-lg overflow-hidden bg-slate-100">
-                  {course.image && (
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  )}
-                </div>
-                <div className="pt-5 flex flex-col flex-grow">
-                  <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#102A43]">
-                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
-                    {course.badge}
-                  </span>
-                  <h3 className="mt-2 text-base font-semibold text-[#102A43] leading-snug line-clamp-2">{course.title}</h3>
-                  <span className="mt-3 text-sm font-medium text-[#C9500E] group-hover:underline">Xem chi tiết khóa học</span>
-                  <div className="mt-auto pt-5 flex items-center gap-5 text-xs text-[#486581]">
-                    <span className="flex items-center gap-1.5 min-w-0">
-                      <Layers className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
-                      <span className="truncate">{course.category}</span>
-                    </span>
-                    <span className="flex items-center gap-1.5 min-w-0">
-                      <Clock className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
-                      <span className="truncate">{course.duration}</span>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <LssiProgramGrid />
+
+          <div className="mt-10">
+            <LssiPricingCta href="/dao-tao#dang-ky-lssi" />
           </div>
 
           <div className="text-center mt-12">
@@ -228,7 +181,7 @@ export default function HomeClient({
               href="/dao-tao"
               className="inline-flex items-center gap-2 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
             >
-              Xem tất cả {courseCount} khóa học <ArrowRight className="w-4 h-4" />
+              Xem tất cả {courseCount} chương trình đào tạo <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

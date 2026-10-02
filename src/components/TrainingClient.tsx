@@ -6,8 +6,12 @@ import { Clock, Search } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
+import { LssiFormats, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
+import LssiInterestForm from "@/components/LssiInterestForm";
+import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 
 const ALL = "all";
+const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
 
 // The four program groups; `id` matches the `category` value in courses.json.
 const GROUPS = [
@@ -15,7 +19,7 @@ const GROUPS = [
     id: "Lean Six Sigma chuẩn quốc tế",
     short: "LSS chuẩn quốc tế",
     title: "Chương trình Lean Six Sigma chuẩn quốc tế",
-    description: "Lộ trình đai White, Yellow, Green Belt theo chuẩn LSSI Global, cấp chứng nhận có giá trị quốc tế.",
+    description: "Chương trình chứng nhận của Lean Six Sigma Institute (LSSI Global) — từ Yellow Belt đến Master Black Belt và bằng thạc sĩ, do WISE Academy triển khai tại Việt Nam.",
   },
   {
     id: "Chuyên viên thực hành Lean",
@@ -86,6 +90,22 @@ function CourseCard({ course }: { course: Course }) {
   );
 }
 
+// International group: LSSI partnership, formats, pricing message, programs, benefits and interest form.
+function LssiSection() {
+  return (
+    <div className="space-y-8">
+      <LssiPartnerIntro />
+      <LssiFormats />
+      <LssiPricingCta />
+      <LssiProgramGrid />
+      <LssiIncluded />
+      <div id="dang-ky-lssi" className="scroll-mt-40">
+        <LssiInterestForm />
+      </div>
+    </div>
+  );
+}
+
 function CourseGrid({ courses }: { courses: Course[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -96,12 +116,14 @@ function CourseGrid({ courses }: { courses: Course[] }) {
   );
 }
 
-export default function TrainingClient({ courses }: { courses: Course[] }) {
+export default function TrainingClient({ courses: allCourses }: { courses: Course[] }) {
+  // The international group is served by LSSI programs, so WISE's own belt entries in that group are not listed.
+  const courses = allCourses.filter((c) => c.category !== LSSI_GROUP);
   const [activeGroup, setActiveGroup] = useState(ALL);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const countOf = (id: string) => courses.filter((c) => c.category === id).length;
-  const chips = [{ id: ALL, name: `Tất cả (${courses.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
+  const countOf = (id: string) => (id === LSSI_GROUP ? LSSI_PROGRAMS.length : courses.filter((c) => c.category === id).length);
+  const chips = [{ id: ALL, name: `Tất cả (${courses.length + LSSI_PROGRAMS.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
 
   const q = searchQuery.trim().toLowerCase();
   const filteredCourses = courses.filter(
@@ -159,14 +181,15 @@ export default function TrainingClient({ courses }: { courses: Course[] }) {
           {showGrouped ? (
             <div className="space-y-20">
               {GROUPS.map((g, i) => {
+                const isLssi = g.id === LSSI_GROUP;
                 const list = courses.filter((c) => c.category === g.id);
-                if (list.length === 0) return null;
+                if (!isLssi && list.length === 0) return null;
                 return (
                   <div key={g.id} id={`nhom-${i + 1}`} className="scroll-mt-40">
                     <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-5">
                       <div className="max-w-3xl">
                         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
-                          Nhóm {String(i + 1).padStart(2, "0")} · {list.length} chương trình
+                          Nhóm {String(i + 1).padStart(2, "0")} · {isLssi ? LSSI_PROGRAMS.length : list.length} chương trình
                         </span>
                         <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#002F5B]">{g.title}</h2>
                         <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{g.description}</p>
@@ -179,10 +202,22 @@ export default function TrainingClient({ courses }: { courses: Course[] }) {
                         Chỉ xem nhóm này
                       </button>
                     </div>
-                    <CourseGrid courses={list} />
+                    {isLssi ? (
+                      <LssiSection />
+                    ) : (
+                      <CourseGrid courses={list} />
+                    )}
                   </div>
                 );
               })}
+            </div>
+          ) : activeGroup === LSSI_GROUP ? (
+            <div className="space-y-8">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{GROUPS[0].title}</h2>
+                <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[0].description}</p>
+              </div>
+              <LssiSection />
             </div>
           ) : (
             <>
