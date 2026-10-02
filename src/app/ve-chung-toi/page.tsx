@@ -144,7 +144,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Core values — each pillar with its own accent */}
-      <Section tone="muted">
+      <Section>
         <SectionHeader
           eyebrow="Giá trị cốt lõi"
           title={<>Bốn trụ cột <span className="text-[#F76011]">W · I · S · E</span></>}
