@@ -174,8 +174,8 @@ export function LssiPricingCta({ href = "#dang-ky-lssi" }: { href?: string }) {
   );
 }
 
-// Logos are shown at a third of their balanced base height.
-const LOGO_SCALE = 1 / 3;
+// Logos are shown at two thirds of their balanced base height.
+const LOGO_SCALE = 2 / 3;
 
 // Well-known organisations that have trained with LSSI, grouped by industry (logos from leansixsigmainstitute.org).
 export function LssiClients() {
@@ -194,16 +194,16 @@ export function LssiClients() {
         {LSSI_CLIENTS.map((g) => (
           <div key={g.industry} className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-3 lg:gap-6 items-center border-t border-slate-100 pt-6">
             <p className="text-sm font-semibold text-[#002F5B]">{g.industry}</p>
-            <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
               {g.brands.map((b) => (
-                <li key={b.name} className="h-6 flex items-center">
+                <li key={b.name} className="h-10 flex items-center">
                   <img
                     src={b.logo}
                     alt={b.name}
                     title={b.name}
                     loading="lazy"
                     style={{ height: b.height * LOGO_SCALE }}
-                    className="w-auto max-w-[60px] object-contain"
+                    className="w-auto max-w-[110px] object-contain"
                   />
                 </li>
               ))}
