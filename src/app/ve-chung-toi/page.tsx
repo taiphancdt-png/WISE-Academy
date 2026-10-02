@@ -122,22 +122,22 @@ export default function AboutPage() {
       {/* Vision & Mission */}
       <Section tone="muted">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="card-soft !transform-none p-8 sm:p-10">
-            <span className="w-12 h-12 rounded-full bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
+          <div className="rounded-2xl bg-[#002F5B] text-white p-8 sm:p-10 shadow-[0_20px_45px_-15px_rgba(0,47,91,0.5)]">
+            <span className="w-12 h-12 rounded-full bg-white/10 text-[#FF7A30] flex items-center justify-center">
               <Target className="w-6 h-6" />
             </span>
-            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Tầm nhìn</h2>
-            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
-              WISE định vị là <strong className="text-[#102A43]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
+            <h2 className="mt-5 text-2xl font-semibold">Tầm nhìn</h2>
+            <p className="mt-3 text-sm sm:text-base text-white/85 leading-relaxed">
+              WISE định vị là <strong className="text-[#FF7A30]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
             </p>
           </div>
-          <div className="card-soft !transform-none p-8 sm:p-10">
-            <span className="w-12 h-12 rounded-full bg-[#002F5B] text-[#FF7A30] flex items-center justify-center">
+          <div className="rounded-2xl bg-[#C9500E] text-white p-8 sm:p-10 shadow-[0_20px_45px_-15px_rgba(201,80,14,0.5)]">
+            <span className="w-12 h-12 rounded-full bg-white/15 text-white flex items-center justify-center">
               <ShieldCheck className="w-6 h-6" />
             </span>
-            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Sứ mệnh</h2>
-            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
-              WISE khai thác triệt để mọi cơ hội để <strong className="text-[#102A43]">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
+            <h2 className="mt-5 text-2xl font-semibold">Sứ mệnh</h2>
+            <p className="mt-3 text-sm sm:text-base text-white leading-relaxed">
+              WISE khai thác triệt để mọi cơ hội để <strong className="text-white underline decoration-white/40 underline-offset-4">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
             </p>
           </div>
         </div>
