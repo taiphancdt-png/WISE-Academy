@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, ShieldCheck, Target } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Quote, RefreshCw, ShieldCheck, Target } from "lucide-react";
+import CountUp from "@/components/CountUp";
 import PageHero from "@/components/PageHero";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
@@ -8,6 +9,18 @@ export const metadata = {
   description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
   alternates: { canonical: "/ve-chung-toi" },
 };
+
+const NUMBERS = [
+  { value: "12,000+", label: "Cán bộ & quản lý được đào tạo" },
+  { value: "30+", label: "Doanh nghiệp đối tác" },
+  { value: "100+", label: "Bài viết chia sẻ kiến thức" },
+  { value: "9", label: "Chuyên gia thực chiến" },
+];
+
+// W · I · S · E accent colors (brand navy / orange family). Orange shades used here pass contrast for large text.
+const VALUE_COLORS = ["#002F5B", "#E8590C", "#073866", "#C9500E"];
+// Darker variants for the small uppercase labels so they meet AA contrast on white.
+const VALUE_TEXT = ["#002F5B", "#B5470C", "#073866", "#A8430B"];
 
 // Card placement and outgoing arrow for each RGPDCA step on desktop (3 columns × 2 rows, clockwise loop).
 const LOOP = [
@@ -101,61 +114,107 @@ export default function AboutPage() {
         description="WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững."
       />
 
-      {/* Quote */}
-      <section className="bg-white border-b border-slate-200 py-14 px-4 sm:px-6">
-        <figure className="max-w-3xl mx-auto text-center">
-          <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full mb-6" />
-          <blockquote className="text-xl sm:text-2xl italic text-[#002F5B] leading-relaxed">
-            “Sự phát triển và trưởng thành của nguồn nhân lực là trách nhiệm cao cả nhất của lãnh đạo.”
+      {/* Quote — navy accent band */}
+      <section className="relative overflow-hidden bg-[#002F5B] text-white py-16 sm:py-20 px-4 sm:px-6">
+        <Quote className="absolute -top-6 left-4 sm:left-16 w-40 h-40 text-white/5" aria-hidden="true" />
+        <figure className="relative max-w-3xl mx-auto text-center">
+          <Quote className="w-10 h-10 mx-auto text-[#F76011]" aria-hidden="true" />
+          <blockquote className="mt-5 text-xl sm:text-3xl font-medium leading-relaxed">
+            Sự phát triển và trưởng thành của nguồn nhân lực là{" "}
+            <span className="text-[#FF7A30]">trách nhiệm cao cả nhất</span> của lãnh đạo.
           </blockquote>
-          <figcaption className="mt-4 text-xs uppercase font-bold tracking-widest text-[#486581]">
+          <figcaption className="mt-6 text-xs uppercase font-bold tracking-[0.2em] text-white/60">
             Harvey S. Firestone · Triết lý cốt lõi của WISE Academy
           </figcaption>
         </figure>
       </section>
 
-      {/* Vision & Mission */}
-      <Section tone="muted">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="card-soft !transform-none p-8 sm:p-10">
-            <span className="w-12 h-12 rounded-full bg-[#FFF5EC] text-[#F76011] flex items-center justify-center">
-              <Target className="w-6 h-6" />
-            </span>
-            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Tầm nhìn</h2>
-            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
-              WISE định vị là <strong className="text-[#102A43]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
-            </p>
+      {/* Key numbers */}
+      <section className="bg-[#FFF5EC] border-b border-[#F76011]/15 py-12 px-4 sm:px-6">
+        <dl className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {NUMBERS.map((n) => (
+            <div key={n.label}>
+              <dd className="text-3xl sm:text-4xl font-bold text-[#C9500E]">
+                <CountUp value={n.value} />
+              </dd>
+              <dt className="mt-2 text-xs sm:text-sm font-medium text-[#102A43]">{n.label}</dt>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* Vision & Mission — photo + accented blocks */}
+      <Section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="relative isolate">
+            <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-slate-100">
+              <img
+                src="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_3.webp"
+                alt="Chương trình đào tạo của WISE Academy"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="absolute -bottom-6 left-6 right-6 sm:left-auto sm:right-8 sm:w-72 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+              <img src="/images/brand/lssi-logo.png" alt="" width={800} height={323} className="h-9 w-auto" />
+              <span className="text-xs font-semibold text-[#002F5B] leading-snug">Đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á</span>
+            </div>
+            <div className="hidden sm:block absolute -top-5 -left-5 w-24 h-24 rounded-2xl bg-[#F76011] -z-10" aria-hidden="true" />
           </div>
-          <div className="card-soft !transform-none p-8 sm:p-10">
-            <span className="w-12 h-12 rounded-full bg-[#002F5B] text-[#FF7A30] flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6" />
-            </span>
-            <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Sứ mệnh</h2>
-            <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
-              WISE khai thác triệt để mọi cơ hội để <strong className="text-[#102A43]">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
-            </p>
+
+          <div className="space-y-8 pt-6 lg:pt-0">
+            <div className="border-l-4 border-[#F76011] pl-6">
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
+                <Target className="w-4 h-4" /> Tầm nhìn
+              </span>
+              <p className="mt-3 text-base sm:text-lg text-[#102A43] leading-relaxed">
+                Trở thành <strong className="text-[#002F5B]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và Đông Nam Á,
+                đồng hành cùng doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
+              </p>
+            </div>
+            <div className="border-l-4 border-[#002F5B] pl-6">
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#002F5B]">
+                <ShieldCheck className="w-4 h-4" /> Sứ mệnh
+              </span>
+              <p className="mt-3 text-base sm:text-lg text-[#102A43] leading-relaxed">
+                <strong className="text-[#002F5B]">Phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên chuyên môn sâu và kinh nghiệm
+                thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn lớn.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* Core values */}
-      <Section>
+      {/* Core values — each pillar with its own accent */}
+      <Section tone="muted">
         <SectionHeader
           eyebrow="Giá trị cốt lõi"
           title={<>Bốn trụ cột <span className="text-[#F76011]">W · I · S · E</span></>}
           description="Bộ gen định hình cách các chuyên gia WISE tư vấn, tương tác và đồng hành cùng khách hàng."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v) => (
-            <div key={v.letter} className="card-soft p-7">
-              <span className="w-12 h-12 rounded-full bg-[#002F5B] text-[#FF7A30] flex items-center justify-center font-extrabold text-xl">
-                {v.letter}
-              </span>
-              <span className="mt-5 block text-[11px] font-bold uppercase tracking-widest text-[#C9500E]">{v.word}</span>
-              <h3 className="mt-1 text-lg font-semibold text-[#002F5B]">{v.title}</h3>
-              <p className="mt-3 text-sm text-[#486581] leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
+          {values.map((v, i) => {
+            const color = VALUE_COLORS[i % VALUE_COLORS.length];
+            return (
+              <div key={v.letter} className="card-soft relative overflow-hidden p-7 pt-8" style={{ borderTop: `5px solid ${color}` }}>
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-3 -bottom-8 text-[140px] font-extrabold leading-none select-none"
+                  style={{ color, opacity: 0.08 }}
+                >
+                  {v.letter}
+                </span>
+                <span className="relative w-14 h-14 rounded-2xl text-white flex items-center justify-center font-extrabold text-2xl shadow-md" style={{ backgroundColor: color }}>
+                  {v.letter}
+                </span>
+                <span className="relative mt-5 block text-[11px] font-bold uppercase tracking-widest" style={{ color: VALUE_TEXT[i % VALUE_TEXT.length] }}>
+                  {v.word}
+                </span>
+                <h3 className="relative mt-1 text-lg font-semibold text-[#002F5B]">{v.title}</h3>
+                <p className="relative mt-3 text-sm text-[#486581] leading-relaxed">{v.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
