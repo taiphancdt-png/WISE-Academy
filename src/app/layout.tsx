@@ -17,17 +17,18 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho nhà máy",
+    default: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
     template: "%s",
   },
   description:
-    "WISE Academy — đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma Yellow/Green Belt, 5S, TPM cho nhà máy sản xuất.",
+    "WISE Academy — đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma, 5S, TPM cho doanh nghiệp sản xuất, logistics và dịch vụ.",
   keywords: [
     "Lean Six Sigma",
     "đào tạo Lean Six Sigma",
     "Green Belt",
     "Yellow Belt",
     "tư vấn Lean",
+    "tối ưu vận hành doanh nghiệp",
     "tối ưu vận hành nhà máy",
     "5S",
     "Kaizen",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   authors: [{ name: "WISE Academy" }],
   openGraph: {
     siteName: SITE_NAME,
-    title: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho nhà máy",
+    title: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
     description: "Tối ưu vận hành, tăng năng suất bền vững. Đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
     images: [OG_IMAGE],
     locale: "vi_VN",
@@ -96,7 +97,7 @@ export default function RootLayout({
             url: SITE_URL,
             logo: `${SITE_URL}/images/brand/logo.png`,
             image: `${SITE_URL}${OG_IMAGE.url}`,
-            description: "Tư vấn tối ưu vận hành và đào tạo Lean Six Sigma cho nhà máy sản xuất; đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
+            description: "Tư vấn tối ưu vận hành và đào tạo Lean Six Sigma cho doanh nghiệp sản xuất, logistics và dịch vụ; đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
             telephone: "+84989002121",
             email: "contact@wisedemy.com.vn",
             taxID: "0317485522",

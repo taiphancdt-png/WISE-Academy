@@ -191,13 +191,13 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             <div className="mt-12 bg-[#002F5B] rounded-2xl p-6 sm:p-8 text-white space-y-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF7A30]">
                 <Sparkles className="w-4 h-4" />
-                <span>Ứng Dụng Thực Tế Tại Nhà Xưởng</span>
+                <span>Ứng Dụng Thực Tế Tại Doanh Nghiệp</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white">
                 Bạn Muốn Chuyên Gia Khảo Sát & Tư Vấn Giải Pháp Này Cho Doanh Nghiệp?
               </h3>
               <p className="text-xs sm:text-sm text-[#C7D8E4] leading-relaxed">
-                Đội ngũ chuyên gia của WISE trực tiếp đến phân xưởng để đo lường số liệu, tìm điểm nghẽn và xây dựng lộ trình cải tiến riêng cho nhà máy của bạn.
+                Đội ngũ chuyên gia của WISE trực tiếp đến hiện trường để đo lường số liệu, tìm điểm nghẽn và xây dựng lộ trình cải tiến riêng cho doanh nghiệp của bạn.
               </p>
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
                 <Link
@@ -265,10 +265,10 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 TƯ VẤN TRỰC TIẾP
               </span>
               <h4 className="text-base font-semibold text-[#002F5B]">
-                Cần Giải Đáp Vấn Đề Nhà Xưởng?
+                Cần Giải Đáp Vấn Đề Vận Hành?
               </h4>
               <p className="text-xs text-[#486581] leading-relaxed">
-                Trao đổi 1:1 trực tiếp cùng các chuyên gia từng điều hành nhà máy của Nike, Pou Chen, AG Samho.
+                Trao đổi 1:1 trực tiếp cùng các chuyên gia từng điều hành vận hành tại Nike, Pou Chen, AG Samho.
               </p>
               <div className="space-y-2 pt-1">
                 <a

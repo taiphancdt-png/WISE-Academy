@@ -4,9 +4,9 @@ import type { Course } from "@/types";
 import { SITE_URL, jsonLd, metaDescription } from "@/lib/seo";
 
 export const metadata = {
-  title: "Đào tạo Lean Six Sigma, 5S, TPM thực chiến cho nhà máy — WISE Academy",
+  title: "Đào tạo Lean Six Sigma, 5S, TPM thực chiến cho doanh nghiệp — WISE Academy",
   description:
-    "Các chương trình đào tạo Lean Six Sigma Yellow Belt, Green Belt, 5S, TPM/OEE, Lean 4.0 và workshop mô phỏng cho quản đốc, tổ trưởng, kỹ sư nhà máy.",
+    "Các chương trình đào tạo Lean Six Sigma Yellow Belt, Green Belt, 5S, TPM/OEE, Lean 4.0 và workshop mô phỏng cho lãnh đạo, quản lý và kỹ sư doanh nghiệp.",
   alternates: { canonical: "/dao-tao" },
 };
 

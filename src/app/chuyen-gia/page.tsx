@@ -15,10 +15,10 @@ export default function ExpertsPage() {
   const experts: Expert[] = expertsData as Expert[];
 
   const trust = [
-    { value: "100%", label: "Từng trực tiếp điều hành xưởng sản xuất" },
+    { value: "100%", label: "Từng trực tiếp điều hành vận hành tại doanh nghiệp lớn" },
     { value: "30+", label: "Năm kinh nghiệm cao nhất của chuyên gia" },
     { value: "Thực chiến", label: "Cầm tay chỉ việc trực tiếp trên máy móc" },
-    { value: "Cam kết", label: "Kèm cặp tại xưởng đến khi ra kết quả" },
+    { value: "Cam kết", label: "Kèm cặp tại hiện trường đến khi ra kết quả" },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function ExpertsPage() {
       <PageHero
         eyebrow="Đội ngũ chuyên gia thực chiến"
         image="/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_11.webp"
-        title={<>Chuyên gia đồng hành: <span className="text-[#FF7A30]">người thật,</span> kinh nghiệm nhà xưởng thật</>}
+        title={<>Chuyên gia đồng hành: <span className="text-[#FF7A30]">người thật,</span> kinh nghiệm vận hành thật</>}
         description="Các chuyên gia của WISE không giảng lý thuyết sách vở. Họ từng trực tiếp làm Giám đốc Nhà máy, Quản lý Sản xuất nhiều năm tại các tập đoàn lớn như Nike, Pou Chen, AG Samho, Dean Shoes."
       />
 
@@ -82,7 +82,7 @@ export default function ExpertsPage() {
 
       <CtaBand
         title="Đúng chuyên gia, đúng bài toán hiện trường"
-        description="Liên hệ với chúng tôi để sắp xếp lịch làm việc trực tiếp với chuyên gia phù hợp nhất cho ngành sản xuất của bạn."
+        description="Liên hệ với chúng tôi để sắp xếp lịch làm việc trực tiếp với chuyên gia phù hợp nhất cho lĩnh vực của bạn."
         label="Kết nối với chuyên gia"
       />
     </div>

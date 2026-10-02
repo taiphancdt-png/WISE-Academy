@@ -22,7 +22,7 @@ export default function ToolkitPage() {
         eyebrow="Toolkit"
         image="/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp"
         title={<>Bộ công cụ <span className="text-[#FF7A30]">Lean thực hành</span></>}
-        description="Các công cụ tương tác WISE Academy xây dựng từ chính các dự án tại nhà máy: dùng ngay trên trình duyệt, không cần cài đặt."
+        description="Các công cụ tương tác WISE Academy xây dựng từ chính các dự án tại doanh nghiệp: dùng ngay trên trình duyệt, không cần cài đặt."
       />
 
       <section className="py-14 lg:py-20 px-4 sm:px-6">
@@ -78,7 +78,7 @@ export default function ToolkitPage() {
       </section>
 
       <CtaBand
-        title="Cần công cụ riêng cho nhà máy của bạn?"
+        title="Cần công cụ riêng cho doanh nghiệp của bạn?"
         description="WISE thiết kế công cụ tính toán, biểu mẫu và bảng theo dõi theo đúng quy trình và dữ liệu của doanh nghiệp."
         label="Trao đổi với chuyên gia"
       />

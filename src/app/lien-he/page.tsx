@@ -35,7 +35,7 @@ export default function ContactPage() {
     company: "",
     industry: "May mặc & Giày dép",
     plantSize: "100 - 500 lao động",
-    service: "Khảo sát thực tế & Tìm điểm nghẽn tại xưởng",
+    service: "Khảo sát thực tế & Tìm điểm nghẽn tại hiện trường",
     message: ""
   });
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
         { label: "Số điện thoại", value: formData.phone },
         { label: "Email", value: formData.email },
         { label: "Công ty", value: formData.company },
-        { label: "Ngành nghề", value: formData.industry },
+        { label: "Lĩnh vực", value: formData.industry },
         { label: "Quy mô nhân lực", value: formData.plantSize },
         { label: "Dịch vụ quan tâm", value: formData.service },
         { label: "Mô tả thách thức", value: formData.message },
@@ -64,12 +64,12 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      q: "Khảo sát thực tế tại nhà xưởng ban đầu có mất phí không?",
-      a: "WISE hỗ trợ buổi khảo sát sơ bộ ban đầu tại xưởng hoàn toàn miễn phí cho các doanh nghiệp sản xuất đủ điều kiện, nhằm đánh giá tiềm năng cải tiến và đề xuất lộ trình phù hợp."
+      q: "Buổi khảo sát thực tế ban đầu tại doanh nghiệp có mất phí không?",
+      a: "WISE hỗ trợ buổi khảo sát sơ bộ ban đầu tại hiện trường hoàn toàn miễn phí cho các doanh nghiệp đủ điều kiện, nhằm đánh giá tiềm năng cải tiến và đề xuất lộ trình phù hợp."
     },
     {
       q: "Dự án tư vấn Lean thường kéo dài bao lâu?",
-      a: "Tùy thuộc vào quy mô và mục tiêu: Gói chẩn đoán nhanh kéo dài 2-4 tuần; Gói thí điểm chuyền mẫu 3-6 tháng; và Gói chuyển đổi toàn diện nhân rộng từ 6-12 tháng."
+      a: "Tùy thuộc vào quy mô và mục tiêu: Gói chẩn đoán nhanh kéo dài 2-4 tuần; Gói thí điểm tại khu vực mẫu 3-6 tháng; và Gói chuyển đổi toàn diện nhân rộng từ 6-12 tháng."
     },
     {
       q: "WISE có cam kết kết quả đo lường được không?",
@@ -125,7 +125,7 @@ export default function ContactPage() {
               align="left"
               eyebrow="Thông tin liên hệ"
               title="WISE Academy Consulting & Training"
-              description="Đơn vị đồng hành tin cậy của các doanh nghiệp sản xuất và chuỗi cung ứng hàng đầu tại Việt Nam."
+              description="Đơn vị đồng hành tin cậy của các doanh nghiệp sản xuất, logistics và dịch vụ hàng đầu tại Việt Nam."
             />
             <ul className="-mt-4 divide-y divide-slate-200">
               {contacts.map(({ icon: Icon, label, body }) => (
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 <div>
                   <h2 className="text-2xl font-semibold text-[#002F5B]">Đặt lịch khảo sát & tư vấn hiện trường</h2>
                   <p className="mt-1 text-sm text-[#486581]">
-                    Chia sẻ bài toán của nhà máy để chuyên gia chuẩn bị phân tích trước khi gặp gỡ.
+                    Chia sẻ bài toán của doanh nghiệp để chuyên gia chuẩn bị phân tích trước khi gặp gỡ.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -177,17 +177,18 @@ export default function ContactPage() {
                   <Field id="c-email" label="Email doanh nghiệp" required>
                     <input id="c-email" type="email" required autoComplete="email" value={formData.email} onChange={set("email")} placeholder="ten@congty.com" className={inputClass} />
                   </Field>
-                  <Field id="c-company" label="Tên doanh nghiệp / nhà máy" required>
-                    <input id="c-company" type="text" required autoComplete="organization" value={formData.company} onChange={set("company")} placeholder="Công ty TNHH Sản Xuất ABC" className={inputClass} />
+                  <Field id="c-company" label="Tên doanh nghiệp / tổ chức" required>
+                    <input id="c-company" type="text" required autoComplete="organization" value={formData.company} onChange={set("company")} placeholder="Công ty ABC" className={inputClass} />
                   </Field>
-                  <Field id="c-industry" label="Ngành nghề sản xuất">
+                  <Field id="c-industry" label="Lĩnh vực hoạt động">
                     <select id="c-industry" value={formData.industry} onChange={set("industry")} className={inputClass}>
                       <option value="May mặc & Giày dép">Da giày & May mặc</option>
                       <option value="Cơ khí & Chế tạo">Cơ khí & Chế tạo máy</option>
                       <option value="Điện tử & Bán dẫn">Điện tử & Bán dẫn</option>
                       <option value="Thực phẩm & Đồ uống (F&B)">Thực phẩm & Đồ uống (F&B)</option>
-                      <option value="Logistics & Chuỗi cung ứng">Logistics & Kho bãi</option>
-                      <option value="Khác">Ngành nghề khác</option>
+                      <option value="Logistics & Chuỗi cung ứng">Logistics & Chuỗi cung ứng</option>
+                      <option value="Dịch vụ & Văn phòng">Dịch vụ & Văn phòng</option>
+                      <option value="Khác">Lĩnh vực khác</option>
                     </select>
                   </Field>
                   <Field id="c-size" label="Quy mô nhân lực">
@@ -201,11 +202,11 @@ export default function ContactPage() {
                 </div>
                 <Field id="c-service" label="Dịch vụ quan tâm" required>
                   <select id="c-service" value={formData.service} onChange={set("service")} className={inputClass}>
-                    <option value="Khảo sát thực tế & Tìm điểm nghẽn tại xưởng">Khảo sát thực tế & Tìm điểm nghẽn tại xưởng</option>
-                    <option value="Tối ưu năng suất dây chuyền sản xuất">Tối ưu năng suất dây chuyền sản xuất</option>
-                    <option value="Đào tạo kỹ năng quản lý cho quản đốc & tổ trưởng">Đào tạo kỹ năng quản lý cho quản đốc & tổ trưởng</option>
-                    <option value="Sắp xếp nhà xưởng 5S gọn gàng, ngăn nắp">Sắp xếp nhà xưởng 5S gọn gàng, ngăn nắp</option>
-                    <option value="Giảm thời gian đổi mã hàng & cân bằng chuyền">Giảm thời gian đổi mã hàng & cân bằng chuyền</option>
+                    <option value="Khảo sát thực tế & Tìm điểm nghẽn tại hiện trường">Khảo sát thực tế & Tìm điểm nghẽn tại hiện trường</option>
+                    <option value="Tối ưu năng suất quy trình / dây chuyền">Tối ưu năng suất quy trình / dây chuyền</option>
+                    <option value="Đào tạo kỹ năng cho quản lý cấp trung">Đào tạo kỹ năng cho quản lý cấp trung</option>
+                    <option value="5S & quản lý trực quan nơi làm việc">5S & quản lý trực quan nơi làm việc</option>
+                    <option value="Giảm thời gian chuyển đổi & cân bằng công việc">Giảm thời gian chuyển đổi & cân bằng công việc</option>
                     <option value="Buổi trải nghiệm game mô phỏng sản xuất">Buổi trải nghiệm game mô phỏng sản xuất</option>
                   </select>
                 </Field>

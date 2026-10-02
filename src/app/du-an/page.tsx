@@ -6,7 +6,7 @@ import type { Project } from "@/types";
 
 export const metadata = {
   title: "Dự Án & Câu Chuyện Chuyển Đổi Thực Tế — WISE Academy",
-  description: "Tổng hợp các case study dự án tư vấn Lean Six Sigma, chuẩn hóa 5S, Work Engineering và cải tiến năng suất tại các tập đoàn sản xuất lớn.",
+  description: "Tổng hợp các case study dự án tư vấn Lean Six Sigma, chuẩn hóa 5S, Work Engineering và cải tiến năng suất tại các tập đoàn sản xuất và logistics lớn.",
   alternates: { canonical: "/du-an" },
 };
 
@@ -21,8 +21,8 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Case studies & kết quả thực tế"
         image="/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group/photo_1.webp"
-        title={<>Dự án đã triển khai: <span className="text-[#FF7A30]">kết quả đo lường được</span> tại nhà máy</>}
-        description="Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE và ban giám đốc nhà máy, giúp tăng sản lượng xuất xưởng, giảm phế phẩm và tiết kiệm chi phí lãng phí."
+        title={<>Dự án đã triển khai: <span className="text-[#FF7A30]">kết quả đo lường được</span> tại doanh nghiệp</>}
+        description="Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE và ban lãnh đạo doanh nghiệp, giúp tăng năng suất, giảm lỗi và tiết kiệm chi phí lãng phí."
       />
 
       {/* Featured projects */}
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
       )}
 
       <CtaBand
-        title="Muốn đạt kết quả tương tự tại nhà máy của bạn?"
+        title="Muốn đạt kết quả tương tự tại doanh nghiệp của bạn?"
         description="Chia sẻ bài toán hiện tại, chuyên gia WISE sẽ đề xuất cách triển khai phù hợp với quy mô và ngành hàng của bạn."
         label="Yêu cầu tư vấn triển khai"
       />

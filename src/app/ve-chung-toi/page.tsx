@@ -15,19 +15,19 @@ export default function AboutPage() {
       letter: "W",
       word: "WORKABLE",
       title: "Dễ Làm & Hiệu Quả Thực Tế",
-      desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phải đơn giản, thực tế và áp dụng được ngay trên sàn xưởng."
+      desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phải đơn giản, thực tế và áp dụng được ngay tại nơi làm việc."
     },
     {
       letter: "I",
       word: "IMPROVEMENT",
       title: "Cải Tiến Liên Tục Mỗi Ngày",
-      desc: "WISE cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong nhà máy."
+      desc: "WISE cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong tổ chức."
     },
     {
       letter: "S",
       word: "SHARE",
       title: "Chia Sẻ Kinh Nghiệm Thật",
-      desc: "Chúng tôi nỗ lực đóng góp giá trị chung cho cộng đồng sản xuất Việt Nam, phụng sự nền công nghiệp nước nhà với tinh thần trách nhiệm cao nhất."
+      desc: "Chúng tôi nỗ lực đóng góp giá trị chung cho cộng đồng doanh nghiệp Việt Nam, phụng sự nền kinh tế nước nhà với tinh thần trách nhiệm cao nhất."
     },
     {
       letter: "E",
@@ -41,44 +41,44 @@ export default function AboutPage() {
     {
       phase: "BƯỚC 01",
       code: "R - RESEARCH",
-      name: "Khảo Sát Thực Tế Tại Phân Xưởng",
+      name: "Khảo Sát Thực Tế Tại Hiện Trường",
       action: "Xuống Tận Nơi Quan Sát Thao Tác & Đánh Giá Hiện Trạng",
-      content: "Chuyên gia WISE trực tiếp đến phân xưởng, quan sát luồng nguyên vật liệu và dòng thông tin. Quan sát tỉ mỉ các động tác thừa, phỏng vấn sâu ban lãnh đạo và quản đốc để xây dựng bức tranh hiện trạng toàn diện."
+      content: "Chuyên gia WISE trực tiếp đến hiện trường — nhà máy, kho vận hay văn phòng — quan sát luồng vật tư và dòng thông tin. Quan sát tỉ mỉ các thao tác thừa, phỏng vấn sâu ban lãnh đạo và quản lý trực tiếp để xây dựng bức tranh hiện trạng toàn diện."
     },
     {
       phase: "BƯỚC 02",
       code: "G - GOALS",
       name: "Xác Lập Mục Tiêu & Định Lượng Kết Quả",
       action: "Gắn Kết Cải Tiến Vận Hành Với Bảng Cân Đối Tài Chính",
-      content: "Cùng Ban Giám Đốc xác định rõ các chỉ số đo lường thành công: Tỷ lệ nâng OEE, rút ngắn Lead Time, giảm hàng tồn kho trên chuyền (WIP), giảm tỷ lệ phế phẩm (PPM/Defect Rate) và tính toán giá trị tiết kiệm tài chính (Cost Savings) cụ thể."
+      content: "Cùng Ban Giám Đốc xác định rõ các chỉ số đo lường thành công: Tỷ lệ nâng OEE, rút ngắn Lead Time, giảm công việc dở dang và tồn kho (WIP), giảm tỷ lệ phế phẩm (PPM/Defect Rate) và tính toán giá trị tiết kiệm tài chính (Cost Savings) cụ thể."
     },
     {
       phase: "BƯỚC 03",
       code: "P - PLAN",
       name: "Thiết Kế Lộ Trình Chuyển Đổi Tinh Gọn (Roadmap)",
       action: "Lean House & Lộ Trình 3 Giai Đoạn Chuẩn MIT",
-      content: "Xây dựng bản kế hoạch chi tiết gồm 3 giai đoạn: Khám phá nhận thức (Explore) -> Xây dựng nền móng (Foundation) -> Nhân rộng toàn diện (Scale). Kế hoạch phân bổ nguồn lực rõ ràng theo từng tháng, xác định dây chuyền thí điểm mẫu (Model Line) và thiết lập ban chỉ đạo cải tiến."
+      content: "Xây dựng bản kế hoạch chi tiết gồm 3 giai đoạn: Khám phá nhận thức (Explore) -> Xây dựng nền móng (Foundation) -> Nhân rộng toàn diện (Scale). Kế hoạch phân bổ nguồn lực rõ ràng theo từng tháng, xác định khu vực thí điểm mẫu (Model Line) và thiết lập ban chỉ đạo cải tiến."
     },
     {
       phase: "BƯỚC 04",
       code: "D - DO",
       name: "Triển Khai Thí Điểm & Huấn Luyện Tại Hiện Trường",
       action: "Simulation Game + Kèm Cặp Dự Án Thực Chiến",
-      content: "Tổ chức đào tạo gắn liền với thực hành xưởng. Ứng dụng Lean Simulation Game để xóa bỏ tư duy lối mòn, sau đó chuyên gia cùng đội ngũ kỹ sư trực tiếp triển khai 5S, Lean Cell, SMED, Kanban tại chuyền mẫu để đạt được Quick Wins ngay trong 60 - 90 ngày đầu tiên."
+      content: "Tổ chức đào tạo gắn liền với thực hành tại hiện trường. Ứng dụng Lean Simulation Game để xóa bỏ tư duy lối mòn, sau đó chuyên gia cùng đội ngũ nòng cốt trực tiếp triển khai 5S, Lean Cell, SMED, Kanban tại khu vực mẫu để đạt được Quick Wins ngay trong 60 - 90 ngày đầu tiên."
     },
     {
       phase: "BƯỚC 05",
       code: "C - CHECK",
       name: "Đo Lường, Đánh Giá & Phân Tích Khoảng Cách",
       action: "Đo Lường Before/After & Kiểm Toán Tiến Độ Định Kỳ",
-      content: "Hàng tuần và hàng tháng, ban chỉ đạo tiến hành đo lường các chỉ số Before/After trên chuyền sản xuất thực tế. Đối chiếu với mục tiêu ban đầu, phân tích nguyên nhân gốc rễ (Root Cause Analysis) nếu có độ lệch và điều chỉnh biện pháp can thiệp kịp thời."
+      content: "Hàng tuần và hàng tháng, ban chỉ đạo tiến hành đo lường các chỉ số Before/After trên quy trình thực tế. Đối chiếu với mục tiêu ban đầu, phân tích nguyên nhân gốc rễ (Root Cause Analysis) nếu có độ lệch và điều chỉnh biện pháp can thiệp kịp thời."
     },
     {
       phase: "BƯỚC 06",
       code: "A - ACTION & ADJUST",
       name: "Chuẩn Hóa (Standardize) & Nhân Rộng Bền Vững",
       action: "Ban Hành SOP, Hệ Thống DMS & Đào Tạo Lean Leaders",
-      content: "Đóng gói các giải pháp thành công thành Tiêu chuẩn công việc (Standard Work/SOP). Thiết lập hệ thống quản lý hàng ngày (Daily Management System - DMS) để giữ vững kết quả và chuyển giao năng lực cho các Lean Leaders tự nhân rộng ra toàn bộ nhà máy."
+      content: "Đóng gói các giải pháp thành công thành Tiêu chuẩn công việc (Standard Work/SOP). Thiết lập hệ thống quản lý hàng ngày (Daily Management System - DMS) để giữ vững kết quả và chuyển giao năng lực cho các Lean Leaders tự nhân rộng ra toàn bộ tổ chức."
     }
   ];
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Câu chuyện & sứ mệnh"
         image="/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_10.webp"
-        title={<>Về WISE Academy: <span className="text-[#FF7A30]">đồng hành kiến tạo</span> năng lực vận hành xuất sắc</>}
+        title={<>WISE Academy: <span className="text-[#FF7A30]">đồng hành kiến tạo năng lực vận hành xuất sắc</span></>}
         description="WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững."
       />
 
@@ -113,7 +113,7 @@ export default function AboutPage() {
             </span>
             <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Tầm nhìn</h2>
             <p className="mt-3 text-sm sm:text-base text-[#486581] leading-relaxed">
-              WISE định vị là <strong className="text-[#102A43]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất trên hành trình tối ưu hóa vận hành, xây dựng nhà máy thông minh và nâng tầm năng lực cạnh tranh quốc tế.
+              WISE định vị là <strong className="text-[#102A43]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
             </p>
           </div>
           <div className="card-soft !transform-none p-8 sm:p-10">
@@ -154,7 +154,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="Phương pháp luận RGPDCA"
           title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
-          description="Không áp dụng một công thức rập khuôn cho mọi nhà máy. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
+          description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
         />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {rgpdcaDetails.map((item, i) => (
@@ -172,8 +172,8 @@ export default function AboutPage() {
       </Section>
 
       <CtaBand
-        title="Bạn muốn chuyên gia xuống khảo sát thực tế tại nhà máy cùng WISE?"
-        description="Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống phân xưởng để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến."
+        title="Bạn muốn chuyên gia xuống khảo sát thực tế tại doanh nghiệp cùng WISE?"
+        description="Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống hiện trường để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến."
         label="Đặt lịch khảo sát miễn phí"
       />
     </div>

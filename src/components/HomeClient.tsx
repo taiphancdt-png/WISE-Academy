@@ -49,10 +49,10 @@ const IMG = {
 
 
 const solutions = [
-  "Khảo sát & tìm điểm nghẽn tại xưởng",
-  "Sắp xếp & tối ưu lại dây chuyền",
-  "Nâng năng suất & cân bằng chuyền",
-  "Huấn luyện quản đốc & văn hóa Kaizen",
+  "Khảo sát & tìm điểm nghẽn tại hiện trường",
+  "Sắp xếp & tối ưu lại quy trình",
+  "Nâng năng suất & cân bằng công việc",
+  "Huấn luyện quản lý cấp trung & văn hóa Kaizen",
   "Thiết kế Lean Cell & Layout chữ U",
   "Rút ngắn thời gian đổi mã hàng (SMED)",
   "Quản lý trực quan & 5S hiện trường",
@@ -60,10 +60,10 @@ const solutions = [
 ];
 
 const rgpdcaSteps = [
-  { name: "Khảo sát", vn: "Xuống tận xưởng quan sát" },
+  { name: "Khảo sát", vn: "Xuống tận hiện trường quan sát" },
   { name: "Mục tiêu", vn: "Định lượng kết quả cần đạt" },
   { name: "Kế hoạch", vn: "Lập kế hoạch từng tuần" },
-  { name: "Làm thử", vn: "Làm mẫu tại 1 chuyền trước" },
+  { name: "Làm thử", vn: "Thí điểm tại một khu vực trước" },
   { name: "Đo lường", vn: "So sánh kết quả trước / sau" },
   { name: "Giữ vững", vn: "Viết thành quy trình chuẩn" },
 ];
@@ -71,26 +71,26 @@ const rgpdcaSteps = [
 const whyWise = [
   {
     title: "Dễ làm & hiệu quả ngay (Workable)",
-    desc: "Giải pháp đơn giản, thực tế, công nhân áp dụng được ngay trên sàn xưởng mà không cần công nghệ phức tạp.",
+    desc: "Giải pháp đơn giản, thực tế, đội ngũ áp dụng được ngay tại nơi làm việc mà không cần công nghệ phức tạp.",
   },
   {
     title: "Cải tiến liên tục mỗi ngày (Improvement)",
-    desc: "Tạo thói quen tốt cho công nhân và quản đốc: mỗi ngày sửa một điểm chưa tốt, gom lại thành bước nhảy vọt.",
+    desc: "Tạo thói quen tốt cho nhân viên và quản lý: mỗi ngày sửa một điểm chưa tốt, gom lại thành bước nhảy vọt.",
   },
   {
     title: "Chia sẻ kinh nghiệm thật (Share)",
-    desc: "Chuyên gia từng quản lý nhà máy lớn (Nike, Pou Chen) chia sẻ kinh nghiệm xử lý sự cố thực tế.",
+    desc: "Chuyên gia từng điều hành vận hành tại các tập đoàn lớn (Nike, Pou Chen) chia sẻ kinh nghiệm xử lý sự cố thực tế.",
   },
   {
     title: "Vận hành gọn gàng, tiết kiệm (Excellence)",
-    desc: "Giảm lãng phí tiền bạc, nhân công và thời gian để nhà máy đạt hiệu quả cao nhất với chi phí thấp nhất.",
+    desc: "Giảm lãng phí tiền bạc, nhân công và thời gian để tổ chức đạt hiệu quả cao nhất với chi phí thấp nhất.",
   },
 ];
 
 const stats = [
   { value: "12,000+", label: "Cán bộ & quản lý được đào tạo" },
-  { value: "30+", label: "Nhà máy đối tác" },
-  { value: "+38%", label: "Sản lượng chuyền sau 90 ngày" },
+  { value: "30+", label: "Doanh nghiệp đối tác" },
+  { value: "+38%", label: "Năng suất tăng sau 90 ngày" },
   { value: "-25%", label: "Thời gian chờ đợi & lãng phí" },
 ];
 
@@ -111,7 +111,7 @@ export default function HomeClient({
     phone: "",
     email: "",
     company: "",
-    need: "Khảo sát & Tìm điểm nghẽn tại xưởng",
+    need: "Khảo sát & Tìm điểm nghẽn tại hiện trường",
     message: "",
   });
 
@@ -145,7 +145,7 @@ export default function HomeClient({
     <div>
       {/* 1. HERO */}
       <section className="relative isolate overflow-hidden text-white">
-        <img src={IMG.hero} alt="Nhà máy sản xuất" className="hero-zoom absolute inset-0 -z-20 w-full h-full object-cover" />
+        <img src={IMG.hero} alt="Hiện trường vận hành doanh nghiệp" className="hero-zoom absolute inset-0 -z-20 w-full h-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#001E38]/80 via-[#002F5B]/70 to-[#001E38]/85" />
         <div className="hero-enter max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 lg:py-40 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15]">
@@ -153,7 +153,7 @@ export default function HomeClient({
             <br className="hidden sm:block" /> <span className="text-[#FF7A30]">Tiết kiệm chi phí</span> bền vững.
           </h1>
           <p className="mt-6 text-base sm:text-lg lg:text-xl font-medium text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận xưởng để loại bỏ lãng phí, nâng cao chất lượng
+            Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
             và tối đa hóa năng suất.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -212,17 +212,17 @@ export default function HomeClient({
       <section className="bg-white py-16 lg:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
-            <img src={IMG.gemba} alt="Hiện trường nhà máy" className="w-full h-full object-cover row-span-2 aspect-[3/4]" loading="lazy" />
+            <img src={IMG.gemba} alt="Cải tiến tại hiện trường" className="w-full h-full object-cover row-span-2 aspect-[3/4]" loading="lazy" />
             <img src={IMG.workshop} alt="Workshop thực hành" className="w-full aspect-[4/3] object-cover" loading="lazy" />
-            <img src={IMG.floor} alt="Cải tiến tại chuyền" className="w-full aspect-[4/3] object-cover" loading="lazy" />
+            <img src={IMG.floor} alt="Cải tiến quy trình" className="w-full aspect-[4/3] object-cover" loading="lazy" />
           </div>
           <div>
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
-              Giải pháp tư vấn cho <span className="text-[#F76011]">mọi nhà máy</span>
+              Giải pháp tư vấn cho <span className="text-[#F76011]">mọi tổ chức</span>
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Chuyên gia WISE cùng ban giám đốc xuống tận xưởng, quan sát từng công đoạn để chỉ rõ chỗ nào đang tốn thời
-              gian, nhân lực và chi phí, rồi cùng đội ngũ nhà máy cải tiến cho đến khi có kết quả đo lường được.
+              Từ nhà máy sản xuất, kho vận đến văn phòng dịch vụ, chuyên gia WISE cùng ban lãnh đạo xuống tận hiện trường, quan sát
+              từng bước để chỉ rõ chỗ nào đang tốn thời gian, nhân lực và chi phí, rồi cùng đội ngũ cải tiến cho đến khi có kết quả đo lường được.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
               {solutions.map((s) => (
@@ -249,7 +249,7 @@ export default function HomeClient({
               Phương pháp <span className="text-[#F76011]">RGPDCA</span>: 6 bước cải tiến rõ ràng
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Không mang đến những tập lý thuyết dày cộp. Mọi bước đi đều tập trung vào việc giúp công nhân làm việc dễ
+              Không mang đến những tập lý thuyết dày cộp. Mọi bước đi đều tập trung vào việc giúp đội ngũ làm việc dễ
               hơn, năng suất tăng lên và không làm gián đoạn kế hoạch giao hàng.
             </p>
             <ol className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
@@ -264,9 +264,9 @@ export default function HomeClient({
             </ol>
           </div>
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
-            <img src={IMG.classroom} alt="Đào tạo tại nhà máy" className="w-full aspect-[4/3] object-cover" loading="lazy" />
+            <img src={IMG.classroom} alt="Đào tạo tại doanh nghiệp" className="w-full aspect-[4/3] object-cover" loading="lazy" />
             <img src={IMG.chart} alt="Đo lường kết quả" className="w-full aspect-[4/3] object-cover" loading="lazy" />
-            <img src={IMG.lineBalance} alt="Cân bằng chuyền" className="w-full aspect-[4/3] object-cover" loading="lazy" />
+            <img src={IMG.lineBalance} alt="Cân bằng công việc tại hiện trường" className="w-full aspect-[4/3] object-cover" loading="lazy" />
             <img src={IMG.team} alt="Làm việc nhóm" className="w-full aspect-[4/3] object-cover" loading="lazy" />
           </div>
         </div>
@@ -368,7 +368,7 @@ export default function HomeClient({
             <div>
               <SectionBadge title="Đội ngũ chuyên gia" />
               <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight max-w-md">
-                Kinh nghiệm thực tế, hiểu đời sống nhà xưởng
+                Kinh nghiệm thực tế, hiểu rõ hiện trường vận hành
               </h2>
             </div>
             <Link
@@ -462,10 +462,10 @@ export default function HomeClient({
           <div className="lg:col-span-5">
             <SectionBadge title="Đặt lịch tư vấn" />
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
-              Bài toán của nhà máy là <span className="text-[#F76011]">điểm khởi đầu</span> của chúng tôi
+              Bài toán của doanh nghiệp là <span className="text-[#F76011]">điểm khởi đầu</span> của chúng tôi
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Chuyền sản xuất bị tắc nghẽn, hàng lỗi nhiều hay công nhân chưa tự giác? Để lại thông tin, chuyên gia WISE
+              Quy trình tắc nghẽn, lỗi lặp lại hay đội ngũ chưa chủ động cải tiến? Để lại thông tin, chuyên gia WISE
               sẽ gọi lại trao đổi cụ thể trong vòng 24 giờ làm việc.
             </p>
             <div className="mt-8 space-y-5">
@@ -512,7 +512,7 @@ export default function HomeClient({
               ) : (
                 <form onSubmit={handleFormSubmit} className="relative space-y-4">
                   <Honeypot value={trap} onChange={setTrap} />
-                  <h3 className="text-xl font-semibold text-[#002F5B]">Đặt lịch tư vấn nhà máy</h3>
+                  <h3 className="text-xl font-semibold text-[#002F5B]">Đặt lịch tư vấn cho doanh nghiệp</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="h-name" className="block text-xs font-semibold text-[#102A43] mb-1.5">Họ và tên *</label>
@@ -551,7 +551,7 @@ export default function HomeClient({
                       />
                     </div>
                     <div>
-                      <label htmlFor="h-company" className="block text-xs font-semibold text-[#102A43] mb-1.5">Tên công ty / nhà máy</label>
+                      <label htmlFor="h-company" className="block text-xs font-semibold text-[#102A43] mb-1.5">Tên doanh nghiệp / tổ chức</label>
                       <input
                         id="h-company"
                         type="text"
@@ -570,11 +570,11 @@ export default function HomeClient({
                       onChange={(e) => setFormData({ ...formData, need: e.target.value })}
                       className={inputClass}
                     >
-                      <option value="Khảo sát & Tìm điểm nghẽn tại xưởng">Khảo sát & Tìm điểm nghẽn trực tiếp tại xưởng</option>
-                      <option value="Tăng năng suất dây chuyền sản xuất">Tăng năng suất dây chuyền sản xuất</option>
-                      <option value="Sắp xếp nhà xưởng 5S gọn gàng, an toàn">Sắp xếp nhà xưởng 5S gọn gàng, ngăn nắp, an toàn</option>
-                      <option value="Đào tạo kỹ năng cho quản đốc & tổ trưởng">Đào tạo kỹ năng quản lý cho quản đốc & tổ trưởng</option>
-                      <option value="Giảm tỷ lệ hàng lỗi, phế phẩm">Giảm tỷ lệ hàng lỗi, phế phẩm trong xưởng</option>
+                      <option value="Khảo sát & Tìm điểm nghẽn tại hiện trường">Khảo sát & Tìm điểm nghẽn trực tiếp tại hiện trường</option>
+                      <option value="Tăng năng suất quy trình / dây chuyền">Tăng năng suất quy trình / dây chuyền</option>
+                      <option value="5S & quản lý trực quan nơi làm việc">5S & quản lý trực quan nơi làm việc</option>
+                      <option value="Đào tạo kỹ năng cho quản lý cấp trung">Đào tạo kỹ năng cho quản lý cấp trung</option>
+                      <option value="Giảm tỷ lệ lỗi, phế phẩm">Giảm tỷ lệ lỗi, phế phẩm</option>
                       <option value="Tổ chức buổi trải nghiệm game mô phỏng sản xuất">Tổ chức buổi trải nghiệm game mô phỏng sản xuất</option>
                     </select>
                   </div>
@@ -585,7 +585,7 @@ export default function HomeClient({
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Ví dụ: Công nhân hay bị ứ việc ở khâu đóng gói, thời gian đổi mẫu lâu..."
+                      placeholder="Ví dụ: Công việc hay bị ứ đọng ở một khâu, thời gian xử lý đơn hàng kéo dài, lỗi lặp lại..."
                       className={inputClass}
                     />
                   </div>

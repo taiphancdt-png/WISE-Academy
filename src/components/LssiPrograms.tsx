@@ -5,7 +5,7 @@ import { CSSC_LISTING, LSSI_HOME, LSSI_PROGRAMS } from "@/data/lssi-programs";
 // The three ways every LSSI program can be taken.
 const FORMATS = [
   { name: "Self-paced", icon: Laptop, desc: "Tự học trực tuyến, chủ động thời gian." },
-  { name: "Face to face", icon: Users, desc: "Học trực tiếp tại lớp hoặc in-house tại nhà máy." },
+  { name: "Face to face", icon: Users, desc: "Học trực tiếp tại lớp hoặc in-house tại doanh nghiệp." },
   { name: "Virtual live", icon: MonitorPlay, desc: "Lớp trực tuyến theo lịch cùng giảng viên." },
 ];
 
@@ -26,7 +26,7 @@ export function LssiPartnerIntro() {
             WISE Academy <span className="text-[#FF7A30]">×</span> LSSI Global
           </h3>
           <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
-            Học theo giáo trình chuẩn quốc tế của Lean Six Sigma Institute, cùng giảng viên WISE đồng hành và kèm cặp dự án thực tế tại nhà máy.
+            Học theo giáo trình chuẩn quốc tế của Lean Six Sigma Institute, cùng giảng viên WISE đồng hành và kèm cặp dự án thực tế tại doanh nghiệp.
           </p>
           <ul className="mt-6 space-y-3">
             {TRUST_POINTS.map((t) => (

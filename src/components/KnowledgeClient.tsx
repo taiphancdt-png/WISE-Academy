@@ -100,10 +100,10 @@ export default function KnowledgeClient({ articles }: { articles: KnowledgeItem[
   return (
     <div className="bg-[#F8F9FA]">
       <PageHero
-        eyebrow="Kinh nghiệm vận hành nhà xưởng"
+        eyebrow="Kinh nghiệm vận hành thực tế"
         image="/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_10.webp"
         title={<>Góc tri thức: quản lý sản xuất & <span className="text-[#FF7A30]">tối ưu năng suất</span></>}
-        description="Bài viết hướng dẫn thực tế về 5S, bảo trì TPM, công cụ chất lượng, giải quyết vấn đề và lãnh đạo thay đổi trong nhà máy."
+        description="Bài viết hướng dẫn thực tế về 5S, bảo trì TPM, công cụ chất lượng, giải quyết vấn đề và lãnh đạo thay đổi trong doanh nghiệp."
       >
         <label className="relative w-full max-w-xl">
           <span className="sr-only">Tìm kiếm bài viết</span>

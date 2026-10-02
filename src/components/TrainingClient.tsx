@@ -25,7 +25,7 @@ const GROUPS = [
     id: "Chuyên viên thực hành Lean",
     short: "Chuyên viên thực hành Lean",
     title: "Chương trình dành cho chuyên viên thực hành Lean",
-    description: "Kỹ năng cầm tay chỉ việc cho kỹ sư, quản đốc, tổ trưởng: 5S, TPM, SMED, VSM, cân bằng chuyền, giải quyết vấn đề.",
+    description: "Kỹ năng cầm tay chỉ việc cho kỹ sư, chuyên viên và quản lý trực tiếp: 5S, TPM, SMED, VSM, cân bằng công việc, giải quyết vấn đề.",
   },
   {
     id: "Chương trình cho lãnh đạo",
@@ -37,7 +37,7 @@ const GROUPS = [
     id: "Lean 4.0 & tích hợp AI",
     short: "Lean 4.0 & AI",
     title: "Chương trình Lean 4.0, tích hợp AI",
-    description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành nhà máy thông minh.",
+    description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành thông minh — từ nhà máy đến chuỗi cung ứng và dịch vụ.",
   },
 ];
 
@@ -137,8 +137,8 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
       <PageHero
         eyebrow="Chương trình đào tạo thực chiến"
         image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp"
-        title={<>Đào tạo nâng cao năng suất & <span className="text-[#FF7A30]">tối ưu vận hành</span> nhà xưởng</>}
-        description="4 nhóm chương trình với hơn 35 chuyên đề: từ chứng nhận Lean Six Sigma quốc tế, kỹ năng thực hành tại chuyền, năng lực lãnh đạo đến Lean 4.0 tích hợp AI."
+        title={<>Đào tạo nâng cao năng suất & <span className="text-[#FF7A30]">tối ưu vận hành</span> doanh nghiệp</>}
+        description="4 nhóm chương trình với hơn 35 chuyên đề: từ chứng nhận Lean Six Sigma quốc tế, kỹ năng thực hành tại hiện trường, năng lực lãnh đạo đến Lean 4.0 tích hợp AI."
       />
 
       {/* Group filter and search */}
@@ -242,8 +242,8 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
       </section>
 
       <CtaBand
-        title="Bạn cần khóa học thiết kế riêng cho nhà máy của mình?"
-        description="Chúng tôi khảo sát thực tế tại phân xưởng, lấy ví dụ từ chính sản phẩm và dữ liệu của nhà máy để xây dựng giáo trình đào tạo riêng cho đội ngũ của bạn."
+        title="Bạn cần khóa học thiết kế riêng cho doanh nghiệp của mình?"
+        description="Chúng tôi khảo sát thực tế tại hiện trường, lấy ví dụ từ chính quy trình và dữ liệu của doanh nghiệp để xây dựng giáo trình đào tạo riêng cho đội ngũ của bạn."
         label="Liên hệ thiết kế khóa học in-house"
       />
     </div>

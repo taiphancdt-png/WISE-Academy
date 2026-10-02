@@ -6,7 +6,7 @@ import { cleanExcerpt, normalize, plainText } from "@/lib/text";
 export const metadata = {
   title: "Góc tri thức Lean Six Sigma — WISE Academy",
   description:
-    "Hơn 100 bài viết thực tế về Lean Six Sigma, DMAIC, 5S, TPM, công cụ chất lượng, giải quyết vấn đề và case study cải tiến năng suất nhà máy.",
+    "Hơn 100 bài viết thực tế về Lean Six Sigma, DMAIC, 5S, TPM, công cụ chất lượng, giải quyết vấn đề và case study cải tiến năng suất doanh nghiệp.",
   alternates: { canonical: "/tri-thuc" },
 };
 
