@@ -11,7 +11,8 @@
       "MPI Certified",
       "Gemba Diagnostic"
     ],
-    "image": "/images/experts/nguyen-thi-thuy.webp"
+    "image": "/images/experts/nguyen-thi-thuy.webp",
+    "group": "vietnam"
   },
   {
     "id": "phan-tan-tai",
@@ -25,7 +26,8 @@
       "Lean Cell",
       "Nike Sensei"
     ],
-    "image": "/images/experts/phan-tan-tai.webp"
+    "image": "/images/experts/phan-tan-tai.webp",
+    "group": "vietnam"
   },
   {
     "id": "hoang-minh-nghiep",
@@ -39,7 +41,8 @@
       "Smart Factory",
       "30+ Năm Kinh Nghiệm"
     ],
-    "image": "/images/experts/hoang-minh-nghiep.webp"
+    "image": "/images/experts/hoang-minh-nghiep.webp",
+    "group": "vietnam"
   },
   {
     "id": "nguyen-hoang-son",
@@ -53,7 +56,8 @@
       "Continuous Flow",
       "Kaizen Culture"
     ],
-    "image": "/images/experts/nguyen-hoang-son.webp"
+    "image": "/images/experts/nguyen-hoang-son.webp",
+    "group": "vietnam"
   },
   {
     "id": "tran-nguyen-ha",
@@ -66,7 +70,8 @@
       "ESG",
       "Strategic Ops"
     ],
-    "image": "/images/experts/tran-nguyen-ha.webp"
+    "image": "/images/experts/tran-nguyen-ha.webp",
+    "group": "vietnam"
   },
   {
     "id": "pham-the-linh",
@@ -79,7 +84,8 @@
       "SMED",
       "Plant Optimization"
     ],
-    "image": "/images/experts/pham-the-linh.webp"
+    "image": "/images/experts/pham-the-linh.webp",
+    "group": "vietnam"
   },
   {
     "id": "tu-ngoc-tung",
@@ -93,7 +99,97 @@
       "8D",
       "Process Optimization"
     ],
-    "image": "/images/experts/tu-ngoc-tung.webp"
+    "image": "/images/experts/tu-ngoc-tung.webp",
+    "group": "vietnam"
+  },
+  {
+    "id": "do-tan-khoa",
+    "name": "Đỗ Tấn Khoa",
+    "role": "Chuyên gia Chuyển đổi số · Digital Transformation Consultant",
+    "title": "Thạc sĩ Kỹ thuật Điều khiển & Tự động hóa · Phó Tổng Giám đốc phụ trách Đào tạo & Giải pháp Công nghệ tại CITARES",
+    "bio": "Chuyên gia chẩn đoán doanh nghiệp nhỏ và vừa của Bộ Tài chính (trước đây là Bộ Kế hoạch và Đầu tư). Tư vấn và triển khai chuyển đổi số cho công nghiệp hỗ trợ (Singapore), tư vấn chuyển đổi số cho GIZ; cố vấn khởi nghiệp và đánh giá cải tiến liên tục cho doanh nghiệp công nghệ cao (JICA); chuyên gia đánh giá kỹ năng nghề theo tiêu chuẩn Nhật Bản (JAVADA).",
+    "tags": [
+      "Digital Transformation",
+      "SME Diagnostic",
+      "Automation",
+      "JICA · GIZ"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/do-tan-khoa.webp"
+  },
+  {
+    "id": "nguyen-dinh-tuan",
+    "name": "Nguyễn Đình Tuấn",
+    "role": "Chuyên gia Tư vấn · Lean Consultant & Coach",
+    "title": "Lean Six Sigma Black Belt",
+    "bio": "Chuyên gia tư vấn và huấn luyện Lean, từng là chuyên gia cải tiến hoạt động kinh doanh cho nhiều doanh nghiệp thuộc các ngành khác nhau như Thiên Long, ATC Media, Việt Nhật Tân, Numatec, QCS Mechanical, Bipaco, Tú Phương và Sơn Hải Vân.",
+    "tags": [
+      "Lean Six Sigma Black Belt",
+      "Business Improvement",
+      "Lean Coaching"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/nguyen-dinh-tuan.webp"
+  },
+  {
+    "id": "phan-thi-nhung",
+    "name": "Phan Thị Nhung",
+    "role": "Chuyên gia Cao cấp · Kỹ thuật May & Cải tiến Quy trình",
+    "title": "Chuyên gia cao cấp về Kỹ thuật – Công nghệ ngành may",
+    "bio": "14 năm kinh nghiệm làm thợ mẫu, kỹ thuật viên và huấn luyện công nhân tại Công ty May Hữu Nghị; 17 năm là chuyên viên cao cấp quản lý và cải tiến kỹ thuật – công nghệ theo mô hình quản trị vận hành tinh gọn tại Tổng Công ty May Việt Tiến (VTEC).",
+    "tags": [
+      "Garment Engineering",
+      "Process Improvement",
+      "Lean Operations",
+      "Worker Training"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/phan-thi-nhung.webp"
+  },
+  {
+    "id": "dang-thi-hong-ngoc",
+    "name": "Đặng Thị Hồng Ngọc",
+    "role": "Chuyên gia ISE · Industrial & Systems Engineering",
+    "title": "Chuyên gia Kỹ thuật Công nghiệp & Hệ thống (ISE)",
+    "bio": "Từng là Sr. NPI Manufacturing Engineer tại Zebra, kỹ sư IE tại Swarovski, IE & Project Transfer tại Pepperl+Fuchs và Lean Engineer tại Camso — giàu kinh nghiệm chuyển giao sản phẩm mới, tối ưu quy trình và triển khai Lean trong môi trường sản xuất đa quốc gia.",
+    "tags": [
+      "Industrial Engineering",
+      "NPI",
+      "Project Transfer",
+      "Lean Engineering"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/dang-thi-hong-ngoc.webp"
+  },
+  {
+    "id": "nguyen-minh-nguyet",
+    "name": "Nguyễn Minh Nguyệt",
+    "role": "Chuyên gia Logistics · Logistics Consultant & Trainer",
+    "title": "Chuyên gia tư vấn & đào tạo Logistics, chuỗi cung ứng",
+    "bio": "Từng giữ vị trí Phó Giám đốc Logistics tại HBN, Trợ lý Tổng Giám đốc Logistics tại UMW JDC, Quản lý Việt Nam của BNX Shipping Inc. và Trưởng phòng Logistics tại Pro Trans Logistics.",
+    "tags": [
+      "Logistics",
+      "Supply Chain",
+      "Shipping",
+      "Lean Logistics"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/nguyen-minh-nguyet.webp"
+  },
+  {
+    "id": "tran-thi-my-hong",
+    "name": "Trần Thị Mỹ Hồng",
+    "role": "Chuyên gia Phát triển Nhân sự · HRD Trainer & Coach",
+    "title": "ICF Coach · Soft Skills Trainer · ToT Trainer",
+    "bio": "Chuyên gia đào tạo và coaching phát triển nguồn nhân lực, đồng hành cùng đội ngũ quản lý và nhân viên nâng cao kỹ năng mềm, năng lực đào tạo nội bộ (ToT) và văn hóa cải tiến.",
+    "tags": [
+      "ICF Coach",
+      "Soft Skills",
+      "Train the Trainer",
+      "People Development"
+    ],
+    "group": "vietnam",
+    "image": "/images/experts/tran-thi-my-hong.webp"
   },
   {
     "id": "edward-zhu",
@@ -107,7 +203,8 @@
       "Lean Facilitator",
       "Quality Assurance"
     ],
-    "image": "/images/experts/edward-zhu.webp"
+    "image": "/images/experts/edward-zhu.webp",
+    "group": "international"
   },
   {
     "id": "leo-li",
@@ -121,6 +218,22 @@
       "TPM · SMED · 5S",
       "DMAIC · DFSS"
     ],
-    "image": "/images/experts/leo-li.webp"
+    "image": "/images/experts/leo-li.webp",
+    "group": "international"
+  },
+  {
+    "id": "sujit-bhattacharjee",
+    "name": "Sujit Bhattacharjee",
+    "role": "Chuyên gia Kỹ thuật Giày dép · Footwear Technical Leader",
+    "title": "Associate’s Degree in Footwear Technology · Government College of Engineering and Leather Technology (Ấn Độ)",
+    "bio": "Chuyên gia kỹ thuật giày dép giàu kinh nghiệm trong ngành thời trang và may mặc, thế mạnh về đảm bảo chất lượng, tìm nguồn cung ứng, phát triển sản phẩm, đàm phán và bán lẻ.",
+    "tags": [
+      "Footwear Technology",
+      "Quality Assurance",
+      "Product Development",
+      "Sourcing"
+    ],
+    "group": "international",
+    "image": "/images/experts/sujit-bhattacharjee.webp"
   }
 ]

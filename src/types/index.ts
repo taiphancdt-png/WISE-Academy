@@ -6,6 +6,8 @@ export interface Expert {
   bio: string;
   tags: string[];
   image: string | null;
+  /** "vietnam" = Vietnamese experts, "international" = foreign experts (shown as a separate group) */
+  group: "vietnam" | "international";
 }
 
 export interface ProjectResult {
