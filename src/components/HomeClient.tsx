@@ -16,6 +16,8 @@ import SectionBadge from "@/components/SectionBadge";
 import PartnerLogos from "@/components/PartnerLogos";
 import { LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import CountUp from "@/components/CountUp";
+import Honeypot from "@/components/Honeypot";
+import { submitLead } from "@/lib/submitLead";
 import type { Project, Expert, Article } from "@/types";
 
 // Only the fields the homepage renders; selected on the server in app/page.tsx to keep the client bundle small.
@@ -101,6 +103,9 @@ export default function HomeClient({
 }: HomeProps) {
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [trap, setTrap] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -112,9 +117,25 @@ export default function HomeClient({
 
   const activeProject = featuredProjects[activeProjectIdx] || featuredProjects[0];
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setSending(true);
+    setFailed(false);
+    const ok = await submitLead(
+      "home",
+      [
+        { label: "Họ và tên", value: formData.name },
+        { label: "Số điện thoại", value: formData.phone },
+        { label: "Email", value: formData.email },
+        { label: "Công ty", value: formData.company },
+        { label: "Nhu cầu", value: formData.need },
+        { label: "Mô tả vấn đề", value: formData.message },
+      ],
+      trap
+    );
+    setSending(false);
+    if (ok) setFormSubmitted(true);
+    else setFailed(true);
   };
 
   const inputClass =
@@ -489,7 +510,8 @@ export default function HomeClient({
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleFormSubmit} className="space-y-4">
+                <form onSubmit={handleFormSubmit} className="relative space-y-4">
+                  <Honeypot value={trap} onChange={setTrap} />
                   <h3 className="text-xl font-semibold text-[#002F5B]">Đặt lịch tư vấn nhà máy</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -569,11 +591,18 @@ export default function HomeClient({
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+                    disabled={sending}
+                    className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] disabled:opacity-60 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
                   >
                     <Send className="w-4 h-4" />
-                    Gửi yêu cầu đặt lịch tư vấn
+                    {sending ? "Đang gửi…" : "Gửi yêu cầu đặt lịch tư vấn"}
                   </button>
+                  {failed && (
+                    <p className="text-sm text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-lg px-4 py-3" role="alert">
+                      Chưa gửi được yêu cầu. Vui lòng thử lại hoặc gọi hotline{" "}
+                      <a href="tel:+84989002121" className="font-semibold underline">0989 002 121</a>.
+                    </p>
+                  )}
                   <p className="text-[11px] text-center text-[#486581]">Thông tin của bạn được cam kết bảo mật 100%.</p>
                 </form>
               )}

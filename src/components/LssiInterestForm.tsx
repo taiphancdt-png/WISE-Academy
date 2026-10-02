@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { LSSI_PROGRAMS } from "@/data/lssi-programs";
+import { submitLead } from "@/lib/submitLead";
+import Honeypot from "@/components/Honeypot";
 
 const CONTACT_EMAIL = "contact@wisedemy.com.vn";
 
@@ -21,12 +23,12 @@ function Field({ id, label, required, children }: { id: string; label: string; r
   );
 }
 
-/**
- * Interest form for LSSI programs. The site has no form backend yet, so submitting opens the visitor's
- * email app with the details pre-filled to WISE (nothing is sent to a server).
- */
+/** Interest form for LSSI programs; submissions are emailed to WISE via /api/lead. */
 export default function LssiInterestForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [trap, setTrap] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -42,23 +44,29 @@ export default function LssiInterestForm() {
   const set = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [key]: e.target.value });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const body = [
-      `Họ và tên: ${form.name}`,
-      `Số điện thoại: ${form.phone}`,
-      `Email: ${form.email}`,
-      `Công ty: ${form.company}`,
-      `Thành phố / Quốc gia: ${form.location}`,
-      `Chương trình quan tâm: ${form.program}`,
-      `Hình thức học: ${form.format}`,
-      `Số lượng học viên: ${form.learners}`,
-      `Chứng nhận hiện có: ${form.current}`,
-      `Ghi chú: ${form.message}`,
-    ].join("\n");
-    const subject = `Đăng ký quan tâm chương trình LSSI – ${form.program}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setSending(true);
+    setFailed(false);
+    const ok = await submitLead(
+      "lssi",
+      [
+        { label: "Họ và tên", value: form.name },
+        { label: "Số điện thoại", value: form.phone },
+        { label: "Email", value: form.email },
+        { label: "Công ty", value: form.company },
+        { label: "Thành phố / Quốc gia", value: form.location },
+        { label: "Chương trình quan tâm", value: form.program },
+        { label: "Hình thức học", value: form.format },
+        { label: "Số lượng học viên", value: form.learners },
+        { label: "Chứng nhận hiện có", value: form.current },
+        { label: "Ghi chú", value: form.message },
+      ],
+      trap
+    );
+    setSending(false);
+    if (ok) setSent(true);
+    else setFailed(true);
   };
 
   if (sent) {
@@ -69,19 +77,18 @@ export default function LssiInterestForm() {
         </div>
         <h3 className="mt-4 text-xl font-semibold text-[#002F5B]">Cảm ơn bạn đã quan tâm!</h3>
         <p className="mt-2 text-sm text-[#486581] max-w-md mx-auto">
-          Ứng dụng email đã được mở với thông tin của bạn — hãy bấm gửi để hoàn tất. Nếu email không mở, vui lòng gửi tới{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-[#C9500E]">{CONTACT_EMAIL}</a> hoặc gọi hotline{" "}
-          <a href="tel:+84989002121" className="font-semibold text-[#C9500E]">0989 002 121</a>.
+          WISE Academy đã nhận được thông tin và sẽ liên hệ gửi lịch khai giảng cùng chính sách chi phí ưu đãi trong vòng 24 giờ làm việc.
         </p>
         <button onClick={() => setSent(false)} className="mt-5 text-sm font-semibold text-[#C9500E] hover:underline">
-          Sửa lại thông tin
+          Gửi thêm đăng ký khác
         </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={submit} className="card-soft !transform-none p-6 sm:p-10 space-y-5">
+    <form onSubmit={submit} className="relative card-soft !transform-none p-6 sm:p-10 space-y-5">
+      <Honeypot value={trap} onChange={setTrap} />
       <div>
         <h3 className="text-xl sm:text-2xl font-semibold text-[#002F5B]">Đăng ký nhận thông tin & chi phí ưu đãi</h3>
         <p className="mt-1 text-sm text-[#486581]">
@@ -143,11 +150,19 @@ export default function LssiInterestForm() {
       <Field id="l-message" label="Ghi chú">
         <textarea id="l-message" rows={3} value={form.message} onChange={set("message")} className={inputClass} placeholder="Thời gian mong muốn, mục tiêu học tập..." />
       </Field>
+      {failed && (
+        <p className="text-sm text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-lg px-4 py-3" role="alert">
+          Chưa gửi được thông tin. Vui lòng thử lại, hoặc liên hệ hotline{" "}
+          <a href="tel:+84989002121" className="font-semibold underline">0989 002 121</a> / email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold underline">{CONTACT_EMAIL}</a>.
+        </p>
+      )}
       <button
         type="submit"
-        className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+        disabled={sending}
+        className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] disabled:opacity-60 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
       >
-        <Send className="w-4 h-4" /> Gửi đăng ký quan tâm
+        <Send className="w-4 h-4" /> {sending ? "Đang gửi…" : "Gửi đăng ký quan tâm"}
       </button>
     </form>
   );

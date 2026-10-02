@@ -77,39 +77,16 @@ export function LssiProgramGrid() {
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-lg font-semibold text-[#002F5B] leading-snug group-hover:text-[#C9500E] transition-colors">{p.title}</h3>
-              <p className="mt-2 text-sm text-[#486581] leading-relaxed">{p.tagline}</p>
-
-              <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Cấp độ bao gồm">
-                {p.includes.map((lvl) => (
-                  <li key={lvl} className="text-[11px] font-semibold text-[#102A43] bg-[#F1F4F8] border border-slate-200 px-2.5 py-0.5 rounded-full">
-                    {lvl}
-                  </li>
-                ))}
-              </ul>
-
-              <ul className="mt-4">
-                {p.learn.map((item) => (
-                  <li key={item} className="plus-item !py-1.5 !border-0 !font-normal !text-[#486581]">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-auto pt-5 space-y-3">
-                <p className="flex items-center gap-1.5 text-xs text-[#486581]">
-                  <Clock className="w-3.5 h-3.5 text-[#002F5B] shrink-0" /> {p.duration}
-                </p>
-                <ul className="flex flex-wrap gap-1.5" aria-label="Hình thức học">
-                  {FORMATS.map(({ name, icon: Icon }) => (
-                    <li key={name} className="inline-flex items-center gap-1 text-[11px] font-medium text-[#002F5B] bg-[#EBF3FA] px-2.5 py-1 rounded-full">
-                      <Icon className="w-3 h-3" /> {name}
-                    </li>
-                  ))}
-                </ul>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#C9500E]">
-                  Xem chi tiết tại LSSI <ArrowUpRight className="w-4 h-4" />
-                </span>
-              </div>
+              <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-2">{p.tagline}</p>
+              <p className="mt-auto pt-5 flex items-center gap-1.5 text-xs text-[#486581]">
+                <Clock className="w-3.5 h-3.5 text-[#002F5B] shrink-0" />
+                {p.duration}
+                {p.id.endsWith("bundle") && <span className="text-slate-300">·</span>}
+                {p.id.endsWith("bundle") && <span>{p.includes.length} cấp độ</span>}
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#C9500E]">
+                Xem chi tiết tại LSSI <ArrowUpRight className="w-4 h-4" />
+              </span>
             </div>
           </a>
         </li>

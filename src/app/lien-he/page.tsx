@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Building2, Send, CheckCircle2, ChevronDown } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import Honeypot from "@/components/Honeypot";
+import { submitLead } from "@/lib/submitLead";
 import PartnerLogos from "@/components/PartnerLogos";
 import { Section, SectionHeader } from "@/components/ui";
 
@@ -23,6 +25,9 @@ function Field({ id, label, required, children }: { id: string; label: string; r
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [trap, setTrap] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -34,9 +39,27 @@ export default function ContactPage() {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setFailed(false);
+    const ok = await submitLead(
+      "contact",
+      [
+        { label: "Họ và tên", value: formData.name },
+        { label: "Số điện thoại", value: formData.phone },
+        { label: "Email", value: formData.email },
+        { label: "Công ty", value: formData.company },
+        { label: "Ngành nghề", value: formData.industry },
+        { label: "Quy mô nhân lực", value: formData.plantSize },
+        { label: "Dịch vụ quan tâm", value: formData.service },
+        { label: "Mô tả thách thức", value: formData.message },
+      ],
+      trap
+    );
+    setSending(false);
+    if (ok) setSubmitted(true);
+    else setFailed(true);
   };
 
   const faqs = [
@@ -136,7 +159,8 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="relative space-y-5">
+                <Honeypot value={trap} onChange={setTrap} />
                 <div>
                   <h2 className="text-2xl font-semibold text-[#002F5B]">Đặt lịch khảo sát & tư vấn hiện trường</h2>
                   <p className="mt-1 text-sm text-[#486581]">
@@ -195,12 +219,19 @@ export default function ContactPage() {
                     className={inputClass}
                   />
                 </Field>
+                {failed && (
+                  <p className="text-sm text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-lg px-4 py-3" role="alert">
+                    Chưa gửi được yêu cầu. Vui lòng thử lại hoặc gọi hotline{" "}
+                    <a href="tel:+84989002121" className="font-semibold underline">0989 002 121</a>.
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+                  disabled={sending}
+                  className="w-full py-3.5 rounded-full bg-[#F76011] hover:bg-[#C9500E] disabled:opacity-60 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
                 >
                   <Send className="w-4 h-4" />
-                  Gửi yêu cầu tư vấn
+                  {sending ? "Đang gửi…" : "Gửi yêu cầu tư vấn"}
                 </button>
               </form>
             )}
