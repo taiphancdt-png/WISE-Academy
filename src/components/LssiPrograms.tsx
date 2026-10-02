@@ -1,58 +1,75 @@
 import React from "react";
-import { ArrowUpRight, Award, Clock, Laptop, MonitorPlay, Users } from "lucide-react";
+import { ArrowUpRight, Award, CheckCircle2, Clock, Laptop, MonitorPlay, Users } from "lucide-react";
 import { CSSC_LISTING, LSSI_HOME, LSSI_PROGRAMS } from "@/data/lssi-programs";
 
 // The three ways every LSSI program can be taken.
 const FORMATS = [
-  { name: "Self-paced", icon: Laptop, desc: "Tự học trực tuyến trên nền tảng của LSSI, chủ động thời gian và tiến độ." },
-  { name: "Face to face", icon: Users, desc: "Học trực tiếp cùng giảng viên tại lớp hoặc tại nhà máy (in-house), thực hành trên dữ liệu thật." },
-  { name: "Virtual live", icon: MonitorPlay, desc: "Lớp trực tuyến theo lịch cùng giảng viên, tương tác và trao đổi trực tiếp qua video." },
+  { name: "Self-paced", icon: Laptop, desc: "Tự học trực tuyến, chủ động thời gian." },
+  { name: "Face to face", icon: Users, desc: "Học trực tiếp tại lớp hoặc in-house tại nhà máy." },
+  { name: "Virtual live", icon: MonitorPlay, desc: "Lớp trực tuyến theo lịch cùng giảng viên." },
 ];
 
-export function LssiFormats() {
-  return (
-    <div>
-      <h3 className="text-lg font-semibold text-[#002F5B]">3 hình thức học cho mỗi chương trình</h3>
-      <ul className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-        {FORMATS.map(({ name, icon: Icon, desc }) => (
-          <li key={name} className="flex items-start gap-3 bg-white border border-slate-200 rounded-xl p-4">
-            <span className="w-10 h-10 rounded-full bg-[#FFF5EC] text-[#F76011] flex items-center justify-center shrink-0">
-              <Icon className="w-5 h-5" />
-            </span>
-            <span>
-              <span className="block text-sm font-semibold text-[#102A43]">{name}</span>
-              <span className="block mt-0.5 text-sm text-[#486581] leading-relaxed">{desc}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+const TRUST_POINTS = [
+  "Đối tác ủy quyền chính thức (Authorized Partner) tại Việt Nam & châu Á",
+  "LSSI là đơn vị đào tạo được CSSC công nhận",
+  "Chứng nhận Lean Six Sigma quốc tế, giá trị trọn đời",
+];
 
-// WISE × LSSI partnership intro with the LSSI logo.
+// Highlighted WISE × LSSI partnership band: message, trust points, logos and the three learning formats.
 export function LssiPartnerIntro() {
   return (
-    <div className="card-soft !transform-none px-6 py-7 sm:px-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-      <div className="shrink-0 flex items-center gap-5">
-        <a href={LSSI_HOME} target="_blank" rel="noopener noreferrer" aria-label="Lean Six Sigma Institute (LSSI Global)">
-          <img src="/images/brand/lssi-logo.png" alt="Lean Six Sigma Institute (LSSI) logo" width={800} height={323} className="h-14 sm:h-16 w-auto" />
-        </a>
-        <a href={CSSC_LISTING} target="_blank" rel="noopener noreferrer" aria-label="LSSI trong danh sách đơn vị đào tạo được CSSC công nhận">
-          <img src="/images/lssi/cssc.webp" alt="Council for Six Sigma Certification (CSSC)" width={299} height={300} className="h-16 sm:h-20 w-auto" />
-        </a>
+    <div className="rounded-3xl overflow-hidden bg-[#002F5B] text-white shadow-[0_20px_50px_-15px_rgba(0,30,56,0.45)]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-7 sm:p-10 lg:p-12 items-center">
+        <div className="lg:col-span-7">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF7A30]">Đối tác ủy quyền</span>
+          <h3 className="mt-3 text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-tight">
+            WISE Academy <span className="text-[#FF7A30]">×</span> LSSI Global
+          </h3>
+          <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
+            Học theo giáo trình chuẩn quốc tế của Lean Six Sigma Institute, cùng giảng viên WISE đồng hành và kèm cặp dự án thực tế tại nhà máy.
+          </p>
+          <ul className="mt-6 space-y-3">
+            {TRUST_POINTS.map((t) => (
+              <li key={t} className="flex items-start gap-3 text-sm sm:text-base">
+                <CheckCircle2 className="w-5 h-5 text-[#FF7A30] shrink-0 mt-0.5" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="lg:col-span-5">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center">
+            <div className="flex items-center justify-center gap-6 sm:gap-8">
+              <a href={LSSI_HOME} target="_blank" rel="noopener noreferrer" aria-label="Lean Six Sigma Institute (LSSI Global)">
+                <img src="/images/brand/lssi-logo.png" alt="Lean Six Sigma Institute (LSSI) logo" width={800} height={323} className="h-14 sm:h-16 w-auto" />
+              </a>
+              <span className="w-px h-16 bg-slate-200" />
+              <a href={CSSC_LISTING} target="_blank" rel="noopener noreferrer" aria-label="LSSI trong danh sách đơn vị đào tạo được CSSC công nhận">
+                <img src="/images/lssi/cssc.webp" alt="Council for Six Sigma Certification (CSSC)" width={299} height={300} className="h-20 sm:h-24 w-auto" />
+              </a>
+            </div>
+            <p className="mt-5 text-xs sm:text-sm text-[#486581] leading-relaxed">
+              Chứng nhận do <strong className="text-[#002F5B]">LSSI</strong> và <strong className="text-[#002F5B]">CSSC</strong> (The Council for Six
+              Sigma Certification) đồng cấp, được công nhận toàn cầu.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="hidden md:block w-px self-stretch bg-slate-200" />
-      <div className="text-sm sm:text-base text-[#486581] leading-relaxed text-center md:text-left space-y-2">
-        <p>
-          <strong className="text-[#002F5B]">WISE Academy là đối tác được ủy quyền (Authorized Partner) của Lean Six Sigma Institute – LSSI Global</strong>{" "}
-          tại Việt Nam và châu Á. Học viên được đào tạo theo giáo trình chuẩn quốc tế của LSSI, với đội ngũ giảng viên WISE đồng hành và kèm cặp dự án
-          thực tế tại nhà máy.
-        </p>
-        <p>
-          LSSI là <strong className="text-[#002F5B]">đơn vị đào tạo chính thức được công nhận bởi CSSC</strong> (The Council for Six Sigma
-          Certification) — tổ chức thiết lập chuẩn chứng nhận Six Sigma quốc tế — nên chứng nhận Lean Six Sigma của học viên có giá trị toàn cầu.
-        </p>
+      <div className="border-t border-white/10 bg-[#00264A] px-7 sm:px-10 lg:px-12 py-6">
+        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 mb-4">3 hình thức học cho mỗi chương trình</p>
+        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {FORMATS.map(({ name, icon: Icon, desc }) => (
+            <li key={name} className="flex items-center gap-3">
+              <span className="w-11 h-11 rounded-full bg-[#F76011] text-white flex items-center justify-center shrink-0">
+                <Icon className="w-5 h-5" />
+              </span>
+              <span>
+                <span className="block text-sm sm:text-base font-semibold">{name}</span>
+                <span className="block text-xs sm:text-sm text-white/70">{desc}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -126,14 +143,14 @@ export function LssiIncluded() {
 // Key message: best pricing for Vietnam & Asia through WISE.
 export function LssiPricingCta({ href = "#dang-ky-lssi" }: { href?: string }) {
   return (
-    <div className="rounded-2xl bg-[#002F5B] text-white px-6 py-8 sm:px-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+    <div className="rounded-2xl bg-[#FFF5EC] border border-[#F76011]/25 px-6 py-8 sm:px-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
-        <p className="text-xl sm:text-2xl font-semibold leading-snug">
-          Liên hệ WISE Academy để có <span className="text-[#FF7A30]">chính sách chi phí ưu đãi nhất</span> cho thị trường Việt Nam và châu Á
+        <p className="text-xl sm:text-2xl font-semibold leading-snug text-[#002F5B]">
+          Liên hệ WISE Academy để có <span className="text-[#C9500E]">chính sách chi phí ưu đãi nhất</span> cho thị trường Việt Nam và châu Á
         </p>
-        <p className="mt-2 text-sm text-white/80">Ưu đãi cho cá nhân, nhóm và đào tạo in-house theo doanh nghiệp.</p>
-        <p className="mt-3 text-sm text-white">
-          <strong className="text-[#FF7A30]">Đặc biệt:</strong> Bạn đã có chứng nhận một cấp độ và muốn học lên cấp cao hơn? Liên hệ WISE Academy
+        <p className="mt-2 text-sm text-[#486581]">Ưu đãi cho cá nhân, nhóm và đào tạo in-house theo doanh nghiệp.</p>
+        <p className="mt-3 text-sm text-[#102A43]">
+          <strong className="text-[#C9500E]">Đặc biệt:</strong> Bạn đã có chứng nhận một cấp độ và muốn học lên cấp cao hơn? Liên hệ WISE Academy
           để được tư vấn lộ trình nâng cấp phù hợp.
         </p>
       </div>

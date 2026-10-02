@@ -6,7 +6,7 @@ import { Clock, Search } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
-import { LssiFormats, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
+import { LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import LssiInterestForm from "@/components/LssiInterestForm";
 import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 
@@ -95,7 +95,6 @@ function LssiSection() {
   return (
     <div className="space-y-8">
       <LssiPartnerIntro />
-      <LssiFormats />
       <LssiPricingCta />
       <LssiProgramGrid />
       <LssiIncluded />
