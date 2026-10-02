@@ -7,27 +7,109 @@ import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
 
+const ALL = "all";
+
+// The four program groups; `id` matches the `category` value in courses.json.
+const GROUPS = [
+  {
+    id: "Lean Six Sigma chuẩn quốc tế",
+    short: "LSS chuẩn quốc tế",
+    title: "Chương trình Lean Six Sigma chuẩn quốc tế",
+    description: "Lộ trình đai White, Yellow, Green Belt theo chuẩn LSSI Global, cấp chứng nhận có giá trị quốc tế.",
+  },
+  {
+    id: "Chuyên viên thực hành Lean",
+    short: "Chuyên viên thực hành Lean",
+    title: "Chương trình dành cho chuyên viên thực hành Lean",
+    description: "Kỹ năng cầm tay chỉ việc cho kỹ sư, quản đốc, tổ trưởng: 5S, TPM, SMED, VSM, cân bằng chuyền, giải quyết vấn đề.",
+  },
+  {
+    id: "Chương trình cho lãnh đạo",
+    short: "Lãnh đạo",
+    title: "Chương trình cho lãnh đạo",
+    description: "Hoạch định chiến lược, quản trị bằng chỉ số, chẩn đoán vận hành và phát triển năng lực đội ngũ quản lý.",
+  },
+  {
+    id: "Lean 4.0 & tích hợp AI",
+    short: "Lean 4.0 & AI",
+    title: "Chương trình Lean 4.0, tích hợp AI",
+    description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành nhà máy thông minh.",
+  },
+];
+
+function CourseCard({ course }: { course: Course }) {
+  return (
+      <article id={course.id} className="card-soft flex flex-col p-5 scroll-mt-40">
+        {course.image && (
+          <div className="aspect-[16/10] rounded-lg overflow-hidden bg-slate-100">
+            <img src={course.image} alt={course.title} className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        )}
+        <div className="pt-5 flex flex-col flex-grow">
+          <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#102A43]">
+            <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
+            {course.badge}
+          </span>
+          <h3 className="mt-2 text-lg font-semibold text-[#002F5B] leading-snug">{course.title}</h3>
+          <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{course.summary}</p>
+
+          <dl className="mt-4 space-y-3 text-sm">
+            <div>
+              <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Đối tượng</dt>
+              <dd className="mt-1 text-[#486581]">{course.target}</dd>
+            </div>
+            <div>
+              <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Kết quả đạt được</dt>
+              <dd>
+                <ul className="mt-1">
+                  {course.outcomes.slice(0, 3).map((out) => (
+                    <li key={out} className="plus-item !py-1.5 !border-0 !font-normal !text-[#486581]">
+                      {out}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
+            <span className="flex items-center gap-1.5 text-xs text-[#486581] min-w-0">
+              <Clock className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
+              <span className="truncate">{course.duration}</span>
+            </span>
+            <Link href="/lien-he" className="shrink-0 text-sm font-semibold text-[#C9500E] hover:underline">
+              Tư vấn khóa học
+            </Link>
+          </div>
+        </div>
+      </article>
+  );
+}
+
+function CourseGrid({ courses }: { courses: Course[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {courses.map((course) => (
+        <CourseCard key={course.id} course={course} />
+      ))}
+    </div>
+  );
+}
+
 export default function TrainingClient({ courses }: { courses: Course[] }) {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeGroup, setActiveGroup] = useState(ALL);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const countOf = (id: string) => courses.filter((c) => c.category === id).length;
+  const chips = [{ id: ALL, name: `Tất cả (${courses.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
 
-  const categories = [
-    { id: "all", name: `Tất cả chuyên đề (${courses.length})` },
-    { id: "Lean Six Sigma", name: "Lean Six Sigma Belts" },
-    { id: "Quản trị Hiện trường", name: "5S & Quản trị Hiện trường" },
-    { id: "Bảo trì & Kỹ thuật", name: "TPM & Kỹ thuật Sản xuất" },
-    { id: "Workshop Thực chiến", name: "Simulation Game" },
-    { id: "Chuyển đổi số", name: "Lean 4.0 & Số hóa" },
-    { id: "Chuyên đề Nâng cao", name: "Đào tạo In-house Khác" },
-  ];
-
-  const filteredCourses = courses.filter((c) => {
-    const matchesCat = activeCategory === "all" || c.category === activeCategory;
-    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          c.summary.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCat && matchesSearch;
-  });
+  const q = searchQuery.trim().toLowerCase();
+  const filteredCourses = courses.filter(
+    (c) =>
+      (activeGroup === ALL || c.category === activeGroup) &&
+      (!q || c.title.toLowerCase().includes(q) || c.summary.toLowerCase().includes(q))
+  );
+  const showGrouped = activeGroup === ALL && !q;
 
   return (
     <div className="bg-[#F8F9FA]">
@@ -35,104 +117,92 @@ export default function TrainingClient({ courses }: { courses: Course[] }) {
         eyebrow="Chương trình đào tạo thực chiến"
         image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp"
         title={<>Đào tạo nâng cao năng suất & <span className="text-[#FF7A30]">tối ưu vận hành</span> nhà xưởng</>}
-        description="Hơn 35 chuyên đề đào tạo dễ hiểu, cầm tay chỉ việc ngay trên chuyền sản xuất. Giúp quản đốc, tổ trưởng và kỹ sư biết cách phát hiện lãng phí, giảm phế phẩm và làm chủ quy trình."
+        description="4 nhóm chương trình với hơn 35 chuyên đề: từ chứng nhận Lean Six Sigma quốc tế, kỹ năng thực hành tại chuyền, năng lực lãnh đạo đến Lean 4.0 tích hợp AI."
       />
 
-      {/* Filter and search */}
+      {/* Group filter and search */}
       <section className="sticky top-[61px] z-30 bg-white border-b border-slate-200 py-3 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none w-full md:w-auto" role="tablist" aria-label="Lọc theo chủ đề">
-            {categories.map((cat) => (
+        <div className="max-w-6xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none w-full xl:w-auto" role="tablist" aria-label="Lọc theo nhóm chương trình">
+            {chips.map((chip) => (
               <button
-                key={cat.id}
+                key={chip.id}
                 role="tab"
-                aria-selected={activeCategory === cat.id}
-                onClick={() => setActiveCategory(cat.id)}
+                aria-selected={activeGroup === chip.id}
+                onClick={() => setActiveGroup(chip.id)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap border transition-colors ${
-                  activeCategory === cat.id
+                  activeGroup === chip.id
                     ? "bg-[#002F5B] border-[#002F5B] text-white"
                     : "bg-white border-slate-200 text-[#486581] hover:border-[#002F5B] hover:text-[#002F5B]"
                 }`}
               >
-                {cat.name}
+                {chip.name}
               </button>
             ))}
           </div>
-          <label className="relative w-full md:w-72">
+          <label className="relative w-full xl:w-64 shrink-0">
             <span className="sr-only">Tìm kiếm chuyên đề đào tạo</span>
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Tìm kiếm chuyên đề đào tạo..."
+              placeholder="Tìm kiếm chuyên đề..."
               className="w-full pl-10 pr-4 py-2.5 rounded-full bg-[#F8F9FA] border border-slate-200 text-sm focus:outline-none focus:border-[#F76011] focus:ring-2 focus:ring-[#F76011]/15"
             />
           </label>
         </div>
       </section>
 
-      {/* Courses grid */}
       <section className="py-14 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <p className="mb-8 text-sm text-[#486581]" aria-live="polite">
-            Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chuyên đề
-          </p>
-
-          {filteredCourses.length === 0 ? (
-            <div className="text-center py-20 text-[#486581]">
-              <p className="text-base font-semibold text-[#002F5B]">Không tìm thấy chuyên đề phù hợp</p>
-              <p className="mt-2 text-sm">Thử từ khóa khác hoặc chọn &ldquo;Tất cả chuyên đề&rdquo;.</p>
+          {showGrouped ? (
+            <div className="space-y-20">
+              {GROUPS.map((g, i) => {
+                const list = courses.filter((c) => c.category === g.id);
+                if (list.length === 0) return null;
+                return (
+                  <div key={g.id} id={`nhom-${i + 1}`} className="scroll-mt-40">
+                    <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-5">
+                      <div className="max-w-3xl">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
+                          Nhóm {String(i + 1).padStart(2, "0")} · {list.length} chương trình
+                        </span>
+                        <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#002F5B]">{g.title}</h2>
+                        <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{g.description}</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setActiveGroup(g.id)}
+                        className="self-start sm:self-auto shrink-0 text-sm font-semibold text-[#C9500E] hover:underline"
+                      >
+                        Chỉ xem nhóm này
+                      </button>
+                    </div>
+                    <CourseGrid courses={list} />
+                  </div>
+                );
+              })}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredCourses.map((course) => (
-                <article key={course.id} id={course.id} className="card-soft flex flex-col p-5 scroll-mt-40">
-                  {course.image && (
-                    <div className="aspect-[16/10] rounded-lg overflow-hidden bg-slate-100">
-                      <img src={course.image} alt={course.title} className="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                  )}
-                  <div className="pt-5 flex flex-col flex-grow">
-                    <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#102A43]">
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
-                      {course.badge}
-                    </span>
-                    <h3 className="mt-2 text-lg font-semibold text-[#002F5B] leading-snug">{course.title}</h3>
-                    <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{course.summary}</p>
-
-                    <dl className="mt-4 space-y-3 text-sm">
-                      <div>
-                        <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Đối tượng</dt>
-                        <dd className="mt-1 text-[#486581]">{course.target}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Kết quả đạt được</dt>
-                        <dd>
-                          <ul className="mt-1">
-                            {course.outcomes.slice(0, 3).map((out) => (
-                              <li key={out} className="plus-item !py-1.5 !border-0 !font-normal !text-[#486581]">
-                                {out}
-                              </li>
-                            ))}
-                          </ul>
-                        </dd>
-                      </div>
-                    </dl>
-
-                    <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
-                      <span className="flex items-center gap-1.5 text-xs text-[#486581] min-w-0">
-                        <Clock className="w-3.5 h-3.5 shrink-0 text-[#002F5B]" />
-                        <span className="truncate">{course.duration}</span>
-                      </span>
-                      <Link href="/lien-he" className="shrink-0 text-sm font-semibold text-[#C9500E] hover:underline">
-                        Tư vấn khóa học
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <>
+              <p className="mb-8 text-sm text-[#486581]" aria-live="polite">
+                Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chương trình
+                {activeGroup !== ALL && (
+                  <>
+                    {" "}trong nhóm <strong className="text-[#002F5B]">{GROUPS.find((g) => g.id === activeGroup)?.title}</strong>
+                  </>
+                )}
+              </p>
+              {filteredCourses.length === 0 ? (
+                <div className="text-center py-20 text-[#486581]">
+                  <p className="text-base font-semibold text-[#002F5B]">Không tìm thấy chương trình phù hợp</p>
+                  <p className="mt-2 text-sm">Thử từ khóa khác hoặc chọn &ldquo;Tất cả&rdquo;.</p>
+                </div>
+              ) : (
+                <CourseGrid courses={filteredCourses} />
+              )}
+            </>
           )}
         </div>
       </section>
