@@ -6,7 +6,7 @@ import { Clock, Search } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
-import { LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
+import { LssiClients, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import LssiInterestForm from "@/components/LssiInterestForm";
 import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 
@@ -101,6 +101,7 @@ function LssiSection() {
       <div id="dang-ky-lssi" className="scroll-mt-40">
         <LssiInterestForm />
       </div>
+      <LssiClients />
     </div>
   );
 }

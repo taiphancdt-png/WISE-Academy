@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight, Award, CheckCircle2, Clock, Download, Laptop, MonitorPlay, Users } from "lucide-react";
 import { CSSC_LISTING, LSSI_HOME, LSSI_PROGRAMS } from "@/data/lssi-programs";
+import { LSSI_CLIENTS } from "@/data/lssi-clients";
 
 // The three ways every LSSI program can be taken.
 const FORMATS = [
@@ -169,6 +170,48 @@ export function LssiPricingCta({ href = "#dang-ky-lssi" }: { href?: string }) {
       >
         Nhận thông tin ưu đãi
       </a>
+    </div>
+  );
+}
+
+// Well-known organisations that have trained with LSSI, grouped by industry (logos from leansixsigmainstitute.org).
+export function LssiClients() {
+  const total = LSSI_CLIENTS.reduce((n, g) => n + g.brands.length, 0);
+  return (
+    <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10">
+      <div className="max-w-3xl">
+        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">Được tin chọn trên toàn cầu</span>
+        <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#002F5B] leading-tight">
+          {total}+ thương hiệu hàng đầu đã chọn chương trình của LSSI
+        </h3>
+        <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">
+          Từ sản xuất ô tô, thực phẩm – đồ uống, y tế đến tư vấn và giáo dục, các tổ chức lớn đã đào tạo đội ngũ với Lean Six Sigma Institute.
+        </p>
+      </div>
+      <div className="mt-8 space-y-7">
+        {LSSI_CLIENTS.map((g) => (
+          <div key={g.industry} className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-3 lg:gap-6 items-center border-t border-slate-100 pt-6">
+            <p className="text-sm font-semibold text-[#002F5B]">{g.industry}</p>
+            <ul className="flex flex-wrap items-center gap-x-10 gap-y-6">
+              {g.brands.map((b) => (
+                <li key={b.name} className="h-14 flex items-center">
+                  <img
+                    src={b.logo}
+                    alt={b.name}
+                    title={b.name}
+                    loading="lazy"
+                    style={{ height: b.height }}
+                    className="w-auto max-w-[150px] object-contain"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-8 text-xs text-[#829AB1]">
+        Nguồn: <a href={LSSI_HOME} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9500E]">leansixsigmainstitute.org</a>. Logo thuộc quyền sở hữu của các thương hiệu tương ứng.
+      </p>
     </div>
   );
 }
