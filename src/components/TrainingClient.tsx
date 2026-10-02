@@ -2,16 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Clock, Search } from "lucide-react";
+import { ChevronDown, Clock, Download, Search } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
 import { LssiClients, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import LssiInterestForm from "@/components/LssiInterestForm";
+import LeanHouse from "@/components/LeanHouse";
 import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 
 const ALL = "all";
 const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
+const PRACTITIONER_GROUP = "Chuyên viên thực hành Lean";
 
 // The four program groups; `id` matches the `category` value in courses.json.
 const GROUPS = [
@@ -85,8 +87,105 @@ function CourseCard({ course }: { course: Course }) {
               Tư vấn khóa học
             </Link>
           </div>
+          {course.brochure && (
+            <a
+              href={course.brochure}
+              download={`WISE-Academy-${course.id}-brochure.pdf`}
+              className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#002F5B] hover:bg-[#073866] text-white text-xs font-semibold px-4 py-2.5 transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" /> Tải brochure
+            </a>
+          )}
         </div>
       </article>
+  );
+}
+
+// One expandable row of the practitioner list; the open row shows the full course details.
+function CourseAccordionItem({ course, open, onToggle }: { course: Course; open: boolean; onToggle: () => void }) {
+  return (
+    <li id={course.id} className="scroll-mt-40 bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="w-full flex items-center gap-4 px-4 sm:px-5 py-4 text-left hover:bg-[#F8F9FA] transition-colors"
+      >
+        {course.image && (
+          <img src={course.image} alt="" className="hidden sm:block w-20 h-12 rounded-md object-cover shrink-0" loading="lazy" />
+        )}
+        <span className="flex-grow min-w-0">
+          <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#486581]">
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: course.accent_color || "#002F5B" }} />
+            {course.badge}
+          </span>
+          <span className="mt-0.5 block text-sm sm:text-base font-semibold text-[#002F5B] leading-snug">{course.title}</span>
+        </span>
+        <span className="hidden md:flex items-center gap-1.5 text-xs text-[#486581] shrink-0 max-w-[220px]">
+          <Clock className="w-3.5 h-3.5 text-[#002F5B] shrink-0" />
+          <span className="truncate">{course.duration}</span>
+        </span>
+        <ChevronDown className={`w-5 h-5 text-[#C9500E] shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="border-t border-slate-100 px-4 sm:px-5 py-5 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6">
+          {course.image && <img src={course.image} alt={course.title} className="w-full aspect-[16/10] rounded-lg object-cover" loading="lazy" />}
+          <div>
+            <p className="text-sm text-[#486581] leading-relaxed">{course.summary}</p>
+            <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+              <div>
+                <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Đối tượng</dt>
+                <dd className="mt-1 text-[#486581]">{course.target}</dd>
+              </div>
+              <div>
+                <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Thời lượng</dt>
+                <dd className="mt-1 text-[#486581]">{course.duration}</dd>
+              </div>
+            </dl>
+            <p className="mt-4 text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Kết quả đạt được</p>
+            <ul className="mt-1">
+              {course.outcomes.map((out) => (
+                <li key={out} className="plus-item !py-1.5 !border-0 !font-normal !text-[#486581]">
+                  {out}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              {course.brochure && (
+                <a
+                  href={course.brochure}
+                  download={`WISE-Academy-${course.id}-brochure.pdf`}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#002F5B] hover:bg-[#073866] text-white text-xs font-semibold px-4 py-2.5 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" /> Tải brochure
+                </a>
+              )}
+              <Link
+                href="/lien-he"
+                className="inline-flex items-center rounded-full border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white text-xs font-semibold px-4 py-2.5 transition-colors"
+              >
+                Tư vấn khóa học
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+    </li>
+  );
+}
+
+// Practitioner group: the Lean House first, then the courses as an expandable list.
+function PractitionerSection({ courses }: { courses: Course[] }) {
+  const [openId, setOpenId] = useState<string | null>(null);
+  return (
+    <div className="space-y-10">
+      <LeanHouse />
+      <ul className="space-y-3">
+        {courses.map((c) => (
+          <CourseAccordionItem key={c.id} course={c} open={openId === c.id} onToggle={() => setOpenId(openId === c.id ? null : c.id)} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -204,6 +303,8 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
                     </div>
                     {isLssi ? (
                       <LssiSection />
+                    ) : g.id === PRACTITIONER_GROUP ? (
+                      <PractitionerSection courses={list} />
                     ) : (
                       <CourseGrid courses={list} />
                     )}
@@ -218,6 +319,14 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
                 <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[0].description}</p>
               </div>
               <LssiSection />
+            </div>
+          ) : activeGroup === PRACTITIONER_GROUP && !q ? (
+            <div className="space-y-8">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{GROUPS[1].title}</h2>
+                <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[1].description}</p>
+              </div>
+              <PractitionerSection courses={filteredCourses} />
             </div>
           ) : (
             <>

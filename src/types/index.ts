@@ -41,6 +41,8 @@ export interface Course {
   badge: string;
   accent_color: string;
   image?: string | null;
+  /** Optional downloadable program brochure (PDF under /public) */
+  brochure?: string;
 }
 
 export interface TocItem {

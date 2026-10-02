@@ -1,19 +1,40 @@
 [
   {
-    "id": "lean-six-sigma-white-belt",
-    "title": "Lean Six Sigma White Belt",
+    "id": "a-guide-to-kaizen-event",
+    "title": "A Guide to Kaizen Event: Triển khai chương trình Kaizen hiệu quả",
     "belt": "none",
     "category": "Chuyên viên thực hành Lean",
-    "duration": "Theo yêu cầu Doanh nghiệp (In-house)",
-    "target": "Cán bộ quản lý & Kỹ thuật viên hiện trường",
-    "summary": "# Lean Six Sigma White Belt - **Chuyên mục:** COURSES - **URL gốc:** [https://wisedemy.com.vn/course/lean-six-sigma-white-belt/](https://wisedemy.com.vn/course/lean-six-sigma-white-belt/) --- Nôi dung chương trình chi ti...",
+    "duration": "Workshop 3 ngày + 12 tuần đồng hành triển khai",
+    "target": "Quản lý sản xuất, trưởng & quản lý chuỗi giá trị (VSL/VSM), chuyên viên Lean/CI/IE",
+    "summary": "Workshop thực hành 3 ngày giúp hiểu Kaizen như một văn hóa và hệ thống, không chỉ là công cụ: phân biệt Kaizen Event với hoạt động nhóm nhỏ (SGA), chọn đúng cơ hội cải tiến theo QCD, thiết kế dự án với Project Charter, chỉ số và Kaizen Workbook. Tiếp nối bằng lộ trình 12 tuần đồng hành: chuẩn bị, thực thi Kaizen Event, xác nhận kết quả trước – sau, chuẩn hóa và nhân rộng (Yokoten).",
     "outcomes": [
-      "Nâng cao năng lực chuyên môn nghiệp vụ tại hiện trường",
-      "Áp dụng trực tiếp vào công việc hằng ngày",
-      "Được hướng dẫn bởi chuyên gia Lean thực chiến"
+      "Chọn đúng cơ hội cải tiến theo QCD và thiết kế dự án Kaizen với Project Charter, chỉ số và Kaizen Workbook",
+      "Vận hành Kaizen Event bài bản: vai trò Champion – Leader – Facilitator, review hằng tuần, thực thi tại Gemba",
+      "Đo lường kết quả thật (tiết kiệm hard/soft), chuẩn hóa và nhân rộng (Yokoten) trên toàn doanh nghiệp",
+      "Chuyển từ tư duy xử lý sự cố sang cải tiến có hệ thống, bền vững và mở rộng được"
     ],
-    "image": "/images/courses/lean-six-sigma-white-belt/cover.webp",
-    "badge": "CHUYÊN ĐỀ",
+    "image": "/images/courses/a-guide-to-kaizen-event/cover.webp",
+    "badge": "WORKSHOP & ĐỒNG HÀNH",
+    "accent_color": "#F76011",
+    "brochure": "/brochures/a-guide-to-kaizen-event.pdf"
+  },
+  {
+    "id": "lean-fundamental-kaizen-mindset",
+    "title": "Lean Fundamental & Kaizen Mindset: Nền tảng Lean và tư duy Kaizen",
+    "belt": "none",
+    "category": "Chuyên viên thực hành Lean",
+    "duration": "3 ngày: 2 ngày đào tạo & thực hành hiện trường + 1 ngày báo cáo Kaizen",
+    "target": "Tổ trưởng, giám sát mới bổ nhiệm, cán bộ sản xuất và các phòng ban hỗ trợ",
+    "summary": "Chương trình nền tảng giúp đội ngũ hiểu Lean một cách đơn giản, thực tế: 5 nguyên lý Lean, trò chơi mô phỏng sản xuất để nhận diện 5S và 8 lãng phí, nhận diện lãng phí tại Gemba bằng vòng tròn Ohno, 3 cách tiếp cận Kaizen (Single point Kaizen, Kaizen Event, SGA). Mỗi học viên thực hiện ít nhất một cải tiến nhỏ và trình bày kết quả trước ban lãnh đạo trong ngày tốt nghiệp.",
+    "outcomes": [
+      "Hiểu hệ thống quản lý Lean = tư duy Kaizen + loại bỏ lãng phí, áp dụng được vào công việc hằng ngày",
+      "Nhận diện 8 lãng phí (DOWNTIME), 3 MU (Muda – Mura – Muri) ngay tại hiện trường",
+      "Thực hiện ít nhất một Single point Kaizen và tính toán hiệu quả tài chính của cải tiến",
+      "Trình bày kết quả cải tiến trước lãnh đạo, nhận chứng nhận hoàn thành chương trình"
+    ],
+    "image": "/images/courses/lean-fundamental-kaizen-mindset/cover.webp",
+    "brochure": "/brochures/lean-fundamental-kaizen-mindset.pdf",
+    "badge": "NỀN TẢNG & THỰC HÀNH",
     "accent_color": "#002F5B"
   },
   {

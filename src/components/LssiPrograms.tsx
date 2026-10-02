@@ -181,20 +181,20 @@ const LOGO_SCALE = 2 / 3;
 export function LssiClients() {
   return (
     <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10">
-      <div className="max-w-3xl">
+      <div className="text-center">
         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">Được tin chọn trên toàn cầu</span>
-        <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#002F5B] leading-tight">
+        <h3 className="mt-2 text-2xl lg:text-[28px] font-semibold text-[#002F5B] leading-tight lg:whitespace-nowrap">
           Hàng trăm thương hiệu hàng đầu đã chọn chương trình của LSSI
         </h3>
-        <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">
+        <p className="mt-2 max-w-3xl mx-auto text-sm sm:text-base text-[#486581] leading-relaxed">
           Từ sản xuất ô tô, thực phẩm – đồ uống, y tế đến tư vấn và giáo dục, các tổ chức lớn đã đào tạo đội ngũ với Lean Six Sigma Institute.
         </p>
       </div>
       <div className="mt-8 space-y-7">
         {LSSI_CLIENTS.map((g) => (
-          <div key={g.industry} className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-3 lg:gap-6 items-center border-t border-slate-100 pt-6">
+          <div key={g.industry} className="border-t border-slate-100 pt-6 text-center">
             <p className="text-sm font-semibold text-[#002F5B]">{g.industry}</p>
-            <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
               {g.brands.map((b) => (
                 <li key={b.name} className="h-10 flex items-center">
                   <img
@@ -211,7 +211,7 @@ export function LssiClients() {
           </div>
         ))}
       </div>
-      <p className="mt-8 text-xs text-[#829AB1]">
+      <p className="mt-8 text-center text-xs text-[#829AB1]">
         Nguồn: <a href={LSSI_HOME} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9500E]">leansixsigmainstitute.org</a>. Logo thuộc quyền sở hữu của các thương hiệu tương ứng.
       </p>
     </div>
