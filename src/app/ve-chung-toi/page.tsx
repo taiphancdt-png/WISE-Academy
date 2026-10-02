@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, Target } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, ShieldCheck, Target } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
@@ -8,6 +8,16 @@ export const metadata = {
   description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
   alternates: { canonical: "/ve-chung-toi" },
 };
+
+// Card placement and outgoing arrow for each RGPDCA step on desktop (3 columns × 2 rows, clockwise loop).
+const LOOP = [
+  { place: "lg:col-start-1 lg:row-start-1", icon: ArrowRight, arrowPos: "top-1/2 -translate-y-1/2 -right-[52px]" },
+  { place: "lg:col-start-2 lg:row-start-1", icon: ArrowRight, arrowPos: "top-1/2 -translate-y-1/2 -right-[52px]" },
+  { place: "lg:col-start-3 lg:row-start-1", icon: ArrowDown, arrowPos: "left-1/2 -translate-x-1/2 -bottom-[60px]" },
+  { place: "lg:col-start-3 lg:row-start-2", icon: ArrowLeft, arrowPos: "top-1/2 -translate-y-1/2 -left-[52px]" },
+  { place: "lg:col-start-2 lg:row-start-2", icon: ArrowLeft, arrowPos: "top-1/2 -translate-y-1/2 -left-[52px]" },
+  { place: "lg:col-start-1 lg:row-start-2", icon: ArrowUp, arrowPos: "left-1/2 -translate-x-1/2 -top-[60px]" },
+];
 
 export default function AboutPage() {
   const values = [
@@ -156,19 +166,49 @@ export default function AboutPage() {
           title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
           description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
         />
-        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rgpdcaDetails.map((item, i) => (
-            <li key={item.phase} className="card-soft p-7">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#486581]">{item.code}</span>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
-              <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
-              <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
-            </li>
-          ))}
-        </ol>
+        {/* Loop: 1 → 2 → 3 ↓ 4 → 5 → 6 (bottom row runs right-to-left) ↑ back to 1 */}
+        <div className="relative">
+          <ol className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 lg:gap-y-20">
+            {rgpdcaDetails.map((item, i) => {
+              const step = i + 1;
+              const out = LOOP[i];
+              const Arrow = out.icon;
+              return (
+                <li key={item.phase} className={`relative card-soft !transform-none p-7 ${out.place}`}>
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-bold text-[#F76011]">{String(step).padStart(2, "0")}</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#486581]">{item.code}</span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
+                  <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
+                  <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
+
+                  {/* Desktop: arrow toward the next step, sitting in the gap */}
+                  <span
+                    aria-hidden="true"
+                    className={`hidden lg:flex absolute w-10 h-10 rounded-full bg-[#F76011] text-white items-center justify-center shadow-md shadow-[#F76011]/30 ${out.arrowPos}`}
+                  >
+                    <Arrow className="w-5 h-5" />
+                  </span>
+                  {/* Mobile: down arrow between stacked steps */}
+                  {step < 6 && (
+                    <span aria-hidden="true" className="lg:hidden absolute left-1/2 -translate-x-1/2 -bottom-10 w-8 h-8 rounded-full bg-[#F76011] text-white flex items-center justify-center">
+                      <ArrowDown className="w-4 h-4" />
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+
+          {/* Loop label in the middle of the cycle (desktop) / after step 6 (mobile) */}
+          <div className="mt-10 lg:mt-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 flex justify-center pointer-events-none">
+            <span className="inline-flex items-center gap-2 bg-[#002F5B] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg">
+              <RefreshCw className="w-4 h-4 text-[#FF7A30]" />
+              Vòng cải tiến liên tục · bước 6 quay lại bước 1
+            </span>
+          </div>
+        </div>
       </Section>
 
       <CtaBand
