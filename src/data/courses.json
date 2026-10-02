@@ -151,7 +151,7 @@
     ],
     "badge": "GEMBA 5S",
     "accent_color": "#002F5B",
-    "image": "/images/courses/chan-doan-va-danh-gia-doanh-nghiep-van-hanh-xuat-sac/cover.webp",
+    "image": "/images/courses/5s-visual-management-safety/cover.webp",
     "topic": "Tổng quan về Lean"
   },
   {
@@ -170,7 +170,7 @@
     ],
     "badge": "TPM / OEE",
     "accent_color": "#F76011",
-    "image": "/images/courses/chuyen-doi-san-xuat-nhanh-smed-qco/cover.webp",
+    "image": "/images/courses/tpm-oee-equipment-excellence/cover.webp",
     "topic": "TPM – Quản lý năng suất thiết bị toàn phần"
   },
   {
@@ -227,7 +227,7 @@
     ],
     "badge": "SIMULATION",
     "accent_color": "#FF5A14",
-    "image": "/images/courses/cong-thuc-tinh-gia-thanh-va-giam-chi-phi/cover.webp"
+    "image": "/images/courses/lean-simulation-game-workshop/cover.webp"
   },
   {
     "id": "production-4-0-digital-lean",
@@ -245,7 +245,7 @@
     ],
     "badge": "LEAN 4.0",
     "accent_color": "#073866",
-    "image": "/images/courses/dao-tao-giam-doc-san-xuat-4-0/cover.webp"
+    "image": "/images/courses/production-4-0-digital-lean/cover.webp"
   },
   {
     "id": "cac-dai-luong-do-luong-nang-luc-he-thong-quan-ly-chat-luong-quality-kpis",
