@@ -195,18 +195,28 @@ export default function ConsultingPage() {
       {/* Pillars: alternating image / text */}
       {pillars.map((pillar, idx) => (
         <section key={pillar.id} id={pillar.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className={`w-full lg:w-3/4 rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 ${idx % 2 ? "lg:order-2 lg:justify-self-start" : "lg:justify-self-end"}`}>
-              <img src={pillarImages[idx]} alt={pillar.title} className="w-full h-full object-cover" loading="lazy" />
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 lg:gap-y-0">
+            {/* image: as tall as the intro next to it (no intrinsic height on desktop) */}
+            <div
+              className={`relative w-full lg:w-3/4 aspect-[4/3] lg:aspect-auto rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${
+                idx % 2 ? "lg:col-start-2 lg:justify-self-start" : "lg:col-start-1 lg:justify-self-end"
+              }`}
+            >
+              <img src={pillarImages[idx]} alt={pillar.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
-            <div>
+            <ServiceDetails
+              id={pillar.id}
+              listTitle={pillar.listTitle}
+              items={pillar.items}
+              brochure={pillar.brochure}
+              col={idx % 2 ? "lg:col-start-1" : "lg:col-start-2"}
+            >
               <span className="text-sm font-semibold text-[#C9500E]">{pillar.tag}</span>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-[#002F5B] leading-tight">{pillar.title}</h2>
               <p className="mt-4 text-sm sm:text-base text-[#486581] leading-relaxed">
                 <strong className="text-[#102A43]">{pillar.subtitle}.</strong> {pillar.desc}
               </p>
-              <ServiceDetails id={pillar.id} listTitle={pillar.listTitle} items={pillar.items} brochure={pillar.brochure} />
-            </div>
+            </ServiceDetails>
           </div>
         </section>
       ))}
