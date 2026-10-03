@@ -55,6 +55,7 @@ export default function ConsultingPage() {
         "Con người & Lãnh đạo Lean: Hoshin Kanri, A3, Catch-ball, Leader Standard Work"
       ],
       tag: "LEAN MANAGEMENT SYSTEM TRANSFORMATION",
+      short: "Hệ thống Quản lý Lean",
       brochure: "/brochures/lean-management-system-transformation.pdf"
     },
     {
@@ -71,6 +72,7 @@ export default function ConsultingPage() {
         "Hoạch định khả năng mở rộng công suất theo từng giai đoạn đầu tư"
       ],
       tag: "NEW LEAN FACTORY DESIGN",
+      short: "Nhà máy Lean mới",
       brochure: "/brochures/new-lean-factory-design.pdf"
     },
     {
@@ -86,6 +88,7 @@ export default function ConsultingPage() {
         "Quản lý chất lượng toàn diện (TQM): kiểm soát quy trình, đồng nhất sản phẩm và cải tiến liên tục"
       ],
       tag: "LEAN & DIGITAL TRANSFORMATION INTEGRATION",
+      short: "Lean & Chuyển đổi số",
       brochure: "/brochures/lean-digital-transformation.pdf"
     },
     {
@@ -103,6 +106,7 @@ export default function ConsultingPage() {
         "Chương trình đào tạo giảng viên nội bộ (Train-the-Trainer)"
       ],
       tag: "HR LEARNING & DEVELOPMENT SYSTEM",
+      short: "Đào tạo & Phát triển nhân lực",
       brochure: "/brochures/hr-learning-development-system.pdf"
     },
     {
@@ -119,6 +123,7 @@ export default function ConsultingPage() {
         "Huấn luyện dự án cải tiến thực tế, chứng nhận quốc tế LSSI"
       ],
       tag: "LEAN SIX SIGMA TRAINING & COACHING",
+      short: "Lean Six Sigma",
       brochure: "/brochures/lean-six-sigma-training-coaching.pdf"
     }
   ];
@@ -174,6 +179,19 @@ export default function ConsultingPage() {
 
       {/* Survey first: the four steps every engagement starts with */}
       <Section>
+        {/* quick links to the services below */}
+        <nav aria-label="Các dịch vụ tư vấn" className="-mt-4 mb-16 flex flex-wrap justify-center gap-3">
+          {pillars.map((p) => (
+            <a
+              key={p.id}
+              href={`#${p.id}`}
+              className="group inline-flex items-center gap-2.5 rounded-full border border-[#002F5B]/15 bg-white px-5 py-2.5 text-sm font-semibold text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
+              {p.short}
+            </a>
+          ))}
+        </nav>
         <SectionHeader
           title={<>Thấu hiểu để <span className="text-[#F76011]">đồng hành</span></>}
           description="Mỗi doanh nghiệp có bối cảnh, ưu tiên và thực trạng vận hành riêng. Vì vậy trước khi đề xuất bất kỳ giải pháp nào, WISE Academy cùng doanh nghiệp đi qua bốn bước sau."
