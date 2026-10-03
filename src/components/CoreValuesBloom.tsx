@@ -12,11 +12,12 @@ export interface CoreValue {
 // Petal colours (translucent, so overlaps mix like a Venn diagram) and label colours readable on white.
 const PETAL = ["#002F5B", "#F76011", "#1F64A6", "#FF9F43"];
 const LABEL = ["#002F5B", "#C9500E", "#1F64A6", "#B85F0B"];
+// darker shade of each petal colour for the letter on it
+const PETAL_INK = ["#001A33", "#A93D06", "#0F3F6E", "#B35E0A"];
 // All four petals grow from one point. Closed: a narrow bud whose petals read W I S E; open: a fanned lotus.
 const CLOSED_ANGLE = [-33, -11, 11, 33];
 const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
-const OPEN_MS = 800; // time to open (or close) the flower fully, at a constant speed
 const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
@@ -92,51 +93,30 @@ export default function CoreValuesBloom({
       apply(1);
       return () => window.removeEventListener("resize", setTop);
     }
-    // Not tied to the scroll position: when the section comes into view the page settles on it and the
-    // flower opens at a steady speed; when the section leaves, the flower closes again for the next visit.
+    // The flower follows the scroll: it opens as the section reaches the middle of the screen and closes
+    // again as it scrolls away (both directions), with a little easing so it moves smoothly.
     let raf = 0;
-    let last = 0;
     let t = 0;
-    let target = 0;
-    let settled = false;
-    let lastY = window.scrollY;
-    const tick = (now: number) => {
-      const dt = last ? Math.min(50, now - last) : 16;
-      last = now;
-      const step = dt / OPEN_MS;
-      t += Math.max(-step, Math.min(step, target - t)); // constant speed both ways
+    const frame = () => {
+      const r = wrap.getBoundingClientRect();
+      const headerH = parseFloat(sticky.style.top) || 0;
+      const viewMid = headerH + (window.innerHeight - headerH) / 2;
+      const d = Math.abs(r.top + sticky.offsetHeight / 2 - viewMid) / (window.innerHeight - headerH);
+      const target = 1 - smooth(0.12, 0.55, d);
+      t += (target - t) * 0.18;
+      if (Math.abs(target - t) < 0.001) t = target;
       apply(t);
-      raf = t === target ? 0 : requestAnimationFrame(tick);
-      if (!raf) last = 0;
+      raf = requestAnimationFrame(frame);
     };
-    const go = (to: number) => {
-      target = to;
-      if (!raf) raf = requestAnimationFrame(tick);
-    };
-    let openTimer = 0;
-    const io = new IntersectionObserver(
-      ([e]) => {
-        const down = window.scrollY >= lastY;
-        lastY = window.scrollY;
-        if (e.intersectionRatio >= 0.35 && !settled) {
-          settled = true;
-          // arriving from above: bring the whole section into view, then open
-          if (down) window.scrollTo({ top: wrap.getBoundingClientRect().top + window.scrollY - (parseFloat(sticky.style.top) || 0), behavior: "smooth" });
-          clearTimeout(openTimer);
-          openTimer = window.setTimeout(() => go(1), down ? 450 : 0);
-        } else if (e.intersectionRatio < 0.2 && settled) {
-          settled = false;
-          clearTimeout(openTimer);
-          go(0);
-        }
-      },
-      { threshold: [0, 0.2, 0.35, 0.6] }
-    );
+    const io = new IntersectionObserver(([e]) => {
+      cancelAnimationFrame(raf);
+      if (e.isIntersecting) raf = requestAnimationFrame(frame);
+      else apply((t = 0));
+    });
     io.observe(wrap);
     return () => {
       io.disconnect();
       cancelAnimationFrame(raf);
-      clearTimeout(openTimer);
       window.removeEventListener("resize", setTop);
     };
   }, []);
@@ -162,8 +142,7 @@ export default function CoreValuesBloom({
             dominantBaseline="central"
             className="font-extrabold"
             fontSize={45}
-            fill="#fff"
-            fillOpacity={0.6}
+            fill={PETAL_INK[i]}
             style={{ mixBlendMode: "normal" }}
           >
             {v.letter}
@@ -177,7 +156,7 @@ export default function CoreValuesBloom({
   const card = (v: CoreValue, i: number, extra = "") => (
     <div className={`relative overflow-hidden rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
       {/* big see-through letter in the corner */}
-      <span aria-hidden="true" className="pointer-events-none absolute right-5 bottom-3 select-none text-[60px] font-extrabold leading-[0.8]" style={{ color: PETAL[i], opacity: 0.1 }}>
+      <span aria-hidden="true" className="pointer-events-none absolute -right-2 -bottom-7 select-none text-[120px] font-extrabold leading-none" style={{ color: PETAL[i], opacity: 0.1 }}>
         {v.letter}
       </span>
       {/* the core value itself, as the card's headline label */}
@@ -191,7 +170,7 @@ export default function CoreValuesBloom({
 
   return (
     <section className="relative bg-white">
-      {/* desktop: one screen; the page settles on it and the flower opens by itself */}
+      {/* desktop: one screen; the flower opens and closes with the scroll */}
       <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative pb-20`}>
         <div ref={stickyRef} className="relative h-[100dvh] flex flex-col items-center px-8 pt-12">
           <div className="max-w-3xl text-center">
