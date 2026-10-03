@@ -39,7 +39,7 @@ npm run build      # build production phải chạy được
    git rebase origin/main
    git push --force-with-lease
    ```
-5. Chủ dự án xem PR và bấm **Merge**. Sau khi merge, xoá nhánh.
+5. Dev tự bấm **Merge** khi PR đã kiểm tra xong (không bắt buộc duyệt). Nên báo chủ dự án nếu PR thay đổi lớn hoặc đụng file nội dung. Sau khi merge, xoá nhánh.
 
 Đặt tên nhánh: `feat/...` (tính năng), `fix/...` (sửa lỗi), `chore/...` (dọn dẹp, cấu hình).
 
