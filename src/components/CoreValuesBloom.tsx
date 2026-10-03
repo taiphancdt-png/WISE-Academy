@@ -19,11 +19,13 @@ const PETAL_W = 124;
 const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
+const CARD_W = 320;
+const CARD_H = 250;
 const CARD_POS = [
-  { x: -620, y: -205 },
-  { x: -540, y: -475 },
-  { x: 240, y: -475 },
-  { x: 320, y: -205 },
+  { x: -625, y: -250 },
+  { x: -555, y: -520 },
+  { x: 555 - CARD_W, y: -520 },
+  { x: 625 - CARD_W, y: -250 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
@@ -32,9 +34,9 @@ const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
 };
-// lotus petal: full and rounded near the base, narrowing to a pointed tip
+// petal: the original almond shape, made fuller (plump in the middle, pointed at both ends)
 const petalPath = (w: number, l: number) =>
-  `M 0 0 C ${-w * 0.95} ${-l * 0.08} ${-w * 0.7} ${-l * 0.62} 0 ${-l} C ${w * 0.7} ${-l * 0.62} ${w * 0.95} ${-l * 0.08} 0 0 Z`;
+  `M 0 0 C ${-w * 0.8} ${-l * 0.16} ${-w * 0.8} ${-l * 0.8} 0 ${-l} C ${w * 0.8} ${-l * 0.8} ${w * 0.8} ${-l * 0.16} 0 0 Z`;
 
 export default function CoreValuesBloom({
   values,
@@ -132,7 +134,7 @@ export default function CoreValuesBloom({
             textAnchor="middle"
             dominantBaseline="central"
             className="font-extrabold"
-            fontSize={80}
+            fontSize={64}
             fill="#fff"
             fillOpacity={0.6}
             style={{ mixBlendMode: "normal" }}
@@ -174,7 +176,7 @@ export default function CoreValuesBloom({
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 bottom-28 -translate-x-1/2">
+            <div className="absolute left-1/2 bottom-20 -translate-x-1/2">
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
@@ -184,10 +186,10 @@ export default function CoreValuesBloom({
                     ref={(el) => {
                       cardRefs.current[i] = el;
                     }}
-                    className="absolute w-[300px] transition-[opacity,transform] duration-300"
-                    style={{ left: BASE.x + pos.x, top: BASE.y + pos.y, opacity: 0 }}
+                    className="absolute transition-[opacity,transform] duration-300"
+                    style={{ left: BASE.x + pos.x, top: BASE.y + pos.y, width: CARD_W, height: CARD_H, opacity: 0 }}
                   >
-                    {card(v, i)}
+                    {card(v, i, "h-full")}
                   </div>
                 );
               })}
