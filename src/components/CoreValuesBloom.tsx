@@ -192,14 +192,14 @@ export default function CoreValuesBloom({
   return (
     <section className="relative bg-white">
       {/* desktop: one screen; the page settles on it and the flower opens by itself */}
-      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative`}>
+      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative pb-20`}>
         <div ref={stickyRef} className="relative h-[100dvh] flex flex-col items-center px-8 pt-12">
           <div className="max-w-3xl text-center">
             <h2 className="text-3xl sm:text-[34px] font-semibold leading-tight text-[#002F5B]">{title}</h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 37px)" }}>
+            <div className="absolute left-1/2 origin-center" style={{ top: "calc(50% - 60px)", transform: "translateX(-50%) scale(0.85)" }}>
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
