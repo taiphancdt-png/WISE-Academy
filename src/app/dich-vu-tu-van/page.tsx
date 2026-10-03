@@ -175,7 +175,7 @@ export default function ConsultingPage() {
       {/* Survey first: the four steps every engagement starts with */}
       <Section>
         <SectionHeader
-          title={<>Khảo sát là bước <span className="text-[#F76011]">ưu tiên hàng đầu</span></>}
+          title={<>Thấu hiểu để <span className="text-[#F76011]">đồng hành</span></>}
           description="Mỗi doanh nghiệp có bối cảnh, ưu tiên và thực trạng vận hành riêng. Vì vậy trước khi đề xuất bất kỳ giải pháp nào, WISE Academy cùng doanh nghiệp đi qua bốn bước sau."
         />
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
