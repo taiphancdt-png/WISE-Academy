@@ -20,12 +20,12 @@ const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
 const CARD_W = 320;
-const CARD_H = 250;
+const CARD_H = 292;
 const CARD_POS = [
-  { x: -625, y: -250 },
-  { x: -555, y: -520 },
-  { x: 555 - CARD_W, y: -520 },
-  { x: 625 - CARD_W, y: -250 },
+  { x: -625, y: -272 },
+  { x: -555, y: -582 },
+  { x: 555 - CARD_W, y: -582 },
+  { x: 625 - CARD_W, y: -272 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
@@ -125,7 +125,7 @@ export default function CoreValuesBloom({
           transform={`rotate(${CLOSED_ANGLE[i]})`}
           style={{ mixBlendMode: "multiply" }}
         >
-          <path d={petalPath(PETAL_W, PETAL_L)} fill={PETAL[i]} fillOpacity={0.85} />
+          <path d={petalPath(PETAL_W, PETAL_L)} fill={PETAL[i]} fillOpacity={0.6} />
           <text
             ref={(el) => {
               letterRefs.current[i] = el;
@@ -150,19 +150,15 @@ export default function CoreValuesBloom({
   const card = (v: CoreValue, i: number, extra = "") => (
     <div className={`relative overflow-hidden rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
       {/* big see-through letter in the corner */}
-      <span aria-hidden="true" className="pointer-events-none absolute right-3 bottom-1 select-none text-[120px] font-extrabold leading-[0.85]" style={{ color: PETAL[i], opacity: 0.1 }}>
+      <span aria-hidden="true" className="pointer-events-none absolute right-4 bottom-3 select-none text-[76px] font-extrabold leading-[0.8]" style={{ color: PETAL[i], opacity: 0.1 }}>
         {v.letter}
       </span>
-      <div className="relative flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-lg font-extrabold text-white" style={{ backgroundColor: PETAL[i] }}>
-          {v.letter}
-        </span>
-        <span className="text-xs font-bold uppercase tracking-widest" style={{ color: LABEL[i] }}>
-          {v.word}
-        </span>
-      </div>
+      {/* the core value itself, as the card's headline label */}
+      <p className="relative text-xl xl:text-2xl font-extrabold uppercase leading-none tracking-[0.06em]" style={{ color: LABEL[i] }}>
+        {v.word}
+      </p>
       <h3 className="relative mt-3 text-lg font-semibold leading-snug text-[#002F5B] whitespace-pre-line">{v.title}</h3>
-      <p className="relative mt-2 text-[13px] xl:text-sm leading-relaxed text-[#486581]">{v.desc}</p>
+      <p className="relative mt-2 pr-20 text-[13px] xl:text-sm leading-relaxed text-[#486581]">{v.desc}</p>
     </div>
   );
 
@@ -176,7 +172,7 @@ export default function CoreValuesBloom({
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 80px)" }}>
+            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 48px)" }}>
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
