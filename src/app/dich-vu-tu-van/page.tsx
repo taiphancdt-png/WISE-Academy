@@ -214,9 +214,9 @@ export default function ConsultingPage() {
       {pillars.map((pillar, idx) => (
         <section key={pillar.id} id={pillar.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 lg:gap-y-0">
-            {/* image: as tall as the intro next to it (no intrinsic height on desktop) */}
+            {/* portrait 3:4 image, as tall as the intro next to it */}
             <div
-              className={`relative w-full lg:w-3/4 aspect-[4/3] lg:aspect-auto rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${
+              className={`relative w-full max-w-xs mx-auto aspect-[3/4] lg:max-w-none lg:mx-0 lg:w-auto lg:h-full rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${
                 idx % 2 ? "lg:col-start-2 lg:justify-self-start" : "lg:col-start-1 lg:justify-self-end"
               }`}
             >
