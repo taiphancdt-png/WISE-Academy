@@ -222,7 +222,7 @@ export default function ConsultingPage() {
       <LeanRoadmapRace
         stages={roadmapStages}
         title={<>Lộ trình chuyển đổi Lean<br /><span className="text-[#FF7A30]">5 giai đoạn</span></>}
-        description="Chuyển đổi Lean là một hành trình cần được hoạch định rõ ràng, với sự cam kết của lãnh đạo và sự đồng hành bền bỉ. WISE Academy cùng doanh nghiệp vượt qua những rào cản ban đầu, từng bước hình thành thói quen cải tiến và kiến tạo văn hóa Lean cho tổ chức."
+        description="Chuyển đổi Lean là hành trình cần hoạch định rõ ràng, lãnh đạo cam kết và đồng hành bền bỉ để vượt qua rào cản ban đầu, hình thành thói quen cải tiến và kiến tạo văn hóa Lean."
       />
 
       <CtaBand
