@@ -8,7 +8,8 @@ import { useEffect } from "react";
 // rendered later (filters, accordions, translations).
 const PHRASES = [
   // names and fixed terms
-  "WISE Academy", "Lean Six Sigma", "Six Sigma", "Lean 4.0", "Ngôi nhà Lean", "Train-the-Trainer",
+  "WISE Academy", "chuẩn quốc tế", "quốc tế", "Việt Nam", "toàn cầu", "ủy quyền", "uỷ quyền", "chứng chỉ", "Đai Vàng", "Đai Xanh", "Đai Đen",
+  "Lean Six Sigma", "Six Sigma", "Lean 4.0", "Ngôi nhà Lean", "Train-the-Trainer",
   "chuyển đổi số", "nguồn nhân lực", "chuỗi giá trị", "dòng giá trị", "chuỗi cung ứng", "cải tiến liên tục",
   "văn hóa", "văn hoá", "tại hiện trường", "Nhà máy Lean mới", "Hệ thống Quản lý Lean", "Lean & Chuyển đổi số", "Hoshin Kanri", "Leader Standard Work", "Poka-Yoke",
   // two-syllable words
