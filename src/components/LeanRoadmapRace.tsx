@@ -263,8 +263,12 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const light = smooth(0, 0.8, skyP); // full daylight from about stage 4
       if (skyRef.current) {
         // the bright top colour fills the upper half before blending into the horizon colour
+        // at first light the blue fills the lower 3/5; by daylight the bright top fills the upper half
         const top = skyAt(SKY_TOP, light);
-        skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} 50%, ${skyAt(SKY_BOTTOM, light)} 100%)`;
+        const bottom = skyAt(SKY_BOTTOM, light);
+        const a = 22 + 28 * light; // end of the solid top colour (%)
+        const b = 40 + 60 * light; // start of the solid bottom colour (%)
+        skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} ${a}%, ${bottom} ${b}%, ${bottom} 100%)`;
       }
       // the sun rises straight up from behind the mountain between stage 2 and stage 5, brightening as it goes
       // target height from the climb (linear), approached at a constant speed so the sun glides evenly
@@ -419,7 +423,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
           ref={skyRef}
           aria-hidden="true"
           className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10"
-          style={{ background: "linear-gradient(to bottom, rgb(236,132,72) 0%, rgb(236,132,72) 50%, rgb(28,64,122) 100%)" }}
+          style={{ background: "linear-gradient(to bottom, rgb(236,132,72) 0%, rgb(236,132,72) 22%, rgb(28,64,122) 40%, rgb(28,64,122) 100%)" }}
         />
         <Header title={title} description={description} />
 
