@@ -29,7 +29,7 @@ export default function AboutPage() {
     {
       letter: "W",
       word: "WORKABLE",
-      title: "Dễ Làm & Hiệu Quả Thực Tế",
+      title: "Áp dụng được\nHiệu quả thật",
       desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phải đơn giản, thực tế và áp dụng được ngay tại nơi làm việc."
     },
     {
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 <span className="relative mt-5 block text-[11px] font-bold uppercase tracking-widest" style={{ color: VALUE_TEXT[i % VALUE_TEXT.length] }}>
                   {v.word}
                 </span>
-                <h3 className="relative mt-1 text-lg font-semibold text-[#002F5B]">{v.title}</h3>
+                <h3 className="relative mt-1 text-lg font-semibold text-[#002F5B] whitespace-pre-line">{v.title}</h3>
                 <p className="relative mt-3 text-sm text-[#486581] leading-relaxed">{v.desc}</p>
               </div>
             );
