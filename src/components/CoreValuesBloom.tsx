@@ -18,6 +18,7 @@ const PETAL_INK = ["#001A33", "#A93D06", "#0F3F6E", "#B35E0A"];
 const CLOSED_ANGLE = [-18, -6, 6, 18];
 const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
+const OPEN_MS = 800; // the flower opens in this time while the page holds still
 const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
@@ -93,30 +94,84 @@ export default function CoreValuesBloom({
       apply(1);
       return () => window.removeEventListener("resize", setTop);
     }
-    // The flower follows the scroll, keyed to where the flower itself is on screen (0 = top, 1 = bottom):
-    // it starts to open as it comes up from the bottom (95% -> fully open at 70%) and starts to close once it
-    // rises above the middle of the screen (50% -> fully closed at 25%).
+    // Scrolling down, the page holds still for a moment while the flower opens (constant speed), then lets go.
+    // Further down, once the flower rises above the middle of the screen, it closes again with the scroll.
+    // Coming back up past the section resets it, so the next pass opens it again.
     let raf = 0;
-    let t = 0;
+    let last = 0;
+    let openT = 0; // 0..1, time-based opening
+    let t = 0; // what is drawn
+    let opened = false;
+    let locked = false;
+    let lockY = 0;
+    let lastScroll = window.scrollY;
     const flowerSvg = wrap.querySelector("svg");
-    const frame = () => {
+    const block = (e: Event) => {
+      if (locked) e.preventDefault();
+    };
+    const blockKeys = (e: KeyboardEvent) => {
+      if (locked && ["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Space", " ", "Home", "End"].includes(e.key)) e.preventDefault();
+    };
+    const holdScroll = () => {
+      if (locked && Math.abs(window.scrollY - lockY) > 1) window.scrollTo(0, lockY);
+    };
+    window.addEventListener("wheel", block, { passive: false });
+    window.addEventListener("touchmove", block, { passive: false });
+    window.addEventListener("keydown", blockKeys);
+    window.addEventListener("scroll", holdScroll);
+    const frame = (now: number) => {
+      const dt = last ? Math.min(50, now - last) : 16;
+      last = now;
       const fr = flowerSvg?.getBoundingClientRect();
       const y = fr ? (fr.top + fr.height / 2) / window.innerHeight : 1;
-      const target = smooth(0.95, 0.7, y) * (1 - smooth(0.5, 0.25, y));
-      t += (target - t) * 0.18;
-      if (Math.abs(target - t) < 0.001) t = target;
+      const down = window.scrollY > lastScroll;
+      lastScroll = window.scrollY;
+      if (!opened && !locked && down && y <= 0.72 && y > 0.3) {
+        locked = true;
+        lockY = window.scrollY;
+      }
+      if (locked) {
+        openT = Math.min(1, openT + dt / OPEN_MS);
+        if (openT >= 1) {
+          locked = false;
+          opened = true;
+        }
+      } else if (!opened && y < 0.3) {
+        // jumped past (e.g. an anchor link): just show it open
+        openT = 1;
+        opened = true;
+      }
+      if (y > 0.98) {
+        // the section is back below the fold: reset for the next pass
+        opened = false;
+        openT = 0;
+      }
+      const target = openT * (1 - smooth(0.5, 0.25, y));
+      t += (target - t) * (locked ? 1 : 0.2);
       apply(t);
       raf = requestAnimationFrame(frame);
     };
     const io = new IntersectionObserver(([e]) => {
       cancelAnimationFrame(raf);
+      last = 0;
       if (e.isIntersecting) raf = requestAnimationFrame(frame);
-      else apply((t = 0));
+      else {
+        locked = false;
+        if (e.boundingClientRect.top > 0) {
+          opened = false;
+          openT = 0;
+          apply((t = 0));
+        }
+      }
     });
     io.observe(wrap);
     return () => {
       io.disconnect();
       cancelAnimationFrame(raf);
+      window.removeEventListener("wheel", block);
+      window.removeEventListener("touchmove", block);
+      window.removeEventListener("keydown", blockKeys);
+      window.removeEventListener("scroll", holdScroll);
       window.removeEventListener("resize", setTop);
     };
   }, []);
