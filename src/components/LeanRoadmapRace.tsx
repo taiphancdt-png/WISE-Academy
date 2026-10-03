@@ -28,7 +28,7 @@ type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [nu
 function buildGeo(w: number, h: number): Geo {
   // 1.2x the width-fit size (capped by the height); any extra width bleeds into the right margin
   const k = Math.min((1.2 * w) / ART.w, h / ART.h);
-  const ox = Math.max(0, (w - ART.w * k) / 2), oy = h - ART.h * k;
+  const ox = Math.max(0, (w - ART.w * k) / 2) + 110, oy = h - ART.h * k; // nudged right, leaving room for the stage labels
   const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
@@ -46,7 +46,8 @@ function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
   const p = g.pts[i - 1], q = g.pts[i];
   return { x: p[0] + (q[0] - p[0]) * t, y: p[1] + (q[1] - p[1]) * t, left: b[0] - a[0] < -0.4 * Math.abs(b[1] - a[1]) };
 }
-const TRAIL_D = "M " + ART.trail.map(([x, y]) => `${x} ${y}`).join(" L ");
+// footpath only beyond the end of the road (the road itself is drawn as artwork)
+const FOOT_D = "M " + ART.trail.slice(ART.roadEnd).map(([x, y]) => `${x} ${y}`).join(" L ");
 
 export default function LeanRoadmapRace({
   stages,
@@ -111,12 +112,12 @@ function StageBody({ stage, stacked = false }: { stage: RoadmapStage; stacked?: 
   return (
     <div className={`grid gap-5 ${stacked ? "" : "sm:grid-cols-2 sm:gap-8"}`}>
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#486581]">Mục tiêu</p>
-        <p className="mt-2 text-sm xl:text-[15px] text-[#334E68] leading-relaxed">{stage.objective}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#486581]">Mục tiêu</p>
+        <p className="mt-2 text-base xl:text-[17px] text-[#243B53] leading-relaxed">{stage.objective}</p>
       </div>
       <div className={stacked ? "border-t border-[#002F5B]/10 pt-5" : "sm:border-l sm:border-[#002F5B]/10 sm:pl-8"}>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9500E]">Kết quả</p>
-        <p className="mt-2 text-sm xl:text-[15px] text-[#002F5B] leading-relaxed font-medium">{stage.outcome}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9500E]">Kết quả</p>
+        <p className="mt-2 text-base xl:text-[17px] text-[#002F5B] leading-relaxed font-semibold">{stage.outcome}</p>
       </div>
     </div>
   );
@@ -238,7 +239,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     };
   }, []);
 
-  const active = Math.max(0, reached - 1);
+  // the stage being climbed towards (the current goal); at the summit it stays on stage 5
+  const target = Math.min(reached, stages.length - 1);
+  const active = target;
   const ready = size.w > 0;
 
   // GSAP: the scene builds up the first time it scrolls into view, then clouds drift around the peak
@@ -258,6 +261,16 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     }, boxRef);
     return () => ctx.revert();
   }, [ready]);
+
+  // GSAP: a new goal appears on the mountain only once the previous stage is reached
+  useEffect(() => {
+    const el = boxRef.current?.querySelector(`.rm-gate[data-i="${target}"]`);
+    if (!el || target === 0) return;
+    const tw = gsap.fromTo(el, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2.4)" });
+    return () => {
+      tw.kill();
+    };
+  }, [target]);
 
   // GSAP: each new stage slides its lines in one after another
   useEffect(() => {
@@ -372,7 +385,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   <path className="rm-snow" d={ART.snow} fill="#F4F8FC" />
                   <path d={ART.road} fill="#FDCBA6" />
                   {/* footpath from the end of the road to the summit */}
-                  <path d={TRAIL_D} fill="none" stroke="#FDCBA6" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 16" />
+                  <path d={FOOT_D} fill="none" stroke="#FDCBA6" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 16" />
                 </g>
                 </g>
                 {/* clouds drifting around the peak */}
@@ -402,35 +415,44 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
               </svg>
             )}
 
-            {/* bends of the trail: stage number and name (click to send the climber there) */}
+            {/* stages on the mountain: only those reached plus the next goal are shown; labels sit outside the left flank */}
             {w > 0 &&
               geo.bends.slice(1).map((pt, i) => {
+                if (i > target) return null;
                 const on = reached > i;
-                // labels sit outside each bend of the road: right bends and the summit to the right, left bends to the left
-                const right = i % 2 === 0;
+                const goal = i === target && !on;
+                // stages 3-5 share one label column (aligned at the lowest of their flank edges)
+                const edgeArt = i >= 2 ? Math.min(...ART.edges.slice(2)) : ART.edges[i];
+                const edgeX = geo.ox + edgeArt * geo.k - 16;
                 return (
                   <button
                     key={i}
+                    data-i={i}
                     type="button"
                     onClick={() => jumpTo(i)}
                     className="rm-gate group absolute w-0 h-0 focus-visible:outline-none"
                     style={{ left: pt[0], top: pt[1] }}
                     aria-label={`Giai đoạn ${i + 1}: ${stages[i].short}`}
                   >
+                    {/* leader from the label to the stage */}
+                    <span aria-hidden="true" className={`absolute top-0 h-0 border-t-2 border-dashed ${on ? "border-[#F76011]" : "border-[#002F5B]/40"}`} style={{ right: 20, width: Math.max(0, pt[0] - edgeX - 20) }} />
                     <span
                       className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
-                        on ? "bg-[#F76011] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#002F5B] ring-2 ring-white/60"
+                        on ? "bg-[#F76011] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#C9500E] ring-[3px] ring-[#F76011]"
                       }`}
                     >
                       {pad(i + 1)}
                       {on && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-white" />}
+                      {goal && <span aria-hidden="true" className="goal-ring absolute inset-0 rounded-full ring-2 ring-[#F76011]" />}
                     </span>
                     <span
-                      className={`absolute top-0 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-500 ${
-                        right ? "left-6" : "right-6"
-                      } ${on ? "bg-white text-[#002F5B] shadow-sm" : "bg-white/70 text-[#486581] group-hover:text-[#002F5B]"}`}
+                      className={`absolute top-0 -translate-y-1/2 -translate-x-full whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] shadow-[0_6px_16px_-8px_rgba(0,47,91,0.4)] ${
+                        goal ? "goal-blink bg-[#F76011] text-white" : "bg-white text-[#002F5B] ring-1 ring-[#002F5B]/10"
+                      }`}
+                      style={{ left: edgeX - pt[0] }}
                     >
-                      {stages[i].short}
+                      {goal && <span className="block text-[9px] tracking-[0.2em] opacity-85 leading-tight">Mục tiêu</span>}
+                      <span className="block leading-tight">{stages[i].short}</span>
                     </span>
                   </button>
                 );

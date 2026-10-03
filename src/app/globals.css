@@ -236,3 +236,22 @@ font[style] {
 @media (prefers-reduced-motion: reduce) {
   .summit-flag { animation: none; }
 }
+
+/* Lean roadmap: the next goal on the mountain blinks until the trekker reaches it */
+@keyframes goalBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.goal-blink {
+  animation: goalBlink 1.1s ease-in-out infinite;
+}
+@keyframes goalRing {
+  from { transform: scale(1); opacity: 0.9; }
+  to { transform: scale(1.9); opacity: 0; }
+}
+.goal-ring {
+  animation: goalRing 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .goal-blink, .goal-ring { animation: none; }
+}
