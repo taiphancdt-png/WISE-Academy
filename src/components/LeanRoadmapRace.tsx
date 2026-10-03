@@ -115,17 +115,18 @@ function Header({ title, description }: { title: React.ReactNode; description: s
   return (
     <div
       ref={ref}
-      className={`grid lg:grid-cols-12 gap-4 lg:gap-10 items-end transition-all duration-1000 ${EASE} motion-reduce:transition-none ${
+      className={`transition-all duration-1000 ${EASE} motion-reduce:transition-none ${
         seen ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-10 blur-sm motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:blur-0"
       }`}
     >
-      <div className="lg:col-span-7">
-        <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9500E] ring-1 ring-[#F76011]/30 bg-[#F76011]/10">
-          Lộ trình chuyển đổi
-        </span>
-        <h2 className="mt-4 text-3xl sm:text-4xl xl:text-[44px] font-semibold leading-[1.1] tracking-tight">{title}</h2>
+      <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9500E] ring-1 ring-[#F76011]/30 bg-[#F76011]/10">
+        Lộ trình chuyển đổi
+      </span>
+      {/* heading and description share the same top edge */}
+      <div className="mt-4 grid lg:grid-cols-12 gap-4 lg:gap-10 items-start">
+        <h2 className="lg:col-span-7 text-3xl sm:text-4xl xl:text-[44px] font-semibold leading-[1.1] tracking-tight">{title}</h2>
+        <p className="lg:col-span-5 lg:pt-1.5 text-sm sm:text-base opacity-75 leading-relaxed">{description}</p>
       </div>
-      <p className="lg:col-span-5 text-sm sm:text-base opacity-75 leading-relaxed">{description}</p>
     </div>
   );
 }
