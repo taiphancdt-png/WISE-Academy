@@ -225,18 +225,6 @@ font[style] {
   .gate-pulse, .runner-bob { animation: none; }
 }
 
-/* Lean roadmap: the summit flag waves when the climber arrives */
-@keyframes summitFlag {
-  0%, 100% { transform: scaleX(1) skewY(0deg); }
-  50% { transform: scaleX(0.82) skewY(6deg); }
-}
-.summit-flag {
-  animation: summitFlag 0.6s ease-in-out infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .summit-flag { animation: none; }
-}
-
 /* Lean roadmap: the next goal on the mountain blinks until the trekker reaches it */
 @keyframes goalBlink {
   0%, 100% { opacity: 1; }

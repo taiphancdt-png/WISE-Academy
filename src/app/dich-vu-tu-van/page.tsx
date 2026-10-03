@@ -1,5 +1,4 @@
 import React from "react";
-import { Clock } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import LeanRoadmapRace from "@/components/LeanRoadmapRace";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
@@ -14,7 +13,7 @@ const pillarImages = [
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
-  description: "Tư vấn tối ưu vận hành cho sản xuất, logistics và dịch vụ: khảo sát hiện trường, chuyển đổi Lean, nâng cao năng suất, vận hành số và giảm chi phí.",
+  description: "4 dịch vụ tư vấn chính của WISE Academy: chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực.",
   alternates: { canonical: "/dich-vu-tu-van" },
 };
 
@@ -22,63 +21,64 @@ export default function ConsultingPage() {
   const pillars = [
     {
       id: "01",
-      title: "Khảo Sát Thực Tế & Tìm Điểm Nghẽn Tại Hiện Trường",
-      subtitle: "Nhìn rõ các chỗ bị nghẽn, lãng phí thời gian và cơ hội tăng năng suất",
-      desc: "Chuyên gia WISE Academy khảo sát toàn diện hệ thống vận hành ngay tại hiện trường - nhà máy, kho vận hay văn phòng - quan sát luồng vật tư, luồng thông tin và cách đội ngũ làm việc để chỉ rõ các điểm lãng phí cần khắc phục ngay.",
-      deliverables: [
-        "Báo cáo đánh giá hiện trạng vận hành và mức độ lãng phí",
-        "Sơ đồ luồng công việc thực tế từ đầu vào đến khi giao cho khách hàng",
-        "Bảng thống kê các nguyên nhân gây chậm trễ và hao hụt chi phí",
-        "Kế hoạch hành động 90 ngày để đạt kết quả tăng năng suất rõ rệt",
-        "Xác lập hệ thống chỉ số theo dõi năng suất gắn liền với lợi nhuận"
+      title: "Tư vấn chuyển đổi Hệ thống Quản lý Lean",
+      subtitle: "Từ mô hình quản lý truyền thống sang hệ thống Lean, nền tảng của vận hành xuất sắc và tăng trưởng bền vững",
+      desc: "WISE Academy đồng hành cùng doanh nghiệp sản xuất FDI và nội địa trên hai trục: Chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và Chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức). Lean không chỉ được áp dụng như công cụ mà trở thành triết lý quản lý dài hạn, triển khai theo khung 5 module lấy cảm hứng từ Hệ thống Sản xuất Toyota (Ngôi nhà Lean).",
+      listTitle: "Phạm vi tư vấn",
+      items: [
+        "Chuyển đổi Lean cho nhà máy hiện hữu: tối ưu quy trình, cải tiến mặt bằng, tái thiết kế dòng giá trị và loại bỏ lãng phí",
+        "Nền tảng & Hệ thống quản lý: 5S, Quản lý trực quan, Công việc tiêu chuẩn, Hệ thống quản lý hằng ngày",
+        "Chất lượng xuất sắc: giải quyết vấn đề, Poka-Yoke, Quản lý chất lượng toàn diện (TQM)",
+        "Năng suất & Dòng chảy: VSM, cân bằng chuyền, hệ thống kéo, Kanban, SMED",
+        "Thiết bị & Độ tin cậy: Bảo trì năng suất toàn diện (TPM), cải thiện OEE",
+        "Con người & Lãnh đạo Lean: Hoshin Kanri, A3, Catch-ball, Leader Standard Work"
       ],
-      duration: "2 - 4 tuần khảo sát & phân tích chuyên sâu",
-      tag: "KHẢO SÁT & ĐÁNH GIÁ"
+      tag: "LEAN MANAGEMENT SYSTEM TRANSFORMATION"
     },
     {
       id: "02",
-      title: "Chuyển Đổi Lean Toàn Diện & Dòng Chảy Giá Trị (Lean Transformation)",
-      subtitle: "Tái thiết hệ thống quản trị theo dòng chảy liên tục, từ chiến lược đến hiện trường",
-      desc: "Tổ chức lại quy trình và khu vực làm việc theo nguyên tắc tinh gọn, xóa bỏ tình trạng làm theo lô lớn rời rạc, thiết lập dòng chảy liên tục (như ô sản xuất chữ U trong nhà máy) và vận hành kéo theo nhu cầu khách hàng (Pull System).",
-      deliverables: [
-        "Thiết kế bản đồ dòng giá trị tương lai (Future State VSM)",
-        "Thiết kế mặt bằng / khu vực làm việc tinh gọn (Lean Layout)",
-        "Thiết lập hệ thống kéo Kanban & Điểm kiểm soát tồn kho",
-        "Rút ngắn thời gian chuyển đổi (SMED) cho máy móc và quy trình",
-        "Xây dựng hệ thống quản trị hiện trường hàng ngày (DMS)"
+      title: "Tư vấn thiết kế Nhà máy Lean mới",
+      subtitle: "Thiết kế đúng ngay từ đầu cho nhà máy và dây chuyền mới",
+      desc: "WISE Academy hỗ trợ doanh nghiệp thiết kế nhà máy hoặc dây chuyền sản xuất mới dựa trên nguyên tắc Lean, đảm bảo dòng chảy tối ưu, khả năng mở rộng và hiệu quả vận hành ngay từ ngày đầu, thay vì phải cải tạo tốn kém sau khi đã xây dựng.",
+      listTitle: "Phạm vi tư vấn",
+      items: [
+        "Phân tích sản phẩm, sản lượng và nhịp sản xuất (Takt time) làm cơ sở thiết kế",
+        "Thiết kế dòng giá trị tương lai (Future State VSM) cho nhà máy mới",
+        "Thiết kế mặt bằng tổng thể và bố trí chuyền theo dòng chảy (Lean Layout, Cell)",
+        "Thiết kế luồng vật tư, kho và cấp liệu nội bộ theo hệ thống kéo",
+        "Hoạch định khả năng mở rộng công suất theo từng giai đoạn đầu tư"
       ],
-      duration: "6 - 12 tháng triển khai đồng hành",
-      tag: "FULL SYSTEM TRANSFORMATION"
+      tag: "NEW LEAN FACTORY DESIGN"
     },
     {
       id: "03",
-      title: "Work Engineering & Cân Bằng Công Việc (Productivity)",
-      subtitle: "Tối ưu thao tác, giảm thời gian chu kỳ và tăng năng suất cho dây chuyền sản xuất, kho vận và quy trình dịch vụ",
-      desc: "Áp dụng kỹ thuật công nghiệp (Industrial Engineering) để bấm giờ phân tích thao tác, loại bỏ động tác thừa, cân bằng tải trọng công việc giữa các công đoạn và xóa bỏ nút thắt cổ chai.",
-      deliverables: [
-        "Biểu đồ phân tích cân bằng công việc (Yamazumi Chart)",
-        "Bảng chuẩn hóa thao tác và định mức thời gian chuẩn (Standard Time)",
-        "Giải pháp bố trí đồ gá (Jig) và công cụ hỗ trợ thông minh",
-        "Tăng năng suất 15% - 30% mà không cần đầu tư thêm thiết bị",
-        "Giảm ùn ứ công việc dở dang (WIP) giữa các công đoạn"
+      title: "Tư vấn tích hợp Lean & Chuyển đổi số",
+      subtitle: "Để mỗi khoản đầu tư công nghệ tạo ra giá trị vận hành và kinh doanh thực sự",
+      desc: "Nhiều dự án chuyển đổi số không đạt kỳ vọng vì công nghệ được triển khai trên một nền tảng vận hành chưa tối ưu. Lean loại bỏ lãng phí và tối ưu quy trình, công nghệ số mang lại tự động hóa, dữ liệu thời gian thực và ra quyết định dựa trên dữ liệu. Khi kết hợp đúng cách, doanh nghiệp tăng năng suất, giảm chi phí và lỗi quy trình, xây dựng hệ thống sản xuất linh hoạt và dễ mở rộng.",
+      listTitle: "Dịch vụ tư vấn chính",
+      items: [
+        "Hệ thống quản lý dữ liệu vận hành thời gian thực: giám sát và phân tích dữ liệu sản xuất để ra quyết định nhanh, chính xác",
+        "Kỹ thuật hệ thống công nghiệp: thiết kế và tối ưu hệ thống sản xuất, tăng hiệu quả và ổn định vận hành",
+        "Bảo trì năng suất toàn diện (TPM): nâng cao độ tin cậy thiết bị, giảm thời gian dừng máy",
+        "Quản lý chất lượng toàn diện (TQM): kiểm soát quy trình, đồng nhất sản phẩm và cải tiến liên tục"
       ],
-      duration: "3 - 6 tháng tại các khu vực mục tiêu",
-      tag: "PRODUCTIVITY IMPROVEMENT"
+      tag: "LEAN & DIGITAL TRANSFORMATION INTEGRATION"
     },
     {
       id: "04",
-      title: "Vận Hành Số & Lean 4.0 (IoT, AI)",
-      subtitle: "Kết hợp tư duy tinh gọn với công nghệ giám sát thời gian thực và tự động hóa",
-      desc: "Tránh bẫy số hóa lãng phí bằng cách tối ưu quy trình trước khi số hóa. Triển khai IoT kết nối thiết bị, bảng giám sát theo thời gian thực và ứng dụng AI hỗ trợ lập kế hoạch và ra quyết định.",
-      deliverables: [
-        "Dashboard giám sát hiệu suất thiết bị OEE thời gian thực",
-        "Hệ thống cảnh báo sự cố kỹ thuật số (Digital Andon)",
-        "Số hóa nhật ký vận hành và biên bản kiểm tra chất lượng",
-        "Tự động hóa thu thập dữ liệu máy móc và dự đoán bảo trì (PdM)",
-        "Lộ trình chuyển đổi vận hành số / nhà máy thông minh (Smart Operations Roadmap)"
+      title: "Tư vấn hệ thống Đào tạo & Phát triển nguồn nhân lực",
+      subtitle: "Biến đội ngũ thành động lực của vận hành xuất sắc trong bối cảnh nhiều biến động",
+      desc: "Trong môi trường kinh doanh biến động, phức tạp và khó đoán định (VUCA), hệ thống Đào tạo & Phát triển (L&D) hiệu quả là yêu cầu chiến lược. WISE Academy hỗ trợ doanh nghiệp thiết kế và triển khai hệ thống L&D bài bản: phát triển năng lực cốt lõi gắn với chiến lược, củng cố đội ngũ lãnh đạo kế cận, nâng cao gắn kết, giữ chân nhân tài và hình thành văn hóa cải tiến liên tục.",
+      listTitle: "Dịch vụ tư vấn & đào tạo chính",
+      items: [
+        "Tư vấn khung năng lực cốt lõi gắn với chiến lược kinh doanh",
+        "Tư vấn xây dựng hệ thống Đào tạo & Phát triển (L&D) bài bản và liên tục",
+        "Đào tạo TWI (Training Within Industry) cho quản lý tuyến đầu và tổ trưởng",
+        "Đào tạo phương pháp giải quyết vấn đề có cấu trúc",
+        "Đào tạo kỹ năng Coaching cho cấp quản lý",
+        "Chương trình đào tạo giảng viên nội bộ (Train-the-Trainer)"
       ],
-      duration: "4 - 8 tháng tích hợp và thử nghiệm",
-      tag: "DIGITAL TRANSFORMATION"
+      tag: "HR LEARNING & DEVELOPMENT SYSTEM"
     }
   ];
 
@@ -142,19 +142,16 @@ export default function ConsultingPage() {
               <p className="mt-4 text-sm sm:text-base text-[#486581] leading-relaxed">
                 <strong className="text-[#102A43]">{pillar.subtitle}.</strong> {pillar.desc}
               </p>
-              <h3 className="mt-6 text-xs font-bold uppercase tracking-wider text-[#002F5B]">Kết quả bàn giao</h3>
+              <h3 className="mt-6 text-xs font-bold uppercase tracking-wider text-[#002F5B]">{pillar.listTitle}</h3>
               <ul className="mt-2">
-                {pillar.deliverables.map((d) => (
+                {pillar.items.map((d) => (
                   <li key={d} className="plus-item !font-medium">
                     {d}
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap items-center gap-5">
-                <ButtonLink href="/lien-he">Tư vấn giải pháp {pillar.id}</ButtonLink>
-                <span className="flex items-center gap-2 text-xs font-semibold text-[#486581]">
-                  <Clock className="w-4 h-4 text-[#F76011]" /> {pillar.duration}
-                </span>
+              <div className="mt-6">
+                <ButtonLink href="/lien-he">Tư vấn dịch vụ {pillar.id}</ButtonLink>
               </div>
             </div>
           </div>

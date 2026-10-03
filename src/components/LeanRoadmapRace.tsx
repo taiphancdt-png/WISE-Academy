@@ -406,11 +406,11 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   {/* footpath from the end of the road to the summit */}
                   <path d={FOOT_D} fill="none" stroke="#FDCBA6" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 16" />
                 </g>
-                {/* clouds hugging the flanks and the peak; they belong to the mountain and rise with it */}
+                {/* clouds drifting back and forth around the peak; they belong to the mountain and rise with it */}
                 {[
-                  [-0.08, 0.14, 0.9],
-                  [0.09, 0.22, 0.8],
-                  [-0.03, 0.04, 0.55],
+                  [-0.17, 0.11, 1],
+                  [0.16, 0.2, 0.8],
+                  [-0.07, -0.02, 0.6],
                 ].map(([dx, dy, sc], i) => (
                   // outer group is placed by React, the inner one is moved by GSAP (GSAP owns its transform)
                   <g key={i} transform={`translate(${peak[0] + dx * ART.w * geo.k} ${peak[1] + dy * ART.h * geo.k}) scale(${sc})`}>
