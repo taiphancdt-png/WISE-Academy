@@ -1,6 +1,7 @@
 import React from "react";
-import { ArrowDown, ChevronRight, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, ShieldCheck, Target } from "@/components/icons";
+import { ShieldCheck, Target } from "@/components/icons";
 import PageHero from "@/components/PageHero";
+import RgpdcaLoop from "@/components/RgpdcaLoop";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
 export const metadata = {
@@ -15,14 +16,6 @@ const VALUE_COLORS = ["#002F5B", "#E8590C", "#073866", "#C9500E"];
 const VALUE_TEXT = ["#002F5B", "#B5470C", "#073866", "#A8430B"];
 
 // Card placement and outgoing arrow for each RGPDCA step on desktop (3 columns × 2 rows, clockwise loop).
-const LOOP = [
-  { place: "lg:col-start-1 lg:row-start-1", icon: ArrowRight, arrowPos: "top-1/2 -translate-y-1/2 -right-[52px]" },
-  { place: "lg:col-start-2 lg:row-start-1", icon: ArrowRight, arrowPos: "top-1/2 -translate-y-1/2 -right-[52px]" },
-  { place: "lg:col-start-3 lg:row-start-1", icon: ArrowDown, arrowPos: "left-1/2 -translate-x-1/2 -bottom-[80px]" },
-  { place: "lg:col-start-3 lg:row-start-3", icon: ArrowLeft, arrowPos: "top-1/2 -translate-y-1/2 -left-[52px]" },
-  { place: "lg:col-start-2 lg:row-start-3", icon: ArrowLeft, arrowPos: "top-1/2 -translate-y-1/2 -left-[52px]" },
-  { place: "lg:col-start-1 lg:row-start-3", icon: ArrowUp, arrowPos: "left-1/2 -translate-x-1/2 -top-[80px]" },
-];
 
 export default function AboutPage() {
   const values = [
@@ -201,87 +194,7 @@ export default function AboutPage() {
           title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
           description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE Academy cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
         />
-        {/* Loop: 1 → 2 → 3 ↓ 4 → 5 → 6 (bottom row runs right-to-left) ↑ back to 1 */}
-        <div className="relative">
-          <ol className="relative grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 lg:gap-y-0">
-            {rgpdcaDetails.map((item, i) => {
-              const step = i + 1;
-              const out = LOOP[i];
-              const Arrow = out.icon;
-              return (
-                <li key={item.phase} className={`relative card-soft !transform-none p-7 ${out.place}`}>
-                  <div className="flex items-center gap-4">
-                    {/* The RGPDCA letter is the anchor of each step */}
-                    <span className="w-14 h-14 rounded-xl bg-[#002F5B] text-[#FF7A30] text-3xl font-extrabold flex items-center justify-center shrink-0">
-                      {item.code.charAt(0)}
-                    </span>
-                    <span className="leading-tight">
-                      <span className="block text-xs font-semibold text-[#486581]">Bước {String(step).padStart(2, "0")}</span>
-                      <span className="block text-sm font-bold uppercase tracking-wide text-[#002F5B]">
-                        <span className="text-[#F76011]">{item.code.charAt(0)}</span>
-                        {item.code.split(" - ")[1].slice(1)}
-                      </span>
-                    </span>
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug whitespace-pre-line">{item.name}</h3>
-                  <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
-                  <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
-
-                  {/* Desktop: arrow toward the next step, sitting in the gap */}
-                  <span
-                    aria-hidden="true"
-                    className={`hidden lg:flex absolute w-10 h-10 rounded-full bg-[#F76011] text-white items-center justify-center shadow-md shadow-[#F76011]/30 ${out.arrowPos}`}
-                  >
-                    <Arrow className="w-5 h-5" />
-                  </span>
-                  {/* Mobile: down arrow between stacked steps */}
-                  {step < 6 && (
-                    <span aria-hidden="true" className="lg:hidden absolute left-1/2 -translate-x-1/2 -bottom-10 w-8 h-8 rounded-full bg-[#F76011] text-white flex items-center justify-center">
-                      <ArrowDown className="w-4 h-4" />
-                    </span>
-                  )}
-                </li>
-              );
-            })}
-            {/* Loop track (desktop): a rounded rectangle between the two rows. Its ends sit under step 3 and step 6,
-                so the cycle reads 1 → 3, down, 4 → 6, up, back to 1. */}
-            <li aria-hidden="true" className="hidden lg:block relative lg:col-span-3 lg:row-start-2 h-[120px] list-none">
-              <div
-                className="absolute top-6 bottom-6 rounded-full border-[3px] border-[#F76011] bg-[#FFF5EC]"
-                style={{ left: "calc((100% - 8rem) / 6)", right: "calc((100% - 8rem) / 6)" }}
-              >
-                {[33, 66].map((x) => (
-                  <span key={`t${x}`} className="absolute -top-[3px] -translate-y-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-[#F76011] text-[#F76011] flex items-center justify-center" style={{ left: `${x}%` }}>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </span>
-                ))}
-                {[33, 66].map((x) => (
-                  <span key={`b${x}`} className="absolute -bottom-[3px] translate-y-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-[#F76011] text-[#F76011] flex items-center justify-center" style={{ left: `${x}%` }}>
-                    <ChevronRight className="w-3.5 h-3.5 rotate-180" />
-                  </span>
-                ))}
-                <div className="absolute inset-0 flex items-center justify-center gap-3">
-                  <RefreshCw className="w-5 h-5 text-[#F76011]" />
-                  <span className="tracking-[0.3em] text-xl font-extrabold text-[#002F5B]">
-                    {["R", "G", "P", "D", "C", "A"].map((l) => (
-                      <span key={l} className="text-[#F76011]">{l}</span>
-                    ))}
-                  </span>
-                  <span className="text-sm font-semibold text-[#486581]">vòng cải tiến liên tục</span>
-                </div>
-              </div>
-            </li>
-          </ol>
-
-          {/* Loop label in the middle of the cycle (desktop) / after step 6 (mobile) */}
-          <div className="mt-10 lg:hidden flex justify-center pointer-events-none">
-            <span className="inline-flex items-center gap-3 bg-[#002F5B] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg">
-              <RefreshCw className="w-4 h-4 text-[#FF7A30]" />
-              <span className="tracking-[0.25em] text-base sm:text-lg font-extrabold text-[#FF7A30]">RGPDCA</span>
-              <span className="text-white/85">bước 6 quay lại bước 1</span>
-            </span>
-          </div>
-        </div>
+        <RgpdcaLoop steps={rgpdcaDetails} />
       </Section>
 
       <CtaBand

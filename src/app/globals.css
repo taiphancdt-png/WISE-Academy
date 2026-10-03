@@ -195,3 +195,11 @@ font[style] {
   box-shadow: none !important;
 }
 
+
+/* RGPDCA loop (About page): dashes travel clockwise along the track */
+@keyframes rgpdcaDash {
+  to { stroke-dashoffset: -48; }
+}
+.rgpdca-dash {
+  animation: rgpdcaDash 1.2s linear infinite;
+}
