@@ -376,7 +376,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                 <path d={poly(SNOW)} fill="#F4F8FC" />
                 {/* the road, and the part already climbed */}
                 <g clipPath="url(#mtClip)">
-                  <path d={roadPath(geo)} fill="#FBE3D3" />
+                  <path d={roadPath(geo)} fill="#FDCBA6" />
                   <path ref={litRef} d={roadPath(geo, START)} fill="#F76011" />
                 </g>
                 {/* summit flag */}
