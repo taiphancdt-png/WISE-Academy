@@ -56,7 +56,7 @@ export default function LeanRoadmapRace({
   useEffect(() => setReduce(window.matchMedia("(prefers-reduced-motion: reduce)").matches), []);
 
   return (
-    <section className="relative bg-[#001E38] text-white overflow-clip">
+    <section className="relative bg-gradient-to-b from-[#F3F7FC] via-white to-[#FFF3EA] text-[#002F5B] overflow-clip">
       <Stadium />
       {!reduce && <PinnedRace stages={stages} title={title} description={description} />}
       <StackedRace stages={stages} title={title} description={description} desktop={reduce} />
@@ -68,9 +68,9 @@ export default function LeanRoadmapRace({
 function Stadium() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#F76011]/[0.07] blur-3xl" />
-      <div className="absolute bottom-0 inset-x-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(247,96,17,0.12),transparent_65%)]" />
-      <div className="absolute inset-0 opacity-[0.05] bg-[repeating-linear-gradient(90deg,#fff_0_1px,transparent_1px_120px)]" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#F76011]/[0.08] blur-3xl" />
+      <div className="absolute bottom-0 inset-x-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(247,96,17,0.14),transparent_65%)]" />
+      <div className="absolute inset-0 opacity-[0.06] bg-[repeating-linear-gradient(90deg,#002F5B_0_1px,transparent_1px_120px)]" />
     </div>
   );
 }
@@ -93,12 +93,12 @@ function Header({ title, description }: { title: React.ReactNode; description: s
       }`}
     >
       <div className="lg:col-span-7">
-        <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FF9A5C] ring-1 ring-[#F76011]/40 bg-[#F76011]/10">
+        <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9500E] ring-1 ring-[#F76011]/30 bg-[#F76011]/10">
           Lộ trình chuyển đổi
         </span>
         <h2 className="mt-4 text-3xl sm:text-4xl xl:text-[44px] font-semibold leading-[1.1] tracking-tight">{title}</h2>
       </div>
-      <p className="lg:col-span-5 text-sm sm:text-base text-white/65 leading-relaxed">{description}</p>
+      <p className="lg:col-span-5 text-sm sm:text-base text-[#486581] leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -107,12 +107,12 @@ function StageBody({ stage }: { stage: RoadmapStage }) {
   return (
     <div className="grid sm:grid-cols-2 gap-5 sm:gap-8">
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">Mục tiêu</p>
-        <p className="mt-2 text-sm xl:text-[15px] text-white/80 leading-relaxed">{stage.objective}</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#486581]">Mục tiêu</p>
+        <p className="mt-2 text-sm xl:text-[15px] text-[#334E68] leading-relaxed">{stage.objective}</p>
       </div>
-      <div className="sm:border-l sm:border-white/10 sm:pl-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#FF9A5C]">Kết quả</p>
-        <p className="mt-2 text-sm xl:text-[15px] text-white leading-relaxed font-medium">{stage.outcome}</p>
+      <div className="sm:border-l sm:border-[#002F5B]/10 sm:pl-8">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9500E]">Kết quả</p>
+        <p className="mt-2 text-sm xl:text-[15px] text-[#002F5B] leading-relaxed font-medium">{stage.outcome}</p>
       </div>
     </div>
   );
@@ -238,8 +238,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </div>
                 </div>
                 <div className="col-span-7">
-                  <div className="rounded-[2rem] p-2 bg-white/[0.04] ring-1 ring-white/10">
-                    <div className="rounded-[calc(2rem-0.5rem)] p-8 bg-[#002F5B]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                  <div className="rounded-[2rem] p-2 bg-white/60 ring-1 ring-[#002F5B]/[0.08]">
+                    <div className="rounded-[calc(2rem-0.5rem)] p-8 bg-white shadow-[0_24px_60px_-28px_rgba(0,47,91,0.35)]">
                       <StageBody stage={stage} />
                     </div>
                   </div>
@@ -251,32 +251,32 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
         {/* the race track */}
         <div className="relative mt-6 pt-24">
-          <div ref={trackRef} className="relative h-14 rounded-2xl bg-[#0A3A66] ring-1 ring-white/10 overflow-hidden">
+          <div ref={trackRef} className="relative h-14 rounded-2xl bg-[#F6C7A9] ring-1 ring-[#F76011]/20 overflow-hidden shadow-[0_14px_30px_-18px_rgba(201,80,14,0.6)]">
             {/* lit part of the track, up to the runner */}
             <div ref={fillRef} className="absolute inset-0 origin-left bg-gradient-to-r from-[#C9500E] via-[#F76011] to-[#FF8A3D]" style={{ transform: `scaleX(${START / 100})` }} />
             {/* lane lines */}
-            <div className="absolute inset-x-0 top-1/3 border-t border-dashed border-white/25" />
-            <div className="absolute inset-x-0 top-2/3 border-t border-dashed border-white/25" />
+            <div className="absolute inset-x-0 top-1/3 border-t-2 border-white/80" />
+            <div className="absolute inset-x-0 top-2/3 border-t-2 border-white/80" />
             {/* start line and checkered finish */}
-            <div className="absolute inset-y-0 left-[4%] w-1 bg-white/70" />
-            <div className={`absolute inset-y-0 right-0 w-[2%] bg-[repeating-conic-gradient(#fff_0_25%,#001E38_0_50%)] bg-[length:12px_12px] transition-opacity duration-500 ${finished ? "opacity-100" : "opacity-60"}`} />
+            <div className="absolute inset-y-0 left-[4%] w-1.5 bg-white" />
+            <div className={`absolute inset-y-0 right-0 w-[2%] bg-[repeating-conic-gradient(#fff_0_25%,#002F5B_0_50%)] bg-[length:12px_12px] transition-opacity duration-500 ${finished ? "opacity-100" : "opacity-60"}`} />
             {/* checkpoint markers */}
             {CHECKPOINTS.map((c, i) => (
               <span
                 key={c}
                 className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} ${
-                  reached > i ? "bg-white text-[#C9500E] scale-110" : "bg-[#002F5B] text-white/60 ring-1 ring-white/20"
+                  reached > i ? "bg-[#002F5B] text-white scale-110 ring-2 ring-white" : "bg-white text-[#C9500E] ring-1 ring-[#F76011]/30"
                 }`}
                 style={{ left: `${c}%` }}
               >
                 {pad(i + 1)}
-                {reached > i && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-white" />}
+                {reached > i && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-[#002F5B]" />}
               </span>
             ))}
           </div>
 
           {/* below the track: start, the five gates (click to jump), finish */}
-          <div className="relative mt-2 h-10 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+          <div className="relative mt-2 h-10 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]">
             <span className="absolute left-0 top-3">Xuất phát</span>
             {CHECKPOINTS.map((c, i) => {
               const on = reached > i;
@@ -288,12 +288,12 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   className="group absolute top-0 -translate-x-1/2 flex flex-col items-center gap-1 rounded-md px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F76011]"
                   style={{ left: `${c}%` }}
                 >
-                  <span className={`w-px h-2.5 transition-colors duration-500 ${on ? "bg-[#F76011]" : "bg-white/20"}`} />
-                  <span className={`uppercase tracking-[0.16em] transition-colors duration-500 ${on ? "text-white" : "text-white/40 group-hover:text-white/75"}`}>{stages[i].short}</span>
+                  <span className={`w-px h-2.5 transition-colors duration-500 ${on ? "bg-[#F76011]" : "bg-[#002F5B]/20"}`} />
+                  <span className={`uppercase tracking-[0.16em] transition-colors duration-500 ${on ? "text-[#002F5B]" : "text-[#486581]/70 group-hover:text-[#002F5B]"}`}>{stages[i].short}</span>
                 </button>
               );
             })}
-            <span className={`absolute right-0 top-3 flex items-center gap-1.5 transition-colors duration-500 ${finished ? "text-[#FF9A5C]" : ""}`}>
+            <span className={`absolute right-0 top-3 flex items-center gap-1.5 transition-colors duration-500 ${finished ? "text-[#C9500E]" : ""}`}>
               <FlagCheckered weight="fill" className={`w-4 h-4 ${finished ? "finish-wave" : ""}`} /> Về đích
             </span>
           </div>
@@ -303,11 +303,11 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             <div className="-translate-x-1/2 flex flex-col items-center">
               {/* speed lines while running */}
               <div ref={trailRef} className="absolute right-[70%] top-[35%] flex flex-col gap-2 opacity-0" aria-hidden="true">
-                <span className="block h-[3px] w-14 rounded-full bg-gradient-to-l from-white/70 to-transparent" />
+                <span className="block h-[3px] w-14 rounded-full bg-gradient-to-l from-[#002F5B]/50 to-transparent" />
                 <span className="block h-[3px] w-20 rounded-full bg-gradient-to-l from-[#FF8A3D] to-transparent ml-4" />
-                <span className="block h-[3px] w-10 rounded-full bg-gradient-to-l from-white/50 to-transparent ml-8" />
+                <span className="block h-[3px] w-10 rounded-full bg-gradient-to-l from-[#002F5B]/30 to-transparent ml-8" />
               </div>
-              <RunnerFigure ref={figRef} className="relative w-36 h-[116px] drop-shadow-[0_6px_10px_rgba(247,96,17,0.4)]" />
+              <RunnerFigure ref={figRef} className="relative w-44 h-[140px] drop-shadow-[0_6px_8px_rgba(0,47,91,0.25)]" />
             </div>
           </div>
         </div>
@@ -356,22 +356,22 @@ function StackedRace({
           const isActive = !desktop && reached - 1 === i;
           return (
             <li key={stage.name} ref={(el) => { refs.current[i] = el; }} className="relative pl-14">
-              <span aria-hidden="true" className={`absolute left-[19px] top-0 -bottom-6 w-1 rounded-full ${i === stages.length - 1 ? "bg-transparent" : "bg-white/10"} overflow-hidden`}>
+              <span aria-hidden="true" className={`absolute left-[19px] top-0 -bottom-6 w-1 rounded-full ${i === stages.length - 1 ? "bg-transparent" : "bg-[#002F5B]/10"} overflow-hidden`}>
                 <span className={`block w-full bg-[#F76011] origin-top transition-transform duration-700 ${EASE} ${on && i < stages.length - 1 ? "scale-y-100" : "scale-y-0"}`} style={{ height: "100%" }} />
               </span>
               <span
                 aria-hidden="true"
                 className={`absolute left-0 top-7 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-colors duration-500 ${
-                  on ? "bg-[#F76011] text-white" : "bg-[#0A3A66] text-white/60 ring-1 ring-white/20"
+                  isActive ? "bg-white ring-2 ring-[#F76011] shadow-md" : on ? "bg-[#F76011] text-white" : "bg-white text-[#C9500E] ring-1 ring-[#F76011]/30"
                 }`}
               >
                 {isActive ? <JoggingRunner /> : pad(i + 1)}
               </span>
-              <div className={`rounded-[1.75rem] p-1.5 ring-1 transition-all duration-700 ${EASE} ${on ? "bg-white/[0.05] ring-[#F76011]/40 opacity-100" : "bg-white/[0.03] ring-white/10 opacity-50"}`}>
-                <div className="rounded-[calc(1.75rem-0.375rem)] p-6 bg-[#002F5B]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <div className={`rounded-[1.75rem] p-1.5 ring-1 transition-all duration-700 ${EASE} ${on ? "bg-white/70 ring-[#F76011]/40 opacity-100" : "bg-white/50 ring-[#002F5B]/10 opacity-60"}`}>
+                <div className="rounded-[calc(1.75rem-0.375rem)] p-6 bg-white shadow-[0_18px_40px_-24px_rgba(0,47,91,0.35)]">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-3xl font-bold text-[#FF8A3D]">{pad(i + 1)}</span>
-                    <span className="rounded-lg px-2.5 py-1 text-xs font-semibold bg-white/10 text-white/85">{stage.time}</span>
+                    <span className="text-3xl font-bold text-[#F76011]">{pad(i + 1)}</span>
+                    <span className="rounded-lg px-2.5 py-1 text-xs font-semibold bg-[#FFF1E8] text-[#C9500E]">{stage.time}</span>
                   </div>
                   <h3 className="mt-3 text-xl font-semibold leading-snug">{stage.name}</h3>
                   <div className="mt-4">
@@ -401,5 +401,5 @@ function JoggingRunner() {
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, []);
-  return <RunnerFigure ref={ref} className="w-9 h-8" />;
+  return <RunnerFigure ref={ref} className="w-10 h-9" />;
 }
