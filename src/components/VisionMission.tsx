@@ -144,7 +144,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
             <span className="relative w-[50%] -translate-x-[9%]">
               <img src="/images/brand/logo-mark.png" alt="" className="w-full" />
               {/* beside the top of the W's right arm, with a small gap */}
-              <span className="absolute left-full top-[16%] ml-[3px] text-[31px] font-bold leading-[0.6] text-[#002F5B]">®</span>
+              <span className="absolute left-full top-[16%] ml-[3px] text-[26px] font-bold leading-[0.6] text-[#002F5B]">®</span>
             </span>
           </div>
         </div>
