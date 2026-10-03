@@ -28,8 +28,9 @@ export default function Header() {
   const navLinks = [
     { label: "Về WISE Academy", en: "About WISE Academy", zh: "关于 WISE Academy", href: "/ve-chung-toi" },
     { label: "Tư vấn doanh nghiệp", en: "Consulting", zh: "咨询服务", href: "/dich-vu-tu-van" },
-    { label: "Đào tạo", en: "Training", zh: "培训课程", href: "/dao-tao" },
-    { label: "Dự án thực tế", en: "Case Studies", zh: "项目案例", href: "/du-an" },
+    { label: "Đào tạo Lean", en: "Training", zh: "培训课程", href: "/dao-tao" },
+    { label: "Đào tạo Lean Six Sigma", en: "Lean Six Sigma Training", zh: "精益六西格玛培训", href: "/dao-tao-lean-six-sigma" },
+    { label: "Dự án nổi bật", en: "Case Studies", zh: "项目案例", href: "/du-an" },
     { label: "Chuyên gia", en: "Experts", zh: "专家团队", href: "/chuyen-gia" },
     { label: "Góc tri thức", en: "Insights", zh: "知识中心", href: "/tri-thuc" },
     { label: "Toolkit", en: "Toolkit", zh: "工具包", href: "/toolkit" },

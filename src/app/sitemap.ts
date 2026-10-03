@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/dao-tao`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/dao-tao-lean-six-sigma`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/dich-vu-tu-van`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/tri-thuc`, lastModified: latest, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/du-an`, changeFrequency: "monthly", priority: 0.7 },
