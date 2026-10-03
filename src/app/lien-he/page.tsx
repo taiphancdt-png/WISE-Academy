@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Building2, Send, CheckCircle2, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Building2, Send, CheckCircle2, ChevronDown } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import Honeypot from "@/components/Honeypot";
 import { submitLead } from "@/lib/submitLead";
@@ -65,15 +65,15 @@ export default function ContactPage() {
   const faqs = [
     {
       q: "Buổi khảo sát thực tế ban đầu tại doanh nghiệp có mất phí không?",
-      a: "WISE hỗ trợ buổi khảo sát sơ bộ ban đầu tại hiện trường hoàn toàn miễn phí cho các doanh nghiệp đủ điều kiện, nhằm đánh giá tiềm năng cải tiến và đề xuất lộ trình phù hợp."
+      a: "WISE Academy hỗ trợ buổi khảo sát sơ bộ ban đầu tại hiện trường hoàn toàn miễn phí cho các doanh nghiệp đủ điều kiện, nhằm đánh giá tiềm năng cải tiến và đề xuất lộ trình phù hợp."
     },
     {
       q: "Dự án tư vấn Lean thường kéo dài bao lâu?",
       a: "Tùy thuộc vào quy mô và mục tiêu: Gói chẩn đoán nhanh kéo dài 2-4 tuần; Gói thí điểm tại khu vực mẫu 3-6 tháng; và Gói chuyển đổi toàn diện nhân rộng từ 6-12 tháng."
     },
     {
-      q: "WISE có cam kết kết quả đo lường được không?",
-      a: "Có. Mọi hợp đồng tư vấn của WISE đều cam kết các chỉ số hiệu suất KPI cụ thể (nâng OEE, giảm WIP, giảm Lead Time, giảm thời gian chuyển đổi mã hàng SMED)."
+      q: "WISE Academy có cam kết kết quả đo lường được không?",
+      a: "Có. Mọi hợp đồng tư vấn của WISE Academy đều cam kết các chỉ số hiệu suất KPI cụ thể (nâng OEE, giảm WIP, giảm Lead Time, giảm thời gian chuyển đổi mã hàng SMED)."
     },
     {
       q: "Khóa đào tạo Lean Six Sigma cấp chứng chỉ gì?",
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 </div>
                 <h2 className="mt-5 text-2xl font-semibold text-[#002F5B]">Gửi thông tin thành công!</h2>
                 <p className="mt-3 text-sm text-[#486581] max-w-md mx-auto">
-                  Cảm ơn Quý doanh nghiệp. Chuyên gia tư vấn của WISE sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.
+                  Cảm ơn Quý doanh nghiệp. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.
                 </p>
                 <button onClick={() => setSubmitted(false)} className="mt-5 text-sm font-semibold text-[#C9500E] hover:underline">
                   Gửi thêm yêu cầu khác

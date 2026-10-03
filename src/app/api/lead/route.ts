@@ -113,7 +113,7 @@ export async function POST(request: Request) {
       from: SMTP_FROM || `WISE Academy Website <${SMTP_USER}>`,
       to: (LEAD_RECIPIENTS || DEFAULT_RECIPIENTS).split(",").map((s) => s.trim()).filter(Boolean),
       replyTo: email && EMAIL_RE.test(email) ? email : undefined,
-      subject: oneLine(`[Website] ${title} – ${name}`).slice(0, 200),
+      subject: oneLine(`[Website] ${title} - ${name}`).slice(0, 200),
       text,
       html,
     });

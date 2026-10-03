@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Clock, Download, Search } from "lucide-react";
+import { ChevronDown, Clock, Download, Search } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
@@ -22,7 +22,7 @@ const PRACTITIONER_TOPICS = [
   "Kỹ năng",
   "Chất lượng",
   "Năng suất",
-  "TPM – Quản lý năng suất thiết bị toàn phần",
+  "TPM - Quản lý năng suất thiết bị toàn phần",
 ];
 
 // The four program groups; `id` matches the `category` value in courses.json.
@@ -31,7 +31,7 @@ const GROUPS = [
     id: "Lean Six Sigma chuẩn quốc tế",
     short: "LSS chuẩn quốc tế",
     title: "Chương trình Lean Six Sigma chuẩn quốc tế",
-    description: "Chương trình chứng nhận của Lean Six Sigma Institute (LSSI Global) — từ Yellow Belt đến Master Black Belt và bằng thạc sĩ, do WISE Academy triển khai tại Việt Nam.",
+    description: "Chương trình chứng nhận của Lean Six Sigma Institute (LSSI Global) - từ Yellow Belt đến Master Black Belt và bằng thạc sĩ, do WISE Academy triển khai tại Việt Nam.",
   },
   {
     id: "Chuyên viên thực hành Lean",
@@ -49,7 +49,7 @@ const GROUPS = [
     id: "Lean 4.0 & tích hợp AI",
     short: "Lean 4.0 & AI",
     title: "Chương trình Lean 4.0, tích hợp AI",
-    description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành thông minh — từ nhà máy đến chuỗi cung ứng và dịch vụ.",
+    description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành thông minh - từ nhà máy đến chuỗi cung ứng và dịch vụ.",
   },
 ];
 
@@ -94,7 +94,7 @@ function CourseCard({ course }: { course: Course }) {
               <span className="truncate">{course.duration}</span>
             </span>
             <Link href="/lien-he" className="shrink-0 text-sm font-semibold text-[#C9500E] hover:underline">
-              Tư vấn khóa học
+              Đặt lịch tư vấn
             </Link>
           </div>
           {course.brochure && (
@@ -174,7 +174,7 @@ function CourseAccordionItem({ course, open, onToggle }: { course: Course; open:
                 href="/lien-he"
                 className="inline-flex items-center rounded-full border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white text-xs font-semibold px-4 py-2.5 transition-colors"
               >
-                Tư vấn khóa học
+                Đặt lịch tư vấn
               </Link>
             </div>
           </div>
@@ -312,10 +312,7 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
                   <div key={g.id} id={`nhom-${i + 1}`} className="scroll-mt-40">
                     <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-5">
                       <div className="max-w-3xl">
-                        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
-                          Nhóm {String(i + 1).padStart(2, "0")} · {isLssi ? LSSI_PROGRAMS.length : list.length} chương trình
-                        </span>
-                        <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#002F5B]">{g.title}</h2>
+                        <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{g.title}</h2>
                         <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{g.description}</p>
                       </div>
                       <button
@@ -379,7 +376,6 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
       <CtaBand
         title="Bạn cần khóa học thiết kế riêng cho doanh nghiệp của mình?"
         description="Chúng tôi khảo sát thực tế tại hiện trường, lấy ví dụ từ chính quy trình và dữ liệu của doanh nghiệp để xây dựng giáo trình đào tạo riêng cho đội ngũ của bạn."
-        label="Liên hệ thiết kế khóa học in-house"
       />
     </div>
   );

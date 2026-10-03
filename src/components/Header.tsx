@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, Menu, X, ChevronRight } from "lucide-react";
+import { Phone, Mail, Menu, X, ChevronRight } from "@/components/icons";
 import LanguageSwitcher, { useLang } from "@/components/LanguageSwitcher";
 
 export default function Header() {
@@ -26,7 +26,7 @@ export default function Header() {
   }, [pathname]);
 
   const navLinks = [
-    { label: "Về WISE", en: "About WISE", zh: "关于 WISE", href: "/ve-chung-toi" },
+    { label: "Về WISE Academy", en: "About WISE Academy", zh: "关于 WISE Academy", href: "/ve-chung-toi" },
     { label: "Dịch vụ tư vấn", en: "Consulting", zh: "咨询服务", href: "/dich-vu-tu-van" },
     { label: "Đào tạo", en: "Training", zh: "培训课程", href: "/dao-tao" },
     { label: "Dự án thực tế", en: "Case Studies", zh: "项目案例", href: "/du-an" },

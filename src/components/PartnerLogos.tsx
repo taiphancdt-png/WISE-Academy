@@ -2,7 +2,7 @@ import React from "react";
 
 // Width/height per logo chosen so every mark covers a similar visual area (wide wordmarks vs. round badges).
 const clients = [
-  { name: "LSSI – Lean Six Sigma Institute", logo: "lssi", w: 104, h: 42 },
+  { name: "LSSI - Lean Six Sigma Institute", logo: "lssi", w: 104, h: 42 },
   { name: "GEODIS", logo: "geodis", w: 69, h: 62 },
   { name: "HuaLi Industrial Group", logo: "huali", w: 179, h: 44 },
   { name: "KREVES", logo: "kreves", w: 131, h: 34 },
@@ -18,7 +18,7 @@ export default function PartnerLogos({ className = "" }: { className?: string })
   return (
     <section className={`bg-white py-12 px-4 sm:px-6 border-b border-slate-100 ${className}`}>
       <div className="max-w-6xl mx-auto">
-        <p className="text-center text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#486581] mb-8">
+        <p className="text-center text-sm font-medium text-[#486581] mb-8">
           Được tin tưởng bởi các doanh nghiệp & tổ chức hàng đầu
         </p>
         <div className="logo-marquee overflow-hidden">

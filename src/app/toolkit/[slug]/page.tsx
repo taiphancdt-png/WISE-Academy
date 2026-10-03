@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "@/components/icons";
 import toolsData from "@/data/tools.json";
 import type { LeanTool } from "@/types";
 
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const tool = tools.find((t) => t.slug === slug);
   return tool
-    ? { title: `${tool.title} — Toolkit — WISE Academy`, description: tool.summary, alternates: { canonical: `/toolkit/${tool.slug}` } }
+    ? { title: `${tool.title} | Toolkit | WISE Academy`, description: tool.summary, alternates: { canonical: `/toolkit/${tool.slug}` } }
     : {};
 }
 

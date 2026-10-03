@@ -11,7 +11,7 @@ import {
   Send,
   Calendar,
   BookOpen,
-} from "lucide-react";
+} from "@/components/icons";
 import SectionBadge from "@/components/SectionBadge";
 import PartnerLogos from "@/components/PartnerLogos";
 import { LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
@@ -143,32 +143,34 @@ export default function HomeClient({
 
   return (
     <div>
-      {/* 1. HERO */}
+      {/* 1. HERO: left-aligned copy over the photo, the scene stays visible on the right */}
       <section className="relative isolate overflow-hidden text-white">
         <img src={IMG.hero} alt="Hiện trường vận hành doanh nghiệp" className="hero-zoom absolute inset-0 -z-20 w-full h-full object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#001E38]/80 via-[#002F5B]/70 to-[#001E38]/85" />
-        <div className="hero-enter max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 lg:py-40 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15]">
-            Tối ưu vận hành. Tăng năng suất.
-            <br className="hidden sm:block" /> <span className="text-[#FF7A30]">Tiết kiệm chi phí</span> bền vững.
-          </h1>
-          <p className="mt-6 text-base sm:text-lg lg:text-xl font-medium text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
-            và tối đa hóa năng suất.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/dao-tao"
-              className="inline-flex items-center bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
-            >
-              Chương trình đào tạo
-            </Link>
-            <Link
-              href="/dich-vu-tu-van"
-              className="inline-flex items-center bg-[#F76011] hover:bg-[#C9500E] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-black/20 transition-colors"
-            >
-              Tư vấn cho doanh nghiệp
-            </Link>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#001E38]/95 via-[#002F5B]/80 to-[#002F5B]/25" />
+        <div className="hero-enter max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24 sm:pt-24 sm:pb-32 lg:pb-36">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1]">
+              Tối ưu vận hành, tăng năng suất, <span className="text-[#FF7A30]">tiết kiệm chi phí</span> bền vững.
+            </h1>
+            <p className="mt-6 text-base sm:text-lg text-white/85 max-w-xl leading-relaxed">
+              Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
+              và tối đa hóa năng suất.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Link
+                href="/dao-tao"
+                className="inline-flex items-center bg-[#F76011] hover:bg-[#C9500E] active:translate-y-px text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full transition-colors"
+              >
+                Chương trình đào tạo
+              </Link>
+              <Link
+                href="/dich-vu-tu-van"
+                className="group inline-flex items-center gap-2 text-white font-semibold text-sm sm:text-base hover:text-[#FF7A30] transition-colors"
+              >
+                Tư vấn cho doanh nghiệp
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -221,7 +223,7 @@ export default function HomeClient({
               Giải pháp tư vấn cho <span className="text-[#F76011]">mọi tổ chức</span>
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Từ nhà máy sản xuất, kho vận đến văn phòng dịch vụ, chuyên gia WISE cùng ban lãnh đạo xuống tận hiện trường, quan sát
+              Từ nhà máy sản xuất, kho vận đến văn phòng dịch vụ, chuyên gia WISE Academy cùng ban lãnh đạo xuống tận hiện trường, quan sát
               từng bước để chỉ rõ chỗ nào đang tốn thời gian, nhân lực và chi phí, rồi cùng đội ngũ cải tiến cho đến khi có kết quả đo lường được.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
@@ -343,7 +345,7 @@ export default function HomeClient({
       <section className="bg-white py-16 lg:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src={IMG.why} alt="Workshop cùng WISE" className="w-full h-full object-cover" loading="lazy" />
+            <img src={IMG.why} alt="Workshop cùng WISE Academy" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div>
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] text-center lg:text-left">Vì sao chọn WISE Academy?</h2>
@@ -366,7 +368,6 @@ export default function HomeClient({
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
             <div>
-              <SectionBadge title="Đội ngũ chuyên gia" />
               <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight max-w-md">
                 Kinh nghiệm thực tế, hiểu rõ hiện trường vận hành
               </h2>
@@ -405,7 +406,6 @@ export default function HomeClient({
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
-              <SectionBadge title="Góc tri thức" />
               <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight max-w-md">
                 Kinh nghiệm quản lý & tối ưu hiện trường
               </h2>
@@ -418,40 +418,52 @@ export default function HomeClient({
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredArticles.map((art) => (
-              <Link key={art.id} href={`/tri-thuc/${art.slug || art.id}`} className="card-soft group overflow-hidden flex flex-col">
-                <div className="aspect-[4/3] bg-[#F1F4F8] overflow-hidden">
-                  {art.thumbnail ? (
-                    <img
-                      src={art.thumbnail}
-                      alt={art.title}
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-[#002F5B]">
-                      <BookOpen className="w-10 h-10 text-[#FF7A30]" />
-                    </div>
-                  )}
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">{art.category}</span>
-                  <h3 className="mt-2 text-base font-semibold text-[#102A43] leading-snug line-clamp-2 group-hover:text-[#F76011] transition-colors">
-                    {art.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[#486581] line-clamp-2">{art.excerpt}</p>
-                  <div className="mt-auto pt-5 flex items-center gap-5 text-xs text-[#486581]">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-[#002F5B]" /> {art.date}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#002F5B]" /> {art.readTime}
-                    </span>
+          {/* One featured article on the left, the next two stacked on the right */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-8">
+            {featuredArticles.map((art, i) => {
+              const featured = i === 0;
+              return (
+                <Link
+                  key={art.id}
+                  href={`/tri-thuc/${art.slug || art.id}`}
+                  className={`card-soft group overflow-hidden flex ${featured ? "flex-col lg:row-span-2" : "flex-col sm:flex-row"}`}
+                >
+                  <div className={`bg-[#F1F4F8] overflow-hidden shrink-0 ${featured ? "aspect-[16/10]" : "aspect-[4/3] sm:aspect-auto sm:w-44 lg:w-48"}`}>
+                    {art.thumbnail ? (
+                      <img
+                        src={art.thumbnail}
+                        alt={art.title}
+                        className={`w-full h-full ${featured ? "object-contain" : "object-cover"} group-hover:scale-[1.03] transition-transform duration-500`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full min-h-32 flex items-center justify-center bg-[#002F5B]">
+                        <BookOpen className="w-10 h-10 text-[#FF7A30]" />
+                      </div>
+                    )}
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className={`flex flex-col flex-grow ${featured ? "p-7" : "p-5"}`}>
+                    <span className="text-xs font-semibold text-[#C9500E]">{art.category}</span>
+                    <h3
+                      className={`mt-2 font-semibold text-[#102A43] leading-snug group-hover:text-[#C9500E] transition-colors ${
+                        featured ? "text-xl sm:text-2xl line-clamp-3" : "text-base line-clamp-2"
+                      }`}
+                    >
+                      {art.title}
+                    </h3>
+                    <p className={`mt-2 text-sm text-[#486581] ${featured ? "line-clamp-3" : "line-clamp-2"}`}>{art.excerpt}</p>
+                    <div className="mt-auto pt-4 flex items-center gap-5 text-xs text-[#486581]">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5 text-[#002F5B]" /> {art.date}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-[#002F5B]" /> {art.readTime}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -460,12 +472,11 @@ export default function HomeClient({
       <section className="bg-white py-16 lg:py-24 px-4 sm:px-6" id="tu-van">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
-            <SectionBadge title="Đặt lịch tư vấn" />
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
               Bài toán của doanh nghiệp là <span className="text-[#F76011]">điểm khởi đầu</span> của chúng tôi
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Quy trình tắc nghẽn, lỗi lặp lại hay đội ngũ chưa chủ động cải tiến? Để lại thông tin, chuyên gia WISE
+              Quy trình tắc nghẽn, lỗi lặp lại hay đội ngũ chưa chủ động cải tiến? Để lại thông tin, chuyên gia WISE Academy
               sẽ gọi lại trao đổi cụ thể trong vòng 24 giờ làm việc.
             </p>
             <div className="mt-8 space-y-5">
@@ -503,7 +514,7 @@ export default function HomeClient({
                   </div>
                   <h3 className="text-2xl font-semibold text-[#002F5B]">Đã nhận yêu cầu thành công!</h3>
                   <p className="text-sm text-[#486581]">
-                    Cảm ơn bạn. Chuyên gia tư vấn của WISE sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.
+                    Cảm ơn bạn. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.
                   </p>
                   <button onClick={() => setFormSubmitted(false)} className="text-sm font-semibold text-[#F76011] hover:underline pt-2">
                     Gửi thêm yêu cầu khác

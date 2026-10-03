@@ -5,7 +5,7 @@ import projectsData from "@/data/projects.json";
 import type { Project } from "@/types";
 
 export const metadata = {
-  title: "Dự Án & Câu Chuyện Chuyển Đổi Thực Tế — WISE Academy",
+  title: "Dự Án & Câu Chuyện Chuyển Đổi Thực Tế | WISE Academy",
   description: "Tổng hợp các case study dự án tư vấn Lean Six Sigma, chuẩn hóa 5S, Work Engineering và cải tiến năng suất tại các tập đoàn sản xuất và logistics lớn.",
   alternates: { canonical: "/du-an" },
 };
@@ -22,7 +22,7 @@ export default function ProjectsPage() {
         eyebrow="Case studies & kết quả thực tế"
         image="/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group/photo_1.webp"
         title={<>Dự án đã triển khai: <span className="text-[#FF7A30]">kết quả đo lường được</span> tại doanh nghiệp</>}
-        description="Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE và ban lãnh đạo doanh nghiệp, giúp tăng năng suất, giảm lỗi và tiết kiệm chi phí lãng phí."
+        description="Mỗi dự án là một sự đồng hành sát sao giữa chuyên gia WISE Academy và ban lãnh đạo doanh nghiệp, giúp tăng năng suất, giảm lỗi và tiết kiệm chi phí lãng phí."
       />
 
       {/* Featured projects */}
@@ -44,9 +44,7 @@ export default function ProjectsPage() {
               )}
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
-                Dự án {String(idx + 1).padStart(2, "0")} · {proj.industry}
-              </span>
+              <span className="text-sm font-semibold text-[#C9500E]">{proj.industry}</span>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-[#002F5B] leading-tight">{proj.client}</h2>
               <p className="mt-1 text-base font-medium text-[#102A43]">{proj.title}</p>
               <blockquote className="mt-5 border-l-4 border-[#F76011] pl-4 italic text-sm sm:text-base text-[#486581] leading-relaxed">
@@ -108,8 +106,7 @@ export default function ProjectsPage() {
 
       <CtaBand
         title="Muốn đạt kết quả tương tự tại doanh nghiệp của bạn?"
-        description="Chia sẻ bài toán hiện tại, chuyên gia WISE sẽ đề xuất cách triển khai phù hợp với quy mô và ngành hàng của bạn."
-        label="Yêu cầu tư vấn triển khai"
+        description="Chia sẻ bài toán hiện tại, chuyên gia WISE Academy sẽ đề xuất cách triển khai phù hợp với quy mô và ngành hàng của bạn."
       />
     </div>
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { Wrench } from "lucide-react";
+import { Wrench } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import toolsData from "@/data/tools.json";
 import type { LeanTool } from "@/types";
 
 export const metadata = {
-  title: "Toolkit — Công cụ Lean thực hành — WISE Academy",
+  title: "Toolkit | Công cụ Lean thực hành | WISE Academy",
   description: "Bộ công cụ Lean tương tác do WISE Academy xây dựng từ các dự án thực tế: tính toán, biểu mẫu và mô phỏng dùng ngay trên trình duyệt.",
   alternates: { canonical: "/toolkit" },
 };
@@ -34,7 +34,7 @@ export default function ToolkitPage() {
               </span>
               <h2 className="mt-5 text-xl font-semibold text-[#002F5B]">Bộ công cụ đang được cập nhật</h2>
               <p className="mt-2 text-sm text-[#486581]">
-                Các công cụ Lean tương tác sẽ sớm có mặt tại đây. Liên hệ WISE nếu bạn cần công cụ cho dự án của mình.
+                Các công cụ Lean tương tác sẽ sớm có mặt tại đây. Liên hệ WISE Academy nếu bạn cần công cụ cho dự án của mình.
               </p>
             </div>
           ) : (
@@ -79,8 +79,7 @@ export default function ToolkitPage() {
 
       <CtaBand
         title="Cần công cụ riêng cho doanh nghiệp của bạn?"
-        description="WISE thiết kế công cụ tính toán, biểu mẫu và bảng theo dõi theo đúng quy trình và dữ liệu của doanh nghiệp."
-        label="Trao đổi với chuyên gia"
+        description="WISE Academy thiết kế công cụ tính toán, biểu mẫu và bảng theo dõi theo đúng quy trình và dữ liệu của doanh nghiệp."
       />
     </div>
   );

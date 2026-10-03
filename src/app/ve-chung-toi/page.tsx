@@ -1,10 +1,10 @@
 import React from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, ShieldCheck, Target } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, ShieldCheck, Target } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
 export const metadata = {
-  title: "Về Chúng Tôi & Triết Lý RGPDCA — WISE Academy",
+  title: "Về Chúng Tôi & Triết Lý RGPDCA | WISE Academy",
   description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
   alternates: { canonical: "/ve-chung-toi" },
 };
@@ -36,7 +36,7 @@ export default function AboutPage() {
       letter: "I",
       word: "IMPROVEMENT",
       title: "Cải Tiến Liên Tục Mỗi Ngày",
-      desc: "WISE cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong tổ chức."
+      desc: "WISE Academy cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong tổ chức."
     },
     {
       letter: "S",
@@ -48,7 +48,7 @@ export default function AboutPage() {
       letter: "E",
       word: "EXCELLENCE",
       title: "Gọn Gàng & Tiết Kiệm Chi Phí",
-      desc: "WISE kiên định tìm kiếm giải pháp tối ưu nhất, giúp đối tác đạt được hiệu quả vận hành vượt trội trong khi tiết kiệm tối đa nguồn lực và chi phí."
+      desc: "WISE Academy kiên định tìm kiếm giải pháp tối ưu nhất, giúp đối tác đạt được hiệu quả vận hành vượt trội trong khi tiết kiệm tối đa nguồn lực và chi phí."
     }
   ];
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
       code: "R - RESEARCH",
       name: "Khảo Sát Thực Tế Tại Hiện Trường",
       action: "Xuống Tận Nơi Quan Sát Thao Tác & Đánh Giá Hiện Trạng",
-      content: "Chuyên gia WISE trực tiếp đến hiện trường — nhà máy, kho vận hay văn phòng — quan sát luồng vật tư và dòng thông tin. Quan sát tỉ mỉ các thao tác thừa, phỏng vấn sâu ban lãnh đạo và quản lý trực tiếp để xây dựng bức tranh hiện trạng toàn diện."
+      content: "Chuyên gia WISE Academy trực tiếp đến hiện trường - nhà máy, kho vận hay văn phòng - quan sát luồng vật tư và dòng thông tin. Quan sát tỉ mỉ các thao tác thừa, phỏng vấn sâu ban lãnh đạo và quản lý trực tiếp để xây dựng bức tranh hiện trạng toàn diện."
     },
     {
       phase: "BƯỚC 02",
@@ -100,10 +100,8 @@ export default function AboutPage() {
   return (
     <div>
       <PageHero
-        eyebrow="Câu chuyện & sứ mệnh"
         image="/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_10.webp"
-        title={<>WISE Academy: <span className="text-[#FF7A30]">đồng hành kiến tạo năng lực vận hành xuất sắc</span></>}
-        description="WISE định vị là đơn vị tiên phong trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam, đồng hành cùng doanh nghiệp từ chẩn đoán, thiết kế giải pháp đến thực hành thí điểm và nhân rộng bền vững."
+        title={<>WISE Academy<span className="block mt-1 text-[#FF7A30] text-2xl sm:text-3xl lg:text-[38px] lg:whitespace-nowrap lg:-mx-16">đồng hành kiến tạo năng lực vận hành xuất sắc</span></>}
       />
 
       {/* Quote */}
@@ -111,12 +109,32 @@ export default function AboutPage() {
         <figure className="max-w-3xl mx-auto text-center">
           <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full mb-6" />
           <blockquote className="text-xl sm:text-2xl italic text-[#002F5B] leading-relaxed">
-            “Sự phát triển và trưởng thành của nguồn nhân lực là trách nhiệm cao cả nhất của lãnh đạo.”
+            “Sự phát triển và trưởng thành của nhân viên<br />là trách nhiệm cao cả của người lãnh đạo.”
           </blockquote>
           <figcaption className="mt-4 text-xs uppercase font-bold tracking-widest text-[#486581]">
-            Harvey S. Firestone · Triết lý cốt lõi của WISE Academy
+            Harvey S. Firestone
           </figcaption>
         </figure>
+
+        {/* WISE's guiding principle, drawn from the quote above */}
+        <div className="max-w-4xl mx-auto mt-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#002F5B] uppercase">
+            Tôn chỉ của <span className="text-[#F76011]">WISE Academy</span>
+          </h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base text-[#486581] leading-relaxed">
+            <p>
+              Trích dẫn trên của <strong className="text-[#102A43]">Harvey S. Firestone</strong> đề cập đơn giản, trực tiếp đến trách
+              nhiệm của lãnh đạo trong quản trị vận hành doanh nghiệp thông qua việc phát triển nguồn nhân lực chất lượng cho doanh
+              nghiệp. Các dịch vụ Tư vấn Lean - Triển khai Lean - Đào tạo Lean luôn phải xuất phát từ việc tôn trọng con người, lấy
+              nhân sự làm trung tâm và biết cách trao quyền một cách đúng đắn.
+            </p>
+            <p>
+              Đây cũng chính là điều WISE Academy mong mỏi truyền đạt nhất trong mọi dự án của mình. WISE Academy luôn trao đổi chân thành và thấu
+              cảm nỗi đau của từng con người, từng vị trí, từng bộ phận, từng cấp lãnh đạo để khai vấn đồng sự cùng đối tác trên
+              hành trình phát triển, tối ưu hóa quy trình và vận hành doanh nghiệp.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Vision & Mission */}
@@ -128,7 +146,7 @@ export default function AboutPage() {
             </span>
             <h2 className="mt-5 text-2xl font-semibold">Tầm nhìn</h2>
             <p className="mt-3 text-sm sm:text-base text-white/85 leading-relaxed">
-              WISE định vị là <strong className="text-[#FF7A30]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
+              WISE Academy định vị là <strong className="text-[#FF7A30]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
             </p>
           </div>
           <div className="rounded-2xl bg-[#C9500E] text-white p-8 sm:p-10 shadow-[0_20px_45px_-15px_rgba(201,80,14,0.5)]">
@@ -137,18 +155,18 @@ export default function AboutPage() {
             </span>
             <h2 className="mt-5 text-2xl font-semibold">Sứ mệnh</h2>
             <p className="mt-3 text-sm sm:text-base text-white leading-relaxed">
-              WISE khai thác triệt để mọi cơ hội để <strong className="text-white underline decoration-white/40 underline-offset-4">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
+              WISE Academy khai thác triệt để mọi cơ hội để <strong className="text-white underline decoration-white/40 underline-offset-4">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* Core values — each pillar with its own accent */}
+      {/* Core values - each pillar with its own accent */}
       <Section>
         <SectionHeader
           eyebrow="Giá trị cốt lõi"
-          title={<>Bốn trụ cột <span className="text-[#F76011]">W · I · S · E</span></>}
-          description="Bộ gen định hình cách các chuyên gia WISE tư vấn, tương tác và đồng hành cùng khách hàng."
+          title={<>Bốn giá trị cốt lõi <span className="text-[#F76011]">W · I · S · E</span></>}
+          description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, i) => {
@@ -181,7 +199,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="Phương pháp luận RGPDCA"
           title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
-          description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
+          description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE Academy cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
         />
         {/* Loop: 1 → 2 → 3 ↓ 4 → 5 → 6 (bottom row runs right-to-left) ↑ back to 1 */}
         <div className="relative">
@@ -229,9 +247,8 @@ export default function AboutPage() {
       </Section>
 
       <CtaBand
-        title="Bạn muốn chuyên gia xuống khảo sát thực tế tại doanh nghiệp cùng WISE?"
+        title="Bạn muốn chuyên gia xuống khảo sát thực tế tại doanh nghiệp cùng WISE Academy?"
         description="Chuyên gia của chúng tôi sẵn sàng cùng Ban Giám Đốc trực tiếp xuống hiện trường để cùng nhìn nhận các điểm lãng phí và cơ hội cải tiến."
-        label="Đặt lịch khảo sát miễn phí"
       />
     </div>
   );

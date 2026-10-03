@@ -34,6 +34,14 @@
     font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
   }
 
+  h1, h2, h3 {
+    text-wrap: balance;
+    letter-spacing: -0.015em;
+  }
+  p, li {
+    text-wrap: pretty;
+  }
+
   body {
     background-color: var(--surface-white);
     color: var(--text-ink);

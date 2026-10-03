@@ -1,6 +1,6 @@
 export const SITE_URL = "https://wisedemy.com.vn";
 export const SITE_NAME = "WISE Academy";
-export const OG_IMAGE = { url: "/images/brand/og-image.jpg", width: 1200, height: 630, alt: "WISE Academy — Tư vấn & đào tạo Lean Six Sigma" };
+export const OG_IMAGE = { url: "/images/brand/og-image.jpg", width: 1200, height: 630, alt: "WISE Academy - Tư vấn & đào tạo Lean Six Sigma" };
 
 // Serialize JSON-LD safely for a <script> tag (escape "<" so content can never close the tag).
 export function jsonLd(data: unknown) {

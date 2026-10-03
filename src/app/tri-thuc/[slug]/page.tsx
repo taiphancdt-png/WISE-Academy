@@ -12,7 +12,7 @@ import {
   Phone, 
   Sparkles,
   ArrowUpRight
-} from "lucide-react";
+} from "@/components/icons";
 import articlesData from "@/data/articles.json";
 import type { Article } from "@/types";
 import MarkdownArticle from "@/components/MarkdownArticle";
@@ -35,14 +35,14 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!article) {
     return {
-      title: "Không tìm thấy bài viết — WISE Academy",
+      title: "Không tìm thấy bài viết | WISE Academy",
     };
   }
 
   const description = metaDescription(cleanExcerpt(article.title, article.excerpt) || plainText(article.content));
   const url = `/tri-thuc/${article.slug || article.id}`;
   return {
-    title: `${article.title} — Góc tri thức WISE Academy`,
+    title: `${article.title} | Góc tri thức WISE Academy`,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -197,7 +197,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 Bạn Muốn Chuyên Gia Khảo Sát & Tư Vấn Giải Pháp Này Cho Doanh Nghiệp?
               </h3>
               <p className="text-xs sm:text-sm text-[#C7D8E4] leading-relaxed">
-                Đội ngũ chuyên gia của WISE trực tiếp đến hiện trường để đo lường số liệu, tìm điểm nghẽn và xây dựng lộ trình cải tiến riêng cho doanh nghiệp của bạn.
+                Đội ngũ chuyên gia của WISE Academy trực tiếp đến hiện trường để đo lường số liệu, tìm điểm nghẽn và xây dựng lộ trình cải tiến riêng cho doanh nghiệp của bạn.
               </p>
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
                 <Link
@@ -282,7 +282,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                   href="/lien-he"
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#002F5B] hover:bg-[#F76011] text-white text-xs font-bold transition-all shadow-sm"
                 >
-                  <span>Đặt lịch trao đổi</span>
+                  <span>Đặt lịch tư vấn</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>

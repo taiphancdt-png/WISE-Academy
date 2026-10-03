@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock } from "lucide-react";
+import { Clock } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 
@@ -12,7 +12,7 @@ const pillarImages = [
 ];
 
 export const metadata = {
-  title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường — WISE Academy",
+  title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
   description: "Tư vấn tối ưu vận hành cho sản xuất, logistics và dịch vụ: khảo sát hiện trường, chuyển đổi Lean, nâng cao năng suất, vận hành số và giảm chi phí.",
   alternates: { canonical: "/dich-vu-tu-van" },
 };
@@ -23,7 +23,7 @@ export default function ConsultingPage() {
       id: "01",
       title: "Khảo Sát Thực Tế & Tìm Điểm Nghẽn Tại Hiện Trường",
       subtitle: "Nhìn rõ các chỗ bị nghẽn, lãng phí thời gian và cơ hội tăng năng suất",
-      desc: "Chuyên gia WISE khảo sát toàn diện hệ thống vận hành ngay tại hiện trường — nhà máy, kho vận hay văn phòng — quan sát luồng vật tư, luồng thông tin và cách đội ngũ làm việc để chỉ rõ các điểm lãng phí cần khắc phục ngay.",
+      desc: "Chuyên gia WISE Academy khảo sát toàn diện hệ thống vận hành ngay tại hiện trường - nhà máy, kho vận hay văn phòng - quan sát luồng vật tư, luồng thông tin và cách đội ngũ làm việc để chỉ rõ các điểm lãng phí cần khắc phục ngay.",
       deliverables: [
         "Báo cáo đánh giá hiện trạng vận hành và mức độ lãng phí",
         "Sơ đồ luồng công việc thực tế từ đầu vào đến khi giao cho khách hàng",
@@ -111,7 +111,7 @@ export default function ConsultingPage() {
         eyebrow="Dịch vụ tư vấn doanh nghiệp"
         image="/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp"
         title={<>Giải pháp tư vấn <span className="text-[#FF7A30]">vận hành tinh gọn</span> tại hiện trường</>}
-        description="WISE cam kết mang lại giá trị có thể đo lường trực tiếp trên bảng cân đối kế toán thông qua việc giảm lãng phí, tăng năng suất và phát triển nội lực cải tiến của tổ chức — trong sản xuất, logistics và dịch vụ."
+        description="WISE Academy cam kết mang lại giá trị có thể đo lường trực tiếp trên bảng cân đối kế toán thông qua việc giảm lãng phí, tăng năng suất và phát triển nội lực cải tiến của tổ chức - trong sản xuất, logistics và dịch vụ."
       />
 
       {/* Pillars: alternating image / text */}
@@ -122,9 +122,7 @@ export default function ConsultingPage() {
               <img src={pillarImages[idx]} alt={pillar.title} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">
-                Giải pháp {pillar.id} · {pillar.tag}
-              </span>
+              <span className="text-sm font-semibold text-[#C9500E]">{pillar.tag}</span>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-[#002F5B] leading-tight">{pillar.title}</h2>
               <p className="mt-4 text-sm sm:text-base text-[#486581] leading-relaxed">
                 <strong className="text-[#102A43]">{pillar.subtitle}.</strong> {pillar.desc}
@@ -153,7 +151,7 @@ export default function ConsultingPage() {
         <SectionHeader
           eyebrow="Lộ trình chuyển đổi 3 giai đoạn"
           title={<>Hành trình đồng hành <span className="text-[#F76011]">dài hạn</span></>}
-          description="Chuyển đổi Lean không thể hoàn thành trong một sớm một chiều. WISE thiết kế lộ trình 3 nấc thang rõ ràng để nguồn lực doanh nghiệp được sử dụng tối ưu."
+          description="Chuyển đổi Lean không thể hoàn thành trong một sớm một chiều. WISE Academy thiết kế lộ trình 3 nấc thang rõ ràng để nguồn lực doanh nghiệp được sử dụng tối ưu."
         />
         <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {roadmapStages.map((stage, idx) => (
@@ -173,7 +171,6 @@ export default function ConsultingPage() {
       <CtaBand
         title="Xây dựng lộ trình chuyển đổi cho doanh nghiệp của bạn"
         description="Bắt đầu bằng một buổi khảo sát hiện trường miễn phí để cùng nhìn ra cơ hội tăng năng suất và giảm chi phí."
-        label="Yêu cầu xây dựng lộ trình"
       />
     </div>
   );

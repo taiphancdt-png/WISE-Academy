@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import SectionBadge from "@/components/SectionBadge";
 
 // Shared layout primitives so every page follows the same spacing, type scale and button styles.
+// Section headers intentionally render no eyebrow label: only page heroes carry one.
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`max-w-6xl mx-auto ${className}`}>{children}</div>;
@@ -28,7 +28,6 @@ export function Section({
 }
 
 export function SectionHeader({
-  eyebrow,
   title,
   description,
   align = "center",
@@ -48,7 +47,6 @@ export function SectionHeader({
     return (
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div className="max-w-2xl">
-          {eyebrow && <SectionBadge title={eyebrow} light={light} />}
           <h2 className={`text-3xl sm:text-[34px] font-semibold leading-tight ${titleColor}`}>{title}</h2>
           {description && <p className={`mt-3 text-sm sm:text-base leading-relaxed ${descColor}`}>{description}</p>}
         </div>
@@ -58,7 +56,6 @@ export function SectionHeader({
   }
   return (
     <div className={`mb-12 ${align === "center" ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}`}>
-      {eyebrow && <SectionBadge title={eyebrow} light={light} />}
       <h2 className={`text-3xl sm:text-[34px] font-semibold leading-tight ${titleColor}`}>{title}</h2>
       {description && <p className={`mt-3 text-sm sm:text-base leading-relaxed ${descColor}`}>{description}</p>}
     </div>

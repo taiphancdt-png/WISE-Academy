@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2 } from "@/components/icons";
 import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 import { submitLead } from "@/lib/submitLead";
 import Honeypot from "@/components/Honeypot";
@@ -128,8 +128,8 @@ export default function LssiInterestForm() {
         <Field id="l-learners" label="Số lượng học viên">
           <select id="l-learners" value={form.learners} onChange={set("learners")} className={inputClass}>
             <option>1 học viên</option>
-            <option>2–5 học viên</option>
-            <option>6–20 học viên</option>
+            <option>2-5 học viên</option>
+            <option>6-20 học viên</option>
             <option>Trên 20 học viên (in-house)</option>
           </select>
         </Field>

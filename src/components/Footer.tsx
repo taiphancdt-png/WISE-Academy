@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Globe, Building2, ArrowUp } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Building2, ArrowUp } from "@/components/icons";
 
 const serviceLinks = [
   "Chẩn đoán vận hành Gemba",
@@ -21,7 +21,7 @@ const trainingLinks = [
 ];
 
 const companyLinks = [
-  { label: "Về WISE", href: "/ve-chung-toi" },
+  { label: "Về WISE Academy", href: "/ve-chung-toi" },
   { label: "Dự án thực tế", href: "/du-an" },
   { label: "Chuyên gia", href: "/chuyen-gia" },
   { label: "Góc tri thức", href: "/tri-thuc" },
@@ -39,12 +39,11 @@ export default function Footer() {
             <img src="/images/brand/logo.webp" width={800} height={282} alt="WISE Academy Logo" className="h-10 w-auto object-contain" />
           </Link>
           <p className="text-sm leading-relaxed max-w-sm">
-            <strong className="text-white">CÔNG TY TNHH TƯ VẤN & ĐÀO TẠO WISE ACADEMY</strong> — đồng hành cùng các doanh nghiệp
+            <strong className="text-white">CÔNG TY TNHH TƯ VẤN & ĐÀO TẠO WISE ACADEMY</strong> - đồng hành cùng các doanh nghiệp
             sản xuất, logistics và dịch vụ tối ưu quy trình, loại bỏ lãng phí, phát triển đội ngũ quản lý và nâng cao năng suất.
           </p>
           <div className="text-xs text-white/55 space-y-1">
             <p>Mã số thuế: 0317485522</p>
-            <p>Lean Sensei Nike NOS · SSMI Lean Six Sigma · MPI Certified</p>
           </div>
         </div>
 
@@ -75,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-1 space-y-4">
-          <h4 className="text-white font-semibold text-sm">WISE</h4>
+          <h4 className="text-white font-semibold text-sm">WISE Academy</h4>
           <ul className="space-y-2.5 text-sm">
             {companyLinks.map((item) => (
               <li key={item.href}>

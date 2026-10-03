@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Award, CheckCircle2, Clock, Download, Laptop, MonitorPlay, Users } from "lucide-react";
+import { ArrowUpRight, Award, CheckCircle2, Clock, Download, Laptop, MonitorPlay, Users } from "@/components/icons";
 import { CSSC_LISTING, LSSI_HOME, LSSI_PROGRAMS } from "@/data/lssi-programs";
 import { LSSI_CLIENTS } from "@/data/lssi-clients";
 
@@ -22,12 +22,11 @@ export function LssiPartnerIntro() {
     <div className="rounded-3xl overflow-hidden bg-[#002F5B] text-white shadow-[0_20px_50px_-15px_rgba(0,30,56,0.45)]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-7 sm:p-10 lg:p-12 items-center">
         <div className="lg:col-span-7">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF7A30]">Đối tác ủy quyền</span>
-          <h3 className="mt-3 text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-tight">
+          <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-tight">
             WISE Academy <span className="text-[#FF7A30]">×</span> LSSI Global
           </h3>
           <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
-            Học theo giáo trình chuẩn quốc tế của Lean Six Sigma Institute, cùng giảng viên WISE đồng hành và kèm cặp dự án thực tế tại doanh nghiệp.
+            Học theo giáo trình chuẩn quốc tế của Lean Six Sigma Institute, cùng giảng viên WISE Academy đồng hành và kèm cặp dự án thực tế tại doanh nghiệp.
           </p>
           <ul className="mt-6 space-y-3">
             {TRUST_POINTS.map((t) => (
@@ -182,12 +181,11 @@ export function LssiClients() {
   return (
     <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10">
       <div className="text-center">
-        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9500E]">Được tin chọn trên toàn cầu</span>
-        <h3 className="mt-2 text-2xl lg:text-[28px] font-semibold text-[#002F5B] leading-tight lg:whitespace-nowrap">
+        <h3 className="text-2xl lg:text-[28px] font-semibold text-[#002F5B] leading-tight lg:whitespace-nowrap">
           Hàng trăm thương hiệu hàng đầu đã chọn chương trình của LSSI
         </h3>
         <p className="mt-2 max-w-3xl mx-auto text-sm sm:text-base text-[#486581] leading-relaxed">
-          Từ sản xuất ô tô, thực phẩm – đồ uống, y tế đến tư vấn và giáo dục, các tổ chức lớn đã đào tạo đội ngũ với Lean Six Sigma Institute.
+          Từ sản xuất ô tô, thực phẩm - đồ uống, y tế đến tư vấn và giáo dục, các tổ chức lớn đã đào tạo đội ngũ với Lean Six Sigma Institute.
         </p>
       </div>
       <div className="mt-8 space-y-7">

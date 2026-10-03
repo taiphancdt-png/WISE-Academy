@@ -42,7 +42,7 @@ export const LSSI_PROGRAMS: LssiProgram[] = [
     id: "master-black-belt-bundle",
     title: "Lean Six Sigma Master Black Belt Bundle",
     tagline:
-      "Chương trình trọn bộ từ White Belt đến Master Black Belt — cấp chuyên môn cao nhất để dẫn dắt chiến lược và huấn luyện đội ngũ.",
+      "Chương trình trọn bộ từ White Belt đến Master Black Belt - cấp chuyên môn cao nhất để dẫn dắt chiến lược và huấn luyện đội ngũ.",
     includes: ["Lean Management", "White Belt", "Yellow Belt", "Green Belt", "Black Belt", "Master Black Belt"],
     duration: "160 giờ có giảng viên · 80 giờ tự học",
     learn: [
@@ -58,7 +58,7 @@ export const LSSI_PROGRAMS: LssiProgram[] = [
     id: "black-belt-bundle",
     title: "Lean Six Sigma Black Belt Bundle",
     tagline:
-      "Gồm Lean Management, White, Yellow, Green và Black Belt — kiến thức nâng cao để lãnh đạo dự án và tạo tác động kinh doanh lớn.",
+      "Gồm Lean Management, White, Yellow, Green và Black Belt - kiến thức nâng cao để lãnh đạo dự án và tạo tác động kinh doanh lớn.",
     includes: ["Lean Management", "White Belt", "Yellow Belt", "Green Belt", "Black Belt"],
     duration: "120 giờ có giảng viên · 60 giờ tự học",
     learn: [
@@ -74,7 +74,7 @@ export const LSSI_PROGRAMS: LssiProgram[] = [
     id: "green-belt-bundle",
     title: "Lean Six Sigma Green Belt Bundle",
     tagline:
-      "Gồm Lean Management, White, Yellow và Green Belt — hiểu sâu phương pháp, công cụ và triển khai dự án Lean Six Sigma.",
+      "Gồm Lean Management, White, Yellow và Green Belt - hiểu sâu phương pháp, công cụ và triển khai dự án Lean Six Sigma.",
     includes: ["Lean Management", "White Belt", "Yellow Belt", "Green Belt"],
     duration: "80 giờ có giảng viên · 40 giờ tự học",
     learn: [
@@ -90,7 +90,7 @@ export const LSSI_PROGRAMS: LssiProgram[] = [
     id: "yellow-belt-bundle",
     title: "Lean Six Sigma Yellow Belt Bundle",
     tagline:
-      "Gồm Lean Management, White Belt và Yellow Belt — giúp cá nhân và đội nhóm xây dựng quy trình hiệu quả, nhanh hơn và chất lượng ổn định.",
+      "Gồm Lean Management, White Belt và Yellow Belt - giúp cá nhân và đội nhóm xây dựng quy trình hiệu quả, nhanh hơn và chất lượng ổn định.",
     includes: ["Lean Management", "White Belt", "Yellow Belt"],
     duration: "40 giờ có giảng viên · 20 giờ tự học",
     learn: [

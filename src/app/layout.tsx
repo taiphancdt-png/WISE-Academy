@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { OG_IMAGE, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
-const jakarta = Plus_Jakarta_Sans({
+// Be Vietnam Pro: a sans designed for Vietnamese, so diacritics sit correctly at every weight.
+const sans = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -17,11 +18,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
+    default: "WISE Academy | Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
     template: "%s",
   },
   description:
-    "WISE Academy — đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma, 5S, TPM cho doanh nghiệp sản xuất, logistics và dịch vụ.",
+    "WISE Academy - đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma, 5S, TPM cho doanh nghiệp sản xuất, logistics và dịch vụ.",
   keywords: [
     "Lean Six Sigma",
     "đào tạo Lean Six Sigma",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   authors: [{ name: "WISE Academy" }],
   openGraph: {
     siteName: SITE_NAME,
-    title: "WISE Academy — Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
+    title: "WISE Academy | Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
     description: "Tối ưu vận hành, tăng năng suất bền vững. Đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
     images: [OG_IMAGE],
     locale: "vi_VN",
@@ -60,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`scroll-smooth ${jakarta.variable}`}>
+    <html lang="vi" className={`scroll-smooth ${sans.variable}`}>
       <head>
         {/* Google Translate rewrites text nodes; keep React's DOM ops from throwing when nodes were swapped. */}
         <script

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Maximize2, X } from "lucide-react";
+import { Maximize2, X } from "@/components/icons";
 
 interface MarkdownArticleProps {
   content: string;

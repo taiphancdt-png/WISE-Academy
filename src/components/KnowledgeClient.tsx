@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { BookOpen, Calendar, Clock, Search, X } from "lucide-react";
+import { BookOpen, Calendar, Clock, Search, X } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { normalize } from "@/lib/text";
 import type { Article } from "@/types";
