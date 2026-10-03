@@ -15,6 +15,8 @@ export {
   CaretRightIcon as ChevronRight,
   ClockIcon as Clock,
   DownloadSimpleIcon as Download,
+  FlagCheckeredIcon as FlagCheckered,
+  PersonSimpleRunIcon as Runner,
   ArrowSquareOutIcon as ExternalLink,
   GlobeSimpleIcon as Globe,
   LaptopIcon as Laptop,

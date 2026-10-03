@@ -1,6 +1,7 @@
 import React from "react";
 import { Clock } from "@/components/icons";
 import PageHero from "@/components/PageHero";
+import LeanRoadmapRace from "@/components/LeanRoadmapRace";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 
 const P = "/images/projects/";
@@ -83,25 +84,34 @@ export default function ConsultingPage() {
 
   const roadmapStages = [
     {
-      stage: "GIAI ĐOẠN 1",
-      name: "Khám Phá & Đánh Thức Tư Duy (Explore)",
-      time: "1 - 2 Tháng",
-      focus: "75% Nhận thức & Nền tảng · 25% Thực nghiệm nhỏ",
-      details: "Lãnh đạo phát triển cách hiểu đúng đắn về Lean, tổ chức Simulation Game cho ban điều hành, chẩn đoán toàn diện hiện trạng và lựa chọn khu vực thí điểm."
+      name: "Khám phá & Làm quen với Lean (Explore)",
+      time: "Linh hoạt theo mức độ cam kết",
+      objective: "Lãnh đạo hiểu đúng về Lean, làm rõ lý do áp dụng và tạo điều kiện để đội ngũ tiếp cận Lean qua các sáng kiến gắn với chiến lược doanh nghiệp.",
+      outcome: "Lãnh đạo đánh giá được doanh nghiệp đang ở chặng nào trên hành trình Lean."
     },
     {
-      stage: "GIAI ĐOẠN 2",
-      name: "Xây Dựng Nền Móng Tinh Gọn (Foundation)",
-      time: "6 - 9 Tháng",
-      focus: "25% Kiến thức chuyên sâu · 75% Triển khai hiện trường",
-      details: "Triển khai 5S, Visual Management, Lean Cell, SMED tại các khu vực mẫu (model line). Đo lường các chỉ số năng suất (tăng 15-38%) và tạo Quick Wins để củng cố niềm tin."
+      name: "Xây dựng nền tảng Lean (Foundation)",
+      time: "6 - 9 tháng",
+      objective: "Lãnh đạo thúc đẩy phát triển năng lực nền tảng cho đội ngũ vận hành và thực nghiệm ngay tại hiện trường để khơi dậy đổi mới, làm rõ hiện trạng, định hình tầm nhìn. Đội ngũ quản lý được đào tạo để thay đổi tư duy quản trị vận hành và thí điểm công cụ Lean nhằm tạo Quick Wins.",
+      outcome: "75% tập trung xây dựng kiến thức nền tảng, 25% phát triển năng lực triển khai thực tế."
     },
     {
-      stage: "GIAI ĐOẠN 3",
-      name: "Nhân Rộng & Chuẩn Hóa Bền Vững (Scale)",
-      time: "9 - 18 Tháng",
-      focus: "Duy trì văn hóa cải tiến liên tục & Hệ thống DMS",
-      details: "Nhân rộng giải pháp sang toàn bộ các bộ phận còn lại. Đào tạo đội ngũ Lean Leaders nội bộ tự vận hành, đánh giá và duy trì kết quả lâu dài."
+      name: "Nhân rộng Lean toàn tổ chức (Scale)",
+      time: "9 - 18 tháng",
+      objective: "Nhân rộng các thực hành Lean tốt nhất ra toàn tổ chức và tạo kết quả kinh doanh rõ ràng qua các chỉ số hiệu suất vận hành đo lường được.",
+      outcome: "25% tập trung kiến thức chuyên sâu, 75% nhân rộng, chuẩn hóa và cải tiến liên tục."
+    },
+    {
+      name: "Đưa Lean vào vận hành hằng ngày (Embed)",
+      time: "12 - 18 tháng",
+      objective: "Tích hợp Lean vào hoạt động hằng ngày trên toàn tổ chức, củng cố hệ thống quản lý để nhận diện bất thường và kiểm soát hiệu quả quy trình, con người và vấn đề.",
+      outcome: "Năng lực đội ngũ vận hành nâng lên rõ rệt, tổ chức tự quản lý và duy trì được hiệu suất."
+    },
+    {
+      name: "Xây dựng văn hóa cải tiến liên tục (Culture)",
+      time: "Liên tục, không giới hạn",
+      objective: "Nguyên tắc và thực hành Lean thấm sâu vào văn hóa tổ chức, giúp cải tiến liên tục để luôn đáp ứng và vượt kỳ vọng của khách hàng.",
+      outcome: "Lean trở thành kim chỉ nam cho mọi hoạt động chiến lược, thể hiện qua kết quả về an toàn, chất lượng, giao hàng, chi phí, sự gắn kết của nhân viên và giá trị thương hiệu."
     }
   ];
 
@@ -149,23 +159,10 @@ export default function ConsultingPage() {
       {/* Roadmap */}
       <Section>
         <SectionHeader
-          eyebrow="Lộ trình chuyển đổi 3 giai đoạn"
-          title={<>Hành trình đồng hành <span className="text-[#F76011]">dài hạn</span></>}
-          description="Chuyển đổi Lean không thể hoàn thành trong một sớm một chiều. WISE Academy thiết kế lộ trình 3 nấc thang rõ ràng để nguồn lực doanh nghiệp được sử dụng tối ưu."
+          title={<>Lộ trình chuyển đổi Lean <span className="text-[#F76011]">5 giai đoạn</span></>}
+          description="Chuyển đổi Lean không thể hoàn thành trong một sớm một chiều. WISE Academy đồng hành cùng doanh nghiệp qua 5 chặng đường rõ ràng, từ làm quen với Lean đến hình thành văn hóa cải tiến liên tục."
         />
-        <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {roadmapStages.map((stage, idx) => (
-            <li key={stage.stage} className="card-soft p-7 flex flex-col">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-[#F76011]">{String(idx + 1).padStart(2, "0")}</span>
-                <span className="text-xs font-semibold text-[#002F5B] bg-[#EBF3FA] px-3 py-1 rounded-full">{stage.time}</span>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug">{stage.name}</h3>
-              <p className="mt-2 text-xs font-semibold text-[#C9500E]">{stage.focus}</p>
-              <p className="mt-3 text-sm text-[#486581] leading-relaxed">{stage.details}</p>
-            </li>
-          ))}
-        </ol>
+        <LeanRoadmapRace stages={roadmapStages} />
       </Section>
 
       <CtaBand

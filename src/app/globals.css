@@ -203,3 +203,12 @@ font[style] {
 .rgpdca-dash {
   animation: rgpdcaDash 1.2s linear infinite;
 }
+
+/* Lean roadmap (consulting page): the runner bobs while moving */
+@keyframes runnerBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-4deg); }
+}
+.runner-bob {
+  animation: runnerBob 0.34s ease-in-out infinite;
+}
