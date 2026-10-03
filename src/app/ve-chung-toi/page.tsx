@@ -113,22 +113,22 @@ export default function AboutPage() {
           </figcaption>
         </figure>
 
-        {/* WISE's guiding principle, drawn from the quote above */}
+        {/* Message from WISE Academy, drawn from the quote above */}
         <div className="max-w-4xl mx-auto mt-12 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#002F5B] uppercase">
-            Tôn chỉ của <span className="text-[#F76011]">WISE Academy</span>
+            Thông điệp từ <span className="text-[#F76011]">WISE Academy</span>
           </h2>
           <div className="mt-4 space-y-4 text-sm sm:text-base text-[#486581] leading-relaxed">
             <p>
-              Trích dẫn trên của <strong className="text-[#102A43]">Harvey S. Firestone</strong> đề cập đơn giản, trực tiếp đến trách
-              nhiệm của lãnh đạo trong quản trị vận hành doanh nghiệp thông qua việc phát triển nguồn nhân lực chất lượng cho doanh
-              nghiệp. Các dịch vụ Tư vấn Lean - Triển khai Lean - Đào tạo Lean luôn phải xuất phát từ việc tôn trọng con người, lấy
-              nhân sự làm trung tâm và biết cách trao quyền một cách đúng đắn.
+              Câu nói của <strong className="text-[#102A43]">Harvey S. Firestone</strong> chỉ ra một cách giản dị và trực tiếp trách
+              nhiệm của người lãnh đạo trong quản trị vận hành: phát triển đội ngũ nhân sự chất lượng cho doanh nghiệp. Vì vậy, mọi
+              hoạt động Tư vấn, Triển khai và Đào tạo Lean đều phải bắt đầu từ sự tôn trọng con người, lấy con người làm trung tâm và
+              trao quyền một cách đúng đắn.
             </p>
             <p>
-              Đây cũng chính là điều WISE Academy mong mỏi truyền đạt nhất trong mọi dự án của mình. WISE Academy luôn trao đổi chân thành và thấu
-              cảm nỗi đau của từng con người, từng vị trí, từng bộ phận, từng cấp lãnh đạo để khai vấn đồng sự cùng đối tác trên
-              hành trình phát triển, tối ưu hóa quy trình và vận hành doanh nghiệp.
+              Đó cũng là điều WISE Academy mong muốn lan tỏa nhất qua từng dự án. Chúng tôi luôn trao đổi chân thành, thấu hiểu những
+              khó khăn của từng con người, từng vị trí, từng bộ phận và từng cấp lãnh đạo, để cùng đối tác khai vấn và đồng hành trên
+              hành trình phát triển, tối ưu quy trình và vận hành doanh nghiệp.
             </p>
           </div>
         </div>
