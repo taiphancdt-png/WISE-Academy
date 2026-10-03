@@ -200,3 +200,70 @@ const RunnerFigure = forwardRef<RunnerHandle, { className?: string }>(function R
 });
 
 export default RunnerFigure;
+
+// The same trekker seen from behind (climbing away up the last stretch): backpack in view, legs stepping up.
+export interface BackHandle {
+  setPhase: (phi: number, walk: number) => void;
+}
+
+export const BackFigure = forwardRef<BackHandle, { className?: string }>(function BackFigure({ className = "" }, ref) {
+  const g = useRef<Record<string, SVGElement | null>>({});
+  const set = (k: string) => (el: SVGElement | null) => {
+    g.current[k] = el;
+  };
+
+  useImperativeHandle(ref, () => ({
+    setPhase(phi, walk) {
+      const s = Math.sin(phi);
+      const liftL = 5 * Math.max(0, s) * walk;
+      const liftR = 5 * Math.max(0, -s) * walk;
+      const bob = 1.2 * Math.abs(Math.cos(phi)) * walk;
+      const swing = 3 * s * walk;
+      const move = (k: string, dx: number, dy: number) => g.current[k]?.setAttribute("transform", `translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
+      move("legL", 0, -liftL);
+      move("legR", 0, -liftR);
+      move("body", 0, -bob);
+      move("armL", 0, -bob + swing);
+      move("armR", 0, -bob - swing);
+    },
+  }));
+
+  return (
+    <svg viewBox="0 -8 100 88" className={className} aria-hidden="true">
+      {/* legs (lift alternately as the trekker steps up) */}
+      <g ref={set("legL")}>
+        <path d="M 44 50 L 43.5 72" stroke={C.pants} strokeWidth={8} strokeLinecap="round" />
+        <path d="M 39.5 75.5 L 47.5 75.5" stroke={C.boot} strokeWidth={6} strokeLinecap="round" />
+        <path d="M 39 78.2 L 48 78.2" stroke={C.sole} strokeWidth={2} strokeLinecap="round" />
+      </g>
+      <g ref={set("legR")}>
+        <path d="M 56 50 L 56.5 72" stroke={C.pantsFar} strokeWidth={8} strokeLinecap="round" />
+        <path d="M 52.5 75.5 L 60.5 75.5" stroke={C.bootFar} strokeWidth={6} strokeLinecap="round" />
+        <path d="M 52 78.2 L 61 78.2" stroke={C.sole} strokeWidth={2} strokeLinecap="round" />
+      </g>
+      {/* arms and pole */}
+      <g ref={set("armL")}>
+        <path d="M 40 30 L 37 41 L 38 50" stroke={C.jacketFar} strokeWidth={5.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <circle cx={38} cy={51.5} r={2.6} fill={C.skinFar} />
+      </g>
+      <g ref={set("armR")}>
+        <path d="M 66 46 L 70 79" stroke={C.pole} strokeWidth={2} strokeLinecap="round" />
+        <path d="M 60 30 L 63.5 40 L 65.5 47" stroke={C.jacket} strokeWidth={5.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <circle cx={65.8} cy={48} r={2.7} fill={C.skin} />
+      </g>
+      {/* torso, backpack, head and hat */}
+      <g ref={set("body")}>
+        <path d="M 41 28 L 59 28 L 58 52 L 42 52 Z" fill={C.jacket} strokeLinejoin="round" />
+        <path d="M 42.5 48 L 57.5 48 L 57.5 54 L 42.5 54 Z" fill={C.pants} />
+        <rect x={40.5} y={24} width={19} height={27} rx={4} fill={C.pack} />
+        <rect x={40.5} y={23} width={19} height={7} rx={3.5} fill={C.packDark} />
+        <rect x={44} y={37} width={12} height={9} rx={2.5} fill={C.packDark} />
+        <rect x={38.5} y={18.5} width={23} height={5.5} rx={2.75} fill={C.packRoll} />
+        <circle cx={50} cy={13} r={5.6} fill={C.hair} />
+        <ellipse cx={50} cy={9.6} rx={10.5} ry={2.2} fill={C.hat} />
+        <path d="M 44.5 9.6 Q 45 3.4 50 3.2 Q 55 3.4 55.5 9.6 Z" fill={C.hat} />
+        <path d="M 44.8 8.2 L 55.2 8.2" stroke={C.hatBand} strokeWidth={1.4} />
+      </g>
+    </svg>
+  );
+});

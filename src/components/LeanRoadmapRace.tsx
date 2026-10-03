@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ART } from "@/components/mountainArt";
-import RunnerFigure, { POSES, blendPose, walkPose, type RunnerHandle } from "@/components/RunnerFigure";
+import RunnerFigure, { BackFigure, POSES, blendPose, walkPose, type BackHandle, type RunnerHandle } from "@/components/RunnerFigure";
 
 export interface RoadmapStage {
   name: string;
@@ -46,8 +46,11 @@ function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
   const p = g.pts[i - 1], q = g.pts[i];
   return { x: p[0] + (q[0] - p[0]) * t, y: p[1] + (q[1] - p[1]) * t, left: b[0] - a[0] < -0.4 * Math.abs(b[1] - a[1]) };
 }
+// flag cloth in two wind-blown shapes (same commands, so GSAP can morph between them)
+const FLAG_A = "M 1.5 -92 Q 10 -96 18 -90 Q 26 -85 35 -85 Q 26 -80 18 -78 Q 10 -77 1.5 -72 Z";
+const FLAG_B = "M 1.5 -92 Q 10 -88 18 -91 Q 26 -93 34 -87 Q 26 -81 18 -80 Q 10 -80 1.5 -72 Z";
 // footpath only beyond the end of the road (the road itself is drawn as artwork)
-const FOOT_D = "M " + ART.trail.slice(ART.roadEnd).map(([x, y]) => `${x} ${y}`).join(" L ");
+const FOOT_D = "M " + ART.trail.slice(ART.roadEnd + 1).map(([x, y]) => `${x} ${y}`).join(" L ");
 
 export default function LeanRoadmapRace({
   stages,
@@ -132,6 +135,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const runnerRef = useRef<HTMLDivElement>(null);
   const figRef = useRef<RunnerHandle>(null);
   const flipRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<BackHandle>(null);
+  const sideBoxRef = useRef<HTMLDivElement>(null);
+  const backBoxRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const geoRef = useRef<Geo>(buildGeo(1, 1));
   const curRef = useRef(START);
@@ -219,7 +225,16 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const pt = pointAt(geo, cur);
       // smaller as the climber gets higher (further away)
       if (runnerRef.current) runnerRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px) scale(${1.1 - 0.55 * (cur / 100)})`;
-      if (flipRef.current && moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
+      // from stage 4 to the summit the trekker climbs away from us (seen from behind);
+      // on the summit they stand by the flag looking out to the left
+      const fromBehind = moving && cur > geo.cp[3] + 0.2 && cur < 100;
+      backRef.current?.setPhase(phi, runW);
+      if (sideBoxRef.current) sideBoxRef.current.style.display = fromBehind ? "none" : "";
+      if (backBoxRef.current) backBoxRef.current.style.display = fromBehind ? "" : "none";
+      if (flipRef.current) {
+        if (resting) flipRef.current.style.transform = "scaleX(-1)";
+        else if (moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
+      }
       const n = geo.cp.filter((c) => cur >= c - 0.01).length;
       setReached((prev) => (prev === n ? prev : n));
       raf = requestAnimationFrame(frame);
@@ -255,6 +270,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         .from(".rm-snow", { opacity: 0, duration: 0.6 }, 0.6)
         .from(".rm-gate", { scale: 0, opacity: 0, stagger: 0.12, duration: 0.5, ease: "back.out(2.2)" }, 0.8)
         .from(flagRef.current, { scaleY: 0, transformOrigin: "50% 100%", duration: 0.6, ease: "back.out(2)" }, 1.4);
+      // the flag flutters in the wind
+      gsap.to(".rm-flag", { attr: { d: FLAG_B }, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: -1 });
       gsap.utils.toArray<SVGGElement>(".rm-cloud").forEach((c, i) => {
         gsap.to(c, { x: i % 2 ? -46 : 46, duration: 9 + i * 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
       });
@@ -374,9 +391,11 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </radialGradient>
                 </defs>
                 {/* sun */}
-                <g ref={sunRef} transform={`translate(${geo.ox + ART.w * geo.k * 0.86} ${geo.oy + sunR * 0.22})`}>
+                <g transform={`translate(${Math.min(w * 0.86, peak[0] + sunR * 0.3)} ${peak[1] - 112})`}>
+                <g ref={sunRef}>
                   <circle r={sunR * 0.3} fill="url(#sun)" />
-                  <circle r={sunR * 0.08} fill="#FFC9A3" />
+                  <circle r={sunR * 0.085} fill="#FFB27A" />
+                </g>
                 </g>
                 <g ref={mtnRef}>
                 <g transform={`translate(${geo.ox} ${geo.oy}) scale(${geo.k})`}>
@@ -387,19 +406,22 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   {/* footpath from the end of the road to the summit */}
                   <path d={FOOT_D} fill="none" stroke="#FDCBA6" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 16" />
                 </g>
-                </g>
-                {/* clouds drifting around the peak */}
+                {/* clouds hugging the flanks and the peak; they belong to the mountain and rise with it */}
                 {[
-                  [-0.17, 0.11, 1],
-                  [0.16, 0.2, 0.8],
-                  [-0.07, -0.02, 0.6],
+                  [-0.08, 0.14, 0.9],
+                  [0.09, 0.22, 0.8],
+                  [-0.03, 0.04, 0.55],
                 ].map(([dx, dy, sc], i) => (
-                  <g key={i} className="rm-cloud" opacity={0.95} transform={`translate(${peak[0] + dx * ART.w * geo.k} ${peak[1] + dy * ART.h * geo.k}) scale(${sc})`}>
+                  // outer group is placed by React, the inner one is moved by GSAP (GSAP owns its transform)
+                  <g key={i} transform={`translate(${peak[0] + dx * ART.w * geo.k} ${peak[1] + dy * ART.h * geo.k}) scale(${sc})`}>
+                  <g className="rm-cloud" opacity={0.95}>
                     <ellipse cx={0} cy={0} rx={34} ry={11} fill="#DCE7F2" />
                     <ellipse cx={-12} cy={-7} rx={14} ry={11} fill="#DCE7F2" />
                     <ellipse cx={8} cy={-10} rx={17} ry={13} fill="#E8EFF7" />
                   </g>
+                  </g>
                 ))}
+                </g>
                 {/* summit flag */}
                 <g transform={`translate(${peak[0]} ${peak[1]})`}>
                   <g ref={burstRef}>
@@ -409,7 +431,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </g>
                   <g ref={flagRef}>
                     <line x1={0} y1={0} x2={0} y2={-92} stroke="#002F5B" strokeWidth={3} strokeLinecap="round" />
-                    <path d="M 1.5 -92 L 34 -82 L 1.5 -72 Z" fill="#F76011" className={summit ? "summit-flag" : ""} style={{ transformOrigin: "1.5px -82px" }} />
+                    <path className="rm-flag" d={FLAG_A} fill="#F76011" />
                   </g>
                 </g>
               </svg>
@@ -462,7 +484,12 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
               <div className="absolute bottom-[-6px] left-0 -translate-x-1/2">
                 <div ref={flipRef}>
-                  <RunnerFigure ref={figRef} className="w-[120px] h-[106px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  <div ref={sideBoxRef}>
+                    <RunnerFigure ref={figRef} className="w-[120px] h-[106px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  </div>
+                  <div ref={backBoxRef} style={{ display: "none" }}>
+                    <BackFigure ref={backRef} className="w-[120px] h-[106px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  </div>
                 </div>
               </div>
             </div>
