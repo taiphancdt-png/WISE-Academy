@@ -41,8 +41,8 @@ export default function AboutPage() {
     {
       letter: "S",
       word: "SHARE",
-      title: "Chia Sẻ Kinh Nghiệm Thật",
-      desc: "Chúng tôi nỗ lực đóng góp giá trị chung cho cộng đồng doanh nghiệp Việt Nam, phụng sự nền kinh tế nước nhà với tinh thần trách nhiệm cao nhất."
+      title: "Chia sẻ kinh nghiệm\nKết nối chuyên gia",
+      desc: "Chúng tôi chia sẻ kinh nghiệm vận hành thật và kết nối doanh nghiệp với đội ngũ chuyên gia giàu kinh nghiệm trong và ngoài nước, cùng đóng góp giá trị chung cho cộng đồng doanh nghiệp Việt Nam."
     },
     {
       letter: "E",
