@@ -1,4 +1,5 @@
 import React from "react";
+import { Download } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import LeanRoadmapRace from "@/components/LeanRoadmapRace";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
@@ -8,16 +9,36 @@ const pillarImages = [
   P + "huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
   P + "ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
   P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_10.webp",
+  P + "victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
   P + "project-lean-six-sigma-yellow-belt-pouchen-group/photo_10.webp",
 ];
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
-  description: "4 dịch vụ tư vấn chính của WISE Academy: chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực.",
+  description: "5 dịch vụ chính của WISE Academy: chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực, Đào tạo & Huấn luyện Lean Six Sigma.",
   alternates: { canonical: "/dich-vu-tu-van" },
 };
 
 export default function ConsultingPage() {
+  const surveySteps = [
+    {
+      title: "Thấu hiểu nhu cầu & ưu tiên",
+      desc: "Lắng nghe ban lãnh đạo về bối cảnh, thách thức và những ưu tiên kinh doanh của doanh nghiệp."
+    },
+    {
+      title: "Xác lập mục tiêu",
+      desc: "Cùng thống nhất mục tiêu và chỉ số đo lường cụ thể về năng suất, chất lượng, chi phí và thời gian giao hàng."
+    },
+    {
+      title: "Khảo sát hiện trạng",
+      desc: "Đi Gemba quan sát dòng vật tư, dòng thông tin và cách đội ngũ làm việc để nhận diện lãng phí và cơ hội cải tiến."
+    },
+    {
+      title: "Đề xuất lộ trình",
+      desc: "Đưa ra giải pháp và lộ trình đồng hành phù hợp giữa thực trạng và mục tiêu của doanh nghiệp."
+    }
+  ];
+
   const pillars = [
     {
       id: "01",
@@ -33,7 +54,8 @@ export default function ConsultingPage() {
         "Thiết bị & Độ tin cậy: Bảo trì năng suất toàn diện (TPM), cải thiện OEE",
         "Con người & Lãnh đạo Lean: Hoshin Kanri, A3, Catch-ball, Leader Standard Work"
       ],
-      tag: "LEAN MANAGEMENT SYSTEM TRANSFORMATION"
+      tag: "LEAN MANAGEMENT SYSTEM TRANSFORMATION",
+      brochure: "/brochures/lean-management-system-transformation.pdf"
     },
     {
       id: "02",
@@ -48,7 +70,8 @@ export default function ConsultingPage() {
         "Thiết kế luồng vật tư, kho và cấp liệu nội bộ theo hệ thống kéo",
         "Hoạch định khả năng mở rộng công suất theo từng giai đoạn đầu tư"
       ],
-      tag: "NEW LEAN FACTORY DESIGN"
+      tag: "NEW LEAN FACTORY DESIGN",
+      brochure: "/brochures/new-lean-factory-design.pdf"
     },
     {
       id: "03",
@@ -62,7 +85,8 @@ export default function ConsultingPage() {
         "Bảo trì năng suất toàn diện (TPM): nâng cao độ tin cậy thiết bị, giảm thời gian dừng máy",
         "Quản lý chất lượng toàn diện (TQM): kiểm soát quy trình, đồng nhất sản phẩm và cải tiến liên tục"
       ],
-      tag: "LEAN & DIGITAL TRANSFORMATION INTEGRATION"
+      tag: "LEAN & DIGITAL TRANSFORMATION INTEGRATION",
+      brochure: "/brochures/lean-digital-transformation.pdf"
     },
     {
       id: "04",
@@ -78,7 +102,24 @@ export default function ConsultingPage() {
         "Đào tạo kỹ năng Coaching cho cấp quản lý",
         "Chương trình đào tạo giảng viên nội bộ (Train-the-Trainer)"
       ],
-      tag: "HR LEARNING & DEVELOPMENT SYSTEM"
+      tag: "HR LEARNING & DEVELOPMENT SYSTEM",
+      brochure: "/brochures/hr-learning-development-system.pdf"
+    },
+    {
+      id: "05",
+      title: "Đào tạo & Huấn luyện Lean Six Sigma",
+      subtitle: "Chìa khóa cho ra quyết định dựa trên dữ liệu trong kỷ nguyên số",
+      desc: "WISE Academy hợp tác cùng Viện Lean Six Sigma quốc tế (LSSI) đào tạo, chứng nhận và huấn luyện cá nhân, doanh nghiệp giảm chi phí, nâng cao chất lượng và cải thiện năng suất. Chương trình theo chuẩn quốc tế, được thiết kế theo cấp độ, ngành nghề và quy trình, kèm huấn luyện dự án thực tế tại doanh nghiệp.",
+      listTitle: "Chương trình đào tạo",
+      items: [
+        "Theo cấp độ: Lean Management, White Belt, Yellow Belt, Green Belt, Black Belt, Master Black Belt",
+        "Theo ngành: Lean trong nông nghiệp, xây dựng, y tế và khách sạn",
+        "Theo quy trình: Lean năng lượng, Lean logistics, Lean dịch vụ",
+        "Thạc sĩ quản trị: Corporate Management, Lean Six Sigma 4.0, Black Belt Master's Degree",
+        "Huấn luyện dự án cải tiến thực tế, chứng nhận quốc tế LSSI"
+      ],
+      tag: "LEAN SIX SIGMA TRAINING & COACHING",
+      brochure: "/brochures/lean-six-sigma-training-coaching.pdf"
     }
   ];
 
@@ -126,8 +167,30 @@ export default function ConsultingPage() {
         eyebrow="Dịch vụ tư vấn doanh nghiệp"
         image="/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp"
         title={<>Giải pháp tư vấn <span className="text-[#FF7A30]">vận hành tinh gọn</span> tại hiện trường</>}
-        description="WISE Academy cam kết mang lại giá trị có thể đo lường trực tiếp trên bảng cân đối kế toán thông qua việc giảm lãng phí, tăng năng suất và phát triển nội lực cải tiến của tổ chức - trong sản xuất, logistics và dịch vụ."
-      />
+        description="Mọi dự án tư vấn của WISE Academy đều bắt đầu từ bước khảo sát: thấu hiểu nhu cầu và các ưu tiên của doanh nghiệp, cùng xác lập mục tiêu rõ ràng và đánh giá hiện trạng ngay tại hiện trường. Đó là nền tảng để đề xuất giải pháp đúng trọng tâm và đo lường được kết quả."
+      >
+        <ButtonLink href="/lien-he">Đặt lịch khảo sát hiện trạng</ButtonLink>
+      </PageHero>
+
+      {/* Survey first: the four steps every engagement starts with */}
+      <Section>
+        <SectionHeader
+          title={<>Khảo sát là bước <span className="text-[#F76011]">ưu tiên hàng đầu</span></>}
+          description="Mỗi doanh nghiệp có bối cảnh, ưu tiên và thực trạng vận hành riêng. Vì vậy trước khi đề xuất bất kỳ giải pháp nào, WISE Academy cùng doanh nghiệp đi qua bốn bước sau."
+        />
+        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {surveySteps.map((step, i) => (
+            <li key={step.title} className="card-soft p-6">
+              <span className="text-3xl font-bold text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-3 text-lg font-semibold text-[#002F5B] leading-snug">{step.title}</h3>
+              <p className="mt-2 text-sm text-[#486581] leading-relaxed">{step.desc}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-10 text-center">
+          <ButtonLink href="/lien-he">Liên hệ để được khảo sát</ButtonLink>
+        </div>
+      </Section>
 
       {/* Pillars: alternating image / text */}
       {pillars.map((pillar, idx) => (
@@ -150,8 +213,15 @@ export default function ConsultingPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap items-center gap-3">
                 <ButtonLink href="/lien-he">Tư vấn dịch vụ {pillar.id}</ButtonLink>
+                <a
+                  href={pillar.brochure}
+                  download={`WISE-Academy-dich-vu-${pillar.id}-brochure.pdf`}
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#002F5B] px-6 py-2.5 text-sm font-semibold text-[#002F5B] transition-colors hover:bg-[#002F5B] hover:text-white"
+                >
+                  <Download className="w-4 h-4" /> Tải brochure
+                </a>
               </div>
             </div>
           </div>
