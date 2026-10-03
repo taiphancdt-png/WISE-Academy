@@ -15,6 +15,7 @@ export interface RoadmapStage {
 }
 
 const START = 2;
+const SUN_SPEED = 0.00012; // share of the sunrise per ms: an even glide of about 8 s from ridge to sky
 const SUMMIT_HOLD_MS = 2800; // celebrate on the summit, then start a new climb from the foot
 const BASE_SPEED = 0.0034; // % of track per ms when nobody scrolls: a calm jog, about 5 s per stage
 const MAX_SPEED = 0.026; // flat-out sprint while scrolling fast
@@ -198,6 +199,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let runW = 0;
     let holdUntil = 0; // resting on the summit until this time
     let skyP = 0; // smoothed height reached, drives the dawn sky
+    let sunT = 0; // sun height 0..1 (from the ridge to its place above the flag)
+    let hideT = 1; // 1 = sunk fully behind the mountain (before stage 2)
     let climbs = 1;
     figRef.current?.setPose(POSES.stand);
 
@@ -248,7 +251,11 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         skyRef.current.style.background = `linear-gradient(to bottom, ${skyAt(SKY_TOP, light)}, ${skyAt(SKY_BOTTOM, light)})`;
       }
       // the sun rises straight up from behind the mountain between stage 2 and stage 5, brightening as it goes
-      const rise = smooth(g0.cp[1] / 100, g0.cp[4] / 100, skyP);
+      // target height from the climb (linear), approached at a constant speed so the sun glides evenly
+      const sunTarget = Math.max(0, Math.min(1, (cur / 100 - g0.cp[1] / 100) / ((g0.cp[4] - g0.cp[1]) / 100)));
+      const sunStep = SUN_SPEED * dt;
+      sunT += Math.max(-sunStep, Math.min(sunStep, sunTarget - sunT));
+      const rise = sunT;
       if (sunRiseRef.current) {
         // start with the top of the sun just peeking over the ridge behind it, end at its place above the flag
         const sR = ART.h * g0.k;
@@ -258,7 +265,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         const startY = g0.oy + ART.ridge[ri] * g0.k + sR * 0.085 * 0.35;
         const endY = peakPt[1] - 112;
         // before stage 2 it stays fully hidden behind the mountain
-        const hidden = (1 - smooth(g0.cp[0] / 100, g0.cp[1] / 100, skyP)) * sR * 0.085 * 1.8;
+        hideT += Math.max(-sunStep * 3, Math.min(sunStep * 3, (cur >= g0.cp[1] ? 0 : 1) - hideT));
+        const hidden = hideT * sR * 0.085 * 1.8;
         sunRiseRef.current.setAttribute("transform", `translate(0 ${((1 - rise) * Math.max(0, startY - endY) + hidden).toFixed(1)})`);
         sunRiseRef.current.style.opacity = String(0.7 + 0.3 * rise);
         // deep orange as it breaks the ridge, light orange high in the sky; the glow grows as it rises
