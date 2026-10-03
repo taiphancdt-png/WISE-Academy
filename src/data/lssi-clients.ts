@@ -60,7 +60,7 @@ export const LSSI_CLIENTS: LssiClientGroup[] = [
   {
     industry: "Giáo dục & đào tạo",
     brands: [
-      { name: "UCAM", logo: "/images/lssi/ucam.webp", height: 42 },
+      { name: "UCAM", logo: "/images/lssi/clients/ucam.svg", height: 36 },
       { name: "Harvard University", logo: "/images/lssi/clients/harvard.webp", height: 33 },
       { name: "Boston College", logo: "/images/lssi/clients/boston-college.webp", height: 36 },
       { name: "Wagner College", logo: "/images/lssi/clients/wagner-college.webp", height: 56 },
