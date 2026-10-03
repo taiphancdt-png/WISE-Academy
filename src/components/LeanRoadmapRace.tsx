@@ -25,7 +25,7 @@ const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 const pad = (n: number) => String(n).padStart(2, "0");
 
 // Mountain artwork (client's reference, vectorised): the climber follows ART.trail, up the road and on to the summit.
-type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
+type Geo = { w: number; h: number; bleed: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
 // bleed: distance from the box's right edge to the window's right edge
 function buildGeo(w: number, h: number, bleed = 0): Geo {
   // 15% larger than the fitted size (capped by the box height), sitting on the bottom edge and shifted right
@@ -36,7 +36,7 @@ function buildGeo(w: number, h: number, bleed = 0): Geo {
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
   const total = cum[cum.length - 1] || 1;
-  return { w, h, ox, oy, k, bends: [pts[0], ...ART.stages.map((i) => pts[i])], pts, cum, total, cp: ART.stages.map((i) => (cum[i] / total) * 100) };
+  return { w, h, bleed, ox, oy, k, bends: [pts[0], ...ART.stages.map((i) => pts[i])], pts, cum, total, cp: ART.stages.map((i) => (cum[i] / total) * 100) };
 }
 // point on the trail at pct (% of its length) and whether that stretch heads left
 function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
@@ -132,11 +132,11 @@ function StageBody({ stage, stacked = false }: { stage: RoadmapStage; stacked?: 
   return (
     <div className={`grid gap-5 ${stacked ? "" : "sm:grid-cols-2 sm:gap-8"}`}>
       <div>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#486581]">Mục tiêu</p>
+        <p className="flex items-center gap-2 text-sm xl:text-[15px] font-extrabold uppercase tracking-[0.12em] text-[#002F5B]"><span aria-hidden="true" className="h-4 w-1 rounded-full bg-[#002F5B]" />Mục tiêu</p>
         <p className="mt-2 text-base xl:text-[17px] text-[#243B53] leading-relaxed">{stage.objective}</p>
       </div>
       <div className={stacked ? "border-t border-[#002F5B]/10 pt-5" : "sm:border-l sm:border-[#002F5B]/10 sm:pl-8"}>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9500E]">Kết quả</p>
+        <p className="flex items-center gap-2 text-sm xl:text-[15px] font-extrabold uppercase tracking-[0.12em] text-[#E2560C]"><span aria-hidden="true" className="h-4 w-1 rounded-full bg-[#F76011]" />Kết quả</p>
         <p className="mt-2 text-base xl:text-[17px] text-[#002F5B] leading-relaxed font-semibold">{stage.outcome}</p>
       </div>
     </div>
@@ -285,7 +285,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         // start with the top of the sun just peeking over the ridge behind it, end at its place above the flag
         const sR = ART.h * g0.k;
         const peakPt = g0.pts[g0.pts.length - 1];
-        const sunX = Math.min(g0.w * 0.86, peakPt[0] + sR * 0.3);
+        const sunX = Math.min(g0.w + g0.bleed - sR * 0.12, peakPt[0] + sR * 0.3);
         const ri = Math.max(0, Math.min(ART.ridge.length - 1, Math.round((sunX - g0.ox) / g0.k / ART.ridgeStep)));
         const startY = g0.oy + ART.ridge[ri] * g0.k + sR * 0.085 * 0.35;
         const endY = peakPt[1] - 112;
@@ -479,7 +479,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </radialGradient>
                 </defs>
                 {/* sun */}
-                <g transform={`translate(${Math.min(w * 0.86, peak[0] + sunR * 0.3)} ${peak[1] - 112})`}>
+                <g transform={`translate(${Math.min(w + geo.bleed - sunR * 0.12, peak[0] + sunR * 0.3)} ${peak[1] - 112})`}>
                 <g ref={sunRiseRef}>
                 <g ref={sunRef}>
                   <circle r={sunR * 0.3} fill="url(#sun)" />
