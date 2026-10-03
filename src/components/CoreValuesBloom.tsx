@@ -36,7 +36,7 @@ const smooth = (e0: number, e1: number, x: number) => {
 };
 // petal: the original almond shape, made fuller (plump in the middle, pointed at both ends)
 const petalPath = (w: number, l: number) =>
-  `M 0 0 C ${-w * 0.8} ${-l * 0.16} ${-w * 0.8} ${-l * 0.8} 0 ${-l} C ${w * 0.8} ${-l * 0.8} ${w * 0.8} ${-l * 0.16} 0 0 Z`;
+  `M 0 0 C ${-w * 0.72} ${-l * 0.17} ${-w * 0.72} ${-l * 0.8} 0 ${-l} C ${w * 0.72} ${-l * 0.8} ${w * 0.72} ${-l * 0.17} 0 0 Z`;
 
 export default function CoreValuesBloom({
   values,
@@ -176,7 +176,7 @@ export default function CoreValuesBloom({
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 bottom-20 -translate-x-1/2">
+            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 80px)" }}>
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
