@@ -162,9 +162,8 @@ export default function ConsultingPage() {
           <a
             key={p.id}
             href={`#${p.id}`}
-            className="group flex items-center gap-3 rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
+            className="group flex items-center justify-center text-center rounded-2xl border border-[#002F5B]/15 bg-white px-5 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
           >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
             {p.title}
           </a>
         ))}
