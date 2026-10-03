@@ -36,7 +36,7 @@ const smooth = (e0: number, e1: number, x: number) => {
 };
 // petal: the original almond shape, made fuller (plump in the middle, pointed at both ends)
 const petalPath = (w: number, l: number) =>
-  `M 0 0 C ${-w * 0.72} ${-l * 0.17} ${-w * 0.72} ${-l * 0.8} 0 ${-l} C ${w * 0.72} ${-l * 0.8} ${w * 0.72} ${-l * 0.17} 0 0 Z`;
+  `M 0 0 C ${-w * 0.65} ${-l * 0.18} ${-w * 0.65} ${-l * 0.8} 0 ${-l} C ${w * 0.65} ${-l * 0.8} ${w * 0.65} ${-l * 0.18} 0 0 Z`;
 
 export default function CoreValuesBloom({
   values,
