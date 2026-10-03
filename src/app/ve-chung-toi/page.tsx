@@ -105,7 +105,7 @@ export default function AboutPage() {
       <section className="bg-white border-b border-slate-200 py-14 px-4 sm:px-6">
         <figure className="max-w-3xl mx-auto text-center">
           <div className="w-12 h-1 bg-[#F76011] mx-auto rounded-full mb-6" />
-          <blockquote className="text-xl sm:text-2xl italic text-[#002F5B] leading-relaxed">
+          <blockquote className="text-sm sm:text-[17px] italic text-[#002F5B] leading-relaxed">
             “Sự phát triển và trưởng thành của nhân viên<br />là trách nhiệm cao cả của người lãnh đạo.”
           </blockquote>
           <figcaption className="mt-4 text-xs uppercase font-bold tracking-widest text-[#486581]">
