@@ -191,7 +191,7 @@ export default function AboutPage() {
       <Section tone="muted">
         <SectionHeader
           eyebrow="Phương pháp luận RGPDCA"
-          title={<>Lộ trình 6 giai đoạn <span className="text-[#F76011]">khoa học & bền vững</span></>}
+          title={<>Phương pháp tiếp cận <span className="text-[#F76011]">6 giai đoạn</span></>}
           description="Không áp dụng một công thức rập khuôn cho mọi tổ chức. WISE Academy cùng đội ngũ của bạn đi qua 6 bước khép kín để đảm bảo thay đổi là thật và duy trì được sau khi dự án kết thúc."
         />
         <RgpdcaLoop steps={rgpdcaDetails} />
