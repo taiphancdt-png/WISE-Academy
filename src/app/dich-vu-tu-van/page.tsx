@@ -1,7 +1,7 @@
 import React from "react";
-import { Download } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import LeanRoadmapRace from "@/components/LeanRoadmapRace";
+import ServiceDetails from "@/components/ServiceDetails";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 
 const P = "/images/projects/";
@@ -196,7 +196,7 @@ export default function ConsultingPage() {
       {pillars.map((pillar, idx) => (
         <section key={pillar.id} id={pillar.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className={`rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 ${idx % 2 ? "lg:order-2" : ""}`}>
+            <div className={`w-full lg:w-3/4 rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 ${idx % 2 ? "lg:order-2 lg:justify-self-start" : "lg:justify-self-end"}`}>
               <img src={pillarImages[idx]} alt={pillar.title} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div>
@@ -205,24 +205,7 @@ export default function ConsultingPage() {
               <p className="mt-4 text-sm sm:text-base text-[#486581] leading-relaxed">
                 <strong className="text-[#102A43]">{pillar.subtitle}.</strong> {pillar.desc}
               </p>
-              <h3 className="mt-6 text-xs font-bold uppercase tracking-wider text-[#002F5B]">{pillar.listTitle}</h3>
-              <ul className="mt-2">
-                {pillar.items.map((d) => (
-                  <li key={d} className="plus-item !font-medium">
-                    {d}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <ButtonLink href="/lien-he">Tư vấn dịch vụ {pillar.id}</ButtonLink>
-                <a
-                  href={pillar.brochure}
-                  download={`WISE-Academy-dich-vu-${pillar.id}-brochure.pdf`}
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#002F5B] px-6 py-2.5 text-sm font-semibold text-[#002F5B] transition-colors hover:bg-[#002F5B] hover:text-white"
-                >
-                  <Download className="w-4 h-4" /> Tải brochure
-                </a>
-              </div>
+              <ServiceDetails id={pillar.id} listTitle={pillar.listTitle} items={pillar.items} brochure={pillar.brochure} />
             </div>
           </div>
         </section>
