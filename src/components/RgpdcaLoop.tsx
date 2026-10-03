@@ -93,7 +93,8 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
     const start = performance.now();
     const tick = (now: number) => {
       const s = (((now - start) % LAP_MS) / LAP_MS) * total;
-      const p = pathRef.current!.getPointAtLength(s);
+      if (!pathRef.current) return; // unmounted
+      const p = pathRef.current.getPointAtLength(s);
       dotRef.current?.setAttribute("transform", `translate(${p.x} ${p.y})`);
       let idx = 5;
       for (let i = 0; i < 6; i++) if (s >= anchors[i]) idx = i;
