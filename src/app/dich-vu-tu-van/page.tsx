@@ -10,12 +10,11 @@ const pillarImages = [
   P + "ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
   P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_10.webp",
   P + "victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
-  P + "project-lean-six-sigma-yellow-belt-pouchen-group/photo_10.webp",
 ];
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
-  description: "5 dịch vụ chính của WISE Academy: xây dựng/chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực, Đào tạo & Huấn luyện Lean Six Sigma.",
+  description: "4 dịch vụ tư vấn chính của WISE Academy: xây dựng/chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực.",
   alternates: { canonical: "/dich-vu-tu-van" },
 };
 
@@ -55,7 +54,6 @@ export default function ConsultingPage() {
         "Con người & Lãnh đạo Lean: Hoshin Kanri, A3, Catch-ball, Leader Standard Work"
       ],
       tag: "LEAN MANAGEMENT SYSTEM TRANSFORMATION",
-      short: "Hệ thống Quản lý Lean",
       brochure: "/brochures/lean-management-system-transformation.pdf"
     },
     {
@@ -72,7 +70,6 @@ export default function ConsultingPage() {
         "Hoạch định khả năng mở rộng công suất theo từng giai đoạn đầu tư"
       ],
       tag: "NEW LEAN FACTORY DESIGN",
-      short: "Nhà máy Lean mới",
       brochure: "/brochures/new-lean-factory-design.pdf"
     },
     {
@@ -88,7 +85,6 @@ export default function ConsultingPage() {
         "Quản lý chất lượng toàn diện (TQM): kiểm soát quy trình, đồng nhất sản phẩm và cải tiến liên tục"
       ],
       tag: "LEAN & DIGITAL TRANSFORMATION INTEGRATION",
-      short: "Lean & Chuyển đổi số",
       brochure: "/brochures/lean-digital-transformation.pdf"
     },
     {
@@ -106,25 +102,7 @@ export default function ConsultingPage() {
         "Chương trình đào tạo giảng viên nội bộ (Train-the-Trainer)"
       ],
       tag: "HR LEARNING & DEVELOPMENT SYSTEM",
-      short: "Đào tạo & Phát triển nhân lực",
       brochure: "/brochures/hr-learning-development-system.pdf"
-    },
-    {
-      id: "05",
-      title: "Đào tạo & Huấn luyện Lean Six Sigma",
-      subtitle: "Chìa khóa cho ra quyết định dựa trên dữ liệu trong kỷ nguyên số",
-      desc: "WISE Academy hợp tác cùng Viện Lean Six Sigma quốc tế (LSSI) đào tạo, chứng nhận và huấn luyện cá nhân, doanh nghiệp giảm chi phí, nâng cao chất lượng và cải thiện năng suất. Chương trình theo chuẩn quốc tế, được thiết kế theo cấp độ, ngành nghề và quy trình, kèm huấn luyện dự án thực tế tại doanh nghiệp.",
-      listTitle: "Chương trình đào tạo",
-      items: [
-        "Theo cấp độ: Lean Management, White Belt, Yellow Belt, Green Belt, Black Belt, Master Black Belt",
-        "Theo ngành: Lean trong nông nghiệp, xây dựng, y tế và khách sạn",
-        "Theo quy trình: Lean năng lượng, Lean logistics, Lean dịch vụ",
-        "Thạc sĩ quản trị: Corporate Management, Lean Six Sigma 4.0, Black Belt Master's Degree",
-        "Huấn luyện dự án cải tiến thực tế, chứng nhận quốc tế LSSI"
-      ],
-      tag: "LEAN SIX SIGMA TRAINING & COACHING",
-      short: "Lean Six Sigma",
-      brochure: "/brochures/lean-six-sigma-training-coaching.pdf"
     }
   ];
 
@@ -180,15 +158,15 @@ export default function ConsultingPage() {
       {/* Survey first: the four steps every engagement starts with */}
       <Section>
         {/* quick links to the services below */}
-        <nav aria-label="Các dịch vụ tư vấn" className="-mt-4 mb-16 flex flex-wrap justify-center gap-3">
+        <nav aria-label="Các dịch vụ tư vấn" className="-mt-4 mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((p) => (
             <a
               key={p.id}
               href={`#${p.id}`}
-              className="group inline-flex items-center gap-2.5 rounded-full border border-[#002F5B]/15 bg-white px-5 py-2.5 text-sm font-semibold text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
+              className="group flex items-center gap-3 rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
-              {p.short}
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
+              {p.title}
             </a>
           ))}
         </nav>
