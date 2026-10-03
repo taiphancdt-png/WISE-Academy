@@ -57,8 +57,8 @@ const FLAG_B = "M 1.5 -92 Q 10 -88 18 -91 Q 26 -93 34 -87 Q 26 -81 18 -80 Q 10 -
 // Dawn sky: the higher the trekker, the brighter the sky.
 const mix = (a: number[], b: number[], t: number) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
 // from first light (blue below, orange above) to full daylight (light orange below, white above)
-const SKY_TOP = [[255, 196, 150], [255, 236, 218], [255, 255, 255]];
-const SKY_BOTTOM = [[70, 130, 200], [240, 186, 176], [255, 226, 196]];
+const SKY_TOP = [[236, 132, 72], [255, 214, 178], [255, 255, 255]];
+const SKY_BOTTOM = [[28, 64, 122], [226, 160, 156], [255, 241, 226]];
 const skyAt = (stops: number[][], t: number) => {
   const x = Math.max(0, Math.min(1, t)) * (stops.length - 1);
   const i = Math.min(stops.length - 2, Math.floor(x));
@@ -419,7 +419,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
           ref={skyRef}
           aria-hidden="true"
           className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10"
-          style={{ background: "linear-gradient(to bottom, rgb(255,196,150) 0%, rgb(255,196,150) 50%, rgb(70,130,200) 100%)" }}
+          style={{ background: "linear-gradient(to bottom, rgb(236,132,72) 0%, rgb(236,132,72) 50%, rgb(28,64,122) 100%)" }}
         />
         <Header title={title} description={description} />
 

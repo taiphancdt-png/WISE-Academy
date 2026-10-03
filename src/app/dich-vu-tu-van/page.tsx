@@ -221,7 +221,7 @@ export default function ConsultingPage() {
       {/* Roadmap */}
       <LeanRoadmapRace
         stages={roadmapStages}
-        title={<>Lộ trình chuyển đổi Lean<br /><span className="text-[#FF7A30]">5 giai đoạn</span></>}
+        title={<>Lộ trình chuyển đổi Lean<br /><span className="text-[#C9500E]">5 giai đoạn</span></>}
         description="Chuyển đổi Lean là hành trình cần hoạch định rõ ràng, lãnh đạo cam kết và đồng hành bền bỉ để vượt qua rào cản ban đầu, hình thành thói quen cải tiến và kiến tạo văn hóa Lean."
       />
 
