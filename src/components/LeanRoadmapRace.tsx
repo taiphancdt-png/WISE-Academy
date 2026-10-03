@@ -121,7 +121,7 @@ function Header({ title, description }: { title: React.ReactNode; description: s
         seen ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-10 blur-sm motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:blur-0"
       }`}
     >
-      <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9500E] ring-1 ring-[#F76011]/30 bg-[#F76011]/10">
+      <span className="inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--rm-accent,#C9500E)] ring-1 ring-current/30 bg-[#F76011]/10">
         Lộ trình chuyển đổi
       </span>
       {/* heading and description share the same top edge */}
@@ -272,6 +272,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         const b = 62 + 38 * light; // start of the solid bottom colour (%)
         // a wide, soft band between them with a warm rose tone in the middle
         const mid = skyAt(SKY_MID, light);
+        // accent text (e.g. "5 giai đoạn"): light cream on the dark first-light sky, brand orange in daylight
+        sticky.style.setProperty("--rm-accent", mix([255, 246, 236], [214, 84, 12], smooth(0.3, 0.65, light)));
         // the blue (lower) part also deepens towards the bottom
         const bottomLight = skyAt(SKY_BOTTOM_LIGHT, light);
         skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} ${a}%, ${mid} ${(a + b) / 2}%, ${bottomLight} ${b}%, ${bottom} 100%)`;
