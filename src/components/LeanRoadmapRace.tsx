@@ -27,9 +27,9 @@ const pad = (n: number) => String(n).padStart(2, "0");
 // Mountain artwork (client's reference, vectorised): the climber follows ART.trail, up the road and on to the summit.
 type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
 function buildGeo(w: number, h: number): Geo {
-  // 1.2x the width-fit size (capped by the height); any extra width bleeds into the right margin
-  const k = Math.min((1.2 * w) / ART.w, h / ART.h);
-  const ox = Math.max(0, (w - ART.w * k) / 2) + 110, oy = h - ART.h * k; // nudged right, leaving room for the stage labels
+  // as large as the box allows, sitting on its bottom edge and its right edge (labels use the space on the left)
+  const k = Math.min((0.88 * w) / ART.w, h / ART.h); // keep at least 12% of the width free on the left for labels
+  const ox = w - ART.w * k, oy = h - ART.h * k;
   const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
@@ -401,7 +401,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
   return (
     <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
-      <div ref={stickyRef} className="isolate sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-10 pb-8">
+      <div ref={stickyRef} className="isolate sticky top-0 h-[100dvh] flex flex-col max-w-[1600px] mx-auto px-8 xl:px-12 pt-10 pb-8">
         <div
           ref={skyRef}
           aria-hidden="true"
