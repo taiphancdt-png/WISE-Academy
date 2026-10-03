@@ -59,6 +59,8 @@ const mix = (a: number[], b: number[], t: number) => `rgb(${a.map((v, i) => Math
 // from first light (blue below, orange above) to full daylight (light orange below, white above)
 const SKY_TOP = [[236, 132, 72], [255, 214, 178], [255, 255, 255]];
 const SKY_BOTTOM = [[28, 64, 122], [226, 160, 156], [255, 241, 226]];
+const SKY_MID = [[196, 104, 112], [246, 188, 168], [255, 248, 238]];
+const SKY_BOTTOM_LIGHT = [[76, 118, 178], [238, 176, 164], [255, 245, 234]];
 const skyAt = (stops: number[][], t: number) => {
   const x = Math.max(0, Math.min(1, t)) * (stops.length - 1);
   const i = Math.min(stops.length - 2, Math.floor(x));
@@ -266,9 +268,13 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         // at first light the blue fills the lower 3/5; by daylight the bright top fills the upper half
         const top = skyAt(SKY_TOP, light);
         const bottom = skyAt(SKY_BOTTOM, light);
-        const a = 22 + 28 * light; // end of the solid top colour (%)
-        const b = 40 + 60 * light; // start of the solid bottom colour (%)
-        skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} ${a}%, ${bottom} ${b}%, ${bottom} 100%)`;
+        const a = 12 + 33 * light; // end of the solid top colour (%)
+        const b = 62 + 38 * light; // start of the solid bottom colour (%)
+        // a wide, soft band between them with a warm rose tone in the middle
+        const mid = skyAt(SKY_MID, light);
+        // the blue (lower) part also deepens towards the bottom
+        const bottomLight = skyAt(SKY_BOTTOM_LIGHT, light);
+        skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} ${a}%, ${mid} ${(a + b) / 2}%, ${bottomLight} ${b}%, ${bottom} 100%)`;
       }
       // the sun rises straight up from behind the mountain between stage 2 and stage 5, brightening as it goes
       // target height from the climb (linear), approached at a constant speed so the sun glides evenly
@@ -423,7 +429,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
           ref={skyRef}
           aria-hidden="true"
           className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10"
-          style={{ background: "linear-gradient(to bottom, rgb(236,132,72) 0%, rgb(236,132,72) 22%, rgb(28,64,122) 40%, rgb(28,64,122) 100%)" }}
+          style={{ background: "linear-gradient(to bottom, rgb(236,132,72) 0%, rgb(236,132,72) 12%, rgb(196,104,112) 37%, rgb(76,118,178) 62%, rgb(28,64,122) 100%)" }}
         />
         <Header title={title} description={description} />
 
