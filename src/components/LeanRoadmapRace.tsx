@@ -15,6 +15,8 @@ export interface RoadmapStage {
 }
 
 const START = 2;
+const SUN_DX = 170; // final sun position: px to the right of the summit
+const SUN_DY = 70; // and px above it (level with the top of the flag pole)
 const SUN_SPEED = 0.00012; // share of the sunrise per ms: an even glide of about 8 s from ridge to sky
 const SUMMIT_HOLD_MS = 2800; // celebrate on the summit, then start a new climb from the foot
 const BASE_SPEED = 0.0034; // % of track per ms when nobody scrolls: a calm jog, about 5 s per stage
@@ -28,9 +30,9 @@ const pad = (n: number) => String(n).padStart(2, "0");
 type Geo = { w: number; h: number; bleed: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
 // bleed: distance from the box's right edge to the window's right edge
 function buildGeo(w: number, h: number, bleed = 0): Geo {
-  // 15% larger than the fitted size (capped by the box height), sitting on the bottom edge and shifted right
-  // so that about a quarter of the mountain runs off the right edge of the window
-  const k = Math.min(1.15 * 0.9 * Math.min((0.88 * w) / ART.w, h / ART.h), h / ART.h);
+  // sits on the bottom edge, shifted right so that about a quarter of the mountain runs off the window
+  // as tall as the box allows (room above the peak for the flag), but never so wide that it crowds the labels
+  const k = Math.max(0.01, Math.min((h - 110) / ART.h, (0.9 * w + bleed) / (0.75 * ART.w)));
   const ox = w + bleed - 0.75 * ART.w * k, oy = h - ART.h * k;
   const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
@@ -285,10 +287,10 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         // start with the top of the sun just peeking over the ridge behind it, end at its place above the flag
         const sR = ART.h * g0.k;
         const peakPt = g0.pts[g0.pts.length - 1];
-        const sunX = Math.min(g0.w + g0.bleed - sR * 0.12, peakPt[0] + sR * 0.3);
+        const sunX = Math.min(g0.w + g0.bleed - 70, peakPt[0] + SUN_DX);
         const ri = Math.max(0, Math.min(ART.ridge.length - 1, Math.round((sunX - g0.ox) / g0.k / ART.ridgeStep)));
         const startY = g0.oy + ART.ridge[ri] * g0.k + sR * 0.085 * 0.35;
-        const endY = peakPt[1] - 112;
+        const endY = peakPt[1] - SUN_DY;
         // before stage 2 it stays fully hidden behind the mountain
         if (!sunFading) hideT = Math.max(0, hideT - (cur >= g0.cp[1] ? sunStep * 3 : 0));
         const hidden = hideT * sR * 0.085 * 1.8;
@@ -411,7 +413,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
   return (
     <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
-      <div ref={stickyRef} className="isolate sticky top-0 h-[100dvh] flex flex-col max-w-[1600px] mx-auto px-8 xl:px-12 pt-10 pb-8">
+      <div ref={stickyRef} className="isolate sticky top-0 h-[100dvh] flex flex-col max-w-[1400px] mx-auto px-8 xl:px-12 pt-10 pb-8">
         <div
           ref={skyRef}
           aria-hidden="true"
@@ -479,7 +481,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </radialGradient>
                 </defs>
                 {/* sun */}
-                <g transform={`translate(${Math.min(w + geo.bleed - sunR * 0.12, peak[0] + sunR * 0.3)} ${peak[1] - 112})`}>
+                <g transform={`translate(${Math.min(w + geo.bleed - 70, peak[0] + SUN_DX)} ${peak[1] - SUN_DY})`}>
                 <g ref={sunRiseRef}>
                 <g ref={sunRef}>
                   <circle r={sunR * 0.3} fill="url(#sun)" />

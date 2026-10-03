@@ -155,9 +155,9 @@ export default function ConsultingPage() {
         <ButtonLink href="/lien-he">Đặt lịch khảo sát hiện trạng</ButtonLink>
       </PageHero>
 
-      {/* quick links to the services, aligned with the wide service rows below */}
+      {/* quick links to the services, aligned with the header (1400px) */}
       <div className="bg-white px-4 sm:px-6 pt-14 lg:pt-16">
-      <nav aria-label="Các dịch vụ tư vấn" className="max-w-[1600px] mx-auto xl:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <nav aria-label="Các dịch vụ tư vấn" className="max-w-[1400px] mx-auto sm:px-2 xl:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {pillars.map((p) => (
           <a
             key={p.id}
@@ -194,7 +194,7 @@ export default function ConsultingPage() {
       {/* Pillars: alternating image / text */}
       {pillars.map((pillar, idx) => (
         <section key={pillar.id} id={pillar.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
-          <div className={`max-w-[1600px] mx-auto grid grid-cols-1 gap-x-14 xl:px-6 gap-y-8 lg:gap-y-0 lg:items-center ${idx % 2 ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"}`}>
+          <div className={`max-w-[1400px] mx-auto grid grid-cols-1 gap-x-14 sm:px-2 xl:px-6 gap-y-8 lg:gap-y-0 lg:items-center ${idx % 2 ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"}`}>
             {/* landscape 4:3 image in 5/12 of the width, about as tall as the intro next to it */}
             <div
               className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${idx % 2 ? "lg:col-start-2" : "lg:col-start-1"}`}
