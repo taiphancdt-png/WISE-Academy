@@ -475,7 +475,6 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   <circle r={sunR * 0.3} fill="url(#sun)" />
                   {/* soft blurred glow around the sun */}
                   <circle ref={haloRef} r={sunR * 0.085 * 1.9} fill="#FFC79A" filter="url(#sunBlur)" />
-                  <circle r={sunR * 0.085 * 1.18} fill="#FFD9B8" opacity={0.55} />
                   <circle ref={sunCoreRef} r={sunR * 0.085} fill="#E24A08" />
                 </g>
                 </g>
