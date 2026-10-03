@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import PhraseKeeper from "@/components/PhraseKeeper";
 import { OG_IMAGE, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
 // Be Vietnam Pro: a sans designed for Vietnamese, so diacritics sit correctly at every weight.
@@ -75,6 +76,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <ScrollReveal />
+        <PhraseKeeper />
 
         {/* Automatic Vietnamese → English / Chinese translation (toggled by LanguageSwitcher via the googtrans cookie) */}
         <div id="google_translate_element" className="hidden" />
