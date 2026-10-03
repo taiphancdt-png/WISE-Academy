@@ -161,25 +161,6 @@ export default function AboutPage() {
           title={<>Bốn giá trị cốt lõi <span className="text-[#F76011]">W · I · S · E</span></>}
           description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
         />
-        {/* Branch (desktop): one stem from the heading splits into four, one drop per value card */}
-        <div aria-hidden="true" className="hidden lg:block relative h-16 -mt-6">
-          <span className="absolute left-1/2 top-0 -translate-x-1/2 w-3 h-3 rounded-full bg-[#002F5B]" />
-          <span className="absolute left-1/2 top-1.5 h-[30px] w-[3px] -translate-x-1/2 bg-[#002F5B]" />
-          <span
-            className="absolute top-[36px] h-[3px] bg-[#002F5B] rounded-full"
-            style={{ left: "calc((100% - 4.5rem) / 8)", right: "calc((100% - 4.5rem) / 8)" }}
-          />
-          {values.map((v, i) => (
-            <span
-              key={v.letter}
-              className="absolute top-[36px] bottom-0 w-[3px] -translate-x-1/2"
-              style={{
-                left: `calc((100% - 4.5rem) / 4 * ${i} + 1.5rem * ${i} + (100% - 4.5rem) / 8)`,
-                background: VALUE_COLORS[i % VALUE_COLORS.length],
-              }}
-            />
-          ))}
-        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, i) => {
             const color = VALUE_COLORS[i % VALUE_COLORS.length];
