@@ -192,7 +192,15 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="Phương pháp luận RGPDCA"
           title={<>Phương pháp tiếp cận <span className="text-[#F76011]">6 giai đoạn</span></>}
-          description="Mỗi doanh nghiệp có một thực trạng vận hành riêng. WISE Academy áp dụng phương pháp tiếp cận 6 bước khoa học và thực tế: đánh giá, thiết kế, triển khai, đo lường, chuẩn hóa và duy trì, từ đó đề xuất lộ trình đồng hành phù hợp giữa thực trạng và mục tiêu của doanh nghiệp."
+          description={
+            <>
+              Mỗi doanh nghiệp có một thực trạng vận hành riêng.
+              <br className="hidden sm:block" /> WISE Academy áp dụng phương pháp tiếp cận 6 bước khoa học và thực tế:
+              <br className="hidden sm:block" /> đánh giá, thiết kế, triển khai, đo lường, chuẩn hóa và duy trì,
+              <br className="hidden sm:block" /> từ đó đề xuất lộ trình đồng hành phù hợp
+              <br className="hidden sm:block" /> giữa thực trạng và mục tiêu của doanh nghiệp.
+            </>
+          }
         />
         <RgpdcaLoop steps={rgpdcaDetails} />
       </Section>
