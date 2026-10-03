@@ -11,6 +11,8 @@ const clients = [
   { name: "Pou Chen (PCD)", logo: "pcd", w: 56, h: 55 },
   { name: "Tỷ Bách", logo: "ty-bach", w: 62, h: 47 },
   { name: "AG Samho", logo: "samho", w: 56, h: 47 },
+  { name: "OCEANVET - Thuốc Thú Y Đại Dương", logo: "oceanvet", w: 164, h: 44 },
+  { name: "Victory Group", logo: "victory", w: 92, h: 64 },
 ];
 
 // Infinite single-row marquee of client / partner logos (list is duplicated for a seamless loop).
