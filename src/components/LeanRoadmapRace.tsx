@@ -28,7 +28,8 @@ const pad = (n: number) => String(n).padStart(2, "0");
 type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
 function buildGeo(w: number, h: number): Geo {
   // as large as the box allows, sitting on its bottom edge and its right edge (labels use the space on the left)
-  const k = Math.min((0.88 * w) / ART.w, h / ART.h); // keep at least 12% of the width free on the left for labels
+  // 90% of the largest size that fits (leaving room on the left for labels); still sits on the bottom edge
+  const k = 0.9 * Math.min((0.88 * w) / ART.w, h / ART.h);
   const ox = w - ART.w * k, oy = h - ART.h * k;
   const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
