@@ -9,6 +9,8 @@ import { useEffect } from "react";
 const PHRASES = [
   // names and fixed terms
   "WISE Academy", "chuẩn quốc tế", "quốc tế", "Việt Nam", "toàn cầu", "ủy quyền", "uỷ quyền", "chứng chỉ", "Đai Vàng", "Đai Xanh", "Đai Đen",
+  "Master Black Belt", "Black Belt", "Green Belt", "Yellow Belt", "White Belt", "LSSI Global", "face to face",
+  "virtual live", "Training Within Industry", "Value Stream Mapping", "Total Productive Maintenance",
   "Lean Six Sigma", "Six Sigma", "Lean 4.0", "Ngôi nhà Lean", "Train-the-Trainer",
   "chuyển đổi số", "nguồn nhân lực", "chuỗi giá trị", "dòng giá trị", "chuỗi cung ứng", "cải tiến liên tục",
   "văn hóa", "văn hoá", "tại hiện trường", "Nhà máy Lean mới", "Hệ thống Quản lý Lean", "Lean & Chuyển đổi số", "Hoshin Kanri", "Leader Standard Work", "Poka-Yoke",
