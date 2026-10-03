@@ -201,6 +201,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let skyP = 0; // smoothed height reached, drives the dawn sky
     let sunT = 0; // sun height 0..1 (from the ridge to its place above the flag)
     let hideT = 1; // 1 = sunk fully behind the mountain (before stage 2)
+    let sunFade = 1; // opacity used to make the sun vanish when a new climb starts
+    let sunFading = false;
     let climbs = 1;
     figRef.current?.setPose(POSES.stand);
 
@@ -256,7 +258,19 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       // target height from the climb (linear), approached at a constant speed so the sun glides evenly
       const sunTarget = Math.max(0, Math.min(1, (cur / 100 - g0.cp[1] / 100) / ((g0.cp[4] - g0.cp[1]) / 100)));
       const sunStep = SUN_SPEED * dt;
-      sunT += Math.max(-sunStep, Math.min(sunStep, sunTarget - sunT));
+      // a new climb: the sun does not set, it fades out and starts again behind the mountain
+      if (sunTarget < sunT - 0.05) sunFading = true;
+      if (sunFading) {
+        sunFade = Math.max(0, sunFade - dt / 450);
+        if (sunFade === 0) {
+          sunT = 0;
+          hideT = 1;
+          sunFading = false;
+        }
+      } else {
+        sunFade = Math.min(1, sunFade + dt / 450);
+        sunT += Math.max(0, Math.min(sunStep, sunTarget - sunT));
+      }
       const rise = sunT;
       if (sunRiseRef.current) {
         // start with the top of the sun just peeking over the ridge behind it, end at its place above the flag
@@ -267,10 +281,10 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         const startY = g0.oy + ART.ridge[ri] * g0.k + sR * 0.085 * 0.35;
         const endY = peakPt[1] - 112;
         // before stage 2 it stays fully hidden behind the mountain
-        hideT += Math.max(-sunStep * 3, Math.min(sunStep * 3, (cur >= g0.cp[1] ? 0 : 1) - hideT));
+        if (!sunFading) hideT = Math.max(0, hideT - (cur >= g0.cp[1] ? sunStep * 3 : 0));
         const hidden = hideT * sR * 0.085 * 1.8;
         sunRiseRef.current.setAttribute("transform", `translate(0 ${((1 - rise) * Math.max(0, startY - endY) + hidden).toFixed(1)})`);
-        sunRiseRef.current.style.opacity = String(0.7 + 0.3 * rise);
+        sunRiseRef.current.style.opacity = String((0.7 + 0.3 * rise) * sunFade);
         // deep orange as it breaks the ridge, light orange high in the sky; the glow grows as it rises
         sunCoreRef.current?.setAttribute("fill", mix([226, 74, 8], [255, 186, 118], rise));
         if (haloRef.current) haloRef.current.style.opacity = String(0.45 + 0.55 * rise);
