@@ -15,7 +15,7 @@ const pillarImages = [
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
-  description: "5 dịch vụ chính của WISE Academy: chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực, Đào tạo & Huấn luyện Lean Six Sigma.",
+  description: "5 dịch vụ chính của WISE Academy: xây dựng/chuyển đổi Hệ thống Quản lý Lean, thiết kế Nhà máy Lean mới, tích hợp Lean & Chuyển đổi số, hệ thống Đào tạo & Phát triển nguồn nhân lực, Đào tạo & Huấn luyện Lean Six Sigma.",
   alternates: { canonical: "/dich-vu-tu-van" },
 };
 
@@ -42,7 +42,7 @@ export default function ConsultingPage() {
   const pillars = [
     {
       id: "01",
-      title: "Tư vấn chuyển đổi Hệ thống Quản lý Lean",
+      title: "Tư vấn xây dựng/chuyển đổi Hệ thống Quản lý Lean",
       subtitle: "Từ mô hình quản lý truyền thống sang hệ thống Lean, nền tảng của vận hành xuất sắc và tăng trưởng bền vững",
       desc: "WISE Academy đồng hành cùng doanh nghiệp sản xuất FDI và nội địa trên hai trục: Chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và Chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức). Lean không chỉ được áp dụng như công cụ mà trở thành triết lý quản lý dài hạn, triển khai theo khung 5 module lấy cảm hứng từ Hệ thống Sản xuất Toyota (Ngôi nhà Lean).",
       listTitle: "Phạm vi tư vấn",
