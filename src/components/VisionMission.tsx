@@ -9,24 +9,23 @@ export interface VisionMissionItem {
   className: string; // background, text colour and shadow of the card
 }
 
-const D = 132; // circle diameter
-const GAP = 32;
+const D = 168; // the centre circle
+const GAP = 210; // room between the two cards for the circle
 const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
 };
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
-// Two circles side by side in the middle, each showing only the WISE "W" mark. As the section scrolls up into
-// view they grow into the Vision card (sliding left) and the Mission card (sliding right).
+// One decorated circle in the middle with the WISE "W" mark. As the section scrolls up into view the Vision card
+// slides out of it to the left and the Mission card to the right.
 export default function VisionMission({ items }: { items: [VisionMissionItem, VisionMissionItem] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const innerRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const markRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
 
-  // card width and the height of the taller card's content
+  // card width and the height of the taller card
   useEffect(() => {
     const wrap = wrapRef.current;
     if (!wrap) return;
@@ -34,11 +33,13 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       const w = wrap.clientWidth;
       const cw = (w - GAP) / 2;
       let h = 0;
-      innerRefs.current.forEach((el) => {
+      boxRefs.current.forEach((el) => {
         if (!el) return;
         el.style.width = `${cw}px`;
+        el.style.height = "auto";
         h = Math.max(h, el.scrollHeight);
       });
+      boxRefs.current.forEach((el) => el && (el.style.height = `${h}px`));
       setSize({ w, h: Math.max(h, D) });
     };
     measure();
@@ -52,22 +53,17 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     if (!wrap || !size.w) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cw = (size.w - GAP) / 2;
-    const H = size.h;
     const apply = (t: number) => {
       boxRefs.current.forEach((box, i) => {
         if (!box) return;
-        const x0 = size.w / 2 + (i === 0 ? -D * 0.9 : -D * 0.1); // circles overlap a little in the middle
-        const x1 = i === 0 ? 0 : cw + GAP;
-        box.style.left = `${lerp(x0, x1, t)}px`;
-        box.style.top = `${lerp((H - D) / 2, 0, t)}px`;
-        box.style.width = `${lerp(D, cw, t)}px`;
-        box.style.height = `${lerp(D, H, t)}px`;
-        box.style.borderRadius = `${lerp(D / 2, 16, t)}px`;
-        const inner = innerRefs.current[i];
-        if (inner) inner.style.opacity = String(smooth(0.6, 1, t));
-        const mark = markRefs.current[i];
-        if (mark) mark.style.opacity = String(1 - smooth(0.05, 0.45, t));
+        // from tucked behind the circle (centre) out to its own side
+        const dir = i === 0 ? 1 : -1;
+        const dx = dir * (cw / 2 + GAP / 2) * (1 - t);
+        box.style.transform = `translateX(${dx.toFixed(1)}px) scale(${(0.7 + 0.3 * t).toFixed(3)})`;
+        box.style.opacity = String(smooth(0, 0.35, t));
       });
+      if (circleRef.current) circleRef.current.style.transform = `translate(-50%, -50%) scale(${(1.08 - 0.08 * t).toFixed(3)})`;
+      if (ringRef.current) ringRef.current.style.transform = `rotate(${(t * 180).toFixed(1)}deg)`;
     };
     if (reduce) {
       apply(1);
@@ -78,8 +74,8 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     const frame = () => {
       const r = wrap.getBoundingClientRect();
       const y = (r.top + r.height / 2) / window.innerHeight; // 0 = top of the screen, 1 = bottom
-      const target = smooth(0.75, 0.5, y);
-      t += (target - t) * 0.18;
+      const target = smooth(0.78, 0.5, y);
+      t += (target - t) * 0.16;
       if (Math.abs(target - t) < 0.001) t = target;
       apply(t);
       raf = requestAnimationFrame(frame);
@@ -106,7 +102,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
 
   return (
     <>
-      {/* desktop: circles that open into the two cards */}
+      {/* desktop: the circle stays in the middle, the two cards slide out of it */}
       <div ref={wrapRef} className="hidden md:block relative" style={{ height: size.h || 320 }}>
         {items.map((it, i) => (
           <div
@@ -114,29 +110,24 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
             ref={(el) => {
               boxRefs.current[i] = el;
             }}
-            className={`absolute overflow-hidden ${it.className}`}
-            style={{ left: "50%", top: 0, width: D, height: D, borderRadius: D / 2 }}
+            className={`absolute top-0 rounded-2xl p-8 lg:p-10 will-change-transform ${it.className}`}
+            style={{ [i === 0 ? "left" : "right"]: 0, opacity: 0 } as React.CSSProperties}
           >
-            <img
-              ref={(el) => {
-                markRefs.current[i] = el;
-              }}
-              src="/images/brand/logo-mark-white.png"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-1/2 w-16 -translate-x-1/2 -translate-y-1/2"
-            />
-            <div
-              ref={(el) => {
-                innerRefs.current[i] = el;
-              }}
-              className="absolute left-0 top-0 p-8 sm:p-10"
-              style={{ opacity: 0 }}
-            >
-              {content(it)}
-            </div>
+            {content(it)}
           </div>
         ))}
+
+        {/* the decorated centre circle with the W mark */}
+        <div ref={circleRef} className="absolute left-1/2 top-1/2 z-10" style={{ width: D, height: D, transform: "translate(-50%, -50%)" }} aria-hidden="true">
+          <div className="absolute -inset-5 rounded-full bg-[radial-gradient(circle,rgba(247,96,17,0.18),transparent_70%)]" />
+          <div ref={ringRef} className="absolute inset-0 rounded-full p-[3px] bg-[conic-gradient(from_0deg,#002F5B,#F76011,#FFB27A,#002F5B)]">
+            <div className="h-full w-full rounded-full bg-white" />
+          </div>
+          <div className="absolute inset-[10px] rounded-full border border-dashed border-[#002F5B]/20" />
+          <div className="absolute inset-[18px] rounded-full bg-white shadow-[0_18px_40px_-16px_rgba(0,47,91,0.45)] flex items-center justify-center">
+            <img src="/images/brand/logo-mark.png" alt="" className="w-[62%]" />
+          </div>
+        </div>
       </div>
 
       {/* mobile: the two cards stacked */}
