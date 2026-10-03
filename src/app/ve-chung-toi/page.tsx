@@ -30,7 +30,7 @@ export default function AboutPage() {
       letter: "W",
       word: "WORKABLE",
       title: "Áp dụng được\nHiệu quả thật",
-      desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phải đơn giản, thực tế và áp dụng được ngay tại nơi làm việc."
+      desc: "Chúng tôi ưu tiên tạo ra giá trị đo lường được cho doanh nghiệp: giải pháp phù hợp, thực tế và áp dụng được ngay tại nơi làm việc."
     },
     {
       letter: "I",
