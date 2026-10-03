@@ -153,7 +153,7 @@ export default function AboutPage() {
               className: "bg-gradient-to-br from-[#F79A5C] to-[#EC7428] text-white",
               body: (
                 <p className="text-white">
-                  WISE Academy đồng hành cùng doanh nghiệp sản xuất, logistics và dịch vụ <strong className="text-[#002F5B] underline decoration-[#002F5B]/40 underline-offset-4">phát triển năng lực nội tại và tạo dựng giá trị bền vững</strong>, bằng phương pháp Lean lấy con người làm trung tâm, kết hợp chuyên môn sâu rộng và kinh nghiệm thực chiến <br className="hidden lg:block" />của đội ngũ chuyên gia.
+                  WISE Academy đồng hành cùng doanh nghiệp sản xuất, logistics và dịch vụ <strong className="text-[#002F5B]">phát triển năng lực nội tại và tạo dựng giá trị bền vững</strong>, bằng phương pháp Lean lấy con người làm trung tâm, kết hợp chuyên môn sâu rộng và kinh nghiệm thực chiến <br className="hidden lg:block" />của đội ngũ chuyên gia.
                 </p>
               ),
             },
