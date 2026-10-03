@@ -191,12 +191,10 @@ export default function ConsultingPage() {
       {/* Pillars: alternating image / text */}
       {pillars.map((pillar, idx) => (
         <section key={pillar.id} id={pillar.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 lg:gap-y-0">
-            {/* portrait 3:4 image, as tall as the intro next to it */}
+          <div className={`max-w-7xl mx-auto grid grid-cols-1 gap-x-14 gap-y-8 lg:gap-y-0 lg:items-center ${idx % 2 ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"}`}>
+            {/* landscape 4:3 image in 5/12 of the width, about as tall as the intro next to it */}
             <div
-              className={`relative w-full max-w-xs mx-auto aspect-[3/4] lg:max-w-none lg:mx-0 lg:w-auto lg:h-full rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${
-                idx % 2 ? "lg:col-start-2 lg:justify-self-start" : "lg:col-start-1 lg:justify-self-end"
-              }`}
+              className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${idx % 2 ? "lg:col-start-2" : "lg:col-start-1"}`}
             >
               <img src={pillarImages[idx]} alt={pillar.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
