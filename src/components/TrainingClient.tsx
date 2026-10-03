@@ -8,7 +8,6 @@ import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
 import LeanHouse from "@/components/LeanHouse";
 
-const ALL = "all";
 // LSSI programs live on their own page (/dao-tao-lean-six-sigma); this page lists WISE Academy's own programs.
 const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
 const PRACTITIONER_GROUP = "Chuyên viên thực hành Lean";
@@ -33,14 +32,14 @@ const GROUPS = [
   },
   {
     id: "Chương trình cho lãnh đạo",
-    short: "Lãnh đạo",
-    title: "Chương trình cho lãnh đạo",
+    short: "Lãnh đạo Lean",
+    title: "Chương trình Lãnh đạo Lean",
     description: "Hoạch định chiến lược, quản trị bằng chỉ số, chẩn đoán vận hành và phát triển năng lực đội ngũ quản lý.",
   },
   {
     id: "Lean 4.0 & tích hợp AI",
-    short: "Lean 4.0 & AI",
-    title: "Chương trình Lean 4.0, tích hợp AI",
+    short: "Lean 4.0 và tích hợp AI",
+    title: "Chương trình Lean 4.0 và tích hợp AI",
     description: "Kết hợp tư duy tinh gọn với dữ liệu thời gian thực, IoT và AI để vận hành thông minh - từ nhà máy đến chuỗi cung ứng và dịch vụ.",
   },
 ];
@@ -219,19 +218,18 @@ function CourseGrid({ courses }: { courses: Course[] }) {
 export default function TrainingClient({ courses: allCourses }: { courses: Course[] }) {
   // International LSS certification is covered on /dao-tao-lean-six-sigma, so that group is not listed here.
   const courses = allCourses.filter((c) => c.category !== LSSI_GROUP);
-  const [activeGroup, setActiveGroup] = useState(ALL);
+  const [activeGroup, setActiveGroup] = useState(GROUPS[0].id);
   const [searchQuery, setSearchQuery] = useState("");
 
   const countOf = (id: string) => courses.filter((c) => c.category === id).length;
-  const chips = [{ id: ALL, name: `Tất cả (${courses.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
+  const chips = GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }));
 
   const q = searchQuery.trim().toLowerCase();
-  const filteredCourses = courses.filter(
-    (c) =>
-      (activeGroup === ALL || c.category === activeGroup) &&
-      (!q || c.title.toLowerCase().includes(q) || c.summary.toLowerCase().includes(q))
+  const activeInfo = GROUPS.find((g) => g.id === activeGroup) ?? GROUPS[0];
+  // three groups, one shown at a time; a search looks across all of them
+  const filteredCourses = courses.filter((c) =>
+    q ? c.title.toLowerCase().includes(q) || c.summary.toLowerCase().includes(q) : c.category === activeGroup
   );
-  const showGrouped = activeGroup === ALL && !q;
 
   return (
     <div className="bg-[#F8F9FA]">
@@ -278,57 +276,23 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
 
       <section className="py-14 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          {showGrouped ? (
-            <div className="space-y-20">
-              {GROUPS.map((g, i) => {
-                const list = courses.filter((c) => c.category === g.id);
-                if (list.length === 0) return null;
-                return (
-                  <div key={g.id} id={`nhom-${i + 1}`} className="scroll-mt-40">
-                    <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-5">
-                      <div className="max-w-3xl">
-                        <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{g.title}</h2>
-                        <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{g.description}</p>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setActiveGroup(g.id)}
-                        className="self-start sm:self-auto shrink-0 text-sm font-semibold text-[#C9500E] hover:underline"
-                      >
-                        Chỉ xem nhóm này
-                      </button>
-                    </div>
-                    {g.id === PRACTITIONER_GROUP ? (
-                      <PractitionerSection courses={list} />
-                    ) : (
-                      <CourseGrid courses={list} />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          ) : activeGroup === PRACTITIONER_GROUP && !q ? (
+          {!q ? (
             <div className="space-y-8">
               <div className="max-w-3xl">
-                <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{GROUPS[0].title}</h2>
-                <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[0].description}</p>
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{activeInfo.title}</h2>
+                <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{activeInfo.description}</p>
               </div>
-              <PractitionerSection courses={filteredCourses} />
+              {activeGroup === PRACTITIONER_GROUP ? <PractitionerSection courses={filteredCourses} /> : <CourseGrid courses={filteredCourses} />}
             </div>
           ) : (
             <>
               <p className="mb-8 text-sm text-[#486581]" aria-live="polite">
-                Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chương trình
-                {activeGroup !== ALL && (
-                  <>
-                    {" "}trong nhóm <strong className="text-[#002F5B]">{GROUPS.find((g) => g.id === activeGroup)?.title}</strong>
-                  </>
-                )}
+                Đang hiển thị <strong className="text-[#002F5B]">{filteredCourses.length}</strong> chương trình phù hợp với từ khóa tìm kiếm
               </p>
               {filteredCourses.length === 0 ? (
                 <div className="text-center py-20 text-[#486581]">
                   <p className="text-base font-semibold text-[#002F5B]">Không tìm thấy chương trình phù hợp</p>
-                  <p className="mt-2 text-sm">Thử từ khóa khác hoặc chọn &ldquo;Tất cả&rdquo;.</p>
+                  <p className="mt-2 text-sm">Thử từ khóa khác.</p>
                 </div>
               ) : (
                 <CourseGrid courses={filteredCourses} />
