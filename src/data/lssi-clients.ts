@@ -1,5 +1,7 @@
 // Organisations featured on leansixsigmainstitute.org as having trained with LSSI, grouped by industry.
-// Logos are taken from the LSSI website; `height` (px) balances the visual weight of wide vs. square marks.
+// Most logos are taken from the LSSI website; a few (noted below) are well-known global brands LSSI lists
+// by name only (no logo file on their site), so the logo is sourced from the brand's own site instead.
+// `height` (px) balances the visual weight of wide vs. square marks.
 export interface LssiClientGroup {
   industry: string;
   brands: { name: string; logo: string; height: number }[];
@@ -14,6 +16,9 @@ export const LSSI_CLIENTS: LssiClientGroup[] = [
       { name: "Continental", logo: "/images/lssi/clients/continental.webp", height: 28 },
       { name: "Caterpillar", logo: "/images/lssi/clients/cat.webp", height: 48 },
       { name: "LEGO", logo: "/images/lssi/clients/lego.webp", height: 56 },
+      { name: "BOSCH", logo: "/images/lssi/clients/bosch.svg", height: 22 },
+      { name: "Bridgestone", logo: "/images/lssi/clients/bridgestone.svg", height: 13 },
+      { name: "Holcim", logo: "/images/lssi/clients/holcim.svg", height: 38 },
     ],
   },
   {
@@ -38,14 +43,26 @@ export const LSSI_CLIENTS: LssiClientGroup[] = [
       { name: "Jose Cuervo", logo: "/images/lssi/clients/jose-cuervo.svg", height: 32 },
       { name: "NatureSweet", logo: "/images/lssi/clients/naturesweet.webp", height: 45 },
       { name: "Sunkist", logo: "/images/lssi/clients/sunkist.webp", height: 56 },
+      { name: "Corona", logo: "/images/lssi/clients/corona.jpg", height: 44 },
     ],
   },
   {
     industry: "Y tế & dược phẩm",
     brands: [
       { name: "Pfizer", logo: "/images/lssi/clients/pfizer.webp", height: 41 },
+      { name: "Johnson & Johnson", logo: "/images/lssi/clients/jnj.svg", height: 10 },
+      { name: "Abbott", logo: "/images/lssi/clients/abbott.png", height: 17 },
+      { name: "Kaiser Permanente", logo: "/images/lssi/clients/kaiser.jpg", height: 28 },
       { name: "Allen Parish Community Healthcare", logo: "/images/lssi/clients/allen-parish.webp", height: 42 },
       { name: "Western University of Health Sciences", logo: "/images/lssi/clients/western-university.webp", height: 56 },
+    ],
+  },
+  {
+    industry: "Dịch vụ tài chính",
+    brands: [
+      { name: "BBVA", logo: "/images/lssi/clients/bbva.png", height: 28 },
+      { name: "HSBC", logo: "/images/lssi/clients/hsbc.svg", height: 28 },
+      { name: "Santander", logo: "/images/lssi/clients/santander.png", height: 28 },
     ],
   },
   {
