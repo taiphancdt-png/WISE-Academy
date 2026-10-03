@@ -143,7 +143,7 @@ export default function AboutPage() {
               className: "bg-gradient-to-br from-[#3A78B5] to-[#1C5690] text-white",
               body: (
                 <p className="text-white/90">
-                  WISE Academy định vị là <strong className="text-[#FFC79E]">đơn vị dẫn đầu</strong> trong đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, đồng hành cùng các doanh nghiệp sản xuất, logistics và dịch vụ trên hành trình tối ưu hóa vận hành, chuyển đổi số và nâng tầm năng lực cạnh tranh quốc tế.
+                  WISE Academy hướng tới trở thành <strong className="text-[#FFC79E]">đơn vị dẫn đầu</strong> về đào tạo và tư vấn Lean ứng dụng tại Việt Nam và khu vực Đông Nam Á, nơi doanh nghiệp tìm đến để kiến tạo năng lực vận hành xuất sắc, hình thành văn hóa cải tiến liên tục và nâng tầm năng lực cạnh tranh trên trường quốc tế.
                 </p>
               ),
             },
@@ -153,7 +153,7 @@ export default function AboutPage() {
               className: "bg-gradient-to-br from-[#F79A5C] to-[#EC7428] text-white",
               body: (
                 <p className="text-white">
-                  WISE Academy khai thác triệt để mọi cơ hội để <strong className="text-white underline decoration-white/40 underline-offset-4">phát triển năng lực nội tại và tạo giá trị bền vững</strong> cho đối tác, dựa trên nền tảng chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia Lean Six Sigma từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
+                  WISE Academy đồng hành cùng doanh nghiệp sản xuất, logistics và dịch vụ <strong className="text-white underline decoration-white/40 underline-offset-4">phát triển năng lực nội tại và tạo dựng giá trị bền vững</strong>, bằng phương pháp Lean lấy con người làm trung tâm, kết hợp chuyên môn sâu rộng và kinh nghiệm thực chiến của đội ngũ chuyên gia từng giữ cương vị quản lý cấp cao tại các tập đoàn sản xuất lớn.
                 </p>
               ),
             },
