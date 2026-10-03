@@ -146,8 +146,12 @@ export default function CoreValuesBloom({
   );
 
   const card = (v: CoreValue, i: number, extra = "") => (
-    <div className={`rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
-      <div className="flex items-center gap-3">
+    <div className={`relative overflow-hidden rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
+      {/* big see-through letter in the corner */}
+      <span aria-hidden="true" className="pointer-events-none absolute -right-2 -bottom-10 select-none text-[140px] font-extrabold leading-none" style={{ color: PETAL[i], opacity: 0.1 }}>
+        {v.letter}
+      </span>
+      <div className="relative flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-lg font-extrabold text-white" style={{ backgroundColor: PETAL[i] }}>
           {v.letter}
         </span>
@@ -155,8 +159,8 @@ export default function CoreValuesBloom({
           {v.word}
         </span>
       </div>
-      <h3 className="mt-3 text-lg font-semibold leading-snug text-[#002F5B] whitespace-pre-line">{v.title}</h3>
-      <p className="mt-2 text-[13px] xl:text-sm leading-relaxed text-[#486581]">{v.desc}</p>
+      <h3 className="relative mt-3 text-lg font-semibold leading-snug text-[#002F5B] whitespace-pre-line">{v.title}</h3>
+      <p className="relative mt-2 text-[13px] xl:text-sm leading-relaxed text-[#486581]">{v.desc}</p>
     </div>
   );
 
