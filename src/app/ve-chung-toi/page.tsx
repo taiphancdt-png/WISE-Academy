@@ -42,7 +42,7 @@ export default function AboutPage() {
       letter: "S",
       word: "SHARE",
       title: "Chia sẻ kinh nghiệm\nKết nối chuyên gia",
-      desc: "Chúng tôi chia sẻ kinh nghiệm vận hành thật và kết nối doanh nghiệp với đội ngũ chuyên gia giàu kinh nghiệm trong và ngoài nước, cùng đóng góp giá trị chung cho cộng đồng doanh nghiệp."
+      desc: "Chúng tôi chia sẻ kinh nghiệm vận hành thật và kết nối doanh nghiệp với đội ngũ chuyên gia giàu kinh nghiệm, cùng đóng góp giá trị chung cho cộng đồng doanh nghiệp."
     },
     {
       letter: "E",
