@@ -94,7 +94,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     };
   }, [size]);
 
-  // mirror: the left card aligns to the right (towards the circle), the right card to the left
+  // mirror: each card aligns to its outer edge (left card to the left, right card to the right)
   const content = (it: VisionMissionItem, mirror = false) => (
     <div className={mirror ? "lg:text-right" : ""}>
       <span className={`w-12 h-12 rounded-full bg-white/10 flex items-center justify-center ${mirror ? "lg:ml-auto" : ""}`}>{it.icon}</span>
@@ -124,7 +124,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
                 maskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
               }}
             >
-              {content(it, i === 0)}
+              {content(it, i === 1)}
             </div>
           </div>
         ))}
