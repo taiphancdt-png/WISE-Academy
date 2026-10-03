@@ -2,6 +2,7 @@ import React from "react";
 import { ShieldCheck, Target } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import RgpdcaLoop from "@/components/RgpdcaLoop";
+import CoreValuesBloom from "@/components/CoreValuesBloom";
 import PartnerLogos from "@/components/PartnerLogos";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
@@ -12,9 +13,6 @@ export const metadata = {
 };
 
 // W · I · S · E accent colors (brand navy / orange family). Orange shades used here pass contrast for large text.
-const VALUE_COLORS = ["#002F5B", "#E8590C", "#073866", "#C9500E"];
-// Darker variants for the small uppercase labels so they meet AA contrast on white.
-const VALUE_TEXT = ["#002F5B", "#B5470C", "#073866", "#A8430B"];
 
 // Card placement and outgoing arrow for each RGPDCA step on desktop (3 columns × 2 rows, clockwise loop).
 
@@ -158,38 +156,12 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Core values - each pillar with its own accent */}
-      <Section>
-        <SectionHeader
-          eyebrow="Giá trị cốt lõi"
-          title={<>Bốn giá trị cốt lõi <span className="text-[#F76011]">W · I · S · E</span></>}
-          description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, i) => {
-            const color = VALUE_COLORS[i % VALUE_COLORS.length];
-            return (
-              <div key={v.letter} className="card-soft relative overflow-hidden p-7 pt-8" style={{ borderTop: `5px solid ${color}` }}>
-                <span
-                  aria-hidden="true"
-                  className="absolute -right-3 -bottom-8 text-[140px] font-extrabold leading-none select-none"
-                  style={{ color, opacity: 0.08 }}
-                >
-                  {v.letter}
-                </span>
-                <span className="relative w-14 h-14 rounded-2xl text-white flex items-center justify-center font-extrabold text-2xl shadow-md" style={{ backgroundColor: color }}>
-                  {v.letter}
-                </span>
-                <span className="relative mt-5 block text-[11px] font-bold uppercase tracking-widest" style={{ color: VALUE_TEXT[i % VALUE_TEXT.length] }}>
-                  {v.word}
-                </span>
-                <h3 className="relative mt-1 text-lg font-semibold text-[#002F5B] whitespace-pre-line">{v.title}</h3>
-                <p className="relative mt-3 text-sm text-[#486581] leading-relaxed">{v.desc}</p>
-              </div>
-            );
-          })}
-        </div>
-      </Section>
+      {/* Core values: four petals reading W I S E open into the four values as you scroll, then close again */}
+      <CoreValuesBloom
+        values={values}
+        title={<>Bốn giá trị cốt lõi <span className="text-[#F76011]">W · I · S · E</span></>}
+        description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
+      />
 
       {/* RGPDCA */}
       <Section tone="muted">
