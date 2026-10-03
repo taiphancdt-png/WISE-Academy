@@ -354,7 +354,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       // the flag flutters in the wind
       gsap.to(".rm-flag", { attr: { d: FLAG_B }, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: -1 });
       gsap.utils.toArray<SVGGElement>(".rm-cloud").forEach((c, i) => {
-        gsap.to(c, { x: i % 2 ? -46 : 46, duration: 9 + i * 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        gsap.to(c, { x: i % 2 ? -150 : 150, duration: 14 + i * 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
       });
     }, boxRef);
     return () => ctx.revert();
