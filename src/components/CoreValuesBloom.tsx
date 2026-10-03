@@ -15,7 +15,7 @@ const LABEL = ["#002F5B", "#C9500E", "#1F64A6", "#B85F0B"];
 // darker shade of each petal colour for the letter on it
 const PETAL_INK = ["#001A33", "#A93D06", "#0F3F6E", "#B35E0A"];
 // All four petals grow from one point. Closed: a narrow bud whose petals read W I S E; open: a fanned lotus.
-const CLOSED_ANGLE = [-33, -11, 11, 33];
+const CLOSED_ANGLE = [-18, -6, 6, 18];
 const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
 const PETAL_L = 300;
@@ -78,8 +78,8 @@ export default function CoreValuesBloom({
         if (!g) return;
         const a = CLOSED_ANGLE[i] + (OPEN_ANGLE[i] - CLOSED_ANGLE[i]) * t;
         g.setAttribute("transform", `rotate(${a.toFixed(2)})`);
-        // keep each letter upright, high on its petal
-        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.76 - 0.16 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)})`);
+        // keep each letter upright; it slides towards the tip as the flower closes so letters never touch
+        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.9 - 0.3 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)})`);
       });
       const show = smooth(0.55, 0.95, t);
       cardRefs.current.forEach((c, i) => {
@@ -93,16 +93,16 @@ export default function CoreValuesBloom({
       apply(1);
       return () => window.removeEventListener("resize", setTop);
     }
-    // The flower follows the scroll: it opens as the section reaches the middle of the screen and closes
-    // again as it scrolls away (both directions), with a little easing so it moves smoothly.
+    // The flower follows the scroll, keyed to where the flower itself is on screen (0 = top, 1 = bottom):
+    // it starts to open as it comes up from the bottom (95% -> fully open at 70%) and starts to close once it
+    // rises above the middle of the screen (50% -> fully closed at 25%).
     let raf = 0;
     let t = 0;
+    const flowerSvg = wrap.querySelector("svg");
     const frame = () => {
-      const r = wrap.getBoundingClientRect();
-      const headerH = parseFloat(sticky.style.top) || 0;
-      const viewMid = headerH + (window.innerHeight - headerH) / 2;
-      const d = Math.abs(r.top + sticky.offsetHeight / 2 - viewMid) / (window.innerHeight - headerH);
-      const target = 1 - smooth(0.12, 0.55, d);
+      const fr = flowerSvg?.getBoundingClientRect();
+      const y = fr ? (fr.top + fr.height / 2) / window.innerHeight : 1;
+      const target = smooth(0.95, 0.7, y) * (1 - smooth(0.5, 0.25, y));
       t += (target - t) * 0.18;
       if (Math.abs(target - t) < 0.001) t = target;
       apply(t);
@@ -137,7 +137,7 @@ export default function CoreValuesBloom({
             ref={(el) => {
               letterRefs.current[i] = el;
             }}
-            transform={`translate(0 ${-PETAL_L * 0.76}) rotate(${-CLOSED_ANGLE[i]})`}
+            transform={`translate(0 ${-PETAL_L * 0.9}) rotate(${-CLOSED_ANGLE[i]})`}
             textAnchor="middle"
             dominantBaseline="central"
             className="font-extrabold"
