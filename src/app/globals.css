@@ -213,7 +213,7 @@ font[style] {
   animation: runnerBob 0.34s ease-in-out infinite;
 }
 
-/* Lean roadmap: one-shot ring when the runner passes a checkpoint, flag wave at the finish */
+/* Lean roadmap: one-shot ring when the runner passes a checkpoint */
 @keyframes gatePulse {
   from { transform: scale(1); opacity: 0.9; }
   to { transform: scale(2.2); opacity: 0; }
@@ -221,14 +221,6 @@ font[style] {
 .gate-pulse {
   animation: gatePulse 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-@keyframes finishWave {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-14deg); }
-}
-.finish-wave {
-  animation: finishWave 0.5s ease-in-out 3;
-  transform-origin: bottom left;
-}
 @media (prefers-reduced-motion: reduce) {
-  .gate-pulse, .finish-wave, .runner-bob { animation: none; }
+  .gate-pulse, .runner-bob { animation: none; }
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { FlagCheckered } from "@/components/icons";
+import { RefreshCw } from "@/components/icons";
 import RunnerFigure, { POSES, blendPose, runPose, type RunnerHandle } from "@/components/RunnerFigure";
 
 export interface RoadmapStage {
@@ -12,35 +12,38 @@ export interface RoadmapStage {
   outcome: string;
 }
 
-const CHECKPOINTS = [1, 2, 3, 4, 5].map((k) => (k / 6) * 100);
 const START = 4;
-const FINISH = 98;
-const RUN_SHARE = 0.4; // share of each stage's scroll spent running to its checkpoint; the rest is reading time
+const LAP_END = 104; // the runner leaves the track on the right and starts a new lap from the left
+const BASE_SPEED = 0.0034; // % of track per ms when nobody scrolls: a calm jog, about 5 s per stage
+const MAX_SPEED = 0.026; // flat-out sprint while scrolling fast
+const SCROLL_BOOST = 0.006; // extra speed per px/ms of scroll velocity
+const BASE_CYCLE_MS = 900; // one gait cycle (two steps) at jogging pace
 const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 const pad = (n: number) => String(n).padStart(2, "0");
 
-const START_SHARE = 0.2; // first part of stage 1: "on your marks", then "set", before the runner pushes off
-const STRIDE_PX = 74; // ground covered by one full gait cycle
-
-// Scroll progress (0..1) through the pinned section -> runner position on the track (% of width).
-// Each stage owns 1/5 of the scroll: run to its checkpoint, then hold so the panel can be read.
-// Returns startT (0..1) while the runner is still in the blocks.
-function raceAt(p: number): { pos: number; startT: number | null } {
-  const n = CHECKPOINTS.length;
-  const seg = Math.min(n - 1, Math.floor(p * n));
-  const k = p * n - seg;
-  const to = CHECKPOINTS[seg];
-  if (seg === 0) {
-    if (k < START_SHARE) return { pos: START, startT: k / START_SHARE };
-    const run = (k - START_SHARE) / RUN_SHARE;
-    return { pos: run < 1 ? START + (to - START) * run : to, startT: null };
-  }
-  const from = CHECKPOINTS[seg - 1];
-  if (k < RUN_SHARE) return { pos: from + (to - from) * (k / RUN_SHARE), startT: null };
-  if (seg < n - 1) return { pos: to, startT: null };
-  // last stage: hold, then sprint to the finish line
-  const tail = (k - RUN_SHARE) / (1 - RUN_SHARE);
-  return { pos: tail < 0.5 ? to : to + (FINISH - to) * ((tail - 0.5) / 0.5), startT: null };
+// Zig-zag track: from the start it climbs to stage 1, drops to stage 2, climbs to 3 ... and leaves on the right.
+const TRACK_H = 270; // px height of the track area
+const Y_LOW = 214;
+const Y_HIGH = 128;
+const TRACK_W = 34; // px width of the running surface
+type Geo = { pts: [number, number][]; cum: number[]; total: number; cp: number[] };
+function buildGeo(w: number): Geo {
+  const pts = [0, 1, 2, 3, 4, 5, 6].map((k) => [(k / 6) * w, k % 2 ? Y_HIGH : Y_LOW] as [number, number]);
+  const cum = [0];
+  for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const total = cum[cum.length - 1];
+  return { pts, cum, total, cp: [1, 2, 3, 4, 5].map((k) => (cum[k] / total) * 100) };
+}
+// point on the track at pct (% of its length); beyond either end it carries on horizontally
+function pointAt(g: Geo, pct: number): [number, number] {
+  const L = (pct / 100) * g.total;
+  if (L <= 0) return [g.pts[0][0] + L, g.pts[0][1]];
+  if (L >= g.total) return [g.pts[6][0] + (L - g.total), g.pts[6][1]];
+  let i = 1;
+  while (g.cum[i] < L) i++;
+  const t = (L - g.cum[i - 1]) / (g.cum[i] - g.cum[i - 1]);
+  const a = g.pts[i - 1], b = g.pts[i];
+  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
 }
 
 export default function LeanRoadmapRace({
@@ -64,13 +67,12 @@ export default function LeanRoadmapRace({
   );
 }
 
-// Floodlight glow and faint lane lines behind the whole section.
+// Soft floodlight glow behind the whole section.
 function Stadium() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#F76011]/[0.08] blur-3xl" />
       <div className="absolute bottom-0 inset-x-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(247,96,17,0.14),transparent_65%)]" />
-      <div className="absolute inset-0 opacity-[0.06] bg-[repeating-linear-gradient(90deg,#002F5B_0_1px,transparent_1px_120px)]" />
     </div>
   );
 }
@@ -127,9 +129,13 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const runnerRef = useRef<HTMLDivElement>(null);
   const figRef = useRef<RunnerHandle>(null);
   const trailRef = useRef<HTMLDivElement>(null);
-  const fillRef = useRef<HTMLDivElement>(null);
+  const flipRef = useRef<HTMLDivElement>(null);
+  const litRef = useRef<SVGPathElement>(null);
+  const [w, setW] = useState(0);
+  const geoRef = useRef<Geo>(buildGeo(1));
   const [reached, setReached] = useState(0);
-  const [finished, setFinished] = useState(false);
+  const [lap, setLap] = useState(0);
+  const curRef = useRef(START);
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -145,71 +151,87 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     };
     setTop();
     window.addEventListener("resize", setTop);
+    // redraw the zig-zag in real pixels whenever the track width changes
+    const ro = new ResizeObserver(([e]) => {
+      geoRef.current = buildGeo(e.contentRect.width);
+      setW(e.contentRect.width);
+    });
+    if (trackRef.current) ro.observe(trackRef.current);
 
     let raf = 0;
-    let lastPx = -1;
+    let last = 0;
+    let started = 0; // time the runner first came into view: "on your marks", "set", go
+    let lastScroll = window.scrollY;
+    let speed = 0;
     let phi = 0;
-    let runW = 0; // 0 = standing / in the blocks, 1 = full stride
+    let runW = 0; // 0 = in the blocks, 1 = full stride
+    let laps = 0;
     figRef.current?.setPose(POSES.marks);
-    const frame = () => {
-      const rect = wrap.getBoundingClientRect();
-      const span = rect.height - sticky.offsetHeight;
-      const p = Math.min(1, Math.max(0, -(rect.top - (parseFloat(sticky.style.top) || 0)) / span));
-      const { pos, startT } = raceAt(p);
-      const w = trackRef.current?.offsetWidth ?? 0;
-      const px = (pos / 100) * w;
-      const dx = lastPx < 0 ? 0 : px - lastPx;
-      lastPx = px;
+    const frame = (now: number) => {
+      const dt = last ? Math.min(50, now - last) : 16;
+      last = now;
+      if (!started) started = now;
+      const t = now - started;
 
-      // legs move with the ground covered, so the stride always matches the speed (also when scrolling back)
-      phi += (dx / STRIDE_PX) * Math.PI * 2;
-      const moving = Math.abs(dx) > 0.05;
-      runW += ((moving ? 1 : 0) - runW) * (moving ? 0.22 : 0.07);
+      // the runner never stops; scrolling (either way) pushes the pace up
+      const scrollV = Math.abs(window.scrollY - lastScroll) / dt;
+      lastScroll = window.scrollY;
+      const inBlocks = laps === 0 && t < 1500;
+      const targetSpeed = inBlocks ? 0 : Math.min(MAX_SPEED, BASE_SPEED + scrollV * SCROLL_BOOST);
+      speed += (targetSpeed - speed) * (1 - Math.exp(-dt / (targetSpeed > speed ? 220 : 650)));
+      let cur = curRef.current + speed * dt;
+      if (cur >= LAP_END) {
+        cur = -LAP_END + 100; // re-enter from the left
+        laps += 1;
+        setLap(laps);
+      }
+      curRef.current = cur;
 
-      // base pose: in the blocks ("on your marks" -> "set") or standing at a checkpoint
-      let base = POSES.stand;
-      if (startT !== null) base = startT < 0.45 ? POSES.marks : blendPose(POSES.marks, POSES.set, Math.min(1, (startT - 0.45) / 0.4));
-      else if (pos <= START + 0.01) base = POSES.set;
-      const pose = blendPose(base, runPose(phi, Math.min(1, 0.55 + Math.abs(dx) / 6)), runW);
-      figRef.current?.setPose(pose, runW * 2.6 * Math.abs(Math.sin(phi)));
+      // cadence and stride grow with speed but stay smooth and regular
+      const pace = speed / BASE_SPEED;
+      phi += (dt / (BASE_CYCLE_MS / Math.min(2.2, Math.sqrt(Math.max(pace, 0.01))))) * Math.PI * 2;
+      runW += ((inBlocks ? 0 : 1) - runW) * (1 - Math.exp(-dt / 200));
 
-      if (runnerRef.current) runnerRef.current.style.transform = `translateX(${px}px)`;
-      if (fillRef.current) fillRef.current.style.transform = `scaleX(${pos / 100})`;
-      if (trailRef.current) trailRef.current.style.opacity = String(Math.min(1, runW * Math.min(1, Math.abs(dx) / 2)));
-      const n = CHECKPOINTS.filter((c) => pos >= c - 0.01).length;
+      const base = inBlocks && t < 700 ? POSES.marks : POSES.set;
+      const pose = blendPose(base, runPose(phi, Math.min(1.25, 0.85 + 0.12 * pace)), runW);
+      figRef.current?.setPose(pose, runW * 2.2 * Math.abs(Math.sin(phi)));
+
+      const geo = geoRef.current;
+      const [x, y] = pointAt(geo, cur);
+      if (runnerRef.current) runnerRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      if (litRef.current) litRef.current.style.strokeDashoffset = String(geo.total * (1 - Math.max(0, Math.min(100, cur)) / 100));
+      if (trailRef.current) trailRef.current.style.opacity = String(Math.max(0, Math.min(0.9, (pace - 1.4) / 3)));
+      const n = geo.cp.filter((c) => cur >= c).length;
       setReached((prev) => (prev === n ? prev : n));
-      const f = pos >= FINISH - 0.2;
-      setFinished((prev) => (prev === f ? prev : f));
       raf = requestAnimationFrame(frame);
     };
     // Only animate while the section is on screen.
     const io = new IntersectionObserver(([e]) => {
       cancelAnimationFrame(raf);
+      last = 0;
       if (e.isIntersecting) raf = requestAnimationFrame(frame);
     });
     io.observe(wrap);
     return () => {
       io.disconnect();
       cancelAnimationFrame(raf);
+      ro.disconnect();
       window.removeEventListener("resize", setTop);
     };
   }, []);
 
   const active = Math.max(0, reached - 1);
 
-  // Clicking a gate scrolls to the moment that stage is fully read.
+  // Clicking a gate brings the runner up to that stage.
   const jumpTo = (i: number) => {
-    const wrap = wrapRef.current;
-    const sticky = stickyRef.current;
-    if (!wrap || !sticky) return;
-    const span = wrap.offsetHeight - sticky.offsetHeight;
-    const p = (i + RUN_SHARE + 0.2) / stages.length;
-    const top = wrap.getBoundingClientRect().top + window.scrollY - (parseFloat(sticky.style.top) || 0);
-    window.scrollTo({ top: top + p * span, behavior: "smooth" });
+    curRef.current = geoRef.current.cp[i] - 1.5;
   };
+  const geo = geoRef.current;
+  const d = w ? geo.pts.map((p, i) => `${i ? "L" : "M"} ${p[0].toFixed(1)} ${p[1]}`).join(" ") : "";
+  const startPt = pointAt(geo, START);
 
   return (
-    <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 300vh)" }}>
+    <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
       <div ref={stickyRef} className="sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-12 pb-10">
         <Header title={title} description={description} />
 
@@ -249,65 +271,85 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
           })}
         </div>
 
-        {/* the race track */}
-        <div className="relative mt-6 pt-24">
-          <div ref={trackRef} className="relative h-14 rounded-2xl bg-[#F6C7A9] ring-1 ring-[#F76011]/20 overflow-hidden shadow-[0_14px_30px_-18px_rgba(201,80,14,0.6)]">
-            {/* lit part of the track, up to the runner */}
-            <div ref={fillRef} className="absolute inset-0 origin-left bg-gradient-to-r from-[#C9500E] via-[#F76011] to-[#FF8A3D]" style={{ transform: `scaleX(${START / 100})` }} />
-            {/* lane lines */}
-            <div className="absolute inset-x-0 top-1/3 border-t-2 border-white/80" />
-            <div className="absolute inset-x-0 top-2/3 border-t-2 border-white/80" />
-            {/* start line and checkered finish */}
-            <div className="absolute inset-y-0 left-[4%] w-1.5 bg-white" />
-            <div className={`absolute inset-y-0 right-0 w-[2%] bg-[repeating-conic-gradient(#fff_0_25%,#002F5B_0_50%)] bg-[length:12px_12px] transition-opacity duration-500 ${finished ? "opacity-100" : "opacity-60"}`} />
-            {/* checkpoint markers */}
-            {CHECKPOINTS.map((c, i) => (
-              <span
-                key={c}
-                className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} ${
-                  reached > i ? "bg-[#002F5B] text-white scale-110 ring-2 ring-white" : "bg-white text-[#C9500E] ring-1 ring-[#F76011]/30"
-                }`}
-                style={{ left: `${c}%` }}
-              >
-                {pad(i + 1)}
-                {reached > i && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-[#002F5B]" />}
-              </span>
-            ))}
-          </div>
+        {/* the zig-zag race track */}
+        <div ref={trackRef} className="relative mt-2 -mx-2" style={{ height: TRACK_H }}>
+          {w > 0 && (
+            <svg width={w} height={TRACK_H} className="absolute inset-0 overflow-visible" aria-hidden="true">
+              <path d={d} fill="none" stroke="#C9500E" strokeOpacity={0.12} strokeWidth={TRACK_W + 14} strokeLinejoin="round" strokeLinecap="round" transform="translate(0 8)" />
+              <path d={d} fill="none" stroke="#F6C7A9" strokeWidth={TRACK_W} strokeLinejoin="round" strokeLinecap="round" />
+              <path
+                ref={litRef}
+                d={d}
+                fill="none"
+                stroke="#F76011"
+                strokeWidth={TRACK_W}
+                strokeLinejoin="round"
+                strokeDasharray={geo.total}
+                strokeDashoffset={geo.total * (1 - START / 100)}
+              />
+              {/* lane lines */}
+              <path d={d} fill="none" stroke="#fff" strokeOpacity={0.85} strokeWidth={2} strokeLinejoin="round" transform="translate(0 -8)" />
+              <path d={d} fill="none" stroke="#fff" strokeOpacity={0.85} strokeWidth={2} strokeLinejoin="round" transform="translate(0 8)" />
+              {/* start line */}
+              <line x1={startPt[0]} y1={startPt[1] - TRACK_W / 2} x2={startPt[0]} y2={startPt[1] + TRACK_W / 2} stroke="#fff" strokeWidth={5} />
+            </svg>
+          )}
 
-          {/* below the track: start, the five gates (click to jump), finish */}
-          <div className="relative mt-2 h-10 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]">
-            <span className="absolute left-0 top-3">Xuất phát</span>
-            {CHECKPOINTS.map((c, i) => {
+          {/* checkpoint markers, with their stage name underneath (click to send the runner there) */}
+          {w > 0 &&
+            geo.pts.slice(1, 6).map((pt, i) => {
               const on = reached > i;
               return (
                 <button
-                  key={c}
+                  key={i}
                   type="button"
                   onClick={() => jumpTo(i)}
-                  className="group absolute top-0 -translate-x-1/2 flex flex-col items-center gap-1 rounded-md px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F76011]"
-                  style={{ left: `${c}%` }}
+                  className="group absolute w-0 h-0 focus-visible:outline-none"
+                  style={{ left: pt[0], top: pt[1] }}
+                  aria-label={`Giai đoạn ${i + 1}: ${stages[i].short}`}
                 >
-                  <span className={`w-px h-2.5 transition-colors duration-500 ${on ? "bg-[#F76011]" : "bg-[#002F5B]/20"}`} />
-                  <span className={`uppercase tracking-[0.16em] transition-colors duration-500 ${on ? "text-[#002F5B]" : "text-[#486581]/70 group-hover:text-[#002F5B]"}`}>{stages[i].short}</span>
+                  <span
+                    className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
+                      on ? "bg-[#002F5B] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#C9500E] ring-2 ring-[#F76011]/30"
+                    }`}
+                  >
+                    {pad(i + 1)}
+                    {on && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-[#002F5B]" />}
+                  </span>
+                  {/* name above the peaks, below the valleys */}
+                  <span
+                    className={`absolute left-0 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors duration-500 ${
+                      i % 2 === 0 ? "bottom-[34px]" : "top-[34px]"
+                    } ${on ? "text-[#002F5B]" : "text-[#486581]/70 group-hover:text-[#002F5B]"}`}
+                  >
+                    {stages[i].short}
+                  </span>
                 </button>
               );
             })}
-            <span className={`absolute right-0 top-3 flex items-center gap-1.5 transition-colors duration-500 ${finished ? "text-[#C9500E]" : ""}`}>
-              <FlagCheckered weight="fill" className={`w-4 h-4 ${finished ? "finish-wave" : ""}`} /> Về đích
-            </span>
-          </div>
+          {w > 0 && (
+            <>
+              <span className="absolute -translate-x-1/2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]" style={{ left: Math.max(40, startPt[0]), top: startPt[1] + 30 }}>
+                Xuất phát
+              </span>
+              <span className="absolute right-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C9500E]" style={{ top: Y_LOW + 30 }}>
+                <RefreshCw weight="bold" className="w-4 h-4" /> {lap > 0 ? `Vòng ${lap + 1}` : "Liên tục"}
+              </span>
+            </>
+          )}
 
           {/* runner, positioned by transform only */}
-          <div ref={runnerRef} className="absolute left-0 bottom-[92px] will-change-transform" style={{ transform: "translateX(0px)" }}>
-            <div className="-translate-x-1/2 flex flex-col items-center">
+          <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
+            <div className="absolute bottom-[-10px] left-0 -translate-x-1/2 flex flex-col items-center">
               {/* speed lines while running */}
               <div ref={trailRef} className="absolute right-[70%] top-[35%] flex flex-col gap-2 opacity-0" aria-hidden="true">
                 <span className="block h-[3px] w-14 rounded-full bg-gradient-to-l from-[#002F5B]/50 to-transparent" />
                 <span className="block h-[3px] w-20 rounded-full bg-gradient-to-l from-[#FF8A3D] to-transparent ml-4" />
                 <span className="block h-[3px] w-10 rounded-full bg-gradient-to-l from-[#002F5B]/30 to-transparent ml-8" />
               </div>
-              <RunnerFigure ref={figRef} className="relative w-44 h-[140px] drop-shadow-[0_6px_8px_rgba(0,47,91,0.25)]" />
+              <div ref={flipRef} className="relative">
+                <RunnerFigure ref={figRef} className="relative w-40 h-[140px] drop-shadow-[0_6px_8px_rgba(0,47,91,0.25)]" />
+              </div>
             </div>
           </div>
         </div>
@@ -394,8 +436,8 @@ function JoggingRunner() {
     let raf = 0;
     const t0 = performance.now();
     const tick = (now: number) => {
-      const phi = ((now - t0) / 620) * Math.PI * 2;
-      ref.current?.setPose(runPose(phi), 2.4 * Math.abs(Math.sin(phi)));
+      const phi = ((now - t0) / 820) * Math.PI * 2;
+      ref.current?.setPose(runPose(phi), 2.2 * Math.abs(Math.sin(phi)));
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
