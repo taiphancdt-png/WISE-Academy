@@ -49,6 +49,20 @@ function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
 // flag cloth in two wind-blown shapes (same commands, so GSAP can morph between them)
 const FLAG_A = "M 1.5 -92 Q 10 -96 18 -90 Q 26 -85 35 -85 Q 26 -80 18 -78 Q 10 -77 1.5 -72 Z";
 const FLAG_B = "M 1.5 -92 Q 10 -88 18 -91 Q 26 -93 34 -87 Q 26 -81 18 -80 Q 10 -80 1.5 -72 Z";
+// Dawn sky: the higher the trekker, the brighter the sky.
+const mix = (a: number[], b: number[], t: number) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
+// from first light (blue below, orange above) to full daylight (light orange below, white above)
+const SKY_TOP = [[255, 170, 110], [255, 214, 180], [255, 255, 255]];
+const SKY_BOTTOM = [[70, 130, 200], [236, 172, 162], [255, 214, 170]];
+const skyAt = (stops: number[][], t: number) => {
+  const x = Math.max(0, Math.min(1, t)) * (stops.length - 1);
+  const i = Math.min(stops.length - 2, Math.floor(x));
+  return mix(stops[i], stops[i + 1], x - i);
+};
+const smooth = (e0: number, e1: number, x: number) => {
+  const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
+  return t * t * (3 - 2 * t);
+};
 // footpath only beyond the end of the road (the road itself is drawn as artwork)
 const FOOT_D = "M " + ART.trail.slice(ART.roadEnd + 1).map(([x, y]) => `${x} ${y}`).join(" L ");
 
@@ -106,7 +120,7 @@ function Header({ title, description }: { title: React.ReactNode; description: s
         </span>
         <h2 className="mt-4 text-3xl sm:text-4xl xl:text-[44px] font-semibold leading-[1.1] tracking-tight">{title}</h2>
       </div>
-      <p className="lg:col-span-5 text-sm sm:text-base text-[#486581] leading-relaxed">{description}</p>
+      <p className="lg:col-span-5 text-sm sm:text-base opacity-75 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -145,6 +159,10 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const [summit, setSummit] = useState(false);
   const mtnRef = useRef<SVGGElement>(null);
   const sunRef = useRef<SVGGElement>(null);
+  const sunRiseRef = useRef<SVGGElement>(null);
+  const sunCoreRef = useRef<SVGCircleElement>(null);
+  const haloRef = useRef<SVGCircleElement>(null);
+  const skyRef = useRef<HTMLDivElement>(null);
   const flagRef = useRef<SVGGElement>(null);
   const burstRef = useRef<SVGGElement>(null);
   const articleRefs = useRef<(HTMLElement | null)[]>([]);
@@ -179,6 +197,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let phi = 0;
     let runW = 0;
     let holdUntil = 0; // resting on the summit until this time
+    let skyP = 0; // smoothed height reached, drives the dawn sky
     let climbs = 1;
     figRef.current?.setPose(POSES.stand);
 
@@ -220,6 +239,32 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const pose = blendPose(POSES.stand, walkPose(phi, Math.min(1.3, 0.9 + 0.1 * pace)), runW);
       pose.torso += 8 * runW; // lean into the slope
       figRef.current?.setPose(pose, runW * 1.1 * Math.abs(Math.cos(phi)));
+
+      // dawn: the sky follows the height reached (smoothed, so a new climb fades back to first light)
+      skyP += (cur / 100 - skyP) * (1 - Math.exp(-dt / 500));
+      const g0 = geoRef.current;
+      const light = smooth(0, 0.8, skyP); // full daylight from about stage 4
+      if (skyRef.current) {
+        skyRef.current.style.background = `linear-gradient(to bottom, ${skyAt(SKY_TOP, light)}, ${skyAt(SKY_BOTTOM, light)})`;
+      }
+      // the sun rises straight up from behind the mountain between stage 2 and stage 5, brightening as it goes
+      const rise = smooth(g0.cp[1] / 100, g0.cp[4] / 100, skyP);
+      if (sunRiseRef.current) {
+        // start with the top of the sun just peeking over the ridge behind it, end at its place above the flag
+        const sR = ART.h * g0.k;
+        const peakPt = g0.pts[g0.pts.length - 1];
+        const sunX = Math.min(g0.w * 0.86, peakPt[0] + sR * 0.3);
+        const ri = Math.max(0, Math.min(ART.ridge.length - 1, Math.round((sunX - g0.ox) / g0.k / ART.ridgeStep)));
+        const startY = g0.oy + ART.ridge[ri] * g0.k + sR * 0.085 * 0.35;
+        const endY = peakPt[1] - 112;
+        // before stage 2 it stays fully hidden behind the mountain
+        const hidden = (1 - smooth(g0.cp[0] / 100, g0.cp[1] / 100, skyP)) * sR * 0.085 * 1.8;
+        sunRiseRef.current.setAttribute("transform", `translate(0 ${((1 - rise) * Math.max(0, startY - endY) + hidden).toFixed(1)})`);
+        sunRiseRef.current.style.opacity = String(0.7 + 0.3 * rise);
+        // deep orange as it breaks the ridge, light orange high in the sky; the glow grows as it rises
+        sunCoreRef.current?.setAttribute("fill", mix([226, 74, 8], [255, 186, 118], rise));
+        if (haloRef.current) haloRef.current.style.opacity = String(0.45 + 0.55 * rise);
+      }
 
       const geo = geoRef.current;
       const pt = pointAt(geo, cur);
@@ -332,7 +377,13 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
   return (
     <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
-      <div ref={stickyRef} className="sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-10 pb-8">
+      <div ref={stickyRef} className="isolate sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-10 pb-8">
+        <div
+          ref={skyRef}
+          aria-hidden="true"
+          className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10"
+          style={{ background: "linear-gradient(to bottom, rgb(255,170,110), rgb(70,130,200))" }}
+        />
         <Header title={title} description={description} />
 
         <div className="flex-1 min-h-0 mt-6 grid grid-cols-12 gap-10">
@@ -385,6 +436,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                     <stop offset="0" stopColor="#1B4A78" />
                     <stop offset="1" stopColor="#002F5B" />
                   </linearGradient>
+                  <filter id="sunBlur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation={12} />
+                  </filter>
                   <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
                     <stop offset="0" stopColor="#FFB27A" stopOpacity="0.9" />
                     <stop offset="1" stopColor="#FFB27A" stopOpacity="0" />
@@ -392,9 +446,14 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                 </defs>
                 {/* sun */}
                 <g transform={`translate(${Math.min(w * 0.86, peak[0] + sunR * 0.3)} ${peak[1] - 112})`}>
+                <g ref={sunRiseRef}>
                 <g ref={sunRef}>
                   <circle r={sunR * 0.3} fill="url(#sun)" />
-                  <circle r={sunR * 0.085} fill="#FFB27A" />
+                  {/* soft blurred glow around the sun */}
+                  <circle ref={haloRef} r={sunR * 0.085 * 1.9} fill="#FFC79A" filter="url(#sunBlur)" />
+                  <circle r={sunR * 0.085 * 1.18} fill="#FFD9B8" opacity={0.55} />
+                  <circle ref={sunCoreRef} r={sunR * 0.085} fill="#E24A08" />
+                </g>
                 </g>
                 </g>
                 <g ref={mtnRef}>

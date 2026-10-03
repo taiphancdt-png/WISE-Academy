@@ -12,5 +12,8 @@ export const ART = {
   stages: [19, 38, 62, 83, 87],
   // left edge of the mountain (artwork x) level with each stage: stage labels sit just outside it
   edges: [145, 237, 406, 537, 636],
+  // top of the mountain silhouette every 20 artwork units of x (used to let the sun rise from behind it)
+  ridgeStep: 20,
+  ridge: [831, 806, 781, 755, 730, 696, 677, 654, 628, 598, 566, 534, 505, 476, 451, 431, 434, 440, 435, 409, 384, 360, 321, 279, 260, 247, 225, 188, 147, 107, 70, 38, 6, 19, 46, 98, 134, 150, 190, 242, 262, 277, 299, 340, 365, 375, 391, 426, 473, 487, 492, 503, 534, 569, 607, 629, 639, 652, 670, 691, 710, 728, 743, 758, 771, 782, 792, 802, 812, 821, 830],
   roadEnd: 81,
 };
