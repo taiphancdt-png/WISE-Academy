@@ -6,12 +6,10 @@ import { ChevronDown, Clock, Download, Search } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
-import { LssiClients, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
-import LssiInterestForm from "@/components/LssiInterestForm";
 import LeanHouse from "@/components/LeanHouse";
-import { LSSI_PROGRAMS } from "@/data/lssi-programs";
 
 const ALL = "all";
+// LSSI programs live on their own page (/dao-tao-lean-six-sigma); this page lists WISE Academy's own programs.
 const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
 const PRACTITIONER_GROUP = "Chuyên viên thực hành Lean";
 // Topic sub-groups of the practitioner programs, in display order (matches `topic` in courses.json).
@@ -25,14 +23,8 @@ const PRACTITIONER_TOPICS = [
   "TPM - Quản lý năng suất thiết bị toàn phần",
 ];
 
-// The four program groups; `id` matches the `category` value in courses.json.
+// The program groups; `id` matches the `category` value in courses.json.
 const GROUPS = [
-  {
-    id: "Lean Six Sigma chuẩn quốc tế",
-    short: "LSS chuẩn quốc tế",
-    title: "Chương trình Lean Six Sigma chuẩn quốc tế",
-    description: "Chương trình chứng nhận của Lean Six Sigma Institute (LSSI Global) - từ Yellow Belt đến Master Black Belt và bằng thạc sĩ, do WISE Academy triển khai tại Việt Nam.",
-  },
   {
     id: "Chuyên viên thực hành Lean",
     short: "Chuyên viên thực hành Lean",
@@ -214,22 +206,6 @@ function PractitionerSection({ courses }: { courses: Course[] }) {
   );
 }
 
-// International group: LSSI partnership, formats, pricing message, programs, benefits and interest form.
-function LssiSection() {
-  return (
-    <div className="space-y-8">
-      <LssiPartnerIntro />
-      <LssiPricingCta />
-      <LssiProgramGrid />
-      <LssiIncluded />
-      <div id="dang-ky-lssi" className="scroll-mt-40">
-        <LssiInterestForm />
-      </div>
-      <LssiClients />
-    </div>
-  );
-}
-
 function CourseGrid({ courses }: { courses: Course[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -241,13 +217,13 @@ function CourseGrid({ courses }: { courses: Course[] }) {
 }
 
 export default function TrainingClient({ courses: allCourses }: { courses: Course[] }) {
-  // The international group is served by LSSI programs, so WISE's own belt entries in that group are not listed.
+  // International LSS certification is covered on /dao-tao-lean-six-sigma, so that group is not listed here.
   const courses = allCourses.filter((c) => c.category !== LSSI_GROUP);
   const [activeGroup, setActiveGroup] = useState(ALL);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const countOf = (id: string) => (id === LSSI_GROUP ? LSSI_PROGRAMS.length : courses.filter((c) => c.category === id).length);
-  const chips = [{ id: ALL, name: `Tất cả (${courses.length + LSSI_PROGRAMS.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
+  const countOf = (id: string) => courses.filter((c) => c.category === id).length;
+  const chips = [{ id: ALL, name: `Tất cả (${courses.length})` }, ...GROUPS.map((g) => ({ id: g.id, name: `${g.short} (${countOf(g.id)})` }))];
 
   const q = searchQuery.trim().toLowerCase();
   const filteredCourses = courses.filter(
@@ -263,7 +239,7 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
         eyebrow="Chương trình đào tạo thực chiến"
         image="/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp"
         title={<>Đào tạo nâng cao năng suất & <span className="text-[#FF7A30]">tối ưu vận hành</span> doanh nghiệp</>}
-        description="4 nhóm chương trình với hơn 35 chuyên đề: từ chứng nhận Lean Six Sigma quốc tế, kỹ năng thực hành tại hiện trường, năng lực lãnh đạo đến Lean 4.0 tích hợp AI."
+        description="3 nhóm chương trình với hơn 35 chuyên đề: kỹ năng thực hành Lean tại hiện trường, năng lực lãnh đạo và Lean 4.0 tích hợp AI."
       />
 
       {/* Group filter and search */}
@@ -305,9 +281,8 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
           {showGrouped ? (
             <div className="space-y-20">
               {GROUPS.map((g, i) => {
-                const isLssi = g.id === LSSI_GROUP;
                 const list = courses.filter((c) => c.category === g.id);
-                if (!isLssi && list.length === 0) return null;
+                if (list.length === 0) return null;
                 return (
                   <div key={g.id} id={`nhom-${i + 1}`} className="scroll-mt-40">
                     <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-5">
@@ -323,9 +298,7 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
                         Chỉ xem nhóm này
                       </button>
                     </div>
-                    {isLssi ? (
-                      <LssiSection />
-                    ) : g.id === PRACTITIONER_GROUP ? (
+                    {g.id === PRACTITIONER_GROUP ? (
                       <PractitionerSection courses={list} />
                     ) : (
                       <CourseGrid courses={list} />
@@ -334,19 +307,11 @@ export default function TrainingClient({ courses: allCourses }: { courses: Cours
                 );
               })}
             </div>
-          ) : activeGroup === LSSI_GROUP ? (
+          ) : activeGroup === PRACTITIONER_GROUP && !q ? (
             <div className="space-y-8">
               <div className="max-w-3xl">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{GROUPS[0].title}</h2>
                 <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[0].description}</p>
-              </div>
-              <LssiSection />
-            </div>
-          ) : activeGroup === PRACTITIONER_GROUP && !q ? (
-            <div className="space-y-8">
-              <div className="max-w-3xl">
-                <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">{GROUPS[1].title}</h2>
-                <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{GROUPS[1].description}</p>
               </div>
               <PractitionerSection courses={filteredCourses} />
             </div>
