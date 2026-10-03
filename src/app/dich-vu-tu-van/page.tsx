@@ -188,7 +188,7 @@ export default function ConsultingPage() {
           ))}
         </ol>
         <div className="mt-10 text-center">
-          <ButtonLink href="/lien-he">Liên hệ để được khảo sát</ButtonLink>
+          <ButtonLink href="/lien-he">Hãy liên hệ với chúng tôi để cùng bắt đầu hành trình cải tiến</ButtonLink>
         </div>
       </Section>
 
