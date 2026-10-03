@@ -150,7 +150,7 @@ export default function CoreValuesBloom({
   const card = (v: CoreValue, i: number, extra = "") => (
     <div className={`relative overflow-hidden rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
       {/* big see-through letter in the corner */}
-      <span aria-hidden="true" className="pointer-events-none absolute -right-2 -bottom-10 select-none text-[140px] font-extrabold leading-none" style={{ color: PETAL[i], opacity: 0.1 }}>
+      <span aria-hidden="true" className="pointer-events-none absolute right-3 bottom-1 select-none text-[120px] font-extrabold leading-[0.85]" style={{ color: PETAL[i], opacity: 0.1 }}>
         {v.letter}
       </span>
       <div className="relative flex items-center gap-3">
