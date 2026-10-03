@@ -1,6 +1,6 @@
 # Làm việc chung trên website WISE Academy
 
-Tài liệu này dành cho dev cùng phát triển website. Nhánh `main` được bảo vệ bằng ruleset trên GitHub: chỉ chủ repo được đẩy thẳng, mọi người khác phải qua Pull Request. Quy ước chính: **mọi thay đổi của dev đi qua nhánh riêng và Pull Request (PR)**, không đẩy thẳng lên `main`.
+Tài liệu này dành cho dev cùng phát triển website. Nhánh `main` được bảo vệ bằng ruleset trên GitHub (không xoá, không force push). Chủ repo và dev có quyền ghi đều được phép đưa code vào `main`, nhưng nên dùng nhánh + Pull Request để dễ theo dõi. Quy ước chính: **mọi thay đổi của dev đi qua nhánh riêng và Pull Request (PR)**, không đẩy thẳng lên `main`.
 
 ## 1. Cài đặt
 
