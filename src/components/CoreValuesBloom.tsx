@@ -16,16 +16,17 @@ const LABEL = ["#002F5B", "#C9500E", "#1F64A6", "#B85F0B"];
 const CLOSED_ANGLE = [-33, -11, 11, 33];
 const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
+const OPEN_MS = 800; // time to open (or close) the flower fully, at a constant speed
 const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
-const CARD_W = 320;
-const CARD_H = 292;
+const CARD_W = 340;
+const CARD_H = 300;
 const CARD_POS = [
-  { x: -625, y: -262 },
-  { x: -490, y: -622 },
-  { x: 490 - CARD_W, y: -622 },
-  { x: 625 - CARD_W, y: -262 },
+  { x: -630, y: -262 },
+  { x: -500, y: -632 },
+  { x: 500 - CARD_W, y: -632 },
+  { x: 630 - CARD_W, y: -262 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
@@ -64,7 +65,7 @@ export default function CoreValuesBloom({
     const header = document.querySelector("header");
     const setTop = () => {
       const h = header?.getBoundingClientRect().height ?? 0;
-      sticky.style.top = `${h}px`;
+      sticky.style.top = `${h}px`; // header height, used to line the section up under it
       sticky.style.height = `calc(100dvh - ${h}px)`;
     };
     setTop();
@@ -91,25 +92,51 @@ export default function CoreValuesBloom({
       apply(1);
       return () => window.removeEventListener("resize", setTop);
     }
+    // Not tied to the scroll position: when the section comes into view the page settles on it and the
+    // flower opens at a steady speed; when the section leaves, the flower closes again for the next visit.
     let raf = 0;
-    let shown = -1;
-    const frame = () => {
-      const rect = wrap.getBoundingClientRect();
-      const span = rect.height - sticky.offsetHeight;
-      const p = Math.min(1, Math.max(0, -(rect.top - (parseFloat(sticky.style.top) || 0)) / span));
-      const target = smooth(0.08, 0.38, p) * (1 - smooth(0.68, 0.95, p));
-      shown = shown < 0 ? target : shown + (target - shown) * 0.12; // a little easing on top of the scroll
-      apply(shown);
-      raf = requestAnimationFrame(frame);
+    let last = 0;
+    let t = 0;
+    let target = 0;
+    let settled = false;
+    let lastY = window.scrollY;
+    const tick = (now: number) => {
+      const dt = last ? Math.min(50, now - last) : 16;
+      last = now;
+      const step = dt / OPEN_MS;
+      t += Math.max(-step, Math.min(step, target - t)); // constant speed both ways
+      apply(t);
+      raf = t === target ? 0 : requestAnimationFrame(tick);
+      if (!raf) last = 0;
     };
-    const io = new IntersectionObserver(([e]) => {
-      cancelAnimationFrame(raf);
-      if (e.isIntersecting) raf = requestAnimationFrame(frame);
-    });
+    const go = (to: number) => {
+      target = to;
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    let openTimer = 0;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        const down = window.scrollY >= lastY;
+        lastY = window.scrollY;
+        if (e.intersectionRatio >= 0.35 && !settled) {
+          settled = true;
+          // arriving from above: bring the whole section into view, then open
+          if (down) window.scrollTo({ top: wrap.getBoundingClientRect().top + window.scrollY - (parseFloat(sticky.style.top) || 0), behavior: "smooth" });
+          clearTimeout(openTimer);
+          openTimer = window.setTimeout(() => go(1), down ? 450 : 0);
+        } else if (e.intersectionRatio < 0.2 && settled) {
+          settled = false;
+          clearTimeout(openTimer);
+          go(0);
+        }
+      },
+      { threshold: [0, 0.2, 0.35, 0.6] }
+    );
     io.observe(wrap);
     return () => {
       io.disconnect();
       cancelAnimationFrame(raf);
+      clearTimeout(openTimer);
       window.removeEventListener("resize", setTop);
     };
   }, []);
@@ -150,7 +177,7 @@ export default function CoreValuesBloom({
   const card = (v: CoreValue, i: number, extra = "") => (
     <div className={`relative overflow-hidden rounded-2xl bg-white/90 p-4 xl:p-5 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06] ${extra}`}>
       {/* big see-through letter in the corner */}
-      <span aria-hidden="true" className="pointer-events-none absolute right-4 bottom-3 select-none text-[76px] font-extrabold leading-[0.8]" style={{ color: PETAL[i], opacity: 0.1 }}>
+      <span aria-hidden="true" className="pointer-events-none absolute right-5 bottom-3 select-none text-[60px] font-extrabold leading-[0.8]" style={{ color: PETAL[i], opacity: 0.1 }}>
         {v.letter}
       </span>
       {/* the core value itself, as the card's headline label */}
@@ -158,21 +185,21 @@ export default function CoreValuesBloom({
         {v.word}
       </p>
       <h3 className="relative mt-3 text-lg font-semibold leading-snug text-[#002F5B] whitespace-pre-line">{v.title}</h3>
-      <p className="relative mt-2 pr-20 text-[13px] xl:text-sm leading-relaxed text-[#486581]">{v.desc}</p>
+      <p className="relative mt-2 text-sm leading-relaxed text-[#486581] [text-wrap:wrap]">{v.desc}</p>
     </div>
   );
 
   return (
     <section className="relative bg-white">
-      {/* desktop: pinned, the flower opens and closes with the scroll */}
-      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative`} style={{ height: "calc(100dvh + 160vh)" }}>
-        <div ref={stickyRef} className="sticky top-0 h-[100dvh] flex flex-col items-center px-8 pt-12">
+      {/* desktop: one screen; the page settles on it and the flower opens by itself */}
+      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative`}>
+        <div ref={stickyRef} className="relative h-[100dvh] flex flex-col items-center px-8 pt-12">
           <div className="max-w-3xl text-center">
             <h2 className="text-3xl sm:text-[34px] font-semibold leading-tight text-[#002F5B]">{title}</h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 40px)" }}>
+            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 37px)" }}>
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
