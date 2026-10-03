@@ -274,6 +274,10 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         const mid = skyAt(SKY_MID, light);
         // accent text (e.g. "5 giai đoạn"): light cream on the dark first-light sky, brand orange in daylight
         sticky.style.setProperty("--rm-accent", mix([255, 246, 236], [214, 84, 12], smooth(0.3, 0.65, light)));
+        // the big stage number follows the same accent: outline and a soft fill
+        const acc = [255, 246, 236].map((v, i) => Math.round(v + ([247, 96, 17][i] - v) * smooth(0.3, 0.65, light)));
+        sticky.style.setProperty("--rm-accent-line", `rgba(${acc.join(",")},0.7)`);
+        sticky.style.setProperty("--rm-accent-soft", `rgba(${acc.join(",")},0.16)`);
         // the blue (lower) part also deepens towards the bottom
         const bottomLight = skyAt(SKY_BOTTOM_LIGHT, light);
         skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} ${a}%, ${mid} ${(a + b) / 2}%, ${bottomLight} ${b}%, ${bottom} 100%)`;
@@ -308,7 +312,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
         if (!sunFading) hideT = Math.max(0, hideT - (cur >= g0.cp[1] ? sunStep * 3 : 0));
         const hidden = hideT * sR * 0.085 * 1.8;
         sunRiseRef.current.setAttribute("transform", `translate(0 ${((1 - rise) * Math.max(0, startY - endY) + hidden).toFixed(1)})`);
-        sunRiseRef.current.style.opacity = String((0.7 + 0.3 * rise) * sunFade);
+        sunRiseRef.current.style.opacity = String((0.7 + 0.3 * rise) * sunFade * (1 - hideT)); // fully invisible while hidden
         // deep orange as it breaks the ridge, light orange high in the sky; the glow grows as it rises
         sunCoreRef.current?.setAttribute("fill", mix([226, 74, 8], [255, 186, 118], rise));
         if (haloRef.current) haloRef.current.style.opacity = String(0.45 + 0.55 * rise);
@@ -456,7 +460,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   <div className="relative">
                     <span
                       aria-hidden="true"
-                      className={`absolute -top-24 -left-2 text-[170px] xl:text-[200px] font-bold leading-none select-none [-webkit-text-stroke:1.5px_rgba(247,96,17,0.45)] transition-colors duration-[1200ms] ${EASE} ${on ? "text-[#F76011]/[0.1]" : "text-transparent"}`}
+                      className={`absolute -top-24 -left-2 text-[170px] xl:text-[200px] font-bold leading-none select-none [-webkit-text-stroke:2px_var(--rm-accent-line,rgba(247,96,17,0.45))] transition-colors duration-[1200ms] ${EASE} ${on ? "text-[var(--rm-accent-soft,rgba(247,96,17,0.1))]" : "text-transparent"}`}
                     >
                       {pad(i + 1)}
                     </span>
