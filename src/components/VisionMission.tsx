@@ -12,7 +12,7 @@ export interface VisionMissionItem {
 const D = 168; // the centre circle
 const GAP = 130; // room between the two cards; the circle sits in a curved notch cut into both
 const NOTCH = D / 2 + 16; // radius of the notch around the circle
-const SHADOW = ["drop-shadow(0 22px 28px rgba(0,47,91,0.35))", "drop-shadow(0 22px 28px rgba(201,80,14,0.35))"];
+const SHADOW = ["drop-shadow(0 22px 28px rgba(28,86,144,0.3))", "drop-shadow(0 22px 28px rgba(236,116,40,0.3))"];
 const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
@@ -94,12 +94,13 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     };
   }, [size]);
 
-  const content = (it: VisionMissionItem) => (
-    <>
-      <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">{it.icon}</span>
+  // mirror: the left card aligns to the right (towards the circle), the right card to the left
+  const content = (it: VisionMissionItem, mirror = false) => (
+    <div className={mirror ? "lg:text-right" : ""}>
+      <span className={`w-12 h-12 rounded-full bg-white/10 flex items-center justify-center ${mirror ? "lg:ml-auto" : ""}`}>{it.icon}</span>
       <h2 className="mt-5 text-2xl font-semibold">{it.title}</h2>
       <div className="mt-3 text-sm sm:text-base leading-relaxed">{it.body}</div>
-    </>
+    </div>
   );
 
   return (
@@ -123,7 +124,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
                 maskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
               }}
             >
-              {content(it)}
+              {content(it, i === 0)}
             </div>
           </div>
         ))}
