@@ -97,9 +97,12 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
   // mirror: each card aligns to its outer edge (left card to the left, right card to the right)
   const content = (it: VisionMissionItem, mirror = false) => (
     <div className={mirror ? "lg:text-right" : ""}>
-      <span className={`w-12 h-12 rounded-full bg-white/10 flex items-center justify-center ${mirror ? "lg:ml-auto" : ""}`}>{it.icon}</span>
-      <h2 className="mt-5 text-2xl font-semibold">{it.title}</h2>
-      <div className="mt-3 text-sm sm:text-base leading-relaxed">{it.body}</div>
+      {/* icon and title on one row; the mirrored card puts the icon in its right corner */}
+      <div className={`flex items-center gap-5 ${mirror ? "lg:flex-row-reverse" : ""}`}>
+        <span className="w-20 h-20 shrink-0 rounded-2xl bg-white/15 ring-1 ring-white/25 flex items-center justify-center">{it.icon}</span>
+        <h2 className="text-2xl lg:text-[28px] font-semibold">{it.title}</h2>
+      </div>
+      <div className="mt-5 text-sm sm:text-base leading-relaxed">{it.body}</div>
     </div>
   );
 

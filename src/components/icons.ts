@@ -7,6 +7,7 @@ export {
   ArrowUpIcon as ArrowUp,
   ArrowUpRightIcon as ArrowUpRight,
   MedalIcon as Award,
+  BinocularsIcon as Binoculars,
   BookOpenIcon as BookOpen,
   BuildingsIcon as Building2,
   CalendarBlankIcon as Calendar,

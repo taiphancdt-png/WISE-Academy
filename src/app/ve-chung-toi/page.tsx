@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, Target } from "@/components/icons";
+import { Binoculars, Target } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import RgpdcaLoop from "@/components/RgpdcaLoop";
 import CoreValuesBloom from "@/components/CoreValuesBloom";
@@ -139,7 +139,7 @@ export default function AboutPage() {
           items={[
             {
               title: "Tầm nhìn",
-              icon: <Target className="w-6 h-6 text-[#FFC79E]" />,
+              icon: <Binoculars weight="duotone" className="w-11 h-11 text-white" />,
               className: "bg-gradient-to-br from-[#3A78B5] to-[#1C5690] text-white",
               body: (
                 <p className="text-white/90">
@@ -149,7 +149,7 @@ export default function AboutPage() {
             },
             {
               title: "Sứ mệnh",
-              icon: <ShieldCheck className="w-6 h-6 text-white" />,
+              icon: <Target weight="duotone" className="w-11 h-11 text-white" />,
               className: "bg-gradient-to-br from-[#F79A5C] to-[#EC7428] text-white",
               body: (
                 <p className="text-white">
