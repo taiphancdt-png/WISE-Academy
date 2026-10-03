@@ -53,8 +53,8 @@ const FLAG_B = "M 1.5 -92 Q 10 -88 18 -91 Q 26 -93 34 -87 Q 26 -81 18 -80 Q 10 -
 // Dawn sky: the higher the trekker, the brighter the sky.
 const mix = (a: number[], b: number[], t: number) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
 // from first light (blue below, orange above) to full daylight (light orange below, white above)
-const SKY_TOP = [[255, 170, 110], [255, 214, 180], [255, 255, 255]];
-const SKY_BOTTOM = [[70, 130, 200], [236, 172, 162], [255, 214, 170]];
+const SKY_TOP = [[255, 196, 150], [255, 236, 218], [255, 255, 255]];
+const SKY_BOTTOM = [[70, 130, 200], [240, 186, 176], [255, 226, 196]];
 const skyAt = (stops: number[][], t: number) => {
   const x = Math.max(0, Math.min(1, t)) * (stops.length - 1);
   const i = Math.min(stops.length - 2, Math.floor(x));
@@ -248,7 +248,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const g0 = geoRef.current;
       const light = smooth(0, 0.8, skyP); // full daylight from about stage 4
       if (skyRef.current) {
-        skyRef.current.style.background = `linear-gradient(to bottom, ${skyAt(SKY_TOP, light)}, ${skyAt(SKY_BOTTOM, light)})`;
+        // the bright top colour fills the upper half before blending into the horizon colour
+        const top = skyAt(SKY_TOP, light);
+        skyRef.current.style.background = `linear-gradient(to bottom, ${top} 0%, ${top} 50%, ${skyAt(SKY_BOTTOM, light)} 100%)`;
       }
       // the sun rises straight up from behind the mountain between stage 2 and stage 5, brightening as it goes
       // target height from the climb (linear), approached at a constant speed so the sun glides evenly
@@ -390,7 +392,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
           ref={skyRef}
           aria-hidden="true"
           className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10"
-          style={{ background: "linear-gradient(to bottom, rgb(255,170,110), rgb(70,130,200))" }}
+          style={{ background: "linear-gradient(to bottom, rgb(255,196,150) 0%, rgb(255,196,150) 50%, rgb(70,130,200) 100%)" }}
         />
         <Header title={title} description={description} />
 
