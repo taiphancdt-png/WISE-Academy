@@ -26,11 +26,12 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 // Mountain artwork (client's reference, vectorised): the climber follows ART.trail, up the road and on to the summit.
 type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
-function buildGeo(w: number, h: number): Geo {
-  // as large as the box allows, sitting on its bottom edge and its right edge (labels use the space on the left)
-  // 90% of the largest size that fits (leaving room on the left for labels); still sits on the bottom edge
-  const k = 0.9 * Math.min((0.88 * w) / ART.w, h / ART.h);
-  const ox = w - ART.w * k, oy = h - ART.h * k;
+// bleed: distance from the box's right edge to the window's right edge
+function buildGeo(w: number, h: number, bleed = 0): Geo {
+  // 15% larger than the fitted size (capped by the box height), sitting on the bottom edge and shifted right
+  // so that about a quarter of the mountain runs off the right edge of the window
+  const k = Math.min(1.15 * 0.9 * Math.min((0.88 * w) / ART.w, h / ART.h), h / ART.h);
+  const ox = w + bleed - 0.75 * ART.w * k, oy = h - ART.h * k;
   const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
@@ -155,6 +156,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const sideBoxRef = useRef<HTMLDivElement>(null);
   const backBoxRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
+  const [, setLayout] = useState(0);
   const geoRef = useRef<Geo>(buildGeo(1, 1));
   const curRef = useRef(START);
   const [reached, setReached] = useState(0);
@@ -183,13 +185,19 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     };
     setTop();
     window.addEventListener("resize", setTop);
-    // redraw the mountain in real pixels whenever its box changes
-    const ro = new ResizeObserver(([e]) => {
-      const { width, height } = e.contentRect;
-      geoRef.current = buildGeo(width, height);
-      setSize({ w: width, h: height });
-    });
+    // redraw the mountain in real pixels whenever its box or the window changes
+    const relayout = () => {
+      const box = boxRef.current;
+      if (!box) return;
+      const r = box.getBoundingClientRect();
+      const bleed = Math.max(0, document.documentElement.clientWidth - r.right);
+      geoRef.current = buildGeo(r.width, r.height, bleed);
+      setSize({ w: r.width, h: r.height });
+      setLayout((n) => n + 1); // re-render even when only the window (not the box) changed
+    };
+    const ro = new ResizeObserver(relayout);
     if (boxRef.current) ro.observe(boxRef.current);
+    window.addEventListener("resize", relayout);
 
     let raf = 0;
     let last = 0;
@@ -320,6 +328,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       io.disconnect();
       cancelAnimationFrame(raf);
       ro.disconnect();
+      window.removeEventListener("resize", relayout);
       window.removeEventListener("resize", setTop);
     };
   }, []);
