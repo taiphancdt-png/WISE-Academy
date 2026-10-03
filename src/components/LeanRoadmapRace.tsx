@@ -12,8 +12,8 @@ export interface RoadmapStage {
   outcome: string;
 }
 
-const START = 4;
-const LAP_END = 104; // the runner leaves the track on the right and starts a new lap from the left
+const START = 2;
+const SUMMIT_HOLD_MS = 2800; // celebrate on the summit, then start a new climb from the foot
 const BASE_SPEED = 0.0034; // % of track per ms when nobody scrolls: a calm jog, about 5 s per stage
 const MAX_SPEED = 0.026; // flat-out sprint while scrolling fast
 const SCROLL_BOOST = 0.006; // extra speed per px/ms of scroll velocity
@@ -21,29 +21,51 @@ const BASE_CYCLE_MS = 900; // one gait cycle (two steps) at jogging pace
 const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 const pad = (n: number) => String(n).padStart(2, "0");
 
-// Zig-zag track: from the start it climbs to stage 1, drops to stage 2, climbs to 3 ... and leaves on the right.
-const TRACK_H = 270; // px height of the track area
-const Y_LOW = 214;
-const Y_HIGH = 128;
-const TRACK_W = 34; // px width of the running surface
-type Geo = { pts: [number, number][]; cum: number[]; total: number; cp: number[] };
-function buildGeo(w: number): Geo {
-  const pts = [0, 1, 2, 3, 4, 5, 6].map((k) => [(k / 6) * w, k % 2 ? Y_HIGH : Y_LOW] as [number, number]);
+// Mountain trail: from the foot on the left it climbs the left flank, one stage per bend, stage 5 on the summit.
+// Points are fractions of the mountain box (x of width, y of height).
+const PEAK: [number, number] = [0.6, 0.07];
+const BASE_L = 0.02;
+const BASE_R = 0.98;
+const TRAIL: [number, number][] = [
+  [0.12, 0.95],
+  [0.34, 0.8],
+  [0.31, 0.62],
+  [0.52, 0.45],
+  [0.52, 0.27],
+  [PEAK[0], PEAK[1] + 0.025],
+];
+const TRAIL_W = 16;
+type Geo = { w: number; h: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
+const SAMPLES = 24; // per bend, to follow the smooth curve
+function buildGeo(w: number, h: number): Geo {
+  const bends = TRAIL.map(([x, y]) => [x * w, y * h] as [number, number]);
+  // Catmull-Rom spline through the bends, sampled into a fine polyline
+  const pts: [number, number][] = [];
+  const at = (i: number) => bends[Math.max(0, Math.min(bends.length - 1, i))];
+  for (let i = 0; i < bends.length - 1; i++) {
+    const [p0, p1, p2, p3] = [at(i - 1), at(i), at(i + 1), at(i + 2)];
+    for (let k = 0; k < SAMPLES; k++) {
+      const t = k / SAMPLES, t2 = t * t, t3 = t2 * t;
+      const f = (a: number, b: number, c: number, d: number) =>
+        0.5 * (2 * b + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t2 + (-a + 3 * b - 3 * c + d) * t3);
+      pts.push([f(p0[0], p1[0], p2[0], p3[0]), f(p0[1], p1[1], p2[1], p3[1])]);
+    }
+  }
+  pts.push(bends[bends.length - 1]);
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
-  const total = cum[cum.length - 1];
-  return { pts, cum, total, cp: [1, 2, 3, 4, 5].map((k) => (cum[k] / total) * 100) };
+  const total = cum[cum.length - 1] || 1;
+  return { w, h, bends, pts, cum, total, cp: [1, 2, 3, 4, 5].map((k) => (cum[k * SAMPLES] / total) * 100) };
 }
-// point on the track at pct (% of its length); beyond either end it carries on horizontally
-function pointAt(g: Geo, pct: number): [number, number] {
-  const L = (pct / 100) * g.total;
-  if (L <= 0) return [g.pts[0][0] + L, g.pts[0][1]];
-  if (L >= g.total) return [g.pts[6][0] + (L - g.total), g.pts[6][1]];
+// point on the trail at pct (% of its length) and whether that stretch heads left
+function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
+  const L = Math.max(0, Math.min(1, pct / 100)) * g.total;
   let i = 1;
-  while (g.cum[i] < L) i++;
-  const t = (L - g.cum[i - 1]) / (g.cum[i] - g.cum[i - 1]);
+  while (i < g.pts.length - 1 && g.cum[i] < L) i++;
+  const t = (L - g.cum[i - 1]) / (g.cum[i] - g.cum[i - 1] || 1);
   const a = g.pts[i - 1], b = g.pts[i];
-  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+  // only face left on clearly leftward stretches, so gentle wiggles do not flip the climber
+  return { x: a[0] + (b[0] - a[0]) * t, y: a[1] + (b[1] - a[1]) * t, left: b[0] - a[0] < -0.4 * Math.abs(b[1] - a[1]) };
 }
 
 export default function LeanRoadmapRace({
@@ -105,14 +127,14 @@ function Header({ title, description }: { title: React.ReactNode; description: s
   );
 }
 
-function StageBody({ stage }: { stage: RoadmapStage }) {
+function StageBody({ stage, stacked = false }: { stage: RoadmapStage; stacked?: boolean }) {
   return (
-    <div className="grid sm:grid-cols-2 gap-5 sm:gap-8">
+    <div className={`grid gap-5 ${stacked ? "" : "sm:grid-cols-2 sm:gap-8"}`}>
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#486581]">Mục tiêu</p>
         <p className="mt-2 text-sm xl:text-[15px] text-[#334E68] leading-relaxed">{stage.objective}</p>
       </div>
-      <div className="sm:border-l sm:border-[#002F5B]/10 sm:pl-8">
+      <div className={stacked ? "border-t border-[#002F5B]/10 pt-5" : "sm:border-l sm:border-[#002F5B]/10 sm:pl-8"}>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9500E]">Kết quả</p>
         <p className="mt-2 text-sm xl:text-[15px] text-[#002F5B] leading-relaxed font-medium">{stage.outcome}</p>
       </div>
@@ -125,17 +147,17 @@ function StageBody({ stage }: { stage: RoadmapStage }) {
 function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; title: React.ReactNode; description: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
   const runnerRef = useRef<HTMLDivElement>(null);
   const figRef = useRef<RunnerHandle>(null);
-  const trailRef = useRef<HTMLDivElement>(null);
   const flipRef = useRef<HTMLDivElement>(null);
   const litRef = useRef<SVGPathElement>(null);
-  const [w, setW] = useState(0);
-  const geoRef = useRef<Geo>(buildGeo(1));
-  const [reached, setReached] = useState(0);
-  const [lap, setLap] = useState(0);
+  const [size, setSize] = useState({ w: 0, h: 0 });
+  const geoRef = useRef<Geo>(buildGeo(1, 1));
   const curRef = useRef(START);
+  const [reached, setReached] = useState(0);
+  const [summit, setSummit] = useState(false);
+  const [climb, setClimb] = useState(1);
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -151,57 +173,72 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     };
     setTop();
     window.addEventListener("resize", setTop);
-    // redraw the zig-zag in real pixels whenever the track width changes
+    // redraw the mountain in real pixels whenever its box changes
     const ro = new ResizeObserver(([e]) => {
-      geoRef.current = buildGeo(e.contentRect.width);
-      setW(e.contentRect.width);
+      const { width, height } = e.contentRect;
+      geoRef.current = buildGeo(width, height);
+      setSize({ w: width, h: height });
     });
-    if (trackRef.current) ro.observe(trackRef.current);
+    if (boxRef.current) ro.observe(boxRef.current);
 
     let raf = 0;
     let last = 0;
-    let started = 0; // time the runner first came into view: "on your marks", "set", go
+    let started = 0; // first time in view: "on your marks", "set", go
     let lastScroll = window.scrollY;
     let speed = 0;
     let phi = 0;
-    let runW = 0; // 0 = in the blocks, 1 = full stride
-    let laps = 0;
+    let runW = 0;
+    let holdUntil = 0; // resting on the summit until this time
+    let climbs = 1;
     figRef.current?.setPose(POSES.marks);
+
     const frame = (now: number) => {
       const dt = last ? Math.min(50, now - last) : 16;
       last = now;
       if (!started) started = now;
       const t = now - started;
 
-      // the runner never stops; scrolling (either way) pushes the pace up
+      // always climbing; scrolling (either way) pushes the pace up
       const scrollV = Math.abs(window.scrollY - lastScroll) / dt;
       lastScroll = window.scrollY;
-      const inBlocks = laps === 0 && t < 1500;
-      const targetSpeed = inBlocks ? 0 : Math.min(MAX_SPEED, BASE_SPEED + scrollV * SCROLL_BOOST);
-      speed += (targetSpeed - speed) * (1 - Math.exp(-dt / (targetSpeed > speed ? 220 : 650)));
+      const inBlocks = climbs === 1 && t < 1500;
+      const resting = now < holdUntil;
+      const targetSpeed = inBlocks || resting ? 0 : Math.min(MAX_SPEED, BASE_SPEED + scrollV * SCROLL_BOOST);
+      speed += (targetSpeed - speed) * (1 - Math.exp(-dt / (targetSpeed > speed ? 220 : 400)));
       let cur = curRef.current + speed * dt;
-      if (cur >= LAP_END) {
-        cur = -LAP_END + 100; // re-enter from the left
-        laps += 1;
-        setLap(laps);
+      if (cur >= 100 && !resting && holdUntil === 0) {
+        cur = 100;
+        holdUntil = now + SUMMIT_HOLD_MS;
+        setSummit(true);
       }
+      if (holdUntil && now >= holdUntil) {
+        // back to the foot of the mountain for the next climb
+        holdUntil = 0;
+        cur = START;
+        speed = 0;
+        climbs += 1;
+        setClimb(climbs);
+        setSummit(false);
+      }
+      cur = Math.min(100, cur);
       curRef.current = cur;
 
-      // cadence and stride grow with speed but stay smooth and regular
       const pace = speed / BASE_SPEED;
       phi += (dt / (BASE_CYCLE_MS / Math.min(2.2, Math.sqrt(Math.max(pace, 0.01))))) * Math.PI * 2;
-      runW += ((inBlocks ? 0 : 1) - runW) * (1 - Math.exp(-dt / 200));
+      const moving = !inBlocks && !resting;
+      runW += ((moving ? 1 : 0) - runW) * (1 - Math.exp(-dt / 220));
 
-      const base = inBlocks && t < 700 ? POSES.marks : POSES.set;
-      const pose = blendPose(base, runPose(phi, Math.min(1.25, 0.85 + 0.12 * pace)), runW);
-      figRef.current?.setPose(pose, runW * 2.2 * Math.abs(Math.sin(phi)));
+      const base = inBlocks ? (t < 700 ? POSES.marks : POSES.set) : POSES.stand;
+      const pose = blendPose(base, runPose(phi, Math.min(1.25, 0.9 + 0.1 * pace)), runW);
+      pose.torso += 10 * runW; // lean into the slope
+      figRef.current?.setPose(pose, runW * 2 * Math.abs(Math.sin(phi)));
 
       const geo = geoRef.current;
-      const [x, y] = pointAt(geo, cur);
-      if (runnerRef.current) runnerRef.current.style.transform = `translate(${x}px, ${y}px)`;
-      if (litRef.current) litRef.current.style.strokeDashoffset = String(geo.total * (1 - Math.max(0, Math.min(100, cur)) / 100));
-      if (trailRef.current) trailRef.current.style.opacity = String(Math.max(0, Math.min(0.9, (pace - 1.4) / 3)));
-      const n = geo.cp.filter((c) => cur >= c).length;
+      const pt = pointAt(geo, cur);
+      if (runnerRef.current) runnerRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px)`;
+      if (flipRef.current && moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
+      if (litRef.current) litRef.current.style.strokeDashoffset = String(geo.total * (1 - cur / 100));
+      const n = geo.cp.filter((c) => cur >= c - 0.01).length;
       setReached((prev) => (prev === n ? prev : n));
       raf = requestAnimationFrame(frame);
     };
@@ -221,134 +258,160 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   }, []);
 
   const active = Math.max(0, reached - 1);
-
-  // Clicking a gate brings the runner up to that stage.
+  // Clicking a bend sends the climber up to that stage.
   const jumpTo = (i: number) => {
-    curRef.current = geoRef.current.cp[i] - 1.5;
+    curRef.current = geoRef.current.cp[i] - 1;
   };
+
   const geo = geoRef.current;
-  const d = w ? geo.pts.map((p, i) => `${i ? "L" : "M"} ${p[0].toFixed(1)} ${p[1]}`).join(" ") : "";
-  const startPt = pointAt(geo, START);
+  const { w, h } = size;
+  const trail = w ? geo.pts.map((p, i) => `${i ? "L" : "M"} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" ") : "";
+  const X = (f: number) => f * w;
+  const Y = (f: number) => f * h;
+  const peak = [X(PEAK[0]), Y(PEAK[1])];
 
   return (
     <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
-      <div ref={stickyRef} className="sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-12 pb-10">
+      <div ref={stickyRef} className="sticky top-0 h-[100dvh] flex flex-col max-w-7xl mx-auto px-8 pt-10 pb-8">
         <Header title={title} description={description} />
 
-        {/* the stage being run: big number, name and the two outcome columns */}
-        <div className="relative flex-1 min-h-0 mt-8">
-          {stages.map((stage, i) => {
-            const on = i === active;
-            return (
-              <article
-                key={stage.name}
-                aria-hidden={!on}
-                className={`absolute inset-0 grid grid-cols-12 gap-10 items-center transition-all duration-700 ${EASE} ${
-                  on ? "opacity-100 translate-y-0 blur-0" : i < active ? "opacity-0 -translate-y-10 blur-md pointer-events-none" : "opacity-0 translate-y-10 blur-md pointer-events-none"
-                }`}
-              >
-                <div className="col-span-5 relative">
-                  <span
-                    aria-hidden="true"
-                    className={`absolute -top-16 -left-2 text-[200px] xl:text-[240px] font-bold leading-none select-none [-webkit-text-stroke:1.5px_rgba(247,96,17,0.45)] transition-colors duration-[1200ms] ${EASE} ${on ? "text-[#F76011]/[0.12]" : "text-transparent"}`}
-                  >
-                    {pad(i + 1)}
-                  </span>
+        <div className="flex-1 min-h-0 mt-6 grid grid-cols-12 gap-10">
+          {/* the stage being climbed */}
+          <div className="col-span-5 relative">
+            {stages.map((stage, i) => {
+              const on = i === active;
+              return (
+                <article
+                  key={stage.name}
+                  aria-hidden={!on}
+                  className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ${EASE} ${
+                    on ? "opacity-100 translate-y-0 blur-0" : i < active ? "opacity-0 -translate-y-10 blur-md pointer-events-none" : "opacity-0 translate-y-10 blur-md pointer-events-none"
+                  }`}
+                >
                   <div className="relative">
-                    <span className="inline-flex rounded-lg px-3 py-1.5 text-xs font-semibold bg-[#F76011] text-white">{stage.time}</span>
-                    <h3 className="mt-5 text-3xl xl:text-[40px] font-semibold leading-[1.12] tracking-tight [text-wrap:balance]">{stage.name}</h3>
-                  </div>
-                </div>
-                <div className="col-span-7">
-                  <div className="rounded-[2rem] p-2 bg-white/60 ring-1 ring-[#002F5B]/[0.08]">
-                    <div className="rounded-[calc(2rem-0.5rem)] p-8 bg-white shadow-[0_24px_60px_-28px_rgba(0,47,91,0.35)]">
-                      <StageBody stage={stage} />
+                    <span
+                      aria-hidden="true"
+                      className={`absolute -top-24 -left-2 text-[170px] xl:text-[200px] font-bold leading-none select-none [-webkit-text-stroke:1.5px_rgba(247,96,17,0.45)] transition-colors duration-[1200ms] ${EASE} ${on ? "text-[#F76011]/[0.1]" : "text-transparent"}`}
+                    >
+                      {pad(i + 1)}
+                    </span>
+                    <div className="relative">
+                      <span className="inline-flex rounded-lg px-3 py-1.5 text-xs font-semibold bg-[#F76011] text-white">{stage.time}</span>
+                      <h3 className="mt-4 text-[28px] xl:text-[34px] font-semibold leading-[1.15] tracking-tight [text-wrap:balance]">{stage.name}</h3>
                     </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* the zig-zag race track */}
-        <div ref={trackRef} className="relative mt-2 -mx-2" style={{ height: TRACK_H }}>
-          {w > 0 && (
-            <svg width={w} height={TRACK_H} className="absolute inset-0 overflow-visible" aria-hidden="true">
-              <path d={d} fill="none" stroke="#C9500E" strokeOpacity={0.12} strokeWidth={TRACK_W + 14} strokeLinejoin="round" strokeLinecap="round" transform="translate(0 8)" />
-              <path d={d} fill="none" stroke="#F6C7A9" strokeWidth={TRACK_W} strokeLinejoin="round" strokeLinecap="round" />
-              <path
-                ref={litRef}
-                d={d}
-                fill="none"
-                stroke="#F76011"
-                strokeWidth={TRACK_W}
-                strokeLinejoin="round"
-                strokeDasharray={geo.total}
-                strokeDashoffset={geo.total * (1 - START / 100)}
-              />
-              {/* lane lines */}
-              <path d={d} fill="none" stroke="#fff" strokeOpacity={0.85} strokeWidth={2} strokeLinejoin="round" transform="translate(0 -8)" />
-              <path d={d} fill="none" stroke="#fff" strokeOpacity={0.85} strokeWidth={2} strokeLinejoin="round" transform="translate(0 8)" />
-              {/* start line */}
-              <line x1={startPt[0]} y1={startPt[1] - TRACK_W / 2} x2={startPt[0]} y2={startPt[1] + TRACK_W / 2} stroke="#fff" strokeWidth={5} />
-            </svg>
-          )}
-
-          {/* checkpoint markers, with their stage name underneath (click to send the runner there) */}
-          {w > 0 &&
-            geo.pts.slice(1, 6).map((pt, i) => {
-              const on = reached > i;
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => jumpTo(i)}
-                  className="group absolute w-0 h-0 focus-visible:outline-none"
-                  style={{ left: pt[0], top: pt[1] }}
-                  aria-label={`Giai đoạn ${i + 1}: ${stages[i].short}`}
-                >
-                  <span
-                    className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
-                      on ? "bg-[#002F5B] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#C9500E] ring-2 ring-[#F76011]/30"
-                    }`}
-                  >
-                    {pad(i + 1)}
-                    {on && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-[#002F5B]" />}
-                  </span>
-                  {/* name above the peaks, below the valleys */}
-                  <span
-                    className={`absolute left-0 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors duration-500 ${
-                      i % 2 === 0 ? "bottom-[34px]" : "top-[34px]"
-                    } ${on ? "text-[#002F5B]" : "text-[#486581]/70 group-hover:text-[#002F5B]"}`}
-                  >
-                    {stages[i].short}
-                  </span>
-                </button>
+                  <div className="mt-6 rounded-[2rem] p-2 bg-white/60 ring-1 ring-[#002F5B]/[0.08]">
+                    <div className="rounded-[calc(2rem-0.5rem)] p-6 bg-white shadow-[0_24px_60px_-28px_rgba(0,47,91,0.35)]">
+                      <StageBody stage={stage} stacked />
+                    </div>
+                  </div>
+                </article>
               );
             })}
-          {w > 0 && (
-            <>
-              <span className="absolute -translate-x-1/2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]" style={{ left: Math.max(40, startPt[0]), top: startPt[1] + 30 }}>
-                Xuất phát
-              </span>
-              <span className="absolute right-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C9500E]" style={{ top: Y_LOW + 30 }}>
-                <RefreshCw weight="bold" className="w-4 h-4" /> {lap > 0 ? `Vòng ${lap + 1}` : "Liên tục"}
-              </span>
-            </>
-          )}
+          </div>
 
-          {/* runner, positioned by transform only */}
-          <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
-            <div className="absolute bottom-[-10px] left-0 -translate-x-1/2 flex flex-col items-center">
-              {/* speed lines while running */}
-              <div ref={trailRef} className="absolute right-[70%] top-[35%] flex flex-col gap-2 opacity-0" aria-hidden="true">
-                <span className="block h-[3px] w-14 rounded-full bg-gradient-to-l from-[#002F5B]/50 to-transparent" />
-                <span className="block h-[3px] w-20 rounded-full bg-gradient-to-l from-[#FF8A3D] to-transparent ml-4" />
-                <span className="block h-[3px] w-10 rounded-full bg-gradient-to-l from-[#002F5B]/30 to-transparent ml-8" />
-              </div>
-              <div ref={flipRef} className="relative">
-                <RunnerFigure ref={figRef} className="relative w-40 h-[140px] drop-shadow-[0_6px_8px_rgba(0,47,91,0.25)]" />
+          {/* the mountain */}
+          <div ref={boxRef} className="col-span-7 relative">
+            {w > 0 && (
+              <svg width={w} height={h} className="absolute inset-0 overflow-visible" aria-hidden="true">
+                <defs>
+                  <linearGradient id="mtLight" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#3D6E9E" />
+                    <stop offset="1" stopColor="#1B4A78" />
+                  </linearGradient>
+                  <linearGradient id="mtShade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#1B4A78" />
+                    <stop offset="1" stopColor="#002F5B" />
+                  </linearGradient>
+                  <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0" stopColor="#FFB27A" stopOpacity="0.9" />
+                    <stop offset="1" stopColor="#FFB27A" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                {/* sun */}
+                <circle cx={X(0.86)} cy={Y(0.16)} r={Math.min(w, h) * 0.22} fill="url(#sun)" />
+                <circle cx={X(0.86)} cy={Y(0.16)} r={Math.min(w, h) * 0.06} fill="#FFC9A3" />
+                {/* main mountain: lit face on the left, shaded face on the right of the ridge */}
+                <path d={`M ${X(BASE_L)} ${Y(1)} L ${peak[0]} ${peak[1]} L ${X(0.6)} ${Y(1)} Z`} fill="url(#mtLight)" />
+                <path d={`M ${peak[0]} ${peak[1]} L ${X(BASE_R)} ${Y(1)} L ${X(0.6)} ${Y(1)} Z`} fill="url(#mtShade)" />
+                {/* snow cap */}
+                <path
+                  d={`M ${peak[0]} ${peak[1]} L ${X(0.525)} ${Y(0.19)} L ${X(0.555)} ${Y(0.17)} L ${X(0.58)} ${Y(0.22)} L ${X(0.62)} ${Y(0.16)} L ${X(0.655)} ${Y(0.21)} L ${X(0.675)} ${Y(0.18)} Z`}
+                  fill="#F4F8FC"
+                />
+                {/* trail: shadow, path, lit part, centre dashes */}
+                <path d={trail} fill="none" stroke="#001E38" strokeOpacity={0.35} strokeWidth={TRAIL_W + 6} strokeLinejoin="round" strokeLinecap="round" />
+                <path d={trail} fill="none" stroke="#F6C7A9" strokeWidth={TRAIL_W} strokeLinejoin="round" strokeLinecap="round" />
+                <path
+                  ref={litRef}
+                  d={trail}
+                  fill="none"
+                  stroke="#F76011"
+                  strokeWidth={TRAIL_W}
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeDasharray={geo.total}
+                  strokeDashoffset={geo.total * (1 - START / 100)}
+                />
+                <path d={trail} fill="none" stroke="#fff" strokeOpacity={0.8} strokeWidth={1.5} strokeDasharray="6 8" strokeLinejoin="round" />
+                {/* summit flag */}
+                <g transform={`translate(${peak[0]} ${peak[1] + Y(0.02)})`}>
+                  <line x1={0} y1={0} x2={0} y2={-46} stroke="#002F5B" strokeWidth={3} strokeLinecap="round" />
+                  <path d="M 1.5 -46 L 30 -38 L 1.5 -30 Z" fill="#F76011" className={summit ? "summit-flag" : ""} style={{ transformOrigin: "1.5px -38px" }} />
+                </g>
+              </svg>
+            )}
+
+            {/* bends of the trail: stage number and name (click to send the climber there) */}
+            {w > 0 &&
+              geo.bends.slice(1).map((pt, i) => {
+                const on = reached > i;
+                // labels go on the side away from the trail: outer bends (near the flank) to the left, inner bends and the summit to the right
+                const right = i % 2 === 0;
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => jumpTo(i)}
+                    className="group absolute w-0 h-0 focus-visible:outline-none"
+                    style={{ left: pt[0], top: pt[1] }}
+                    aria-label={`Giai đoạn ${i + 1}: ${stages[i].short}`}
+                  >
+                    <span
+                      className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
+                        on ? "bg-[#F76011] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#002F5B] ring-2 ring-white/60"
+                      }`}
+                    >
+                      {pad(i + 1)}
+                      {on && <span aria-hidden="true" className="gate-pulse absolute inset-0 rounded-full ring-2 ring-white" />}
+                    </span>
+                    <span
+                      className={`absolute top-0 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-500 ${
+                        right ? "left-6" : "right-6"
+                      } ${on ? "bg-white text-[#002F5B] shadow-sm" : "bg-white/70 text-[#486581] group-hover:text-[#002F5B]"}`}
+                    >
+                      {stages[i].short}
+                    </span>
+                  </button>
+                );
+              })}
+            {w > 0 && (
+              <span className="absolute -translate-x-full -translate-y-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]" style={{ left: geo.bends[0][0] - 22, top: geo.bends[0][1] }}>
+                Chân núi
+              </span>
+            )}
+            {climb > 1 && (
+              <span className="absolute right-0 bottom-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C9500E]">
+                <RefreshCw weight="bold" className="w-4 h-4" /> Chinh phục lần {climb}
+              </span>
+            )}
+
+            {/* the climber, feet on the trail */}
+            <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
+              <div className="absolute bottom-[-6px] left-0 -translate-x-1/2">
+                <div ref={flipRef}>
+                  <RunnerFigure ref={figRef} className="w-[104px] h-[92px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                </div>
               </div>
             </div>
           </div>

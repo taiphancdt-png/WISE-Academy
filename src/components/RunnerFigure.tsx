@@ -73,6 +73,9 @@ const C = {
   shoeFar: "#CBD5E1",
   sole: "#002F5B",
   hair: "#1E2B3C",
+  pack: "#1B4A78", // backpack
+  packDark: "#002F5B",
+  packAccent: "#FFB27A",
 };
 
 // Capsule that tapers from width w1 at a to w2 at b (round ends), as an SVG path.
@@ -91,7 +94,8 @@ const PARTS = [
   ["armUB", C.skinFar], ["armLB", C.skinFar],
   ["thighB", C.skinFar], ["shortB", C.shortsFar], ["calfB", C.skinFar], ["shinB", C.skinFar], ["sockB", C.sockFar], ["shoeB", C.shoeFar], ["soleB", C.sole],
   // body
-  ["neck", C.skinFar], ["torso", C.kit], ["hips", C.shorts],
+  ["pack", C.pack], ["packFlap", C.packDark], ["packPocket", C.packDark], ["packLoop", C.packAccent],
+  ["neck", C.skinFar], ["torso", C.kit], ["hips", C.shorts], ["strap", C.packDark],
   ["hair", C.hair], ["face", C.skin], ["nose", C.skin], ["ear", C.skinFar], ["hairTop", C.hair],
   // near side
   ["thighF", C.skin], ["shortF", C.shorts], ["calfF", C.skin], ["shinF", C.skin], ["sockF", C.sock], ["shoeF", C.shoe], ["soleF", C.sole],
@@ -129,7 +133,19 @@ const RunnerFigure = forwardRef<RunnerHandle, { className?: string }>(function R
       const fwd = limb(1, p.torso + 90); // facing direction of the head
       const upDir = up(p.torso, 1);
 
+      // backpack rides on the back, behind the torso
+      const back: Pt = [-fwd[0], -fwd[1]];
+      const onBack = (t: number, off: number): Pt => {
+        const q = lerp(hip, sh, t);
+        return [q[0] + back[0] * off, q[1] + back[1] * off];
+      };
+
       const d: Record<string, string> = {
+        pack: taper(onBack(0.28, 7), onBack(0.98, 7), 12, 11, T),
+        packFlap: taper(onBack(0.86, 7.3), onBack(1.04, 7.3), 11.5, 11, T),
+        packPocket: taper(onBack(0.32, 11.5), onBack(0.56, 11.5), 4.5, 4.5, T),
+        packLoop: taper(onBack(0.7, 12.2), onBack(0.74, 12.2), 2.2, 2.2, T),
+        strap: taper(lerp(hip, sh, 0.97), add(lerp(hip, sh, 0.5), [fwd[0] * 2.5, fwd[1] * 2.5]), 2.4, 2.2, T),
         armUB: taper(sh, elB, 6, 5, T),
         armLB: taper(elB, hB, 5, 5.6, T),
         thighB: taper(hip, kB, 11, 7.5, T),
