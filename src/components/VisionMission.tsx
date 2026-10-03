@@ -10,7 +10,9 @@ export interface VisionMissionItem {
 }
 
 const D = 168; // the centre circle
-const GAP = 210; // room between the two cards for the circle
+const GAP = 130; // room between the two cards; the circle sits in a curved notch cut into both
+const NOTCH = D / 2 + 16; // radius of the notch around the circle
+const SHADOW = ["drop-shadow(0 22px 28px rgba(0,47,91,0.35))", "drop-shadow(0 22px 28px rgba(201,80,14,0.35))"];
 const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
@@ -110,10 +112,19 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
             ref={(el) => {
               boxRefs.current[i] = el;
             }}
-            className={`absolute top-0 rounded-2xl p-8 lg:p-10 will-change-transform ${it.className}`}
-            style={{ [i === 0 ? "left" : "right"]: 0, opacity: 0 } as React.CSSProperties}
+            className="absolute top-0 will-change-transform"
+            style={{ [i === 0 ? "left" : "right"]: 0, opacity: 0, filter: SHADOW[i] } as React.CSSProperties}
           >
-            {content(it)}
+            {/* the card: soft corners and a curved notch on its inner edge that hugs the centre circle */}
+            <div
+              className={`h-full rounded-[28px] p-8 lg:p-10 ${i === 0 ? "lg:pr-16" : "lg:pl-16"} ${it.className}`}
+              style={{
+                WebkitMaskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
+                maskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
+              }}
+            >
+              {content(it)}
+            </div>
           </div>
         ))}
 
@@ -133,7 +144,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       {/* mobile: the two cards stacked */}
       <div className="md:hidden grid grid-cols-1 gap-6">
         {items.map((it) => (
-          <div key={it.title} className={`rounded-2xl p-8 ${it.className}`}>
+          <div key={it.title} className={`rounded-[28px] p-8 ${it.className}`}>
             {content(it)}
           </div>
         ))}
