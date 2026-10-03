@@ -14,7 +14,7 @@ const PETAL = ["#002F5B", "#F76011", "#1F64A6", "#FF9F43"];
 const LABEL = ["#002F5B", "#C9500E", "#1F64A6", "#B85F0B"];
 // All four petals grow from one point. Closed: a narrow bud whose petals read W I S E; open: a fanned lotus.
 const CLOSED_ANGLE = [-33, -11, 11, 33];
-const OPEN_ANGLE = [-66, -22, 22, 66];
+const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
 const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
@@ -134,7 +134,7 @@ export default function CoreValuesBloom({
             textAnchor="middle"
             dominantBaseline="central"
             className="font-extrabold"
-            fontSize={64}
+            fontSize={45}
             fill="#fff"
             fillOpacity={0.6}
             style={{ mixBlendMode: "normal" }}
