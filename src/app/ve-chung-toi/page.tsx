@@ -56,7 +56,7 @@ export default function AboutPage() {
     {
       phase: "BƯỚC 01",
       code: "R - RESEARCH",
-      name: "Đi Gemba, hiểu đúng hiện trạng",
+      name: "Đi Gemba,\nHiểu đúng hiện trạng",
       action: "Đến tận nơi, xem tận mắt, hỏi tại sao",
       content: "Chuyên gia WISE Academy cùng đội ngũ của bạn đi dọc chuỗi giá trị: đứng vòng tròn Ohno để nhìn ra lãng phí, đo thời gian chu kỳ và tồn kho thực tế, lắng nghe người trực tiếp làm việc. Kết quả là sơ đồ chuỗi giá trị hiện trạng (Current VSM) và danh sách vấn đề được chứng minh bằng dữ liệu, không bằng cảm tính."
     },
@@ -203,18 +203,46 @@ export default function AboutPage() {
         />
         {/* Loop: 1 → 2 → 3 ↓ 4 → 5 → 6 (bottom row runs right-to-left) ↑ back to 1 */}
         <div className="relative">
-          <ol className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 lg:gap-y-20">
+          {/* Faint loop drawn behind the six steps (desktop). The dash flows clockwise: 1 → 3 ↓ 4 → 6 ↑ 1. */}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 1000 600"
+            preserveAspectRatio="none"
+            className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none"
+          >
+            <ellipse cx="500" cy="300" rx="430" ry="235" fill="none" stroke="#F76011" strokeOpacity="0.07" strokeWidth="46" vectorEffect="non-scaling-stroke" />
+            <path
+              className="rgpdca-flow"
+              d="M 70 300 A 430 235 0 1 1 930 300 A 430 235 0 1 1 70 300"
+              fill="none"
+              stroke="#F76011"
+              strokeOpacity="0.45"
+              strokeWidth="2"
+              strokeDasharray="10 12"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <ol className="relative grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 lg:gap-y-20">
             {rgpdcaDetails.map((item, i) => {
               const step = i + 1;
               const out = LOOP[i];
               const Arrow = out.icon;
               return (
                 <li key={item.phase} className={`relative card-soft !transform-none p-7 ${out.place}`}>
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-[#F76011]">{String(step).padStart(2, "0")}</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#486581]">{item.code}</span>
+                  <div className="flex items-center gap-4">
+                    {/* The RGPDCA letter is the anchor of each step */}
+                    <span className="w-14 h-14 rounded-xl bg-[#002F5B] text-[#FF7A30] text-3xl font-extrabold flex items-center justify-center shrink-0">
+                      {item.code.charAt(0)}
+                    </span>
+                    <span className="leading-tight">
+                      <span className="block text-xs font-semibold text-[#486581]">Bước {String(step).padStart(2, "0")}</span>
+                      <span className="block text-sm font-bold uppercase tracking-wide text-[#002F5B]">
+                        <span className="text-[#F76011]">{item.code.charAt(0)}</span>
+                        {item.code.split(" - ")[1].slice(1)}
+                      </span>
+                    </span>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug whitespace-pre-line">{item.name}</h3>
                   <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
                   <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
 
@@ -238,9 +266,10 @@ export default function AboutPage() {
 
           {/* Loop label in the middle of the cycle (desktop) / after step 6 (mobile) */}
           <div className="mt-10 lg:mt-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 flex justify-center pointer-events-none">
-            <span className="inline-flex items-center gap-2 bg-[#002F5B] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg">
+            <span className="inline-flex items-center gap-3 bg-[#002F5B] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg">
               <RefreshCw className="w-4 h-4 text-[#FF7A30]" />
-              Vòng cải tiến liên tục · bước 6 quay lại bước 1
+              <span className="tracking-[0.25em] text-base sm:text-lg font-extrabold text-[#FF7A30]">RGPDCA</span>
+              <span className="text-white/85">bước 6 quay lại bước 1</span>
             </span>
           </div>
         </div>

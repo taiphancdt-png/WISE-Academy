@@ -194,3 +194,11 @@ font[style] {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* RGPDCA loop on the About page: dashes travel clockwise around the six steps */
+@keyframes rgpdcaFlow {
+  to { stroke-dashoffset: -220; }
+}
+.rgpdca-flow {
+  animation: rgpdcaFlow 6s linear infinite;
+}
