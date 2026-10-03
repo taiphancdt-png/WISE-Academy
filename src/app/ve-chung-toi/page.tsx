@@ -56,44 +56,44 @@ export default function AboutPage() {
     {
       phase: "BƯỚC 01",
       code: "R - RESEARCH",
-      name: "Khảo Sát Thực Tế Tại Hiện Trường",
-      action: "Xuống Tận Nơi Quan Sát Thao Tác & Đánh Giá Hiện Trạng",
-      content: "Chuyên gia WISE Academy trực tiếp đến hiện trường - nhà máy, kho vận hay văn phòng - quan sát luồng vật tư và dòng thông tin. Quan sát tỉ mỉ các thao tác thừa, phỏng vấn sâu ban lãnh đạo và quản lý trực tiếp để xây dựng bức tranh hiện trạng toàn diện."
+      name: "Đi Gemba, hiểu đúng hiện trạng",
+      action: "Đến tận nơi, xem tận mắt, hỏi tại sao",
+      content: "Chuyên gia WISE Academy cùng đội ngũ của bạn đi dọc chuỗi giá trị: đứng vòng tròn Ohno để nhìn ra lãng phí, đo thời gian chu kỳ và tồn kho thực tế, lắng nghe người trực tiếp làm việc. Kết quả là sơ đồ chuỗi giá trị hiện trạng (Current VSM) và danh sách vấn đề được chứng minh bằng dữ liệu, không bằng cảm tính."
     },
     {
       phase: "BƯỚC 02",
       code: "G - GOALS",
-      name: "Xác Lập Mục Tiêu & Định Lượng Kết Quả",
-      action: "Gắn Kết Cải Tiến Vận Hành Với Bảng Cân Đối Tài Chính",
-      content: "Cùng Ban Giám Đốc xác định rõ các chỉ số đo lường thành công: Tỷ lệ nâng OEE, rút ngắn Lead Time, giảm công việc dở dang và tồn kho (WIP), giảm tỷ lệ phế phẩm (PPM/Defect Rate) và tính toán giá trị tiết kiệm tài chính (Cost Savings) cụ thể."
+      name: "Xác định True North & mục tiêu đo được",
+      action: "Từ chiến lược đến chỉ số Q-C-D-S-M",
+      content: "Cùng ban lãnh đạo xác định đích đến dài hạn (True North) và chuyển thành vài chỉ số then chốt: OEE, Lead Time, WIP, tỷ lệ lỗi, năng suất lao động. Mỗi chỉ số có giá trị nền, mục tiêu và giá trị tài chính tương ứng, để cải tiến vận hành gắn trực tiếp với kết quả kinh doanh."
     },
     {
       phase: "BƯỚC 03",
       code: "P - PLAN",
-      name: "Thiết Kế Lộ Trình Chuyển Đổi Tinh Gọn (Roadmap)",
-      action: "Lean House & Lộ Trình 3 Giai Đoạn Chuẩn MIT",
-      content: "Xây dựng bản kế hoạch chi tiết gồm 3 giai đoạn: Khám phá nhận thức (Explore) -> Xây dựng nền móng (Foundation) -> Nhân rộng toàn diện (Scale). Kế hoạch phân bổ nguồn lực rõ ràng theo từng tháng, xác định khu vực thí điểm mẫu (Model Line) và thiết lập ban chỉ đạo cải tiến."
+      name: "Thiết kế trạng thái tương lai & lộ trình",
+      action: "Future VSM, Hoshin Kanri, Model Line",
+      content: "Vẽ sơ đồ chuỗi giá trị tương lai, chọn khu vực mô hình (Model Line) và triển khai mục tiêu xuống từng cấp theo Hoshin Kanri. Lộ trình đi qua 3 giai đoạn Explore, Foundation, Scale với nguồn lực, người phụ trách và mốc thời gian rõ ràng, do ban chỉ đạo và đội Lean nòng cốt dẫn dắt."
     },
     {
       phase: "BƯỚC 04",
       code: "D - DO",
-      name: "Triển Khai Thí Điểm & Huấn Luyện Tại Hiện Trường",
-      action: "Simulation Game + Kèm Cặp Dự Án Thực Chiến",
-      content: "Tổ chức đào tạo gắn liền với thực hành tại hiện trường. Ứng dụng Lean Simulation Game để xóa bỏ tư duy lối mòn, sau đó chuyên gia cùng đội ngũ nòng cốt trực tiếp triển khai 5S, Lean Cell, SMED, Kanban tại khu vực mẫu để đạt được Quick Wins ngay trong 60 - 90 ngày đầu tiên."
+      name: "Thí điểm tại Model Line, học bằng làm",
+      action: "Kaizen Event & kèm cặp tại hiện trường",
+      content: "Đào tạo đi liền thực hành: Lean Simulation Game để thay đổi tư duy, sau đó chuyên gia cùng đội nòng cốt chạy các Kaizen Event tại khu vực mô hình với 5S, công việc tiêu chuẩn, cân bằng chuyền, SMED, Kanban. Mục tiêu là có kết quả thấy được trong 60-90 ngày đầu và đội ngũ tự làm được."
     },
     {
       phase: "BƯỚC 05",
       code: "C - CHECK",
-      name: "Đo Lường, Đánh Giá & Phân Tích Khoảng Cách",
-      action: "Đo Lường Before/After & Kiểm Toán Tiến Độ Định Kỳ",
-      content: "Hàng tuần và hàng tháng, ban chỉ đạo tiến hành đo lường các chỉ số Before/After trên quy trình thực tế. Đối chiếu với mục tiêu ban đầu, phân tích nguyên nhân gốc rễ (Root Cause Analysis) nếu có độ lệch và điều chỉnh biện pháp can thiệp kịp thời."
+      name: "Đo kết quả, tìm khoảng cách, học từ dữ liệu",
+      action: "Quản lý trực quan & review định kỳ",
+      content: "Kết quả trước và sau được đo trên chính quy trình thực tế và hiển thị trên bảng quản lý trực quan. Ban chỉ đạo review hằng tuần, hằng tháng; mọi khoảng cách so với mục tiêu được phân tích bằng A3 và 5 Why để xử lý tận gốc, không dừng ở việc chữa cháy."
     },
     {
       phase: "BƯỚC 06",
       code: "A - ACTION & ADJUST",
-      name: "Chuẩn Hóa (Standardize) & Nhân Rộng Bền Vững",
-      action: "Ban Hành SOP, Hệ Thống DMS & Đào Tạo Lean Leaders",
-      content: "Đóng gói các giải pháp thành công thành Tiêu chuẩn công việc (Standard Work/SOP). Thiết lập hệ thống quản lý hàng ngày (Daily Management System - DMS) để giữ vững kết quả và chuyển giao năng lực cho các Lean Leaders tự nhân rộng ra toàn bộ tổ chức."
+      name: "Chuẩn hóa, duy trì & nhân rộng (Yokoten)",
+      action: "Standard Work, Daily Management, Leader Standard Work",
+      content: "Cách làm tốt được chuẩn hóa thành công việc tiêu chuẩn và duy trì bằng hệ thống quản lý hằng ngày: họp đầu ca, bảng KPI, Gemba Walk của người lãnh đạo. Đội Lean nội bộ được huấn luyện để tự nhân rộng sang các khu vực khác và khởi động vòng cải tiến tiếp theo."
     }
   ];
 
