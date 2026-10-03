@@ -140,7 +140,11 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
           </div>
           <div className="absolute inset-[10px] rounded-full border border-dashed border-[#002F5B]/20" />
           <div className="absolute inset-[18px] rounded-full bg-white shadow-[0_18px_40px_-16px_rgba(0,47,91,0.45)] flex items-center justify-center">
-            <img src="/images/brand/logo-mark.png" alt="" className="w-[62%]" />
+            {/* the W mark with the registered-trademark sign, as on the WISE Academy logo */}
+            <span className="relative w-[62%]">
+              <img src="/images/brand/logo-mark.png" alt="" className="w-full" />
+              <span className="absolute -right-3 -top-1 text-[13px] font-bold leading-none text-[#002F5B]">®</span>
+            </span>
           </div>
         </div>
       </div>
