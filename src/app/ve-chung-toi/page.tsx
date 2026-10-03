@@ -2,6 +2,7 @@ import React from "react";
 import { ShieldCheck, Target } from "@/components/icons";
 import PageHero from "@/components/PageHero";
 import RgpdcaLoop from "@/components/RgpdcaLoop";
+import PartnerLogos from "@/components/PartnerLogos";
 import { Section, SectionHeader, CtaBand } from "@/components/ui";
 
 export const metadata = {
@@ -96,6 +97,9 @@ export default function AboutPage() {
         image="/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_10.webp"
         title={<>WISE Academy<span className="block mt-1 text-[#FF7A30] text-2xl sm:text-3xl lg:text-[38px] lg:whitespace-nowrap lg:-mx-16">đồng hành kiến tạo năng lực vận hành xuất sắc</span></>}
       />
+
+      {/* Client / partner logos */}
+      <PartnerLogos />
 
       {/* Quote */}
       <section className="bg-white border-b border-slate-200 py-14 px-4 sm:px-6">
