@@ -36,7 +36,7 @@ export default function AboutPage() {
       letter: "I",
       word: "IMPROVEMENT",
       title: "Cải Tiến Liên Tục Mỗi Ngày",
-      desc: "WISE Academy cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong tổ chức."
+      desc: "Chúng tôi cam kết mang đến giá trị vượt trội bằng sự tận tâm, chuyên nghiệp, biến việc tìm kiếm điểm tốt hơn thành thói quen văn hóa trong tổ chức."
     },
     {
       letter: "S",
@@ -48,7 +48,7 @@ export default function AboutPage() {
       letter: "E",
       word: "EXCELLENCE",
       title: "Gọn Gàng & Tiết Kiệm Chi Phí",
-      desc: "WISE Academy kiên định tìm kiếm giải pháp tối ưu nhất, giúp đối tác đạt được hiệu quả vận hành vượt trội trong khi tiết kiệm tối đa nguồn lực và chi phí."
+      desc: "Chúng tôi kiên định tìm kiếm giải pháp tối ưu nhất, giúp đối tác đạt được hiệu quả vận hành vượt trội trong khi tiết kiệm tối đa nguồn lực và chi phí."
     }
   ];
 
