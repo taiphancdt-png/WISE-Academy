@@ -24,10 +24,10 @@ const PETAL_L = 300;
 const CARD_W = 340;
 const CARD_H = 300;
 const CARD_POS = [
-  { x: -630, y: -262 },
+  { x: -690, y: -262 },
   { x: -500, y: -632 },
   { x: 500 - CARD_W, y: -632 },
-  { x: 630 - CARD_W, y: -262 },
+  { x: 690 - CARD_W, y: -262 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
