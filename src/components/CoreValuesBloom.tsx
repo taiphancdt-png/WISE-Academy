@@ -22,10 +22,10 @@ const PETAL_L = 300;
 const CARD_W = 320;
 const CARD_H = 292;
 const CARD_POS = [
-  { x: -625, y: -272 },
-  { x: -555, y: -582 },
-  { x: 555 - CARD_W, y: -582 },
-  { x: 625 - CARD_W, y: -272 },
+  { x: -625, y: -262 },
+  { x: -490, y: -622 },
+  { x: 490 - CARD_W, y: -622 },
+  { x: 625 - CARD_W, y: -262 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
@@ -172,7 +172,7 @@ export default function CoreValuesBloom({
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 48px)" }}>
+            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "calc(50% - 40px)" }}>
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
