@@ -155,21 +155,24 @@ export default function ConsultingPage() {
         <ButtonLink href="/lien-he">Đặt lịch khảo sát hiện trạng</ButtonLink>
       </PageHero>
 
+      {/* quick links to the services, aligned with the wide service rows below */}
+      <div className="bg-white px-4 sm:px-6 pt-14 lg:pt-16">
+      <nav aria-label="Các dịch vụ tư vấn" className="max-w-[1600px] mx-auto xl:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {pillars.map((p) => (
+          <a
+            key={p.id}
+            href={`#${p.id}`}
+            className="group flex items-center gap-3 rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
+            {p.title}
+          </a>
+        ))}
+      </nav>
+      </div>
+
       {/* Survey first: the four steps every engagement starts with */}
-      <Section>
-        {/* quick links to the services below */}
-        <nav aria-label="Các dịch vụ tư vấn" className="-mt-4 mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {pillars.map((p) => (
-            <a
-              key={p.id}
-              href={`#${p.id}`}
-              className="group flex items-center gap-3 rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F76011] text-xs font-bold text-white">{p.id}</span>
-              {p.title}
-            </a>
-          ))}
-        </nav>
+      <Section className="!pt-14 lg:!pt-16">
         <SectionHeader
           title={<>Thấu hiểu để <span className="text-[#F76011]">đồng hành</span></>}
           description="Mỗi doanh nghiệp có bối cảnh, ưu tiên và thực trạng vận hành riêng. Vì vậy trước khi đề xuất bất kỳ giải pháp nào, WISE Academy cùng doanh nghiệp đi qua bốn bước sau."
