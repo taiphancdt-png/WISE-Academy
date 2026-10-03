@@ -12,18 +12,18 @@ export interface CoreValue {
 // Petal colours (translucent, so overlaps mix like a Venn diagram) and label colours readable on white.
 const PETAL = ["#002F5B", "#F76011", "#1F64A6", "#FF9F43"];
 const LABEL = ["#002F5B", "#C9500E", "#1F64A6", "#B85F0B"];
-// Closed: four upright petals side by side reading W I S E. Open: fanned out like a flower.
-const OPEN_ANGLE = [-62, -21, 21, 62];
-const CLOSED_X = [-1.5, -0.5, 0.5, 1.5]; // in petal widths
-const PETAL_W = 118;
-const PETAL_L = 290;
+// All four petals grow from one point. Closed: a narrow bud whose petals read W I S E; open: a fanned lotus.
+const CLOSED_ANGLE = [-33, -11, 11, 33];
+const OPEN_ANGLE = [-66, -22, 22, 66];
+const PETAL_W = 124;
+const PETAL_L = 300;
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
 const CARD_POS = [
-  { x: -615, y: -190 },
-  { x: -535, y: -490 },
-  { x: 235, y: -490 },
-  { x: 315, y: -190 },
+  { x: -620, y: -205 },
+  { x: -540, y: -475 },
+  { x: 240, y: -475 },
+  { x: 320, y: -205 },
 ] as const;
 // the flower svg is 520 x 350 with the base of the petals at (260, 330)
 const BASE = { x: 260, y: 330 };
@@ -32,8 +32,9 @@ const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
 };
+// lotus petal: full and rounded near the base, narrowing to a pointed tip
 const petalPath = (w: number, l: number) =>
-  `M 0 0 C ${-w * 0.62} ${-l * 0.2} ${-w * 0.62} ${-l * 0.78} 0 ${-l} C ${w * 0.62} ${-l * 0.78} ${w * 0.62} ${-l * 0.2} 0 0 Z`;
+  `M 0 0 C ${-w * 0.95} ${-l * 0.08} ${-w * 0.7} ${-l * 0.62} 0 ${-l} C ${w * 0.7} ${-l * 0.62} ${w * 0.95} ${-l * 0.08} 0 0 Z`;
 
 export default function CoreValuesBloom({
   values,
@@ -71,11 +72,10 @@ export default function CoreValuesBloom({
     const apply = (t: number) => {
       petalRefs.current.forEach((g, i) => {
         if (!g) return;
-        const x = CLOSED_X[i] * PETAL_W * 0.78 * (1 - t);
-        const a = OPEN_ANGLE[i] * t;
-        g.setAttribute("transform", `translate(${x.toFixed(1)} 0) rotate(${a.toFixed(2)})`);
-        // keep each letter upright and slide it towards the tip as the petal opens
-        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.42 + 0.18 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)})`);
+        const a = CLOSED_ANGLE[i] + (OPEN_ANGLE[i] - CLOSED_ANGLE[i]) * t;
+        g.setAttribute("transform", `rotate(${a.toFixed(2)})`);
+        // keep each letter upright, high on its petal
+        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.76 - 0.16 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)})`);
       });
       const show = smooth(0.55, 0.95, t);
       cardRefs.current.forEach((c, i) => {
@@ -120,27 +120,28 @@ export default function CoreValuesBloom({
           ref={(el) => {
             petalRefs.current[i] = el;
           }}
-          transform={`translate(${CLOSED_X[i] * PETAL_W * 0.78} 0)`}
+          transform={`rotate(${CLOSED_ANGLE[i]})`}
           style={{ mixBlendMode: "multiply" }}
         >
-          <path d={petalPath(PETAL_W, PETAL_L)} fill={PETAL[i]} fillOpacity={0.88} />
+          <path d={petalPath(PETAL_W, PETAL_L)} fill={PETAL[i]} fillOpacity={0.85} />
           <text
             ref={(el) => {
               letterRefs.current[i] = el;
             }}
-            transform={`translate(0 ${-PETAL_L * 0.42})`}
+            transform={`translate(0 ${-PETAL_L * 0.76}) rotate(${-CLOSED_ANGLE[i]})`}
             textAnchor="middle"
             dominantBaseline="central"
             className="font-extrabold"
-            fontSize={64}
+            fontSize={80}
             fill="#fff"
+            fillOpacity={0.6}
             style={{ mixBlendMode: "normal" }}
           >
             {v.letter}
           </text>
         </g>
       ))}
-      <circle r={16} fill="#fff" stroke="#002F5B" strokeWidth={3} />
+      <circle r={9} fill="#002F5B" />
     </svg>
   );
 
@@ -169,7 +170,7 @@ export default function CoreValuesBloom({
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
           </div>
           <div className="relative flex-1 w-full max-w-[1300px]">
-            <div className="absolute left-1/2 bottom-16 -translate-x-1/2">
+            <div className="absolute left-1/2 bottom-28 -translate-x-1/2">
               {flower}
               {values.map((v, i) => {
                 const pos = CARD_POS[i];
