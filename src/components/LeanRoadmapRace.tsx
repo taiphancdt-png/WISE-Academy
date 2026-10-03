@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { RefreshCw } from "@/components/icons";
-import RunnerFigure, { POSES, blendPose, runPose, type RunnerHandle } from "@/components/RunnerFigure";
+import { ART } from "@/components/mountainArt";
+import RunnerFigure, { POSES, blendPose, walkPose, type RunnerHandle } from "@/components/RunnerFigure";
 
 export interface RoadmapStage {
   name: string;
@@ -17,58 +18,21 @@ const SUMMIT_HOLD_MS = 2800; // celebrate on the summit, then start a new climb 
 const BASE_SPEED = 0.0034; // % of track per ms when nobody scrolls: a calm jog, about 5 s per stage
 const MAX_SPEED = 0.026; // flat-out sprint while scrolling fast
 const SCROLL_BOOST = 0.006; // extra speed per px/ms of scroll velocity
-const BASE_CYCLE_MS = 900; // one gait cycle (two steps) at jogging pace
+const BASE_CYCLE_MS = 1150; // one gait cycle (two steps) at a steady trekking pace
 const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 const pad = (n: number) => String(n).padStart(2, "0");
 
-// One jagged peak with snow down its left ridge; a road winds up from the foot in an S, wide in front and
-// narrowing with height, with the 5 stages at its bends and stage 5 on the summit.
-// Points are fractions of the mountain box (x of width, y of height).
-const PEAK: [number, number] = [0.493, 0.035];
-const MOUNTAIN: [number, number][] = [
-  [0.04, 1], [0.12, 0.88], [0.17, 0.8], [0.22, 0.68], [0.26, 0.56], [0.27, 0.535], [0.3, 0.547],
-  [0.36, 0.35], [0.4, 0.31], PEAK, [0.52, 0.1], [0.53, 0.16], [0.564, 0.215], [0.584, 0.31],
-  [0.628, 0.38], [0.64, 0.45], [0.678, 0.49], [0.705, 0.575], [0.738, 0.61], [0.79, 0.755],
-  [0.846, 0.815], [0.92, 0.9], [1, 1],
-];
-// snow: the left ridge from the peak down, with a ragged inner edge
-const SNOW: [number, number][] = [
-  PEAK, [0.4, 0.31], [0.36, 0.35], [0.3, 0.547], [0.35, 0.49], [0.385, 0.455], [0.41, 0.44], [0.418, 0.39],
-  [0.445, 0.395], [0.468, 0.345], [0.49, 0.31], [0.508, 0.26], [0.488, 0.205], [0.505, 0.13],
-];
-const TRAIL: [number, number][] = [
-  [0.6, 1],
-  [0.4, 0.64],
-  [0.56, 0.48],
-  [0.47, 0.38],
-  [0.525, 0.25],
-  [PEAK[0], PEAK[1] + 0.03],
-];
-const ROAD_W = 0.085; // road width at the foot, as a share of the box width
-type Geo = { w: number; h: number; ox: number; oy: number; mw: number; mh: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
-const SAMPLES = 24; // per bend, to follow the smooth curve
-const ASPECT = 1.5; // mountain width : height, as in the reference silhouette
+// Mountain artwork (client's reference, vectorised): the climber follows ART.trail, up the road and on to the summit.
+type Geo = { w: number; h: number; ox: number; oy: number; k: number; bends: [number, number][]; pts: [number, number][]; cum: number[]; total: number; cp: number[] };
 function buildGeo(w: number, h: number): Geo {
-  const mw = Math.min(w, h * ASPECT), mh = mw / ASPECT;
-  const ox = (w - mw) / 2, oy = h - mh;
-  const bends = TRAIL.map(([x, y]) => [ox + x * mw, oy + y * mh] as [number, number]);
-  // Catmull-Rom spline through the bends, sampled into a fine polyline
-  const pts: [number, number][] = [];
-  const at = (i: number) => bends[Math.max(0, Math.min(bends.length - 1, i))];
-  for (let i = 0; i < bends.length - 1; i++) {
-    const [p0, p1, p2, p3] = [at(i - 1), at(i), at(i + 1), at(i + 2)];
-    for (let k = 0; k < SAMPLES; k++) {
-      const t = k / SAMPLES, t2 = t * t, t3 = t2 * t;
-      const f = (a: number, b: number, c: number, d: number) =>
-        0.5 * (2 * b + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t2 + (-a + 3 * b - 3 * c + d) * t3);
-      pts.push([f(p0[0], p1[0], p2[0], p3[0]), f(p0[1], p1[1], p2[1], p3[1])]);
-    }
-  }
-  pts.push(bends[bends.length - 1]);
+  // fit the artwork into the box, sitting on its bottom edge
+  const k = Math.min(w / ART.w, h / ART.h);
+  const ox = (w - ART.w * k) / 2, oy = h - ART.h * k;
+  const pts = ART.trail.map(([x, y]) => [ox + x * k, oy + y * k] as [number, number]);
   const cum = [0];
   for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
   const total = cum[cum.length - 1] || 1;
-  return { w, h, ox, oy, mw, mh, bends, pts, cum, total, cp: [1, 2, 3, 4, 5].map((k) => (cum[k * SAMPLES] / total) * 100) };
+  return { w, h, ox, oy, k, bends: [pts[0], ...ART.stages.map((i) => pts[i])], pts, cum, total, cp: ART.stages.map((i) => (cum[i] / total) * 100) };
 }
 // point on the trail at pct (% of its length) and whether that stretch heads left
 function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
@@ -76,37 +40,12 @@ function pointAt(g: Geo, pct: number): { x: number; y: number; left: boolean } {
   let i = 1;
   while (i < g.pts.length - 1 && g.cum[i] < L) i++;
   const t = (L - g.cum[i - 1]) / (g.cum[i] - g.cum[i - 1] || 1);
-  const a = g.pts[i - 1], b = g.pts[i];
-  // only face left on clearly leftward stretches, so gentle wiggles do not flip the climber
-  return { x: a[0] + (b[0] - a[0]) * t, y: a[1] + (b[1] - a[1]) * t, left: b[0] - a[0] < -0.4 * Math.abs(b[1] - a[1]) };
+  // look a little ahead so the climber does not flip on tiny wiggles
+  const a = g.pts[Math.max(0, i - 3)], b = g.pts[Math.min(g.pts.length - 1, i + 3)];
+  const p = g.pts[i - 1], q = g.pts[i];
+  return { x: p[0] + (q[0] - p[0]) * t, y: p[1] + (q[1] - p[1]) * t, left: b[0] - a[0] < -0.4 * Math.abs(b[1] - a[1]) };
 }
-
-// Road as a filled shape that narrows with height (perspective), drawn up to pct of its length.
-function roadPath(g: Geo, pct = 100) {
-  const L = (Math.max(0, Math.min(100, pct)) / 100) * g.total;
-  const pts: [number, number, number][] = [];
-  for (let i = 0; i < g.pts.length; i++) {
-    if (g.cum[i] > L) {
-      const t = (L - g.cum[i - 1]) / (g.cum[i] - g.cum[i - 1] || 1);
-      const a = g.pts[i - 1], b = g.pts[i];
-      pts.push([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, L]);
-      break;
-    }
-    pts.push([g.pts[i][0], g.pts[i][1], g.cum[i]]);
-  }
-  if (pts.length < 2) return "";
-  const width = (len: number) => g.mw * ROAD_W * Math.pow(1 - len / g.total, 1.35) + 3;
-  const left: string[] = [], right: string[] = [];
-  pts.forEach((p, i) => {
-    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(pts.length - 1, i + 1)];
-    const dx = b[0] - a[0], dy = b[1] - a[1];
-    const n = Math.hypot(dx, dy) || 1;
-    const hw = width(p[2]) / 2;
-    left.push(`${(p[0] - (dy / n) * hw).toFixed(1)} ${(p[1] + (dx / n) * hw).toFixed(1)}`);
-    right.push(`${(p[0] + (dy / n) * hw).toFixed(1)} ${(p[1] - (dx / n) * hw).toFixed(1)}`);
-  });
-  return `M ${left.join(" L ")} L ${right.reverse().join(" L ")} Z`;
-}
+const TRAIL_D = "M " + ART.trail.map(([x, y]) => `${x} ${y}`).join(" L ");
 
 export default function LeanRoadmapRace({
   stages,
@@ -191,7 +130,6 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const runnerRef = useRef<HTMLDivElement>(null);
   const figRef = useRef<RunnerHandle>(null);
   const flipRef = useRef<HTMLDivElement>(null);
-  const litRef = useRef<SVGPathElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const geoRef = useRef<Geo>(buildGeo(1, 1));
   const curRef = useRef(START);
@@ -230,7 +168,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let runW = 0;
     let holdUntil = 0; // resting on the summit until this time
     let climbs = 1;
-    figRef.current?.setPose(POSES.marks);
+    figRef.current?.setPose(POSES.stand);
 
     const frame = (now: number) => {
       const dt = last ? Math.min(50, now - last) : 16;
@@ -241,7 +179,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       // always climbing; scrolling (either way) pushes the pace up
       const scrollV = Math.abs(window.scrollY - lastScroll) / dt;
       lastScroll = window.scrollY;
-      const inBlocks = climbs === 1 && t < 1500;
+      const inBlocks = climbs === 1 && t < 900; // a moment to look up at the summit before setting off
       const resting = now < holdUntil;
       const targetSpeed = inBlocks || resting ? 0 : Math.min(MAX_SPEED, BASE_SPEED + scrollV * SCROLL_BOOST);
       speed += (targetSpeed - speed) * (1 - Math.exp(-dt / (targetSpeed > speed ? 220 : 400)));
@@ -268,17 +206,15 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const moving = !inBlocks && !resting;
       runW += ((moving ? 1 : 0) - runW) * (1 - Math.exp(-dt / 220));
 
-      const base = inBlocks ? (t < 700 ? POSES.marks : POSES.set) : POSES.stand;
-      const pose = blendPose(base, runPose(phi, Math.min(1.25, 0.9 + 0.1 * pace)), runW);
-      pose.torso += 10 * runW; // lean into the slope
-      figRef.current?.setPose(pose, runW * 2 * Math.abs(Math.sin(phi)));
+      const pose = blendPose(POSES.stand, walkPose(phi, Math.min(1.3, 0.9 + 0.1 * pace)), runW);
+      pose.torso += 8 * runW; // lean into the slope
+      figRef.current?.setPose(pose, runW * 1.1 * Math.abs(Math.cos(phi)));
 
       const geo = geoRef.current;
       const pt = pointAt(geo, cur);
       // smaller as the climber gets higher (further away)
       if (runnerRef.current) runnerRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px) scale(${1.1 - 0.55 * (cur / 100)})`;
       if (flipRef.current && moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
-      litRef.current?.setAttribute("d", roadPath(geo, cur));
       const n = geo.cp.filter((c) => cur >= c - 0.01).length;
       setReached((prev) => (prev === n ? prev : n));
       raf = requestAnimationFrame(frame);
@@ -306,10 +242,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
   const geo = geoRef.current;
   const { w, h } = size;
-  const X = (f: number) => geo.ox + f * geo.mw;
-  const Y = (f: number) => geo.oy + f * geo.mh;
-  const poly = (list: [number, number][]) => "M " + list.map(([x, y]) => `${X(x).toFixed(1)} ${Y(y).toFixed(1)}`).join(" L ") + " Z";
-  const peak = [X(PEAK[0]), Y(PEAK[1])];
+  const peak = geo.pts[geo.pts.length - 1];
+  const sunR = ART.h * geo.k;
 
   return (
     <div ref={wrapRef} className="hidden lg:block relative" style={{ height: "calc(100dvh + 120vh)" }}>
@@ -325,7 +259,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                 <article
                   key={stage.name}
                   aria-hidden={!on}
-                  className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ${EASE} ${
+                  className={`absolute inset-0 flex flex-col justify-end transition-all duration-700 ${EASE} ${
                     on ? "opacity-100 translate-y-0 blur-0" : i < active ? "opacity-0 -translate-y-10 blur-md pointer-events-none" : "opacity-0 translate-y-10 blur-md pointer-events-none"
                   }`}
                 >
@@ -356,9 +290,6 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             {w > 0 && (
               <svg width={w} height={h} className="absolute inset-0 overflow-visible" aria-hidden="true">
                 <defs>
-                  <clipPath id="mtClip">
-                    <path d={poly(MOUNTAIN)} />
-                  </clipPath>
                   <linearGradient id="mtBody" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0" stopColor="#1B4A78" />
                     <stop offset="1" stopColor="#002F5B" />
@@ -369,18 +300,18 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </radialGradient>
                 </defs>
                 {/* sun */}
-                <circle cx={X(0.84)} cy={Y(0.2)} r={geo.mh * 0.3} fill="url(#sun)" />
-                <circle cx={X(0.84)} cy={Y(0.2)} r={geo.mh * 0.08} fill="#FFC9A3" />
-                {/* the mountain */}
-                <path d={poly(MOUNTAIN)} fill="url(#mtBody)" />
-                <path d={poly(SNOW)} fill="#F4F8FC" />
-                {/* the road, and the part already climbed */}
-                <g clipPath="url(#mtClip)">
-                  <path d={roadPath(geo)} fill="#FDCBA6" />
-                  <path ref={litRef} d={roadPath(geo, START)} fill="#F76011" />
+                <circle cx={geo.ox + ART.w * geo.k * 0.86} cy={geo.oy + sunR * 0.22} r={sunR * 0.3} fill="url(#sun)" />
+                <circle cx={geo.ox + ART.w * geo.k * 0.86} cy={geo.oy + sunR * 0.22} r={sunR * 0.08} fill="#FFC9A3" />
+                <g transform={`translate(${geo.ox} ${geo.oy}) scale(${geo.k})`}>
+                  {/* the mountain, its snow and the road */}
+                  <path d={ART.mountain} fill="url(#mtBody)" fillRule="evenodd" />
+                  <path d={ART.snow} fill="#F4F8FC" />
+                  <path d={ART.road} fill="#FDCBA6" />
+                  {/* footpath from the end of the road to the summit */}
+                  <path d={TRAIL_D} fill="none" stroke="#FDCBA6" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 16" />
                 </g>
                 {/* summit flag */}
-                <g transform={`translate(${peak[0]} ${peak[1] + geo.mh * 0.01})`}>
+                <g transform={`translate(${peak[0]} ${peak[1]})`}>
                   <line x1={0} y1={0} x2={0} y2={-46} stroke="#002F5B" strokeWidth={3} strokeLinecap="round" />
                   <path d="M 1.5 -46 L 30 -38 L 1.5 -30 Z" fill="#F76011" className={summit ? "summit-flag" : ""} style={{ transformOrigin: "1.5px -38px" }} />
                 </g>
@@ -391,8 +322,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             {w > 0 &&
               geo.bends.slice(1).map((pt, i) => {
                 const on = reached > i;
-                // labels sit outside each bend of the S: left bends to the left, right bends and the summit to the right
-                const right = i % 2 === 1 || i === 4;
+                // labels sit outside each bend of the road: right bends and the summit to the right, left bends to the left
+                const right = i % 2 === 0;
                 return (
                   <button
                     key={i}
@@ -420,13 +351,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                   </button>
                 );
               })}
-            {w > 0 && (
-              <span className="absolute translate-x-14 -translate-y-full whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.16em] text-[#486581]" style={{ left: geo.bends[0][0], top: geo.bends[0][1] - 6 }}>
-                Chân núi
-              </span>
-            )}
             {climb > 1 && (
-              <span className="absolute right-0 bottom-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C9500E]">
+              <span className="absolute right-0 top-0 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C9500E]">
                 <RefreshCw weight="bold" className="w-4 h-4" /> Chinh phục lần {climb}
               </span>
             )}
@@ -524,8 +450,8 @@ function JoggingRunner() {
     let raf = 0;
     const t0 = performance.now();
     const tick = (now: number) => {
-      const phi = ((now - t0) / 820) * Math.PI * 2;
-      ref.current?.setPose(runPose(phi), 2.2 * Math.abs(Math.sin(phi)));
+      const phi = ((now - t0) / 1150) * Math.PI * 2;
+      ref.current?.setPose(walkPose(phi), 1.1 * Math.abs(Math.cos(phi)));
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);

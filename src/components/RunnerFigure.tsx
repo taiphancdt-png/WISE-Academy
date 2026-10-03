@@ -13,30 +13,27 @@ export interface Pose {
 }
 
 export const POSES: Record<"stand" | "marks" | "set", Pose> = {
-  stand: { torso: 4, thighF: 4, shinF: -2, thighB: -4, shinB: -6, armF: -6, foreF: 25, armB: 8, foreB: 40 },
+  stand: { torso: 6, thighF: 4, shinF: -2, thighB: -4, shinB: -6, armF: 12, foreF: 66, armB: 8, foreB: 36 },
   // "On your marks": front knee up by the chest, back knee on the ground, hands on the start line
   marks: { torso: 68, thighF: 128, shinF: -18, thighB: 12, shinB: -84, armF: -4, foreF: -4, armB: -8, foreB: -8 },
   // "Set": hips rise above the shoulders, ready to push off
   set: { torso: 98, thighF: 84, shinF: -24, thighB: -4, shinB: -40, armF: -2, foreF: -2, armB: -6, foreB: -6 },
 };
 
-// Running gait at phase phi (radians). One full cycle = two strides.
-// stride > 1 lengthens the swing and leans further forward (faster running).
-export function runPose(phi: number, stride = 1): Pose {
+// Trekking gait at phase phi: a steady uphill walk, the near hand plants a trekking pole.
+export function walkPose(phi: number, stride = 1): Pose {
   const s = Math.sin(phi);
   const leg = (sw: number, ph: number) => {
-    // knee drives further forward than the leg extends behind
-    const thigh = 8 + 40 * sw * stride;
-    // knee folds while the leg recovers forward and stays almost straight while it pushes back on the ground
-    const fold = 14 + 96 * Math.pow(Math.max(0, Math.cos(ph + 0.35)), 1.3);
+    const thigh = 4 + 26 * sw * stride;
+    // the knee bends a little while the leg swings through, stays nearly straight under load
+    const fold = 6 + 40 * Math.pow(Math.max(0, Math.cos(ph + 0.4)), 1.5) * stride;
     return [thigh, thigh - fold];
   };
   const [thighF, shinF] = leg(s, phi);
   const [thighB, shinB] = leg(-s, phi + Math.PI);
-  // arms swing opposite the legs with the elbows held near 90 degrees
-  const armF = -4 - 34 * s * stride;
-  const armB = -4 + 34 * s * stride;
-  return { torso: 20 + 8 * stride, thighF, shinF, thighB, shinB, armF, foreF: armF + 88, armB, foreB: armB + 88 };
+  const armF = 14 - 16 * s; // pole hand reaches forward with the far leg
+  const armB = 6 + 14 * s;
+  return { torso: 12 + 4 * stride, thighF, shinF, thighB, shinB, armF, foreF: armF + 58, armB, foreB: armB + 38 };
 }
 
 export function blendPose(a: Pose, b: Pose, t: number): Pose {
@@ -59,23 +56,25 @@ export interface RunnerHandle {
   setPose: (p: Pose, bob?: number) => void;
 }
 
-// Flat illustration palette in WISE Academy colours.
+// Flat illustration palette in WISE Academy colours: a trekker with hat, big backpack and pole.
 const C = {
   skin: "#F6C79C",
   skinFar: "#E2A574",
-  kit: "#F76011", // singlet
-  kitShade: "#D9500B",
-  shorts: "#002F5B",
-  shortsFar: "#0B2240",
-  sock: "#FFFFFF",
-  sockFar: "#E6ECF3",
-  shoe: "#E9EEF4",
-  shoeFar: "#CBD5E1",
-  sole: "#002F5B",
+  jacket: "#F76011",
+  jacketFar: "#D24E0C",
+  pants: "#002F5B",
+  pantsFar: "#0B2240",
+  boot: "#3A2A22",
+  bootFar: "#2A1E18",
+  sole: "#15100D",
+  hat: "#1B4A78",
+  hatBand: "#FFB27A",
   hair: "#1E2B3C",
-  pack: "#1B4A78", // backpack
+  pack: "#1B4A78",
   packDark: "#002F5B",
-  packAccent: "#FFB27A",
+  packRoll: "#FFB27A",
+  pole: "#CBD5E1",
+  grip: "#1E2B3C",
 };
 
 // Capsule that tapers from width w1 at a to w2 at b (round ends), as an SVG path.
@@ -91,15 +90,16 @@ function taper(a: Pt, b: Pt, w1: number, w2: number, T: (p: Pt) => string) {
 
 const PARTS = [
   // far side (behind the body)
-  ["armUB", C.skinFar], ["armLB", C.skinFar],
-  ["thighB", C.skinFar], ["shortB", C.shortsFar], ["calfB", C.skinFar], ["shinB", C.skinFar], ["sockB", C.sockFar], ["shoeB", C.shoeFar], ["soleB", C.sole],
+  ["armUB", C.jacketFar], ["armLB", C.jacketFar], ["handB", C.skinFar],
+  ["thighB", C.pantsFar], ["shinB", C.pantsFar], ["bootB", C.bootFar], ["soleB", C.sole],
   // body
-  ["pack", C.pack], ["packFlap", C.packDark], ["packPocket", C.packDark], ["packLoop", C.packAccent],
-  ["neck", C.skinFar], ["torso", C.kit], ["hips", C.shorts], ["strap", C.packDark],
-  ["hair", C.hair], ["face", C.skin], ["nose", C.skin], ["ear", C.skinFar], ["hairTop", C.hair],
+  ["pack", C.pack], ["packFlap", C.packDark], ["packPocket", C.packDark], ["packRoll", C.packRoll],
+  ["neck", C.skinFar], ["torso", C.jacket], ["hips", C.pants], ["strap", C.packDark],
+  ["hair", C.hair], ["face", C.skin], ["nose", C.skin], ["ear", C.skinFar],
+  ["hatCrown", C.hat], ["hatBand", C.hatBand], ["hatBrim", C.hat],
   // near side
-  ["thighF", C.skin], ["shortF", C.shorts], ["calfF", C.skin], ["shinF", C.skin], ["sockF", C.sock], ["shoeF", C.shoe], ["soleF", C.sole],
-  ["armUF", C.skin], ["armLF", C.skin],
+  ["thighF", C.pants], ["shinF", C.pants], ["bootF", C.boot], ["soleF", C.sole],
+  ["pole", C.pole], ["armUF", C.jacket], ["armLF", C.jacket], ["grip", C.grip], ["handF", C.skin],
 ] as const;
 
 const RunnerFigure = forwardRef<RunnerHandle, { className?: string }>(function RunnerFigure({ className = "" }, ref) {
@@ -120,16 +120,16 @@ const RunnerFigure = forwardRef<RunnerHandle, { className?: string }>(function R
       const oy = GROUND - lowest - bob;
       const T = (pt: Pt) => `${(ox + pt[0]).toFixed(2)} ${(oy + pt[1]).toFixed(2)}`;
 
-      // shoe: points forward, roughly at right angles to the shin
+      // hiking boot: chunky, points forward roughly at right angles to the shin
       const shoe = (ankle: Pt, shinDeg: number) => {
         const f = limb(1, shinDeg + 90);
-        const heel: Pt = [ankle[0] - f[0] * 1.5, ankle[1] - f[1] * 1.5 + 1.2];
-        const toe: Pt = [ankle[0] + f[0] * 7, ankle[1] + f[1] * 7 + 1.2];
+        const heel: Pt = [ankle[0] - f[0] * 2, ankle[1] - f[1] * 2 + 1.4];
+        const toe: Pt = [ankle[0] + f[0] * 7.5, ankle[1] + f[1] * 7.5 + 1.4];
         const down = limb(1, shinDeg);
-        const sole = (pt: Pt): Pt => [pt[0] + down[0] * 2.2, pt[1] + down[1] * 2.2];
-        return { upper: taper(heel, toe, 5.2, 4.2, T), sole: taper(sole(heel), sole(toe), 1.8, 1.8, T) };
+        const sole = (pt: Pt): Pt => [pt[0] + down[0] * 3, pt[1] + down[1] * 3];
+        return { upper: taper(heel, toe, 7, 5.6, T), sole: taper(sole(heel), sole(toe), 2.4, 2.4, T) };
       };
-      const sF = shoe(aF, p.shinF), sB = shoe(aB, p.shinB);
+      const shoeF = shoe(aF, p.shinF), shoeB = shoe(aB, p.shinB);
       const fwd = limb(1, p.torso + 90); // facing direction of the head
       const upDir = up(p.torso, 1);
 
@@ -140,39 +140,46 @@ const RunnerFigure = forwardRef<RunnerHandle, { className?: string }>(function R
         return [q[0] + back[0] * off, q[1] + back[1] * off];
       };
 
+      const hatC = add(head, [upDir[0] * 4.2, upDir[1] * 4.2]);
+      const brimA = add(head, [upDir[0] * 2.6 - fwd[0] * 9.5, upDir[1] * 2.6 - fwd[1] * 9.5]);
+      const brimB = add(head, [upDir[0] * 2.6 + fwd[0] * 10.5, upDir[1] * 2.6 + fwd[1] * 10.5]);
+      // trekking pole from the near hand to the ground ahead of the feet
+      const poleTip: Pt = [hF[0] + 9 + Math.max(0, (p.armF - 6) * 0.25), Math.max(aF[1], aB[1]) + 3];
+
       const d: Record<string, string> = {
-        pack: taper(onBack(0.28, 7), onBack(0.98, 7), 12, 11, T),
-        packFlap: taper(onBack(0.86, 7.3), onBack(1.04, 7.3), 11.5, 11, T),
-        packPocket: taper(onBack(0.32, 11.5), onBack(0.56, 11.5), 4.5, 4.5, T),
-        packLoop: taper(onBack(0.7, 12.2), onBack(0.74, 12.2), 2.2, 2.2, T),
-        strap: taper(lerp(hip, sh, 0.97), add(lerp(hip, sh, 0.5), [fwd[0] * 2.5, fwd[1] * 2.5]), 2.4, 2.2, T),
-        armUB: taper(sh, elB, 6, 5, T),
-        armLB: taper(elB, hB, 5, 5.6, T),
-        thighB: taper(hip, kB, 11, 7.5, T),
-        shortB: taper(hip, lerp(hip, kB, 0.5), 12.5, 11, T),
-        calfB: taper(kB, lerp(kB, aB, 0.42), 7.5, 8, T),
-        shinB: taper(lerp(kB, aB, 0.3), aB, 7.5, 4.8, T),
-        sockB: taper(lerp(kB, aB, 0.78), aB, 5.6, 5.2, T),
-        shoeB: sB.upper,
-        soleB: sB.sole,
+        armUB: taper(sh, elB, 6.4, 5.6, T),
+        armLB: taper(elB, hB, 5.6, 5.2, T),
+        handB: taper(hB, add(hB, limb(1.2, p.foreB)), 4.6, 4.6, T),
+        thighB: taper(hip, kB, 11, 8.6, T),
+        shinB: taper(kB, aB, 8.4, 6.6, T),
+        bootB: shoeB.upper,
+        soleB: shoeB.sole,
+        pack: taper(onBack(0.18, 8), onBack(1.02, 8), 15, 13.5, T),
+        packFlap: taper(onBack(0.86, 8.4), onBack(1.08, 8.4), 13.5, 13, T),
+        packPocket: taper(onBack(0.3, 13.6), onBack(0.6, 13.6), 5, 5, T),
+        packRoll: taper(onBack(1.18, 3), onBack(1.18, 13), 6.5, 6.5, T),
         neck: taper(lerp(hip, sh, 0.85), add(sh, up(p.torso, L.neck + 1.5)), 5.5, 5, T),
-        torso: taper(lerp(hip, sh, 0.05), lerp(hip, sh, 0.95), 15, 14, T),
-        hips: taper(lerp(hip, sh, -0.06), lerp(hip, sh, 0.16), 15.5, 15.5, T),
-        hair: taper(add(head, [-fwd[0] * 1.6 + upDir[0] * 0.6, -fwd[1] * 1.6 + upDir[1] * 0.6]), add(head, [-fwd[0] * 1.2, -fwd[1] * 1.2]), 14, 14, T),
+        torso: taper(lerp(hip, sh, 0.02), lerp(hip, sh, 0.96), 15.5, 14.5, T),
+        hips: taper(lerp(hip, sh, -0.06), lerp(hip, sh, 0.12), 15, 15, T),
+        strap: taper(lerp(hip, sh, 0.97), add(lerp(hip, sh, 0.45), [fwd[0] * 3, fwd[1] * 3]), 2.6, 2.4, T),
+        hair: taper(add(head, [-fwd[0] * 1.6, -fwd[1] * 1.6]), add(head, [-fwd[0] * 1.2, -fwd[1] * 1.2]), 13.6, 13.6, T),
         face: taper(head, add(head, [fwd[0] * 0.6, fwd[1] * 0.6]), 12.6, 12.6, T),
-        nose: taper(add(head, [fwd[0] * 5.6 + upDir[0] * 0.2, fwd[1] * 5.6 + upDir[1] * 0.2]), add(head, [fwd[0] * 7.2 - upDir[0] * 0.6, fwd[1] * 7.2 - upDir[1] * 0.6]), 2.6, 1.6, T),
+        nose: taper(add(head, [fwd[0] * 5.6, fwd[1] * 5.6]), add(head, [fwd[0] * 7.2 - upDir[0] * 0.8, fwd[1] * 7.2 - upDir[1] * 0.8]), 2.6, 1.6, T),
         ear: taper(add(head, [-fwd[0] * 1.3, -fwd[1] * 1.3]), add(head, [-fwd[0] * 1.3 - upDir[0] * 1.2, -fwd[1] * 1.3 - upDir[1] * 1.2]), 2.8, 2.6, T),
-        hairTop: taper(add(head, [upDir[0] * 4.6 - fwd[0] * 1.5, upDir[1] * 4.6 - fwd[1] * 1.5]), add(head, [upDir[0] * 4.4 + fwd[0] * 2.8, upDir[1] * 4.4 + fwd[1] * 2.8]), 5, 3.4, T),
-        thighF: taper(hip, kF, 11.5, 8, T),
-        shortF: taper(hip, lerp(hip, kF, 0.5), 13, 11.5, T),
-        calfF: taper(kF, lerp(kF, aF, 0.42), 8, 8.6, T),
-        shinF: taper(lerp(kF, aF, 0.3), aF, 8, 5, T),
-        sockF: taper(lerp(kF, aF, 0.78), aF, 6, 5.4, T),
-        shoeF: sF.upper,
-        soleF: sF.sole,
-        armUF: taper(sh, elF, 6.6, 5.4, T),
-        armLF: taper(elF, hF, 5.2, 6, T),
+        hatCrown: taper(add(hatC, [-fwd[0] * 3.5, -fwd[1] * 3.5]), add(hatC, [fwd[0] * 3.5, fwd[1] * 3.5]), 8.5, 8.5, T),
+        hatBand: taper(add(head, [upDir[0] * 3 - fwd[0] * 5.6, upDir[1] * 3 - fwd[1] * 5.6]), add(head, [upDir[0] * 3 + fwd[0] * 5.6, upDir[1] * 3 + fwd[1] * 5.6]), 2.4, 2.4, T),
+        hatBrim: taper(brimA, brimB, 2.6, 2.2, T),
+        thighF: taper(hip, kF, 11.6, 9, T),
+        shinF: taper(kF, aF, 8.8, 7, T),
+        bootF: shoeF.upper,
+        soleF: shoeF.sole,
+        pole: taper(add(hF, [0, -4]), poleTip, 2, 1.6, T),
+        armUF: taper(sh, elF, 6.8, 6, T),
+        armLF: taper(elF, hF, 6, 5.4, T),
+        grip: taper(add(hF, [0, -5]), add(hF, [0.6, 3]), 3.4, 3.4, T),
+        handF: taper(hF, add(hF, limb(1.2, p.foreF)), 5, 5, T),
       };
+
       Object.entries(d).forEach(([k, v]) => g.current[k]?.setAttribute("d", v));
     },
   }));
