@@ -9,9 +9,12 @@ import { createSign } from "node:crypto";
 //   GOOGLE_PRIVATE_KEY            its private key, with "\n" for line breaks
 //   CERT_SHEET_ID                 id of the Google Sheet (the long part of its URL)
 //   CERT_SHEET_RANGE              optional, default "Certificates!A:H"
+//   CERT_DRIVE_FOLDER_ID          id of the Drive folder holding the certificate images
 //
 // Sheet columns (row 1 = headers): Mã chứng chỉ | Họ và tên | Chương trình | Cấp độ | Ngày cấp |
-// Đơn vị cấp | Trạng thái | Ảnh chứng chỉ (Google Drive link)
+// Đơn vị cấp | Trạng thái | Ảnh chứng chỉ
+// The image column only needs the file name of an image in the Drive folder (e.g. "ABC-123.jpg"); a Drive
+// link also works. Left empty, the image whose name is the certificate code (any extension) is used.
 
 export interface Certificate {
   code: string;
@@ -92,10 +95,45 @@ async function loadRows(): Promise<Certificate[]> {
       issued: (r[4] || "").trim(),
       issuer: (r[5] || "").trim(),
       status: (r[6] || "").trim(),
-      imageId: driveId(r[7] || ""),
+      imageRef: (r[7] || "").trim(),
     }));
-  cache = { rows, at: Date.now() };
-  return rows;
+  const files = await listFolder();
+  const resolved: Certificate[] = rows.map(({ imageRef, ...c }) => ({ ...c, imageId: resolveImage(imageRef, c.code, files) }));
+  cache = { rows: resolved, at: Date.now() };
+  return resolved;
+}
+
+// Image files in the certificate folder, by lower-case name and by name without extension.
+async function listFolder(): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  const folder = process.env.CERT_DRIVE_FOLDER_ID;
+  if (!folder) return map;
+  let pageToken = "";
+  do {
+    const q = encodeURIComponent(`'${folder}' in parents and trashed = false and mimeType contains 'image/'`);
+    const res = await fetch(
+      `https://www.googleapis.com/drive/v3/files?q=${q}&fields=nextPageToken,files(id,name)&pageSize=1000&supportsAllDrives=true&includeItemsFromAllDrives=true${pageToken ? `&pageToken=${pageToken}` : ""}`,
+      { headers: { authorization: `Bearer ${await accessToken()}` }, cache: "no-store" },
+    );
+    if (!res.ok) throw new Error(`google_drive_${res.status}`);
+    const json = (await res.json()) as { files?: { id: string; name: string }[]; nextPageToken?: string };
+    for (const f of json.files || []) {
+      const name = f.name.trim().toLowerCase();
+      map.set(name, f.id);
+      map.set(name.replace(/\.[a-z0-9]+$/, ""), f.id);
+    }
+    pageToken = json.nextPageToken || "";
+  } while (pageToken);
+  return map;
+}
+
+function resolveImage(ref: string, code: string, files: Map<string, string>): string | null {
+  if (ref) {
+    const byName = files.get(ref.toLowerCase()) || files.get(ref.toLowerCase().replace(/\.[a-z0-9]+$/, ""));
+    if (byName) return byName;
+    return driveId(ref);
+  }
+  return files.get(code.toLowerCase()) || null;
 }
 
 // Demo record so the page can be tried before Google is connected (only when the env is not set).
