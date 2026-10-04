@@ -1349,81 +1349,249 @@
   },
   {
     "id": "do-tan-khoa",
-    "name": "Đỗ Tấn Khoa",
-    "role": "Chuyên gia Chuyển đổi số · Digital Transformation Consultant",
-    "title": "Thạc sĩ Kỹ thuật Điều khiển & Tự động hóa · Phó Tổng Giám đốc phụ trách Đào tạo & Giải pháp Công nghệ tại CITARES",
-    "bio": "Chuyên gia chẩn đoán doanh nghiệp nhỏ và vừa của Bộ Tài chính (trước đây là Bộ Kế hoạch và Đầu tư). Tư vấn và triển khai chuyển đổi số cho công nghiệp hỗ trợ (Singapore), tư vấn chuyển đổi số cho GIZ; cố vấn khởi nghiệp và đánh giá cải tiến liên tục cho doanh nghiệp công nghệ cao (JICA); chuyên gia đánh giá kỹ năng nghề theo tiêu chuẩn Nhật Bản (JAVADA).",
+    "name": "Đỗ Tân Khoa",
+    "role": "Giảng viên & Chuyên gia tư vấn Chiến lược số",
+    "title": "Thạc sĩ Kỹ thuật Điều khiển & Tự động hóa · Chuyên gia Trung tâm Cách mạng Công nghiệp 4.0 TP.HCM (C4IR) · Phó Tổng Giám đốc CITARES",
+    "bio": "Hơn 15 năm kinh nghiệm trong đào tạo, tư vấn chuyển đổi số và các dự án cải tiến kinh doanh, tập trung kết nối doanh nghiệp B2B và B2C. Hiện là chuyên gia tại Trung tâm Cách mạng Công nghiệp lần thứ 4 TP.HCM (C4IR), tham gia các sáng kiến, kết nối nhà sáng lập và triển khai dự án thí điểm; đồng thời là Phó Tổng Giám đốc CITARES phụ trách đào tạo và giải pháp công nghệ, chuyên gia chẩn đoán doanh nghiệp (JICA) và tư vấn chuyển đổi số cho các chương trình của USAID, GIZ và Singapore.",
     "tags": [
-      "Digital Transformation",
-      "SME Diagnostic",
-      "Automation",
-      "JICA · GIZ"
+      "Chuyển đổi số",
+      "Robot & Tự động hóa",
+      "Shindanshi",
+      "JICA · USAID · GIZ"
     ],
     "group": "vietnam",
     "image": "/images/experts/do-tan-khoa.webp",
     "cutout": "/images/experts/do-tan-khoa-cutout.webp",
     "career": [
       {
-        "period": "",
-        "org": "Trường Đại học Công nghệ Đồng Nai",
-        "role": "Giảng viên Điện công nghiệp, Cơ khí chế tạo, Kỹ thuật điều khiển và Tự động hóa"
+        "period": "2026",
+        "org": "CITARES",
+        "role": "Phó Tổng Giám đốc phụ trách đào tạo và dịch vụ giải pháp công nghệ"
       },
       {
-        "period": "",
-        "org": "Trường Cao đẳng nghề số 8",
-        "role": "Trưởng khoa Điện tử"
+        "period": "2025",
+        "org": "Trung tâm Cách mạng Công nghiệp lần thứ 4 TP.HCM (C4IR)",
+        "role": "Chuyên gia, Trung tâm Sản xuất Thông minh và Chuỗi cung ứng Toàn cầu"
+      },
+      {
+        "period": "2017 - 2025",
+        "org": "Trung tâm Đào tạo Khu Công nghệ cao TP.HCM",
+        "role": "Chuyên gia đào tạo và triển khai dự án công nghệ"
+      },
+      {
+        "period": "2015 - 2017",
+        "org": "Trường Đại học Công nghệ Đồng Nai",
+        "role": "Giảng viên Khoa Cơ khí, Điện và Điện tử"
+      },
+      {
+        "period": "2009 - 2015",
+        "org": "Trường Cao đẳng Nghề số 8 (Bộ Quốc phòng)",
+        "role": "Trưởng Bộ môn Điện tử Công nghiệp"
+      },
+      {
+        "period": "2008 - 2009",
+        "org": "Công ty Điện lạnh Midea Việt Nam",
+        "role": "Phó Trưởng phòng Quản lý và Cải tiến Chất lượng"
       }
     ],
     "expertise": [
-      "Chẩn đoán doanh nghiệp nhỏ và vừa, tư vấn chuyển đổi số",
-      "Tư vấn 5S và cải tiến tự động hóa",
-      "Lập trình, chuyển giao và cải tiến hệ thống robot công nghiệp (Fanuc, NACHI, OTC)",
-      "Lắp đặt, hướng dẫn vận hành và chuyển giao công nghệ",
-      "Xây dựng chương trình đào tạo cho doanh nghiệp, trường cao đẳng và trung cấp",
-      "Kiểm định và tự kiểm định chương trình đào tạo đại học"
+      "Tư vấn chiến lược chuyển đổi số cho doanh nghiệp vừa và nhỏ: nguồn nhân lực, chuỗi cung ứng, tối ưu quy trình sản xuất",
+      "Robot công nghiệp và tự động hóa: Fanuc, NACHI, OTC, Okura; hệ thống thị giác máy (Vision), SCADA",
+      "Đào tạo Robot, PLC, biến tần, SolidWorks, CATIA, ANSYS cho kỹ sư doanh nghiệp",
+      "Tư vấn ngành cơ khí chính xác, điện tử công nghiệp, dệt may và công nghiệp gỗ",
+      "Kaizen, Lean, TPM, JIT, 5S và cải tiến tự động hóa",
+      "Chẩn đoán doanh nghiệp (Shindanshi) và cố vấn khởi nghiệp",
+      "Đánh giá kỹ năng nghề cơ khí và PLC theo tiêu chuẩn Nhật Bản",
+      "Xây dựng chương trình đào tạo và kiểm định chất lượng giáo dục (AUN-QA)"
     ],
     "experience": [
       {
-        "client": "Nhuận Tiến, Bách Tùng, CNS Amura Precision (dự án JICA)",
+        "client": "Nidec Tosok Akiba Việt Nam (dự án JICA)",
         "period": "",
-        "text": "Tư vấn 5S và cải tiến tự động hóa."
+        "text": "Lắp đặt, vận hành và chuyển giao công nghệ dự án đánh bóng chi tiết sau đúc; tư vấn ứng dụng robot và tự động hóa cho dây chuyền sản xuất."
       },
       {
-        "client": "Nidec Tosok Akiba Việt Nam",
+        "client": "Nhuận Tiến, Bách Tùng, CNS Amura (dự án JICA)",
         "period": "",
-        "text": "Lắp đặt, hướng dẫn vận hành và chuyển giao công nghệ dự án đánh bóng sau đúc."
+        "text": "Tư vấn triển khai 5S và cải tiến tự động hóa."
       },
       {
-        "client": "DAPHA",
+        "client": "NanoChem (dự án USAID)",
         "period": "",
-        "text": "Bảo trì, hiệu chuẩn hệ thống robot OTC MR35/50 mài đồng."
+        "text": "Tư vấn chuyển đổi số: cơ cấu nguồn nhân lực, chuỗi cung ứng và tối ưu quy trình sản xuất."
       },
       {
-        "client": "MIDA",
+        "client": "LIXIL (Long Đức, Bình Dương)",
         "period": "",
-        "text": "Lập trình và chuyển giao hệ thống robot NACHI MZ07 cấp phôi cho máy ép nhựa tự động."
+        "text": "Tối ưu robot Fanuc xếp pallet phôi nhôm tự động; tự động hóa pa lăng điện nâng hạ bồn vệ sinh tiêu chuẩn Mỹ."
       },
       {
-        "client": "Lixil (Long Đức, Đồng Nai)",
+        "client": "Esquel",
         "period": "",
-        "text": "Tư vấn cải tiến hệ thống robot Fanuc xếp chồng phôi nhôm (palletizing)."
+        "text": "Tư vấn hệ thống phân loại màu, cấp ống tay áo tự động và đo lường tự động cổ áo, nách áo, vòng eo."
       },
       {
-        "client": "Unilever, Sumiden, Meinan",
+        "client": "Nidec Servo",
         "period": "",
-        "text": "Đào tạo kỹ sư bảo trì hệ thống nhà máy (Unilever Củ Chi), kỹ thuật viên cải tiến chuyền (Sumiden) và kỹ sư R&D (Meinan)."
+        "text": "Phát triển hệ thống kiểm tra phôi tự động bằng camera Vision."
       },
       {
-        "client": "Trường Cao đẳng nghề số 8",
+        "client": "DAPHA, MIDA",
         "period": "",
-        "text": "Xây dựng chương trình đào tạo kỹ năng Điện tử công nghiệp cho Úc; luyện thi giáo viên giỏi cấp tỉnh và cấp bộ (Đồng Nai, Đắk Lắk, Bình Phước)."
+        "text": "Bảo trì, hiệu chuẩn hệ thống mài robot OTC MR35/50; lập trình và chuyển giao robot NACHI MZ07 cho quy trình ép nhựa tự động."
+      },
+      {
+        "client": "Grand World",
+        "period": "",
+        "text": "Cải tiến hệ thống nâng hạ nhạc nước tự động và đồng bộ dữ liệu với SCADA."
+      },
+      {
+        "client": "Nidec, Unilever, Sumiden, Meinan, TSAV, Lọc dầu Dung Quất",
+        "period": "",
+        "text": "Đào tạo kỹ sư R&D, bảo trì nhà máy, tối ưu dây chuyền, tự động hóa và bảo trì robot xếp pallet Okura."
+      },
+      {
+        "client": "GES, Yuki, PLUS, Thiên Long, Bảo Bảo, Sonion, Datalogic",
+        "period": "",
+        "text": "Đào tạo kỹ sư lập trình robot và ứng dụng điều khiển."
+      },
+      {
+        "client": "Toshiba, Yuki, Nidec, Cát Thái, Duy Khánh, CNS Amura, New Hanam, Dynamo",
+        "period": "",
+        "text": "Tư vấn, đánh giá năng lực kỹ năng Cơ khí bậc 3, bậc 2 và PLC bậc 2 theo tiêu chuẩn Nhật Bản cho kỹ thuật viên."
+      },
+      {
+        "client": "Cuộc thi Robot MTA và chương trình khởi nghiệp",
+        "period": "2022 - 2025",
+        "text": "Tư vấn, tổ chức cuộc thi Khoa học Công nghệ Robot MTA tại SECC; cố vấn và giám khảo khởi nghiệp sinh viên tại Hồng Bàng, Nguyễn Tất Thành, Đại học Công nghiệp."
       }
     ],
     "certifications": [
       {
+        "name": "Shindanshi: chuyên gia chẩn đoán doanh nghiệp ngành chế biến, chế tạo",
+        "org": "JICA (2023)",
+        "core": true
+      },
+      {
+        "name": "Chuyên gia tư vấn chuyển đổi số",
+        "org": "GIZ (2023)",
+        "core": true
+      },
+      {
+        "name": "Tư vấn chiến lược chuyển đổi số cho doanh nghiệp vừa và nhỏ",
+        "org": "USAID (2022)",
+        "core": true
+      },
+      {
         "name": "Chuyên gia năng suất",
         "org": "Tổ chức chứng nhận chuyên gia năng suất Việt Nam (2024 - 2027)",
         "core": true
+      },
+      {
+        "name": "Tư vấn chuyển đổi số cho doanh nghiệp công nghiệp hỗ trợ",
+        "org": "Singapore (2022)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Chiến lược phát triển bền vững cho doanh nghiệp vừa và nhỏ",
+        "org": "Singapore (2024)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Ứng dụng công nghệ Blockchain trong Chính phủ điện tử",
+        "org": "APO (2024)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Chất bán dẫn từ vật liệu đến ứng dụng",
+        "org": "Đại học Văn Lang (2024)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Tư vấn đánh giá cải tiến cho doanh nghiệp công nghiệp hỗ trợ",
+        "org": "JICA (2019)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Chuyên gia tư vấn khởi nghiệp cho doanh nghiệp mới",
+        "org": "JICA (2023)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Đánh giá viên đo kiểm cơ khí bậc 3 và bậc 2",
+        "org": "Tiêu chuẩn Nhật Bản (2019, 2022)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Kỹ năng tổ chức kỳ thi và đánh giá kỹ năng nghề",
+        "org": "Nhật Bản (2019)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Kỹ năng nghề điện tử công nghiệp bậc 3",
+        "org": "Malaysia (2012)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Đảm bảo và kiểm định chất lượng giáo dục theo AUN-QA 2.0",
+        "org": "Đại học Đà Nẵng (2017)",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Lý luận giảng dạy đại học, cao đẳng; Sư phạm bậc 2; Sư phạm nghề",
+        "org": "ĐH Sư phạm Kỹ thuật TP.HCM (2008, 2012)",
+        "group": "Đào tạo & Coaching"
+      }
+    ],
+    "highlights": [
+      {
+        "value": "15+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "25+",
+        "label": "Doanh nghiệp đào tạo & tư vấn"
+      },
+      {
+        "value": "8",
+        "label": "Dự án robot & tự động hóa triển khai"
+      },
+      {
+        "value": "20+",
+        "label": "Chứng nhận chuyên môn"
+      },
+      {
+        "value": "4",
+        "label": "Năm tổ chức cuộc thi Robot MTA"
+      },
+      {
+        "value": "3",
+        "label": "Ngoại ngữ"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Thạc sĩ Kỹ thuật Điều khiển và Tự động hóa",
+        "school": "Trường Đại học Giao thông Vận tải TP.HCM (2012)"
+      },
+      {
+        "degree": "Kỹ sư Công nghệ Tự động",
+        "school": "Trường Đại học Sư phạm Kỹ thuật TP.HCM (2008)"
+      }
+    ],
+    "languages": "Tiếng Việt, Tiếng Anh (B1), Tiếng Trung, Ngôn ngữ ký hiệu",
+    "regions": [
+      {
+        "country": "Nhật Bản",
+        "text": "Dự án JICA; đánh giá kỹ năng cơ khí và PLC theo tiêu chuẩn Nhật Bản"
+      },
+      {
+        "country": "Singapore",
+        "text": "Tư vấn chuyển đổi số và phát triển bền vững cho doanh nghiệp công nghiệp hỗ trợ"
+      },
+      {
+        "country": "Malaysia",
+        "text": "Chứng nhận kỹ năng nghề điện tử công nghiệp bậc 3"
       }
     ]
   },
