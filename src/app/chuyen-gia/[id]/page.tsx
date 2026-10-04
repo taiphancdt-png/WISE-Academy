@@ -3,7 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/ui";
 import ExpertActionBar from "@/components/ExpertActionBar";
-import { ArrowLeft, ArrowRight, Calendar, CheckCircle2 } from "@/components/icons";
+import CountUp from "@/components/CountUp";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  CheckCircle2,
+} from "@/components/icons";
 import expertsData from "@/data/experts.json";
 import projectsData from "@/data/projects.json";
 import type { Expert, Project } from "@/types";
@@ -15,7 +21,11 @@ export function generateStaticParams() {
   return experts.map((e) => ({ id: e.id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const exp = experts.find((e) => e.id === id);
   if (!exp) return {};
@@ -24,6 +34,27 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     description: exp.bio,
     alternates: { canonical: `/chuyen-gia/${exp.id}` },
   };
+}
+
+// small uppercase section label with an orange dash
+function SectionLabel({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) {
+  return (
+    <p
+      className={`flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-[#FFB27A]" : "text-[#C9500E]"}`}
+    >
+      <span
+        aria-hidden="true"
+        className="h-0.5 w-6 rounded-full bg-[#F76011]"
+      />
+      {children}
+    </p>
+  );
 }
 
 // Projects whose client is named in the expert's bio (e.g. "Pou Chen", "Geodis", "Samho").
@@ -43,14 +74,23 @@ function relatedProjects(exp: Expert) {
 }
 
 // One landing page per expert: photo and credentials, their story, strengths, projects and other experts.
-export default async function ExpertPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ExpertPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const exp = experts.find((e) => e.id === id);
   if (!exp) notFound();
 
-  const credentials = exp.title.split(" · ").map((s) => s.trim()).filter(Boolean);
+  const credentials = exp.title
+    .split(" · ")
+    .map((s) => s.trim())
+    .filter(Boolean);
   const related = relatedProjects(exp);
-  const others = experts.filter((e) => e.id !== exp.id && e.group === exp.group).slice(0, 3);
+  const others = experts
+    .filter((e) => e.id !== exp.id && e.group === exp.group)
+    .slice(0, 3);
   const initial = exp.name.split(" ").pop()?.charAt(0);
   // name with the given name (and nickname) highlighted, e.g. "Nguyễn Thị" + "Thủy (Kate)"
   const words = exp.name.split(" ");
@@ -64,9 +104,18 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
     <div className="bg-[#F8F9FA]">
       {/* Hero: light and playful; copy on the left, an arch portrait with floating stat cards on the right */}
       <section className="relative isolate overflow-hidden bg-[#FFF7F0]">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-60 [background-image:radial-gradient(#F7601126_1.2px,transparent_1.2px)] [background-size:22px_22px]" />
-        <div aria-hidden="true" className="absolute -left-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#FFD9BF] blur-3xl opacity-70" />
-        <div aria-hidden="true" className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 opacity-60 [background-image:radial-gradient(#F7601126_1.2px,transparent_1.2px)] [background-size:22px_22px]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -left-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#FFD9BF] blur-3xl opacity-70"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70"
+        />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 lg:pt-16 pb-16 lg:pb-24">
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
             <div>
@@ -76,13 +125,23 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
               </span>
               <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#002F5B]">
                 {firstPart}{" "}
-                <span className="bg-gradient-to-r from-[#F76011] to-[#FF9F43] bg-clip-text text-transparent">{lastPart}</span>
+                <span className="bg-gradient-to-r from-[#F76011] to-[#FF9F43] bg-clip-text text-transparent">
+                  {lastPart}
+                </span>
               </h1>
-              <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#486581]">{lead}</p>
+              <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#486581]">
+                {lead}
+              </p>
               <ul className="mt-6 flex flex-wrap gap-2.5">
                 {credentials.map((c) => (
-                  <li key={c} className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-xs sm:text-sm font-medium text-[#002F5B] shadow-[0_8px_20px_-14px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.08]">
-                    <CheckCircle2 weight="fill" className="w-4 h-4 shrink-0 text-[#F76011]" />
+                  <li
+                    key={c}
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-xs sm:text-sm font-medium text-[#002F5B] shadow-[0_8px_20px_-14px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.08]"
+                  >
+                    <CheckCircle2
+                      weight="fill"
+                      className="w-4 h-4 shrink-0 text-[#F76011]"
+                    />
                     {c}
                   </li>
                 ))}
@@ -92,10 +151,14 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                   href={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
                   className="inline-flex items-center gap-2 rounded-full bg-[#F76011] hover:bg-[#C9500E] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_-12px_rgba(247,96,17,0.7)] transition"
                 >
-                  <Calendar className="w-4 h-4" /> Đặt lịch tư vấn với chuyên gia
+                  <Calendar className="w-4 h-4" /> Đặt lịch tư vấn với chuyên
+                  gia
                 </Link>
                 {exp.career && (
-                  <a href="#qua-trinh" className="inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-[#002F5B] hover:text-[#C9500E] transition-colors">
+                  <a
+                    href="#qua-trinh"
+                    className="inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-[#002F5B] hover:text-[#C9500E] transition-colors"
+                  >
                     Xem hành trình <ArrowRight className="w-4 h-4" />
                   </a>
                 )}
@@ -104,7 +167,11 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
 
             <div className="relative mx-auto w-full max-w-[380px] sm:max-w-[440px] aspect-square">
               {/* an organic blob instead of a frame: soft blue fill, an offset orange outline and a few sparks */}
-              <svg viewBox="0 0 400 400" aria-hidden="true" className="absolute inset-0 w-full h-full overflow-visible">
+              <svg
+                viewBox="0 0 400 400"
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full overflow-visible"
+              >
                 <defs>
                   <linearGradient id="blobFill" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#E3EFFB" />
@@ -128,7 +195,10 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                 <circle cx="70" cy="96" r="9" fill="#F76011" />
                 <circle cx="350" cy="300" r="6" fill="#002F5B" />
                 <circle cx="330" cy="70" r="4" fill="#FF9F43" />
-                <path d="M52 250l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#FF9F43" />
+                <path
+                  d="M52 250l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"
+                  fill="#FF9F43"
+                />
               </svg>
               {/* cut-out portrait, its lower edge fading into the page */}
               {exp.cutout ? (
@@ -140,23 +210,37 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
               ) : (
                 <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
                   {exp.image ? (
-                    <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
+                    <img
+                      src={exp.image}
+                      alt={exp.name}
+                      className="w-full h-full object-cover object-top"
+                    />
                   ) : (
-                    <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-[#002F5B]">{initial}</span>
+                    <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-[#002F5B]">
+                      {initial}
+                    </span>
                   )}
                 </div>
               )}
               {/* floating stat cards */}
               {exp.highlights?.[0] && (
                 <div className="float-y absolute -left-4 sm:-left-8 top-[18%] rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
-                  <p className="text-2xl font-extrabold text-[#F76011] leading-none">{exp.highlights[0].value}</p>
-                  <p className="mt-1 text-[11px] font-semibold text-[#486581]">{exp.highlights[0].label}</p>
+                  <p className="text-2xl font-extrabold text-[#F76011] leading-none">
+                    {exp.highlights[0].value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold text-[#486581]">
+                    {exp.highlights[0].label}
+                  </p>
                 </div>
               )}
               {exp.highlights?.[3] && (
                 <div className="float-y-slow absolute -right-2 sm:-right-6 bottom-[22%] rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
-                  <p className="text-2xl font-extrabold leading-none">{exp.highlights[3].value}</p>
-                  <p className="mt-1 text-[11px] font-semibold text-white/75">{exp.highlights[3].label}</p>
+                  <p className="text-2xl font-extrabold leading-none">
+                    {exp.highlights[3].value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold text-white/75">
+                    {exp.highlights[3].label}
+                  </p>
                 </div>
               )}
               <span className="absolute left-1/2 bottom-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
@@ -167,14 +251,29 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {/* Key numbers */}
+      {/* Key numbers: a navy card lifted over the end of the hero */}
       {exp.highlights && (
-        <section className="bg-white border-b border-slate-200 px-4 sm:px-6">
-          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-slate-100 py-8">
-            {exp.highlights.map((h) => (
-              <div key={h.label} className="px-4 py-3 text-center">
-                <dd className="text-2xl sm:text-3xl font-bold text-[#002F5B]">{h.value}</dd>
-                <dt className="mt-1 text-xs text-[#486581] leading-snug">{h.label}</dt>
+        <section className="relative z-10 px-4 sm:px-6 -mt-10">
+          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 rounded-3xl bg-gradient-to-br from-[#002F5B] to-[#0B4A82] text-white shadow-[0_30px_60px_-30px_rgba(0,30,56,0.7)] overflow-hidden">
+            {exp.highlights.map((h, i) => (
+              <div
+                key={h.label}
+                className={`relative px-5 py-7 text-center ${i ? "lg:border-l border-white/10" : ""}`}
+              >
+                <dd className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                  {/\d\.\d/.test(h.value) ? (
+                    h.value
+                  ) : (
+                    <CountUp value={h.value} />
+                  )}
+                </dd>
+                <dt className="mt-1.5 text-xs text-white/70 leading-snug">
+                  {h.label}
+                </dt>
+                <span
+                  aria-hidden="true"
+                  className="absolute left-1/2 bottom-0 h-1 w-10 -translate-x-1/2 rounded-t-full bg-[#F76011]"
+                />
               </div>
             ))}
           </dl>
@@ -182,102 +281,191 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
       )}
 
       {/* Story and strengths */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-10 lg:gap-16">
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Giới thiệu</h2>
-            <p className="mt-4 text-lg sm:text-xl leading-relaxed text-[#102A43]">{exp.bio}</p>
-          </div>
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Thế mạnh chuyên môn</h2>
-            {exp.expertise && (
-              <ul className="mt-4 space-y-2.5">
-                {exp.expertise.map((t) => (
-                  <li key={t} className="flex gap-2.5 text-sm text-[#102A43] leading-relaxed">
-                    <CheckCircle2 weight="fill" className="w-4 h-4 shrink-0 mt-0.5 text-[#F76011]" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <ul className={`${exp.expertise ? "mt-6" : "mt-4"} grid grid-cols-1 sm:grid-cols-2 gap-3`}>
+      <section className="py-16 lg:py-24 px-4 sm:px-6">
+        <div
+          className={`max-w-6xl mx-auto grid grid-cols-1 ${exp.expertise ? "lg:grid-cols-2" : "max-w-4xl"} gap-10 lg:gap-14 items-start`}
+        >
+          <div className="relative rounded-3xl bg-white p-8 sm:p-10 shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
+            <span
+              aria-hidden="true"
+              className="absolute -top-6 left-8 text-[96px] leading-none font-serif text-[#F76011]"
+            >
+              &ldquo;
+            </span>
+            <SectionLabel>Giới thiệu</SectionLabel>
+            <p className="mt-4 text-lg sm:text-xl leading-relaxed text-[#102A43]">
+              {exp.bio}
+            </p>
+            <ul className="mt-7 flex flex-wrap gap-2">
               {exp.tags.map((t) => (
-                <li key={t} className="rounded-xl bg-[#F3F6FA] px-4 py-3 text-sm font-semibold text-[#002F5B] ring-1 ring-[#002F5B]/[0.06]">
-                  {t}
+                <li
+                  key={t}
+                  className="rounded-full bg-[#FFF1E7] px-3.5 py-1.5 text-xs font-semibold text-[#C9500E]"
+                >
+                  #{t}
                 </li>
               ))}
             </ul>
           </div>
+          {exp.expertise && (
+            <div>
+              <SectionLabel>Thế mạnh chuyên môn</SectionLabel>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#002F5B]">
+                Những gì chuyên gia mang đến cho doanh nghiệp
+              </h2>
+              {exp.expertise && (
+                <ol className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {exp.expertise.map((t, i) => (
+                    <li
+                      key={t}
+                      className="group flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-[#002F5B]/[0.07] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_-20px_rgba(0,47,91,0.5)] hover:ring-[#F76011]/40"
+                    >
+                      <span className="shrink-0 w-8 h-8 rounded-xl bg-[#002F5B] text-white text-xs font-bold flex items-center justify-center group-hover:bg-[#F76011] transition-colors">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-sm text-[#102A43] leading-relaxed">
+                        {t}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Career path and education */}
       {exp.career && (
-        <section id="qua-trinh" className="py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-10 lg:gap-16">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Quá trình công tác</h2>
-              <ol className="mt-8 relative border-l-2 border-[#F76011]/30 ml-2 space-y-8">
-                {exp.career.map((c) => (
-                  <li key={c.org} className="pl-7 relative">
-                    <span aria-hidden="true" className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#F76011] ring-4 ring-[#F8F9FA]" />
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#C9500E]">{c.period}</p>
-                    <h3 className="mt-1 text-lg font-semibold text-[#002F5B]">{c.org}</h3>
-                    <p className="mt-1 text-sm text-[#486581] leading-relaxed">{c.role}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div className="space-y-10">
-              {exp.education && (
-                <div>
-                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Học vấn</h2>
-                  <ul className="mt-4 space-y-3">
-                    {exp.education.map((e) => (
-                      <li key={e.degree} className="rounded-xl bg-white p-4 shadow-[0_10px_30px_-20px_rgba(0,47,91,0.4)] ring-1 ring-[#002F5B]/[0.06]">
-                        <p className="font-semibold text-[#002F5B]">{e.degree}</p>
-                        <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {exp.languages && (
-                <div>
-                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Ngoại ngữ</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-[#486581]">{exp.languages}</p>
-                </div>
-              )}
-              {exp.regions && (
-                <div>
-                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Kinh nghiệm quốc tế</h2>
-                  <ul className="mt-4 space-y-2.5">
-                    {exp.regions.map((r) => (
-                      <li key={r.country} className="text-sm leading-relaxed text-[#486581]">
-                        <strong className="text-[#002F5B]">{r.country}:</strong> {r.text}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+        <section
+          id="qua-trinh"
+          className="py-16 lg:py-24 px-4 sm:px-6 bg-white scroll-mt-24"
+        >
+          <div className="max-w-6xl mx-auto">
+            <SectionLabel>Hành trình</SectionLabel>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold text-[#002F5B]">
+              Quá trình công tác
+            </h2>
+            {/* the career as steps on one line, newest first */}
+            <ol className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+              <span
+                aria-hidden="true"
+                className="hidden lg:block absolute left-4 right-4 top-[22px] h-0.5 bg-gradient-to-r from-[#F76011] via-[#FFB27A] to-[#002F5B]/20"
+              />
+              {exp.career.map((c, i) => (
+                <li key={c.org} className="relative">
+                  <span
+                    className={`relative z-10 inline-flex items-center rounded-full px-4 py-2.5 text-xs font-bold ${i === 0 ? "bg-[#F76011] text-white shadow-[0_10px_20px_-8px_rgba(247,96,17,0.8)]" : "bg-white text-[#002F5B] ring-2 ring-[#002F5B]/15"}`}
+                  >
+                    {c.period}
+                  </span>
+                  <div className="mt-4 h-full rounded-2xl bg-[#F8F9FA] p-5 ring-1 ring-[#002F5B]/[0.06]">
+                    <h3 className="text-lg font-bold text-[#002F5B] leading-snug">
+                      {c.org}
+                    </h3>
+                    <p className="mt-2 text-sm text-[#486581] leading-relaxed">
+                      {c.role}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            {(exp.education || exp.languages || exp.regions) && (
+              <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-5">
+                {exp.education && (
+                  <div className="rounded-3xl bg-[#002F5B] p-7 text-white">
+                    <SectionLabel light>Học vấn</SectionLabel>
+                    <ul className="mt-4 space-y-4">
+                      {exp.education.map((e) => (
+                        <li key={e.degree}>
+                          <p className="font-semibold">{e.degree}</p>
+                          <p className="mt-0.5 text-sm text-white/70">
+                            {e.school}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    {exp.languages && (
+                      <>
+                        <div className="my-5 h-px bg-white/10" />
+                        <SectionLabel light>Ngoại ngữ</SectionLabel>
+                        <p className="mt-3 text-sm text-white/85 leading-relaxed">
+                          {exp.languages}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                )}
+                {exp.regions && (
+                  <div className="lg:col-span-2 rounded-3xl bg-[#FFF7F0] p-7 ring-1 ring-[#F76011]/15">
+                    <SectionLabel>Kinh nghiệm quốc tế</SectionLabel>
+                    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {exp.regions.map((r) => (
+                        <li
+                          key={r.country}
+                          className="rounded-2xl bg-white p-4 ring-1 ring-[#002F5B]/[0.06]"
+                        >
+                          <p className="text-sm font-bold text-[#002F5B]">
+                            {r.country}
+                          </p>
+                          <p className="mt-1 text-xs text-[#486581] leading-relaxed">
+                            {r.text}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </section>
       )}
 
       {/* Selected engagements */}
       {exp.experience && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
+        <section className="py-16 lg:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Kinh nghiệm dự án tiêu biểu</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <SectionLabel>Dấu ấn</SectionLabel>
+                <h2 className="mt-2 text-2xl sm:text-4xl font-bold text-[#002F5B]">
+                  Kinh nghiệm dự án tiêu biểu
+                </h2>
+              </div>
+              <p className="text-sm text-[#486581]">
+                {exp.experience.length} dự án và chương trình nổi bật
+              </p>
+            </div>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {exp.experience.map((e) => (
-                <article key={e.client} className="rounded-2xl bg-[#F8F9FA] p-6 ring-1 ring-[#002F5B]/[0.06]">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-semibold text-[#002F5B] leading-snug">{e.client}</h3>
-                    {e.period && <span className="shrink-0 text-[11px] font-bold text-[#C9500E]">{e.period}</span>}
+                <article
+                  key={e.client}
+                  className="group relative overflow-hidden rounded-2xl bg-white p-6 ring-1 ring-[#002F5B]/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_40px_-24px_rgba(0,47,91,0.55)]"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#F76011] to-[#FFB27A] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                  />
+                  <div className="flex items-start gap-3">
+                    <span className="shrink-0 w-11 h-11 rounded-xl bg-[#EBF3FA] text-[#002F5B] font-extrabold flex items-center justify-center group-hover:bg-[#002F5B] group-hover:text-white transition-colors">
+                      {e.client.charAt(0)}
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-[#002F5B] leading-snug">
+                        {e.client}
+                      </h3>
+                      {e.period && (
+                        <span className="mt-1 inline-block rounded-full bg-[#FFF1E7] px-2.5 py-0.5 text-[11px] font-bold text-[#C9500E]">
+                          {e.period}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <p className="mt-2.5 text-sm text-[#486581] leading-relaxed">{e.text}</p>
+                  <p className="mt-4 text-sm text-[#486581] leading-relaxed">
+                    {e.text}
+                  </p>
                 </article>
               ))}
             </div>
@@ -285,18 +473,33 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         </section>
       )}
 
-      {/* Certifications */}
+      {/* Certifications: on navy, like a wall of badges */}
       {exp.certifications && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6">
+        <section className="relative isolate overflow-hidden py-16 lg:py-24 px-4 sm:px-6 bg-[#001E38] text-white">
+          <div
+            aria-hidden="true"
+            className="absolute -right-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#F76011]/15 blur-3xl"
+          />
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Chứng nhận & đào tạo chuyên sâu</h2>
-            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <SectionLabel light>Chứng nhận</SectionLabel>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold">
+              Chứng nhận & đào tạo chuyên sâu
+            </h2>
+            <ul className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {exp.certifications.map((c) => (
-                <li key={c.name} className="flex gap-3 rounded-xl bg-white p-4 shadow-[0_10px_30px_-22px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
-                  <CheckCircle2 weight="duotone" className="w-6 h-6 shrink-0 text-[#F76011]" />
-                  <span>
-                    <span className="block text-sm font-semibold text-[#002F5B]">{c.name}</span>
-                    <span className="block mt-0.5 text-xs text-[#486581]">{c.org}</span>
+                <li
+                  key={c.name}
+                  className="flex flex-col rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/10 backdrop-blur transition hover:bg-white/[0.1] hover:ring-[#F76011]/50"
+                >
+                  <CheckCircle2
+                    weight="duotone"
+                    className="w-7 h-7 text-[#FF9F43]"
+                  />
+                  <span className="mt-3 text-sm font-semibold leading-snug">
+                    {c.name}
+                  </span>
+                  <span className="mt-auto pt-2 text-xs text-white/60">
+                    {c.org}
                   </span>
                 </li>
               ))}
@@ -309,18 +512,33 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
       {related.length > 0 && (
         <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Dự án tiêu biểu đã đồng hành</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">
+              Dự án tiêu biểu đã đồng hành
+            </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((p) => (
-                <Link key={p.id} href={`/du-an#${p.id}`} className="group card-soft overflow-hidden flex flex-col">
+                <Link
+                  key={p.id}
+                  href={`/du-an#${p.id}`}
+                  className="group card-soft overflow-hidden flex flex-col"
+                >
                   {p.cover && (
                     <div className="aspect-[16/10] overflow-hidden bg-slate-100">
-                      <img src={p.cover} alt={p.client} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                      <img
+                        src={p.cover}
+                        alt={p.client}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
                   )}
                   <div className="p-5">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">{p.client}</p>
-                    <h3 className="mt-1.5 text-base font-semibold text-[#002F5B] leading-snug">{p.title}</h3>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">
+                      {p.client}
+                    </p>
+                    <h3 className="mt-1.5 text-base font-semibold text-[#002F5B] leading-snug">
+                      {p.title}
+                    </h3>
                   </div>
                 </Link>
               ))}
@@ -334,20 +552,40 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         <section className="py-16 lg:py-20 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-end justify-between gap-4">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Chuyên gia khác</h2>
-              <Link href="/chuyen-gia" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9500E] hover:text-[#F76011]">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">
+                Chuyên gia khác
+              </h2>
+              <Link
+                href="/chuyen-gia"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9500E] hover:text-[#F76011]"
+              >
                 Xem tất cả <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {others.map((o) => (
-                <Link key={o.id} href={`/chuyen-gia/${o.id}`} className="group card-soft flex items-center gap-4 p-5">
+                <Link
+                  key={o.id}
+                  href={`/chuyen-gia/${o.id}`}
+                  className="group card-soft flex items-center gap-4 p-5"
+                >
                   <span className="w-16 h-16 shrink-0 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow">
-                    {o.image && <img src={o.image} alt={o.name} className="w-full h-full object-cover object-top" loading="lazy" />}
+                    {o.image && (
+                      <img
+                        src={o.image}
+                        alt={o.name}
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    )}
                   </span>
                   <span>
-                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#C9500E] leading-snug">{o.role}</span>
-                    <span className="mt-1 block font-semibold text-[#002F5B] group-hover:text-[#F76011] transition-colors">{o.name}</span>
+                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#C9500E] leading-snug">
+                      {o.role}
+                    </span>
+                    <span className="mt-1 block font-semibold text-[#002F5B] group-hover:text-[#F76011] transition-colors">
+                      {o.name}
+                    </span>
                   </span>
                 </Link>
               ))}
@@ -357,7 +595,9 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
       )}
 
       {/* always at hand while reading the profile: back to the list, or book a session */}
-      <ExpertActionBar bookHref={`/lien-he?expert=${encodeURIComponent(exp.name)}`} />
+      <ExpertActionBar
+        bookHref={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
+      />
 
       <CtaBand
         title={<>Làm việc trực tiếp cùng {exp.name}</>}
