@@ -74,7 +74,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
         const card = box?.firstElementChild as HTMLElement | null;
         if (!box || !card) return;
         card.style.clipPath = i === 0 ? `inset(0 0 0 ${hidden.toFixed(1)}px round 28px)` : `inset(0 ${hidden.toFixed(1)}px 0 0 round 28px)`;
-        box.style.opacity = String(smooth(0, 0.15, t));
+        box.style.opacity = String(smooth(0, 1, t)); // the colour deepens from see-through to solid as it opens
       });
       if (circleRef.current) circleRef.current.style.transform = `translate(-50%, -50%) scale(${(1.08 - 0.08 * t).toFixed(3)})`;
       sideRefs.current.forEach((c, i) => {
