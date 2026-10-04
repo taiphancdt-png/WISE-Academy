@@ -67,14 +67,8 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-60 [background-image:radial-gradient(#F7601126_1.2px,transparent_1.2px)] [background-size:22px_22px]" />
         <div aria-hidden="true" className="absolute -left-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#FFD9BF] blur-3xl opacity-70" />
         <div aria-hidden="true" className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-16 lg:pb-24">
-          <Link
-            href="/chuyen-gia"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#002F5B] shadow-sm ring-1 ring-[#002F5B]/10 hover:ring-[#F76011]/50 hover:text-[#C9500E] transition"
-          >
-            <ArrowLeft className="w-4 h-4" /> Quay lại danh sách chuyên gia
-          </Link>
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 lg:pt-16 pb-16 lg:pb-24">
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-[#002F5B] px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white">
                 <span className="w-2 h-2 rounded-full bg-[#F76011] animate-pulse" />
@@ -112,14 +106,23 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
               {/* shapes behind the portrait */}
               <div aria-hidden="true" className="absolute -inset-6 rounded-full border-2 border-dashed border-[#F76011]/35 spin-slow" />
               <div aria-hidden="true" className="absolute -right-5 top-10 w-full h-[88%] rounded-t-full rounded-b-[44px] bg-[#002F5B] rotate-6" />
-              {/* arch portrait */}
-              <div className="relative aspect-[4/5] rounded-t-full rounded-b-[44px] overflow-hidden bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]">
-                {exp.image ? (
-                  <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
-                ) : (
-                  <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-white">{initial}</span>
-                )}
-              </div>
+              {/* arch portrait; a cut-out photo rises above the top of the arch */}
+              {exp.cutout ? (
+                <div className="relative aspect-[4/5]">
+                  <div className="absolute inset-x-0 bottom-0 top-[12%] rounded-t-full rounded-b-[44px] bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]" />
+                  <div className="absolute inset-0 rounded-b-[44px] overflow-hidden">
+                    <img src={exp.cutout} alt={exp.name} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[108%] max-w-none drop-shadow-[0_12px_24px_rgba(0,30,56,0.25)]" />
+                  </div>
+                </div>
+              ) : (
+                <div className="relative aspect-[4/5] rounded-t-full rounded-b-[44px] overflow-hidden bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]">
+                  {exp.image ? (
+                    <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
+                  ) : (
+                    <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-white">{initial}</span>
+                  )}
+                </div>
+              )}
               {/* floating stat cards */}
               {exp.highlights?.[0] && (
                 <div className="float-y absolute -left-6 sm:-left-12 top-16 rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">

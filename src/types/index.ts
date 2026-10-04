@@ -6,6 +6,8 @@ export interface Expert {
   bio: string;
   tags: string[];
   image: string | null;
+  /** portrait with the background removed, used on the profile hero */
+  cutout?: string;
   /** "vietnam" = Vietnamese experts, "international" = foreign experts (shown as a separate group) */
   group: "vietnam" | "international";
   // optional full profile (from the expert's CV), shown on their landing page
