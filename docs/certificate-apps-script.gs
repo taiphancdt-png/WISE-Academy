@@ -12,10 +12,15 @@ const SHEET_NAME = "Certificates";
 const FOLDER_ID = "1oLhP0VKBGHYdQASJr4HP5oG75cRMlbQ2";
 
 function doGet(e) {
-  const p = e.parameter || {};
+  const p = (e && e.parameter) || {};
   if (SECRET === "CHANGE-ME" || p.key !== SECRET) return json({ ok: false, error: "forbidden" });
   if (p.image) return image(p.image);
   return lookup(p.code || "");
+}
+
+// Run this one from the editor (select testLookup, then Run) to authorize the script and check a code.
+function testLookup() {
+  Logger.log(lookup("WISELSSGB-K2501-001-F").getContent());
 }
 
 const norm = (s) => String(s).trim().toUpperCase().replace(/\s+/g, "");
