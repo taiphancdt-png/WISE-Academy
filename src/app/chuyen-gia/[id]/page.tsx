@@ -95,6 +95,7 @@ function Rail({
 
 // order of the themed columns of further training
 const GROUP_ORDER = [
+  "Lean Six Sigma",
   "Lean & Năng suất",
   "Đào tạo & Coaching",
   "Bền vững & Số hóa",
@@ -145,10 +146,12 @@ export default async function ExpertPage({
   const lead = exp.bio.split(/(?<=\.)\s/)[0];
   const rest = exp.bio.slice(lead.length).trim();
   // training beyond the six core credentials, listed by theme
-  const moreCerts = exp.certifications?.slice(6) ?? [];
+  const coreCerts = exp.certifications?.filter((c) => c.core) ?? [];
+  const moreCerts = exp.certifications?.filter((c) => !c.core) ?? [];
 
   return (
-    <div className="bg-[#F8F9FA]">
+    // data-no-reveal: the whole profile is shown at once, without the site-wide fade-in on scroll
+    <div className="bg-[#F8F9FA]" data-no-reveal>
       {/* Hero: light and playful; copy on the left, an arch portrait with floating stat cards on the right */}
       <section className="relative isolate overflow-hidden bg-[#FFF7F0]">
         <div
@@ -375,13 +378,26 @@ export default async function ExpertPage({
               )}
             </div>
           )}
+          {exp.regions && (
+            <div className="mt-10 pt-8 border-t border-[#002F5B]/10">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Kinh nghiệm quốc tế</p>
+              <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                {exp.regions.map((r) => (
+                  <li key={r.country} className="py-3 border-b border-[#002F5B]/10">
+                    <p className="text-sm font-bold text-[#002F5B]">{r.country}</p>
+                    <p className="mt-0.5 text-xs text-[#486581] leading-relaxed">{r.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </Rail>
 
         {exp.certifications && (
           <Rail no="02" label="Chứng nhận & đào tạo">
             {/* the core credentials, large; the rest as a compact list of further training */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#002F5B]/10">
-              {exp.certifications.slice(0, 6).map((c, i) => (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#002F5B]/10">
+              {coreCerts.map((c, i) => (
                 <li
                   key={c.name}
                   className="relative p-6 border-r border-b border-[#002F5B]/10 group"
@@ -402,13 +418,13 @@ export default async function ExpertPage({
                 </li>
               ))}
             </ul>
-            {exp.certifications.length > 6 && (
+            {moreCerts.length > 0 && (
               <div className="mt-12">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
                   Các khóa đào tạo chuyên sâu khác
                 </p>
                 {/* further training grouped by theme, in tidy columns */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8">
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-8">
                   {Array.from(new Set(moreCerts.map((c) => c.group || "Khác")))
                     .sort(
                       (a, b) => GROUP_ORDER.indexOf(a) - GROUP_ORDER.indexOf(b),
@@ -443,25 +459,9 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        {exp.regions && (
-          <Rail no="03" label="Kinh nghiệm quốc tế">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
-              {exp.regions.map((r) => (
-                <li key={r.country} className="bg-white p-5">
-                  <p className="text-lg font-extrabold text-[#002F5B]">
-                    {r.country}
-                  </p>
-                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">
-                    {r.text}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </Rail>
-        )}
 
         {exp.expertise && (
-          <Rail no="04" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
+          <Rail no="03" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
             <ol
               className={`grid grid-cols-1 ${exp.photos?.[1] ? "" : "md:grid-cols-2"} gap-x-12 border-t border-[#002F5B]/10`}
             >
@@ -484,7 +484,7 @@ export default async function ExpertPage({
 
         {exp.career && (
           <Rail
-            no="05"
+            no="04"
             label="Quá trình công tác"
             id="qua-trinh"
             photo={exp.photos?.[2]}
@@ -523,7 +523,7 @@ export default async function ExpertPage({
         )}
 
         {exp.experience && (
-          <Rail no="06" label="Dự án tiêu biểu">
+          <Rail no="05" label="Dự án tiêu biểu">
             <ul className="border-t border-[#002F5B]/10">
               {exp.experience.map((e) => (
                 <li
