@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import articlesData from "@/data/articles.json";
 import toolsData from "@/data/tools.json";
-import type { Article, LeanTool } from "@/types";
+import expertsData from "@/data/experts.json";
+import type { Article, Expert, LeanTool } from "@/types";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,5 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...pages, ...articlePages, ...toolPages];
+  const expertPages: MetadataRoute.Sitemap = (expertsData as Expert[]).map((e) => ({
+    url: `${SITE_URL}/chuyen-gia/${e.id}`,
+    changeFrequency: "yearly",
+    priority: 0.5,
+  }));
+
+  return [...pages, ...articlePages, ...toolPages, ...expertPages];
 }

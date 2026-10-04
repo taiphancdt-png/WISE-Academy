@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
+import { ArrowRight } from "@/components/icons";
 import expertsData from "@/data/experts.json";
 import type { Expert } from "@/types";
 
@@ -68,10 +69,15 @@ export default function ExpertsPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {g.list.map((exp) => (
-                <article key={exp.id} className="card-soft flex flex-col px-6 sm:px-8 pt-8 pb-7 text-center">
+                // compact card; the full profile opens as its own landing page
+                <Link
+                  key={exp.id}
+                  href={`/chuyen-gia/${exp.id}`}
+                  className="group card-soft flex flex-col px-6 sm:px-8 pt-8 pb-7 text-center transition-transform duration-300 hover:-translate-y-1"
+                >
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-white shadow-md bg-slate-100">
                     {exp.image ? (
-                      <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                      <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center bg-[#002F5B] text-white text-3xl font-bold">
                         {exp.name.split(" ").pop()?.charAt(0)}
@@ -79,25 +85,12 @@ export default function ExpertsPage() {
                     )}
                   </div>
                   <p className="mt-5 text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">{exp.role}</p>
-                  <h3 className="mt-2 text-xl font-semibold text-[#002F5B]">{exp.name}</h3>
+                  <h3 className="mt-2 text-xl font-semibold text-[#002F5B] group-hover:text-[#F76011] transition-colors">{exp.name}</h3>
                   <p className="mt-3 text-xs font-medium text-[#002F5B] bg-[#EBF3FA] px-3 py-2 rounded-lg">{exp.title}</p>
-                  <p className="mt-4 text-sm text-[#486581] leading-relaxed">{exp.bio}</p>
-                  <div className="mt-auto pt-5">
-                    <ul className="flex flex-wrap justify-center gap-1.5 pt-5 border-t border-slate-100">
-                      {exp.tags.map((t) => (
-                        <li key={t} className="text-[11px] bg-[#F8F9FA] border border-slate-200 text-[#486581] px-2.5 py-0.5 rounded-full">
-                          {t}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
-                      className="mt-5 block w-full py-2.5 rounded-full border border-[#002F5B] text-[#002F5B] hover:bg-[#002F5B] hover:text-white text-sm font-semibold transition-colors"
-                    >
-                      Đặt lịch tư vấn
-                    </Link>
-                  </div>
-                </article>
+                  <span className="mt-auto pt-5 inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-[#C9500E]">
+                    Xem hồ sơ chuyên gia <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
