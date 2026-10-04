@@ -27,6 +27,14 @@ export interface Project {
   cover?: string | null;
   gallery?: string[];
   images?: string[];
+  // full case study, shown when the project is expanded
+  partner?: string;
+  challenge?: string;
+  solution?: string;
+  steps?: { name: string; text: string }[];
+  goals?: string[];
+  info?: { label: string; value: string }[];
+  outcome?: string;
 }
 
 export interface Course {

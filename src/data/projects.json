@@ -1,179 +1,133 @@
 [
   {
-    "id": "pou-chen-group",
+    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt",
     "client": "Pou Chen Group",
-    "industry": "Sản xuất Giày dép & Thời trang thể thao",
-    "title": "Chương trình Đào tạo & Huấn luyện Hiện trường Lean Six Sigma",
-    "description": "Triển khai đào tạo và kèm cặp dự án Kaizen thực tế tại các xưởng sản xuất, chuẩn hóa ngôn ngữ cải tiến chung từ cấp quản đốc đến kỹ sư IE.",
+    "industry": "Sản xuất giày dép",
+    "title": "Khóa đào tạo Lean Six Sigma Green Belt",
+    "description": "Chương trình Green Belt chuyên sâu theo chu trình DMAIC cho đội ngũ quản lý, giám sát và chuyên viên Chất lượng, Lean, IE, chứng nhận quốc tế bởi Lean Six Sigma Institute (LSSI).",
+    "highlight": "Đội ngũ quản lý nòng cốt làm chủ tư duy và công cụ thống kê để tự giải quyết các vấn đề của nhà máy bằng dữ liệu.",
     "results": [
       {
-        "metric": "300+",
-        "label": "Học viên & Quản đốc tham gia"
+        "metric": "12 ngày",
+        "label": "Đào tạo chuyên sâu"
       },
       {
-        "metric": "4",
-        "label": "Cấp độ năng lực hoàn thành"
+        "metric": "DMAIC",
+        "label": "Phương pháp luận 5 bước"
       },
       {
-        "metric": "95%",
-        "label": "Tỷ lệ dự án Kaizen áp dụng thành công"
+        "metric": "LSSI",
+        "label": "Chứng nhận quốc tế"
       }
     ],
-    "highlight": "Từ các công cụ rời rạc chuyển thành ngôn ngữ văn hóa cải tiến chung cho toàn bộ nhà máy quy mô hàng nghìn công nhân.",
     "tags": [
       "Lean Six Sigma",
-      "Kaizen Mindset",
-      "Simulation Game",
-      "Hiện trường Gemba"
+      "Green Belt",
+      "DMAIC",
+      "Thống kê"
     ],
-    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-    "gallery": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
-    ]
-  },
-  {
-    "id": "geodis-vietnam",
-    "client": "GEODIS Vietnam",
-    "industry": "Chuỗi cung ứng & Logistics quốc tế",
-    "title": "Chuẩn hóa Quản trị Trực quan & 5S Kho bãi Chuyên nghiệp",
-    "description": "Đánh giá luồng di chuyển vật tư, loại bỏ lãng phí thao tác thừa và xây dựng hệ thống quản lý trực quan Visual Management theo tiêu chuẩn 5S toàn cầu.",
-    "results": [
+    "partner": "Pou Chen Corporation (Đài Loan) là tập đoàn sản xuất giày dép lớn nhất thế giới, đối tác sản xuất đứng sau thành công của những thương hiệu thể thao hàng đầu như Nike, Adidas, Puma. Hệ thống nhà máy quy mô lớn tại Việt Nam thể hiện cam kết lâu dài của Pou Chen với chuỗi cung ứng toàn cầu, cùng định hướng kiến tạo giá trị qua đổi mới công nghệ, tối ưu hiệu suất và môi trường làm việc chuẩn mực.",
+    "challenge": "Là \"người khổng lồ\" của ngành giày, Pou Chen luôn chịu áp lực duy trì hiệu suất đỉnh cao trong một hệ thống vận hành phức tạp, quy mô lớn. Yêu cầu ngày càng cao của các thương hiệu về chất lượng và chuỗi cung ứng đặt ra nhu cầu cấp thiết: trang bị kiến thức và kỹ năng Lean Six Sigma cho đội ngũ quản lý nòng cốt, vừa để đáp ứng yêu cầu tuân thủ, vừa để khai mở tiềm năng cải tiến trong từng quy trình sản xuất hằng ngày.",
+    "solution": "Tiếp nối hành trình đồng hành cùng Pou Chen, WISE Academy triển khai chương trình Lean Six Sigma Green Belt cho đội ngũ quản lý, giám sát và chuyên viên phụ trách Chất lượng, Lean, IE. Khóa học do WISE Academy tổ chức và được chứng nhận quốc tế bởi Lean Six Sigma Institute (LSSI), xoay quanh chu trình DMAIC để phân tích và giải quyết vấn đề một cách hệ thống:",
+    "steps": [
       {
-        "metric": "-25%",
-        "label": "Thời gian tìm kiếm và soạn hàng"
+        "name": "Define",
+        "text": "Xác định dự án, lắng nghe tiếng nói khách hàng và các yếu tố then chốt về chất lượng."
       },
       {
-        "metric": "100%",
-        "label": "Khu vực kho được trực quan hóa"
+        "name": "Measure",
+        "text": "Lập bản đồ quy trình, đánh giá hệ thống đo lường, năng lực và hiệu suất quy trình."
       },
       {
-        "metric": "Zero",
-        "label": "Sự cố an toàn lao động trong chu kỳ"
+        "name": "Analyze",
+        "text": "Phân tích dữ liệu, tìm nguyên nhân gốc rễ bằng công cụ thống kê."
+      },
+      {
+        "name": "Improve",
+        "text": "Ứng dụng thiết kế thực nghiệm (DOE) để tìm ra giải pháp tối ưu."
+      },
+      {
+        "name": "Control",
+        "text": "Áp dụng SPC và kế hoạch kiểm soát để duy trì kết quả cải tiến."
       }
     ],
-    "highlight": "Không gian làm việc và kho bãi trở thành một hệ thống quản trị minh bạch, kiểm soát lỗi tức thì tại điểm phát sinh.",
-    "tags": [
-      "5S",
-      "Visual Management",
-      "Logistics",
-      "Warehouse Safety"
+    "goals": [
+      "Ứng dụng chu trình DMAIC để loại bỏ lãng phí, giảm biến động và nâng cao năng lực quy trình.",
+      "Phân tích dữ liệu một cách khoa học để tìm nguyên nhân gốc rễ và triển khai giải pháp phù hợp.",
+      "Tối ưu chi phí, nâng cao chất lượng sản phẩm và sự hài lòng của khách hàng.",
+      "Phát triển đội ngũ đủ năng lực dẫn dắt các dự án cải tiến quy mô trung bình đến lớn."
     ],
-    "cover": "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
-    "gallery": [
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
-    ]
-  },
-  {
-    "id": "huali-group",
-    "client": "Huali Industrial Group",
-    "industry": "Gia công & Sản xuất Da giày Xuất khẩu",
-    "title": "Tăng Năng Suất Chuyền Sản Xuất Bằng Work Engineering",
-    "description": "Phân tích chi tiết chu kỳ công việc (Cycle Time), cân bằng chuyền lắp ráp và loại bỏ điểm nghẽn cổ chai (Bottleneck) tại 12 chuyền may thí điểm.",
-    "results": [
+    "info": [
       {
-        "metric": "+18%",
-        "label": "Năng suất lao động bình quân"
+        "label": "Người tham gia",
+        "value": "Trưởng phòng chức năng, Giám sát Sản xuất, Chất lượng, Lean, IE, CI"
       },
       {
-        "metric": "12",
-        "label": "Chuyền sản xuất thí điểm thành công"
-      },
-      {
-        "metric": "-30%",
-        "label": "Hàng dở dang trên chuyền (WIP)"
+        "label": "Thời lượng",
+        "value": "12 ngày"
       }
     ],
-    "highlight": "Kết quả đo lường thuyết phục tại các chuyền mẫu đã tạo đà nhân rộng mạnh mẽ ra toàn bộ hệ thống nhà xưởng.",
-    "tags": [
-      "Work Engineering",
-      "Line Balancing",
-      "Cycle Time",
-      "Năng suất"
-    ],
-    "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
+    "outcome": "Nhân sự chủ chốt của Pou Chen được trang bị tư duy và bộ công cụ Lean Six Sigma, biết dùng phân tích dữ liệu thống kê trong DMAIC để giải quyết chính những vấn đề nhà máy đang gặp. Nền tảng cải tiến liên tục và giải quyết vấn đề khoa học này giúp Pou Chen nâng cao chất lượng, giảm chi phí phát sinh và đáp ứng yêu cầu ngày càng khắt khe từ các thương hiệu toàn cầu.",
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_1.webp",
     "gallery": [
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_2.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
-    ]
-  },
-  {
-    "id": "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana",
-    "client": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ)",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ)",
-    "description": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/](https://wisedemy.com.vn/project/chuo...",
-    "results": [
-      {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
-      },
-      {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
-      }
-    ],
-    "highlight": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/chuong-trinh-dao-tao-con...",
-    "images": [
-      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_0.webp",
-      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_1.webp",
-      "/images/projects/chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana_2.webp"
-    ],
-    "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
-    ],
-    "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
-    "gallery": [
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_2.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_6.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_7.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_8.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_9.webp"
     ]
   },
   {
     "id": "geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan",
-    "client": "[GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
-    "description": "# [GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/](https://wisedemy.com.vn/...",
+    "client": "GEODIS Vietnam",
+    "industry": "Logistics & Kho vận",
+    "title": "Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý trực quan",
+    "description": "Chương trình 3 ngày kết hợp đào tạo và thực hành ngay tại khu vực thí điểm trong nhà kho, giúp sắp xếp lại không gian, loại bỏ lãng phí và giữ lối đi an toàn.",
+    "highlight": "5S không còn là dọn dẹp mà trở thành cách làm việc hiệu quả và an toàn của cả đội ngũ kho vận.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "3 ngày",
+        "label": "Đào tạo & thực hành"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "3",
+        "label": "Trụ cột: 5S, An toàn, Trực quan"
+      },
+      {
+        "metric": "Pilot",
+        "label": "Áp dụng tại khu vực kho thí điểm"
       }
     ],
-    "highlight": "# [GEODIS VIETNAM] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/geodis-vietnam-dao-tao-thuc-...",
-    "images": [
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_0.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_1.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "5S",
+      "An toàn",
+      "Quản lý trực quan",
+      "Kho vận"
     ],
+    "partner": "GEODIS là doanh nghiệp hàng đầu thế giới về giải pháp vận chuyển, kho bãi và logistics, với gần 50.000 nhân viên, mạng lưới phủ khoảng 166 quốc gia và trụ sở chính tại Levallois, Pháp.",
+    "challenge": "Vật dụng, hàng hóa và công cụ trong nhà kho chưa được bố trí hợp lý, gây lãng phí vận chuyển, chờ đợi, tồn kho không cần thiết và cản trở lối đi an toàn.",
+    "solution": "WISE Academy triển khai chương trình \"The Scientific and Effective Workplace Management by Implementing 5S, Safety and Visual Management\" trong 3 ngày, trang bị kiến thức nền tảng về 5S, An toàn và Quản lý trực quan, rồi cùng đội ngũ áp dụng trực tiếp tại một khu vực thí điểm trong nhà kho.",
+    "goals": [
+      "Cung cấp cái nhìn tổng quan về 5S, An toàn và Quản lý trực quan.",
+      "Hướng dẫn áp dụng nguyên tắc tổ chức nơi làm việc tại khu vực thí điểm.",
+      "Nhận diện tác động trực tiếp của 5S, An toàn và Quản lý trực quan đến hiệu suất.",
+      "Xây dựng niềm tin và năng lực duy trì cải tiến bền vững tại nơi làm việc."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Nhân viên vận hành, Trưởng phòng ban, Giám sát"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "3 ngày"
+      }
+    ],
+    "outcome": "Đội ngũ có chuyển biến rõ rệt về tư duy và cách tiếp cận công việc: nhân viên hiểu 5S là phương pháp nâng cao hiệu quả và an toàn, không chỉ là dọn dẹp. An toàn trở thành ý thức chung; với hệ thống quản lý trực quan, mọi người chủ động phát hiện bất thường và giữ khu vực làm việc ngăn nắp, rõ ràng.",
     "cover": "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
     "gallery": [
       "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
@@ -181,36 +135,59 @@
       "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
       "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
       "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
-      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_6.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_7.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_8.webp",
+      "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_9.webp"
     ]
   },
   {
     "id": "huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen",
-    "client": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\"",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\"",
-    "description": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/](https://wisedemy....",
+    "client": "Huali Industrial Group",
+    "industry": "Sản xuất giày dép",
+    "title": "Tư duy và Kỹ thuật cải tiến năng suất chuyền",
+    "description": "Khóa \"Work Engineering for Line Productivity Improvement\" 5 ngày: săn lãng phí tại hiện trường, cân bằng chuyền và cải tiến thao tác theo nguyên tắc ECRS.",
+    "highlight": "Quản lý và giám sát tự phân tích dòng chảy, gỡ nút thắt cổ chai và tinh gọn thao tác trên chính dây chuyền của mình.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "5 ngày",
+        "label": "Đào tạo chuyên sâu"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "ECRS",
+        "label": "Nguyên tắc cải tiến thao tác"
+      },
+      {
+        "metric": "Gemba",
+        "label": "Săn lãng phí tại hiện trường"
       }
     ],
-    "highlight": "# [HUALI Group] Khóa đào tạo \"Tư duy và Kỹ thuật cải tiến năng suất chuyền\" - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/huali-group-khoa-dao-tao-tu-d...",
-    "images": [
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_0.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_1.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
+      "Work Engineering",
+      "Cân bằng chuyền",
+      "ECRS",
       "Kaizen"
     ],
+    "partner": "Huali Industrial Group (华利实业集团) là tập đoàn công nghiệp quy mô lớn chuyên sản xuất giày dép, đối tác chiến lược của nhiều thương hiệu hàng đầu thế giới. Huali đề cao sự tinh xảo trong chế tác, đổi mới công nghệ và chất lượng toàn diện, với tầm nhìn dẫn dắt xu hướng sản xuất thông minh và bền vững.",
+    "challenge": "Trong môi trường sản xuất quy mô lớn, Huali cần tối đa hóa hiệu suất dây chuyền và năng suất lao động để giữ lợi thế cạnh tranh. Phát hiện và loại bỏ nút thắt cổ chai, tối ưu dòng chảy công việc và nâng cao năng lực đội ngũ là yếu tố then chốt, đòi hỏi một chương trình tập trung vào cân bằng chuyền và cải tiến năng suất.",
+    "solution": "WISE Academy cùng Huali triển khai chương trình \"Work Engineering for Line Productivity Improvement\" kéo dài 5 ngày, thiết kế riêng cho quản lý, giám sát sản xuất, Lean và IE. Nội dung đi từ nguyên tắc Lean, nhận diện lãng phí và kỹ thuật săn lãng phí (Gemba & Chino Observation Circle), đến biểu đồ cân bằng chuyền (Line Balance Chart), cải tiến phương pháp làm việc theo nguyên tắc ECRS (Eliminate, Combine, Rearrange, Simplify) và các kỹ thuật Kaizen nâng cao năng suất.",
+    "goals": [
+      "Hiểu các nguyên tắc Lean và nhận diện các loại lãng phí.",
+      "Nắm vững kỹ thuật cân bằng chuyền (Line Balancing).",
+      "Cải tiến phương pháp làm việc theo nguyên tắc ECRS.",
+      "Thúc đẩy tư duy Kaizen và kỹ thuật cải thiện năng suất dây chuyền."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Trưởng phòng chức năng, Giám sát Sản xuất, Lean, IE, CI"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "5 ngày"
+      }
+    ],
+    "outcome": "Đội ngũ quản lý và giám sát của Huali được trang bị kỹ thuật phân tích dòng chảy công việc, loại bỏ nút thắt cổ chai và áp dụng ECRS để tinh gọn quy trình. Chương trình giúp tăng năng suất, giảm thời gian chờ, sử dụng nguồn lực hiệu quả hơn và hình thành cách tiếp cận chủ động trong cải tiến liên tục.",
     "cover": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
     "gallery": [
       "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
@@ -218,147 +195,63 @@
       "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_3.webp",
       "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_4.webp",
       "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
-      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp"
-    ]
-  },
-  {
-    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt",
-    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt",
-    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/](https://wisedemy.com.vn/project/pouchen-group-khoa-da...",
-    "results": [
-      {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
-      },
-      {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
-      }
-    ],
-    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Green Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-green-...",
-    "images": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_0.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt_2.webp"
-    ],
-    "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
-    ],
-    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-    "gallery": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
-    ]
-  },
-  {
-    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt",
-    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt",
-    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/](https://wisedemy.com.vn/project/pouchen-group-khoa-...",
-    "results": [
-      {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
-      },
-      {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
-      }
-    ],
-    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/pouchen-group-khoa-dao-tao-lean-six-sigma-yello...",
-    "images": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_0.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt_2.webp"
-    ],
-    "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
-    ],
-    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-    "gallery": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
-    ]
-  },
-  {
-    "id": "project-lean-six-sigma-yellow-belt-pouchen-group",
-    "client": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ)",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ)",
-    "description": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/project-lean-six-sigma-yellow-belt-pouchen-group/](https://wisedemy.com.vn/project/project-lean-six-si...",
-    "results": [
-      {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
-      },
-      {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
-      }
-    ],
-    "highlight": "# [POUCHEN Group] Khóa đào tạo Lean Six Sigma Yellow Belt (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/project-lean-six-sigma-yellow-belt-pouchen...",
-    "images": [
-      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_0.webp",
-      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_1.webp",
-      "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group_2.webp"
-    ],
-    "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
-    ],
-    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-    "gallery": [
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
-      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp"
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_6.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_7.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_8.webp",
+      "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_9.webp"
     ]
   },
   {
     "id": "samho-ag-lean-six-sigma-yellow-belt",
-    "client": "[AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt",
-    "description": "# [AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-belt/](https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-be...",
+    "client": "An Giang Samho",
+    "industry": "Sản xuất giày thể thao",
+    "title": "Chương trình đào tạo Lean Six Sigma Yellow Belt",
+    "description": "Hai khóa Yellow Belt với 4 lớp trong 32 ngày cho quản lý và giám sát đa chức năng, đáp ứng yêu cầu chứng nhận của đối tác và chuẩn hóa tư duy cải tiến nội bộ.",
+    "highlight": "Hơn 150 nhân sự chủ chốt chủ động nhận diện lãng phí và đưa tư duy Kaizen vào công việc hằng ngày.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "150+",
+        "label": "Nhân sự chủ chốt được đào tạo"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "4 lớp",
+        "label": "Thuộc 2 khóa học"
+      },
+      {
+        "metric": "32 ngày",
+        "label": "Tổng thời lượng"
       }
     ],
-    "highlight": "# [AG SAMHO ] Chương trình đào tạo Lean Six Sigma Yellow Belt - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/samho-ag-lean-six-sigma-yellow-belt/](https...",
-    "images": [
-      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_0.webp",
-      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_1.webp",
-      "/images/projects/samho-ag-lean-six-sigma-yellow-belt_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "Lean Six Sigma",
+      "Yellow Belt",
+      "Kaizen",
+      "5S"
     ],
+    "partner": "An Giang Samho, thành viên chiến lược của Tập đoàn Samho (Hàn Quốc), là một trong những nhà máy sản xuất giày thể thao hàng đầu Việt Nam và đối tác tin cậy của New Balance, Adidas. Doanh nghiệp kết hợp công nghệ sản xuất tiên tiến, quản lý tinh gọn và cam kết phát triển bền vững.",
+    "challenge": "Là đối tác trọng yếu của các thương hiệu hàng đầu, An Giang Samho cần minh chứng năng lực và cam kết chất lượng bằng chứng nhận quốc tế. Chứng chỉ Lean Six Sigma Yellow Belt vừa đáp ứng tiêu chuẩn chiến lược từ đối tác, vừa là động lực nâng cao tư duy cải tiến và chuẩn hóa quy trình nội bộ.",
+    "solution": "WISE Academy triển khai chương trình Lean Six Sigma Yellow Belt thiết kế riêng cho quản lý và giám sát đa chức năng của An Giang Samho. Trong 32 ngày, học viên được trang bị công cụ và tư duy cốt lõi: nhận diện và loại bỏ lãng phí, tư duy Kaizen, 5S và quản lý trực quan, lập bản đồ chuỗi giá trị và quy trình, cùng phương pháp giải quyết vấn đề khoa học PDCA, để có thể chủ động cải tiến và tham gia hiệu quả vào các dự án Six Sigma lớn hơn.",
+    "goals": [
+      "Trang bị công cụ và tư duy cốt lõi của Lean Six Sigma Yellow Belt.",
+      "Thúc đẩy tư duy Kaizen và kỹ năng cải tiến liên tục.",
+      "Nâng cao khả năng nhận diện, phân tích và loại bỏ lãng phí.",
+      "Đáp ứng tiêu chuẩn chất lượng và hiệu suất theo yêu cầu của đối tác."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Quản lý phòng ban liên chức năng, Giám sát sản xuất, Lean, IE, CI, nhân viên văn phòng"
+      },
+      {
+        "label": "Quy mô",
+        "value": "2 khóa học, 4 lớp"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "32 ngày"
+      }
+    ],
+    "outcome": "Hơn 150 nhân sự chủ chốt của An Giang Samho được trang bị năng lực nhận diện và loại bỏ lãng phí, đưa tư duy Kaizen vào sản xuất hằng ngày. Đội ngũ minh chứng được khả năng đáp ứng tiêu chuẩn khắt khe của đối tác toàn cầu, chủ động phân tích quy trình và tạo nền tảng vững chắc cho các sáng kiến cải tiến liên tục.",
     "cover": "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_1.webp",
     "gallery": [
       "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_1.webp",
@@ -366,73 +259,119 @@
       "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_3.webp",
       "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_4.webp",
       "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_5.webp",
-      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_6.webp"
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_6.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_7.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_8.webp",
+      "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_9.webp"
     ]
   },
   {
-    "id": "ty-bach-chuong-trinh-dao-tao-lean-cell-layout",
-    "client": "[TỶ BÁCH] Chương trình đào tạo Lean Cell Layout",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[TỶ BÁCH] Chương trình đào tạo Lean Cell Layout",
-    "description": "# [TỶ BÁCH] Chương trình đào tạo Lean Cell Layout - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/](https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-c...",
+    "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt",
+    "client": "Pou Chen Group",
+    "industry": "Sản xuất giày dép",
+    "title": "Khóa đào tạo Lean Six Sigma Yellow Belt",
+    "description": "Chương trình Yellow Belt 18 ngày cho quản lý và giám sát các phòng chức năng, Sản xuất, Chất lượng, Lean, IE: nhận diện lãng phí, Kaizen, 5S, bản đồ chuỗi giá trị và Lean KPIs.",
+    "highlight": "Hàng trăm nhân sự chủ chốt cùng chung một ngôn ngữ cải tiến trên quy mô toàn tập đoàn.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "100+",
+        "label": "Nhân sự chủ chốt được đào tạo"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "18 ngày",
+        "label": "Tổng thời lượng"
+      },
+      {
+        "metric": "Lean KPIs",
+        "label": "Quản lý hiệu suất"
       }
     ],
-    "highlight": "# [TỶ BÁCH] Chương trình đào tạo Lean Cell Layout - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/](https:/...",
-    "images": [
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_0.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_1.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "Lean Six Sigma",
+      "Yellow Belt",
+      "Kaizen",
+      "VSM"
     ],
-    "cover": "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
+    "partner": "Pou Chen Corporation (Đài Loan) là tập đoàn sản xuất giày dép lớn nhất thế giới, đối tác sản xuất đứng sau thành công của những thương hiệu thể thao hàng đầu như Nike, Adidas, Puma. Hệ thống nhà máy quy mô lớn tại Việt Nam thể hiện cam kết lâu dài của Pou Chen với chuỗi cung ứng toàn cầu, cùng định hướng kiến tạo giá trị qua đổi mới công nghệ, tối ưu hiệu suất và môi trường làm việc chuẩn mực.",
+    "challenge": "Là \"người khổng lồ\" của ngành giày, Pou Chen luôn chịu áp lực duy trì hiệu suất đỉnh cao trong một hệ thống vận hành phức tạp, quy mô lớn. Yêu cầu ngày càng cao của các thương hiệu về chất lượng và chuỗi cung ứng đặt ra nhu cầu cấp thiết: trang bị kiến thức và kỹ năng Lean Six Sigma cho đội ngũ quản lý nòng cốt, vừa để đáp ứng yêu cầu tuân thủ, vừa để khai mở tiềm năng cải tiến trong từng quy trình sản xuất hằng ngày.",
+    "solution": "WISE Academy cung cấp chương trình Lean Six Sigma Yellow Belt cho đội ngũ quản lý và giám sát các phòng chức năng, Sản xuất, Chất lượng, Lean và IE của Pou Chen. Trong 18 ngày, học viên tập trung vào nhận diện và loại bỏ lãng phí, tư duy Kaizen, 5S và quản lý trực quan, lập bản đồ chuỗi giá trị và quy trình, cùng kỹ thuật cải tiến liên tục và quản lý hiệu suất (Lean KPIs).",
+    "goals": [
+      "Trang bị kiến thức và công cụ Lean Six Sigma.",
+      "Nâng cao khả năng nhận diện lãng phí và tối ưu quy trình.",
+      "Củng cố tư duy cải tiến liên tục và giải quyết vấn đề.",
+      "Thúc đẩy hiệu suất và chất lượng vận hành trên quy mô lớn."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Trưởng phòng chức năng, Giám sát Sản xuất, Chất lượng, Lean, IE, CI"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "18 ngày"
+      }
+    ],
+    "outcome": "Hàng trăm nhân sự chủ chốt được trang bị tư duy và công cụ Lean Six Sigma, nâng cao khả năng nhận diện lãng phí, tối ưu quy trình và cải thiện hiệu suất vận hành trên quy mô toàn tập đoàn. Đây là nền tảng để Pou Chen nâng cao chất lượng, giảm chi phí phát sinh và đáp ứng yêu cầu ngày càng cao từ các thương hiệu toàn cầu.",
+    "cover": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
     "gallery": [
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_2.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_3.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_4.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_5.webp",
-      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_6.webp"
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_3.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_4.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_5.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_6.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_7.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_8.webp",
+      "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-yellow-belt/photo_9.webp"
     ]
   },
   {
     "id": "victory-lean-dianogtics-and-lean-fundamental-training",
-    "client": "[VICTORY] Lean Dianogtics and Lean fundamental Training",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[VICTORY] Lean Dianogtics and Lean fundamental Training",
-    "description": "# [VICTORY] Lean Dianogtics and Lean fundamental Training - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/victory-lean-dianogtics-and-lean-fundamental-training/](https://wisedemy.com.vn/project/victory-lean-dianog...",
+    "client": "Victory Group",
+    "industry": "Sản xuất giày dép",
+    "title": "Lean Management System & Lean Fundamental Training",
+    "description": "Chương trình 2 ngày giúp lãnh đạo sản xuất thay đổi tư duy quản lý, hiểu sâu nguyên tắc Lean và trải nghiệm qua trò chơi mô phỏng Lean.",
+    "highlight": "Khởi động hành trình chuyển đổi Lean bằng thay đổi tư duy của chính đội ngũ quản lý.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "2 ngày",
+        "label": "Đào tạo nền tảng"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "Simulation",
+        "label": "Trò chơi mô phỏng Lean"
+      },
+      {
+        "metric": "Gemba",
+        "label": "Săn lãng phí tại hiện trường"
       }
     ],
-    "highlight": "# [VICTORY] Lean Dianogtics and Lean fundamental Training - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/victory-lean-dianogtics-and-lean-fundamental-tr...",
-    "images": [
-      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_0.webp",
-      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_1.webp",
-      "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "Lean Management",
+      "Simulation Game",
+      "Kaizen",
+      "Gemba"
     ],
+    "partner": "Victory Group (龙行天下集团) là tập đoàn sản xuất lớn trong ngành giày dép, nổi bật với năng lực sản xuất mạnh và quan hệ hợp tác với các thương hiệu quốc tế. Victory đề cao hiệu quả sản xuất, kiểm soát chất lượng nghiêm ngặt và khả năng thích ứng linh hoạt với thị trường.",
+    "challenge": "Để giữ vị thế trong thị trường biến động, Victory cần xây dựng văn hóa tổ chức linh hoạt, chủ động cải tiến. Chuyển đổi sang hệ thống quản lý Lean không chỉ là áp dụng công cụ mà là thay đổi tư duy và hành vi của toàn đội ngũ: làm sao để nguyên tắc Lean thấm vào mọi cấp và việc loại bỏ lãng phí trở nên bền vững.",
+    "solution": "WISE Academy thiết kế và triển khai chương trình \"Lean Management System & Lean Fundamental Training\" trong 2 ngày cho quản lý phòng ban, giám sát sản xuất và bộ phận Lean. Chương trình tập trung vào thay đổi tư duy quản lý và hành trình chuyển đổi Lean, nguyên tắc Lean, các loại lãng phí, kỹ thuật săn lãng phí (Gemba & Chino Observation Circle), kết hợp trò chơi mô phỏng Lean (Lean Simulation Game) để củng cố kiến thức bằng trải nghiệm.",
+    "goals": [
+      "Thay đổi tư duy quản lý và khởi động hành trình chuyển đổi Lean.",
+      "Hiểu sâu các nguyên tắc Lean và các loại lãng phí.",
+      "Trang bị kỹ thuật tìm và loại bỏ lãng phí (Gemba & Chino Observation Circle).",
+      "Thúc đẩy khả năng áp dụng Lean và Kaizen vào thực tiễn."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Trưởng phòng Sản xuất, Giám sát Sản xuất"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "2 ngày"
+      }
+    ],
+    "outcome": "Đội ngũ quản lý và giám sát của Victory thấu hiểu nguyên tắc Lean, nâng cao khả năng nhận diện và loại bỏ lãng phí trong mọi hoạt động. Qua trò chơi mô phỏng, họ áp dụng ngay kiến thức vào thực tiễn, thúc đẩy các sáng kiến Kaizen và tạo động lực xây dựng hệ thống quản lý tinh gọn, thích ứng tốt hơn với biến động thị trường.",
     "cover": "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
     "gallery": [
       "/images/projects/victory-lean-dianogtics-and-lean-fundamental-training/photo_1.webp",
@@ -442,31 +381,51 @@
   },
   {
     "id": "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan",
-    "client": "[YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan",
-    "description": "# [YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/](https://wisedemy.com.vn/project...",
+    "client": "Yujin Kreves",
+    "industry": "Sản xuất công nghiệp",
+    "title": "Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý trực quan",
+    "description": "Chương trình 3 ngày giúp chuẩn hóa và tối ưu không gian làm việc một cách khoa học, thực hành trực tiếp tại khu vực thí điểm trong nhà máy.",
+    "highlight": "An toàn không còn là việc riêng của bộ phận HSE mà trở thành ý thức chung của toàn nhà máy.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "3 ngày",
+        "label": "Đào tạo & thực hành"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "3",
+        "label": "Trụ cột: 5S, An toàn, Trực quan"
+      },
+      {
+        "metric": "Pilot",
+        "label": "Áp dụng tại khu vực thí điểm"
       }
     ],
-    "highlight": "# [YUJIN KREVES] Đào tạo & Tư vấn thực hành 5S, An toàn, Quản lý Trực quan - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s...",
-    "images": [
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_0.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_1.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "5S",
+      "An toàn",
+      "Quản lý trực quan",
+      "Hiện trường"
     ],
+    "partner": "KREVES, với thông điệp \"Quality in Your Life\", là nhà cung cấp chuyên biệt trong chuỗi giá trị ngành sản xuất, theo đuổi cam kết không ngừng về chất lượng và đổi mới để mang lại giá trị gia tăng rõ rệt cho khách hàng.",
+    "challenge": "Kreves cần chuẩn hóa và tối ưu không gian làm việc một cách khoa học, không chỉ để nâng cao hiệu suất, năng suất mà còn bảo đảm an toàn tuyệt đối cho người lao động.",
+    "solution": "WISE Academy triển khai chương trình \"The Scientific and Effective Workplace Management by Implementing 5S, Safety and Visual Management\" trong 3 ngày cho đội ngũ quản lý và giám sát sản xuất của Kreves, trang bị cái nhìn tổng quan về 5S, An toàn và Quản lý trực quan, rồi hướng dẫn áp dụng ngay tại một khu vực thí điểm trong nhà máy.",
+    "goals": [
+      "Cung cấp cái nhìn tổng quan về 5S, An toàn và Quản lý trực quan.",
+      "Hướng dẫn áp dụng nguyên tắc tổ chức nơi làm việc tại khu vực thí điểm.",
+      "Nhận diện tác động trực tiếp của 5S, An toàn và Quản lý trực quan đến hiệu suất.",
+      "Xây dựng niềm tin và năng lực duy trì cải tiến bền vững tại nơi làm việc."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Trưởng phòng ban, Giám sát Sản xuất"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "3 ngày"
+      }
+    ],
+    "outcome": "Đội ngũ nhà máy chuyển biến rõ rệt: 5S được hiểu và áp dụng như phương pháp nền tảng nâng cao hiệu quả và an toàn, không còn là hoạt động dọn dẹp. An toàn trở thành ý thức chung; nhờ quản lý trực quan, người lao động chủ động phát hiện bất thường, làm việc theo chuẩn và giữ khu vực ngăn nắp, qua đó thúc đẩy tinh thần hợp tác và văn hóa cải tiến liên tục.",
     "cover": "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
     "gallery": [
       "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
@@ -474,44 +433,68 @@
       "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
       "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
       "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_6.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_7.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_8.webp",
+      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_9.webp"
     ]
   },
   {
-    "id": "yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan",
-    "client": "[YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ)",
-    "industry": "Sản xuất & Vận hành Công nghiệp",
-    "title": "[YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ)",
-    "description": "# [YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan/](https://wisedemy.com.vn/project/yujin-kreves...",
+    "id": "ty-bach-chuong-trinh-dao-tao-lean-cell-layout",
+    "client": "Tỷ Bách",
+    "industry": "Sản xuất đế giày & phụ kiện",
+    "title": "Lean Cell Layout Design Workshop",
+    "description": "Workshop 2 ngày về thiết kế bố trí sản xuất dạng Cell: trò chơi mô phỏng, 12 bước thiết kế và chuyển đổi, cùng lợi ích và thách thức khi triển khai.",
+    "highlight": "Bố trí dây chuyền tinh gọn để giảm di chuyển, giảm chờ đợi và rút ngắn thời gian chu kỳ.",
     "results": [
       {
-        "metric": "100%",
-        "label": "Hoàn thành mục tiêu cam kết"
+        "metric": "2 ngày",
+        "label": "Workshop thực hành"
       },
       {
-        "metric": "Đo lường",
-        "label": "Gemba tại hiện trường"
+        "metric": "12 bước",
+        "label": "Thiết kế & chuyển đổi Lean Cell"
+      },
+      {
+        "metric": "Simulation",
+        "label": "Trò chơi mô phỏng bố trí"
       }
     ],
-    "highlight": "# [YUJIN KREVES] Đào tạo & Tư vấn 5S, An toàn, Quản lý Trực quan (bỏ) - **Chuyên mục:** PROJECTS - **URL gốc:** [https://wisedemy.com.vn/project/yujin-kreves-dao-tao-tu-van-5s-quan...",
-    "images": [
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_0.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_1.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-quan-ly-truc-quan_2.webp"
-    ],
     "tags": [
-      "Tư vấn Lean",
-      "Hiện trường Nhà máy",
-      "Kaizen"
+      "Lean Cell",
+      "Layout",
+      "Simulation Game",
+      "Năng suất"
     ],
-    "cover": "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
+    "partner": "Công ty TNHH Tỷ Bách là nhà cung cấp cốt lõi trong ngành giày da, chuyên sản xuất đế giày và phụ kiện cho các nhà sản xuất lớn như Pou Chen và Samho, với cam kết cao về chất lượng và năng lực đáp ứng quy mô lớn.",
+    "challenge": "Tỷ Bách cần một bố trí sản xuất hiệu quả để giảm lãng phí di chuyển và chờ đợi, đồng thời nâng cao năng suất. Việc thiếu quy trình thiết kế bố trí chuẩn mực đang ảnh hưởng đến hiệu quả chung của nhà máy.",
+    "solution": "WISE Academy tổ chức workshop \"Lean Cell Layout Design\" trong 2 ngày, gồm trò chơi mô phỏng bố trí Lean, khái niệm Lean Cell Layout, 12 bước thiết kế và chuyển đổi, cùng hướng dẫn cụ thể về lợi ích và thách thức khi triển khai tại nhà máy.",
+    "goals": [
+      "Hiểu khái niệm Lean Cell Layout.",
+      "Nắm rõ lợi ích và thách thức khi chuyển đổi.",
+      "Biết cách thiết kế và triển khai bố trí Cell.",
+      "Nâng cao năng suất thông qua bố trí tinh gọn."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Lãnh đạo, Trưởng phòng, Giám sát Sản xuất"
+      },
+      {
+        "label": "Thời lượng",
+        "value": "2 ngày"
+      }
+    ],
+    "outcome": "Đội ngũ Tỷ Bách được trang bị kỹ năng thiết kế Lean Cell Layout, giúp giảm lãng phí, nâng cao năng suất, rút ngắn thời gian chu kỳ và tăng khả năng đáp ứng thị trường.",
+    "cover": "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
     "gallery": [
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_4.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_5.webp",
-      "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_6.webp"
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_1.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_2.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_3.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_4.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_5.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_6.webp",
+      "/images/projects/ty-bach-chuong-trinh-dao-tao-lean-cell-layout/photo_7.webp"
     ]
   }
 ]
