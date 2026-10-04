@@ -126,9 +126,9 @@ export default function AboutPage() {
             </p>
             <p>
               Đó cũng là niềm tin WISE Academy mang theo vào từng nhà máy, từng văn phòng. Chúng tôi không đến để áp đặt một mô hình có
-              sẵn, mà để lắng nghe, thấu hiểu và cùng mỗi con người, mỗi bộ phận, mỗi cấp lãnh đạo tìm ra cách làm tốt hơn. Khi mỗi người
-              tìm thấy ý nghĩa trong công việc của mình, cải tiến không còn là một dự án mà trở thành văn hóa, và doanh nghiệp sẽ tự tin
-              vươn xa trên hành trình vận hành xuất sắc.
+              sẵn, mà để lắng nghe, thấu hiểu, khơi mở năng lực tiềm ẩn trong mỗi con người, mỗi bộ phận, mỗi cấp lãnh đạo và nuôi dưỡng
+              để năng lực ấy phát triển. Khi mỗi người tìm thấy ý nghĩa trong công việc của mình, cải tiến không còn là một dự án mà trở
+              thành văn hóa, và doanh nghiệp sẽ tự tin vươn xa trên hành trình vận hành xuất sắc.
             </p>
           </div>
         </div>
