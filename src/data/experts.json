@@ -93,6 +93,11 @@
         "metric": "10 nhà máy"
       },
       {
+        "client": "Biti's",
+        "period": "",
+        "text": "Chuyển đổi Lean: triển khai 6S cho văn phòng và trung tâm phân phối (thành lập ban 6S, checklist tiêu chuẩn); Hoshin Kanri với X-Matrix giai đoạn 2021 - 2026, triển khai A3 xuống các phòng ban, xây dựng 6 kế hoạch kinh doanh liên tục (BCP). Năng suất tăng 15%, diện tích sử dụng giảm 7,84%."
+      },
+      {
         "client": "PNJ Production",
         "period": "",
         "text": "Dẫn dắt 4 dự án: bản đồ chuỗi giá trị, chuyển đổi sang bố trí Lean Cell, quản lý chất lượng tại nguồn và lập kế hoạch sản xuất bằng quản lý trực quan."
@@ -431,6 +436,11 @@
         "text": "Đào tạo Lean Six Sigma Green Belt, hợp tác cùng LSSI Global."
       },
       {
+        "client": "Jia Hsin Footwear",
+        "period": "2020",
+        "text": "Hỗ trợ tích hợp tự động hóa nâng cao năng lực sản xuất, áp dụng Lean đáp ứng mục tiêu chiến lược Adidas 2020, đào tạo văn hóa Lean, nền tảng IE/ME và tối ưu hệ thống."
+      },
+      {
         "client": "Apache Footwear",
         "period": "2019, 2026",
         "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset."
@@ -575,7 +585,7 @@
     "name": "Hoàng Minh Nghiệp",
     "role": "Cố vấn Cấp cao · Sr. Quality Management Consultant",
     "title": "Thạc sĩ Quản lý Chất lượng · LSSI Lean Six Sigma Facilitator",
-    "bio": "Hơn 30 năm kinh nghiệm quản lý sản xuất, quản trị chất lượng toàn diện và nhà máy thông minh tại các tập đoàn sản xuất đa quốc gia. Chuyên gia đào tạo thế hệ quản lý cấp trung và cấp cao.",
+    "bio": "Hơn 30 năm kinh nghiệm quản lý sản xuất, quản trị chất lượng toàn diện và nhà máy thông minh tại các tập đoàn sản xuất đa quốc gia, chuyên sâu Lean Manufacturing và Smart Factory. Đã đồng hành cùng hơn 5.000 học viên tại hơn 200 doanh nghiệp FDI và SME, từ Nestlé, Vinamilk, CP Việt Nam, POSCO Việt Nam đến Kumho Tires, TBS Group và Apache Footwear.",
     "tags": [
       "TQM",
       "Lean Six Sigma",
@@ -584,7 +594,83 @@
     ],
     "image": "/images/experts/hoang-minh-nghiep.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/hoang-minh-nghiep-cutout.webp"
+    "cutout": "/images/experts/hoang-minh-nghiep-cutout.webp",
+    "highlights": [
+      {
+        "value": "30+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "30+",
+        "label": "Dự án"
+      },
+      {
+        "value": "200+",
+        "label": "Doanh nghiệp FDI & SME"
+      },
+      {
+        "value": "5.000+",
+        "label": "Học viên được đào tạo"
+      },
+      {
+        "value": "1.800+",
+        "label": "Giờ đào tạo"
+      },
+      {
+        "value": "500+",
+        "label": "Giờ huấn luyện (coaching)"
+      }
+    ],
+    "expertise": [
+      "Quản lý hiện trường (Shopfloor Management), phát triển giám sát và tổ trưởng",
+      "Triển khai 5S, Kaizen, tổ chức nơi làm việc và quản lý trực quan",
+      "Lean Manufacturing theo nguyên lý Toyota",
+      "Bảo trì năng suất toàn diện (TPM)",
+      "Kho nội bộ và chuỗi cung ứng nội bộ hỗ trợ sản xuất Just-in-Time",
+      "Huấn luyện TWI (Training Within Industry) và phân tích công việc",
+      "Thiết kế dòng vật tư, mặt bằng nhà máy và hệ thống Kanban",
+      "Phát triển năng lực lãnh đạo, tạo động lực và tư duy phản biện"
+    ],
+    "experience": [
+      {
+        "client": "Nestlé, Vinamilk, CP Việt Nam, Vĩnh Hoàn, Lotte, NFC",
+        "period": "",
+        "text": "Quản lý hiện trường và chuyển đổi Lean: phát triển giám sát, tổ trưởng; triển khai 5S, Kaizen; Lean theo Toyota; phân tích công việc và hướng dẫn công việc; logistics sản xuất."
+      },
+      {
+        "client": "Vina Kyoei Steel, POSCO Việt Nam, VNSTEEL, VN Mold",
+        "period": "",
+        "text": "Tư vấn TPM, cải tiến năng suất hiện trường bằng 5S, Kaizen, quản lý kho nội bộ và chuỗi cung ứng hỗ trợ sản xuất Just-in-Time."
+      },
+      {
+        "client": "Sailun, Jinyu Tires, Kumho Tires, Casumina",
+        "period": "",
+        "text": "Dự án Lean Six Sigma theo mô hình Toyota, giảm lãng phí, tăng thời gian tạo giá trị và huấn luyện TWI cho đội ngũ trực tiếp."
+      },
+      {
+        "client": "TBS Group, Apache Footwear",
+        "period": "",
+        "text": "Thành lập trung tâm đào tạo Lean, thiết kế mặt bằng nhà máy cho dòng vật tư thông suốt và triển khai Kanban kiểm soát tồn kho theo hệ thống kéo."
+      },
+      {
+        "client": "CSG, Việt Đức, TC, BUWWON",
+        "period": "",
+        "text": "Chương trình phát triển lãnh đạo: kỹ năng quản lý cho tổ trưởng, giám sát; tạo động lực; tư duy phản biện và hoạch định sản xuất."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Lean Six Sigma Yellow Belt",
+        "org": "BSI Training Academy (2023)",
+        "core": true
+      }
+    ],
+    "education": [
+      {
+        "degree": "Thạc sĩ Quản lý Chất lượng",
+        "school": "Đại học Libre Bruxelles và Đại học Mở TP.HCM (2010)"
+      }
+    ]
   },
   {
     "id": "nguyen-hoang-son",
@@ -607,7 +693,7 @@
     "name": "Trần Nguyên Hà",
     "role": "Chuyên gia Tư vấn Cao cấp · Senior Management Consultant",
     "title": "Chuyên gia Quản trị Chiến lược & Chuyển đổi Số ESG",
-    "bio": "Chuyên gia tư vấn và đào tạo quản trị với nền tảng chuyên sâu về chuyển đổi số, tích hợp hệ thống quản lý tinh gọn với các tiêu chuẩn phát triển bền vững và ESG cho doanh nghiệp xuất khẩu.",
+    "bio": "Chuyên gia tư vấn cấp cao về Lean, ISO và cải tiến năng suất với hơn 10 năm tư vấn và hơn 18 năm làm việc trong ngành, tập trung cải tiến doanh nghiệp và hệ thống quản lý cho chuỗi thực phẩm, cơ khí, y tế và bao bì. Song song là giảng viên đại học, tích hợp hệ thống quản lý tinh gọn với chuyển đổi số và các tiêu chuẩn phát triển bền vững, ESG cho doanh nghiệp xuất khẩu.",
     "tags": [
       "Digital Transformation",
       "ESG",
@@ -615,7 +701,119 @@
     ],
     "image": "/images/experts/tran-nguyen-ha.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/tran-nguyen-ha-cutout.webp"
+    "cutout": "/images/experts/tran-nguyen-ha-cutout.webp",
+    "highlights": [
+      {
+        "value": "18+",
+        "label": "Năm kinh nghiệm trong ngành"
+      },
+      {
+        "value": "10+",
+        "label": "Năm tư vấn"
+      },
+      {
+        "value": "100+",
+        "label": "Dự án"
+      },
+      {
+        "value": "3.000",
+        "label": "Học viên được đào tạo"
+      },
+      {
+        "value": "6.000+",
+        "label": "Giờ đào tạo"
+      },
+      {
+        "value": "12+",
+        "label": "Doanh nghiệp & tổ chức"
+      }
+    ],
+    "expertise": [
+      "Tư vấn và đào tạo tiêu chuẩn ISO 9001, 14001, 45001, 50001, 22000, FSSC 22000, ISO 13485",
+      "Công cụ Lean: 5S, Kaizen, PRO-3M, BSC/KPI cải tiến Chất lượng, Chi phí, Giao hàng (QCD)",
+      "Trách nhiệm xã hội: SA 8000, BSCI, Sedex SMETA",
+      "Quản trị rủi ro: chất lượng, an toàn, mô hình kinh doanh và rủi ro vận hành",
+      "Chẩn đoán doanh nghiệp cho các chương trình do Samsung, JICA và USAID hỗ trợ",
+      "Khung giải thưởng chất lượng Malcolm Baldrige",
+      "Phân tích tài chính và hiệu quả kinh doanh, kỹ năng quản lý sản xuất và quản lý cấp trung",
+      "Giải quyết vấn đề và ra quyết định"
+    ],
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+      },
+      {
+        "period": "",
+        "org": "Trường Đại học Đồng Nai",
+        "role": "Giảng viên Kinh tế, Tài chính doanh nghiệp, Phân tích hiệu quả kinh doanh"
+      },
+      {
+        "period": "",
+        "org": "Trường Cao đẳng Quản trị Kinh doanh Sonadezi",
+        "role": "Giảng viên Quản lý chất lượng, Nghiên cứu Marketing"
+      },
+      {
+        "period": "",
+        "org": "Trường Trung cấp nghề Bà Rịa",
+        "role": "Giảng viên Phân tích báo cáo tài chính, Quản lý dự án"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Thực phẩm & đồ uống",
+        "period": "",
+        "text": "FSSC 22000, ISO 22000, 5S, Kaizen và khung Malcolm Baldrige."
+      },
+      {
+        "client": "Thức ăn chăn nuôi & thuốc thú y",
+        "period": "",
+        "text": "ISO 22000, HACCP, 5S, Kaizen."
+      },
+      {
+        "client": "Chế biến gỗ",
+        "period": "",
+        "text": "ISO 9001, 14001, 45001, Kaizen và FSC."
+      },
+      {
+        "client": "Kết cấu thép & xi măng",
+        "period": "",
+        "text": "ISO 9001, 14001, 45001 và Kaizen."
+      },
+      {
+        "client": "Bao bì nhựa & giấy",
+        "period": "",
+        "text": "ISO 9001, 14001, 45001, Kaizen và FSC."
+      },
+      {
+        "client": "Thiết bị y tế (khẩu trang, găng tay, kit xét nghiệm)",
+        "period": "",
+        "text": "ISO 13485, ISO 9001, 5S, Kaizen."
+      },
+      {
+        "client": "Cơ khí chế tạo & công nghiệp hỗ trợ",
+        "period": "",
+        "text": "ISO 9001, 14001, 45001 và PRO-3M."
+      },
+      {
+        "client": "Chẩn đoán doanh nghiệp",
+        "period": "",
+        "text": "Thực hiện chẩn đoán doanh nghiệp trong các chương trình do Samsung, JICA và USAID hỗ trợ."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Chuyên gia tư vấn chính (Master Consultant)",
+        "org": "Bộ Công Thương và Samsung Electronics Việt Nam (2019)",
+        "core": true
+      },
+      {
+        "name": "Lean Six Sigma Black Belt",
+        "org": "LinkedIn Learning (2022)",
+        "core": true
+      }
+    ]
   },
   {
     "id": "pham-the-linh",
@@ -682,7 +880,7 @@
       },
       {
         "period": "",
-        "org": "YCademy",
+        "org": "Youth Creative Academy (YCademy)",
         "role": "Phó Tổng Giám đốc"
       },
       {
@@ -713,7 +911,7 @@
         "text": "Tư vấn cải tiến năng suất, chất lượng và lộ trình số hóa cho doanh nghiệp; tổ chức tư vấn cải tiến sản xuất cho doanh nghiệp công nghiệp hỗ trợ khu vực phía Nam."
       },
       {
-        "client": "YCademy",
+        "client": "Youth Creative Academy (YCademy)",
         "period": "",
         "text": "Xây dựng và quản lý hệ thống vận hành, phát triển kết nối tư vấn và đào tạo với các trường đại học và doanh nghiệp."
       }
@@ -738,6 +936,11 @@
         "name": "IELTS 7.0",
         "org": "British Council",
         "core": true
+      },
+      {
+        "name": "Chuyên gia năng suất",
+        "org": "Tổ chức chứng nhận chuyên gia năng suất Việt Nam (2024 - 2027)",
+        "group": "Lean & Năng suất"
       }
     ],
     "education": [
@@ -796,7 +999,71 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/do-tan-khoa.webp",
-    "cutout": "/images/experts/do-tan-khoa-cutout.webp"
+    "cutout": "/images/experts/do-tan-khoa-cutout.webp",
+    "career": [
+      {
+        "period": "",
+        "org": "Trường Đại học Công nghệ Đồng Nai",
+        "role": "Giảng viên Điện công nghiệp, Cơ khí chế tạo, Kỹ thuật điều khiển và Tự động hóa"
+      },
+      {
+        "period": "",
+        "org": "Trường Cao đẳng nghề số 8",
+        "role": "Trưởng khoa Điện tử"
+      }
+    ],
+    "expertise": [
+      "Chẩn đoán doanh nghiệp nhỏ và vừa, tư vấn chuyển đổi số",
+      "Tư vấn 5S và cải tiến tự động hóa",
+      "Lập trình, chuyển giao và cải tiến hệ thống robot công nghiệp (Fanuc, NACHI, OTC)",
+      "Lắp đặt, hướng dẫn vận hành và chuyển giao công nghệ",
+      "Xây dựng chương trình đào tạo cho doanh nghiệp, trường cao đẳng và trung cấp",
+      "Kiểm định và tự kiểm định chương trình đào tạo đại học"
+    ],
+    "experience": [
+      {
+        "client": "Nhuận Tiến, Bách Tùng, CNS Amura Precision (dự án JICA)",
+        "period": "",
+        "text": "Tư vấn 5S và cải tiến tự động hóa."
+      },
+      {
+        "client": "Nidec Tosok Akiba Việt Nam",
+        "period": "",
+        "text": "Lắp đặt, hướng dẫn vận hành và chuyển giao công nghệ dự án đánh bóng sau đúc."
+      },
+      {
+        "client": "DAPHA",
+        "period": "",
+        "text": "Bảo trì, hiệu chuẩn hệ thống robot OTC MR35/50 mài đồng."
+      },
+      {
+        "client": "MIDA",
+        "period": "",
+        "text": "Lập trình và chuyển giao hệ thống robot NACHI MZ07 cấp phôi cho máy ép nhựa tự động."
+      },
+      {
+        "client": "Lixil (Long Đức, Đồng Nai)",
+        "period": "",
+        "text": "Tư vấn cải tiến hệ thống robot Fanuc xếp chồng phôi nhôm (palletizing)."
+      },
+      {
+        "client": "Unilever, Sumiden, Meinan",
+        "period": "",
+        "text": "Đào tạo kỹ sư bảo trì hệ thống nhà máy (Unilever Củ Chi), kỹ thuật viên cải tiến chuyền (Sumiden) và kỹ sư R&D (Meinan)."
+      },
+      {
+        "client": "Trường Cao đẳng nghề số 8",
+        "period": "",
+        "text": "Xây dựng chương trình đào tạo kỹ năng Điện tử công nghiệp cho Úc; luyện thi giáo viên giỏi cấp tỉnh và cấp bộ (Đồng Nai, Đắk Lắk, Bình Phước)."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Chuyên gia năng suất",
+        "org": "Tổ chức chứng nhận chuyên gia năng suất Việt Nam (2024 - 2027)",
+        "core": true
+      }
+    ]
   },
   {
     "id": "nguyen-dinh-tuan",
@@ -834,7 +1101,7 @@
     "name": "Đặng Thị Hồng Ngọc",
     "role": "Chuyên gia ISE · Industrial & Systems Engineering",
     "title": "Chuyên gia Kỹ thuật Công nghiệp & Hệ thống (ISE)",
-    "bio": "Từng là Sr. NPI Manufacturing Engineer tại Zebra, kỹ sư IE tại Swarovski, IE & Project Transfer tại Pepperl+Fuchs và Lean Engineer tại Camso - giàu kinh nghiệm chuyển giao sản phẩm mới, tối ưu quy trình và triển khai Lean trong môi trường sản xuất đa quốc gia.",
+    "bio": "Kỹ sư Công nghiệp giàu kinh nghiệm về Lean manufacturing, giới thiệu sản phẩm mới (NPI) và tối ưu quy trình. Từng là Sr. NPI Manufacturing Engineer tại Zebra, kỹ sư IE tại Swarovski, IE chuyển giao dự án tại Pepperl+Fuchs và Lean Engineer tại Michelin (Camso), đóng góp vào các dự án nâng cao hiệu quả, giảm lãng phí và chuyển giao sản xuất quy mô lớn.",
     "tags": [
       "Industrial Engineering",
       "NPI",
@@ -843,7 +1110,82 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/dang-thi-hong-ngoc.webp",
-    "cutout": "/images/experts/dang-thi-hong-ngoc-cutout.webp"
+    "cutout": "/images/experts/dang-thi-hong-ngoc-cutout.webp",
+    "expertise": [
+      "Giới thiệu sản phẩm mới (NPI) và công nghiệp hóa từ ý tưởng đến sản xuất hàng loạt",
+      "Thiết kế cho khả năng sản xuất (DFM), xây dựng dòng giá trị cho sản phẩm mới",
+      "Xây dựng và phê duyệt quy trình sản xuất, làm việc với nhà cung cấp và chế tạo mẫu",
+      "Tối ưu mặt bằng, cân bằng tải và công việc tiêu chuẩn",
+      "Cơ sở dữ liệu thời gian chuẩn và định tuyến, ước tính giá thành sản phẩm mới",
+      "Tự động hóa và giảm lãng phí; xây dựng hệ thống Lean cho cả bộ phận"
+    ],
+    "career": [
+      {
+        "period": "",
+        "org": "Zebra",
+        "role": "Senior NPI Manufacturing Engineer"
+      },
+      {
+        "period": "",
+        "org": "Swarovski & Marigot",
+        "role": "Kỹ sư Công nghiệp (IE)"
+      },
+      {
+        "period": "",
+        "org": "Pepperl+Fuchs",
+        "role": "Kỹ sư Công nghiệp, chuyển giao dự án"
+      },
+      {
+        "period": "",
+        "org": "Michelin (Camso)",
+        "role": "Lean Engineer"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Zebra",
+        "period": "",
+        "text": "Nghiên cứu nhà cung cấp công cụ, tự động hóa và giảm lãng phí; giám sát, phân tích máy tại hiện trường, tối ưu mặt bằng và cân bằng tải; xây dựng, phê duyệt quy trình và dẫn dắt chế tạo mẫu."
+      },
+      {
+        "client": "Swarovski & Marigot",
+        "period": "",
+        "text": "Thiết lập cơ sở dữ liệu GWD cho toàn bộ sản phẩm trang sức (công việc tiêu chuẩn, thời gian định tuyến), ước tính giá thành sản phẩm mới và triển khai mặt bằng đánh bóng tự động mới."
+      },
+      {
+        "client": "Pepperl+Fuchs",
+        "period": "",
+        "text": "Hỗ trợ NPI trong đội IE khu vực Đông Nam Á, là bên liên quan chính trong quy trình kỹ thuật sản phẩm (PEP) và chuyển giao sản phẩm (PTP), dẫn dắt công nghiệp hóa đến sản xuất hàng loạt."
+      },
+      {
+        "client": "Michelin (Camso)",
+        "period": "",
+        "text": "Thiết kế mặt bằng và công việc tiêu chuẩn mới cho chuyền TL2, giảm thời gian chu kỳ; xây dựng hệ thống Lean cho cả bộ phận và trình bày kết quả tại sự kiện Lean Summit ở Sri Lanka."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Lean Six Sigma Green Belt",
+        "org": "Six Sigma Management Institute Academy",
+        "core": true
+      }
+    ],
+    "education": [
+      {
+        "degree": "Thạc sĩ Kỹ thuật Công nghiệp",
+        "school": "Trường Đại học Bách khoa TP.HCM"
+      }
+    ],
+    "regions": [
+      {
+        "country": "Sri Lanka",
+        "text": "Trình bày kết quả dự án Lean tại sự kiện Lean Summit của Michelin (Camso)"
+      },
+      {
+        "country": "Đông Nam Á",
+        "text": "Đội Kỹ thuật Công nghiệp khu vực của Pepperl+Fuchs, chuyển giao sản phẩm mới"
+      }
+    ]
   },
   {
     "id": "nguyen-minh-nguyet",
