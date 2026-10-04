@@ -107,7 +107,7 @@ const DEMO: Certificate = {
   issued: "01/10/2026",
   issuer: "WISE Academy & Lean Six Sigma Institute (LSSI)",
   status: "Còn hiệu lực",
-  imageId: null,
+  imageId: "demo",
 };
 
 export async function findCertificate(code: string): Promise<Certificate | null> {

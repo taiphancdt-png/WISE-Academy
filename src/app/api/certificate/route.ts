@@ -30,7 +30,13 @@ export async function GET(request: Request) {
     if (!cert) return NextResponse.json({ ok: false, error: "not_found" }, { status: 404 });
     const { imageId, ...data } = cert;
     return NextResponse.json(
-      { ok: true, certificate: { ...data, image: imageId ? `/api/certificate/image?id=${imageId}` : null } },
+      {
+        ok: true,
+        certificate: {
+          ...data,
+          image: imageId === "demo" ? "/images/demo-certificate.webp" : imageId ? `/api/certificate/image?id=${imageId}` : null,
+        },
+      },
       { headers: { "cache-control": "no-store" } },
     );
   } catch (err) {

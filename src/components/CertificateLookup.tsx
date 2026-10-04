@@ -15,9 +15,11 @@ interface CertificateData {
 }
 
 const ERRORS: Record<string, string> = {
-  not_found: "Không tìm thấy chứng chỉ với mã này. Vui lòng kiểm tra lại mã in trên chứng chỉ.",
+  not_found:
+    "Không tìm thấy chứng chỉ với mã này. Vui lòng kiểm tra lại mã in trên chứng chỉ.",
   invalid_code: "Mã chứng chỉ không hợp lệ.",
-  too_many_requests: "Bạn đã tra cứu quá nhiều lần. Vui lòng thử lại sau ít phút.",
+  too_many_requests:
+    "Bạn đã tra cứu quá nhiều lần. Vui lòng thử lại sau ít phút.",
   unavailable: "Hệ thống tra cứu đang tạm gián đoạn. Vui lòng thử lại sau.",
 };
 
@@ -35,7 +37,9 @@ export default function CertificateLookup() {
     setError("");
     setCert(null);
     try {
-      const res = await fetch(`/api/certificate?code=${encodeURIComponent(code.trim())}`);
+      const res = await fetch(
+        `/api/certificate?code=${encodeURIComponent(code.trim())}`,
+      );
       const json = await res.json();
       if (json.ok) setCert(json.certificate);
       else setError(ERRORS[json.error] || ERRORS.unavailable);
@@ -59,8 +63,14 @@ export default function CertificateLookup() {
 
   return (
     <div>
-      <form onSubmit={submit} className="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
-        <label htmlFor="cert-code" className="block text-sm font-semibold text-[#002F5B]">
+      <form
+        onSubmit={submit}
+        className="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]"
+      >
+        <label
+          htmlFor="cert-code"
+          className="block text-sm font-semibold text-[#002F5B]"
+        >
           Mã chứng chỉ
         </label>
         <div className="mt-3 flex flex-col sm:flex-row gap-3">
@@ -92,19 +102,43 @@ export default function CertificateLookup() {
               Chứng chỉ hợp lệ{cert.status ? ` · ${cert.status}` : ""}
             </p>
           </div>
-          <dl className="px-6 sm:px-8 py-6 divide-y divide-slate-100">
-            {rows.map(([k, v]) => (
-              <div key={k} className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1 py-3">
-                <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[#486581]">{k}</dt>
-                <dd className="text-[15px] font-semibold text-[#002F5B]">{v}</dd>
-              </div>
-            ))}
-          </dl>
-          {cert.image && (
-            <div className="px-6 sm:px-8 pb-8">
-              <img src={cert.image} alt={`Chứng chỉ của ${cert.name}`} className="w-full rounded-2xl ring-1 ring-slate-200" />
-            </div>
-          )}
+          {/* details on the left, the certificate image on the right */}
+          <div
+            className={`grid grid-cols-1 ${cert.image ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]" : ""} gap-6 lg:gap-8 px-6 sm:px-8 py-6 items-start`}
+          >
+            <dl className="divide-y divide-slate-100">
+              {rows.map(([k, v]) => (
+                <div
+                  key={k}
+                  className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1 py-3"
+                >
+                  <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[#486581]">
+                    {k}
+                  </dt>
+                  <dd className="text-[15px] font-semibold text-[#002F5B]">
+                    {v}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            {cert.image && (
+              <a
+                href={cert.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <img
+                  src={cert.image}
+                  alt={`Chứng chỉ của ${cert.name}`}
+                  className="w-full rounded-2xl ring-1 ring-slate-200 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.5)] transition-transform group-hover:scale-[1.01]"
+                />
+                <span className="mt-2 block text-center text-xs text-[#486581]">
+                  Bấm vào ảnh để xem kích thước đầy đủ
+                </span>
+              </a>
+            )}
+          </div>
         </div>
       )}
     </div>
