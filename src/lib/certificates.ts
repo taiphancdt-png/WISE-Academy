@@ -75,11 +75,20 @@ export function isConfigured() {
   return useScript() || Boolean(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY && process.env.CERT_SHEET_ID);
 }
 
+// env values pasted into a hosting dashboard often carry spaces or quotes
+const envClean = (v?: string) => (v || "").trim().replace(/^["']|["']$/g, "").trim();
+
 async function callScript<T>(params: Record<string, string>): Promise<T> {
-  const url = `${process.env.CERT_APPS_SCRIPT_URL}?${new URLSearchParams({ ...params, key: process.env.CERT_APPS_SCRIPT_KEY! })}`;
+  const base = envClean(process.env.CERT_APPS_SCRIPT_URL);
+  const url = `${base}?${new URLSearchParams({ ...params, key: envClean(process.env.CERT_APPS_SCRIPT_KEY) })}`;
   const res = await fetch(url, { cache: "no-store", redirect: "follow" });
-  if (!res.ok) throw new Error(`apps_script_${res.status}`);
-  return (await res.json()) as T;
+  const text = await res.text();
+  if (!res.ok) throw new Error(`apps_script_${res.status}: ${text.slice(0, 120)}`);
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    throw new Error(`apps_script_not_json: ${text.slice(0, 120)}`);
+  }
 }
 
 let token: { value: string; exp: number } | null = null;

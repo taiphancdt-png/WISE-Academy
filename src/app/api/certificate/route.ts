@@ -41,6 +41,7 @@ export async function GET(request: Request) {
     );
   } catch (err) {
     console.error("certificate lookup failed", err);
-    return NextResponse.json({ ok: false, error: "unavailable" }, { status: 503 });
+    const detail = err instanceof Error ? err.message.split(":")[0] : "unknown";
+    return NextResponse.json({ ok: false, error: "unavailable", detail }, { status: 503 });
   }
 }
