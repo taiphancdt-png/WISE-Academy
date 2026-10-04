@@ -205,8 +205,8 @@ export default function CoreValuesBloom({
           </text>
         </g>
       ))}
-      {/* the flower's centre: the WISE W mark in white */}
-      <circle r={18} fill="#002F5B" />
+      {/* the flower's centre: the WISE W mark in white on a navy disc with a white ring */}
+      <circle r={18} fill="#002F5B" stroke="#FFFFFF" strokeWidth={4} paintOrder="stroke" />
       <image href="/images/brand/logo-mark-white.png" x={-11} y={-9} width={22} height={18} />
     </svg>
   );
