@@ -67,23 +67,21 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cw = (size.w - GAP - 2 * OUT) / 2;
     const apply = (t: number) => {
-      const sc = 0.7 + 0.3 * t;
-      // the cards grow from the W circle: shifted so their inner notch stays centred on it at every scale
-      const shift = (cw / 2 + GAP / 2) * (1 - sc);
+      // Each card stays in place and is revealed from the W circle outwards, like a curtain; its icon circle rides
+      // on the moving edge, so it starts behind the W circle and lands exactly in the card's outer notch.
+      const hidden = (1 - t) * cw; // width still covered, measured from the card's outer edge
       boxRefs.current.forEach((box, i) => {
-        if (!box) return;
-        const dir = i === 0 ? 1 : -1;
-        box.style.transform = `translateX(${(dir * shift).toFixed(1)}px) scale(${sc.toFixed(3)})`;
-        box.style.opacity = String(smooth(0, 0.35, t));
+        const card = box?.firstElementChild as HTMLElement | null;
+        if (!box || !card) return;
+        card.style.clipPath = i === 0 ? `inset(0 0 0 ${hidden.toFixed(1)}px round 28px)` : `inset(0 ${hidden.toFixed(1)}px 0 0 round 28px)`;
+        box.style.opacity = String(smooth(0, 0.15, t));
       });
       if (circleRef.current) circleRef.current.style.transform = `translate(-50%, -50%) scale(${(1.08 - 0.08 * t).toFixed(3)})`;
       sideRefs.current.forEach((c, i) => {
         if (!c) return;
-        // slides out of the W circle and lands exactly in the card's outer notch
-        const edge = OUT + cw / 2 + shift - (sc * cw) / 2; // distance of the outer edge from the section's side
-        const dx = (i === 0 ? -1 : 1) * (size.w / 2 - edge) * t; // starts behind the W circle
-        c.style.transform = `translate(calc(-50% + ${dx.toFixed(1)}px), -50%) scale(${sc.toFixed(3)})`;
-        c.style.opacity = String(smooth(0, 0.25, t));
+        const dx = (i === 0 ? -1 : 1) * (size.w / 2 - OUT - hidden);
+        c.style.transform = `translate(calc(-50% + ${dx.toFixed(1)}px), -50%)`;
+        c.style.opacity = String(smooth(0, 0.2, t));
       });
       ringRefs.current.forEach((r) => r && (r.style.transform = `rotate(${(t * 180).toFixed(1)}deg)`));
     };
@@ -113,6 +111,12 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       cancelAnimationFrame(raf);
       last = 0;
       if (e.isIntersecting) raf = requestAnimationFrame(frame);
+      else if (e.boundingClientRect.top > 0) {
+        // gone below the fold: start closed again for the next pass
+        p = 0;
+        goal = 0;
+        apply(0);
+      }
     });
     io.observe(wrap);
     apply(0);
@@ -153,14 +157,14 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
   return (
     <>
       {/* desktop: the circle stays in the middle, the two cards slide out of it */}
-      <div ref={wrapRef} className="hidden xl:block relative -mx-12" style={{ height: size.h || 320 }}>
+      <div ref={wrapRef} className="hidden xl:block relative" style={{ height: size.h || 320 }}>
         {items.map((it, i) => (
           <div
             key={it.title}
             ref={(el) => {
               boxRefs.current[i] = el;
             }}
-            className="absolute top-0 will-change-transform"
+            className="absolute top-0"
             style={{ [i === 0 ? "left" : "right"]: OUT, opacity: 0, filter: SHADOW[i] } as React.CSSProperties}
           >
             {/* the card: soft corners and curved notches that hug the W circle (inner edge) and its icon circle (outer edge) */}
