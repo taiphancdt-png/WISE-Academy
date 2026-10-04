@@ -58,8 +58,11 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#001E38] via-[#002F5B] to-[#0B4A82] text-white">
         <div aria-hidden="true" className="absolute -right-32 -top-32 -z-10 w-[520px] h-[520px] rounded-full bg-[#F76011]/20 blur-3xl" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-16 lg:pb-20">
-          <Link href="/chuyen-gia" className="inline-flex items-center gap-2 text-sm text-white/75 hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Tất cả chuyên gia
+          <Link
+            href="/chuyen-gia"
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" /> Quay lại danh sách chuyên gia
           </Link>
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
             <div className="mx-auto w-full max-w-sm">
@@ -96,6 +99,20 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
+      {/* Key numbers */}
+      {exp.highlights && (
+        <section className="bg-white border-b border-slate-200 px-4 sm:px-6">
+          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-slate-100 py-8">
+            {exp.highlights.map((h) => (
+              <div key={h.label} className="px-4 py-3 text-center">
+                <dd className="text-2xl sm:text-3xl font-bold text-[#002F5B]">{h.value}</dd>
+                <dt className="mt-1 text-xs text-[#486581] leading-snug">{h.label}</dt>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
       {/* Story and strengths */}
       <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-10 lg:gap-16">
@@ -105,7 +122,17 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
           </div>
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Thế mạnh chuyên môn</h2>
-            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {exp.expertise && (
+              <ul className="mt-4 space-y-2.5">
+                {exp.expertise.map((t) => (
+                  <li key={t} className="flex gap-2.5 text-sm text-[#102A43] leading-relaxed">
+                    <CheckCircle2 weight="fill" className="w-4 h-4 shrink-0 mt-0.5 text-[#F76011]" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <ul className={`${exp.expertise ? "mt-6" : "mt-4"} grid grid-cols-1 sm:grid-cols-2 gap-3`}>
               {exp.tags.map((t) => (
                 <li key={t} className="rounded-xl bg-[#F3F6FA] px-4 py-3 text-sm font-semibold text-[#002F5B] ring-1 ring-[#002F5B]/[0.06]">
                   {t}
@@ -116,9 +143,103 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
+      {/* Career path and education */}
+      {exp.career && (
+        <section className="py-16 lg:py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-10 lg:gap-16">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Quá trình công tác</h2>
+              <ol className="mt-8 relative border-l-2 border-[#F76011]/30 ml-2 space-y-8">
+                {exp.career.map((c) => (
+                  <li key={c.org} className="pl-7 relative">
+                    <span aria-hidden="true" className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#F76011] ring-4 ring-[#F8F9FA]" />
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#C9500E]">{c.period}</p>
+                    <h3 className="mt-1 text-lg font-semibold text-[#002F5B]">{c.org}</h3>
+                    <p className="mt-1 text-sm text-[#486581] leading-relaxed">{c.role}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="space-y-10">
+              {exp.education && (
+                <div>
+                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Học vấn</h2>
+                  <ul className="mt-4 space-y-3">
+                    {exp.education.map((e) => (
+                      <li key={e.degree} className="rounded-xl bg-white p-4 shadow-[0_10px_30px_-20px_rgba(0,47,91,0.4)] ring-1 ring-[#002F5B]/[0.06]">
+                        <p className="font-semibold text-[#002F5B]">{e.degree}</p>
+                        <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {exp.languages && (
+                <div>
+                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Ngoại ngữ</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-[#486581]">{exp.languages}</p>
+                </div>
+              )}
+              {exp.regions && (
+                <div>
+                  <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Kinh nghiệm quốc tế</h2>
+                  <ul className="mt-4 space-y-2.5">
+                    {exp.regions.map((r) => (
+                      <li key={r.country} className="text-sm leading-relaxed text-[#486581]">
+                        <strong className="text-[#002F5B]">{r.country}:</strong> {r.text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Selected engagements */}
+      {exp.experience && (
+        <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Kinh nghiệm dự án tiêu biểu</h2>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {exp.experience.map((e) => (
+                <article key={e.client} className="rounded-2xl bg-[#F8F9FA] p-6 ring-1 ring-[#002F5B]/[0.06]">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="font-semibold text-[#002F5B] leading-snug">{e.client}</h3>
+                    {e.period && <span className="shrink-0 text-[11px] font-bold text-[#C9500E]">{e.period}</span>}
+                  </div>
+                  <p className="mt-2.5 text-sm text-[#486581] leading-relaxed">{e.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Certifications */}
+      {exp.certifications && (
+        <section className="py-16 lg:py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Chứng nhận & đào tạo chuyên sâu</h2>
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {exp.certifications.map((c) => (
+                <li key={c.name} className="flex gap-3 rounded-xl bg-white p-4 shadow-[0_10px_30px_-22px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
+                  <CheckCircle2 weight="duotone" className="w-6 h-6 shrink-0 text-[#F76011]" />
+                  <span>
+                    <span className="block text-sm font-semibold text-[#002F5B]">{c.name}</span>
+                    <span className="block mt-0.5 text-xs text-[#486581]">{c.org}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Projects with the companies named in the bio */}
       {related.length > 0 && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6">
+        <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Dự án tiêu biểu đã đồng hành</h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -142,7 +263,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
 
       {/* Other experts */}
       {others.length > 0 && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
+        <section className="py-16 lg:py-20 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-end justify-between gap-4">
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Chuyên gia khác</h2>
@@ -166,6 +287,24 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
           </div>
         </section>
       )}
+
+      {/* always at hand while reading the profile: back to the list, or book a session */}
+      <div className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4 pointer-events-none">
+        <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-white/95 backdrop-blur p-1.5 shadow-[0_18px_40px_-12px_rgba(0,30,56,0.45)] ring-1 ring-[#002F5B]/10">
+          <Link
+            href="/chuyen-gia"
+            className="inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2.5 text-sm font-semibold text-[#002F5B] hover:bg-[#EBF3FA] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" /> Quay lại
+          </Link>
+          <Link
+            href={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
+            className="inline-flex items-center gap-2 rounded-full bg-[#F76011] hover:bg-[#C9500E] px-4 sm:px-6 py-2.5 text-sm font-semibold text-white transition-colors"
+          >
+            <Calendar className="w-4 h-4" /> Đặt lịch tư vấn
+          </Link>
+        </div>
+      </div>
 
       <CtaBand
         title={<>Làm việc trực tiếp cùng {exp.name}</>}

@@ -4,7 +4,7 @@
     "name": "Nguyễn Thị Thủy (Kate)",
     "role": "Giám đốc Điều hành · LSSI Facilitator",
     "title": "Chuyên gia Chẩn đoán Vận hành Doanh nghiệp (MPI & AED) · Lean Sensei (Nike NOS Training Center) · Lean Six Sigma Black Belt (SSMI)",
-    "bio": "Hơn 15 năm kinh nghiệm thực chiến trong quản trị vận hành, từng phụ trách vị trí Training Manager tại KD Consulting, Lean Specialist tại South Island Garment, Lean Practitioner tại Dean Shoes. Đã trực tiếp đào tạo và tư vấn cho hàng chục tập đoàn lớn như Pou Chen, Geodis, Huali.",
+    "bio": "Hơn 16 năm kinh nghiệm trong quản lý đào tạo, tư vấn Lean và phát triển nguồn nhân lực, kiến tạo năng lực vận hành xuất sắc cho các doanh nghiệp sản xuất, FDI, SME và các tổ chức phi chính phủ. Dẫn dắt và tham gia hơn 100 dự án cùng hơn 50 tổ chức, từ nhà máy của Nike, Adidas, New Balance, Việt Tiến, Biti's, PNJ, TBS Group, Dean Shoes đến các tổ chức quốc tế IFC, ILO, Better Work và USAID.",
     "tags": [
       "Lean Six Sigma Black Belt",
       "Nike Sensei",
@@ -12,7 +12,274 @@
       "Gemba Diagnostic"
     ],
     "image": "/images/experts/nguyen-thi-thuy.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "highlights": [
+      {
+        "value": "16+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "100+",
+        "label": "Dự án đã dẫn dắt và tham gia"
+      },
+      {
+        "value": "50+",
+        "label": "Tổ chức đồng hành"
+      },
+      {
+        "value": "1.700+",
+        "label": "Học viên được đào tạo"
+      },
+      {
+        "value": "2.000+",
+        "label": "Giờ đào tạo"
+      },
+      {
+        "value": "3.500+",
+        "label": "Giờ huấn luyện (coaching)"
+      }
+    ],
+    "expertise": [
+      "Triển khai Lean và Kaizen, 5S, TPM, Value Stream Mapping",
+      "Hoshin Kanri, triển khai chính sách chiến lược, xây dựng KPI/BSC",
+      "Quản trị thay đổi và thiết kế bố trí chuyền Lean Cell",
+      "Lean Six Sigma: quản lý dự án DMAIC và điều phối Kaizen",
+      "Thiết kế bài giảng và chương trình Train-the-Trainer",
+      "Coaching phát triển năng lực lãnh đạo (IFC Coaching Leader)",
+      "Bình đẳng giới và phát triển lực lượng lao động (GEAR, IFC/ILO/Better Work)",
+      "Thế mạnh ngành may mặc, giày dép và trang sức",
+      "Ứng dụng AI trong công việc và thiết kế quy trình tự động bằng AI Agent",
+      "Đào tạo đa văn hóa cho thương hiệu quốc tế (Nike, Adidas, New Balance, GAP, Levi's) và tổ chức phát triển (IDH, IFC, ILO, USAID, Better Work)"
+    ],
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Nhà sáng lập & Giám đốc, Chuyên gia tư vấn và đào tạo Lean Six Sigma"
+      },
+      {
+        "period": "2017 - 2023",
+        "org": "Kim Đăng Consulting",
+        "role": "Training Manager, Chuyên gia tư vấn và đào tạo Lean"
+      },
+      {
+        "period": "2015 - 2017",
+        "org": "South Island Garment (Tổng Công ty Việt Tiến)",
+        "role": "Lean Coordinator, Chuyên gia tư vấn Lean nội bộ cho 6 nhà máy"
+      },
+      {
+        "period": "2009 - 2015",
+        "org": "Freetrend (Dean Shoes Group)",
+        "role": "Trưởng nhóm triển khai Lean, Trưởng nhóm đào tạo Lean, Trưởng nhóm Management Trainee"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Race to the Top Vietnam",
+        "period": "2017 - 2019",
+        "text": "Triển khai chương trình năng suất của sáng kiến đa bên tại 10 nhà máy may mặc và giày dép (Tân Hợp, Nien Hsing, Saitex, Hansae...), cùng các đối tác Nike, GAP, Levi's, Puma, IFC, ILO, USAID, nhằm nâng cao năng suất và điều kiện làm việc."
+      },
+      {
+        "client": "GEAR (IFC / ILO Better Work Vietnam)",
+        "period": "2015 - 2019",
+        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo."
+      },
+      {
+        "client": "Saigon Seiki",
+        "period": "",
+        "text": "Tư vấn năng suất theo Hoshin Kanri, cải thiện các chỉ số PQCDE: năng lực sản xuất từ 63% lên 79,4%, chất lượng từ 60% lên 85,6%."
+      },
+      {
+        "client": "PNJ",
+        "period": "",
+        "text": "Dẫn dắt 4 dự án: bản đồ chuỗi giá trị, chuyển đổi sang bố trí Lean Cell, quản lý chất lượng tại nguồn và lập kế hoạch sản xuất bằng quản lý trực quan."
+      },
+      {
+        "client": "Tổng Công ty May Việt Tiến",
+        "period": "",
+        "text": "Đánh giá và cải tiến hệ thống quản lý Lean tại 6 nhà máy, xây dựng ban chỉ đạo Lean, chương trình đào tạo và theo dõi Lean KPIs cho Kaizen."
+      },
+      {
+        "client": "Far Eastern Polytex",
+        "period": "",
+        "text": "10 dự án VSM, 6S, TPM (48 ngày đào tạo, tư vấn, coaching) cho ban lãnh đạo và các phòng ban, hỗ trợ đạt chứng nhận Nike LMA."
+      },
+      {
+        "client": "TBS Group",
+        "period": "",
+        "text": "Tư vấn Lean tại nhà máy Thoại Sơn mới, thành lập Trung tâm Đào tạo & Đổi mới Lean tại Lefaso và chương trình phát triển quản lý kế cận."
+      },
+      {
+        "client": "Apache Footwear",
+        "period": "2019, 2026",
+        "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset."
+      },
+      {
+        "client": "AQUA Việt Nam",
+        "period": "2026",
+        "text": "Đào tạo Growth Mindset, Kaizen Mindset và kỹ năng giải quyết vấn đề cho đội ngũ quản lý sản xuất."
+      },
+      {
+        "client": "Pou Chen, An Giang Samho, Huali",
+        "period": "",
+        "text": "Đào tạo Lean Six Sigma Yellow Belt và Work Engineering cải tiến năng suất chuyền: nhận diện lãng phí, quan sát Gemba và vòng tròn Ohno, biểu đồ cân bằng chuyền."
+      },
+      {
+        "client": "Tuấn Việt Shoes",
+        "period": "",
+        "text": "Hoshin Kanri, quản trị thay đổi, văn hóa và lãnh đạo Lean, thiết kế chuyền Cell, lộ trình chuyển đổi Lean và nền tảng 5S."
+      },
+      {
+        "client": "Freetrend (Dean Shoes Group)",
+        "period": "2009 - 2015",
+        "text": "Thiết lập chuyền Lean đạt chứng nhận Nike NOS Line Definition Audit, duy trì hệ thống quản lý Lean cấp Bronze, chuẩn hóa phòng ban, cải tiến năng suất, chất lượng, dòng giá trị và hệ thống kéo."
+      },
+      {
+        "client": "Vision International",
+        "period": "2026",
+        "text": "Đào tạo cho dự án thiết kế thực nghiệm DOE (Design of Experiments)."
+      },
+      {
+        "client": "Victory, Tỷ Bách, Yujin Kreves",
+        "period": "",
+        "text": "Đào tạo Lean Diagnostic & Lean Fundamental, workshop thiết kế bố trí Lean Cell, chương trình đào tạo và tư vấn 5S, An toàn, Quản lý trực quan."
+      },
+      {
+        "client": "CSED TP.HCM, Khải Hoàn Insulation",
+        "period": "",
+        "text": "Đào tạo tư duy Kaizen, 8 lãng phí và kỹ năng giải quyết vấn đề theo PDCA cho đội ngũ doanh nghiệp."
+      },
+      {
+        "client": "Liên Phát Shoes, thương hiệu Novi (Vaeso x Impactiva)",
+        "period": "",
+        "text": "Workshop tối ưu quy trình và chuyển đổi số: Hoshin Kanri, hoạch định chiến lược, KPI và quản trị thay đổi."
+      },
+      {
+        "client": "Nhà máy Giang Phạm (G.P)",
+        "period": "",
+        "text": "Tư vấn thiết kế lại nhà máy theo bố trí Lean Cell, phân tích chuỗi giá trị, tổ chức nơi làm việc và thiết kế máy móc Lean."
+      },
+      {
+        "client": "South Island Garment (6 nhà máy Việt Tiến)",
+        "period": "2015 - 2017",
+        "text": "Điều phối Lean và tư vấn nội bộ, hỗ trợ các sáng kiến quản lý Lean trên toàn nhà máy."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Lean Six Sigma Black Belt",
+        "org": "Six Sigma Management Institute (SSMI)"
+      },
+      {
+        "name": "Lean Six Sigma Green Belt",
+        "org": "Lean Six Sigma Institute (LSSI)"
+      },
+      {
+        "name": "Training of Trainers for Lean Six Sigma",
+        "org": "Lean Six Sigma Institute (LSSI)"
+      },
+      {
+        "name": "Lean Six Sigma Green Belt, Operational Excellence",
+        "org": "Wieck Institute of Management Consulting"
+      },
+      {
+        "name": "Khóa chuyên gia chẩn đoán sản xuất (Preliminary Manufacturing Shindanshi)",
+        "org": "JICA, Bộ KH&ĐT và AED"
+      },
+      {
+        "name": "ToT Chuyên gia tư vấn ESG",
+        "org": "APED, Bộ Tài chính"
+      },
+      {
+        "name": "ToT Chuyên gia tư vấn Kinh doanh bao trùm",
+        "org": "APED, Bộ Tài chính"
+      },
+      {
+        "name": "Tối ưu lắp ráp, số hóa nhà máy và ứng dụng AI trong sản xuất cơ khí",
+        "org": "Quanskill & Bossard"
+      },
+      {
+        "name": "NOS Core Training Program",
+        "org": "Nike & AITC"
+      },
+      {
+        "name": "Becoming Coaching Leader",
+        "org": "IFC, Coach Đàm Minh Hạnh"
+      },
+      {
+        "name": "ToT Gender Equality and Returns (GEAR)",
+        "org": "IFC, ILO, Better Work"
+      },
+      {
+        "name": "Train the Trainer Program",
+        "org": "Impactiva"
+      },
+      {
+        "name": "Vaeso Digital Platform Training",
+        "org": "Vaeso, Impactiva"
+      },
+      {
+        "name": "L&D Business Partner",
+        "org": "Eduviet"
+      },
+      {
+        "name": "Instructional Design",
+        "org": "Save the World from Boring Training"
+      },
+      {
+        "name": "A Guide on Kaizen Implementation",
+        "org": "BSI, Neville Clarke"
+      },
+      {
+        "name": "VSM Training Program",
+        "org": "BSI, Neville Clarke"
+      },
+      {
+        "name": "PMTS (Predetermined Motion Time Study)",
+        "org": "Timeline Training, Satra Technology"
+      },
+      {
+        "name": "GSD Training Program",
+        "org": "SIG"
+      },
+      {
+        "name": "BMGI Training, Internal Lean Sensei, Management Trainee Program",
+        "org": "Freetrend (Dean Shoes Group)"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Cử nhân Tâm lý học",
+        "school": "Trường ĐH Khoa học Xã hội và Nhân văn TP.HCM"
+      },
+      {
+        "degree": "Cử nhân Sư phạm Tiếng Anh",
+        "school": "Trường Cao đẳng Sư phạm Thái Bình"
+      }
+    ],
+    "regions": [
+      {
+        "country": "Việt Nam",
+        "text": "Tư vấn Lean Six Sigma, đào tạo quản lý và vận hành xuất sắc"
+      },
+      {
+        "country": "Malaysia",
+        "text": "Đào tạo Lean và dự án nhà máy thí điểm tại trụ sở khu vực SIG"
+      },
+      {
+        "country": "Trung Quốc",
+        "text": "Hợp tác phát triển sản phẩm tư vấn và đào tạo Lean Six Sigma"
+      },
+      {
+        "country": "Tây Ban Nha",
+        "text": "Đối tác quốc tế phát triển chương trình chứng nhận Lean Six Sigma"
+      },
+      {
+        "country": "Bangladesh",
+        "text": "Cùng IFC Bangladesh phát triển chương trình đào tạo cho dự án GEAR"
+      }
+    ],
+    "languages": "Tiếng Việt (bản ngữ), Tiếng Anh (đọc tốt; nghe, nói, viết khá)"
   },
   {
     "id": "phan-tan-tai",

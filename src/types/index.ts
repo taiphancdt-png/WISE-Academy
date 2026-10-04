@@ -8,6 +8,15 @@ export interface Expert {
   image: string | null;
   /** "vietnam" = Vietnamese experts, "international" = foreign experts (shown as a separate group) */
   group: "vietnam" | "international";
+  // optional full profile (from the expert's CV), shown on their landing page
+  highlights?: { value: string; label: string }[];
+  expertise?: string[];
+  career?: { period: string; org: string; role: string }[];
+  experience?: { client: string; period: string; text: string }[];
+  certifications?: { name: string; org: string }[];
+  education?: { degree: string; school: string }[];
+  regions?: { country: string; text: string }[];
+  languages?: string;
 }
 
 export interface ProjectResult {
