@@ -564,10 +564,10 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
                     aria-label={`Giai đoạn ${i + 1}: ${stages[i].short}`}
                   >
                     {/* leader from the label to the stage */}
-                    <span aria-hidden="true" className={`absolute top-0 h-0 border-t-2 border-dashed ${on ? "border-[#F76011]" : "border-[#002F5B]/40"}`} style={{ right: 20, width: Math.max(0, pt[0] - edgeX - 20) }} />
+                    <span aria-hidden="true" className={`absolute top-0 h-0 border-t-2 border-dashed ${on ? "border-[#F76011]" : "border-[#002F5B]/40"}`} style={{ right: 14, width: Math.max(0, pt[0] - edgeX - 14) }} />
                     <span
-                      className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
-                        on ? "bg-[#F76011] text-white scale-110 ring-[3px] ring-white" : "bg-white text-[#C9500E] ring-[3px] ring-[#F76011]"
+                      className={`absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center text-[8px] font-bold transition-all duration-500 ${EASE} group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-[#F76011] ${
+                        on ? "bg-[#F76011] text-white scale-110 ring-2 ring-white" : "bg-white text-[#C9500E] ring-2 ring-[#F76011]"
                       }`}
                     >
                       {pad(i + 1)}

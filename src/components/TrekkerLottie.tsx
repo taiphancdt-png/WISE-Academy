@@ -84,7 +84,7 @@ export const BackTrekker = forwardRef<TrekkerHandle, { className?: string }>(fun
       // one leg lifts while the other pushes; arms swing against the legs; the body bobs twice per cycle
       [0, 1].forEach((i) => {
         const s = Math.sin(a + i * Math.PI);
-        const lift = Math.max(0, s) * 9;
+        const lift = Math.max(0, s) * 8;
         legRefs.current[i]?.setAttribute("transform", `translate(0 ${(-lift).toFixed(2)})`);
         armRefs.current[i]?.setAttribute("transform", `translate(0 ${(-Math.max(0, -s) * 4).toFixed(2)})`);
       });
@@ -92,6 +92,7 @@ export const BackTrekker = forwardRef<TrekkerHandle, { className?: string }>(fun
     },
   }));
 
+  // slim and tall like the side-view walker: narrow shoulders and pack, long thin legs
   const leg = (i: number, x: number) => (
     <g
       key={i}
@@ -99,9 +100,9 @@ export const BackTrekker = forwardRef<TrekkerHandle, { className?: string }>(fun
         legRefs.current[i] = el;
       }}
     >
-      <rect x={x} y={60} width={11} height={34} rx={5} fill={i ? BC.pantsFar : BC.pants} />
-      <rect x={x - 1} y={90} width={13} height={9} rx={4} fill={BC.boot} />
-      <rect x={x - 1} y={97} width={13} height={3} rx={1.5} fill={BC.sole} />
+      <rect x={x} y={56} width={7.5} height={44} rx={3.5} fill={i ? BC.pantsFar : BC.pants} />
+      <rect x={x - 1} y={97} width={9.5} height={7} rx={3} fill={BC.boot} />
+      <rect x={x - 1} y={102.5} width={9.5} height={2.5} rx={1.2} fill={BC.sole} />
     </g>
   );
   const arm = (i: number, x: number, dir: number) => (
@@ -112,32 +113,32 @@ export const BackTrekker = forwardRef<TrekkerHandle, { className?: string }>(fun
       }}
     >
       {/* trekking pole: grip in the hand, tip planted a little outside the boots */}
-      <line x1={x + dir * 5} y1={60} x2={x + dir * 9} y2={102} stroke={BC.pole} strokeWidth={2} strokeLinecap="round" />
-      <line x1={x + dir * 4.6} y1={52} x2={x + dir * 5.2} y2={60} stroke={BC.boot} strokeWidth={3.4} strokeLinecap="round" />
-      <path d={`M ${x} 32 Q ${x + dir * 6} 44 ${x + dir * 5} 56`} stroke={BC.shirtDark} strokeWidth={8} strokeLinecap="round" fill="none" />
-      <circle cx={x + dir * 5} cy={57} r={3.6} fill={BC.skin} />
+      <line x1={x + dir * 4} y1={55} x2={x + dir * 7} y2={108} stroke={BC.pole} strokeWidth={1.6} strokeLinecap="round" />
+      <line x1={x + dir * 3.8} y1={48} x2={x + dir * 4.2} y2={55} stroke={BC.boot} strokeWidth={2.8} strokeLinecap="round" />
+      <path d={`M ${x} 29 Q ${x + dir * 4.5} 40 ${x + dir * 4} 51`} stroke={BC.shirtDark} strokeWidth={6} strokeLinecap="round" fill="none" />
+      <circle cx={x + dir * 4} cy={52.5} r={2.8} fill={BC.skin} />
     </g>
   );
 
   return (
-    <svg viewBox="-4 0 68 104" className={className} aria-hidden="true">
-      {leg(1, 32)}
-      {leg(0, 17)}
+    <svg viewBox="-4 0 56 110" className={className} aria-hidden="true">
+      {leg(1, 25.5)}
+      {leg(0, 15)}
       <g ref={bodyRef}>
-        {arm(0, 15, -1)}
-        {arm(1, 45, 1)}
+        {arm(0, 14.5, -1)}
+        {arm(1, 33.5, 1)}
         {/* shirt */}
-        <path d="M 16 30 Q 30 24 44 30 L 45 64 Q 30 68 15 64 Z" fill={BC.shirt} />
+        <path d="M 15 27 Q 24 23 33 27 L 33.5 58 Q 24 61 14.5 58 Z" fill={BC.shirt} />
         {/* neck, ears and the back of the head */}
-        <rect x={26} y={20} width={8} height={9} rx={3} fill={BC.skin} />
-        <ellipse cx={20.6} cy={14} rx={2} ry={3} fill={BC.ear} />
-        <ellipse cx={39.4} cy={14} rx={2} ry={3} fill={BC.ear} />
-        <circle cx={30} cy={13} r={9.5} fill={BC.hair} />
-        {/* backpack, with its lid, front pocket and a rolled mat on top */}
-        <rect x={13} y={27} width={34} height={40} rx={8} fill={BC.pack} />
-        <rect x={13} y={27} width={34} height={11} rx={6} fill={BC.packLight} />
-        <rect x={19} y={46} width={22} height={15} rx={4} fill={BC.packLight} />
-        <rect x={27.5} y={40} width={5} height={4} rx={1.5} fill={BC.shirt} />
+        <rect x={21} y={18} width={6} height={7} rx={2.5} fill={BC.skin} />
+        <ellipse cx={16.8} cy={12.5} rx={1.6} ry={2.4} fill={BC.ear} />
+        <ellipse cx={31.2} cy={12.5} rx={1.6} ry={2.4} fill={BC.ear} />
+        <circle cx={24} cy={12} r={7.5} fill={BC.hair} />
+        {/* backpack, with its lid and front pocket */}
+        <rect x={12.5} y={25} width={23} height={34} rx={6} fill={BC.pack} />
+        <rect x={12.5} y={25} width={23} height={9} rx={5} fill={BC.packLight} />
+        <rect x={16} y={41} width={16} height={12} rx={3} fill={BC.packLight} />
+        <rect x={22} y={35.5} width={4} height={3} rx={1.2} fill={BC.shirt} />
       </g>
     </svg>
   );
