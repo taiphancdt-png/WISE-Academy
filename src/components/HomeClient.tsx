@@ -34,7 +34,7 @@ export interface HomeProps {
 }
 
 const IMG = {
-  hero: "/images/projects/project-lean-six-sigma-yellow-belt-pouchen-group/photo_1.webp",
+  hero: "/images/hero/home-factory.webp",
   gemba: "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_1.webp",
   workshop: "/images/projects/samho-ag-lean-six-sigma-yellow-belt/photo_10.webp",
   floor: "/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp",
@@ -178,39 +178,7 @@ export default function HomeClient({
       {/* 2. CLIENT / PARTNER LOGOS */}
       <PartnerLogos />
 
-      {/* 3. TRAINING PROGRAM */}
-      <section className="bg-white py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <SectionBadge title="Đối tác ủy quyền của LSSI Global" />
-            <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B]">Chương trình đào tạo Lean Six Sigma</h2>
-            <p className="mt-3 text-sm sm:text-base text-[#486581]">
-              Chương trình chứng nhận quốc tế của LSSI Global, từ Yellow Belt đến Master Black Belt, học theo 3 hình thức: self-paced, face to face và virtual live.
-            </p>
-          </div>
-
-          <div className="mb-14">
-            <LssiPartnerIntro />
-          </div>
-
-          <LssiProgramGrid />
-
-          <div className="mt-10">
-            <LssiPricingCta href="/dao-tao#dang-ky-lssi" />
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/dao-tao"
-              className="inline-flex items-center gap-2 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
-            >
-              Xem tất cả {courseCount} chương trình đào tạo <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CONSULTING SOLUTIONS (collage left) */}
+      {/* 3. CONSULTING SOLUTIONS (collage left) */}
       <section className="bg-white py-16 lg:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
@@ -238,6 +206,38 @@ export default function HomeClient({
               className="mt-8 inline-flex items-center gap-2 bg-[#002F5B] hover:bg-[#F76011] text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
             >
               Xem chi tiết giải pháp <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. TRAINING PROGRAM (Lean Six Sigma) */}
+      <section className="bg-white py-20 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <SectionBadge title="Đối tác ủy quyền của LSSI Global" />
+            <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B]">Chương trình đào tạo Lean Six Sigma</h2>
+            <p className="mt-3 text-sm sm:text-base text-[#486581]">
+              Chương trình chứng nhận quốc tế của LSSI Global, từ Yellow Belt đến Master Black Belt, học theo 3 hình thức: self-paced, face to face và virtual live.
+            </p>
+          </div>
+
+          <div className="mb-14">
+            <LssiPartnerIntro />
+          </div>
+
+          <LssiProgramGrid />
+
+          <div className="mt-10">
+            <LssiPricingCta href="/dao-tao#dang-ky-lssi" />
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/dao-tao"
+              className="inline-flex items-center gap-2 border border-[#C9500E] text-[#C9500E] hover:bg-[#F76011] hover:border-[#F76011] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors"
+            >
+              Xem tất cả {courseCount} chương trình đào tạo <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
