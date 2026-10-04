@@ -620,17 +620,151 @@
   {
     "id": "pham-the-linh",
     "name": "Phạm Thế Linh",
-    "role": "Chuyên gia Năng suất · Productivity Consultant & Trainer",
-    "title": "Chuyên gia Cải tiến Năng suất & Phát triển Nhà máy",
-    "bio": "Dày dạn kinh nghiệm thực tiễn tại nhiều tập đoàn sản xuất may mặc và cơ khí chế tạo, chuyên gia tối ưu hóa định mức lao động và giảm thiểu thời gian chuyển đổi mã hàng (SMED).",
+    "role": "Chuyên gia tư vấn & Giảng viên Lean · WISE Academy",
+    "title": "Chuyên gia chẩn đoán doanh nghiệp (JICA) · Chuyên gia tư vấn cải tiến năng suất (Bộ Công Thương) · Thạc sĩ Kỹ thuật Công nghiệp",
+    "bio": "Hơn 7 năm kinh nghiệm trong quản lý đào tạo và tư vấn Lean, chuyên nâng cấp quy trình sản xuất và triển khai Lean Six Sigma tại nhà máy. Từng là kỹ sư công nghệ tại Bühler với các dự án nhà máy chế biến lúa gạo ở Việt Nam, Thái Lan, Philippines và Malaysia, Trưởng phòng Công nghệ kiêm Giám đốc dự án Lean tại TTF, nay là chuyên gia tư vấn và giảng viên của WISE Academy.",
     "tags": [
-      "Productivity",
-      "SMED",
-      "Plant Optimization"
+      "Lean Six Sigma",
+      "Năng suất",
+      "Số hóa sản xuất",
+      "Chẩn đoán doanh nghiệp"
     ],
     "image": "/images/experts/pham-the-linh.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/pham-the-linh-cutout.webp"
+    "cutout": "/images/experts/pham-the-linh-cutout.webp",
+    "highlights": [
+      {
+        "value": "7+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "35",
+        "label": "Dự án"
+      },
+      {
+        "value": "15",
+        "label": "Doanh nghiệp & tổ chức"
+      },
+      {
+        "value": "100+",
+        "label": "Học viên được đào tạo"
+      },
+      {
+        "value": "500+",
+        "label": "Giờ đào tạo"
+      },
+      {
+        "value": "600+",
+        "label": "Giờ triển khai tại nhà máy"
+      }
+    ],
+    "expertise": [
+      "Chẩn đoán doanh nghiệp và tư vấn cải tiến năng suất, chất lượng",
+      "Cải tiến năng suất chuyền theo Lean và Lean Six Sigma",
+      "Thiết kế sơ đồ công nghệ, chạy thử, nghiệm thu và bàn giao dây chuyền sản xuất",
+      "Chuyển giao thiết bị và công nghệ chế biến",
+      "Số hóa quy trình: xây dựng cơ sở dữ liệu kỹ thuật cho SAP/ERP, hệ thống quản lý hỗ trợ sản xuất (MES)",
+      "Tư vấn lộ trình ứng dụng chuyển đổi số cho doanh nghiệp",
+      "Xây dựng hệ thống phòng đo lường chất lượng sản phẩm, đào tạo kỹ thuật và QA/QC",
+      "Đào tạo ứng dụng Inventor và CAD cho bộ phận kỹ thuật",
+      "Xây dựng và vận hành hệ thống quản trị, kết nối đào tạo giữa trường đại học và doanh nghiệp"
+    ],
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+      },
+      {
+        "period": "",
+        "org": "7 Solutions",
+        "role": "Chuyên gia tư vấn năng suất, chất lượng và chuyển đổi số"
+      },
+      {
+        "period": "",
+        "org": "YCademy",
+        "role": "Phó Tổng Giám đốc"
+      },
+      {
+        "period": "",
+        "org": "TTF (Trường Thành)",
+        "role": "Trưởng phòng Công nghệ, Giám đốc dự án Lean"
+      },
+      {
+        "period": "",
+        "org": "Bühler",
+        "role": "Trưởng nhóm đào tạo, Kỹ sư công nghệ"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Bühler: nhà máy chế biến lúa gạo",
+        "period": "",
+        "text": "Thiết kế sơ đồ công nghệ dây chuyền chế biến hạt, chạy thử, hoàn thiện và bàn giao; xây dựng phòng đo lường chất lượng; phụ trách đào tạo chuyên ngành lúa gạo cho nội bộ và khách hàng. Dự án tại Phụng Hoàng, Thạnh Hưng (Thốt Nốt, Cần Thơ), Thiên Lộc Phú (Tân Trụ, Long An), Siam Parboiled (Thái Lan), Biotech Farm Group (Philippines), Ada Aura và Pasti Selera (Malaysia)."
+      },
+      {
+        "client": "TTF: nhà máy sofa",
+        "period": "10/2020 - 11/2021",
+        "text": "Thiết kế và xây dựng dây chuyền sản xuất sofa; xây dựng chuyền cắt da CNC và chuyển giao hệ thống ERP từ Thagora (Romania); số hóa quy trình, xây dựng hệ thống MES và cải tiến năng suất chuyền theo Lean Six Sigma."
+      },
+      {
+        "client": "7 Solutions",
+        "period": "",
+        "text": "Tư vấn cải tiến năng suất, chất lượng và lộ trình số hóa cho doanh nghiệp; tổ chức tư vấn cải tiến sản xuất cho doanh nghiệp công nghiệp hỗ trợ khu vực phía Nam."
+      },
+      {
+        "client": "YCademy",
+        "period": "",
+        "text": "Xây dựng và quản lý hệ thống vận hành, phát triển kết nối tư vấn và đào tạo với các trường đại học và doanh nghiệp."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Chuyên gia chẩn đoán doanh nghiệp",
+        "org": "Cơ quan Hợp tác Quốc tế Nhật Bản (JICA)",
+        "core": true
+      },
+      {
+        "name": "Chuyên gia tư vấn cải tiến năng suất",
+        "org": "Bộ Công Thương",
+        "core": true
+      },
+      {
+        "name": "Chuyên gia chẩn đoán doanh nghiệp",
+        "org": "Trung tâm Tư vấn Giải pháp Công nghệ Việt Nam - Hàn Quốc",
+        "core": true
+      },
+      {
+        "name": "IELTS 7.0",
+        "org": "British Council",
+        "core": true
+      }
+    ],
+    "education": [
+      {
+        "degree": "Thạc sĩ Kỹ thuật Công nghiệp",
+        "school": "Trường Đại học Sư phạm Kỹ thuật"
+      },
+      {
+        "degree": "Kỹ sư Cơ khí",
+        "school": "Trường Đại học Sư phạm Kỹ thuật"
+      }
+    ],
+    "languages": "Tiếng Việt, Tiếng Anh",
+    "regions": [
+      {
+        "country": "Thái Lan",
+        "text": "Nhà máy chế biến gạo đồ Siam Parboiled (Ang Thong)"
+      },
+      {
+        "country": "Philippines",
+        "text": "Nhà máy chế biến lúa gạo của tổ hợp nông nghiệp Biotech Farm Group (South Cotabato)"
+      },
+      {
+        "country": "Malaysia",
+        "text": "Nhà máy chế biến lúa gạo Ada Aura, Pasti Selera (Selangor)"
+      }
+    ]
   },
   {
     "id": "tu-ngoc-tung",

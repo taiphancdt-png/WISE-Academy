@@ -417,7 +417,7 @@ export default async function ExpertPage({
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#002F5B]/10">
               {coreCerts.map((c, i) => (
                 <li
-                  key={c.name}
+                  key={`${c.name}-${c.org}`}
                   className="relative p-6 border-r border-b border-[#002F5B]/10 group"
                 >
                   <span
@@ -457,7 +457,7 @@ export default async function ExpertPage({
                             .filter((c) => (c.group || "Khác") === g)
                             .map((c) => (
                               <li
-                                key={c.name}
+                                key={`${c.name}-${c.org}`}
                                 className="py-3 border-b border-[#002F5B]/10"
                               >
                                 <p className="text-sm font-semibold text-[#102A43] leading-snug">
@@ -509,7 +509,7 @@ export default async function ExpertPage({
             <ol className="border-t border-[#002F5B]/10">
               {exp.career.map((c, i) => (
                 <li
-                  key={c.org}
+                  key={`${c.period}-${c.org}`}
                   className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10"
                 >
                   <span
@@ -544,7 +544,7 @@ export default async function ExpertPage({
             <ul className="border-t border-[#002F5B]/10">
               {exp.experience.map((e) => (
                 <li
-                  key={e.client}
+                  key={`${e.client}-${e.period}`}
                   className="group grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] gap-2 md:gap-10 py-6 border-b border-[#002F5B]/10"
                 >
                   <div>
