@@ -659,7 +659,7 @@
     "id": "hoang-minh-nghiep",
     "name": "Hoàng Minh Nghiệp",
     "role": "Cố vấn Cấp cao · Sr. Quality Management Consultant",
-    "title": "Thạc sĩ Quản lý Chất lượng · LSSI Lean Six Sigma Facilitator",
+    "title": "Thạc sĩ Quản lý Chất lượng · Chuyên gia cải tiến năng suất Lean theo phương thức Toyota (JPC) · Giảng viên chuyên gia năng suất (Bộ Công Thương & Samsung)",
     "bio": "Hơn 30 năm kinh nghiệm quản lý sản xuất, quản trị chất lượng toàn diện và nhà máy thông minh tại các tập đoàn sản xuất đa quốc gia, chuyên sâu Lean Manufacturing và Smart Factory. Đã đồng hành cùng hơn 5.000 học viên tại hơn 200 doanh nghiệp FDI và SME, từ Nestlé, Vinamilk, CP Việt Nam, POSCO Việt Nam đến Kumho Tires, TBS Group và Apache Footwear.",
     "tags": [
       "TQM",
@@ -731,19 +731,134 @@
         "client": "CSG, Việt Đức, TC, BUWWON",
         "period": "",
         "text": "Chương trình phát triển lãnh đạo: kỹ năng quản lý cho tổ trưởng, giám sát; tạo động lực; tư duy phản biện và hoạch định sản xuất."
+      },
+      {
+        "client": "Daikin, Yamaha, Uchida, VPIC, Zeon, Núi Pháo (H.C. Starck)",
+        "period": "",
+        "text": "Quản lý sản xuất theo mô hình Lean của Toyota, cải tiến năng suất và giảm lãng phí hiện trường, quản lý dự án và TPM."
+      },
+      {
+        "client": "Midea, Datalogic, Molex, MEIWA, Foster Electric, Jabil",
+        "period": "",
+        "text": "Cải tiến năng suất chất lượng tinh gọn theo phương thức Toyota, quản lý dự án cải tiến, hoạch định nguyên vật liệu, quản lý kho, giải quyết vấn đề và tư duy phản biện."
+      },
+      {
+        "client": "SOVI, Legoplastics, Daemung, Bao bì châu Á (API)",
+        "period": "",
+        "text": "Hoạch định sản xuất theo Lean và JIT, cải tiến năng suất, giảm lãng phí hiện trường và quản lý kho."
       }
     ],
     "certifications": [
       {
+        "name": "Chuyên gia tư vấn năng suất chất lượng",
+        "org": "Trung tâm Năng suất Nhật Bản (JPC) và VNPI (2016)",
+        "core": true
+      },
+      {
+        "name": "Giảng viên đào tạo chuyên gia cải tiến năng suất chất lượng",
+        "org": "Cục Công nghiệp, Bộ Công Thương và Samsung (2019)",
+        "core": true
+      },
+      {
+        "name": "Chẩn đoán viên doanh nghiệp ngành chế biến, chế tạo (Shindanshi)",
+        "org": "Cục Phát triển Doanh nghiệp và JICA (2023)",
+        "core": true
+      },
+      {
+        "name": "Khai vấn lãnh đạo (ICF Approved Leadership Coaching)",
+        "org": "Cục Phát triển Doanh nghiệp và USAID",
+        "core": true
+      },
+      {
         "name": "Lean Six Sigma Yellow Belt",
         "org": "BSI Training Academy (2023)",
-        "core": true
+        "group": "Lean Six Sigma"
+      },
+      {
+        "name": "Hệ thống quản lý doanh nghiệp",
+        "org": "VCCI và GIZ (IHK), CHLB Đức (2021, 2022)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Kiểm nghiệm và quản lý chất lượng sản phẩm dệt",
+        "org": "SITRA, Ấn Độ (1999)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Giảng viên kỹ năng quản lý",
+        "org": "Business Edge, IFC (2007)",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Kỹ năng quản lý",
+        "org": "Đại học LIUC, Milan, Ý (2001)",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Tham vấn tâm lý trị liệu và tâm lý ứng dụng",
+        "org": "Hội Khoa học Tâm lý Giáo dục TP.HCM (2018)",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Chuyên viên tiếp thị thực phẩm thị trường châu Âu",
+        "org": "CBI (Hà Lan) và HCACS (2010)",
+        "group": "Bền vững & Số hóa"
       }
     ],
     "education": [
       {
         "degree": "Thạc sĩ Quản lý Chất lượng",
         "school": "Đại học Libre Bruxelles và Đại học Mở TP.HCM (2010)"
+      },
+      {
+        "degree": "Kỹ sư Cơ khí",
+        "school": "Trường Đại học Bách khoa TP.HCM (1993)"
+      }
+    ],
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+      },
+      {
+        "period": "2016 - 2018",
+        "org": "Trung tâm Năng suất Nhật Bản (JPC) tại Việt Nam",
+        "role": "Chuyên gia cải tiến năng suất chất lượng theo phương thức Lean của Toyota"
+      },
+      {
+        "period": "2008 - 2021",
+        "org": "Công ty Tư vấn Quản lý BDSC",
+        "role": "Giám đốc tư vấn sản xuất và chất lượng dịch vụ"
+      },
+      {
+        "period": "2007 - 2008",
+        "org": "Công ty Phan Nam",
+        "role": "Giám đốc nhà máy sản xuất kem Monterosa"
+      },
+      {
+        "period": "2005 - 2006",
+        "org": "Công ty CP Sợi Thế Kỷ",
+        "role": "Phó Ban Kinh doanh và Dịch vụ khách hàng"
+      },
+      {
+        "period": "1993 - 2004",
+        "org": "Công ty Dệt May Thành Công",
+        "role": "Từ nhân viên vận hành, tổ trưởng, trưởng kế hoạch điều độ đến Phó Giám đốc nhà máy Dệt và Giám đốc Ban Kỹ thuật Dệt"
+      }
+    ],
+    "regions": [
+      {
+        "country": "Nhật Bản",
+        "text": "Chuyên gia dự án của Trung tâm Năng suất Nhật Bản (JPC), cải tiến theo phương thức Toyota"
+      },
+      {
+        "country": "Ý",
+        "text": "Khóa Kỹ năng quản lý tại Đại học LIUC, Milan"
+      },
+      {
+        "country": "Ấn Độ",
+        "text": "Kiểm nghiệm và quản lý chất lượng sản phẩm dệt tại SITRA"
       }
     ]
   },
@@ -1001,8 +1116,8 @@
     "id": "pham-the-linh",
     "name": "Phạm Thế Linh",
     "role": "Chuyên gia tư vấn & Giảng viên Lean · WISE Academy",
-    "title": "Chuyên gia chẩn đoán doanh nghiệp (JICA) · Chuyên gia tư vấn cải tiến năng suất (Bộ Công Thương) · Thạc sĩ Kỹ thuật Công nghiệp",
-    "bio": "Hơn 7 năm kinh nghiệm trong quản lý đào tạo và tư vấn Lean, chuyên nâng cấp quy trình sản xuất và triển khai Lean Six Sigma tại nhà máy. Từng là kỹ sư công nghệ tại Bühler với các dự án nhà máy chế biến lúa gạo ở Việt Nam, Thái Lan, Philippines và Malaysia, Trưởng phòng Công nghệ kiêm Giám đốc dự án Lean tại TTF, nay là chuyên gia tư vấn và giảng viên của WISE Academy.",
+    "title": "Chuyên gia năng suất APO (APO-PS 101:2023) · Chuyên gia tư vấn cải tiến năng suất (Bộ Công Thương) · Thạc sĩ Kỹ thuật Cơ khí",
+    "bio": "Hơn 7 năm kinh nghiệm trong quản lý đào tạo và tư vấn Lean, chuyên nâng cấp quy trình sản xuất và triển khai Lean Six Sigma tại nhà máy. Từng là kỹ sư công nghệ tại Bühler với các dự án nhà máy chế biến lúa gạo ở Việt Nam, Thái Lan, Philippines và Malaysia, Trưởng phòng Công nghệ kiêm Giám đốc dự án Lean tại Trường Thành (TTF), nay là chuyên gia tư vấn và giảng viên của WISE Academy.",
     "tags": [
       "Lean Six Sigma",
       "Năng suất",
@@ -1051,57 +1166,82 @@
     ],
     "career": [
       {
-        "period": "Hiện nay",
+        "period": "08/2024 - nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+        "role": "Chuyên gia tư vấn cải tiến năng suất, chất lượng và đào tạo quản lý sản xuất"
       },
       {
-        "period": "",
-        "org": "7 Solutions",
-        "role": "Chuyên gia tư vấn năng suất, chất lượng và chuyển đổi số"
+        "period": "08/2023 - nay",
+        "org": "YCA Education (Youth Creative Academy)",
+        "role": "Đồng sáng lập, Phó Giám đốc"
       },
       {
-        "period": "",
-        "org": "Youth Creative Academy (YCademy)",
-        "role": "Phó Tổng Giám đốc"
+        "period": "03/2023",
+        "org": "P&Q Solutions",
+        "role": "Chuyên gia tư vấn, phòng Business Excellence"
       },
       {
-        "period": "",
-        "org": "TTF (Trường Thành)",
-        "role": "Trưởng phòng Công nghệ, Giám đốc dự án Lean"
+        "period": "09/2019 - 02/2023",
+        "org": "Tập đoàn Kỹ nghệ Gỗ Trường Thành (TTF)",
+        "role": "Trưởng phòng Kỹ thuật Công nghệ, Giám đốc dự án Lean"
       },
       {
-        "period": "",
-        "org": "Bühler",
-        "role": "Trưởng nhóm đào tạo, Kỹ sư công nghệ"
+        "period": "01/2018 - 08/2019",
+        "org": "Bühler Asia Vietnam",
+        "role": "Trưởng nhóm đào tạo, Kỹ sư công nghệ nguyên liệu dạng hạt khu vực Đông Nam Á"
       }
     ],
     "experience": [
       {
         "client": "Bühler: nhà máy chế biến lúa gạo",
-        "period": "",
-        "text": "Thiết kế sơ đồ công nghệ dây chuyền chế biến hạt, chạy thử, hoàn thiện và bàn giao; xây dựng phòng đo lường chất lượng; phụ trách đào tạo chuyên ngành lúa gạo cho nội bộ và khách hàng. Dự án tại Phụng Hoàng, Thạnh Hưng (Thốt Nốt, Cần Thơ), Thiên Lộc Phú (Tân Trụ, Long An), Siam Parboiled (Thái Lan), Biotech Farm Group (Philippines), Ada Aura và Pasti Selera (Malaysia)."
+        "period": "2018 - 2019",
+        "text": "Thiết kế sơ đồ công nghệ dây chuyền chế biến hạt, chạy thử, hoàn thiện và bàn giao; xây dựng phòng đo lường chất lượng; đào tạo chuyên ngành gạo cho nội bộ và khách hàng. Dự án tại Phụng Hoàng, Thạnh Hưng (Thốt Nốt, Cần Thơ), Thiên Lộc Phú (Long An), Siam Parboiled (Thái Lan), Biotech Farm (Philippines), Ada Aura và Pasti Selera (Malaysia)."
       },
       {
-        "client": "TTF: nhà máy sofa",
-        "period": "10/2020 - 11/2021",
-        "text": "Thiết kế và xây dựng dây chuyền sản xuất sofa; xây dựng chuyền cắt da CNC và chuyển giao hệ thống ERP từ Thagora (Romania); số hóa quy trình, xây dựng hệ thống MES và cải tiến năng suất chuyền theo Lean Six Sigma."
+        "client": "Trường Thành (TTF)",
+        "period": "2019 - 2023",
+        "text": "Điều phối xây dựng và vận hành nhà máy tủ bếp; thiết lập dữ liệu kỹ thuật tính giá thành; thiết kế dây chuyền nhà máy sofa, chuyền cắt da CNC và chuyển giao ERP từ Thagora (Romania); tiếp nhận hệ thống IMOS sản xuất tủ bếp kết nối Hafele; xây dựng MES, số hóa dữ liệu SAP/ERP và cải tiến năng suất chuyền theo Lean Six Sigma; đào tạo kỹ thuật cho Meister Kitchen Cabinet."
       },
       {
-        "client": "7 Solutions",
-        "period": "",
-        "text": "Tư vấn cải tiến năng suất, chất lượng và lộ trình số hóa cho doanh nghiệp; tổ chức tư vấn cải tiến sản xuất cho doanh nghiệp công nghiệp hỗ trợ khu vực phía Nam."
+        "client": "Dự án công nghiệp hỗ trợ phía Nam (Cục Công nghiệp)",
+        "period": "2023",
+        "text": "Tư vấn cải tiến sản xuất cho MTS Việt Nam, Alpha Fastener, Gia Nhật Tân, Cơ khí chính xác Khải Hoàn, Việt Nhật Tân, Kato Precision, Kato MP, Numatec và Cơ khí Q.C.S."
       },
       {
-        "client": "Youth Creative Academy (YCademy)",
+        "client": "Q.C.S, Kato Group, Gia Nhật Tân",
         "period": "",
+        "text": "Tư vấn và đào tạo cải tiến năng suất áp dụng 5S, TPM, SMED, 7 công cụ QC."
+      },
+      {
+        "client": "Giày Hằng Vỹ",
+        "period": "",
+        "text": "Tư vấn và đào tạo cải tiến năng suất áp dụng 5S."
+      },
+      {
+        "client": "An Giang Samho, Pou Chen",
+        "period": "2024 - 2025",
+        "text": "Chương trình đào tạo Lean Six Sigma Đai Vàng cho quản lý sản xuất."
+      },
+      {
+        "client": "Tân Long Group",
+        "period": "",
+        "text": "Chương trình \"Sáng kiến Tân Long\": áp dụng Kaizen trên toàn tập đoàn."
+      },
+      {
+        "client": "CSED TP.HCM",
+        "period": "",
+        "text": "Chuỗi đào tạo nâng cao năng suất, chất lượng cho doanh nghiệp sản xuất."
+      },
+      {
+        "client": "YCA Education",
+        "period": "2023 - nay",
         "text": "Xây dựng và quản lý hệ thống vận hành, phát triển kết nối tư vấn và đào tạo với các trường đại học và doanh nghiệp."
       }
     ],
     "certifications": [
       {
-        "name": "Chuyên gia chẩn đoán doanh nghiệp",
-        "org": "Cơ quan Hợp tác Quốc tế Nhật Bản (JICA)",
+        "name": "Chuyên gia năng suất APO (APO-PS 101:2023, TCVN 13751:2023)",
+        "org": "Tổ chức Năng suất châu Á (APO), chứng nhận 2024 - 2027",
         "core": true
       },
       {
@@ -1110,29 +1250,39 @@
         "core": true
       },
       {
-        "name": "Chuyên gia chẩn đoán doanh nghiệp",
-        "org": "Trung tâm Tư vấn Giải pháp Công nghệ Việt Nam - Hàn Quốc",
+        "name": "Chẩn đoán viên Shindanshi",
+        "org": "JICA",
         "core": true
+      },
+      {
+        "name": "Kiểm toán viên năng lượng",
+        "org": "Bộ Công Thương",
+        "core": true
+      },
+      {
+        "name": "Khóa đào tạo chuyên gia tư vấn VITASK",
+        "org": "Trung tâm Tư vấn Giải pháp Công nghệ Việt Nam - Hàn Quốc",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Ứng dụng công nghệ trong quản lý sản xuất theo Lean; Hệ thống quản lý chất lượng ISO",
+        "org": "Tổ chức Năng suất châu Á (APO)",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "IELTS 7.0",
-        "org": "British Council",
-        "core": true
-      },
-      {
-        "name": "Chuyên gia năng suất",
-        "org": "Tổ chức chứng nhận chuyên gia năng suất Việt Nam (2024 - 2027)",
-        "group": "Lean & Năng suất"
+        "org": "British Council (2014)",
+        "group": "Đào tạo & Coaching"
       }
     ],
     "education": [
       {
-        "degree": "Thạc sĩ Kỹ thuật Công nghiệp",
-        "school": "Trường Đại học Sư phạm Kỹ thuật"
+        "degree": "Thạc sĩ Kỹ thuật Cơ khí",
+        "school": "Trường Đại học Sư phạm Kỹ thuật TP.HCM (2017)"
       },
       {
         "degree": "Kỹ sư Cơ khí",
-        "school": "Trường Đại học Sư phạm Kỹ thuật"
+        "school": "Trường Đại học Sư phạm Kỹ thuật TP.HCM (2015)"
       }
     ],
     "languages": "Tiếng Việt, Tiếng Anh",
@@ -1160,6 +1310,20 @@
         "name": "Nguyễn Thanh Hải",
         "role": "Tổng Giám đốc, Kato Precision",
         "quote": "Khóa đào tạo công cụ Lean Six Sigma đã thay đổi rõ rệt nhận thức của nhân viên về quản lý, vận hành sản xuất và cải tiến liên tục. Dưới sự hướng dẫn của chuyên gia trong khảo sát, lập kế hoạch và triển khai, dự án mang lại năng suất tăng, chất lượng ổn định và năng lực nhân viên được nâng cao."
+      }
+    ],
+    "photos": [
+      {
+        "src": "/images/experts/pham-the-linh-1.webp",
+        "caption": "Đứng lớp đào tạo năng suất cho đội ngũ quản lý sản xuất"
+      },
+      {
+        "src": "/images/experts/pham-the-linh-2.webp",
+        "caption": "Cùng học viên chương trình đào tạo tại doanh nghiệp"
+      },
+      {
+        "src": "/images/experts/pham-the-linh-3.webp",
+        "caption": "Hiện trường nhà máy sau cải tiến 5S và bố trí mặt bằng"
       }
     ]
   },
