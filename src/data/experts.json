@@ -95,7 +95,7 @@
       {
         "client": "Biti's",
         "period": "",
-        "text": "Chuyển đổi Lean: triển khai 6S cho văn phòng và trung tâm phân phối (thành lập ban 6S, checklist tiêu chuẩn); Hoshin Kanri với X-Matrix giai đoạn 2021 - 2026, triển khai A3 xuống các phòng ban, xây dựng 6 kế hoạch kinh doanh liên tục (BCP). Năng suất tăng 15%, diện tích sử dụng giảm 7,84%."
+        "text": "Triển khai Lean tại 3 cơ sở sản xuất, chuyển đổi Lean cho nhà máy hiện hữu, PDCA và 6S cho văn phòng, showroom và kênh kinh doanh; 6S cho văn phòng và trung tâm phân phối (thành lập ban 6S, checklist tiêu chuẩn); Hoshin Kanri với X-Matrix giai đoạn 2021 - 2026, triển khai A3 xuống các phòng ban, xây dựng 6 kế hoạch kinh doanh liên tục (BCP). Năng suất tăng 15%, diện tích sử dụng giảm 7,84%."
       },
       {
         "client": "PNJ Production",
@@ -120,7 +120,22 @@
       {
         "client": "Apache Footwear",
         "period": "2019, 2026",
-        "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset."
+        "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset. Đào tạo Lean nâng cao cho ban lãnh đạo và dự án Lean Six Sigma DMAIC."
+      },
+      {
+        "client": "Vaeso & Impactiva",
+        "period": "",
+        "text": "Dự án chuyển đổi số và quản lý dữ liệu sản xuất theo thời gian thực, vai trò PO Specialist."
+      },
+      {
+        "client": "Simpson Strong-Tie",
+        "period": "",
+        "text": "Đồng giảng viên các chương trình Lean Fundamental, vòng tròn Ohno và loại bỏ 10 lãng phí, đào tạo và tư vấn 5S, Hoshin Kanri."
+      },
+      {
+        "client": "Jia Hsin Footwear",
+        "period": "",
+        "text": "Đào tạo Lean nâng cao cho ban lãnh đạo nhà máy."
       },
       {
         "client": "AQUA Việt Nam",
@@ -140,7 +155,7 @@
       {
         "client": "Freetrend (Dean Shoes Group)",
         "period": "2009 - 2015",
-        "text": "Thiết lập chuyền Lean đạt chứng nhận Nike NOS Line Definition Audit, duy trì hệ thống quản lý Lean cấp Bronze, chuẩn hóa phòng ban, cải tiến năng suất, chất lượng, dòng giá trị và hệ thống kéo."
+        "text": "Thiết lập chuyền Lean đạt chứng nhận Nike NOS Line Definition Audit, duy trì hệ thống quản lý Lean cấp Bronze, chuẩn hóa phòng ban, cải tiến năng suất, chất lượng, dòng giá trị và hệ thống kéo. Đánh giá mức độ trưởng thành Lean (Lean Maturity Assessment) và đào tạo đội ngũ quản lý kế cận."
       },
       {
         "client": "Vision International",
@@ -273,6 +288,11 @@
         "name": "BMGI Training, Internal Lean Sensei, Management Trainee Program",
         "org": "Freetrend (Dean Shoes Group)",
         "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Gamification Design",
+        "org": "Save the World from Boring Training",
+        "group": "Đào tạo & Coaching"
       }
     ],
     "education": [
@@ -381,7 +401,7 @@
       {
         "period": "11/2024 - nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn Lean, Giảng viên Lean Six Sigma của Lean Six Sigma Institute (LSSI) Global"
+        "role": "Chuyên gia tư vấn và Giảng viên Lean Six Sigma của LSSI Global, Quản lý Phát triển kinh doanh"
       },
       {
         "period": "2021 - 2024",
@@ -438,12 +458,12 @@
       {
         "client": "Jia Hsin Footwear",
         "period": "2020",
-        "text": "Hỗ trợ tích hợp tự động hóa nâng cao năng lực sản xuất, áp dụng Lean đáp ứng mục tiêu chiến lược Adidas 2020, đào tạo văn hóa Lean, nền tảng IE/ME và tối ưu hệ thống."
+        "text": "Hỗ trợ tích hợp tự động hóa nâng cao năng lực sản xuất, áp dụng Lean đáp ứng mục tiêu chiến lược Adidas 2020, đào tạo văn hóa Lean, nền tảng IE/ME và tối ưu hệ thống; đào tạo Lean nâng cao cho ban lãnh đạo nhà máy."
       },
       {
         "client": "Apache Footwear",
         "period": "2019, 2026",
-        "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset."
+        "text": "Tư vấn IE, bố trí Lean, thiết kế chuyền Cell và hệ thống kéo Kanban theo định hướng Adidas aSC60; năm 2026 đào tạo Lean Fundamental & Kaizen Mindset. Đào tạo Lean nâng cao cho ban lãnh đạo và dự án Lean Six Sigma DMAIC."
       },
       {
         "client": "GEODIS Vietnam",
@@ -531,6 +551,11 @@
         "name": "Số hóa nhà máy và ứng dụng AI trong sản xuất cơ khí",
         "org": "Quanskill & Bossard",
         "group": "An toàn & Số hóa"
+      },
+      {
+        "name": "DMAIC Problem Solving",
+        "org": "TMS Vietnam",
+        "group": "Lean Six Sigma"
       }
     ],
     "education": [
