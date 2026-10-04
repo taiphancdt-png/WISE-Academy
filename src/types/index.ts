@@ -15,7 +15,7 @@ export interface Expert {
   expertise?: string[];
   career?: { period: string; org: string; role: string }[];
   experience?: { client: string; period: string; text: string; metric?: string }[];
-  certifications?: { name: string; org: string }[];
+  certifications?: { name: string; org: string; group?: string }[];
   education?: { degree: string; school: string }[];
   regions?: { country: string; text: string }[];
   languages?: string;

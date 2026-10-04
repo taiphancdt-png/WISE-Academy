@@ -80,6 +80,9 @@ function Rail({
   );
 }
 
+// order of the themed columns of further training
+const GROUP_ORDER = ["Lean & Năng suất", "Đào tạo & Coaching", "Bền vững & Số hóa", "Khác"];
+
 // Projects whose client is named in the expert's bio (e.g. "Pou Chen", "Geodis", "Samho").
 function relatedProjects(exp: Expert) {
   const bio = exp.bio.toLowerCase();
@@ -123,6 +126,8 @@ export default async function ExpertPage({
   // the first sentence of the bio as a short lead
   const lead = exp.bio.split(/(?<=\.)\s/)[0];
   const rest = exp.bio.slice(lead.length).trim();
+  // training beyond the six core credentials, listed by theme
+  const moreCerts = exp.certifications?.slice(6) ?? [];
 
   return (
     <div className="bg-[#F8F9FA]">
@@ -428,16 +433,28 @@ export default async function ExpertPage({
               ))}
             </ul>
             {exp.certifications.length > 6 && (
-              <div className="mt-10">
+              <div className="mt-12">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Các khóa đào tạo chuyên sâu khác</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {exp.certifications.slice(6).map((c) => (
-                    <li key={c.name} className="rounded-full border border-[#002F5B]/15 bg-white px-3.5 py-1.5 text-[13px] text-[#002F5B]">
-                      <span className="font-semibold">{c.name}</span>
-                      <span className="text-[#486581]"> · {c.org}</span>
-                    </li>
+                {/* further training grouped by theme, in tidy columns */}
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8">
+                  {Array.from(new Set(moreCerts.map((c) => c.group || "Khác")))
+                    .sort((a, b) => GROUP_ORDER.indexOf(a) - GROUP_ORDER.indexOf(b))
+                    .map((g) => (
+                    <div key={g}>
+                      <h3 className="pb-3 border-b-2 border-[#002F5B] text-sm font-bold text-[#002F5B]">{g}</h3>
+                      <ul>
+                        {moreCerts
+                          .filter((c) => (c.group || "Khác") === g)
+                          .map((c) => (
+                            <li key={c.name} className="py-3 border-b border-[#002F5B]/10">
+                              <p className="text-sm font-semibold text-[#102A43] leading-snug">{c.name}</p>
+                              <p className="mt-0.5 text-xs text-[#486581]">{c.org}</p>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </Rail>

@@ -195,59 +195,73 @@
       },
       {
         "name": "ToT Chuyên gia tư vấn Kinh doanh bao trùm",
-        "org": "APED, Bộ Tài chính"
+        "org": "APED, Bộ Tài chính",
+        "group": "Bền vững & Số hóa"
       },
       {
         "name": "Tối ưu lắp ráp, số hóa nhà máy và ứng dụng AI trong sản xuất cơ khí",
-        "org": "Quanskill & Bossard"
+        "org": "Quanskill & Bossard",
+        "group": "Bền vững & Số hóa"
       },
       {
         "name": "NOS Core Training Program",
-        "org": "Nike & AITC"
+        "org": "Nike & AITC",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "Becoming Coaching Leader",
-        "org": "IFC, Coach Đàm Minh Hạnh"
+        "org": "IFC, Coach Đàm Minh Hạnh",
+        "group": "Đào tạo & Coaching"
       },
       {
         "name": "ToT Gender Equality and Returns (GEAR)",
-        "org": "IFC, ILO, Better Work"
+        "org": "IFC, ILO, Better Work",
+        "group": "Đào tạo & Coaching"
       },
       {
         "name": "Train the Trainer Program",
-        "org": "Impactiva"
+        "org": "Impactiva",
+        "group": "Đào tạo & Coaching"
       },
       {
         "name": "Vaeso Digital Platform Training",
-        "org": "Vaeso, Impactiva"
+        "org": "Vaeso, Impactiva",
+        "group": "Bền vững & Số hóa"
       },
       {
         "name": "L&D Business Partner",
-        "org": "Eduviet"
+        "org": "Eduviet",
+        "group": "Đào tạo & Coaching"
       },
       {
         "name": "Instructional Design",
-        "org": "Save the World from Boring Training"
+        "org": "Save the World from Boring Training",
+        "group": "Đào tạo & Coaching"
       },
       {
         "name": "A Guide on Kaizen Implementation",
-        "org": "BSI, Neville Clarke"
+        "org": "BSI, Neville Clarke",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "VSM Training Program",
-        "org": "BSI, Neville Clarke"
+        "org": "BSI, Neville Clarke",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "PMTS (Predetermined Motion Time Study)",
-        "org": "Timeline Training, Satra Technology"
+        "org": "Timeline Training, Satra Technology",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "GSD Training Program",
-        "org": "SIG"
+        "org": "SIG",
+        "group": "Lean & Năng suất"
       },
       {
         "name": "BMGI Training, Internal Lean Sensei, Management Trainee Program",
-        "org": "Freetrend (Dean Shoes Group)"
+        "org": "Freetrend (Dean Shoes Group)",
+        "group": "Lean & Năng suất"
       }
     ],
     "education": [
