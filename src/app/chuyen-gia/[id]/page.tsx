@@ -324,24 +324,13 @@ export default async function ExpertPage({
                   fill="#FF9F43"
                 />
               </svg>
-              {/* cut-out portrait ending in a wave; a page-coloured wave laid over its foot casts a soft shadow up onto the figure */}
+              {/* cut-out portrait, its lower edge fading into the page */}
               {exp.cutout ? (
-                <>
-                  <img
-                    src={exp.cutout}
-                    alt={exp.name}
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
-                    style={WAVE_MASK}
-                  />
-                  <svg
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] aspect-[900/892] pointer-events-none drop-shadow-[0_-10px_14px_rgba(0,30,56,0.22)]"
-                  >
-                    <path d="M0 89C6 86 12 88 25 91S50 97 63 90 88 84 100 90V100H0Z" fill="#FBF6F1" />
-                  </svg>
-                </>
+                <img
+                  src={exp.cutout}
+                  alt={exp.name}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none  drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
+                 style={WAVE_MASK} />
               ) : (
                 <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
                   {exp.image ? (
@@ -378,7 +367,7 @@ export default async function ExpertPage({
                   </p>
                 </div>
               )}
-              <span className="absolute left-1/2 -bottom-5 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
+              <span className="absolute left-1/2 bottom-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
                 WISE Academy Expert
               </span>
             </div>
