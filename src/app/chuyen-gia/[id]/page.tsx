@@ -314,6 +314,29 @@ export default async function ExpertPage({
               </span>
             ))}
           </p>
+            {(exp.education || exp.languages) && (
+              <div className="mt-10 pt-8 border-t border-[#002F5B]/10 grid grid-cols-1 md:grid-cols-2 gap-10">
+                {exp.education && (
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Học vấn</p>
+                    <ul className="mt-4 space-y-4">
+                      {exp.education.map((e) => (
+                        <li key={e.degree} className="pl-4 border-l-2 border-[#F76011]">
+                          <p className="font-semibold text-[#002F5B]">{e.degree}</p>
+                          <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {exp.languages && (
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Ngoại ngữ</p>
+                    <p className="mt-4 pl-4 border-l-2 border-[#F76011] text-[15px] text-[#102A43] leading-relaxed">{exp.languages}</p>
+                  </div>
+                )}
+              </div>
+            )}
         </Rail>
 
         {exp.regions && (
@@ -360,29 +383,6 @@ export default async function ExpertPage({
                 </li>
               ))}
             </ol>
-            {(exp.education || exp.languages) && (
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
-                {exp.education && (
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Học vấn</p>
-                    <ul className="mt-4 space-y-4">
-                      {exp.education.map((e) => (
-                        <li key={e.degree} className="pl-4 border-l-2 border-[#F76011]">
-                          <p className="font-semibold text-[#002F5B]">{e.degree}</p>
-                          <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {exp.languages && (
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Ngoại ngữ</p>
-                    <p className="mt-4 pl-4 border-l-2 border-[#F76011] text-[15px] text-[#102A43] leading-relaxed">{exp.languages}</p>
-                  </div>
-                )}
-              </div>
-            )}
           </Rail>
         )}
 
