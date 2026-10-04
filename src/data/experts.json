@@ -171,27 +171,38 @@
     "certifications": [
       {
         "name": "Lean Six Sigma Black Belt",
-        "org": "Six Sigma Management Institute (SSMI)"
+        "org": "Six Sigma Management Institute (SSMI)",
+        "core": true
       },
       {
-        "name": "Lean Six Sigma Green Belt",
-        "org": "Lean Six Sigma Institute (LSSI)"
-      },
-      {
-        "name": "Training of Trainers for Lean Six Sigma",
-        "org": "Lean Six Sigma Institute (LSSI)"
-      },
-      {
-        "name": "Lean Six Sigma Green Belt, Operational Excellence",
-        "org": "Wieck Institute of Management Consulting"
+        "name": "Lean Sensei",
+        "org": "Nike NOS Core Training Program, Nike & AITC",
+        "core": true
       },
       {
         "name": "Khóa chuyên gia chẩn đoán sản xuất (Preliminary Manufacturing Shindanshi)",
-        "org": "JICA, Bộ KH&ĐT và AED"
+        "org": "JICA, Bộ KH&ĐT và AED",
+        "core": true
       },
       {
         "name": "ToT Chuyên gia tư vấn ESG",
-        "org": "APED, Bộ Tài chính"
+        "org": "APED, Bộ Tài chính",
+        "core": true
+      },
+      {
+        "name": "Lean Six Sigma Green Belt",
+        "org": "Lean Six Sigma Institute (LSSI)",
+        "group": "Lean Six Sigma"
+      },
+      {
+        "name": "Training of Trainers for Lean Six Sigma",
+        "org": "Lean Six Sigma Institute (LSSI)",
+        "group": "Lean Six Sigma"
+      },
+      {
+        "name": "Lean Six Sigma Green Belt, Operational Excellence",
+        "org": "Wieck Institute of Management Consulting",
+        "group": "Lean Six Sigma"
       },
       {
         "name": "ToT Chuyên gia tư vấn Kinh doanh bao trùm",
@@ -202,11 +213,6 @@
         "name": "Tối ưu lắp ráp, số hóa nhà máy và ứng dụng AI trong sản xuất cơ khí",
         "org": "Quanskill & Bossard",
         "group": "Bền vững & Số hóa"
-      },
-      {
-        "name": "NOS Core Training Program",
-        "org": "Nike & AITC",
-        "group": "Lean & Năng suất"
       },
       {
         "name": "Becoming Coaching Leader",
