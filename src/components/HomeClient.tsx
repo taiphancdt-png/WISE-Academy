@@ -188,7 +188,7 @@ export default function HomeClient({
           </div>
           <div>
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
-              Giải pháp tư vấn cho <span className="text-[#F76011]">mọi tổ chức</span>
+              Nâng cao năng suất, chất lượng và <span className="text-[#F76011]">phát triển đội ngũ</span>
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
               Từ nhà máy sản xuất, kho vận đến văn phòng dịch vụ, chuyên gia WISE Academy cùng ban lãnh đạo xuống tận hiện trường, quan sát
