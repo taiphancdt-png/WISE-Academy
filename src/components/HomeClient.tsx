@@ -152,7 +152,7 @@ export default function HomeClient({
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1]">
               <span className="block">Tối ưu vận hành,</span>
               <span className="block">tăng năng suất,</span>
-              <span className="block text-[#FF7A30]">tối ưu chi phí</span>
+              <span className="block text-[#FF7A30]">giảm chi phí</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-white/85 max-w-xl leading-relaxed">
               Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
