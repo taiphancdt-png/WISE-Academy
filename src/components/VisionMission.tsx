@@ -12,8 +12,10 @@ export interface VisionMissionItem {
 const D = 168; // the centre circle
 const GAP = 130; // room between the two cards; the circle sits in a curved notch cut into both
 const NOTCH = D / 2 + 16; // radius of the notch around the circle
-const OUT = D / 2; // the icon circles sit on the cards' outer edges, half outside, inside the section width
-const PAD_OUT = NOTCH + 18; // text clears the outer notch
+const SIDE = Math.round((D * 2) / 3); // the two icon circles, 2/3 of the W circle
+const SIDE_NOTCH = SIDE / 2 + 12;
+const OUT = SIDE / 2; // the icon circles sit on the cards' outer edges, half outside, inside the section width
+const PAD_OUT = SIDE_NOTCH + 22; // text clears the outer notch
 // soft tints of each card's colour for its icon circle
 const TINT = [
   { bg: "bg-gradient-to-br from-white to-[#E6EFF9]", ring: "border-[#3A78B5]/25", icon: "text-[#3A78B5]" },
@@ -136,7 +138,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       </div>
     </>
   );
-  const notch = (x: string) => `radial-gradient(circle ${NOTCH}px at ${x} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`;
+  const notch = (x: string, r = NOTCH) => `radial-gradient(circle ${r}px at ${x} 50%, transparent ${r - 0.5}px, #000 ${r}px)`;
 
   return (
     <>
@@ -156,8 +158,8 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
               className={`h-full rounded-[28px] py-10 ${i === 0 ? "pr-14" : "pl-14"} ${it.className}`}
               style={{
                 [i === 0 ? "paddingLeft" : "paddingRight"]: PAD_OUT,
-                WebkitMaskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%")}`,
-                maskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%")}`,
+                WebkitMaskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%", SIDE_NOTCH)}`,
+                maskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%", SIDE_NOTCH)}`,
                 WebkitMaskComposite: "source-in",
                 maskComposite: "intersect",
               } as React.CSSProperties}
@@ -175,13 +177,13 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
               sideRefs.current[i] = el;
             }}
             className="absolute left-1/2 top-1/2 z-[5]"
-            style={{ width: D, height: D, transform: "translate(-50%, -50%)", opacity: 0 }}
+            style={{ width: SIDE, height: SIDE, transform: "translate(-50%, -50%)", opacity: 0 }}
             aria-hidden="true"
           >
             {/* lighter than the W circle: a soft tint of the card's colour, a white rim and a thin tinted line */}
-            <div className={`absolute inset-0 rounded-full border-[5px] border-white shadow-[0_14px_32px_-18px_rgba(0,47,91,0.35)] ${TINT[i].bg}`} />
-            <div className={`absolute inset-[18px] rounded-full border ${TINT[i].ring}`} />
-            <span className={`absolute inset-0 m-auto w-[40%] h-[40%] ${TINT[i].icon} [&>svg]:w-full [&>svg]:h-full`}>{it.icon}</span>
+            <div className={`absolute inset-0 rounded-full border-4 border-white shadow-[0_14px_32px_-18px_rgba(0,47,91,0.35)] ${TINT[i].bg}`} />
+            <div className={`absolute inset-[12px] rounded-full border ${TINT[i].ring}`} />
+            <span className={`absolute inset-0 m-auto w-[44%] h-[44%] ${TINT[i].icon} [&>svg]:w-full [&>svg]:h-full`}>{it.icon}</span>
           </div>
         ))}
 
