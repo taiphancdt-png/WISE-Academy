@@ -36,7 +36,19 @@ export async function generateMetadata({
 }
 
 // One section of the profile body: a sticky left rail with an outlined number and the section name.
-function Rail({ no, label, id, children }: { no: string; label: string; id?: string; children: React.ReactNode }) {
+function Rail({
+  no,
+  label,
+  id,
+  photo,
+  children,
+}: {
+  no: string;
+  label: string;
+  id?: string;
+  photo?: { src: string; caption: string };
+  children: React.ReactNode;
+}) {
   return (
     <section id={id} className="px-4 sm:px-6 scroll-mt-24">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-12 py-14 lg:py-20 border-t border-[#002F5B]/10 first:border-t-0">
@@ -46,44 +58,25 @@ function Rail({ no, label, id, children }: { no: string; label: string; id?: str
           </span>
           <h2 className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-[#002F5B]">{label}</h2>
         </div>
-        <div>{children}</div>
+        {photo ? (
+          // a photo of the expert at work beside the content, keeping the section in one piece
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,300px)] gap-10 items-start">
+            <div>{children}</div>
+            <figure className="md:sticky md:top-28">
+              <div className="overflow-hidden rounded-3xl aspect-[4/5] bg-slate-100 shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]">
+                <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <figcaption className="mt-3 flex gap-2 text-xs text-[#486581] leading-snug">
+                <span aria-hidden="true" className="mt-1.5 h-px w-5 shrink-0 bg-[#F76011]" />
+                {photo.caption}
+              </figcaption>
+            </figure>
+          </div>
+        ) : (
+          <div>{children}</div>
+        )}
       </div>
     </section>
-  );
-}
-
-// A photo of the expert at work placed between sections, each one laid out differently:
-// a wide cinematic strip, or a smaller frame pushed to the right or left with its caption beside it.
-function PhotoBreak({ photo, variant }: { photo?: { src: string; caption: string }; variant: "wide" | "right" | "left" }) {
-  if (!photo) return null;
-  if (variant === "wide") {
-    return (
-      <figure className="px-4 sm:px-6 py-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] bg-slate-100">
-            <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover object-[center_30%]" loading="lazy" />
-          </div>
-          <figcaption className="mt-3 flex items-center gap-2 text-xs text-[#486581]">
-            <span aria-hidden="true" className="h-px w-6 bg-[#F76011]" />
-            {photo.caption}
-          </figcaption>
-        </div>
-      </figure>
-    );
-  }
-  const right = variant === "right";
-  return (
-    <figure className="px-4 sm:px-6 py-4">
-      <div className={`max-w-6xl mx-auto flex flex-col md:items-end gap-5 ${right ? "md:flex-row" : "md:flex-row-reverse"}`}>
-        <figcaption className={`md:w-1/3 md:pb-6 text-sm text-[#486581] leading-relaxed ${right ? "md:text-right" : ""}`}>
-          <span aria-hidden="true" className={`mb-3 block h-0.5 w-10 bg-[#F76011] ${right ? "md:ml-auto" : ""}`} />
-          {photo.caption}
-        </figcaption>
-        <div className={`md:w-7/12 overflow-hidden rounded-3xl aspect-[4/3] bg-slate-100 ${right ? "md:ml-auto md:rotate-[1.2deg]" : "md:mr-auto md:-rotate-[1.2deg]"} shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]`}>
-          <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" loading="lazy" />
-        </div>
-      </div>
-    </figure>
   );
 }
 
@@ -305,7 +298,7 @@ export default async function ExpertPage({
 
       {/* Profile body: a numbered left rail with the section name, content on the right (consulting-firm bio style) */}
       <div className="bg-white">
-        <Rail no="01" label="Giới thiệu">
+        <Rail no="01" label="Giới thiệu" photo={exp.photos?.[0]}>
           {/* the hero already shows the first sentence of the bio; here the rest, set large */}
           <p className="text-2xl sm:text-[30px] leading-[1.4] font-medium tracking-tight text-[#002F5B]">{rest || exp.bio}</p>
           <p className="mt-8 text-sm text-[#486581]">
@@ -331,11 +324,9 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        <PhotoBreak photo={exp.photos?.[0]} variant="wide" />
-
         {exp.expertise && (
-          <Rail no="03" label="Thế mạnh chuyên môn">
-            <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
+          <Rail no="03" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
+            <ol className={`grid grid-cols-1 ${exp.photos?.[1] ? "" : "md:grid-cols-2"} gap-x-12 border-t border-[#002F5B]/10`}>
               {exp.expertise.map((t, i) => (
                 <li key={t} className="group flex gap-5 py-5 border-b border-[#002F5B]/10">
                   <span className="shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
@@ -346,10 +337,8 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        <PhotoBreak photo={exp.photos?.[1]} variant="right" />
-
         {exp.career && (
-          <Rail no="04" label="Quá trình công tác" id="qua-trinh">
+          <Rail no="04" label="Quá trình công tác" id="qua-trinh" photo={exp.photos?.[2]}>
             <ol className="border-t border-[#002F5B]/10">
               {exp.career.map((c, i) => (
                 <li key={c.org} className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10">
@@ -392,8 +381,6 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        <PhotoBreak photo={exp.photos?.[2]} variant="left" />
-
         {exp.experience && (
           <Rail no="05" label="Dự án tiêu biểu">
             {/* the engagements with a hard number lead, large */}
@@ -429,14 +416,30 @@ export default async function ExpertPage({
 
         {exp.certifications && (
           <Rail no="06" label="Chứng nhận & đào tạo">
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
-              {exp.certifications.map((c) => (
-                <li key={c.name} className="flex items-baseline justify-between gap-6 py-4 border-b border-[#002F5B]/10">
-                  <span className="text-[15px] font-semibold text-[#002F5B] leading-snug">{c.name}</span>
-                  <span className="shrink-0 max-w-[45%] text-right text-xs text-[#486581] leading-snug">{c.org}</span>
+            {/* the core credentials, large; the rest as a compact list of further training */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#002F5B]/10">
+              {exp.certifications.slice(0, 6).map((c, i) => (
+                <li key={c.name} className="relative p-6 border-r border-b border-[#002F5B]/10 group">
+                  <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-0 bg-[#F76011] transition-all duration-500 group-hover:w-full" />
+                  <span className="text-xs font-bold tabular-nums text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="mt-3 text-lg font-bold leading-snug text-[#002F5B]">{c.name}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.1em] text-[#486581]">{c.org}</p>
                 </li>
               ))}
             </ul>
+            {exp.certifications.length > 6 && (
+              <div className="mt-10">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Các khóa đào tạo chuyên sâu khác</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {exp.certifications.slice(6).map((c) => (
+                    <li key={c.name} className="rounded-full border border-[#002F5B]/15 bg-white px-3.5 py-1.5 text-[13px] text-[#002F5B]">
+                      <span className="font-semibold">{c.name}</span>
+                      <span className="text-[#486581]"> · {c.org}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Rail>
         )}
 
