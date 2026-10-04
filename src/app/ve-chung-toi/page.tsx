@@ -164,7 +164,7 @@ export default function AboutPage() {
       {/* Core values: four petals reading W I S E open into the four values as you scroll, then close again */}
       <CoreValuesBloom
         values={values}
-        title={<>Bốn giá trị cốt lõi <span className="text-[#F76011]">W · I · S · E</span></>}
+        title={<>Bốn giá trị cốt lõi <span className="block text-[#F76011]">W · I · S · E</span></>}
         description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
       />
 

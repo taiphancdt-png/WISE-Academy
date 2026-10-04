@@ -67,20 +67,22 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cw = (size.w - GAP - 2 * OUT) / 2;
     const apply = (t: number) => {
+      const sc = 0.7 + 0.3 * t;
+      // the cards grow from the W circle: shifted so their inner notch stays centred on it at every scale
+      const shift = (cw / 2 + GAP / 2) * (1 - sc);
       boxRefs.current.forEach((box, i) => {
         if (!box) return;
-        // from tucked behind the circle (centre) out to its own side
         const dir = i === 0 ? 1 : -1;
-        const dx = dir * (cw / 2 + GAP / 2) * (1 - t);
-        box.style.transform = `translateX(${dx.toFixed(1)}px) scale(${(0.7 + 0.3 * t).toFixed(3)})`;
+        box.style.transform = `translateX(${(dir * shift).toFixed(1)}px) scale(${sc.toFixed(3)})`;
         box.style.opacity = String(smooth(0, 0.35, t));
       });
       if (circleRef.current) circleRef.current.style.transform = `translate(-50%, -50%) scale(${(1.08 - 0.08 * t).toFixed(3)})`;
       sideRefs.current.forEach((c, i) => {
         if (!c) return;
-        // from behind the W circle out to the card's outer edge
-        const dx = (i === 0 ? -1 : 1) * (size.w / 2 - OUT) * t;
-        c.style.transform = `translate(calc(-50% + ${dx.toFixed(1)}px), -50%)`;
+        // slides out of the W circle and lands exactly in the card's outer notch
+        const edge = OUT + cw / 2 + shift - (sc * cw) / 2; // distance of the outer edge from the section's side
+        const dx = (i === 0 ? -1 : 1) * (size.w / 2 - edge) * t; // starts behind the W circle
+        c.style.transform = `translate(calc(-50% + ${dx.toFixed(1)}px), -50%) scale(${sc.toFixed(3)})`;
         c.style.opacity = String(smooth(0, 0.25, t));
       });
       ringRefs.current.forEach((r) => r && (r.style.transform = `rotate(${(t * 180).toFixed(1)}deg)`));
@@ -89,19 +91,27 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       apply(1);
       return;
     }
+    // Not scrubbed by the scroll: once the section is well in view it plays through to the end (and back when it
+    // drops below the fold), so it never rests half-open with the circles out of their notches.
     let raf = 0;
-    let t = 0;
-    const frame = () => {
+    let p = 0; // linear progress
+    let goal = 0;
+    let last = 0;
+    const DURATION = 900;
+    const frame = (now: number) => {
+      const dt = last ? Math.min(50, now - last) : 16;
+      last = now;
       const r = wrap.getBoundingClientRect();
       const y = (r.top + r.height / 2) / window.innerHeight; // 0 = top of the screen, 1 = bottom
-      const target = smooth(0.78, 0.5, y);
-      t += (target - t) * 0.16;
-      if (Math.abs(target - t) < 0.001) t = target;
-      apply(t);
+      if (y < 0.72) goal = 1;
+      else if (y > 0.95) goal = 0;
+      p = goal ? Math.min(1, p + dt / DURATION) : Math.max(0, p - dt / DURATION);
+      apply(smooth(0, 1, p));
       raf = requestAnimationFrame(frame);
     };
     const io = new IntersectionObserver(([e]) => {
       cancelAnimationFrame(raf);
+      last = 0;
       if (e.isIntersecting) raf = requestAnimationFrame(frame);
     });
     io.observe(wrap);
