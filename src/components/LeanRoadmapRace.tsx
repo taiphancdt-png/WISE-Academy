@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ART } from "@/components/mountainArt";
-import TrekkerLottie, { type TrekkerHandle } from "@/components/TrekkerLottie";
+import TrekkerLottie, { BackTrekker, type TrekkerHandle } from "@/components/TrekkerLottie";
 
 export interface RoadmapStage {
   name: string;
@@ -157,6 +157,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const runnerRef = useRef<HTMLDivElement>(null);
   const figRef = useRef<TrekkerHandle>(null);
   const flipRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<TrekkerHandle>(null);
+  const sideBoxRef = useRef<HTMLDivElement>(null);
+  const backBoxRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [, setLayout] = useState(0);
   const geoRef = useRef<Geo>(buildGeo(1, 1));
@@ -251,6 +254,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
 
       // the walk cycle advances with the pace; standing still it holds the current step
       figRef.current?.setPhase(phi / (Math.PI * 2));
+      backRef.current?.setPhase(phi / (Math.PI * 2));
 
       // dawn: the sky follows the height reached (smoothed, so a new climb fades back to first light)
       skyP += (cur / 100 - skyP) * (1 - Math.exp(-dt / 500));
@@ -315,7 +319,11 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const pt = pointAt(geo, cur);
       // smaller as the climber gets higher (further away)
       if (runnerRef.current) runnerRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px) scale(${1.1 - 0.55 * (cur / 100)})`;
-      // on the summit the trekker stands by the flag looking out to the left
+      // from stage 4 to the summit the trail goes straight up, so the trekker climbs away from us (backpack
+      // towards the viewer); on the summit they stand by the flag looking out to the left
+      const fromBehind = moving && cur > geo.cp[3] + 0.2 && cur < 100;
+      if (sideBoxRef.current) sideBoxRef.current.style.display = fromBehind ? "none" : "";
+      if (backBoxRef.current) backBoxRef.current.style.display = fromBehind ? "" : "none";
       if (flipRef.current) {
         if (resting) flipRef.current.style.transform = "scaleX(-1)";
         else if (moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
@@ -583,7 +591,12 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
               <div className="absolute bottom-[-6px] left-0 -translate-x-1/2">
                 <div ref={flipRef}>
-                  <TrekkerLottie ref={figRef} className="w-[64px] h-[110px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  <div ref={sideBoxRef}>
+                    <TrekkerLottie ref={figRef} className="w-[64px] h-[110px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  </div>
+                  <div ref={backBoxRef} style={{ display: "none" }}>
+                    <BackTrekker ref={backRef} className="w-[64px] h-[110px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
+                  </div>
                 </div>
               </div>
             </div>
