@@ -511,10 +511,10 @@ export default async function ExpertPage({
               {exp.career.map((c, i) => (
                 <li
                   key={`${c.period}-${c.org}`}
-                  className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10"
+                  className="grid grid-cols-1 sm:grid-cols-[230px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10"
                 >
                   <span
-                    className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-none"
+                    className="text-2xl sm:text-[28px] font-extrabold tracking-tight leading-none whitespace-nowrap"
                     style={
                       i === 0
                         ? { color: "#F76011" }
