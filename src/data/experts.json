@@ -1036,8 +1036,8 @@
     ],
     "certifications": [
       {
-        "name": "Chuyên gia tư vấn chính cải tiến năng suất chất lượng",
-        "org": "Bộ Công Thương và Trung tâm Đào tạo Samsung (2019)",
+        "name": "Vietnam Master Consultant Training Program",
+        "org": "Bộ Công Thương và Samsung Electronics Việt Nam, Suwon, Hàn Quốc (06/2019)",
         "core": true
       },
       {
@@ -1046,33 +1046,33 @@
         "core": true
       },
       {
-        "name": "Chẩn đoán viên Shindanshi",
-        "org": "JICA và Cục Phát triển Doanh nghiệp (2023)",
+        "name": "Chẩn đoán viên Shindanshi ngành công nghiệp chế biến, chế tạo",
+        "org": "Cục Phát triển Doanh nghiệp và JICA (08 - 11/2023)",
         "core": true
       },
       {
-        "name": "Mạng lưới chuyên gia tư vấn ESG Việt Nam",
-        "org": "Cục Phát triển Doanh nghiệp, Bộ Tài chính (2024)",
+        "name": "Phát triển Mạng lưới Tư vấn viên về Thực hành ESG (ToT for ESG Consultants)",
+        "org": "Cục Phát triển Doanh nghiệp, Bộ KH&ĐT (12/2024)",
         "core": true
       },
       {
         "name": "Lean Six Sigma Black Belt",
-        "org": "LinkedIn Learning (2022)",
+        "org": "LinkedIn Learning (04/2022)",
         "group": "Lean Six Sigma"
       },
       {
-        "name": "Google Project Management",
-        "org": "Google, Coursera (2024)",
+        "name": "Google Project Management Professional Certificate",
+        "org": "Google, Coursera (04/2024)",
         "group": "Lean & Năng suất"
       },
       {
-        "name": "Chuyên gia tư vấn chuyển đổi số và công nghiệp 4.0",
-        "org": "GIZ và Cục Phát triển Doanh nghiệp (2023)",
+        "name": "Empowering Vietnam's Digital Transformation Expert Network",
+        "org": "RMIT University, USAID và Cục Phát triển Doanh nghiệp (10 - 11/2024)",
         "group": "Bền vững & Số hóa"
       },
       {
-        "name": "Empowering Vietnam's Digital Transformation Expert Network",
-        "org": "RMIT, USAID và AED (2024)",
+        "name": "Chuyên gia tư vấn chuyển đổi số: Nâng tầm chiến lược chuyển đổi số và công nghiệp 4.0",
+        "org": "GIZ và Cục Phát triển Doanh nghiệp (05/2023)",
         "group": "Bền vững & Số hóa"
       },
       {
@@ -1089,11 +1089,11 @@
     "education": [
       {
         "degree": "Tiến sĩ Quản trị Kinh doanh (DBA)",
-        "school": "Viện EARIST, Manila, Philippines (2018)"
+        "school": "Viện Khoa học và Công nghệ Eulogio \"Amang\" Rodriguez (EARIST), Manila, Philippines (05/2018)"
       },
       {
         "degree": "Thạc sĩ Quản trị Kinh doanh",
-        "school": "Trường Đại học Lạc Hồng (2012)"
+        "school": "Trường Đại học Lạc Hồng (12/2012)"
       },
       {
         "degree": "Kỹ sư Chăn nuôi",
@@ -1105,6 +1105,10 @@
       {
         "country": "Philippines",
         "text": "Tiến sĩ Quản trị Kinh doanh tại Viện EARIST, Manila"
+      },
+      {
+        "country": "Hàn Quốc",
+        "text": "Chương trình đào tạo Chuyên gia tư vấn chính (Vietnam Master Consultant) tại Suwon do Bộ Công Thương và Samsung tổ chức"
       },
       {
         "country": "Quốc tế",
