@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/ve-chung-toi`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/toolkit`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/lien-he`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE_URL}/xac-thuc-chung-chi`, changeFrequency: "yearly", priority: 0.4 },
   ];
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
