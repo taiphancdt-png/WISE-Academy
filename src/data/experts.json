@@ -748,7 +748,7 @@
     "name": "Edward Zhu",
     "role": "Chuyên gia Cấp cao LSSI · Six Sigma Master Black Belt",
     "title": "Six Sigma Master Black Belt · MBA (Tsinghua University) · LSSI Senior Consultant, Trainer & Coach khu vực Trung Quốc",
-    "bio": "Hơn 25 năm kinh nghiệm trong quản lý chất lượng và vận hành. Là Lean Facilitator đầu tiên của nhà máy Nokia Trung Quốc và Master Black Belt của Nokia khu vực châu Á - Thái Bình Dương, từng giữ vị trí Phó Chủ tịch Chất lượng và Giám đốc nhà máy. Đã dẫn dắt hơn 25 dự án Lean Six Sigma, mang lại hơn 50 triệu NDT tiết kiệm và đạt Giải thưởng Chất lượng Toàn cầu Nokia 2008.",
+    "bio": "Hơn 25 năm kinh nghiệm trong lĩnh vực chất lượng và vận hành, từ Six Sigma Black Belt chuyên trách, Lean Facilitator, tác nhân thay đổi sản xuất thông minh của Nokia khu vực châu Á Thái Bình Dương, đến Master Black Belt, Giám đốc Chất lượng, Phó Chủ tịch Chất lượng và Tổng Giám đốc nhà máy. Dẫn dắt hơn 25 dự án Lean Six Sigma mang về hơn 50 triệu CNY cho doanh nghiệp, đạt Giải nhất Chất lượng toàn cầu Nokia 2008, và đã đào tạo hơn 15 học viên trở thành Giám đốc Chất lượng tại nhiều công ty.",
     "tags": [
       "Six Sigma MBB",
       "Hoshin Kanri",
@@ -757,14 +757,152 @@
     ],
     "image": "/images/experts/edward-zhu.webp",
     "group": "international",
-    "cutout": "/images/experts/edward-zhu-cutout.webp"
+    "cutout": "/images/experts/edward-zhu-cutout.webp",
+    "highlights": [
+      {
+        "value": "25+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "25+",
+        "label": "Dự án Lean Six Sigma dẫn dắt"
+      },
+      {
+        "value": "50M+",
+        "label": "CNY tiết kiệm cho doanh nghiệp"
+      },
+      {
+        "value": "15+",
+        "label": "Học viên trở thành Giám đốc Chất lượng"
+      },
+      {
+        "value": "50+",
+        "label": "Dự án Lean Six Sigma mỗi năm trên toàn cầu"
+      },
+      {
+        "value": "2008",
+        "label": "Giải nhất Chất lượng toàn cầu Nokia"
+      }
+    ],
+    "expertise": [
+      "Xây dựng và triển khai chiến lược Lean Six Sigma qua Hoshin Kanri (X-matrix)",
+      "Thiết lập hệ thống đảm bảo chất lượng toàn trình, quy trình, công cụ và phương pháp",
+      "Đảm bảo chất lượng thiết kế và nguồn cung ngành viễn thông: LL, NUDD, DFM, DFFA, DFR, DFT, DFS, chất lượng ra mắt sản phẩm, dự báo chất lượng thị trường",
+      "Đào tạo và phát triển Lean Facilitator, Green Belt, Black Belt; Train-the-Trainer",
+      "Tái cấu trúc tổ chức, quản trị thay đổi và phát triển nhân tài",
+      "Ép nhựa (insert, over, 2K, IMD/IML), dập kim loại, hàn laser, đúc áp lực, rèn, cắt kim cương",
+      "Trang trí bề mặt: sơn, NCVM, PVD, in lụa, in tampon, sơn tĩnh điện",
+      "Phát triển phần cứng e-ink và màn hình, quản lý chương trình chất lượng công nghệ",
+      "Lãnh đạo tình huống và nhạy bén văn hóa trong môi trường đa quốc gia"
+    ],
+    "career": [
+      {
+        "period": "2022 - nay",
+        "org": "Lean Six Sigma Institute (LSSI)",
+        "role": "Chuyên gia tư vấn cấp cao, Giảng viên và Huấn luyện viên khu vực châu Á, Trung Quốc"
+      },
+      {
+        "period": "2022 - nay",
+        "org": "Giám đốc Chất lượng & Vận hành",
+        "role": "Nhà tài trợ chương trình chuyển đổi Lean Six Sigma"
+      },
+      {
+        "period": "2014 - 2022",
+        "org": "Phó Chủ tịch Chất lượng",
+        "role": "Master Black Belt và nhà vô địch (champion) Lean Six Sigma"
+      },
+      {
+        "period": "2013 - 2014",
+        "org": "Giám đốc Chất lượng & Chuỗi cung ứng",
+        "role": "Xây dựng đội ngũ từ đầu với vai trò chuyên gia tư vấn toàn thời gian"
+      },
+      {
+        "period": "2012 - 2013",
+        "org": "Quản lý Chương trình Chất lượng Công nghệ",
+        "role": "Phụ trách sản phẩm, công nghệ và quy trình"
+      },
+      {
+        "period": "1998 - 2012",
+        "org": "Nokia",
+        "role": "Quản lý Chất lượng cấp cao, Lean Six Sigma Master Black Belt"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Nokia",
+        "period": "1998 - 2012",
+        "text": "Lean Facilitator đầu tiên của nhà máy Nokia Trung Quốc và Master Black Belt thứ hai khu vực châu Á Thái Bình Dương; lắp đặt chuyền Lean Cell đầu tiên tại nhà máy Đông Quản, dẫn dắt VSM và lộ trình Lean Six Sigma; thiết kế lại dòng vật tư nâng công suất từ 15 lên 18 triệu sản phẩm mỗi tháng, tiết kiệm trực tiếp hơn 20 triệu mỗi năm; Giải nhất Chất lượng toàn cầu Nokia 2008."
+      },
+      {
+        "client": "Phó Chủ tịch Chất lượng",
+        "period": "2014 - 2022",
+        "text": "Tuyển dụng và tái cấu trúc tổ chức chất lượng; xây dựng chương trình đào tạo Six Sigma, Lean, cơ chế cải tiến liên tục và giải thưởng chất lượng; hơn 50 dự án Lean Six Sigma mỗi năm trên toàn cầu; đưa LL, NUDD và DFX vào hệ thống đảm bảo chất lượng."
+      },
+      {
+        "client": "Giám đốc Chất lượng & Chuỗi cung ứng",
+        "period": "2013 - 2014",
+        "text": "Xây dựng tổ chức chất lượng và chuỗi cung ứng từ đầu: vận hành sau 1,5 tháng, đạt chứng nhận ISO 9001 trong 6 tháng và được Honeywell, Sharp, KHL phê duyệt nhà cung cấp trong một năm."
+      },
+      {
+        "client": "Quản lý Chương trình Chất lượng Công nghệ",
+        "period": "2012 - 2013",
+        "text": "Tổ chức chương trình đào tạo và chứng nhận Black Belt; cải tiến quy trình phát triển sản phẩm, phê duyệt nhà cung cấp và PPAP; xây dựng thẻ điểm cân bằng nhà cung cấp; áp dụng X-matrix để triển khai chiến lược."
+      },
+      {
+        "client": "Lean Six Sigma Institute (LSSI)",
+        "period": "2022 - nay",
+        "text": "Biên soạn tài liệu đào tạo bản địa và giảng dạy Lean Six Sigma cho khách hàng Trung Quốc theo chuẩn LSSI, theo dõi hiệu quả học tập và kèm cặp dự án, đóng góp chiến lược châu Á của LSSI."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Six Sigma Master Black Belt",
+        "org": "Sigma Zone & Nokia (2008)",
+        "core": true
+      },
+      {
+        "name": "Six Sigma Black Belt",
+        "org": "Qualtec & Nokia (2005)",
+        "core": true
+      },
+      {
+        "name": "Lean Facilitator",
+        "org": "Gemba Consult & Nokia (2004)",
+        "core": true
+      }
+    ],
+    "education": [
+      {
+        "degree": "Thạc sĩ Quản trị Kinh doanh (MBA)",
+        "school": "Đại học Thanh Hoa / Northern Virginia University (2011)"
+      },
+      {
+        "degree": "Kỹ sư Điện",
+        "school": "Đại học Giao thông Tây An (1998)"
+      }
+    ],
+    "languages": "Tiếng Trung, Tiếng Anh",
+    "regions": [
+      {
+        "country": "Trung Quốc",
+        "text": "Lean Facilitator đầu tiên của nhà máy Nokia Trung Quốc; giảng viên LSSI khu vực Trung Quốc"
+      },
+      {
+        "country": "Châu Á Thái Bình Dương",
+        "text": "Master Black Belt và tác nhân thay đổi sản xuất thông minh của Nokia khu vực APAC"
+      },
+      {
+        "country": "Toàn cầu",
+        "text": "Quản lý đội ngũ chất lượng nguồn cung cơ khí toàn cầu và hơn 50 dự án Lean Six Sigma mỗi năm"
+      }
+    ]
   },
   {
     "id": "leo-li",
     "name": "Leo Li",
     "role": "Chuyên gia Cấp cao · Lean Six Sigma Consultant, Trainer & Coach",
-    "title": "Li Huiwei · Motorola Six Sigma Master Black Belt · ASQ Certified Quality Manager & Certified Quality Engineer",
-    "bio": "Hơn 30 năm kinh nghiệm quản lý chất lượng và vận hành tại các tập đoàn đa quốc gia như Motorola, Emerson, Kadant và Bitron, đi lên từ kỹ sư chất lượng đến Giám đốc Chất lượng và Tổng Giám đốc. Từ năm 2020 là chuyên gia tư vấn Lean Six Sigma độc lập, đào tạo và kèm cặp dự án Black Belt / Green Belt cho các doanh nghiệp như Haidilao, Langege Milk và Jingfeng Glass.",
+    "title": "Motorola Six Sigma Master Black Belt · ASQ Certified Quality Manager & Certified Quality Engineer · Chuyên gia tư vấn Lean Six Sigma cấp cao",
+    "bio": "Hơn 30 năm kinh nghiệm thực tiễn trong quản lý chất lượng và vận hành tại các tập đoàn sản xuất đa quốc gia hàng đầu, đi lên từ kỹ sư chất lượng đến Giám đốc Chất lượng, Quản lý Chất lượng Toàn cầu và Tổng Giám đốc. Từ năm 2020 là chuyên gia tư vấn Lean Six Sigma độc lập, đào tạo và kèm cặp dự án Black Belt, Green Belt cho các doanh nghiệp như Haidilao, Langege Milk, Yuxing Nut, Jingfeng Glass, tập trung tạo kết quả cải tiến đo lường được và xây dựng văn hóa chất lượng Lean lâu dài.",
     "tags": [
       "Six Sigma MBB (Motorola)",
       "ASQ CQM / CQE",
@@ -773,7 +911,171 @@
     ],
     "image": "/images/experts/leo-li.webp",
     "group": "international",
-    "cutout": "/images/experts/leo-li-cutout.webp"
+    "cutout": "/images/experts/leo-li-cutout.webp",
+    "highlights": [
+      {
+        "value": "30+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "8+",
+        "label": "Ngành sản xuất đã tư vấn"
+      },
+      {
+        "value": "13",
+        "label": "Black Belt được đào tạo & chứng nhận"
+      },
+      {
+        "value": "42",
+        "label": "Dự án Green Belt được kèm cặp"
+      },
+      {
+        "value": "5M+",
+        "label": "RMB tiết kiệm từ dự án Green Belt"
+      },
+      {
+        "value": "6",
+        "label": "Nhà máy toàn cầu triển khai Six Sigma"
+      }
+    ],
+    "expertise": [
+      "Hoạch định chiến lược triển khai Lean Six Sigma và lộ trình cải tiến riêng cho từng doanh nghiệp",
+      "Đào tạo, chứng nhận và kèm cặp dự án Black Belt, Green Belt; phát triển đội ngũ cải tiến nội bộ",
+      "Xây dựng hệ thống chất lượng doanh nghiệp, hệ thống ISO và hệ thống KPI",
+      "Công cụ Lean: 5S, TPM, SMED, VSM, Kaizen",
+      "Công cụ Six Sigma: DMAIC, DFSS, SPC, GRR/MSA, FMEA, DOE, Minitab",
+      "Quản lý chất lượng nhà cung cấp, quản lý NPI và giảm chi phí chuỗi cung ứng",
+      "Nâng cấp tự động hóa sản xuất và tái cấu trúc tổ chức quản lý",
+      "Triển khai dự án đa nhà máy trên toàn cầu, vai trò tác nhân thay đổi tổ chức",
+      "Ngành: điện tử tiêu dùng, điện tử ô tô, ép nhựa, thiết bị công nghiệp, động cơ gia dụng, thực phẩm và sữa, bu lông ốc vít, thủy tinh"
+    ],
+    "career": [
+      {
+        "period": "2020 - nay",
+        "org": "Công ty tư vấn quản trị Lean",
+        "role": "Chuyên gia tư vấn cấp cao, Giảng viên và Huấn luyện dự án Lean Six Sigma"
+      },
+      {
+        "period": "2019 - 2020",
+        "org": "BeiYu (Đông Quản) Electrical Technology",
+        "role": "Tổng Giám đốc, nhà sản xuất linh kiện ép nhựa cho Huami, Sonim và các thương hiệu điện tử"
+      },
+      {
+        "period": "2017 - 2019",
+        "org": "Bitron Electronic (Thanh Đảo)",
+        "role": "Quản lý Chất lượng, tập đoàn Ý sản xuất PCB&A cho thiết bị gia dụng và ô tô"
+      },
+      {
+        "period": "2011 - 2017",
+        "org": "Kadant Fiberline (China)",
+        "role": "Giám đốc Chất lượng, quản lý đội ngũ 24 người, tập đoàn Mỹ sản xuất thiết bị bột giấy"
+      },
+      {
+        "period": "2008 - 2011",
+        "org": "LOM Perlos (Liteonmobile Bắc Kinh)",
+        "role": "Quản lý Chất lượng Toàn cầu cấp cao, Master Black Belt; nhà cung cấp vỏ điện thoại cho Nokia với 6 nhà máy toàn cầu"
+      },
+      {
+        "period": "2005 - 2008",
+        "org": "Motorola (China) Electronics, Thiên Tân",
+        "role": "Quản lý Chất lượng Nhà cung cấp"
+      },
+      {
+        "period": "2002 - 2005",
+        "org": "Emerson China (Thanh Đảo) Motor",
+        "role": "Quản lý Chất lượng, quản lý 9 kỹ sư và 26 nhân viên kiểm tra"
+      },
+      {
+        "period": "1996 - 2002",
+        "org": "Motorola (China) Electronics, Thiên Tân",
+        "role": "Trưởng nhóm Đảm bảo Chất lượng"
+      },
+      {
+        "period": "1991 - 1996",
+        "org": "Nhà máy thép Thiên Tân",
+        "role": "Kỹ sư Chất lượng cấp cao"
+      }
+    ],
+    "experience": [
+      {
+        "client": "LOM Perlos (nhà cung cấp của Nokia)",
+        "period": "2008 - 2011",
+        "text": "Cùng Motorola University triển khai chương trình chứng nhận Black Belt toàn cầu cho 13 ứng viên tại 6 nhà máy; kèm cặp 42 dự án Green Belt, tiết kiệm hơn 5 triệu RMB; giữ chi phí chất lượng kém (CoPQ) dưới 2% trong 4 tháng liên tiếp, kỷ lục của công ty."
+      },
+      {
+        "client": "Kadant Fiberline",
+        "period": "2011 - 2017",
+        "text": "Giảm 30% khiếu nại khách hàng (2013 so với 2012) và 60% chi phí bảo hành; ứng dụng Six Sigma giải quyết lỗi mài mòn lớp mạ crôm xi lanh; xây dựng lộ trình văn hóa chất lượng dài hạn."
+      },
+      {
+        "client": "Bitron Electronic",
+        "period": "2017 - 2019",
+        "text": "Giảm khiếu nại khách hàng từ 39 xuống 12 trong nửa đầu 2018; nâng nhà cung cấp PCB yếu kém thành nhà cung cấp đạt chuẩn cao nhất; giảm 50% tồn kho nguyên vật liệu không phù hợp trong một tháng; chuyển từ kiểm tra thụ động sang phòng ngừa rủi ro."
+      },
+      {
+        "client": "Motorola",
+        "period": "2005 - 2008",
+        "text": "Giảm tỷ lệ lỗi nguyên vật liệu đầu vào từ 3.500 xuống 1.076 PPM, xử lý dứt điểm tồn kho MRB quá hạn và kèm cặp 3 nhân viên đạt chứng nhận Green Belt của Motorola."
+      },
+      {
+        "client": "Emerson China",
+        "period": "2002 - 2005",
+        "text": "Đạt chứng nhận ISO 9000:2000 năm 2003, thống nhất tiêu chuẩn chất lượng 4 khối kinh doanh; đưa tỷ lệ lỗi sản xuất ban đầu 40.000 PPM về 0 ổn định 4 tuần liên tiếp; dẫn dắt triển khai Six Sigma."
+      },
+      {
+        "client": "BeiYu Electrical Technology",
+        "period": "2019 - 2020",
+        "text": "Điều hành toàn diện NPI, mua hàng, kế hoạch, kỹ thuật, sản xuất, chất lượng và nhân sự; xây dựng hệ thống giám sát dữ liệu sản xuất thời gian thực và nâng cấp tự động hóa."
+      },
+      {
+        "client": "Haidilao, Langege Milk, Yuxing Nut, Jingfeng Glass",
+        "period": "2020 - nay",
+        "text": "Tư vấn, đào tạo tại chỗ và kèm cặp dự án: 5S, TPM, SMED, tối ưu chất lượng, giảm chi phí chuỗi cung ứng, đào tạo nội bộ Six Sigma và phát triển đội ngũ Green Belt, Black Belt."
+      },
+      {
+        "client": "Motorola (Thiên Tân)",
+        "period": "1996 - 2002",
+        "text": "Xây dựng hệ thống phát hành thành phẩm FQA và sổ tay xử lý bất thường OCAP; huấn luyện nhóm QCC đạt Giải Vàng QCC khu vực Thiên Tân năm 1998."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Six Sigma Master Black Belt",
+        "org": "Motorola",
+        "core": true
+      },
+      {
+        "name": "Certified Quality Manager (CQM)",
+        "org": "ASQ (American Society for Quality)",
+        "core": true
+      },
+      {
+        "name": "Certified Quality Engineer (CQE)",
+        "org": "ASQ (American Society for Quality)",
+        "core": true
+      }
+    ],
+    "education": [
+      {
+        "degree": "Chương trình MBA",
+        "school": "Đại học Thiên Tân (2005)"
+      },
+      {
+        "degree": "Kỹ sư Kỹ thuật Nhiệt năng",
+        "school": "Đại học Công nghệ Thiên Tân"
+      }
+    ],
+    "languages": "Tiếng Trung, Tiếng Anh",
+    "regions": [
+      {
+        "country": "Trung Quốc",
+        "text": "Quản lý chất lượng và vận hành tại Motorola, Emerson, Kadant, Bitron; tư vấn Lean Six Sigma độc lập từ 2020"
+      },
+      {
+        "country": "Toàn cầu",
+        "text": "Triển khai chương trình chứng nhận Black Belt và đánh giá hiệu suất hằng tuần cho 6 nhà máy toàn cầu của LOM Perlos"
+      }
+    ]
   },
   {
     "id": "sujit-bhattacharjee",
