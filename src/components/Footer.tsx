@@ -34,7 +34,7 @@ export default function Footer() {
     <footer className="bg-[#001E38] text-white/75">
       {/* Main Footer Links */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-4 space-y-5">
+        <div className="lg:col-span-3 space-y-5">
           <Link href="/" className="inline-block bg-white px-4 py-3 rounded-xl">
             <img src="/images/brand/logo.webp" width={800} height={282} alt="WISE Academy Logo" className="h-10 w-auto object-contain" />
           </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lg:col-span-1 space-y-4">
+        <div className="lg:col-span-2 space-y-4">
           <h4 className="text-white font-semibold text-sm">WISE Academy</h4>
           <ul className="space-y-2.5 text-sm">
             {companyLinks.map((item) => (
