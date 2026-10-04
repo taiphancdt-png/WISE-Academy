@@ -89,34 +89,23 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       apply(1);
       return;
     }
-    // Not scrubbed by the scroll: once the section is well in view it plays through to the end (and back when it
-    // drops below the fold), so it never rests half-open with the circles out of their notches.
+    // Scrubbed by the scroll: the cards open as the section rises from the lower part of the screen to its
+    // middle, and close again when scrolling back. The icon circles ride on the opening edge, so they sit in
+    // their notches at every point.
     let raf = 0;
-    let p = 0; // linear progress
-    let goal = 0;
-    let last = 0;
-    const DURATION = 900;
-    const frame = (now: number) => {
-      const dt = last ? Math.min(50, now - last) : 16;
-      last = now;
+    let t = 0;
+    const frame = () => {
       const r = wrap.getBoundingClientRect();
       const y = (r.top + r.height / 2) / window.innerHeight; // 0 = top of the screen, 1 = bottom
-      if (y < 0.72) goal = 1;
-      else if (y > 0.95) goal = 0;
-      p = goal ? Math.min(1, p + dt / DURATION) : Math.max(0, p - dt / DURATION);
-      apply(smooth(0, 1, p));
+      const target = smooth(0.9, 0.5, y);
+      t += (target - t) * 0.18;
+      if (Math.abs(target - t) < 0.001) t = target;
+      apply(t);
       raf = requestAnimationFrame(frame);
     };
     const io = new IntersectionObserver(([e]) => {
       cancelAnimationFrame(raf);
-      last = 0;
       if (e.isIntersecting) raf = requestAnimationFrame(frame);
-      else if (e.boundingClientRect.top > 0) {
-        // gone below the fold: start closed again for the next pass
-        p = 0;
-        goal = 0;
-        apply(0);
-      }
     });
     io.observe(wrap);
     apply(0);
