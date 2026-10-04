@@ -12,19 +12,23 @@ export interface VisionMissionItem {
 const D = 168; // the centre circle
 const GAP = 130; // room between the two cards; the circle sits in a curved notch cut into both
 const NOTCH = D / 2 + 16; // radius of the notch around the circle
+const OUT = D / 2; // the icon circles sit on the cards' outer edges, half outside, inside the section width
+const PAD_OUT = NOTCH + 18; // text clears the outer notch
 const SHADOW = ["drop-shadow(0 22px 28px rgba(28,86,144,0.3))", "drop-shadow(0 22px 28px rgba(236,116,40,0.3))"];
 const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
   return t * t * (3 - 2 * t);
 };
 
-// One decorated circle in the middle with the WISE "W" mark. As the section scrolls up into view the Vision card
-// slides out of it to the left and the Mission card to the right.
+// One decorated circle in the middle with the WISE "W" mark. As the section scrolls up into view it splits into
+// three circles in a row: the Vision icon slides out to the left edge, the Mission icon to the right edge, and the
+// two cards open between them, each notched around the circles it touches.
 export default function VisionMission({ items }: { items: [VisionMissionItem, VisionMissionItem] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
   const circleRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
+  const ringRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [size, setSize] = useState({ w: 0, h: 0 });
 
   // card width and the height of the taller card
@@ -33,8 +37,8 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     if (!wrap) return;
     const measure = () => {
       const w = wrap.clientWidth;
-      const cw = (w - GAP) / 2;
-      let h = 0;
+      const cw = (w - GAP - 2 * OUT) / 2;
+      let h = D + 48;
       boxRefs.current.forEach((el) => {
         if (!el) return;
         el.style.width = `${cw}px`;
@@ -42,7 +46,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
         h = Math.max(h, el.scrollHeight);
       });
       boxRefs.current.forEach((el) => el && (el.style.height = `${h}px`));
-      setSize({ w, h: Math.max(h, D) });
+      setSize({ w, h });
     };
     measure();
     const ro = new ResizeObserver(measure);
@@ -54,7 +58,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
     const wrap = wrapRef.current;
     if (!wrap || !size.w) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const cw = (size.w - GAP) / 2;
+    const cw = (size.w - GAP - 2 * OUT) / 2;
     const apply = (t: number) => {
       boxRefs.current.forEach((box, i) => {
         if (!box) return;
@@ -65,7 +69,14 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
         box.style.opacity = String(smooth(0, 0.35, t));
       });
       if (circleRef.current) circleRef.current.style.transform = `translate(-50%, -50%) scale(${(1.08 - 0.08 * t).toFixed(3)})`;
-      if (ringRef.current) ringRef.current.style.transform = `rotate(${(t * 180).toFixed(1)}deg)`;
+      sideRefs.current.forEach((c, i) => {
+        if (!c) return;
+        // from behind the W circle out to the card's outer edge
+        const dx = (i === 0 ? -1 : 1) * (size.w / 2 - OUT) * t;
+        c.style.transform = `translate(calc(-50% + ${dx.toFixed(1)}px), -50%)`;
+        c.style.opacity = String(smooth(0, 0.25, t));
+      });
+      ringRefs.current.forEach((r) => r && (r.style.transform = `rotate(${(t * 180).toFixed(1)}deg)`));
     };
     if (reduce) {
       apply(1);
@@ -96,20 +107,36 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
 
   // mirror: each card aligns to its outer edge (left card to the left, right card to the right)
   const content = (it: VisionMissionItem, mirror = false) => (
-    <div className={mirror ? "lg:text-right" : ""}>
-      {/* icon and title on one row; the mirrored card puts the icon in its right corner */}
-      <div className={`flex items-center gap-5 ${mirror ? "lg:flex-row-reverse" : ""}`}>
-        <span className="w-20 h-20 shrink-0 rounded-2xl bg-white/15 ring-1 ring-white/25 flex items-center justify-center">{it.icon}</span>
-        <h2 className="text-2xl lg:text-[28px] font-semibold">{it.title}</h2>
-      </div>
-      <div className="mt-5 text-sm sm:text-base leading-relaxed">{it.body}</div>
+    <div className={mirror ? "text-right" : ""}>
+      <h2 className="text-2xl lg:text-[28px] font-semibold">{it.title}</h2>
+      <div className="mt-4 text-sm sm:text-base leading-relaxed">{it.body}</div>
     </div>
   );
+
+  // the decorated circle shared by the W mark and the two icons
+  const circle = (children: React.ReactNode, ring: number) => (
+    <>
+      <div className="absolute -inset-5 rounded-full bg-[radial-gradient(circle,rgba(247,96,17,0.18),transparent_70%)]" />
+      <div
+        ref={(el) => {
+          ringRefs.current[ring] = el;
+        }}
+        className="absolute inset-0 rounded-full p-[3px] bg-[conic-gradient(from_0deg,#002F5B,#F76011,#FFB27A,#002F5B)]"
+      >
+        <div className="h-full w-full rounded-full bg-white" />
+      </div>
+      <div className="absolute inset-[10px] rounded-full border border-dashed border-[#002F5B]/20" />
+      <div className="absolute inset-[18px] rounded-full bg-white shadow-[0_18px_40px_-16px_rgba(0,47,91,0.45)] flex items-center justify-center">
+        {children}
+      </div>
+    </>
+  );
+  const notch = (x: string) => `radial-gradient(circle ${NOTCH}px at ${x} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`;
 
   return (
     <>
       {/* desktop: the circle stays in the middle, the two cards slide out of it */}
-      <div ref={wrapRef} className="hidden md:block relative" style={{ height: size.h || 320 }}>
+      <div ref={wrapRef} className="hidden xl:block relative -mx-12" style={{ height: size.h || 320 }}>
         {items.map((it, i) => (
           <div
             key={it.title}
@@ -117,43 +144,60 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
               boxRefs.current[i] = el;
             }}
             className="absolute top-0 will-change-transform"
-            style={{ [i === 0 ? "left" : "right"]: 0, opacity: 0, filter: SHADOW[i] } as React.CSSProperties}
+            style={{ [i === 0 ? "left" : "right"]: OUT, opacity: 0, filter: SHADOW[i] } as React.CSSProperties}
           >
-            {/* the card: soft corners and a curved notch on its inner edge that hugs the centre circle */}
+            {/* the card: soft corners and curved notches that hug the W circle (inner edge) and its icon circle (outer edge) */}
             <div
-              className={`h-full rounded-[28px] p-8 lg:p-10 ${i === 0 ? "lg:pr-16" : "lg:pl-16"} ${it.className}`}
+              className={`h-full rounded-[28px] py-10 ${i === 0 ? "pr-14" : "pl-14"} ${it.className}`}
               style={{
-                WebkitMaskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
-                maskImage: `radial-gradient(circle ${NOTCH}px at ${i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`} 50%, transparent ${NOTCH - 0.5}px, #000 ${NOTCH}px)`,
-              }}
+                [i === 0 ? "paddingLeft" : "paddingRight"]: PAD_OUT,
+                WebkitMaskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%")}`,
+                maskImage: `${notch(i === 0 ? `calc(100% + ${GAP / 2}px)` : `${-GAP / 2}px`)}, ${notch(i === 0 ? "0px" : "100%")}`,
+                WebkitMaskComposite: "source-in",
+                maskComposite: "intersect",
+              } as React.CSSProperties}
             >
               {content(it, i === 1)}
             </div>
           </div>
         ))}
 
+        {/* the two icon circles start hidden behind the W circle and slide out to the cards' outer edges */}
+        {items.map((it, i) => (
+          <div
+            key={it.title}
+            ref={(el) => {
+              sideRefs.current[i] = el;
+            }}
+            className="absolute left-1/2 top-1/2 z-[5]"
+            style={{ width: D, height: D, transform: "translate(-50%, -50%)", opacity: 0 }}
+            aria-hidden="true"
+          >
+            {circle(<span className="w-[48%] [&>svg]:w-full [&>svg]:h-full">{it.icon}</span>, i + 1)}
+          </div>
+        ))}
+
         {/* the decorated centre circle with the W mark */}
         <div ref={circleRef} className="absolute left-1/2 top-1/2 z-10" style={{ width: D, height: D, transform: "translate(-50%, -50%)" }} aria-hidden="true">
-          <div className="absolute -inset-5 rounded-full bg-[radial-gradient(circle,rgba(247,96,17,0.18),transparent_70%)]" />
-          <div ref={ringRef} className="absolute inset-0 rounded-full p-[3px] bg-[conic-gradient(from_0deg,#002F5B,#F76011,#FFB27A,#002F5B)]">
-            <div className="h-full w-full rounded-full bg-white" />
-          </div>
-          <div className="absolute inset-[10px] rounded-full border border-dashed border-[#002F5B]/20" />
-          <div className="absolute inset-[18px] rounded-full bg-white shadow-[0_18px_40px_-16px_rgba(0,47,91,0.45)] flex items-center justify-center">
-            {/* the W mark with the registered-trademark sign, as on the WISE Academy logo */}
+          {circle(
+            /* the W mark with the registered-trademark sign, as on the WISE Academy logo */
             <span className="relative w-[50%]">
               <img src="/images/brand/logo-mark.png" alt="" className="w-full" />
               {/* beside the top of the W's right arm, with a small gap */}
               <span className="absolute left-full top-[16%] ml-[3px] text-[26px] font-bold leading-[0.6] text-[#002F5B]">®</span>
-            </span>
-          </div>
+            </span>,
+            0,
+          )}
         </div>
       </div>
 
       {/* mobile: the two cards stacked */}
-      <div className="md:hidden grid grid-cols-1 gap-6">
+      <div className="xl:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
         {items.map((it) => (
           <div key={it.title} className={`rounded-[28px] p-8 ${it.className}`}>
+            <span className="mb-5 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center [&>svg]:w-9 [&>svg]:h-9" aria-hidden="true">
+              {it.icon}
+            </span>
             {content(it)}
           </div>
         ))}
