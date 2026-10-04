@@ -1,5 +1,83 @@
 [
   {
+    "id": "apache-lean-fundamental-kaizen-mindset",
+    "client": "Apache Footwear Group",
+    "industry": "Sản xuất giày dép",
+    "title": "Chương trình đào tạo Lean Fundamental & Kaizen Mindset",
+    "description": "Chương trình nền tảng cho đội ngũ quản lý sản xuất: 5 nguyên lý Lean, trò chơi mô phỏng sản xuất, săn lãng phí tại hiện trường và tư duy Kaizen, để mỗi người tự nhìn thấy và cải tiến công việc của mình.",
+    "highlight": "Hệ thống quản lý Lean = Tư duy Kaizen + Loại bỏ lãng phí: bắt đầu từ chính đội ngũ quản lý sản xuất.",
+    "results": [
+      {
+        "metric": "8",
+        "label": "Loại lãng phí DOWNTIME nhận diện tại hiện trường"
+      },
+      {
+        "metric": "Kaizen",
+        "label": "Cải tiến điểm do chính học viên thực hiện"
+      }
+    ],
+    "tags": [
+      "Lean Fundamental",
+      "Kaizen Mindset",
+      "Simulation Game",
+      "Gemba"
+    ],
+    "partner": "Apache Footwear Group là tập đoàn sản xuất giày dép quy mô lớn, đối tác sản xuất của adidas, với hệ thống nhà máy hiện đại và đội ngũ hàng nghìn người lao động. Apache chọn WISE Academy để xây nền móng Lean cho lực lượng quản lý sản xuất trực tiếp.",
+    "challenge": "Các công cụ Lean đã có mặt tại nhà máy, nhưng để chúng thực sự tạo ra kết quả trên từng chuyền, đội ngũ quản lý sản xuất cần hiểu đúng bản chất của Lean, cùng chung một ngôn ngữ cải tiến và biết cách biến ý tưởng thành hành động. Trước khóa học, WISE Academy khảo sát những khó khăn khi triển khai công cụ Lean hiện tại, định hướng thực hành Lean của nhà máy đối với các chuyền và cách ghi nhận, đánh giá ý tưởng cải tiến, để nội dung bám sát thực tế của Apache.",
+    "solution": "WISE Academy thiết kế chương trình \"Lean Fundamental & Kaizen Mindset\" dành riêng cho quản lý sản xuất của Apache, học đi đôi với hành, xen kẽ lớp học và thực hành tại hiện trường:",
+    "steps": [
+      {
+        "name": "Lean là gì",
+        "text": "Vì sao cần Lean và 5 nguyên lý Lean: giá trị, dòng giá trị, dòng chảy liên tục, hệ thống kéo và theo đuổi sự hoàn hảo."
+      },
+      {
+        "name": "Mô phỏng sản xuất",
+        "text": "Trò chơi mô phỏng (gấp, gắn, tô màu) để tự nhận ra vấn đề 5S, 8 lãng phí, Lean KPIs và giá trị của tư duy Kaizen."
+      },
+      {
+        "name": "Săn lãng phí tại Gemba",
+        "text": "3 MU (Muda, Mura, Muri), 8 lãng phí DOWNTIME và kỹ thuật vòng tròn quan sát Ohno ngay trên chuyền."
+      },
+      {
+        "name": "Kaizen",
+        "text": "Chọn dự án, chỉ số Kaizen và 3 cách tiếp cận: Single point Kaizen, Kaizen Event, hoạt động nhóm nhỏ (SGA)."
+      },
+      {
+        "name": "Báo cáo cải tiến",
+        "text": "Học viên thực hiện cải tiến điểm, tính hiệu quả tài chính và trình bày kết quả trước ban lãnh đạo."
+      }
+    ],
+    "goals": [
+      "Hiểu hệ thống quản lý Lean = tư duy Kaizen + loại bỏ lãng phí và áp dụng vào công việc hằng ngày.",
+      "Nhận diện 8 lãng phí (DOWNTIME) và 3 MU ngay tại hiện trường.",
+      "Biết cách chọn và thực hiện Single point Kaizen, tính toán hiệu quả tài chính của cải tiến.",
+      "Hình thành thói quen chủ động đề xuất và triển khai cải tiến trên chuyền."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Đội ngũ quản lý sản xuất"
+      },
+      {
+        "label": "Thời gian",
+        "value": "02 và 03/06/2026"
+      },
+      {
+        "label": "Hình thức",
+        "value": "Workshop tại lớp kết hợp thực hành hiện trường (Gemba)"
+      }
+    ],
+    "outcome": "Sau hai ngày học và thực hành, đội ngũ quản lý sản xuất của Apache nhìn quy trình bằng con mắt khác: lãng phí được gọi đúng tên ngay trên chuyền, mỗi người mang về ít nhất một ý tưởng cải tiến cho khu vực của mình cùng cách đo hiệu quả của nó. Không khí sôi nổi qua trò chơi mô phỏng và phần trình bày nhóm cho thấy tinh thần Kaizen đã bắt đầu lan tỏa, tạo nền móng cho hành trình Lean tiếp theo của Apache.",
+    "cover": "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_1.webp",
+    "gallery": [
+      "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_1.webp",
+      "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_2.webp",
+      "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_3.webp",
+      "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_4.webp",
+      "/images/projects/apache-lean-fundamental-kaizen-mindset/photo_5.webp"
+    ]
+  },
+  {
     "id": "huali-group-lean-six-sigma-yellow-belt",
     "client": "Huali Industrial Group",
     "industry": "Sản xuất giày dép",

@@ -29,8 +29,9 @@ export default function ProjectsPage() {
         <section key={proj.id} id={proj.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-10 items-start">
             <div className={idx % 2 ? "lg:order-2" : "lg:order-1"}>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100">
-                <img src={proj.cover || proj.gallery?.[0]} alt={`Dự án ${proj.client}`} className="w-full h-full object-cover" loading="lazy" />
+              {/* shown at the photo's own proportions, so wide group photos are never cut at the sides */}
+              <div className="rounded-2xl overflow-hidden bg-slate-100">
+                <img src={proj.cover || proj.gallery?.[0]} alt={`Dự án ${proj.client}`} className="block w-full h-auto" loading="lazy" />
               </div>
               {proj.gallery && proj.gallery.length > 1 && (
                 <div className="mt-3 grid grid-cols-3 gap-3">
