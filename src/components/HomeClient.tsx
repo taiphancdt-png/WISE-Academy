@@ -14,7 +14,7 @@ import {
 } from "@/components/icons";
 import SectionBadge from "@/components/SectionBadge";
 import PartnerLogos from "@/components/PartnerLogos";
-import { LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
+import { LssiPartnerIntro } from "@/components/LssiPrograms";
 import CountUp from "@/components/CountUp";
 import Honeypot from "@/components/Honeypot";
 import { submitLead } from "@/lib/submitLead";
@@ -222,15 +222,7 @@ export default function HomeClient({
             </p>
           </div>
 
-          <div className="mb-14">
-            <LssiPartnerIntro />
-          </div>
-
-          <LssiProgramGrid />
-
-          <div className="mt-10">
-            <LssiPricingCta href="/dao-tao#dang-ky-lssi" />
-          </div>
+          <LssiPartnerIntro />
 
           <div className="text-center mt-12">
             <Link
