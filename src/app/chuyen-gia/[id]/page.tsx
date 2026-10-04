@@ -99,6 +99,18 @@ function Rail({
   );
 }
 
+// The cut-out portrait ends in a soft wave instead of a straight or faded edge (two gentle crests).
+const WAVE_SVG =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V90C88 84 76 84 63 90S38 97 25 91 6 86 0 89Z'/%3E%3C/svg%3E\")";
+const WAVE_MASK: React.CSSProperties = {
+  WebkitMaskImage: WAVE_SVG,
+  maskImage: WAVE_SVG,
+  WebkitMaskSize: "100% 100%",
+  maskSize: "100% 100%",
+  WebkitMaskRepeat: "no-repeat",
+  maskRepeat: "no-repeat",
+};
+
 // order of the themed columns of further training
 const GROUP_ORDER = [
   "Lean Six Sigma",
@@ -317,8 +329,8 @@ export default async function ExpertPage({
                 <img
                   src={exp.cutout}
                   alt={exp.name}
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none [mask-image:linear-gradient(to_bottom,#000_88%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
-                />
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none  drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
+                 style={WAVE_MASK} />
               ) : (
                 <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
                   {exp.image ? (
