@@ -125,9 +125,10 @@ export default function AboutPage() {
               trọng con người, đặt con người vào trung tâm và trao quyền để mỗi người tự tin cải tiến công việc của chính mình.
             </p>
             <p>
-              Đó là tinh thần WISE Academy mong muốn thắp lên qua từng dự án. Chúng tôi lắng nghe chân thành, thấu hiểu những trăn trở
-              của từng con người, từng vị trí, từng bộ phận và từng cấp lãnh đạo, để cùng đối tác khai vấn, khơi dậy tiềm năng và sát
-              cánh trên hành trình kiến tạo một doanh nghiệp vận hành xuất sắc, nơi mỗi ngày đều tốt hơn hôm qua.
+              Đó cũng là niềm tin WISE Academy mang theo vào từng nhà máy, từng văn phòng. Chúng tôi không đến để áp đặt một mô hình có
+              sẵn, mà để lắng nghe, thấu hiểu và cùng mỗi con người, mỗi bộ phận, mỗi cấp lãnh đạo tìm ra cách làm tốt hơn. Khi mỗi người
+              tìm thấy ý nghĩa trong công việc của mình, cải tiến không còn là một dự án mà trở thành văn hóa, và doanh nghiệp sẽ tự tin
+              vươn xa trên hành trình vận hành xuất sắc.
             </p>
           </div>
         </div>
