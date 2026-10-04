@@ -79,7 +79,7 @@ export default function CertificateLookup() {
             id="cert-code"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            placeholder="Ví dụ: WISE-LSSYB-2026-0001"
+            placeholder="Ví dụ: WISELSSGB-K2501-001-F"
             autoComplete="off"
             maxLength={40}
             className="flex-1 rounded-full border border-slate-300 px-5 py-3 text-[15px] uppercase tracking-wide text-[#002F5B] outline-none focus:border-[#F76011] focus:ring-2 focus:ring-[#F76011]/20"
