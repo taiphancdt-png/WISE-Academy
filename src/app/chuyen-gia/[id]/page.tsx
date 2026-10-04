@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/ui";
 import ExpertActionBar from "@/components/ExpertActionBar";
-import CountUp from "@/components/CountUp";
 import {
   ArrowLeft,
   ArrowRight,
@@ -36,24 +35,20 @@ export async function generateMetadata({
   };
 }
 
-// small uppercase section label with an orange dash
-function SectionLabel({
-  children,
-  light = false,
-}: {
-  children: React.ReactNode;
-  light?: boolean;
-}) {
+// One section of the profile body: a sticky left rail with an outlined number and the section name.
+function Rail({ no, label, id, children }: { no: string; label: string; id?: string; children: React.ReactNode }) {
   return (
-    <p
-      className={`flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-[#FFB27A]" : "text-[#C9500E]"}`}
-    >
-      <span
-        aria-hidden="true"
-        className="h-0.5 w-6 rounded-full bg-[#F76011]"
-      />
-      {children}
-    </p>
+    <section id={id} className="px-4 sm:px-6 scroll-mt-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-12 py-14 lg:py-20 border-t border-[#002F5B]/10 first:border-t-0">
+        <div className="lg:sticky lg:top-28 self-start">
+          <span className="block text-5xl font-extrabold leading-none" style={{ color: "transparent", WebkitTextStroke: "1.2px #F76011" }}>
+            {no}
+          </span>
+          <h2 className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-[#002F5B]">{label}</h2>
+        </div>
+        <div>{children}</div>
+      </div>
+    </section>
   );
 }
 
@@ -99,6 +94,7 @@ export default async function ExpertPage({
   const lastPart = words.slice(cut).join(" ");
   // the first sentence of the bio as a short lead
   const lead = exp.bio.split(/(?<=\.)\s/)[0];
+  const rest = exp.bio.slice(lead.length).trim();
 
   return (
     <div className="bg-[#F8F9FA]">
@@ -251,262 +247,158 @@ export default async function ExpertPage({
         </div>
       </section>
 
-      {/* Key numbers: a navy card lifted over the end of the hero */}
+      {/* Key numbers: an editorial strip, big figures between hairlines */}
       {exp.highlights && (
-        <section className="relative z-10 px-4 sm:px-6 -mt-10">
-          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 rounded-3xl bg-gradient-to-br from-[#002F5B] to-[#0B4A82] text-white shadow-[0_30px_60px_-30px_rgba(0,30,56,0.7)] overflow-hidden">
-            {exp.highlights.map((h, i) => (
-              <div
-                key={h.label}
-                className={`relative px-5 py-7 text-center ${i ? "lg:border-l border-white/10" : ""}`}
-              >
-                <dd className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                  {/\d\.\d/.test(h.value) ? (
-                    h.value
-                  ) : (
-                    <CountUp value={h.value} />
-                  )}
-                </dd>
-                <dt className="mt-1.5 text-xs text-white/70 leading-snug">
-                  {h.label}
-                </dt>
-                <span
-                  aria-hidden="true"
-                  className="absolute left-1/2 bottom-0 h-1 w-10 -translate-x-1/2 rounded-t-full bg-[#F76011]"
-                />
-              </div>
-            ))}
+        <section className="bg-white border-y border-[#002F5B]/10 px-4 sm:px-6">
+          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+            {exp.highlights.map((h, i) => {
+              const plus = h.value.endsWith("+");
+              const num = plus ? h.value.slice(0, -1) : h.value;
+              return (
+                <div key={h.label} className={`py-8 px-4 ${i % 2 ? "border-l" : "sm:border-l"} ${i === 0 ? "sm:border-l-0" : ""} border-[#002F5B]/10`}>
+                  <dd className="text-4xl lg:text-5xl font-extrabold tracking-tight text-[#002F5B] leading-none">
+                    {num}
+                    {plus && <span className="text-[#F76011]">+</span>}
+                  </dd>
+                  <dt className="mt-3 text-xs uppercase tracking-[0.12em] text-[#486581] leading-snug">{h.label}</dt>
+                </div>
+              );
+            })}
           </dl>
         </section>
       )}
 
-      {/* Story and strengths */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6">
-        <div
-          className={`max-w-6xl mx-auto grid grid-cols-1 ${exp.expertise ? "lg:grid-cols-2" : "max-w-4xl"} gap-10 lg:gap-14 items-start`}
-        >
-          <div className="relative rounded-3xl bg-white p-8 sm:p-10 shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
-            <span
-              aria-hidden="true"
-              className="absolute -top-6 left-8 text-[96px] leading-none font-serif text-[#F76011]"
-            >
-              &ldquo;
-            </span>
-            <SectionLabel>Giới thiệu</SectionLabel>
-            <p className="mt-4 text-lg sm:text-xl leading-relaxed text-[#102A43]">
-              {exp.bio}
-            </p>
-            <ul className="mt-7 flex flex-wrap gap-2">
-              {exp.tags.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full bg-[#FFF1E7] px-3.5 py-1.5 text-xs font-semibold text-[#C9500E]"
-                >
-                  #{t}
+      {/* Profile body: a numbered left rail with the section name, content on the right (consulting-firm bio style) */}
+      <div className="bg-white">
+        <Rail no="01" label="Giới thiệu">
+          {/* the hero already shows the first sentence of the bio; here the rest, set large */}
+          <p className="text-2xl sm:text-[30px] leading-[1.4] font-medium tracking-tight text-[#002F5B]">{rest || exp.bio}</p>
+          <p className="mt-8 text-sm text-[#486581]">
+            {exp.tags.map((t, i) => (
+              <span key={t}>
+                {i > 0 && <span className="mx-2 text-[#F76011]">/</span>}
+                <span className="font-semibold text-[#002F5B]">{t}</span>
+              </span>
+            ))}
+          </p>
+        </Rail>
+
+        {exp.expertise && (
+          <Rail no="02" label="Thế mạnh chuyên môn">
+            <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
+              {exp.expertise.map((t, i) => (
+                <li key={t} className="group flex gap-5 py-5 border-b border-[#002F5B]/10">
+                  <span className="shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors">{t}</span>
                 </li>
               ))}
-            </ul>
-          </div>
-          {exp.expertise && (
-            <div>
-              <SectionLabel>Thế mạnh chuyên môn</SectionLabel>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#002F5B]">
-                Những gì chuyên gia mang đến cho doanh nghiệp
-              </h2>
-              {exp.expertise && (
-                <ol className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {exp.expertise.map((t, i) => (
-                    <li
-                      key={t}
-                      className="group flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-[#002F5B]/[0.07] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_-20px_rgba(0,47,91,0.5)] hover:ring-[#F76011]/40"
-                    >
-                      <span className="shrink-0 w-8 h-8 rounded-xl bg-[#002F5B] text-white text-xs font-bold flex items-center justify-center group-hover:bg-[#F76011] transition-colors">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-sm text-[#102A43] leading-relaxed">
-                        {t}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              )}
-            </div>
-          )}
-        </div>
-      </section>
+            </ol>
+          </Rail>
+        )}
 
-      {/* Career path and education */}
-      {exp.career && (
-        <section
-          id="qua-trinh"
-          className="py-16 lg:py-24 px-4 sm:px-6 bg-white scroll-mt-24"
-        >
-          <div className="max-w-6xl mx-auto">
-            <SectionLabel>Hành trình</SectionLabel>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-bold text-[#002F5B]">
-              Quá trình công tác
-            </h2>
-            {/* the career as steps on one line, newest first */}
-            <ol className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
-              <span
-                aria-hidden="true"
-                className="hidden lg:block absolute left-4 right-4 top-[22px] h-0.5 bg-gradient-to-r from-[#F76011] via-[#FFB27A] to-[#002F5B]/20"
-              />
+        {exp.career && (
+          <Rail no="03" label="Quá trình công tác" id="qua-trinh">
+            <ol className="border-t border-[#002F5B]/10">
               {exp.career.map((c, i) => (
-                <li key={c.org} className="relative">
+                <li key={c.org} className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10">
                   <span
-                    className={`relative z-10 inline-flex items-center rounded-full px-4 py-2.5 text-xs font-bold ${i === 0 ? "bg-[#F76011] text-white shadow-[0_10px_20px_-8px_rgba(247,96,17,0.8)]" : "bg-white text-[#002F5B] ring-2 ring-[#002F5B]/15"}`}
+                    className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-none"
+                    style={i === 0 ? { color: "#F76011" } : { color: "transparent", WebkitTextStroke: "1.2px #002F5B" }}
                   >
                     {c.period}
                   </span>
-                  <div className="mt-4 h-full rounded-2xl bg-[#F8F9FA] p-5 ring-1 ring-[#002F5B]/[0.06]">
-                    <h3 className="text-lg font-bold text-[#002F5B] leading-snug">
-                      {c.org}
-                    </h3>
-                    <p className="mt-2 text-sm text-[#486581] leading-relaxed">
-                      {c.role}
-                    </p>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#002F5B]">{c.org}</h3>
+                    <p className="mt-1.5 text-[15px] text-[#486581] leading-relaxed">{c.role}</p>
                   </div>
                 </li>
               ))}
             </ol>
-
-            {(exp.education || exp.languages || exp.regions) && (
-              <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {(exp.education || exp.languages) && (
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
                 {exp.education && (
-                  <div className="rounded-3xl bg-[#002F5B] p-7 text-white">
-                    <SectionLabel light>Học vấn</SectionLabel>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Học vấn</p>
                     <ul className="mt-4 space-y-4">
                       {exp.education.map((e) => (
-                        <li key={e.degree}>
-                          <p className="font-semibold">{e.degree}</p>
-                          <p className="mt-0.5 text-sm text-white/70">
-                            {e.school}
-                          </p>
+                        <li key={e.degree} className="pl-4 border-l-2 border-[#F76011]">
+                          <p className="font-semibold text-[#002F5B]">{e.degree}</p>
+                          <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
                         </li>
                       ))}
                     </ul>
-                    {exp.languages && (
-                      <>
-                        <div className="my-5 h-px bg-white/10" />
-                        <SectionLabel light>Ngoại ngữ</SectionLabel>
-                        <p className="mt-3 text-sm text-white/85 leading-relaxed">
-                          {exp.languages}
-                        </p>
-                      </>
-                    )}
                   </div>
                 )}
-                {exp.regions && (
-                  <div className="lg:col-span-2 rounded-3xl bg-[#FFF7F0] p-7 ring-1 ring-[#F76011]/15">
-                    <SectionLabel>Kinh nghiệm quốc tế</SectionLabel>
-                    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {exp.regions.map((r) => (
-                        <li
-                          key={r.country}
-                          className="rounded-2xl bg-white p-4 ring-1 ring-[#002F5B]/[0.06]"
-                        >
-                          <p className="text-sm font-bold text-[#002F5B]">
-                            {r.country}
-                          </p>
-                          <p className="mt-1 text-xs text-[#486581] leading-relaxed">
-                            {r.text}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
+                {exp.languages && (
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Ngoại ngữ</p>
+                    <p className="mt-4 pl-4 border-l-2 border-[#F76011] text-[15px] text-[#102A43] leading-relaxed">{exp.languages}</p>
                   </div>
                 )}
               </div>
             )}
-          </div>
-        </section>
-      )}
+          </Rail>
+        )}
 
-      {/* Selected engagements */}
-      {exp.experience && (
-        <section className="py-16 lg:py-24 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <SectionLabel>Dấu ấn</SectionLabel>
-                <h2 className="mt-2 text-2xl sm:text-4xl font-bold text-[#002F5B]">
-                  Kinh nghiệm dự án tiêu biểu
-                </h2>
-              </div>
-              <p className="text-sm text-[#486581]">
-                {exp.experience.length} dự án và chương trình nổi bật
-              </p>
-            </div>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {exp.experience.map((e) => (
-                <article
-                  key={e.client}
-                  className="group relative overflow-hidden rounded-2xl bg-white p-6 ring-1 ring-[#002F5B]/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_40px_-24px_rgba(0,47,91,0.55)]"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#F76011] to-[#FFB27A] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                  />
-                  <div className="flex items-start gap-3">
-                    <span className="shrink-0 w-11 h-11 rounded-xl bg-[#EBF3FA] text-[#002F5B] font-extrabold flex items-center justify-center group-hover:bg-[#002F5B] group-hover:text-white transition-colors">
-                      {e.client.charAt(0)}
-                    </span>
-                    <div className="min-w-0">
-                      <h3 className="font-bold text-[#002F5B] leading-snug">
-                        {e.client}
-                      </h3>
-                      {e.period && (
-                        <span className="mt-1 inline-block rounded-full bg-[#FFF1E7] px-2.5 py-0.5 text-[11px] font-bold text-[#C9500E]">
-                          {e.period}
-                        </span>
-                      )}
+        {exp.experience && (
+          <Rail no="04" label="Dự án tiêu biểu">
+            {/* the engagements with a hard number lead, large */}
+            {exp.experience.some((e) => e.metric) && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
+                {exp.experience
+                  .filter((e) => e.metric)
+                  .map((e) => (
+                    <div key={e.client} className="bg-[#FFF7F0] p-7 flex flex-col">
+                      <p className="text-3xl lg:text-4xl font-extrabold tracking-tight text-[#F76011] leading-none">{e.metric}</p>
+                      <p className="mt-5 font-bold text-[#002F5B]">{e.client}</p>
+                      {e.period && <p className="text-xs text-[#486581] mt-0.5">{e.period}</p>}
+                      <p className="mt-3 text-sm text-[#486581] leading-relaxed">{e.text}</p>
                     </div>
-                  </div>
-                  <p className="mt-4 text-sm text-[#486581] leading-relaxed">
-                    {e.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+                  ))}
+              </div>
+            )}
+            <ul className="mt-10 border-t border-[#002F5B]/10">
+              {exp.experience
+                .filter((e) => !e.metric)
+                .map((e) => (
+                  <li key={e.client} className="group grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] gap-2 md:gap-10 py-6 border-b border-[#002F5B]/10">
+                    <div>
+                      <h3 className="font-bold text-[#002F5B] group-hover:text-[#C9500E] transition-colors">{e.client}</h3>
+                      {e.period && <p className="mt-0.5 text-xs font-semibold text-[#C9500E]">{e.period}</p>}
+                    </div>
+                    <p className="text-[15px] text-[#486581] leading-relaxed">{e.text}</p>
+                  </li>
+                ))}
+            </ul>
+          </Rail>
+        )}
 
-      {/* Certifications: on navy, like a wall of badges */}
-      {exp.certifications && (
-        <section className="relative isolate overflow-hidden py-16 lg:py-24 px-4 sm:px-6 bg-[#001E38] text-white">
-          <div
-            aria-hidden="true"
-            className="absolute -right-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#F76011]/15 blur-3xl"
-          />
-          <div className="max-w-6xl mx-auto">
-            <SectionLabel light>Chứng nhận</SectionLabel>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-bold">
-              Chứng nhận & đào tạo chuyên sâu
-            </h2>
-            <ul className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {exp.certifications && (
+          <Rail no="05" label="Chứng nhận & đào tạo">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
               {exp.certifications.map((c) => (
-                <li
-                  key={c.name}
-                  className="flex flex-col rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/10 backdrop-blur transition hover:bg-white/[0.1] hover:ring-[#F76011]/50"
-                >
-                  <CheckCircle2
-                    weight="duotone"
-                    className="w-7 h-7 text-[#FF9F43]"
-                  />
-                  <span className="mt-3 text-sm font-semibold leading-snug">
-                    {c.name}
-                  </span>
-                  <span className="mt-auto pt-2 text-xs text-white/60">
-                    {c.org}
-                  </span>
+                <li key={c.name} className="flex items-baseline justify-between gap-6 py-4 border-b border-[#002F5B]/10">
+                  <span className="text-[15px] font-semibold text-[#002F5B] leading-snug">{c.name}</span>
+                  <span className="shrink-0 max-w-[45%] text-right text-xs text-[#486581] leading-snug">{c.org}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-      )}
+          </Rail>
+        )}
+
+        {exp.regions && (
+          <Rail no="06" label="Kinh nghiệm quốc tế">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
+              {exp.regions.map((r) => (
+                <li key={r.country} className="bg-white p-5">
+                  <p className="text-lg font-extrabold text-[#002F5B]">{r.country}</p>
+                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">{r.text}</p>
+                </li>
+              ))}
+            </ul>
+          </Rail>
+        )}
+      </div>
 
       {/* Projects with the companies named in the bio */}
       {related.length > 0 && (

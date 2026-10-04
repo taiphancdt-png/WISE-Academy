@@ -75,19 +75,22 @@
     ],
     "experience": [
       {
-        "client": "Race to the Top Vietnam",
-        "period": "2017 - 2019",
-        "text": "Triển khai chương trình năng suất của sáng kiến đa bên tại 10 nhà máy may mặc và giày dép (Tân Hợp, Nien Hsing, Saitex, Hansae...), cùng các đối tác Nike, GAP, Levi's, Puma, IFC, ILO, USAID, nhằm nâng cao năng suất và điều kiện làm việc."
+        "client": "Saigon Seiki",
+        "period": "",
+        "text": "Tư vấn năng suất theo Hoshin Kanri, cải thiện các chỉ số PQCDE: năng lực sản xuất từ 63% lên 79,4%, chất lượng từ 60% lên 85,6%.",
+        "metric": "63% → 79,4%"
       },
       {
         "client": "GEAR (IFC / ILO Better Work Vietnam)",
         "period": "2015 - 2019",
-        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo."
+        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo.",
+        "metric": "34 nhà máy"
       },
       {
-        "client": "Saigon Seiki",
-        "period": "",
-        "text": "Tư vấn năng suất theo Hoshin Kanri, cải thiện các chỉ số PQCDE: năng lực sản xuất từ 63% lên 79,4%, chất lượng từ 60% lên 85,6%."
+        "client": "Race to the Top Vietnam",
+        "period": "2017 - 2019",
+        "text": "Triển khai chương trình năng suất của sáng kiến đa bên tại 10 nhà máy may mặc và giày dép (Tân Hợp, Nien Hsing, Saitex, Hansae...), cùng các đối tác Nike, GAP, Levi's, Puma, IFC, ILO, USAID, nhằm nâng cao năng suất và điều kiện làm việc.",
+        "metric": "10 nhà máy"
       },
       {
         "client": "PNJ",
