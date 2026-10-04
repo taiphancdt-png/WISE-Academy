@@ -241,7 +241,7 @@ export default async function ExpertPage({
           className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70"
         />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 pt-12 lg:pt-16 pb-16 lg:pb-24">
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center lg:items-end">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-[#002F5B] px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white">
                 <span className="w-2 h-2 rounded-full bg-[#F76011] animate-pulse" />
@@ -367,7 +367,7 @@ export default async function ExpertPage({
                   </p>
                 </div>
               )}
-              <span className="absolute left-1/2 -bottom-5 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
+              <span className="absolute left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
                 WISE Academy Expert
               </span>
             </div>
