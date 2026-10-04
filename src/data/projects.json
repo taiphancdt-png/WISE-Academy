@@ -8,10 +8,6 @@
     "highlight": "Đội ngũ quản lý nòng cốt làm chủ tư duy và công cụ thống kê để tự giải quyết các vấn đề của nhà máy bằng dữ liệu.",
     "results": [
       {
-        "metric": "12 ngày",
-        "label": "Đào tạo chuyên sâu"
-      },
-      {
         "metric": "DMAIC",
         "label": "Phương pháp luận 5 bước"
       },
@@ -90,10 +86,6 @@
     "highlight": "5S không còn là dọn dẹp mà trở thành cách làm việc hiệu quả và an toàn của cả đội ngũ kho vận.",
     "results": [
       {
-        "metric": "3 ngày",
-        "label": "Đào tạo & thực hành"
-      },
-      {
         "metric": "3",
         "label": "Trụ cột: 5S, An toàn, Trực quan"
       },
@@ -149,10 +141,6 @@
     "description": "Khóa \"Work Engineering for Line Productivity Improvement\" 5 ngày: săn lãng phí tại hiện trường, cân bằng chuyền và cải tiến thao tác theo nguyên tắc ECRS.",
     "highlight": "Quản lý và giám sát tự phân tích dòng chảy, gỡ nút thắt cổ chai và tinh gọn thao tác trên chính dây chuyền của mình.",
     "results": [
-      {
-        "metric": "5 ngày",
-        "label": "Đào tạo chuyên sâu"
-      },
       {
         "metric": "ECRS",
         "label": "Nguyên tắc cải tiến thao tác"
@@ -216,10 +204,6 @@
       {
         "metric": "4 lớp",
         "label": "Thuộc 2 khóa học"
-      },
-      {
-        "metric": "32 ngày",
-        "label": "Tổng thời lượng"
       }
     ],
     "tags": [
@@ -278,10 +262,6 @@
         "label": "Nhân sự chủ chốt được đào tạo"
       },
       {
-        "metric": "18 ngày",
-        "label": "Tổng thời lượng"
-      },
-      {
         "metric": "Lean KPIs",
         "label": "Quản lý hiệu suất"
       }
@@ -334,10 +314,6 @@
     "highlight": "Khởi động hành trình chuyển đổi Lean bằng thay đổi tư duy của chính đội ngũ quản lý.",
     "results": [
       {
-        "metric": "2 ngày",
-        "label": "Đào tạo nền tảng"
-      },
-      {
         "metric": "Simulation",
         "label": "Trò chơi mô phỏng Lean"
       },
@@ -387,10 +363,6 @@
     "description": "Chương trình 3 ngày giúp chuẩn hóa và tối ưu không gian làm việc một cách khoa học, thực hành trực tiếp tại khu vực thí điểm trong nhà máy.",
     "highlight": "An toàn không còn là việc riêng của bộ phận HSE mà trở thành ý thức chung của toàn nhà máy.",
     "results": [
-      {
-        "metric": "3 ngày",
-        "label": "Đào tạo & thực hành"
-      },
       {
         "metric": "3",
         "label": "Trụ cột: 5S, An toàn, Trực quan"
@@ -447,10 +419,6 @@
     "description": "Workshop 2 ngày về thiết kế bố trí sản xuất dạng Cell: trò chơi mô phỏng, 12 bước thiết kế và chuyển đổi, cùng lợi ích và thách thức khi triển khai.",
     "highlight": "Bố trí dây chuyền tinh gọn để giảm di chuyển, giảm chờ đợi và rút ngắn thời gian chu kỳ.",
     "results": [
-      {
-        "metric": "2 ngày",
-        "label": "Workshop thực hành"
-      },
       {
         "metric": "12 bước",
         "label": "Thiết kế & chuyển đổi Lean Cell"

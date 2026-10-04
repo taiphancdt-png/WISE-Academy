@@ -135,6 +135,21 @@ export default function ProjectDetails({
               ))}
             </div>
           )}
+          {/* collapse again from the bottom of the case study, back to the project summary */}
+          <div className="mt-8 mb-2 flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                document.getElementById(project.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              aria-controls={panelId}
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#002F5B] px-6 py-2 text-sm font-semibold text-[#002F5B] transition-colors hover:bg-[#002F5B] hover:text-white"
+            >
+              Thu gọn
+              <ChevronDown className="w-4 h-4 rotate-180" />
+            </button>
+          </div>
         </div>
       </div>
     </>
