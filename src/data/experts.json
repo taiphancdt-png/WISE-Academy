@@ -323,17 +323,211 @@
     "id": "phan-tan-tai",
     "name": "Phan Tấn Tài",
     "role": "Đồng Sáng Lập · Automation & Lean Facilitator",
-    "title": "Chuyên gia Tự động hóa & Lean Manufacturing · Lean Sensei (Nike NOS)",
-    "bio": "Nguyên Giám đốc Lean tại AG Samho, Chuyên gia tự động hóa sản xuất giày dép cho các dự án tự động của Nike tại Dean Shoes. Chuyên sâu về cân bằng chuyền, thiết kế Lean Cell Layout và cải tiến năng suất Work Engineering.",
+    "title": "Giảng viên Lean Six Sigma của LSSI · Chuyên gia Tự động hóa & Lean Manufacturing · Lean Sensei (Nike NOS)",
+    "bio": "Hơn 14 năm kinh nghiệm trong chuyển đổi Lean, Kỹ thuật công nghiệp (IE) và triển khai Lean Six Sigma, với thế mạnh đặc biệt về tự động hóa sản xuất. Từng là chuyên gia tư vấn, giảng viên, LSSI Global Facilitator và Lean Manager, tạo tác động tại hơn 60 doanh nghiệp và tổ chức trong ngành giày dép, may mặc và logistics.",
     "tags": [
-      "Automation 4.0",
-      "Work Engineering",
-      "Lean Cell",
-      "Nike Sensei"
+      "Lean Six Sigma Green Belt",
+      "Nike Sensei",
+      "Automation",
+      "Work Engineering"
     ],
     "image": "/images/experts/phan-tan-tai.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/phan-tan-tai-cutout.webp"
+    "cutout": "/images/experts/phan-tan-tai-cutout.webp",
+    "highlights": [
+      {
+        "value": "14+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "120+",
+        "label": "Dự án"
+      },
+      {
+        "value": "60+",
+        "label": "Doanh nghiệp & tổ chức"
+      },
+      {
+        "value": "1.600+",
+        "label": "Học viên được đào tạo"
+      },
+      {
+        "value": "2.000+",
+        "label": "Giờ đào tạo"
+      },
+      {
+        "value": "3.000+",
+        "label": "Giờ huấn luyện (coaching)"
+      }
+    ],
+    "expertise": [
+      "Đánh giá hệ thống vận hành Lean (LAT): đo mức độ trưởng thành, xác định khoảng trống năng lực và ưu tiên sáng kiến chuyển đổi",
+      "Lộ trình chuyển đổi Lean: từ ổn định, chuẩn hóa vận hành đến hệ thống lãnh đạo và văn hóa cải tiến liên tục",
+      "Chẩn đoán vận hành: nhận diện điểm nghẽn, lãng phí và chọn dự án cải tiến có tác động kinh doanh đo lường được",
+      "Kỹ thuật công nghiệp (IE): hoạch định năng lực, mô hình sử dụng lao động, cân bằng chuyền, takt time, hiệu suất thiết bị",
+      "Thiết lập nhà máy mới: thiết kế chuyền, tối ưu mặt bằng, thiết kế dòng chảy và vận hành ổn định hệ thống sản xuất",
+      "Tự động hóa sản xuất giày: chặt không dao (die-less cutting), quét keo tự động, chuyền lắp ráp tự động, hệ thống UV",
+      "Triển khai chiến lược (Strategy Deployment): chuyển mục tiêu thành KPI, nhịp quản lý và thực thi hằng ngày",
+      "Quản trị thay đổi và ảnh hưởng lãnh đạo: kết nối các bên, coaching lãnh đạo, xây dựng business case dựa trên ROI và dữ liệu",
+      "Xây dựng năng lực Lean nội bộ và tinh thần làm chủ cải tiến bền vững trong tổ chức",
+      "Quản lý cộng đồng Lean & Lean Six Sigma hơn 400 thành viên, tổ chức workshop và cố vấn sinh viên thực tập"
+    ],
+    "career": [
+      {
+        "period": "11/2024 - nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn Lean, Giảng viên Lean Six Sigma của Lean Six Sigma Institute (LSSI) Global"
+      },
+      {
+        "period": "2021 - 2024",
+        "org": "An Giang Samho",
+        "role": "Lean Manager, báo cáo Tổng Giám đốc; quản lý các bộ phận Cải tiến liên tục (CI), IE, Kỹ thuật quy trình (PE), Tự động hóa và Đào tạo"
+      },
+      {
+        "period": "2015 - 2021",
+        "org": "Kim Đăng Consulting",
+        "role": "Quản lý dự án, Chuyên gia tư vấn và đào tạo Lean"
+      },
+      {
+        "period": "2012 - 2016",
+        "org": "Freetrend Industrial Vietnam (Dean Shoes Group)",
+        "role": "Trưởng nhóm Tự động hóa, Chuyên viên Lean tại Trung tâm Hiện đại hóa Sản xuất"
+      }
+    ],
+    "experience": [
+      {
+        "client": "Freetrend (Dean Shoes Group)",
+        "period": "2012 - 2016",
+        "text": "Nâng điểm đánh giá Lean của nhà máy từ 1,4 lên 3,3/4,0 trong 3 năm (vượt mục tiêu khách hàng 3,0), giữ vị trí số 1 về Lean trên bảng xếp hạng của khách hàng 2 năm liên tiếp; tăng năng suất 30%, giảm 75% lãng phí vận chuyển, giảm 80% tồn kho bán thành phẩm (WIP) và rút ngắn 10 ngày thời gian sản xuất."
+      },
+      {
+        "client": "An Giang Samho",
+        "period": "2021 - 2024",
+        "text": "Dẫn dắt triển khai Lean toàn nhà máy, quản lý KPI năng suất, phân tích IE cho hoạch định năng lực và nguồn lực, các dự án thiết lập nhà máy mới, và xây dựng văn hóa Kaizen qua quản lý hằng ngày và giải quyết vấn đề."
+      },
+      {
+        "client": "Race to the Top",
+        "period": "",
+        "text": "Chương trình do IHD và USAID tài trợ: tư vấn Lean phát triển năng lực lãnh đạo và vận hành xuất sắc cho quản lý cấp cao và cấp trung tại 15 nhà máy may mặc và giày dép."
+      },
+      {
+        "client": "Gender Equality and Returns (GEAR)",
+        "period": "",
+        "text": "Chương trình của ILO, IFC và Better Work: phát triển và chuẩn bị cho nữ công nhân thăng tiến lên vị trí giám sát tại 20 nhà máy may."
+      },
+      {
+        "client": "TBS, nhà máy Thoại Sơn",
+        "period": "",
+        "text": "Tư vấn thiết lập nhà máy giày mới: thiết kế mặt bằng theo Lean, xây dựng hệ thống KPI và đào tạo giám sát sản xuất."
+      },
+      {
+        "client": "Tuấn Việt Shoes",
+        "period": "",
+        "text": "Dẫn dắt chuyển đổi Lean qua tái bố trí mặt bằng nhà máy và đào tạo năng lực Lean cho đội ngũ quản lý và quản lý cấp trung."
+      },
+      {
+        "client": "Pou Chen Group",
+        "period": "",
+        "text": "Đào tạo Lean Six Sigma Green Belt, hợp tác cùng LSSI Global."
+      },
+      {
+        "client": "An Giang Samho (WISE Academy)",
+        "period": "",
+        "text": "Tư vấn Lean và đào tạo Lean Six Sigma Yellow Belt."
+      },
+      {
+        "client": "Huali Industrial Group",
+        "period": "",
+        "text": "Chương trình Work Engineering cải tiến năng suất chuyền."
+      },
+      {
+        "client": "GEODIS Vietnam",
+        "period": "",
+        "text": "Đào tạo và tư vấn 6S cho kho vận."
+      },
+      {
+        "client": "Yujin Kreves",
+        "period": "",
+        "text": "Chương trình tư vấn 6S cho sản xuất dao kéo và phụ kiện túi xách."
+      },
+      {
+        "client": "Victory Group",
+        "period": "",
+        "text": "Đào tạo Lean Fundamental cho đội ngũ quản lý sản xuất."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Training of Trainers for Lean Six Sigma",
+        "org": "Lean Six Sigma Institute (LSSI)",
+        "core": true
+      },
+      {
+        "name": "Lean Six Sigma Green Belt",
+        "org": "Lean Six Sigma Institute (LSSI)",
+        "core": true
+      },
+      {
+        "name": "Lean Sensei",
+        "org": "Nike NOS Sensei Training Program, Nike & AITC",
+        "core": true
+      },
+      {
+        "name": "ISO 45001, ISO 9001",
+        "org": "BSI (British Standards Institution)",
+        "core": true
+      },
+      {
+        "name": "BMGI Problem Solving",
+        "org": "BMGI & Dean Shoes Group",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "PMTS Timeline Training",
+        "org": "Satra Technology",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Lean Fundamental Training Program",
+        "org": "Freetrend (Dean Shoes Group)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Becoming Coaching Leader",
+        "org": "IFC, Coach Đàm Minh Hạnh",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "ToT Gender Equality and Returns (GEAR)",
+        "org": "IFC, ILO, Better Work",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Presentation Design Methodology",
+        "org": "Slide Factory",
+        "group": "Đào tạo & Coaching"
+      },
+      {
+        "name": "Machine Safety & Risk Assessment",
+        "org": "TÜV",
+        "group": "An toàn & Số hóa"
+      },
+      {
+        "name": "Số hóa nhà máy và ứng dụng AI trong sản xuất cơ khí",
+        "org": "Quanskill & Bossard",
+        "group": "An toàn & Số hóa"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Kỹ sư Cơ điện tử",
+        "school": "Trường Cao đẳng Công Thương TP.HCM"
+      },
+      {
+        "degree": "Chương trình Giám đốc điều hành (CEO)",
+        "school": "Pace Institute of Management"
+      }
+    ]
   },
   {
     "id": "hoang-minh-nghiep",

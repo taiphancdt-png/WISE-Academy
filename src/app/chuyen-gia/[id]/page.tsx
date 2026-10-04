@@ -99,6 +99,7 @@ const GROUP_ORDER = [
   "Lean & Năng suất",
   "Đào tạo & Coaching",
   "Bền vững & Số hóa",
+  "An toàn & Số hóa",
   "Khác",
 ];
 
