@@ -1,5 +1,86 @@
 [
   {
+    "id": "aqua-growth-mindset-kaizen",
+    "client": "AQUA Việt Nam",
+    "industry": "Sản xuất thiết bị điện gia dụng",
+    "title": "Growth Mindset & Continuous Improvement (Kaizen) Skills",
+    "description": "Chương trình một ngày cho Senior, Leader, Supervisor của AQUA Electrical Appliances Vietnam: từ tư duy phát triển, các cấp độ Kaizen, phương pháp giải quyết vấn đề RG-PDCA đến vai trò người quản lý trong xây dựng văn hóa cải tiến.",
+    "highlight": "Từ \"người chữa cháy\" thành \"người xây hệ thống\": quản lý sản xuất dẫn dắt đội ngũ cùng học hỏi và cải tiến mỗi ngày.",
+    "results": [
+      {
+        "metric": "Growth",
+        "label": "Tư duy phát triển làm nền cho Kaizen"
+      },
+      {
+        "metric": "30-60-90",
+        "label": "Kế hoạch hành động sau đào tạo"
+      }
+    ],
+    "tags": [
+      "Growth Mindset",
+      "Kaizen",
+      "RG-PDCA",
+      "Coaching Kata"
+    ],
+    "partner": "AQUA Electrical Appliances Vietnam là nhà sản xuất thiết bị điện gia dụng mang thương hiệu AQUA smart home như máy giặt, tủ lạnh, với nhà máy và đội ngũ quản lý sản xuất quy mô lớn tại Việt Nam.",
+    "challenge": "Nhịp sản xuất nhanh khiến đội ngũ quản lý dễ bị cuốn vào vai trò \"chữa cháy\": xử lý triệu chứng, vấn đề cũ lặp lại, số ý tưởng cải tiến giảm dần. Để Kaizen trở thành thói quen hằng ngày, người quản lý cần thay đổi từ bên trong: tin rằng năng lực của mình và đội ngũ có thể phát triển, nhìn vấn đề từ góc độ hệ thống thay vì đổ lỗi, và biết cách huấn luyện để đội ngũ tự giải quyết vấn đề.",
+    "solution": "WISE Academy thiết kế chương trình \"Growth Mindset & Continuous Improvement (Kaizen) Skills\" dành riêng cho Senior, Leader và Supervisor của AQUA, gắn với chính các tình huống của nhà máy (tỷ lệ lỗi chuyền lắp ráp, dừng máy ép nhựa, OEE, khiếu nại thị trường). Học viên học qua trải nghiệm: thử thách sáng tạo 30 hình tròn, thử thách xây tháp theo nhóm, mini game \"chữa cháy\" và case study thực tế, theo 5 chủ đề:",
+    "steps": [
+      {
+        "name": "Growth Mindset",
+        "text": "Phân biệt tư duy phát triển và tư duy cố định (Carol Dweck), tam giác nhận thức, sức mạnh của từ \"CHƯA\" và 4 cách nuôi dưỡng Growth Mindset trong sản xuất."
+      },
+      {
+        "name": "Kaizen",
+        "text": "Kaizen là hệ thống chứ không phải sự kiện; 3 cấp độ Fix, Improve, Prevent; 3 phương pháp Single point Kaizen, SGA, Kaizen Event và 7 yếu tố xây dựng văn hóa cải tiến."
+      },
+      {
+        "name": "Giải quyết vấn đề",
+        "text": "Chu trình RG-PDCA và 4 loại vấn đề (Art Smalley), chọn đúng công cụ cho đúng loại vấn đề: 5 Why, Fishbone, A3, 8D, Kata, Design Thinking."
+      },
+      {
+        "name": "Vai trò quản lý",
+        "text": "3 hành vi cốt lõi Ask Why, Go to See (Gemba) và Coaching Kata; chuyển từ Firefighter sang System Builder."
+      },
+      {
+        "name": "Hành động",
+        "text": "Mỗi học viên lập kế hoạch 30, 60, 90 ngày với chỉ số đo lường cụ thể và ký cam kết thực hiện."
+      }
+    ],
+    "goals": [
+      "Nhận diện tư duy hiện tại và nuôi dưỡng Growth Mindset trong quản lý đội nhóm.",
+      "Hiểu Kaizen như một hệ thống vận hành hằng ngày với sự tham gia của mọi người.",
+      "Phân loại đúng vấn đề và chọn đúng phương pháp giải quyết, xử lý tận gốc thay vì chữa cháy.",
+      "Thực hành 3 hành vi của Kaizen Leader và cam kết kế hoạch hành động sau đào tạo."
+    ],
+    "info": [
+      {
+        "label": "Người tham gia",
+        "value": "Quản lý sản xuất cấp Senior, Leader, Supervisor"
+      },
+      {
+        "label": "Hình thức",
+        "value": "Workshop 1 ngày, học qua trò chơi, thảo luận nhóm và case study tại nhà máy"
+      },
+      {
+        "label": "Giảng viên",
+        "value": "Nguyễn Thị Thủy, Trần Nguyên Hà (WISE Academy)"
+      }
+    ],
+    "outcome": "Các học viên hoàn thành chương trình, nhận chứng nhận và mang về kế hoạch hành động 30, 60, 90 ngày của riêng mình. Qua trò chơi và tình huống thực tế, đội ngũ quản lý AQUA nhìn rõ hơn sự khác biệt giữa chữa cháy và xây hệ thống, cùng chung thông điệp: 94% vấn đề đến từ hệ thống, Kaizen diễn ra mỗi ngày, ở mọi nơi, với mọi người, và người quản lý dẫn dắt bằng chính hành vi của mình.",
+    "cover": "/images/projects/aqua-growth-mindset-kaizen/photo_1.webp",
+    "gallery": [
+      "/images/projects/aqua-growth-mindset-kaizen/photo_1.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_2.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_3.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_4.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_5.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_6.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_7.webp",
+      "/images/projects/aqua-growth-mindset-kaizen/photo_8.webp"
+    ]
+  },
+  {
     "id": "apache-lean-fundamental-kaizen-mindset",
     "client": "Apache Footwear Group",
     "industry": "Sản xuất giày dép",
