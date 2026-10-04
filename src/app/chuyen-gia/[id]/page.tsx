@@ -334,9 +334,9 @@ export default async function ExpertPage({
                   )}
                 </div>
               )}
-              {/* floating stat cards */}
+              {/* floating stat cards: kept clear of the face (top card above the forehead line, bottom card below the chin); hidden on phones, where the stats strip shows the same figures */}
               {exp.highlights?.[0] && (
-                <div className="float-y absolute -left-4 sm:-left-8 top-[18%] rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
+                <div className="float-y absolute hidden sm:block -left-4 sm:-left-8 -top-[3%] max-w-[10.5rem] rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
                   <p className="text-2xl font-extrabold text-[#F76011] leading-none">
                     {exp.highlights[0].value}
                   </p>
@@ -346,7 +346,7 @@ export default async function ExpertPage({
                 </div>
               )}
               {exp.highlights?.[3] && (
-                <div className="float-y-slow absolute -right-2 sm:-right-6 bottom-[22%] rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
+                <div className="float-y-slow absolute hidden sm:block -right-2 sm:-right-6 bottom-[22%] max-w-[10.5rem] rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
                   <p className="text-2xl font-extrabold leading-none">
                     {exp.highlights[3].value}
                   </p>
