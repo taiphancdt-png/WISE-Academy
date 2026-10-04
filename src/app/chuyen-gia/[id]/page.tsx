@@ -339,88 +339,8 @@ export default async function ExpertPage({
             )}
         </Rail>
 
-        {exp.regions && (
-          <Rail no="02" label="Kinh nghiệm quốc tế">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
-              {exp.regions.map((r) => (
-                <li key={r.country} className="bg-white p-5">
-                  <p className="text-lg font-extrabold text-[#002F5B]">{r.country}</p>
-                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">{r.text}</p>
-                </li>
-              ))}
-            </ul>
-          </Rail>
-        )}
-
-        {exp.expertise && (
-          <Rail no="03" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
-            <ol className={`grid grid-cols-1 ${exp.photos?.[1] ? "" : "md:grid-cols-2"} gap-x-12 border-t border-[#002F5B]/10`}>
-              {exp.expertise.map((t, i) => (
-                <li key={t} className="group flex gap-5 py-5 border-b border-[#002F5B]/10">
-                  <span className="shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors">{t}</span>
-                </li>
-              ))}
-            </ol>
-          </Rail>
-        )}
-
-        {exp.career && (
-          <Rail no="04" label="Quá trình công tác" id="qua-trinh" photo={exp.photos?.[2]}>
-            <ol className="border-t border-[#002F5B]/10">
-              {exp.career.map((c, i) => (
-                <li key={c.org} className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10">
-                  <span
-                    className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-none"
-                    style={i === 0 ? { color: "#F76011" } : { color: "transparent", WebkitTextStroke: "1.2px #002F5B" }}
-                  >
-                    {c.period}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#002F5B]">{c.org}</h3>
-                    <p className="mt-1.5 text-[15px] text-[#486581] leading-relaxed">{c.role}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </Rail>
-        )}
-
-        {exp.experience && (
-          <Rail no="05" label="Dự án tiêu biểu">
-            {/* the engagements with a hard number lead, large */}
-            {exp.experience.some((e) => e.metric) && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
-                {exp.experience
-                  .filter((e) => e.metric)
-                  .map((e) => (
-                    <div key={e.client} className="bg-[#FFF7F0] p-7 flex flex-col">
-                      <p className="text-3xl lg:text-4xl font-extrabold tracking-tight text-[#F76011] leading-none">{e.metric}</p>
-                      <p className="mt-5 font-bold text-[#002F5B]">{e.client}</p>
-                      {e.period && <p className="text-xs text-[#486581] mt-0.5">{e.period}</p>}
-                      <p className="mt-3 text-sm text-[#486581] leading-relaxed">{e.text}</p>
-                    </div>
-                  ))}
-              </div>
-            )}
-            <ul className="mt-10 border-t border-[#002F5B]/10">
-              {exp.experience
-                .filter((e) => !e.metric)
-                .map((e) => (
-                  <li key={e.client} className="group grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] gap-2 md:gap-10 py-6 border-b border-[#002F5B]/10">
-                    <div>
-                      <h3 className="font-bold text-[#002F5B] group-hover:text-[#C9500E] transition-colors">{e.client}</h3>
-                      {e.period && <p className="mt-0.5 text-xs font-semibold text-[#C9500E]">{e.period}</p>}
-                    </div>
-                    <p className="text-[15px] text-[#486581] leading-relaxed">{e.text}</p>
-                  </li>
-                ))}
-            </ul>
-          </Rail>
-        )}
-
         {exp.certifications && (
-          <Rail no="06" label="Chứng nhận & đào tạo">
+          <Rail no="02" label="Chứng nhận & đào tạo">
             {/* the core credentials, large; the rest as a compact list of further training */}
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#002F5B]/10">
               {exp.certifications.slice(0, 6).map((c, i) => (
@@ -459,6 +379,87 @@ export default async function ExpertPage({
             )}
           </Rail>
         )}
+
+        {exp.regions && (
+          <Rail no="03" label="Kinh nghiệm quốc tế">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
+              {exp.regions.map((r) => (
+                <li key={r.country} className="bg-white p-5">
+                  <p className="text-lg font-extrabold text-[#002F5B]">{r.country}</p>
+                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">{r.text}</p>
+                </li>
+              ))}
+            </ul>
+          </Rail>
+        )}
+
+        {exp.expertise && (
+          <Rail no="04" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
+            <ol className={`grid grid-cols-1 ${exp.photos?.[1] ? "" : "md:grid-cols-2"} gap-x-12 border-t border-[#002F5B]/10`}>
+              {exp.expertise.map((t, i) => (
+                <li key={t} className="group flex gap-5 py-5 border-b border-[#002F5B]/10">
+                  <span className="shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors">{t}</span>
+                </li>
+              ))}
+            </ol>
+          </Rail>
+        )}
+
+        {exp.career && (
+          <Rail no="05" label="Quá trình công tác" id="qua-trinh" photo={exp.photos?.[2]}>
+            <ol className="border-t border-[#002F5B]/10">
+              {exp.career.map((c, i) => (
+                <li key={c.org} className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10">
+                  <span
+                    className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-none"
+                    style={i === 0 ? { color: "#F76011" } : { color: "transparent", WebkitTextStroke: "1.2px #002F5B" }}
+                  >
+                    {c.period}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#002F5B]">{c.org}</h3>
+                    <p className="mt-1.5 text-[15px] text-[#486581] leading-relaxed">{c.role}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Rail>
+        )}
+
+        {exp.experience && (
+          <Rail no="06" label="Dự án tiêu biểu">
+            {/* the engagements with a hard number lead, large */}
+            {exp.experience.some((e) => e.metric) && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
+                {exp.experience
+                  .filter((e) => e.metric)
+                  .map((e) => (
+                    <div key={e.client} className="bg-[#FFF7F0] p-7 flex flex-col">
+                      <p className="text-3xl lg:text-4xl font-extrabold tracking-tight text-[#F76011] leading-none">{e.metric}</p>
+                      <p className="mt-5 font-bold text-[#002F5B]">{e.client}</p>
+                      {e.period && <p className="text-xs text-[#486581] mt-0.5">{e.period}</p>}
+                      <p className="mt-3 text-sm text-[#486581] leading-relaxed">{e.text}</p>
+                    </div>
+                  ))}
+              </div>
+            )}
+            <ul className="mt-10 border-t border-[#002F5B]/10">
+              {exp.experience
+                .filter((e) => !e.metric)
+                .map((e) => (
+                  <li key={e.client} className="group grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] gap-2 md:gap-10 py-6 border-b border-[#002F5B]/10">
+                    <div>
+                      <h3 className="font-bold text-[#002F5B] group-hover:text-[#C9500E] transition-colors">{e.client}</h3>
+                      {e.period && <p className="mt-0.5 text-xs font-semibold text-[#C9500E]">{e.period}</p>}
+                    </div>
+                    <p className="text-[15px] text-[#486581] leading-relaxed">{e.text}</p>
+                  </li>
+                ))}
+            </ul>
+          </Rail>
+        )}
+
 
       </div>
 
