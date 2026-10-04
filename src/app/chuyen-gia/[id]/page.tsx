@@ -102,41 +102,64 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[380px]">
-              {/* shapes behind the portrait */}
-              <div aria-hidden="true" className="absolute -inset-6 rounded-full border-2 border-dashed border-[#F76011]/35 spin-slow" />
-              <div aria-hidden="true" className="absolute -right-5 top-10 w-full h-[88%] rounded-t-full rounded-b-[44px] bg-[#002F5B] rotate-6" />
-              {/* arch portrait; a cut-out photo rises above the top of the arch */}
+            <div className="relative mx-auto w-full max-w-[380px] sm:max-w-[440px] aspect-square">
+              {/* an organic blob instead of a frame: soft blue fill, an offset orange outline and a few sparks */}
+              <svg viewBox="0 0 400 400" aria-hidden="true" className="absolute inset-0 w-full h-full overflow-visible">
+                <defs>
+                  <linearGradient id="blobFill" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#E3EFFB" />
+                    <stop offset="100%" stopColor="#B9D5F0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M318 92c38 36 52 94 36 146-16 52-62 98-118 110-56 12-122-10-158-56S38 180 64 126 152 38 210 36s70 20 108 56Z"
+                  fill="url(#blobFill)"
+                />
+                <path
+                  d="M330 110c30 40 34 100 8 146-26 46-82 78-140 76-58-2-118-38-140-90S54 128 96 92s104-52 154-44 50 22 80 62Z"
+                  fill="none"
+                  stroke="#F76011"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray="2 12"
+                  className="origin-center spin-slow"
+                  style={{ transformBox: "fill-box" }}
+                />
+                <circle cx="70" cy="96" r="9" fill="#F76011" />
+                <circle cx="350" cy="300" r="6" fill="#002F5B" />
+                <circle cx="330" cy="70" r="4" fill="#FF9F43" />
+                <path d="M52 250l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#FF9F43" />
+              </svg>
+              {/* cut-out portrait, its lower edge fading into the page */}
               {exp.cutout ? (
-                <div className="relative aspect-[4/5]">
-                  <div className="absolute inset-x-0 bottom-0 top-[12%] rounded-t-full rounded-b-[44px] bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]" />
-                  <div className="absolute inset-0 rounded-b-[44px] overflow-hidden">
-                    <img src={exp.cutout} alt={exp.name} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[108%] max-w-none drop-shadow-[0_12px_24px_rgba(0,30,56,0.25)]" />
-                  </div>
-                </div>
+                <img
+                  src={exp.cutout}
+                  alt={exp.name}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[96%] max-w-none [mask-image:linear-gradient(to_bottom,#000_78%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
+                />
               ) : (
-                <div className="relative aspect-[4/5] rounded-t-full rounded-b-[44px] overflow-hidden bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]">
+                <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
                   {exp.image ? (
                     <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
                   ) : (
-                    <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-white">{initial}</span>
+                    <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-[#002F5B]">{initial}</span>
                   )}
                 </div>
               )}
               {/* floating stat cards */}
               {exp.highlights?.[0] && (
-                <div className="float-y absolute -left-6 sm:-left-12 top-16 rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
+                <div className="float-y absolute -left-4 sm:-left-8 top-[18%] rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
                   <p className="text-2xl font-extrabold text-[#F76011] leading-none">{exp.highlights[0].value}</p>
                   <p className="mt-1 text-[11px] font-semibold text-[#486581]">{exp.highlights[0].label}</p>
                 </div>
               )}
               {exp.highlights?.[3] && (
-                <div className="float-y-slow absolute -right-4 sm:-right-10 bottom-16 rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
+                <div className="float-y-slow absolute -right-2 sm:-right-6 bottom-[22%] rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
                   <p className="text-2xl font-extrabold leading-none">{exp.highlights[3].value}</p>
                   <p className="mt-1 text-[11px] font-semibold text-white/75">{exp.highlights[3].label}</p>
                 </div>
               )}
-              <span className="absolute left-1/2 -bottom-4 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
+              <span className="absolute left-1/2 bottom-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
                 WISE Academy Expert
               </span>
             </div>
