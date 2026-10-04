@@ -119,15 +119,15 @@ export default function AboutPage() {
           </h2>
           <div className="mt-4 space-y-4 text-sm sm:text-base text-[#486581] leading-relaxed">
             <p>
-              Câu nói của <strong className="text-[#102A43]">Harvey S. Firestone</strong> chỉ ra một cách giản dị và trực tiếp trách
-              nhiệm của người lãnh đạo trong quản trị vận hành: phát triển đội ngũ nhân sự chất lượng cho doanh nghiệp. Vì vậy, mọi
-              hoạt động Tư vấn, Triển khai và Đào tạo Lean đều phải bắt đầu từ sự tôn trọng con người, lấy con người làm trung tâm và
-              trao quyền một cách đúng đắn.
+              Câu nói của <strong className="text-[#102A43]">Harvey S. Firestone</strong> nhắc chúng tôi rằng thước đo cao nhất của
+              người lãnh đạo không nằm ở những con số, mà ở sự trưởng thành của từng con người họ dẫn dắt. Doanh nghiệp chỉ có thể vươn
+              xa khi đội ngũ cùng lớn lên. Vì thế, mọi hoạt động Tư vấn, Triển khai và Đào tạo Lean của chúng tôi đều bắt đầu từ sự tôn
+              trọng con người, đặt con người vào trung tâm và trao quyền để mỗi người tự tin cải tiến công việc của chính mình.
             </p>
             <p>
-              Đó cũng là điều WISE Academy mong muốn lan tỏa nhất qua từng dự án. Chúng tôi luôn trao đổi chân thành, thấu hiểu những
-              khó khăn của từng con người, từng vị trí, từng bộ phận và từng cấp lãnh đạo, để cùng đối tác khai vấn và đồng hành trên
-              hành trình phát triển, tối ưu quy trình và vận hành doanh nghiệp.
+              Đó là tinh thần WISE Academy mong muốn thắp lên qua từng dự án. Chúng tôi lắng nghe chân thành, thấu hiểu những trăn trở
+              của từng con người, từng vị trí, từng bộ phận và từng cấp lãnh đạo, để cùng đối tác khai vấn, khơi dậy tiềm năng và sát
+              cánh trên hành trình kiến tạo một doanh nghiệp vận hành xuất sắc, nơi mỗi ngày đều tốt hơn hôm qua.
             </p>
           </div>
         </div>
