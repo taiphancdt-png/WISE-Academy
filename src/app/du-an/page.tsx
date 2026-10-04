@@ -50,15 +50,6 @@ export default function ProjectsPage() {
                 “{proj.highlight}”
               </blockquote>
               <p className="mt-4 text-sm text-[#486581] leading-relaxed">{proj.description}</p>
-              <dl className={`mt-6 grid ${proj.results.length > 2 ? "grid-cols-3" : "grid-cols-2"} gap-4 border-y border-slate-200 py-5`}>
-                {proj.results.map((res) => (
-                  <div key={res.label}>
-                    <dt className="sr-only">{res.label}</dt>
-                    <dd className="text-xl sm:text-2xl font-bold text-[#002F5B]">{res.metric}</dd>
-                    <dd className="mt-1 text-xs text-[#486581] leading-snug">{res.label}</dd>
-                  </div>
-                ))}
-              </dl>
               <div className="mt-5 flex flex-wrap gap-2">
                 {proj.tags.map((t) => (
                   <span key={t} className="text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full">
