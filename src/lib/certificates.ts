@@ -11,6 +11,10 @@ import { createSign } from "node:crypto";
 //   CERT_SHEET_RANGE              optional, default "Certificates!A:Z"
 //   CERT_DRIVE_FOLDER_ID          id of the Drive folder holding the certificate images
 //
+// Or, without a service account: deploy docs/certificate-apps-script.gs from the sheet as a web app and set
+//   CERT_APPS_SCRIPT_URL          the web app URL
+//   CERT_APPS_SCRIPT_KEY          the SECRET written in that script
+//
 // Sheet columns are matched by their header in row 1 (any order), using WISE Academy's upload format:
 //   certificate_number | name | program | graduated_date | training_duration | method | facilitator | certificate_image
 // (Vietnamese headers such as "Mã chứng chỉ", "Họ và tên", "Ngày cấp"... are accepted too.)
@@ -65,8 +69,17 @@ export function driveId(link: string): string | null {
   return /^[\w-]{20,}$/.test(s) ? s : null;
 }
 
+const useScript = () => Boolean(process.env.CERT_APPS_SCRIPT_URL && process.env.CERT_APPS_SCRIPT_KEY);
+
 export function isConfigured() {
-  return Boolean(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY && process.env.CERT_SHEET_ID);
+  return useScript() || Boolean(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY && process.env.CERT_SHEET_ID);
+}
+
+async function callScript<T>(params: Record<string, string>): Promise<T> {
+  const url = `${process.env.CERT_APPS_SCRIPT_URL}?${new URLSearchParams({ ...params, key: process.env.CERT_APPS_SCRIPT_KEY! })}`;
+  const res = await fetch(url, { cache: "no-store", redirect: "follow" });
+  if (!res.ok) throw new Error(`apps_script_${res.status}`);
+  return (await res.json()) as T;
 }
 
 let token: { value: string; exp: number } | null = null;
@@ -109,12 +122,20 @@ async function loadRows(): Promise<Certificate[]> {
   });
   if (!res.ok) throw new Error(`google_sheet_${res.status}`);
   const { values = [] } = (await res.json()) as { values?: string[][] };
-  const headers = (values[0] || []).map(key);
+  const rows = mapRows(values[0] || [], values.slice(1));
+  const files = await listFolder();
+  const resolved: Certificate[] = rows.map(({ imageRef, ...c }) => ({ ...c, imageId: resolveImage(imageRef, c.code, files) }));
+  cache = { rows: resolved, at: Date.now() };
+  return resolved;
+}
+
+// Sheet rows to certificates, with columns matched by header.
+function mapRows(header: string[], body: string[][]) {
+  const headers = header.map(key);
   const col = (f: keyof typeof FIELDS) => headers.findIndex((h) => FIELDS[f].includes(h));
   const idx = Object.fromEntries((Object.keys(FIELDS) as (keyof typeof FIELDS)[]).map((f) => [f, col(f)])) as Record<keyof typeof FIELDS, number>;
-  const cell = (r: string[], f: keyof typeof FIELDS) => (idx[f] >= 0 ? (r[idx[f]] || "").trim() : "");
-  const rows = values
-    .slice(1)
+  const cell = (r: string[], f: keyof typeof FIELDS) => (idx[f] >= 0 ? String(r[idx[f]] ?? "").trim() : "");
+  return body
     .filter((r) => cell(r, "code"))
     .map((r) => ({
       code: normalizeCode(cell(r, "code")),
@@ -126,10 +147,6 @@ async function loadRows(): Promise<Certificate[]> {
       facilitator: cell(r, "facilitator").replace(/\s*\/\s*/g, ", "),
       imageRef: cell(r, "image"),
     }));
-  const files = await listFolder();
-  const resolved: Certificate[] = rows.map(({ imageRef, ...c }) => ({ ...c, imageId: resolveImage(imageRef, c.code, files) }));
-  cache = { rows: resolved, at: Date.now() };
-  return resolved;
 }
 
 // Image files in the certificate folder, by lower-case name and by name without extension.
@@ -180,12 +197,25 @@ const DEMO: Certificate = {
 export async function findCertificate(code: string): Promise<Certificate | null> {
   const c = normalizeCode(code);
   if (!isConfigured()) return c === DEMO.code ? DEMO : null;
+  if (useScript()) {
+    const r = await callScript<{ ok: boolean; headers?: string[]; row?: string[]; imageId?: string | null }>({ code: c });
+    if (!r.ok || !r.headers || !r.row) return null;
+    const [found] = mapRows(r.headers, [r.row]);
+    if (!found || found.code !== c) return null;
+    const { imageRef: _ref, ...cert } = found;
+    return { ...cert, imageId: r.imageId || null };
+  }
   return (await loadRows()).find((r) => r.code === c) || null;
 }
 
 // Streams a certificate image from Drive; only ids that belong to a certificate row are served.
 export async function fetchImage(id: string): Promise<Response | null> {
   if (!isConfigured()) return null;
+  if (useScript()) {
+    const r = await callScript<{ ok: boolean; mime?: string; data?: string }>({ image: id });
+    if (!r.ok || !r.data) return null;
+    return new Response(Buffer.from(r.data, "base64"), { headers: { "content-type": r.mime || "image/jpeg" } });
+  }
   const rows = await loadRows();
   if (!rows.some((r) => r.imageId === id)) return null;
   const res = await fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media&supportsAllDrives=true`, {
