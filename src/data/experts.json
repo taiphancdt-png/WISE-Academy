@@ -332,7 +332,8 @@
       "Nike Sensei"
     ],
     "image": "/images/experts/phan-tan-tai.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/phan-tan-tai-cutout.webp"
   },
   {
     "id": "hoang-minh-nghiep",
