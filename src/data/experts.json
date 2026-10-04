@@ -1351,8 +1351,8 @@
     "id": "do-tan-khoa",
     "name": "Đỗ Tân Khoa",
     "role": "Giảng viên & Chuyên gia tư vấn Chiến lược số",
-    "title": "Thạc sĩ Kỹ thuật Điều khiển & Tự động hóa · Chuyên gia Trung tâm Cách mạng Công nghiệp 4.0 TP.HCM (C4IR) · Phó Tổng Giám đốc CITARES",
-    "bio": "Hơn 15 năm kinh nghiệm trong đào tạo, tư vấn chuyển đổi số và các dự án cải tiến kinh doanh, tập trung kết nối doanh nghiệp B2B và B2C. Hiện là chuyên gia tại Trung tâm Cách mạng Công nghiệp lần thứ 4 TP.HCM (C4IR), tham gia các sáng kiến, kết nối nhà sáng lập và triển khai dự án thí điểm; đồng thời là Phó Tổng Giám đốc CITARES phụ trách đào tạo và giải pháp công nghệ, chuyên gia chẩn đoán doanh nghiệp (JICA) và tư vấn chuyển đổi số cho các chương trình của USAID, GIZ và Singapore.",
+    "title": "Thạc sĩ Kỹ thuật Điều khiển & Tự động hóa · Phó Tổng Giám đốc CITARES · Chuyên gia chẩn đoán doanh nghiệp (JICA)",
+    "bio": "Hơn 15 năm kinh nghiệm trong đào tạo, tư vấn chuyển đổi số và các dự án cải tiến kinh doanh, tập trung kết nối doanh nghiệp B2B và B2C. Hiện là Phó Tổng Giám đốc CITARES phụ trách đào tạo và giải pháp công nghệ; từng là chuyên gia tại Trung tâm Cách mạng Công nghiệp lần thứ 4 TP.HCM (C4IR). Là chuyên gia chẩn đoán doanh nghiệp (JICA) và tư vấn chuyển đổi số cho các chương trình của USAID, GIZ và Singapore.",
     "tags": [
       "Chuyển đổi số",
       "Robot & Tự động hóa",
@@ -1364,7 +1364,7 @@
     "cutout": "/images/experts/do-tan-khoa-cutout.webp",
     "career": [
       {
-        "period": "2026",
+        "period": "Hiện nay",
         "org": "CITARES",
         "role": "Phó Tổng Giám đốc phụ trách đào tạo và dịch vụ giải pháp công nghệ"
       },
