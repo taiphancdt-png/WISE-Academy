@@ -139,7 +139,7 @@ export default function AboutPage() {
           items={[
             {
               title: "Tầm nhìn",
-              icon: <Binoculars weight="duotone" className="text-[#1C5690]" />,
+              icon: <Binoculars weight="duotone" />,
               className: "bg-gradient-to-br from-[#3A78B5] to-[#1C5690] text-white",
               body: (
                 <p className="text-white/90">
@@ -149,7 +149,7 @@ export default function AboutPage() {
             },
             {
               title: "Sứ mệnh",
-              icon: <Target weight="duotone" className="text-[#EC7428]" />,
+              icon: <Target weight="duotone" />,
               className: "bg-gradient-to-br from-[#F79A5C] to-[#EC7428] text-white",
               body: (
                 <p className="text-white">

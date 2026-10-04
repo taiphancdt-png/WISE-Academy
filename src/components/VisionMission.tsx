@@ -173,7 +173,11 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
             style={{ width: D, height: D, transform: "translate(-50%, -50%)", opacity: 0 }}
             aria-hidden="true"
           >
-            {circle(<span className="w-[48%] [&>svg]:w-full [&>svg]:h-full">{it.icon}</span>, i + 1)}
+            {/* unlike the W circle: filled with the card's own colour, a thick white rim and a white icon */}
+            <div className={`absolute inset-0 rounded-full border-[6px] border-white shadow-[0_18px_40px_-14px_rgba(0,47,91,0.5)] ${it.className}`} />
+            <div className="absolute inset-[16px] rounded-full ring-1 ring-white/35" />
+            <div className="absolute inset-[26px] rounded-full bg-white/10" />
+            <span className="absolute inset-0 m-auto w-[44%] h-[44%] text-white [&>svg]:w-full [&>svg]:h-full">{it.icon}</span>
           </div>
         ))}
 
@@ -195,7 +199,7 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
       <div className="xl:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
         {items.map((it) => (
           <div key={it.title} className={`rounded-[28px] p-8 ${it.className}`}>
-            <span className="mb-5 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center [&>svg]:w-9 [&>svg]:h-9" aria-hidden="true">
+            <span className="mb-5 w-16 h-16 rounded-full bg-white/15 ring-2 ring-white/40 flex items-center justify-center [&>svg]:w-9 [&>svg]:h-9" aria-hidden="true">
               {it.icon}
             </span>
             {content(it)}
