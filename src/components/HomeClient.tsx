@@ -150,7 +150,9 @@ export default function HomeClient({
         <div className="hero-enter max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-24 sm:pt-24 sm:pb-32 lg:pb-36">
           <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1]">
-              Tối ưu vận hành, tăng năng suất, <span className="text-[#FF7A30]">tiết kiệm chi phí</span> bền vững.
+              <span className="block">Tối ưu vận hành</span>
+              <span className="block">Tăng năng suất</span>
+              <span className="block text-[#FF7A30]">Tối ưu chi phí</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-white/85 max-w-xl leading-relaxed">
               Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
