@@ -554,6 +554,20 @@
         "country": "Bangladesh",
         "text": "Cùng IFC Bangladesh phát triển chương trình đào tạo cho dự án GEAR"
       }
+    ],
+    "photos": [
+      {
+        "src": "/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_5.webp",
+        "caption": "Chương trình Work Engineering cải tiến năng suất chuyền tại Huali Industrial Group"
+      },
+      {
+        "src": "/images/projects/pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt/photo_1.webp",
+        "caption": "Lớp Lean Six Sigma Green Belt cho Pou Chen Group, hợp tác cùng LSSI Global"
+      },
+      {
+        "src": "/images/projects/geodis-vietnam-dao-tao-thuc-hanh-5s-an-toan-quan-ly-truc-quan/photo_3.webp",
+        "caption": "Đào tạo và tư vấn 5S, An toàn, Quản lý trực quan tại GEODIS Vietnam"
+      }
     ]
   },
   {
