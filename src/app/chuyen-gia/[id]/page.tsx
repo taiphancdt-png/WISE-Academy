@@ -59,11 +59,11 @@ function Rail({
           <h2 className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-[#002F5B]">{label}</h2>
         </div>
         {photo ? (
-          // a photo of the expert at work beside the content, keeping the section in one piece
-          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,300px)] gap-10 items-start">
+          // a landscape photo of the expert at work beside the content, keeping the section in one piece
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,380px)] gap-10 items-start">
             <div>{children}</div>
             <figure className="md:sticky md:top-28">
-              <div className="overflow-hidden rounded-3xl aspect-[4/5] bg-slate-100 shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]">
+              <div className="overflow-hidden rounded-3xl aspect-[4/3] bg-slate-100 shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]">
                 <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <figcaption className="mt-3 flex gap-2 text-xs text-[#486581] leading-snug">
