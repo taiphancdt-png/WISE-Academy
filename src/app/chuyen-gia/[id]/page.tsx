@@ -41,12 +41,14 @@ function Rail({
   label,
   id,
   photo,
+  below,
   children,
 }: {
   no: string;
   label: string;
   id?: string;
   photo?: { src: string; caption: string };
+  below?: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
@@ -67,7 +69,7 @@ function Rail({
           // a landscape photo of the expert at work beside the content, keeping the section in one piece
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,380px)] gap-10 items-start">
             <div>{children}</div>
-            <figure className="md:sticky md:top-28">
+            <figure>
               <div className="overflow-hidden rounded-3xl aspect-[4/3] bg-slate-100 shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]">
                 <img
                   src={photo.src}
@@ -84,9 +86,13 @@ function Rail({
                 {photo.caption}
               </figcaption>
             </figure>
+            {below && <div className="md:col-span-2">{below}</div>}
           </div>
         ) : (
-          <div>{children}</div>
+          <div>
+            {children}
+            {below}
+          </div>
         )}
       </div>
     </section>
@@ -149,6 +155,61 @@ export default async function ExpertPage({
   // training beyond the six core credentials, listed by theme
   const coreCerts = exp.certifications?.filter((c) => c.core) ?? [];
   const moreCerts = exp.certifications?.filter((c) => !c.core) ?? [];
+
+  // education, languages and international experience run full width under the intro and its photo
+  const introBelow = (
+    <>
+      {(exp.education || exp.languages) && (
+        <div className="mt-10 pt-8 border-t border-[#002F5B]/10 grid grid-cols-1 md:grid-cols-2 gap-10">
+          {exp.education && (
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
+                Học vấn
+              </p>
+              <ul className="mt-4 space-y-4">
+                {exp.education.map((e) => (
+                  <li
+                    key={e.degree}
+                    className="pl-4 border-l-2 border-[#F76011]"
+                  >
+                    <p className="font-semibold text-[#002F5B]">{e.degree}</p>
+                    <p className="mt-0.5 text-sm text-[#486581]">{e.school}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {exp.languages && (
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
+                Ngoại ngữ
+              </p>
+              <p className="mt-4 pl-4 border-l-2 border-[#F76011] text-[15px] text-[#102A43] leading-relaxed">
+                {exp.languages}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+      {exp.regions && (
+        <div className="mt-10 pt-8 border-t border-[#002F5B]/10">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
+            Kinh nghiệm quốc tế
+          </p>
+          <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8">
+            {exp.regions.map((r) => (
+              <li key={r.country} className="py-3 border-b border-[#002F5B]/10">
+                <p className="text-sm font-bold text-[#002F5B]">{r.country}</p>
+                <p className="mt-0.5 text-xs text-[#486581] leading-relaxed">
+                  {r.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
+  );
 
   return (
     // data-no-reveal: the whole profile is shown at once, without the site-wide fade-in on scroll
@@ -330,7 +391,12 @@ export default async function ExpertPage({
 
       {/* Profile body: a numbered left rail with the section name, content on the right (consulting-firm bio style) */}
       <div className="bg-white">
-        <Rail no="01" label="Giới thiệu" photo={exp.photos?.[0]}>
+        <Rail
+          no="01"
+          label="Giới thiệu"
+          photo={exp.photos?.[0]}
+          below={introBelow}
+        >
           {/* the hero already shows the first sentence of the bio; here the rest, set large */}
           <p className="text-2xl sm:text-[30px] leading-[1.4] font-medium tracking-tight text-[#002F5B]">
             {rest || exp.bio}
@@ -343,55 +409,6 @@ export default async function ExpertPage({
               </span>
             ))}
           </p>
-          {(exp.education || exp.languages) && (
-            <div className="mt-10 pt-8 border-t border-[#002F5B]/10 grid grid-cols-1 md:grid-cols-2 gap-10">
-              {exp.education && (
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
-                    Học vấn
-                  </p>
-                  <ul className="mt-4 space-y-4">
-                    {exp.education.map((e) => (
-                      <li
-                        key={e.degree}
-                        className="pl-4 border-l-2 border-[#F76011]"
-                      >
-                        <p className="font-semibold text-[#002F5B]">
-                          {e.degree}
-                        </p>
-                        <p className="mt-0.5 text-sm text-[#486581]">
-                          {e.school}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {exp.languages && (
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">
-                    Ngoại ngữ
-                  </p>
-                  <p className="mt-4 pl-4 border-l-2 border-[#F76011] text-[15px] text-[#102A43] leading-relaxed">
-                    {exp.languages}
-                  </p>
-                </div>
-              )}
-            </div>
-          )}
-          {exp.regions && (
-            <div className="mt-10 pt-8 border-t border-[#002F5B]/10">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C9500E]">Kinh nghiệm quốc tế</p>
-              <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-                {exp.regions.map((r) => (
-                  <li key={r.country} className="py-3 border-b border-[#002F5B]/10">
-                    <p className="text-sm font-bold text-[#002F5B]">{r.country}</p>
-                    <p className="mt-0.5 text-xs text-[#486581] leading-relaxed">{r.text}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </Rail>
 
         {exp.certifications && (
@@ -459,7 +476,6 @@ export default async function ExpertPage({
             )}
           </Rail>
         )}
-
 
         {exp.expertise && (
           <Rail no="03" label="Thế mạnh chuyên môn" photo={exp.photos?.[1]}>
