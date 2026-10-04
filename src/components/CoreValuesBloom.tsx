@@ -20,6 +20,7 @@ const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
 const OPEN_MS = 800; // the flower opens in this time while the page holds still
 const PETAL_L = 300;
+const LETTER_CLOSED = 0.6; // letter size in the closed bud, relative to the open flower, so the letters fit the narrow petals
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
 // (W lower left, I upper left, S upper right, E lower right, each next to its petal tip).
 const CARD_W = 340;
@@ -79,8 +80,8 @@ export default function CoreValuesBloom({
         if (!g) return;
         const a = CLOSED_ANGLE[i] + (OPEN_ANGLE[i] - CLOSED_ANGLE[i]) * t;
         g.setAttribute("transform", `rotate(${a.toFixed(2)})`);
-        // keep each letter upright; it slides towards the tip as the flower closes so letters never touch
-        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.9 - 0.3 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)})`);
+        // keep each letter upright; as the flower closes it slides towards the tip and shrinks so letters never touch
+        letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.9 - 0.3 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)}) scale(${(LETTER_CLOSED + (1 - LETTER_CLOSED) * t).toFixed(3)})`);
       });
       const show = smooth(0.55, 0.95, t);
       cardRefs.current.forEach((c, i) => {
@@ -192,7 +193,7 @@ export default function CoreValuesBloom({
             ref={(el) => {
               letterRefs.current[i] = el;
             }}
-            transform={`translate(0 ${-PETAL_L * 0.9}) rotate(${-CLOSED_ANGLE[i]})`}
+            transform={`translate(0 ${-PETAL_L * 0.9}) rotate(${-CLOSED_ANGLE[i]}) scale(${LETTER_CLOSED})`}
             textAnchor="middle"
             dominantBaseline="central"
             className="font-extrabold"
