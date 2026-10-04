@@ -283,7 +283,21 @@
       }
     ],
     "languages": "Tiếng Việt (bản ngữ), Tiếng Anh (đọc tốt; nghe, nói, viết khá)",
-    "cutout": "/images/experts/nguyen-thi-thuy-cutout.webp"
+    "cutout": "/images/experts/nguyen-thi-thuy-cutout.webp",
+    "photos": [
+      {
+        "src": "/images/experts/nguyen-thi-thuy-apache.webp",
+        "caption": "Dẫn dắt trò chơi mô phỏng sản xuất trong chương trình Lean Fundamental & Kaizen Mindset tại Apache Footwear"
+      },
+      {
+        "src": "/images/projects/aqua-growth-mindset-kaizen/photo_3.webp",
+        "caption": "Chương trình Growth Mindset & Kaizen cho đội ngũ quản lý sản xuất AQUA Việt Nam"
+      },
+      {
+        "src": "/images/projects/aqua-growth-mindset-kaizen/photo_8.webp",
+        "caption": "Trao quà cho học viên xuất sắc tại AQUA"
+      }
+    ]
   },
   {
     "id": "phan-tan-tai",

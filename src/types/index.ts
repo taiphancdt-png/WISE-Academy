@@ -19,6 +19,7 @@ export interface Expert {
   education?: { degree: string; school: string }[];
   regions?: { country: string; text: string }[];
   languages?: string;
+  photos?: { src: string; caption: string }[];
 }
 
 export interface ProjectResult {

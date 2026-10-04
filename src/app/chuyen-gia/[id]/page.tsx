@@ -296,6 +296,25 @@ export default async function ExpertPage({
           </Rail>
         )}
 
+        {/* in the field: a few photos of the expert at work, between the sections */}
+        {exp.photos && exp.photos.length > 0 && (
+          <section className="px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-6">
+              {exp.photos.map((ph, i) => (
+                <figure key={ph.src} className={`group ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}`}>
+                  <div className={`overflow-hidden rounded-2xl bg-slate-100 ${i === 0 ? "aspect-[4/3] md:aspect-auto md:h-[calc(100%-2.75rem)]" : "aspect-[4/3]"}`}>
+                    <img src={ph.src} alt={ph.caption} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+                  </div>
+                  <figcaption className="mt-2.5 flex gap-2 text-xs text-[#486581] leading-snug">
+                    <span aria-hidden="true" className="mt-1.5 h-px w-5 shrink-0 bg-[#F76011]" />
+                    {ph.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
         {exp.expertise && (
           <Rail no="03" label="Thế mạnh chuyên môn">
             <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
