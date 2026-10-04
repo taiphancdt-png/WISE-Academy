@@ -547,7 +547,8 @@
       "30+ Năm Kinh Nghiệm"
     ],
     "image": "/images/experts/hoang-minh-nghiep.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/hoang-minh-nghiep-cutout.webp"
   },
   {
     "id": "nguyen-hoang-son",
@@ -562,7 +563,8 @@
       "Kaizen Culture"
     ],
     "image": "/images/experts/nguyen-hoang-son.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/nguyen-hoang-son-cutout.webp"
   },
   {
     "id": "tran-nguyen-ha",
@@ -576,7 +578,8 @@
       "Strategic Ops"
     ],
     "image": "/images/experts/tran-nguyen-ha.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/tran-nguyen-ha-cutout.webp"
   },
   {
     "id": "pham-the-linh",
@@ -590,7 +593,8 @@
       "Plant Optimization"
     ],
     "image": "/images/experts/pham-the-linh.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/pham-the-linh-cutout.webp"
   },
   {
     "id": "tu-ngoc-tung",
@@ -605,7 +609,8 @@
       "Process Optimization"
     ],
     "image": "/images/experts/tu-ngoc-tung.webp",
-    "group": "vietnam"
+    "group": "vietnam",
+    "cutout": "/images/experts/tu-ngoc-tung-cutout.webp"
   },
   {
     "id": "do-tan-khoa",
@@ -620,7 +625,8 @@
       "JICA · GIZ"
     ],
     "group": "vietnam",
-    "image": "/images/experts/do-tan-khoa.webp"
+    "image": "/images/experts/do-tan-khoa.webp",
+    "cutout": "/images/experts/do-tan-khoa-cutout.webp"
   },
   {
     "id": "nguyen-dinh-tuan",
@@ -634,7 +640,8 @@
       "Lean Coaching"
     ],
     "group": "vietnam",
-    "image": "/images/experts/nguyen-dinh-tuan.webp"
+    "image": "/images/experts/nguyen-dinh-tuan.webp",
+    "cutout": "/images/experts/nguyen-dinh-tuan-cutout.webp"
   },
   {
     "id": "phan-thi-nhung",
@@ -649,7 +656,8 @@
       "Worker Training"
     ],
     "group": "vietnam",
-    "image": "/images/experts/phan-thi-nhung.webp"
+    "image": "/images/experts/phan-thi-nhung.webp",
+    "cutout": "/images/experts/phan-thi-nhung-cutout.webp"
   },
   {
     "id": "dang-thi-hong-ngoc",
@@ -664,7 +672,8 @@
       "Lean Engineering"
     ],
     "group": "vietnam",
-    "image": "/images/experts/dang-thi-hong-ngoc.webp"
+    "image": "/images/experts/dang-thi-hong-ngoc.webp",
+    "cutout": "/images/experts/dang-thi-hong-ngoc-cutout.webp"
   },
   {
     "id": "nguyen-minh-nguyet",
@@ -679,7 +688,8 @@
       "Lean Logistics"
     ],
     "group": "vietnam",
-    "image": "/images/experts/nguyen-minh-nguyet.webp"
+    "image": "/images/experts/nguyen-minh-nguyet.webp",
+    "cutout": "/images/experts/nguyen-minh-nguyet-cutout.webp"
   },
   {
     "id": "tran-thi-my-hong",
@@ -694,7 +704,8 @@
       "People Development"
     ],
     "group": "vietnam",
-    "image": "/images/experts/tran-thi-my-hong.webp"
+    "image": "/images/experts/tran-thi-my-hong.webp",
+    "cutout": "/images/experts/tran-thi-my-hong-cutout.webp"
   },
   {
     "id": "edward-zhu",
@@ -709,7 +720,8 @@
       "Quality Assurance"
     ],
     "image": "/images/experts/edward-zhu.webp",
-    "group": "international"
+    "group": "international",
+    "cutout": "/images/experts/edward-zhu-cutout.webp"
   },
   {
     "id": "leo-li",
@@ -724,7 +736,8 @@
       "DMAIC · DFSS"
     ],
     "image": "/images/experts/leo-li.webp",
-    "group": "international"
+    "group": "international",
+    "cutout": "/images/experts/leo-li-cutout.webp"
   },
   {
     "id": "sujit-bhattacharjee",
@@ -739,6 +752,7 @@
       "Sourcing"
     ],
     "group": "international",
-    "image": "/images/experts/sujit-bhattacharjee.webp"
+    "image": "/images/experts/sujit-bhattacharjee.webp",
+    "cutout": "/images/experts/sujit-bhattacharjee-cutout.webp"
   }
 ]
