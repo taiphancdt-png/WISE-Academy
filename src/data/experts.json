@@ -532,6 +532,24 @@
         "degree": "Chương trình Giám đốc điều hành (CEO)",
         "school": "Pace Institute of Management"
       }
+    ],
+    "regions": [
+      {
+        "country": "Việt Nam",
+        "text": "Tư vấn và đào tạo Lean, Lean Six Sigma cho ngành giày dép, may mặc và logistics"
+      },
+      {
+        "country": "Trung Quốc",
+        "text": "Hợp tác phát triển sản phẩm tư vấn và đào tạo Lean Six Sigma"
+      },
+      {
+        "country": "Tây Ban Nha",
+        "text": "Đối tác quốc tế phát triển chương trình chứng nhận Lean Six Sigma"
+      },
+      {
+        "country": "Bangladesh",
+        "text": "Cùng IFC Bangladesh phát triển chương trình đào tạo cho dự án GEAR"
+      }
     ]
   },
   {
