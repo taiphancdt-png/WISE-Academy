@@ -50,8 +50,8 @@ function Rail({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="px-4 sm:px-6 scroll-mt-24">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-12 py-14 lg:py-20 border-t border-[#002F5B]/10 first:border-t-0">
+    <section id={id} className="px-4 sm:px-8 xl:px-12 scroll-mt-24">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-12 py-14 lg:py-20 border-t border-[#002F5B]/10 first:border-t-0">
         <div className="lg:sticky lg:top-28 self-start">
           <span
             className="block text-5xl font-extrabold leading-none"
@@ -166,7 +166,7 @@ export default async function ExpertPage({
           aria-hidden="true"
           className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70"
         />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 lg:pt-16 pb-16 lg:pb-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-12 pt-12 lg:pt-16 pb-16 lg:pb-24">
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-[#002F5B] px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white">
@@ -303,8 +303,8 @@ export default async function ExpertPage({
 
       {/* Key numbers: an editorial strip, big figures between hairlines */}
       {exp.highlights && (
-        <section className="bg-white border-y border-[#002F5B]/10 px-4 sm:px-6">
-          <dl className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+        <section className="bg-white border-y border-[#002F5B]/10 px-4 sm:px-8 xl:px-12">
+          <dl className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             {exp.highlights.map((h, i) => {
               const plus = h.value.endsWith("+");
               const num = plus ? h.value.slice(0, -1) : h.value;
@@ -552,8 +552,8 @@ export default async function ExpertPage({
 
       {/* Projects with the companies named in the bio */}
       {related.length > 0 && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 lg:py-20 px-4 sm:px-8 xl:px-12 bg-white">
+          <div className="max-w-[1400px] mx-auto">
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">
               Dự án tiêu biểu đã đồng hành
             </h2>
@@ -591,8 +591,8 @@ export default async function ExpertPage({
 
       {/* Other experts */}
       {others.length > 0 && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 lg:py-20 px-4 sm:px-8 xl:px-12">
+          <div className="max-w-[1400px] mx-auto">
             <div className="flex items-end justify-between gap-4">
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">
                 Chuyên gia khác
