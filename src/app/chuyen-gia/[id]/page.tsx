@@ -455,7 +455,10 @@ export default async function ExpertPage({
                   Các khóa đào tạo chuyên sâu khác
                 </p>
                 {/* further training grouped by theme, in tidy columns */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-8">
+                <div
+                  className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:[grid-template-columns:repeat(var(--g),minmax(0,1fr))] gap-x-10 gap-y-8"
+                  style={{ "--g": new Set(moreCerts.map((c) => c.group || "Khác")).size } as React.CSSProperties}
+                >
                   {Array.from(new Set(moreCerts.map((c) => c.group || "Khác")))
                     .sort(
                       (a, b) => GROUP_ORDER.indexOf(a) - GROUP_ORDER.indexOf(b),
