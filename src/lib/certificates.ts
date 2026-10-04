@@ -8,23 +8,48 @@ import { createSign } from "node:crypto";
 //   GOOGLE_SERVICE_ACCOUNT_EMAIL  service account e-mail (share the sheet and the image folder with it, Viewer)
 //   GOOGLE_PRIVATE_KEY            its private key, with "\n" for line breaks
 //   CERT_SHEET_ID                 id of the Google Sheet (the long part of its URL)
-//   CERT_SHEET_RANGE              optional, default "Certificates!A:H"
+//   CERT_SHEET_RANGE              optional, default "Certificates!A:Z"
 //   CERT_DRIVE_FOLDER_ID          id of the Drive folder holding the certificate images
 //
-// Sheet columns (row 1 = headers): Mã chứng chỉ | Họ và tên | Chương trình | Cấp độ | Ngày cấp |
-// Đơn vị cấp | Trạng thái | Ảnh chứng chỉ
-// The image column only needs the file name of an image in the Drive folder (e.g. "ABC-123.jpg"); a Drive
+// Sheet columns are matched by their header in row 1 (any order), using WISE Academy's upload format:
+//   certificate_number | name | program | graduated_date | training_duration | method | facilitator | certificate_image
+// (Vietnamese headers such as "Mã chứng chỉ", "Họ và tên", "Ngày cấp"... are accepted too.)
+// certificate_image only needs the file name of an image in the Drive folder (e.g. "WISELF-K2501-001.jpg"); a Drive
 // link also works. Left empty, the image whose name is the certificate code (any extension) is used.
 
 export interface Certificate {
   code: string;
   name: string;
   program: string;
-  level: string;
   issued: string;
-  issuer: string;
-  status: string;
+  duration: string;
+  method: string;
+  facilitator: string;
   imageId: string | null;
+}
+
+// header aliases, compared lower-cased without accents/spaces
+const FIELDS: Record<keyof Omit<Certificate, "imageId"> | "image", string[]> = {
+  code: ["certificate_number", "certificatenumber", "machungchi", "ma", "code"],
+  name: ["name", "hovaten", "hoten", "hocvien"],
+  program: ["program", "chuongtrinh", "khoahoc"],
+  issued: ["graduated_date", "graduateddate", "ngaycap", "ngaytotnghiep", "date"],
+  duration: ["training_duration", "trainingduration", "thoiluong"],
+  method: ["method", "hinhthuc"],
+  facilitator: ["facilitator", "giangvien", "trainer"],
+  image: ["certificate_image", "certificateimage", "anhchungchi", "anh", "image"],
+};
+const key = (h: string) =>
+  h.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z_]/g, "");
+
+// Dates may come as dd/mm/yyyy text or as a spreadsheet serial number.
+function formatDate(v: string): string {
+  const s = v.trim();
+  if (/^\d{5}$/.test(s)) {
+    const d = new Date(Date.UTC(1899, 11, 30) + Number(s) * 86400000);
+    return `${String(d.getUTCDate()).padStart(2, "0")}/${String(d.getUTCMonth() + 1).padStart(2, "0")}/${d.getUTCFullYear()}`;
+  }
+  return s;
 }
 
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly https://www.googleapis.com/auth/drive.readonly";
@@ -77,25 +102,29 @@ const CACHE_MS = 60_000;
 
 async function loadRows(): Promise<Certificate[]> {
   if (cache && Date.now() - cache.at < CACHE_MS) return cache.rows;
-  const range = encodeURIComponent(process.env.CERT_SHEET_RANGE || "Certificates!A:H");
+  const range = encodeURIComponent(process.env.CERT_SHEET_RANGE || "Certificates!A:Z");
   const res = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.CERT_SHEET_ID}/values/${range}`, {
     headers: { authorization: `Bearer ${await accessToken()}` },
     cache: "no-store",
   });
   if (!res.ok) throw new Error(`google_sheet_${res.status}`);
   const { values = [] } = (await res.json()) as { values?: string[][] };
+  const headers = (values[0] || []).map(key);
+  const col = (f: keyof typeof FIELDS) => headers.findIndex((h) => FIELDS[f].includes(h));
+  const idx = Object.fromEntries((Object.keys(FIELDS) as (keyof typeof FIELDS)[]).map((f) => [f, col(f)])) as Record<keyof typeof FIELDS, number>;
+  const cell = (r: string[], f: keyof typeof FIELDS) => (idx[f] >= 0 ? (r[idx[f]] || "").trim() : "");
   const rows = values
     .slice(1)
-    .filter((r) => r[0]?.trim())
+    .filter((r) => cell(r, "code"))
     .map((r) => ({
-      code: normalizeCode(r[0] || ""),
-      name: (r[1] || "").trim(),
-      program: (r[2] || "").trim(),
-      level: (r[3] || "").trim(),
-      issued: (r[4] || "").trim(),
-      issuer: (r[5] || "").trim(),
-      status: (r[6] || "").trim(),
-      imageRef: (r[7] || "").trim(),
+      code: normalizeCode(cell(r, "code")),
+      name: cell(r, "name"),
+      program: cell(r, "program"),
+      issued: formatDate(cell(r, "issued")),
+      duration: cell(r, "duration"),
+      method: cell(r, "method"),
+      facilitator: cell(r, "facilitator").replace(/\s*\/\s*/g, ", "),
+      imageRef: cell(r, "image"),
     }));
   const files = await listFolder();
   const resolved: Certificate[] = rows.map(({ imageRef, ...c }) => ({ ...c, imageId: resolveImage(imageRef, c.code, files) }));
@@ -141,10 +170,10 @@ const DEMO: Certificate = {
   code: "WISE-DEMO-0001",
   name: "Nguyễn Văn A",
   program: "Lean Six Sigma Yellow Belt",
-  level: "Yellow Belt",
   issued: "01/10/2026",
-  issuer: "WISE Academy & Lean Six Sigma Institute (LSSI)",
-  status: "Còn hiệu lực",
+  duration: "108 hours",
+  method: "Face-to-Face",
+  facilitator: "WISE Academy",
   imageId: "demo",
 };
 

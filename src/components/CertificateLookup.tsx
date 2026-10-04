@@ -7,10 +7,10 @@ interface CertificateData {
   code: string;
   name: string;
   program: string;
-  level: string;
   issued: string;
-  issuer: string;
-  status: string;
+  duration: string;
+  method: string;
+  facilitator: string;
   image: string | null;
 }
 
@@ -55,9 +55,10 @@ export default function CertificateLookup() {
         ["Mã chứng chỉ", cert.code],
         ["Học viên", cert.name],
         ["Chương trình", cert.program],
-        ["Cấp độ", cert.level],
-        ["Ngày cấp", cert.issued],
-        ["Đơn vị cấp", cert.issuer],
+        ["Ngày tốt nghiệp", cert.issued],
+        ["Thời lượng", cert.duration],
+        ["Hình thức", cert.method],
+        ["Giảng viên", cert.facilitator],
       ].filter(([, v]) => v) as [string, string][])
     : [];
 
@@ -99,7 +100,7 @@ export default function CertificateLookup() {
           <div className="flex items-center gap-3 bg-[#EAF7EF] px-6 sm:px-8 py-4">
             <CheckCircle2 weight="fill" className="w-6 h-6 text-[#1E9E5A]" />
             <p className="font-semibold text-[#14713F]">
-              Chứng chỉ hợp lệ{cert.status ? ` · ${cert.status}` : ""}
+              Chứng nhận hợp lệ do WISE Academy cấp
             </p>
           </div>
           {/* details on the left, the certificate image on the right */}
