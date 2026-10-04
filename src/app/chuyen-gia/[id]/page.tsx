@@ -283,8 +283,21 @@ export default async function ExpertPage({
           </p>
         </Rail>
 
+        {exp.regions && (
+          <Rail no="02" label="Kinh nghiệm quốc tế">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
+              {exp.regions.map((r) => (
+                <li key={r.country} className="bg-white p-5">
+                  <p className="text-lg font-extrabold text-[#002F5B]">{r.country}</p>
+                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">{r.text}</p>
+                </li>
+              ))}
+            </ul>
+          </Rail>
+        )}
+
         {exp.expertise && (
-          <Rail no="02" label="Thế mạnh chuyên môn">
+          <Rail no="03" label="Thế mạnh chuyên môn">
             <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
               {exp.expertise.map((t, i) => (
                 <li key={t} className="group flex gap-5 py-5 border-b border-[#002F5B]/10">
@@ -297,7 +310,7 @@ export default async function ExpertPage({
         )}
 
         {exp.career && (
-          <Rail no="03" label="Quá trình công tác" id="qua-trinh">
+          <Rail no="04" label="Quá trình công tác" id="qua-trinh">
             <ol className="border-t border-[#002F5B]/10">
               {exp.career.map((c, i) => (
                 <li key={c.org} className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 py-7 border-b border-[#002F5B]/10">
@@ -341,7 +354,7 @@ export default async function ExpertPage({
         )}
 
         {exp.experience && (
-          <Rail no="04" label="Dự án tiêu biểu">
+          <Rail no="05" label="Dự án tiêu biểu">
             {/* the engagements with a hard number lead, large */}
             {exp.experience.some((e) => e.metric) && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
@@ -374,7 +387,7 @@ export default async function ExpertPage({
         )}
 
         {exp.certifications && (
-          <Rail no="05" label="Chứng nhận & đào tạo">
+          <Rail no="06" label="Chứng nhận & đào tạo">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-[#002F5B]/10">
               {exp.certifications.map((c) => (
                 <li key={c.name} className="flex items-baseline justify-between gap-6 py-4 border-b border-[#002F5B]/10">
@@ -386,18 +399,6 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        {exp.regions && (
-          <Rail no="06" label="Kinh nghiệm quốc tế">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[#002F5B]/10 border border-[#002F5B]/10 rounded-2xl overflow-hidden">
-              {exp.regions.map((r) => (
-                <li key={r.country} className="bg-white p-5">
-                  <p className="text-lg font-extrabold text-[#002F5B]">{r.country}</p>
-                  <p className="mt-2 text-xs text-[#486581] leading-relaxed">{r.text}</p>
-                </li>
-              ))}
-            </ul>
-          </Rail>
-        )}
       </div>
 
       {/* Projects with the companies named in the bio */}
