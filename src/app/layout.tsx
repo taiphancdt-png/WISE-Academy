@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import PhraseKeeper from "@/components/PhraseKeeper";
+import SiteTranslator from "@/components/SiteTranslator";
 import { OG_IMAGE, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
 // Be Vietnam Pro: a sans designed for Vietnamese, so diacritics sit correctly at every weight.
@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`scroll-smooth ${sans.variable}`}>
       <head>
-        {/* Google Translate rewrites text nodes; keep React's DOM ops from throwing when nodes were swapped. */}
+        {/* The translator rewrites text nodes; keep React's DOM ops from throwing when nodes were swapped. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){if(typeof Node!=="function")return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(c){if(c.parentNode!==this)return c;return r.apply(this,arguments)};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(n,ref){if(ref&&ref.parentNode!==this)return n;return i.apply(this,arguments)}})();`,
@@ -78,15 +78,8 @@ export default function RootLayout({
         <ScrollReveal />
         <PhraseKeeper />
 
-        {/* Automatic Vietnamese → English / Chinese translation (toggled by LanguageSwitcher via the googtrans cookie) */}
-        <div id="google_translate_element" className="hidden" />
-        <Script id="google-translate-init" strategy="afterInteractive">
-          {`window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'vi,en,zh-CN',autoDisplay:false},'google_translate_element')};`}
-        </Script>
-        <Script
-          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="afterInteractive"
-        />
+        {/* English / Chinese versions, translated by Claude (toggled by LanguageSwitcher) */}
+        <SiteTranslator />
 
         {/* Structured Data (JSON-LD) for SEO */}
         <script

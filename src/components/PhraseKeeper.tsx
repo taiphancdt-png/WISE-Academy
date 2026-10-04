@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { readLang } from "@/components/LanguageSwitcher";
 
 // Vietnamese words are made of several space-separated syllables, so the browser happily breaks a line in the
 // middle of a word ("chuyển / đổi", "nhà / máy"). This joins the syllables of common words and fixed terms with
@@ -67,6 +68,8 @@ function processNode(root: Node) {
 
 export default function PhraseKeeper() {
   useEffect(() => {
+    // Vietnamese only: in English / Chinese the translator owns the text
+    if (readLang() !== "vi") return;
     processNode(document.body);
     let queued: Node[] = [];
     let raf = 0;

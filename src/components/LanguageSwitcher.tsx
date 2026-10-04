@@ -4,35 +4,26 @@ import React, { useEffect, useState } from "react";
 
 export type Lang = "vi" | "en" | "zh";
 
-// Google Translate language code for each site language.
-const GT_CODE: Record<Lang, string> = { vi: "vi", en: "en", zh: "zh-CN" };
-
 const OPTIONS: { lang: Lang; flag: string; label: string }[] = [
   { lang: "vi", flag: "🇻🇳", label: "Tiếng Việt" },
   { lang: "en", flag: "🇬🇧", label: "English" },
   { lang: "zh", flag: "🇨🇳", label: "中文" },
 ];
 
-// Google Translate reads the `googtrans` cookie ("/<source>/<target>") on load.
-// Content is authored in Vietnamese; other languages are machine-translated on the fly.
-function readLang(): Lang {
-  const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
-  const target = match ? decodeURIComponent(match[1]).split("/").pop() : "";
-  if (target === GT_CODE.en) return "en";
-  if (target === GT_CODE.zh) return "zh";
-  return "vi";
+// The chosen language is kept in the `wise_lang` cookie; SiteTranslator shows the page in it (translations by Claude).
+// Content is authored in Vietnamese.
+export function readLang(): Lang {
+  const m = document.cookie.match(/(?:^|;\s*)wise_lang=(en|zh)/);
+  return m ? (m[1] as Lang) : "vi";
 }
 
 function writeLang(lang: Lang) {
+  const year = 60 * 60 * 24 * 365;
+  document.cookie = lang === "vi" ? "wise_lang=; path=/; max-age=0" : `wise_lang=${lang}; path=/; max-age=${year}`;
+  // clear the cookie the former Google Translate switcher used, or Google's widget could come back
   const host = window.location.hostname;
-  const domains = ["", host, `.${host.replace(/^www\./, "")}`];
-  for (const d of domains) {
-    const domainAttr = d ? `; domain=${d}` : "";
-    if (lang === "vi") {
-      document.cookie = `googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT${domainAttr}`;
-    } else {
-      document.cookie = `googtrans=/vi/${GT_CODE[lang]}; path=/${domainAttr}`;
-    }
+  for (const d of ["", host, `.${host.replace(/^www\./, "")}`]) {
+    document.cookie = `googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT${d ? `; domain=${d}` : ""}`;
   }
 }
 
