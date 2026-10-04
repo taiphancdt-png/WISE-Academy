@@ -111,12 +111,12 @@ export default function CertificateLookup() {
               {rows.map(([k, v]) => (
                 <div
                   key={k}
-                  className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1 py-3"
+                  className="grid grid-cols-1 sm:grid-cols-[160px_1fr] sm:items-baseline gap-1 py-3"
                 >
                   <dt className="text-xs font-bold uppercase tracking-[0.12em] text-[#486581]">
                     {k}
                   </dt>
-                  <dd className="text-[15px] font-semibold text-[#002F5B]">
+                  <dd className="text-[15px] leading-snug font-semibold text-[#002F5B]">
                     {v}
                   </dd>
                 </div>
