@@ -580,6 +580,29 @@ export default async function ExpertPage({
         )}
       </div>
 
+      {/* What clients say (quotes translated from the trainer profiles) */}
+      {exp.testimonials && exp.testimonials.length > 0 && (
+        <section className="relative isolate overflow-hidden bg-[#002F5B] text-white px-4 sm:px-8 xl:px-12 py-16 lg:py-24">
+          <div aria-hidden="true" className="absolute -left-32 -top-32 -z-10 w-[460px] h-[460px] rounded-full bg-[#F76011]/15 blur-3xl" />
+          <div className="max-w-[1400px] mx-auto">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#FFB27A]">Khách hàng nói gì</p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-bold">Đối tác đánh giá về {exp.name.split(" (")[0]}</h2>
+            <div className="mt-10 columns-1 md:columns-2 xl:columns-3 gap-6">
+              {exp.testimonials.map((t) => (
+                <figure key={t.name} className="mb-6 break-inside-avoid rounded-2xl bg-white/[0.06] p-6 ring-1 ring-white/10">
+                  <span aria-hidden="true" className="block text-5xl leading-none font-serif text-[#F76011]">&ldquo;</span>
+                  <blockquote className="mt-1 text-[15px] leading-relaxed text-white/90">{t.quote}</blockquote>
+                  <figcaption className="mt-5 pt-4 border-t border-white/10">
+                    <p className="font-semibold">{t.name}</p>
+                    <p className="text-xs text-white/60">{t.role}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Projects with the companies named in the bio */}
       {related.length > 0 && (
         <section className="py-16 lg:py-20 px-4 sm:px-8 xl:px-12 bg-white">

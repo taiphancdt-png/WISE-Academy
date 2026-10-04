@@ -83,8 +83,8 @@
       {
         "client": "GEAR (IFC / ILO Better Work Vietnam)",
         "period": "2015 - 2019",
-        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo.",
-        "metric": "34 nhà máy"
+        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 35 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo.",
+        "metric": "35 nhà máy"
       },
       {
         "client": "Race to the Top Vietnam",
@@ -342,6 +342,38 @@
         "src": "/images/experts/nguyen-thi-thuy-apache-2.webp",
         "caption": "Đứng lớp Lean Fundamental & Kaizen Mindset cho đội ngũ quản lý sản xuất Apache Footwear"
       }
+    ],
+    "testimonials": [
+      {
+        "name": "Nguyễn Việt Đăng Khoa",
+        "role": "Giám đốc, Kim Đăng Consulting",
+        "quote": "Thủy là chuyên gia tư vấn chuyên nghiệp của Kim Đăng Consulting. Cô ấy luôn thể hiện đam mê, sự tận tâm và tinh thần trách nhiệm trong công việc, trở thành thành viên không thể thiếu của đội ngũ. Những đóng góp của cô được công ty và đồng nghiệp đánh giá rất cao."
+      },
+      {
+        "name": "Trịnh Duy Doanh",
+        "role": "Tổng Giám đốc, May Nam Châu",
+        "quote": "Thủy là chuyên gia tư vấn thân thiện, nhiệt huyết và nghiêm túc, có kiến thức và kinh nghiệm vững vàng trong đào tạo và kèm cặp đội dự án. Cô dẫn dắt đội dự án đạt những kết quả then chốt với hướng dẫn rõ ràng cho kế hoạch hành động."
+      },
+      {
+        "name": "Đỗ Chí Đại",
+        "role": "Lean Manager, Saitex International",
+        "quote": "Thủy rất linh hoạt và có kiến thức sâu rộng về Lean. Cô trả lời câu hỏi nhanh và làm học viên hài lòng, xứng đáng với ý nghĩa tên mình: sự linh hoạt của nước."
+      },
+      {
+        "name": "Võ Minh Luân",
+        "role": "Giám đốc điều hành, May Việt Khánh",
+        "quote": "Thủy là người đồng hành mang đầy đủ tinh thần Lean: linh hoạt, nhận diện và giải quyết vấn đề, đặt mục tiêu chiến lược, trình bày và thuyết phục tốt. Cô cùng nhà máy xây dựng chiến lược Lean và kế hoạch hành động."
+      },
+      {
+        "name": "Sujit Bhattacharjee",
+        "role": "Technical Team Leader, dự án Vaeso | Impactiva",
+        "quote": "Thủy là trưởng nhóm xuất sắc với kiến thức đặc biệt về hệ thống Lean và phát triển nguồn nhân lực. Kỹ năng điều phối lớp học đông người và cách trình diễn ngay tại hiện trường của cô thật tuyệt vời."
+      },
+      {
+        "name": "Ashif Zobayer",
+        "role": "Lead Technical Consultant, dự án GEAR, IFC Bangladesh",
+        "quote": "Thủy thông minh, chu đáo, nhiệt huyết, lạc quan và lý trí. Cô có đủ phẩm chất của một giảng viên: chuẩn bị kỹ, am hiểu chủ đề, gần gũi với học viên, đón nhận câu hỏi hào hứng và luôn trả lời bằng nụ cười thân thiện. Cô luôn trân trọng đồng đội và sẵn sàng làm thêm để hoàn thành công việc."
+      }
     ]
   },
   {
@@ -438,7 +470,7 @@
       {
         "client": "GEAR (IFC / ILO Better Work Vietnam)",
         "period": "2015 - 2019",
-        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo."
+        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 35 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo."
       },
       {
         "client": "TBS Group",
@@ -604,7 +636,24 @@
         "caption": "Đào tạo và tư vấn 5S, An toàn, Quản lý trực quan tại GEODIS Vietnam"
       }
     ],
-    "languages": "Tiếng Việt, Tiếng Anh"
+    "languages": "Tiếng Việt, Tiếng Anh",
+    "testimonials": [
+      {
+        "name": "Nguyễn Việt Đăng Khoa",
+        "role": "Giám đốc, Kim Đăng Consulting",
+        "quote": "Tài là tài sản quý của Kim Đăng Consulting. Với nền tảng vững về Lean, cơ khí, tự động hóa và hạ tầng nhà xưởng, anh đã đóng góp lớn cho nhiều dự án quan trọng của công ty."
+      },
+      {
+        "name": "Trịnh Duy Doanh",
+        "role": "Tổng Giám đốc, May Nam Châu",
+        "quote": "Qua dự án Race to the Top, tôi đánh giá cao sự chuyên nghiệp của Tài. Với kiến thức Lean sâu, khả năng trình bày thuyết phục và kèm cặp tận tình, nhà máy chúng tôi đã tiến bộ rất nhiều."
+      },
+      {
+        "name": "Đỗ Chí Đại",
+        "role": "Lean Manager, Saitex International",
+        "quote": "Tài có kiến thức vững về Lean, thân thiện và chuyên nghiệp, xứng đáng với ý nghĩa tên mình: tài năng."
+      }
+    ]
   },
   {
     "id": "hoang-minh-nghiep",
@@ -717,13 +766,14 @@
   {
     "id": "tran-nguyen-ha",
     "name": "Trần Nguyên Hà",
-    "role": "Chuyên gia Tư vấn Cao cấp · Senior Management Consultant",
-    "title": "Chuyên gia Quản trị Chiến lược & Chuyển đổi Số ESG",
-    "bio": "Chuyên gia tư vấn cấp cao về Lean, ISO và cải tiến năng suất với hơn 10 năm tư vấn và hơn 18 năm làm việc trong ngành, tập trung cải tiến doanh nghiệp và hệ thống quản lý cho chuỗi thực phẩm, cơ khí, y tế và bao bì. Song song là giảng viên đại học, tích hợp hệ thống quản lý tinh gọn với chuyển đổi số và các tiêu chuẩn phát triển bền vững, ESG cho doanh nghiệp xuất khẩu.",
+    "role": "Chuyên gia Tư vấn Cao cấp · Lean, ISO & ESG",
+    "title": "Tiến sĩ Quản trị Kinh doanh (DBA) · Chuyên gia tư vấn chính (Bộ Công Thương & Samsung) · Lead Auditor ISO 9001 (CQI-IRCA)",
+    "bio": "Hơn 18 năm kinh nghiệm, trong đó hơn 10 năm tư vấn và đào tạo về Lean, ISO, ESG và cải tiến năng suất, cùng hơn 14 năm giảng dạy đại học. Đã triển khai hơn 100 dự án thực chiến, hỗ trợ 81 doanh nghiệp đạt ISO, ESG, Mô hình Giải thưởng Chất lượng Malcolm Baldrige và hệ thống KPI, đồng hành tái cấu trúc cùng hơn 20 doanh nghiệp từ EVN HCMC, REE, Xi măng Hà Tiên, Bia Sài Gòn đến Bệnh viện Thống Nhất, Saigon Co.op.",
     "tags": [
-      "Digital Transformation",
+      "ISO",
       "ESG",
-      "Strategic Ops"
+      "Lean",
+      "Malcolm Baldrige"
     ],
     "image": "/images/experts/tran-nguyen-ha.webp",
     "group": "vietnam",
@@ -731,38 +781,39 @@
     "highlights": [
       {
         "value": "18+",
-        "label": "Năm kinh nghiệm trong ngành"
+        "label": "Năm kinh nghiệm"
       },
       {
         "value": "10+",
-        "label": "Năm tư vấn"
+        "label": "Năm tư vấn & đào tạo"
       },
       {
         "value": "100+",
-        "label": "Dự án"
+        "label": "Dự án thực chiến"
       },
       {
-        "value": "3.000",
-        "label": "Học viên được đào tạo"
+        "value": "81",
+        "label": "Doanh nghiệp đạt ISO, ESG, KPI"
       },
       {
-        "value": "6.000+",
-        "label": "Giờ đào tạo"
+        "value": "20+",
+        "label": "Doanh nghiệp tái cấu trúc"
       },
       {
-        "value": "12+",
-        "label": "Doanh nghiệp & tổ chức"
+        "value": "14+",
+        "label": "Năm giảng dạy đại học"
       }
     ],
     "expertise": [
-      "Tư vấn và đào tạo tiêu chuẩn ISO 9001, 14001, 45001, 50001, 22000, FSSC 22000, ISO 13485",
-      "Công cụ Lean: 5S, Kaizen, PRO-3M, BSC/KPI cải tiến Chất lượng, Chi phí, Giao hàng (QCD)",
-      "Trách nhiệm xã hội: SA 8000, BSCI, Sedex SMETA",
-      "Quản trị rủi ro: chất lượng, an toàn, mô hình kinh doanh và rủi ro vận hành",
-      "Chẩn đoán doanh nghiệp cho các chương trình do Samsung, JICA và USAID hỗ trợ",
-      "Khung giải thưởng chất lượng Malcolm Baldrige",
-      "Phân tích tài chính và hiệu quả kinh doanh, kỹ năng quản lý sản xuất và quản lý cấp trung",
-      "Giải quyết vấn đề và ra quyết định"
+      "Tư vấn hệ thống quản lý: ISO 9001, 14001, 45001, 50001, 22000, FSSC 22000, ISO 13485, HACCP, GMP-WHO",
+      "Khung ESG tích hợp: môi trường (ISO 14001, 50001, 14064, FSC, GRS, EUDR, LCA), xã hội (BSCI amfori, SA 8000, Sedex SMETA, RBA), quản trị (ISO 37001, 31000, 22301, 19600, kiểm soát nội bộ)",
+      "Lồng ghép ESG vào Lean: giảm lãng phí là giảm phát thải, Kaizen là phát triển bền vững",
+      "Cải tiến năng suất chất lượng: PRO-3M, 5S, Kaizen, Lean cho SME, OEE",
+      "Thiết kế KPI đa tầng, BSC và dashboard đo lường hiệu quả",
+      "Chẩn đoán doanh nghiệp (Shindanshi) và tái cấu trúc mô hình kinh doanh",
+      "Báo cáo Giải thưởng Chất lượng theo mô hình Malcolm Baldrige",
+      "Kỹ năng quản lý cấp trung: lập kế hoạch sản xuất, chất lượng, tư duy phản biện, giải quyết vấn đề, quản trị rủi ro",
+      "Tác giả sách \"Tư duy mới trong quản trị\""
     ],
     "career": [
       {
@@ -771,73 +822,178 @@
         "role": "Chuyên gia tư vấn và Giảng viên Lean"
       },
       {
-        "period": "",
-        "org": "Trường Đại học Đồng Nai",
-        "role": "Giảng viên Kinh tế, Tài chính doanh nghiệp, Phân tích hiệu quả kinh doanh"
+        "period": "2024 - nay",
+        "org": "IFC - World Bank",
+        "role": "Chuyên gia địa phương, tư vấn FSSC và chống thất thoát, lãng phí thực phẩm (FLW)"
       },
       {
-        "period": "",
-        "org": "Trường Cao đẳng Quản trị Kinh doanh Sonadezi",
-        "role": "Giảng viên Quản lý chất lượng, Nghiên cứu Marketing"
+        "period": "2023 - nay",
+        "org": "Cục Phát triển Doanh nghiệp (nay là APED)",
+        "role": "Chuyên gia tư vấn ESG"
       },
       {
-        "period": "",
-        "org": "Trường Trung cấp nghề Bà Rịa",
-        "role": "Giảng viên Phân tích báo cáo tài chính, Quản lý dự án"
+        "period": "2021 - nay",
+        "org": "Công ty Tư vấn Đào tạo Á Châu",
+        "role": "Tư vấn trưởng, Phó Giám đốc"
+      },
+      {
+        "period": "2020 - 2021",
+        "org": "Trung tâm Hỗ trợ Phát triển Công nghiệp IDC (Cục Công nghiệp)",
+        "role": "Tư vấn trưởng cải tiến năng suất chất lượng PRO-3M"
+      },
+      {
+        "period": "2017 - 2020",
+        "org": "Công ty Tư vấn Trần Đình Cửu",
+        "role": "Tư vấn trưởng"
+      },
+      {
+        "period": "2014 - 2016",
+        "org": "Công ty CP Bắc Âu Mỹ",
+        "role": "Trưởng phòng Quản lý chất lượng"
+      },
+      {
+        "period": "2007 - 2010",
+        "org": "Công ty TNHH Sunjin Vina",
+        "role": "Quản lý vùng kinh doanh"
       }
     ],
     "experience": [
       {
-        "client": "Thực phẩm & đồ uống",
+        "client": "Cơ khí chính xác (case study)",
         "period": "",
-        "text": "FSSC 22000, ISO 22000, 5S, Kaizen và khung Malcolm Baldrige."
+        "text": "Tối ưu quy trình và giảm lãng phí trên dây chuyền: giảm 18% chi phí, tăng 22% hiệu suất thiết bị tổng thể (OEE) nhờ cải tiến quy trình và bảo trì phòng ngừa."
       },
       {
-        "client": "Thức ăn chăn nuôi & thuốc thú y",
+        "client": "Hệ thống KPI (case study)",
         "period": "",
-        "text": "ISO 22000, HACCP, 5S, Kaizen."
+        "text": "Sau 6 tháng: giao hàng đúng hạn từ 78% lên 94%, lãng phí thao tác từ 32% xuống 15%, tỷ lệ nhân viên hiểu KPI của bản thân từ 40% lên 85%."
       },
       {
-        "client": "Chế biến gỗ",
+        "client": "EVN HCMC, Xi măng Hà Tiên, Reetech (REE), Bia Sài Gòn Bảo Lộc",
         "period": "",
-        "text": "ISO 9001, 14001, 45001, Kaizen và FSC."
+        "text": "Tư vấn, đào tạo ISO 9001, ISO 14001, ISO 45001, ISO 50001 cho Tổng công ty Điện lực TP.HCM, Xi măng Hà Tiên (Kiên Lương, Bình Phước), Reetech và Bia Sài Gòn chi nhánh Bảo Lộc."
       },
       {
-        "client": "Kết cấu thép & xi măng",
+        "client": "Bệnh viện Thống Nhất, Vinavit (Nam Quốc)",
         "period": "",
-        "text": "ISO 9001, 14001, 45001 và Kaizen."
+        "text": "Tư vấn ISO 9001; đào tạo tư duy quản trị rủi ro theo PFMEA và DFMEA cho Vinavit."
       },
       {
-        "client": "Bao bì nhựa & giấy",
+        "client": "DB Schenker, Mondelez Kinh Đô, Wonderful Electric (cùng ACC)",
         "period": "",
-        "text": "ISO 9001, 14001, 45001, Kaizen và FSC."
+        "text": "Tư vấn tuân thủ RBA và Sedex SMETA 2 trụ cột; đào tạo và đánh giá tuân thủ SA 8000 (KMRCert, Vinametal)."
       },
       {
-        "client": "Thiết bị y tế (khẩu trang, găng tay, kit xét nghiệm)",
+        "client": "HTX Vĩnh Thành, Gỗ Minh Thành, VITANA",
         "period": "",
-        "text": "ISO 13485, ISO 9001, 5S, Kaizen."
+        "text": "Tư vấn BSCI 2021 và Sedex SMETA 4 trụ cột; tư vấn ICAMP và BSCI 2021."
       },
       {
-        "client": "Cơ khí chế tạo & công nghiệp hỗ trợ",
+        "client": "Bắc Âu Mỹ, Topcin, Gia Thịnh Phát",
         "period": "",
-        "text": "ISO 9001, 14001, 45001 và PRO-3M."
+        "text": "Tư vấn HACCP, GMP-WHO và ISO 22000 cho doanh nghiệp thực phẩm và dược."
       },
       {
-        "client": "Chẩn đoán doanh nghiệp",
+        "client": "Điện Quang",
         "period": "",
-        "text": "Thực hiện chẩn đoán doanh nghiệp trong các chương trình do Samsung, JICA và USAID hỗ trợ."
+        "text": "Dự án PRO-3M: xây dựng môi trường 5S cơ bản, nâng hiệu quả cân bằng chuyền (LOB) và giảm tỷ lệ lỗi quy trình."
+      },
+      {
+        "client": "Găng tay y tế Duy Hằng, Tuấn Ngọc Nhi (nhà cung cấp của Honda)",
+        "period": "",
+        "text": "5S, Kaizen theo yêu cầu ISO 13485 và chuẩn 5S của Honda Việt Nam."
+      },
+      {
+        "client": "Bao bì Việt Thành, Dynaplast, Solartech, MCreative Vina",
+        "period": "",
+        "text": "Đào tạo 5S3D, 5S, Kaizen và xây dựng chính sách Kaizen cho doanh nghiệp."
+      },
+      {
+        "client": "Gỗ Phú Tài, MDC Precision",
+        "period": "",
+        "text": "Đào tạo 5 Core Tools đáp ứng yêu cầu khách hàng EU và Mỹ; tư vấn QMS tích hợp ISO 9001 với tiêu chuẩn tập đoàn."
+      },
+      {
+        "client": "CP Thái Lan, Saigon Co.op, Farminut",
+        "period": "",
+        "text": "Chuỗi dự án báo cáo Giải thưởng Chất lượng theo mô hình Malcolm Baldrige."
       }
     ],
     "certifications": [
       {
-        "name": "Chuyên gia tư vấn chính (Master Consultant)",
-        "org": "Bộ Công Thương và Samsung Electronics Việt Nam (2019)",
+        "name": "Chuyên gia tư vấn chính cải tiến năng suất chất lượng",
+        "org": "Bộ Công Thương và Trung tâm Đào tạo Samsung (2019)",
+        "core": true
+      },
+      {
+        "name": "Lead Auditor ISO 9001",
+        "org": "CQI-IRCA (2021)",
+        "core": true
+      },
+      {
+        "name": "Chẩn đoán viên Shindanshi",
+        "org": "JICA và Cục Phát triển Doanh nghiệp (2023)",
+        "core": true
+      },
+      {
+        "name": "Mạng lưới chuyên gia tư vấn ESG Việt Nam",
+        "org": "Cục Phát triển Doanh nghiệp, Bộ Tài chính (2024)",
         "core": true
       },
       {
         "name": "Lean Six Sigma Black Belt",
         "org": "LinkedIn Learning (2022)",
-        "core": true
+        "group": "Lean Six Sigma"
+      },
+      {
+        "name": "Google Project Management",
+        "org": "Google, Coursera (2024)",
+        "group": "Lean & Năng suất"
+      },
+      {
+        "name": "Chuyên gia tư vấn chuyển đổi số và công nghiệp 4.0",
+        "org": "GIZ và Cục Phát triển Doanh nghiệp (2023)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Empowering Vietnam's Digital Transformation Expert Network",
+        "org": "RMIT, USAID và AED (2024)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Các khóa ISO 14001, ISO 45001, ISO 50001",
+        "org": "eAPO (2022)",
+        "group": "Bền vững & Số hóa"
+      },
+      {
+        "name": "Giám đốc điều hành doanh nghiệp CEO 4.0",
+        "org": "VCCI TP.HCM (2023)",
+        "group": "Đào tạo & Coaching"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Tiến sĩ Quản trị Kinh doanh (DBA)",
+        "school": "Viện EARIST, Manila, Philippines (2018)"
+      },
+      {
+        "degree": "Thạc sĩ Quản trị Kinh doanh",
+        "school": "Trường Đại học Lạc Hồng (2012)"
+      },
+      {
+        "degree": "Kỹ sư Chăn nuôi",
+        "school": "Trường Đại học Nông Lâm TP.HCM (2007)"
+      }
+    ],
+    "languages": "Tiếng Việt, Tiếng Anh",
+    "regions": [
+      {
+        "country": "Philippines",
+        "text": "Tiến sĩ Quản trị Kinh doanh tại Viện EARIST, Manila"
+      },
+      {
+        "country": "Quốc tế",
+        "text": "Chuyên gia địa phương của IFC - World Bank; dự án tuân thủ RBA, Sedex SMETA cho DB Schenker, Mondelez"
       }
     ]
   },
@@ -992,6 +1148,18 @@
       {
         "country": "Malaysia",
         "text": "Nhà máy chế biến lúa gạo Ada Aura, Pasti Selera (Selangor)"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Nguyễn Quốc Huy",
+        "role": "Tổng Giám đốc, Numatec",
+        "quote": "Triển khai 5S đã giúp công ty ngăn nắp, sạch sẽ, hiệu quả hơn và mở ra cơ hội năng suất mới. Sự chuyên nghiệp, tận tâm, linh hoạt và hỗ trợ tích cực của đội tư vấn anh Linh là yếu tố then chốt để triển khai thành công 5S và cải tiến sản xuất, cùng các buổi đào tạo giúp áp dụng kiến thức vào thực tế."
+      },
+      {
+        "name": "Nguyễn Thanh Hải",
+        "role": "Tổng Giám đốc, Kato Precision",
+        "quote": "Khóa đào tạo công cụ Lean Six Sigma đã thay đổi rõ rệt nhận thức của nhân viên về quản lý, vận hành sản xuất và cải tiến liên tục. Dưới sự hướng dẫn của chuyên gia trong khảo sát, lập kế hoạch và triển khai, dự án mang lại năng suất tăng, chất lượng ổn định và năng lực nhân viên được nâng cao."
       }
     ]
   },

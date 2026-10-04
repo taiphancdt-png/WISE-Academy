@@ -20,6 +20,7 @@ export interface Expert {
   regions?: { country: string; text: string }[];
   languages?: string;
   photos?: { src: string; caption: string }[];
+  testimonials?: { name: string; role: string; quote: string }[];
 }
 
 export interface ProjectResult {
