@@ -27,9 +27,9 @@ export default function ProjectsPage() {
       {/* Every project: a short summary with photos; "Xem chi tiết dự án" opens the full case study */}
       {projects.map((proj, idx) => (
         <section key={proj.id} id={proj.id} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-10 items-start">
+          <div className={`max-w-6xl mx-auto grid grid-cols-1 ${idx % 2 ? "lg:grid-cols-[2fr_1fr]" : "lg:grid-cols-[1fr_2fr]"} gap-x-12 lg:gap-x-16 gap-y-10 items-start`}>
             <div className={idx % 2 ? "lg:order-2" : "lg:order-1"}>
-              {/* shown at the photo's own proportions, so wide group photos are never cut at the sides */}
+              {/* photos take a third of the row; the cover keeps its own proportions so group photos are never cut */}
               <div className="rounded-2xl overflow-hidden bg-slate-100">
                 <img src={proj.cover || proj.gallery?.[0]} alt={`Dự án ${proj.client}`} className="block w-full h-auto" loading="lazy" />
               </div>
