@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CheckCircle2 } from "@/components/icons";
 
 interface CertificateData {
@@ -29,6 +29,14 @@ export default function CertificateLookup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [cert, setCert] = useState<CertificateData | null>(null);
+  const [zoom, setZoom] = useState(false);
+
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setZoom(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [zoom]);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -105,7 +113,7 @@ export default function CertificateLookup() {
           </div>
           {/* details on the left, the certificate image on the right */}
           <div
-            className={`grid grid-cols-1 ${cert.image ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]" : ""} gap-6 lg:gap-8 px-6 sm:px-8 py-6 items-start`}
+            className={`grid grid-cols-1 ${cert.image ? "sm:grid-cols-[minmax(0,1fr)_200px] lg:grid-cols-[minmax(0,1fr)_250px]" : ""} gap-6 lg:gap-8 px-6 sm:px-8 py-6 items-start`}
           >
             <dl className="divide-y divide-slate-100">
               {rows.map(([k, v]) => (
@@ -123,23 +131,48 @@ export default function CertificateLookup() {
               ))}
             </dl>
             {cert.image && (
-              <a
-                href={cert.image}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
+              <button
+                type="button"
+                onClick={() => setZoom(true)}
+                className="group mx-auto block w-full max-w-[250px] cursor-zoom-in"
+                aria-label="Xem ảnh chứng chỉ kích thước đầy đủ"
               >
                 <img
                   src={cert.image}
                   alt={`Chứng chỉ của ${cert.name}`}
-                  className="w-full rounded-2xl ring-1 ring-slate-200 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.5)] transition-transform group-hover:scale-[1.01]"
+                  className="w-full rounded-xl ring-1 ring-slate-200 shadow-[0_18px_40px_-24px_rgba(0,47,91,0.5)] transition-transform group-hover:scale-[1.02]"
                 />
                 <span className="mt-2 block text-center text-xs text-[#486581]">
-                  Bấm vào ảnh để xem kích thước đầy đủ
+                  Bấm vào ảnh để xem đầy đủ
                 </span>
-              </a>
+              </button>
             )}
           </div>
+        </div>
+      )}
+
+      {/* full-size certificate, closed by a click anywhere or Escape */}
+      {zoom && cert?.image && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Chứng chỉ của ${cert.name}`}
+          onClick={() => setZoom(false)}
+          className="fixed inset-0 z-[100] flex cursor-zoom-out items-center justify-center bg-[#001B35]/85 p-4 sm:p-8"
+        >
+          <img
+            src={cert.image}
+            alt={`Chứng chỉ của ${cert.name}`}
+            className="max-h-full max-w-full rounded-xl shadow-2xl"
+          />
+          <button
+            type="button"
+            onClick={() => setZoom(false)}
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-2xl leading-none text-white hover:bg-white/25"
+            aria-label="Đóng"
+          >
+            ×
+          </button>
         </div>
       )}
     </div>
