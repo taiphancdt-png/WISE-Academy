@@ -41,7 +41,9 @@ export async function GET(request: Request) {
     );
   } catch (err) {
     console.error("certificate lookup failed", err);
-    const detail = err instanceof Error ? err.message.split(":")[0] : "unknown";
+    // only a short failure kind, never the message (it can echo env values)
+    const msg = err instanceof Error ? err.message : "";
+    const detail = /^(apps_script_\w+|google_\w+)/.exec(msg)?.[1] || (/parse URL/i.test(msg) ? "bad_script_url" : "fetch_failed");
     return NextResponse.json({ ok: false, error: "unavailable", detail }, { status: 503 });
   }
 }
