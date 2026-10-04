@@ -1,5 +1,81 @@
 [
   {
+    "id": "huali-group-lean-six-sigma-yellow-belt",
+    "client": "Huali Industrial Group",
+    "industry": "Sản xuất giày dép",
+    "title": "Chương trình Lean Six Sigma Yellow Belt chuẩn CSSC",
+    "description": "Chương trình Yellow Belt theo chuẩn của Council for Six Sigma Certification (CSSC) từ LSSI, đi từ Lean Management, White Belt đến Yellow Belt theo chu trình DMAIC. 15 học viên đã hoàn thành và nhận chứng nhận quốc tế.",
+    "highlight": "Learn, Improve, Make an Impact: 15 học viên Huali chính thức đạt chứng nhận quốc tế Lean Six Sigma Yellow Belt.",
+    "results": [
+      {
+        "metric": "15",
+        "label": "Học viên đạt chứng nhận quốc tế"
+      },
+      {
+        "metric": "CSSC",
+        "label": "Chuẩn chứng nhận Six Sigma"
+      }
+    ],
+    "tags": [
+      "Lean Six Sigma",
+      "Yellow Belt",
+      "CSSC",
+      "DMAIC"
+    ],
+    "partner": "Huali Industrial Group (华利实业集团) là tập đoàn công nghiệp quy mô lớn chuyên sản xuất giày dép, đối tác chiến lược của nhiều thương hiệu hàng đầu thế giới. Sau chương trình cải tiến năng suất chuyền, Huali tiếp tục cùng WISE Academy đầu tư vào năng lực cải tiến của đội ngũ bằng một chứng nhận quốc tế.",
+    "challenge": "Để cải tiến trở thành việc làm hằng ngày chứ không dừng ở một vài dự án, Huali cần một đội ngũ cùng chung ngôn ngữ và phương pháp: biết nhìn quy trình bằng dữ liệu, nhận diện lãng phí, giải quyết vấn đề có hệ thống và duy trì kết quả sau cải tiến. Năng lực ấy cần được chuẩn hóa và công nhận theo một tiêu chuẩn quốc tế.",
+    "solution": "WISE Academy, đối tác ủy quyền của LSSI tại Việt Nam và châu Á, triển khai chương trình Lean Six Sigma Yellow Belt theo chuẩn CSSC cho đội ngũ Huali. Lộ trình đi qua ba cấp độ: Lean Management (Hoshin Kanri, chuỗi giá trị, 5S, quản lý trực quan, công việc tiêu chuẩn), White Belt và Yellow Belt, với nội dung Yellow Belt bám theo chu trình DMAIC:",
+    "steps": [
+      {
+        "name": "Define",
+        "text": "Phân loại vấn đề theo 4 góc phần tư và định nghĩa dự án bằng A3."
+      },
+      {
+        "name": "Measure",
+        "text": "Thu thập dữ liệu, đo OEE, vẽ VSM hiện trạng, Spaghetti Diagram và biểu đồ cân bằng."
+      },
+      {
+        "name": "Analyze",
+        "text": "Phân tích lãng phí và rủi ro với FMEA để tìm đúng điểm cần cải tiến."
+      },
+      {
+        "name": "Improve",
+        "text": "Kaizen, dòng chảy liên tục, SMED, TPM, Kanban và VSM tương lai."
+      },
+      {
+        "name": "Control",
+        "text": "Công việc tiêu chuẩn, chống sai lỗi Poka Yoke và Kata để duy trì cải tiến."
+      }
+    ],
+    "goals": [
+      "Làm chủ nguyên lý Lean Six Sigma và kỹ thuật giải quyết vấn đề theo DMAIC.",
+      "Thu thập và phân tích dữ liệu để ra quyết định cải tiến.",
+      "Ứng dụng các công cụ cốt lõi: A3, OEE, VSM, FMEA, Kaizen, SMED, TPM, Kanban, Poka Yoke.",
+      "Đạt chứng nhận quốc tế Yellow Belt và lan tỏa văn hóa cải tiến liên tục trong tổ chức."
+    ],
+    "info": [
+      {
+        "label": "Chuẩn đào tạo",
+        "value": "Council for Six Sigma Certification (CSSC), từ Lean Six Sigma Institute (LSSI)"
+      },
+      {
+        "label": "Lộ trình",
+        "value": "Lean Management, White Belt, Yellow Belt"
+      },
+      {
+        "label": "Kết quả",
+        "value": "15 học viên hoàn thành và nhận chứng nhận quốc tế"
+      }
+    ],
+    "outcome": "15 học viên của Huali đã hoàn thành chương trình và chính thức nhận chứng nhận quốc tế Lean Six Sigma Yellow Belt theo chuẩn CSSC, có giá trị toàn cầu và trọn đời. Quan trọng hơn tấm chứng nhận, đội ngũ mang về bộ công cụ và tư duy Lean Six Sigma để tạo ra những cải tiến thiết thực mỗi ngày ngay tại công việc của mình. Learn, Improve, Make an Impact.",
+    "cover": "/images/projects/huali-group-lean-six-sigma-yellow-belt/photo_1.webp",
+    "gallery": [
+      "/images/projects/huali-group-lean-six-sigma-yellow-belt/photo_1.webp",
+      "/images/projects/huali-group-lean-six-sigma-yellow-belt/photo_2.webp",
+      "/images/projects/huali-group-lean-six-sigma-yellow-belt/photo_3.webp"
+    ]
+  },
+  {
     "id": "pouchen-group-khoa-dao-tao-lean-six-sigma-green-belt",
     "client": "Pou Chen Group",
     "industry": "Sản xuất giày dép",
