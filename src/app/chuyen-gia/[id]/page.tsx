@@ -282,7 +282,7 @@ export default async function ExpertPage({
               <svg
                 viewBox="0 0 400 400"
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full overflow-visible origin-top -translate-y-[6%] scale-[0.86]"
+                className="absolute inset-0 w-full h-full overflow-visible origin-bottom translate-y-[3%] scale-[1.2]"
               >
                 <defs>
                   <linearGradient id="blobFill" x1="0" y1="0" x2="1" y2="1">
@@ -291,7 +291,7 @@ export default async function ExpertPage({
                   </linearGradient>
                 </defs>
                 <path
-                  d="M318 92c38 36 52 94 36 146-16 52-62 98-118 110-56 12-122-10-158-56S38 180 64 126 152 38 210 36s70 20 108 56Z"
+                  d="M300 70c44 22 78 70 74 128-3 44-34 66-38 108-5 48-58 82-112 78-46-3-70-30-118-40-52-11-80-58-74-110 5-46 40-62 46-106 7-52 48-86 104-88 46-2 76 8 118 30Z"
                   fill="url(#blobFill)"
                 />
                 <path
@@ -317,7 +317,7 @@ export default async function ExpertPage({
                 <img
                   src={exp.cutout}
                   alt={exp.name}
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none [mask-image:linear-gradient(to_bottom,#000_78%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none [mask-image:linear-gradient(to_bottom,#000_88%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
                 />
               ) : (
                 <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
@@ -414,11 +414,12 @@ export default async function ExpertPage({
         {exp.certifications && (
           <Rail no="02" label="Chứng nhận & đào tạo">
             {/* the core credentials, large; the rest as a compact list of further training */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#002F5B]/10">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:repeat(var(--n),minmax(0,1fr))] border-t border-l border-[#002F5B]/10"
+              style={{ "--n": coreCerts.length } as React.CSSProperties}>
               {coreCerts.map((c, i) => (
                 <li
                   key={`${c.name}-${c.org}`}
-                  className="relative p-6 border-r border-b border-[#002F5B]/10 group"
+                  className="relative p-5 xl:p-6 border-r border-b border-[#002F5B]/10 group"
                 >
                   <span
                     aria-hidden="true"
@@ -427,7 +428,7 @@ export default async function ExpertPage({
                   <span className="text-xs font-bold tabular-nums text-[#F76011]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-3 text-lg font-bold leading-snug text-[#002F5B]">
+                  <p className="mt-3 text-base xl:text-[17px] font-bold leading-snug text-[#002F5B]">
                     {c.name}
                   </p>
                   <p className="mt-2 text-xs uppercase tracking-[0.1em] text-[#486581]">
