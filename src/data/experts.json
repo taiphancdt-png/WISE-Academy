@@ -406,24 +406,24 @@
         "text": "Dẫn dắt triển khai Lean toàn nhà máy, quản lý KPI năng suất, phân tích IE cho hoạch định năng lực và nguồn lực, các dự án thiết lập nhà máy mới, và xây dựng văn hóa Kaizen qua quản lý hằng ngày và giải quyết vấn đề."
       },
       {
-        "client": "Race to the Top",
-        "period": "",
-        "text": "Chương trình do IHD và USAID tài trợ: tư vấn Lean phát triển năng lực lãnh đạo và vận hành xuất sắc cho quản lý cấp cao và cấp trung tại 15 nhà máy may mặc và giày dép."
+        "client": "Race to the Top Vietnam",
+        "period": "2017 - 2019",
+        "text": "Triển khai chương trình năng suất của sáng kiến đa bên tại 10 nhà máy may mặc và giày dép (Tân Hợp, Nien Hsing, Saitex, Hansae...), cùng các đối tác Nike, GAP, Levi's, Puma, IFC, ILO, USAID, nhằm nâng cao năng suất và điều kiện làm việc."
       },
       {
-        "client": "Gender Equality and Returns (GEAR)",
-        "period": "",
-        "text": "Chương trình của ILO, IFC và Better Work: phát triển và chuẩn bị cho nữ công nhân thăng tiến lên vị trí giám sát tại 20 nhà máy may."
+        "client": "GEAR (IFC / ILO Better Work Vietnam)",
+        "period": "2015 - 2019",
+        "text": "Đào tạo nữ công nhân trở thành chuyền trưởng tại 34 nhà máy may ở 8 tỉnh thành: quản lý sản xuất, đo lường hiệu suất, kiểm soát chất lượng và kỹ năng lãnh đạo."
       },
       {
-        "client": "TBS, nhà máy Thoại Sơn",
+        "client": "TBS Group",
         "period": "",
-        "text": "Tư vấn thiết lập nhà máy giày mới: thiết kế mặt bằng theo Lean, xây dựng hệ thống KPI và đào tạo giám sát sản xuất."
+        "text": "Tư vấn Lean tại nhà máy Thoại Sơn mới, thành lập Trung tâm Đào tạo & Đổi mới Lean tại Lefaso và chương trình phát triển quản lý kế cận."
       },
       {
         "client": "Tuấn Việt Shoes",
         "period": "",
-        "text": "Dẫn dắt chuyển đổi Lean qua tái bố trí mặt bằng nhà máy và đào tạo năng lực Lean cho đội ngũ quản lý và quản lý cấp trung."
+        "text": "Hoshin Kanri, quản trị thay đổi, văn hóa và lãnh đạo Lean, thiết kế chuyền Cell, lộ trình chuyển đổi Lean và nền tảng 5S."
       },
       {
         "client": "Pou Chen Group",
@@ -431,14 +431,9 @@
         "text": "Đào tạo Lean Six Sigma Green Belt, hợp tác cùng LSSI Global."
       },
       {
-        "client": "An Giang Samho (WISE Academy)",
+        "client": "Pou Chen, An Giang Samho, Huali",
         "period": "",
-        "text": "Tư vấn Lean và đào tạo Lean Six Sigma Yellow Belt."
-      },
-      {
-        "client": "Huali Industrial Group",
-        "period": "",
-        "text": "Chương trình Work Engineering cải tiến năng suất chuyền."
+        "text": "Đào tạo Lean Six Sigma Yellow Belt và Work Engineering cải tiến năng suất chuyền: nhận diện lãng phí, quan sát Gemba và vòng tròn Ohno, biểu đồ cân bằng chuyền."
       },
       {
         "client": "GEODIS Vietnam",
@@ -446,14 +441,9 @@
         "text": "Đào tạo và tư vấn 6S cho kho vận."
       },
       {
-        "client": "Yujin Kreves",
+        "client": "Victory, Tỷ Bách, Yujin Kreves",
         "period": "",
-        "text": "Chương trình tư vấn 6S cho sản xuất dao kéo và phụ kiện túi xách."
-      },
-      {
-        "client": "Victory Group",
-        "period": "",
-        "text": "Đào tạo Lean Fundamental cho đội ngũ quản lý sản xuất."
+        "text": "Đào tạo Lean Diagnostic & Lean Fundamental, workshop thiết kế bố trí Lean Cell, chương trình đào tạo và tư vấn 5S, An toàn, Quản lý trực quan."
       }
     ],
     "certifications": [
