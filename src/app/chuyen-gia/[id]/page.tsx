@@ -52,6 +52,41 @@ function Rail({ no, label, id, children }: { no: string; label: string; id?: str
   );
 }
 
+// A photo of the expert at work placed between sections, each one laid out differently:
+// a wide cinematic strip, or a smaller frame pushed to the right or left with its caption beside it.
+function PhotoBreak({ photo, variant }: { photo?: { src: string; caption: string }; variant: "wide" | "right" | "left" }) {
+  if (!photo) return null;
+  if (variant === "wide") {
+    return (
+      <figure className="px-4 sm:px-6 py-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="overflow-hidden rounded-3xl aspect-[16/9] md:aspect-[21/9] bg-slate-100">
+            <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+          </div>
+          <figcaption className="mt-3 flex items-center gap-2 text-xs text-[#486581]">
+            <span aria-hidden="true" className="h-px w-6 bg-[#F76011]" />
+            {photo.caption}
+          </figcaption>
+        </div>
+      </figure>
+    );
+  }
+  const right = variant === "right";
+  return (
+    <figure className="px-4 sm:px-6 py-4">
+      <div className={`max-w-6xl mx-auto flex flex-col md:items-end gap-5 ${right ? "md:flex-row" : "md:flex-row-reverse"}`}>
+        <figcaption className={`md:w-1/3 md:pb-6 text-sm text-[#486581] leading-relaxed ${right ? "md:text-right" : ""}`}>
+          <span aria-hidden="true" className={`mb-3 block h-0.5 w-10 bg-[#F76011] ${right ? "md:ml-auto" : ""}`} />
+          {photo.caption}
+        </figcaption>
+        <div className={`md:w-7/12 overflow-hidden rounded-3xl aspect-[4/3] bg-slate-100 ${right ? "md:ml-auto md:rotate-[1.2deg]" : "md:mr-auto md:-rotate-[1.2deg]"} shadow-[0_30px_60px_-35px_rgba(0,47,91,0.55)]`}>
+          <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </figure>
+  );
+}
+
 // Projects whose client is named in the expert's bio (e.g. "Pou Chen", "Geodis", "Samho").
 function relatedProjects(exp: Expert) {
   const bio = exp.bio.toLowerCase();
@@ -256,7 +291,7 @@ export default async function ExpertPage({
               const num = plus ? h.value.slice(0, -1) : h.value;
               return (
                 <div key={h.label} className={`py-8 px-4 ${i % 2 ? "border-l" : "sm:border-l"} ${i === 0 ? "sm:border-l-0" : ""} border-[#002F5B]/10`}>
-                  <dd className="text-4xl lg:text-5xl font-extrabold tracking-tight text-[#002F5B] leading-none">
+                  <dd className="text-3xl lg:text-[34px] font-extrabold tracking-tight text-[#002F5B] leading-none">
                     {num}
                     {plus && <span className="text-[#F76011]">+</span>}
                   </dd>
@@ -296,24 +331,7 @@ export default async function ExpertPage({
           </Rail>
         )}
 
-        {/* in the field: a few photos of the expert at work, between the sections */}
-        {exp.photos && exp.photos.length > 0 && (
-          <section className="px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-6">
-              {exp.photos.map((ph, i) => (
-                <figure key={ph.src} className={`group ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}`}>
-                  <div className={`overflow-hidden rounded-2xl bg-slate-100 ${i === 0 ? "aspect-[4/3] md:aspect-auto md:h-[calc(100%-2.75rem)]" : "aspect-[4/3]"}`}>
-                    <img src={ph.src} alt={ph.caption} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
-                  </div>
-                  <figcaption className="mt-2.5 flex gap-2 text-xs text-[#486581] leading-snug">
-                    <span aria-hidden="true" className="mt-1.5 h-px w-5 shrink-0 bg-[#F76011]" />
-                    {ph.caption}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-        )}
+        <PhotoBreak photo={exp.photos?.[0]} variant="wide" />
 
         {exp.expertise && (
           <Rail no="03" label="Thế mạnh chuyên môn">
@@ -327,6 +345,8 @@ export default async function ExpertPage({
             </ol>
           </Rail>
         )}
+
+        <PhotoBreak photo={exp.photos?.[1]} variant="right" />
 
         {exp.career && (
           <Rail no="04" label="Quá trình công tác" id="qua-trinh">
@@ -371,6 +391,8 @@ export default async function ExpertPage({
             )}
           </Rail>
         )}
+
+        <PhotoBreak photo={exp.photos?.[2]} variant="left" />
 
         {exp.experience && (
           <Rail no="05" label="Dự án tiêu biểu">
