@@ -819,7 +819,7 @@
       {
         "period": "Hiện nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+        "role": "Chuyên gia tư vấn / đào tạo"
       },
       {
         "period": "2016 - 2018",
@@ -876,7 +876,14 @@
     ],
     "image": "/images/experts/nguyen-hoang-son.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/nguyen-hoang-son-cutout.webp"
+    "cutout": "/images/experts/nguyen-hoang-son-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "tran-nguyen-ha",
@@ -934,7 +941,7 @@
       {
         "period": "Hiện nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn và Giảng viên Lean"
+        "role": "Chuyên gia tư vấn / đào tạo"
       },
       {
         "period": "2024 - nay",
@@ -1170,9 +1177,9 @@
     ],
     "career": [
       {
-        "period": "08/2024 - nay",
+        "period": "Hiện nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn cải tiến năng suất, chất lượng và đào tạo quản lý sản xuất"
+        "role": "Chuyên gia tư vấn / đào tạo"
       },
       {
         "period": "08/2023 - nay",
@@ -1345,7 +1352,14 @@
     ],
     "image": "/images/experts/tu-ngoc-tung.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/tu-ngoc-tung-cutout.webp"
+    "cutout": "/images/experts/tu-ngoc-tung-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "do-tan-khoa",
@@ -1363,6 +1377,11 @@
     "image": "/images/experts/do-tan-khoa-v2.webp",
     "cutout": "/images/experts/do-tan-khoa-cutout-v2.webp",
     "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      },
       {
         "period": "Hiện nay",
         "org": "CITARES",
@@ -1608,7 +1627,14 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/nguyen-dinh-tuan.webp",
-    "cutout": "/images/experts/nguyen-dinh-tuan-cutout.webp"
+    "cutout": "/images/experts/nguyen-dinh-tuan-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "phan-thi-nhung",
@@ -1624,7 +1650,14 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/phan-thi-nhung.webp",
-    "cutout": "/images/experts/phan-thi-nhung-cutout.webp"
+    "cutout": "/images/experts/phan-thi-nhung-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "dang-thi-hong-ngoc",
@@ -1650,6 +1683,11 @@
       "Tự động hóa và giảm lãng phí; xây dựng hệ thống Lean cho cả bộ phận"
     ],
     "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      },
       {
         "period": "",
         "org": "Zebra",
@@ -1731,7 +1769,14 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/nguyen-minh-nguyet.webp",
-    "cutout": "/images/experts/nguyen-minh-nguyet-cutout.webp"
+    "cutout": "/images/experts/nguyen-minh-nguyet-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "tran-thi-my-hong",
@@ -1747,7 +1792,14 @@
     ],
     "group": "vietnam",
     "image": "/images/experts/tran-thi-my-hong.webp",
-    "cutout": "/images/experts/tran-thi-my-hong-cutout.webp"
+    "cutout": "/images/experts/tran-thi-my-hong-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   },
   {
     "id": "edward-zhu",
@@ -1802,6 +1854,11 @@
       "Lãnh đạo tình huống và nhạy bén văn hóa trong môi trường đa quốc gia"
     ],
     "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      },
       {
         "period": "2022 - nay",
         "org": "Lean Six Sigma Institute (LSSI)",
@@ -1957,6 +2014,11 @@
     ],
     "career": [
       {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      },
+      {
         "period": "2020 - nay",
         "org": "Công ty tư vấn quản trị Lean",
         "role": "Chuyên gia tư vấn cấp cao, Giảng viên và Huấn luyện dự án Lean Six Sigma"
@@ -2097,6 +2159,13 @@
     ],
     "group": "international",
     "image": "/images/experts/sujit-bhattacharjee.webp",
-    "cutout": "/images/experts/sujit-bhattacharjee-cutout.webp"
+    "cutout": "/images/experts/sujit-bhattacharjee-cutout.webp",
+    "career": [
+      {
+        "period": "Hiện nay",
+        "org": "WISE Academy",
+        "role": "Chuyên gia tư vấn / đào tạo"
+      }
+    ]
   }
 ]
