@@ -8,6 +8,7 @@
 // It only answers one exact certificate code at a time (or one image of the certificate folder), never the whole list.
 
 const SECRET = "CHANGE-ME";
+const SHEET_ID = "17Tv50vZdq8aIvJFsM_ySKhefXIgj63UnaMqwT3n3vuY"; // the "Certification WISE" sheet
 const SHEET_NAME = "Certificates";
 const FOLDER_ID = "1oLhP0VKBGHYdQASJr4HP5oG75cRMlbQ2";
 
@@ -29,7 +30,9 @@ const json = (o) => ContentService.createTextOutput(JSON.stringify(o)).setMimeTy
 function lookup(raw) {
   const code = norm(raw);
   if (!code) return json({ ok: false, error: "invalid_code" });
-  const values = SpreadsheetApp.getActive().getSheetByName(SHEET_NAME).getDataRange().getDisplayValues();
+  const book = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = book.getSheetByName(SHEET_NAME) || book.getSheets()[0];
+  const values = sheet.getDataRange().getDisplayValues();
   const headers = values[0];
   const codeCol = headers.findIndex((h) => /certificate.?number|m[aã]\s*ch[uứ]ng\s*ch[iỉ]/i.test(h));
   const imageCol = headers.findIndex((h) => /certificate.?image|[aả]nh/i.test(h));
