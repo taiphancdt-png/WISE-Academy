@@ -282,7 +282,7 @@ export default async function ExpertPage({
               <svg
                 viewBox="0 0 400 400"
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full overflow-visible"
+                className="absolute inset-0 w-full h-full overflow-visible origin-top -translate-y-[6%] scale-[0.86]"
               >
                 <defs>
                   <linearGradient id="blobFill" x1="0" y1="0" x2="1" y2="1">
