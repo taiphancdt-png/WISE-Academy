@@ -317,7 +317,7 @@ export default async function ExpertPage({
                 <img
                   src={exp.cutout}
                   alt={exp.name}
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[96%] max-w-none [mask-image:linear-gradient(to_bottom,#000_78%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[104%] max-w-none [mask-image:linear-gradient(to_bottom,#000_78%,transparent)] drop-shadow-[0_18px_30px_rgba(0,30,56,0.18)]"
                 />
               ) : (
                 <div className="absolute inset-[12%] rounded-full overflow-hidden bg-[#B9D5F0]">
