@@ -14,6 +14,11 @@ const GAP = 130; // room between the two cards; the circle sits in a curved notc
 const NOTCH = D / 2 + 16; // radius of the notch around the circle
 const OUT = D / 2; // the icon circles sit on the cards' outer edges, half outside, inside the section width
 const PAD_OUT = NOTCH + 18; // text clears the outer notch
+// soft tints of each card's colour for its icon circle
+const TINT = [
+  { bg: "bg-gradient-to-br from-white to-[#E6EFF9]", ring: "border-[#3A78B5]/25", icon: "text-[#3A78B5]" },
+  { bg: "bg-gradient-to-br from-white to-[#FDECDF]", ring: "border-[#EC7428]/25", icon: "text-[#EC7428]" },
+];
 const SHADOW = ["drop-shadow(0 22px 28px rgba(28,86,144,0.3))", "drop-shadow(0 22px 28px rgba(236,116,40,0.3))"];
 const smooth = (e0: number, e1: number, x: number) => {
   const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
@@ -173,11 +178,10 @@ export default function VisionMission({ items }: { items: [VisionMissionItem, Vi
             style={{ width: D, height: D, transform: "translate(-50%, -50%)", opacity: 0 }}
             aria-hidden="true"
           >
-            {/* unlike the W circle: filled with the card's own colour, a thick white rim and a white icon */}
-            <div className={`absolute inset-0 rounded-full border-[6px] border-white shadow-[0_18px_40px_-14px_rgba(0,47,91,0.5)] ${it.className}`} />
-            <div className="absolute inset-[16px] rounded-full ring-1 ring-white/35" />
-            <div className="absolute inset-[26px] rounded-full bg-white/10" />
-            <span className="absolute inset-0 m-auto w-[44%] h-[44%] text-white [&>svg]:w-full [&>svg]:h-full">{it.icon}</span>
+            {/* lighter than the W circle: a soft tint of the card's colour, a white rim and a thin tinted line */}
+            <div className={`absolute inset-0 rounded-full border-[5px] border-white shadow-[0_14px_32px_-18px_rgba(0,47,91,0.35)] ${TINT[i].bg}`} />
+            <div className={`absolute inset-[18px] rounded-full border ${TINT[i].ring}`} />
+            <span className={`absolute inset-0 m-auto w-[40%] h-[40%] ${TINT[i].icon} [&>svg]:w-full [&>svg]:h-full`}>{it.icon}</span>
           </div>
         ))}
 
