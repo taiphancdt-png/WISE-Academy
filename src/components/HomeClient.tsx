@@ -154,9 +154,9 @@ export default function HomeClient({
               <span className="block">tăng năng suất,</span>
               <span className="block text-[#FF7A30]">giảm chi phí</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-white/85 max-w-xl leading-relaxed">
-              Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường để loại bỏ lãng phí, nâng cao chất lượng
-              và tối đa hóa năng suất.
+            <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed">
+              <span className="lg:block lg:whitespace-nowrap">Chúng tôi đào tạo, huấn luyện và cùng doanh nghiệp xuống tận hiện trường</span>{" "}
+              <span className="lg:block lg:whitespace-nowrap">để loại bỏ lãng phí, nâng cao chất lượng và tối đa hóa năng suất.</span>
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Link
