@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ART } from "@/components/mountainArt";
-import RunnerFigure, { BackFigure, POSES, blendPose, walkPose, type BackHandle, type RunnerHandle } from "@/components/RunnerFigure";
+import TrekkerLottie, { type TrekkerHandle } from "@/components/TrekkerLottie";
 
 export interface RoadmapStage {
   name: string;
@@ -155,11 +155,8 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
   const stickyRef = useRef<HTMLDivElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const runnerRef = useRef<HTMLDivElement>(null);
-  const figRef = useRef<RunnerHandle>(null);
+  const figRef = useRef<TrekkerHandle>(null);
   const flipRef = useRef<HTMLDivElement>(null);
-  const backRef = useRef<BackHandle>(null);
-  const sideBoxRef = useRef<HTMLDivElement>(null);
-  const backBoxRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [, setLayout] = useState(0);
   const geoRef = useRef<Geo>(buildGeo(1, 1));
@@ -210,7 +207,6 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let lastScroll = window.scrollY;
     let speed = 0;
     let phi = 0;
-    let runW = 0;
     let holdUntil = 0; // resting on the summit until this time
     let skyP = 0; // smoothed height reached, drives the dawn sky
     let sunT = 0; // sun height 0..1 (from the ridge to its place above the flag)
@@ -218,7 +214,6 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
     let sunFade = 1; // opacity used to make the sun vanish when a new climb starts
     let sunFading = false;
     let climbs = 1;
-    figRef.current?.setPose(POSES.stand);
 
     const frame = (now: number) => {
       const dt = last ? Math.min(50, now - last) : 16;
@@ -253,11 +248,9 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const pace = speed / BASE_SPEED;
       phi += (dt / (BASE_CYCLE_MS / Math.min(2.2, Math.sqrt(Math.max(pace, 0.01))))) * Math.PI * 2;
       const moving = !inBlocks && !resting;
-      runW += ((moving ? 1 : 0) - runW) * (1 - Math.exp(-dt / 220));
 
-      const pose = blendPose(POSES.stand, walkPose(phi, Math.min(1.3, 0.9 + 0.1 * pace)), runW);
-      pose.torso += 8 * runW; // lean into the slope
-      figRef.current?.setPose(pose, runW * 1.1 * Math.abs(Math.cos(phi)));
+      // the walk cycle advances with the pace; standing still it holds the current step
+      figRef.current?.setPhase(phi / (Math.PI * 2));
 
       // dawn: the sky follows the height reached (smoothed, so a new climb fades back to first light)
       skyP += (cur / 100 - skyP) * (1 - Math.exp(-dt / 500));
@@ -322,12 +315,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
       const pt = pointAt(geo, cur);
       // smaller as the climber gets higher (further away)
       if (runnerRef.current) runnerRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px) scale(${1.1 - 0.55 * (cur / 100)})`;
-      // from stage 4 to the summit the trekker climbs away from us (seen from behind);
-      // on the summit they stand by the flag looking out to the left
-      const fromBehind = moving && cur > geo.cp[3] + 0.2 && cur < 100;
-      backRef.current?.setPhase(phi, runW);
-      if (sideBoxRef.current) sideBoxRef.current.style.display = fromBehind ? "none" : "";
-      if (backBoxRef.current) backBoxRef.current.style.display = fromBehind ? "" : "none";
+      // on the summit the trekker stands by the flag looking out to the left
       if (flipRef.current) {
         if (resting) flipRef.current.style.transform = "scaleX(-1)";
         else if (moving) flipRef.current.style.transform = pt.left ? "scaleX(-1)" : "scaleX(1)";
@@ -595,12 +583,7 @@ function PinnedRace({ stages, title, description }: { stages: RoadmapStage[]; ti
             <div ref={runnerRef} className="absolute left-0 top-0 z-10 will-change-transform pointer-events-none">
               <div className="absolute bottom-[-6px] left-0 -translate-x-1/2">
                 <div ref={flipRef}>
-                  <div ref={sideBoxRef}>
-                    <RunnerFigure ref={figRef} className="w-[120px] h-[106px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
-                  </div>
-                  <div ref={backBoxRef} style={{ display: "none" }}>
-                    <BackFigure ref={backRef} className="w-[120px] h-[106px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
-                  </div>
+                  <TrekkerLottie ref={figRef} className="w-[64px] h-[110px] drop-shadow-[0_4px_6px_rgba(0,30,56,0.35)]" />
                 </div>
               </div>
             </div>
@@ -682,19 +665,18 @@ function StackedRace({
   );
 }
 
-// Small runner jogging on the spot (marks the current stage on mobile).
+// Small trekker walking on the spot (marks the current stage on mobile).
 function JoggingRunner() {
-  const ref = useRef<RunnerHandle>(null);
+  const ref = useRef<TrekkerHandle>(null);
   useEffect(() => {
     let raf = 0;
     const t0 = performance.now();
     const tick = (now: number) => {
-      const phi = ((now - t0) / 1150) * Math.PI * 2;
-      ref.current?.setPose(walkPose(phi), 1.1 * Math.abs(Math.cos(phi)));
+      ref.current?.setPhase((now - t0) / 1150);
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, []);
-  return <RunnerFigure ref={ref} className="w-10 h-9" />;
+  return <TrekkerLottie ref={ref} className="w-6 h-10" />;
 }
