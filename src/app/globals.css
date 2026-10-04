@@ -243,3 +243,16 @@ font[style] {
 @media (prefers-reduced-motion: reduce) {
   .goal-blink, .goal-ring { animation: none; }
 }
+
+/* expert profile hero: gently floating stat cards and a slowly turning dashed ring */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-y { animation: floatY 5s ease-in-out infinite; }
+.float-y-slow { animation: floatY 6.5s ease-in-out infinite 0.8s; }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spinSlow 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .float-y, .float-y-slow, .spin-slow { animation: none; }
+}

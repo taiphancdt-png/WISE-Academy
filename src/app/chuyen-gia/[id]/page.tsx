@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/ui";
+import ExpertActionBar from "@/components/ExpertActionBar";
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle2 } from "@/components/icons";
 import expertsData from "@/data/experts.json";
 import projectsData from "@/data/projects.json";
@@ -51,49 +52,90 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
   const related = relatedProjects(exp);
   const others = experts.filter((e) => e.id !== exp.id && e.group === exp.group).slice(0, 3);
   const initial = exp.name.split(" ").pop()?.charAt(0);
+  // name with the given name (and nickname) highlighted, e.g. "Nguyễn Thị" + "Thủy (Kate)"
+  const words = exp.name.split(" ");
+  const cut = exp.name.includes("(") ? words.length - 2 : words.length - 1;
+  const firstPart = words.slice(0, cut).join(" ");
+  const lastPart = words.slice(cut).join(" ");
+  // the first sentence of the bio as a short lead
+  const lead = exp.bio.split(/(?<=\.)\s/)[0];
 
   return (
     <div className="bg-[#F8F9FA]">
-      {/* Hero: portrait and credentials */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#001E38] via-[#002F5B] to-[#0B4A82] text-white">
-        <div aria-hidden="true" className="absolute -right-32 -top-32 -z-10 w-[520px] h-[520px] rounded-full bg-[#F76011]/20 blur-3xl" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-16 lg:pb-20">
+      {/* Hero: light and playful; copy on the left, an arch portrait with floating stat cards on the right */}
+      <section className="relative isolate overflow-hidden bg-[#FFF7F0]">
+        <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-60 [background-image:radial-gradient(#F7601126_1.2px,transparent_1.2px)] [background-size:22px_22px]" />
+        <div aria-hidden="true" className="absolute -left-40 -top-40 -z-10 w-[520px] h-[520px] rounded-full bg-[#FFD9BF] blur-3xl opacity-70" />
+        <div aria-hidden="true" className="absolute -right-24 bottom-0 -z-10 w-[460px] h-[460px] rounded-full bg-[#CFE2F5] blur-3xl opacity-70" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-16 lg:pb-24">
           <Link
             href="/chuyen-gia"
-            className="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#002F5B] shadow-sm ring-1 ring-[#002F5B]/10 hover:ring-[#F76011]/50 hover:text-[#C9500E] transition"
           >
             <ArrowLeft className="w-4 h-4" /> Quay lại danh sách chuyên gia
           </Link>
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
-            <div className="mx-auto w-full max-w-sm">
-              <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden ring-4 ring-white/15 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] bg-[#0B4A82]">
-                {exp.image ? (
-                  <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
-                ) : (
-                  <span className="w-full h-full flex items-center justify-center text-7xl font-bold">{initial}</span>
-                )}
-                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-[#F76011] to-[#FFB27A]" />
-              </div>
-            </div>
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-14 lg:gap-12 items-center">
             <div>
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#FFB27A]">{exp.role}</p>
-              <h1 className="mt-3 text-3xl sm:text-5xl font-bold leading-tight">{exp.name}</h1>
-              <ul className="mt-7 space-y-3">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#002F5B] px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white">
+                <span className="w-2 h-2 rounded-full bg-[#F76011] animate-pulse" />
+                {exp.role}
+              </span>
+              <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#002F5B]">
+                {firstPart}{" "}
+                <span className="bg-gradient-to-r from-[#F76011] to-[#FF9F43] bg-clip-text text-transparent">{lastPart}</span>
+              </h1>
+              <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#486581]">{lead}</p>
+              <ul className="mt-6 flex flex-wrap gap-2.5">
                 {credentials.map((c) => (
-                  <li key={c} className="flex gap-3 text-sm sm:text-base text-white/90">
-                    <CheckCircle2 weight="fill" className="w-5 h-5 shrink-0 mt-0.5 text-[#F76011]" />
-                    <span>{c}</span>
+                  <li key={c} className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-xs sm:text-sm font-medium text-[#002F5B] shadow-[0_8px_20px_-14px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.08]">
+                    <CheckCircle2 weight="fill" className="w-4 h-4 shrink-0 text-[#F76011]" />
+                    {c}
                   </li>
                 ))}
               </ul>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#F76011] hover:bg-[#C9500E] px-7 py-3 text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#F76011] hover:bg-[#C9500E] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_-12px_rgba(247,96,17,0.7)] transition"
                 >
                   <Calendar className="w-4 h-4" /> Đặt lịch tư vấn với chuyên gia
                 </Link>
+                {exp.career && (
+                  <a href="#qua-trinh" className="inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-[#002F5B] hover:text-[#C9500E] transition-colors">
+                    Xem hành trình <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
               </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[380px]">
+              {/* shapes behind the portrait */}
+              <div aria-hidden="true" className="absolute -inset-6 rounded-full border-2 border-dashed border-[#F76011]/35 spin-slow" />
+              <div aria-hidden="true" className="absolute -right-5 top-10 w-full h-[88%] rounded-t-full rounded-b-[44px] bg-[#002F5B] rotate-6" />
+              {/* arch portrait */}
+              <div className="relative aspect-[4/5] rounded-t-full rounded-b-[44px] overflow-hidden bg-gradient-to-b from-[#FFB27A] to-[#F76011] shadow-[0_30px_60px_-25px_rgba(0,47,91,0.55)]">
+                {exp.image ? (
+                  <img src={exp.image} alt={exp.name} className="w-full h-full object-cover object-top" />
+                ) : (
+                  <span className="w-full h-full flex items-center justify-center text-7xl font-bold text-white">{initial}</span>
+                )}
+              </div>
+              {/* floating stat cards */}
+              {exp.highlights?.[0] && (
+                <div className="float-y absolute -left-6 sm:-left-12 top-16 rounded-2xl bg-white px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,47,91,0.5)] ring-1 ring-[#002F5B]/[0.06]">
+                  <p className="text-2xl font-extrabold text-[#F76011] leading-none">{exp.highlights[0].value}</p>
+                  <p className="mt-1 text-[11px] font-semibold text-[#486581]">{exp.highlights[0].label}</p>
+                </div>
+              )}
+              {exp.highlights?.[3] && (
+                <div className="float-y-slow absolute -right-4 sm:-right-10 bottom-16 rounded-2xl bg-[#002F5B] px-4 py-3 text-white shadow-[0_18px_40px_-18px_rgba(0,30,56,0.7)]">
+                  <p className="text-2xl font-extrabold leading-none">{exp.highlights[3].value}</p>
+                  <p className="mt-1 text-[11px] font-semibold text-white/75">{exp.highlights[3].label}</p>
+                </div>
+              )}
+              <span className="absolute left-1/2 -bottom-4 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#002F5B] shadow-md ring-1 ring-[#002F5B]/10">
+                WISE Academy Expert
+              </span>
             </div>
           </div>
         </div>
@@ -145,7 +187,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
 
       {/* Career path and education */}
       {exp.career && (
-        <section className="py-16 lg:py-20 px-4 sm:px-6">
+        <section id="qua-trinh" className="py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-10 lg:gap-16">
             <div>
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#002F5B]">Quá trình công tác</h2>
@@ -289,22 +331,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
       )}
 
       {/* always at hand while reading the profile: back to the list, or book a session */}
-      <div className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4 pointer-events-none">
-        <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-white/95 backdrop-blur p-1.5 shadow-[0_18px_40px_-12px_rgba(0,30,56,0.45)] ring-1 ring-[#002F5B]/10">
-          <Link
-            href="/chuyen-gia"
-            className="inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2.5 text-sm font-semibold text-[#002F5B] hover:bg-[#EBF3FA] transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" /> Quay lại
-          </Link>
-          <Link
-            href={`/lien-he?expert=${encodeURIComponent(exp.name)}`}
-            className="inline-flex items-center gap-2 rounded-full bg-[#F76011] hover:bg-[#C9500E] px-4 sm:px-6 py-2.5 text-sm font-semibold text-white transition-colors"
-          >
-            <Calendar className="w-4 h-4" /> Đặt lịch tư vấn
-          </Link>
-        </div>
-      </div>
+      <ExpertActionBar bookHref={`/lien-he?expert=${encodeURIComponent(exp.name)}`} />
 
       <CtaBand
         title={<>Làm việc trực tiếp cùng {exp.name}</>}
