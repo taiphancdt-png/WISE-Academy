@@ -2,8 +2,8 @@ import experts from "@/data/experts.json";
 import projects from "@/data/projects.json";
 import { LSSI_CLIENTS } from "@/data/lssi-clients";
 
-// Proper names of companies, organisations and people that machine translation (English / 中文) must leave as
-// written. Only the distinctive name is listed ("Sunjin Vina", not "Công ty TNHH Sunjin Vina"), so descriptive
+// Proper names of companies, organisations and people that translation (English / 中文) must not translate; Vietnamese
+// ones are written without diacritics there (Phan Tấn Tài → Phan Tan Tai). Only the distinctive name is listed ("Sunjin Vina", not "Công ty TNHH Sunjin Vina"), so descriptive
 // words around it ("Công ty", "Tập đoàn", "Nhà máy") are still translated. Add new clients and partners here.
 const COMPANIES = [
   // WISE Academy and partners

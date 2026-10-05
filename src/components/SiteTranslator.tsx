@@ -65,9 +65,12 @@ function pushText(t: Text, units: Unit[]) {
   units.push({ kind: "text", node: t, src: v });
 }
 
-const CACHE_KEY = (lang: string) => `wise-i18n-${lang}`;
+// bump the version when stored translations are revised, so browsers drop their old copies
+const CACHE_VERSION = 2;
+const CACHE_KEY = (lang: string) => `wise-i18n-v${CACHE_VERSION}-${lang}`;
 function loadCache(lang: string): Record<string, string> {
   try {
+    for (let v = 1; v < CACHE_VERSION; v++) localStorage.removeItem(v === 1 ? `wise-i18n-${lang}` : `wise-i18n-v${v}-${lang}`);
     return JSON.parse(localStorage.getItem(CACHE_KEY(lang)) || "{}");
   } catch {
     return {};

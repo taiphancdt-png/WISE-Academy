@@ -101,8 +101,8 @@ function systemPrompt(lang: Lang) {
     `You translate the website of WISE Academy, a Vietnamese consulting and training firm for manufacturers and businesses (Lean, Lean Six Sigma, productivity, operational excellence, leadership development). Translate Vietnamese website text into ${LANG_NAME[lang]}.`,
     "Write the way a professional business consultancy writes: natural, fluent, complete sentences with the full meaning of the original; never word-by-word. Keep headings short and punchy, keep the tone of calls to action.",
     terms,
-    "Never translate, transliterate or alter proper names of companies, organisations, brands, programmes' owners or people. Copy them exactly as written, with their Vietnamese diacritics (for example: WISE Academy, Pou Chen, An Giang Samho, Tỷ Bách, Nguyễn Thị Thủy, Phan Tấn Tài). Descriptive words around a name are translated (\"Công ty TNHH Sunjin Vina\" → \"Sunjin Vina Co., Ltd.\").",
-    `Names that must stay exactly as written: ${PROPER_NAMES.join("; ")}.`,
+    "Never translate or transliterate proper names of companies, organisations, brands or people, and never render Vietnamese names in Chinese characters. Write Vietnamese names of people, companies and places without Vietnamese diacritics, in both English and Chinese (for example: Phan Tấn Tài → Phan Tan Tai, Nguyễn Thị Thủy → Nguyen Thi Thuy, Tỷ Bách → Ty Bach, Đồng Nai → Dong Nai); keep foreign names as they are (WISE Academy, Pou Chen, Nestlé). Descriptive words around a name are translated (\"Công ty TNHH Sunjin Vina\" → \"Sunjin Vina Co., Ltd.\"); universities and public bodies take their official English / Chinese names.",
+    `Proper names (keep them, written without Vietnamese diacritics): ${PROPER_NAMES.join("; ")}.`,
     "Keep numbers, dates, units, percentages, codes, URLs, e-mails and phone numbers unchanged (Vietnamese decimal commas may become points in English).",
     "Some items contain HTML: keep every tag and attribute exactly as it is and translate only the text between tags.",
     "If an item is already in the target language, or is only a name, code or number, return it unchanged.",
@@ -131,6 +131,24 @@ async function claude(lang: Lang, texts: string[]): Promise<string[]> {
   const arr = JSON.parse(raw.slice(raw.indexOf("["), raw.lastIndexOf("]") + 1)) as unknown;
   if (!Array.isArray(arr) || arr.length !== texts.length) throw new Error("claude_bad_shape");
   return arr.map((v, i) => (typeof v === "string" && v.trim() ? v : texts[i]));
+}
+
+// Vietnamese names are written without diacritics in English and Chinese (Phan Tấn Tài → Phan Tan Tai);
+// a few foreign names keep their accents.
+const KEEP_ACCENTS = new Set(["Nestlé", "Bühler", "TÜV", "Rölkens", "x̄", "ȳ"]);
+export function plainNames(text: string) {
+  return text
+    .split(/(<[^>]+>)/)
+    .map((part) =>
+      part.startsWith("<")
+        ? part
+        : part.replace(/[^\s<>,.;:()（）、，。“”"'/]+/g, (w) =>
+            KEEP_ACCENTS.has(w)
+              ? w
+              : w.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").normalize("NFC"),
+          ),
+    )
+    .join("");
 }
 
 // same tags in the same order, so a translation cannot break the page markup
@@ -177,8 +195,9 @@ export async function translateMissing(lang: Lang, items: { key: string; text: s
     batches.map(async (b) => {
       try {
         const res = await claude(lang, b.map((x) => x.text));
-        res.forEach((t, i) => {
+        res.forEach((raw, i) => {
           const src = b[i].text;
+          const t = plainNames(raw);
           if (tagsOf(t) !== tagsOf(src)) return;
           out[b[i].key] = t;
           saved.push({ key: b[i].key, source: src, text: t });
