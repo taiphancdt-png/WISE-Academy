@@ -49,7 +49,7 @@ export default function Footer() {
             href="/xac-thuc-chung-chi"
             className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white hover:bg-[#F76011] hover:border-[#F76011] transition-colors"
           >
-            <ShieldCheck className="w-4 h-4" /> Certificate verification
+            <ShieldCheck className="w-4 h-4" /> Xác thực chứng chỉ
           </Link>
         </div>
 

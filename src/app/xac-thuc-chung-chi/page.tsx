@@ -11,7 +11,7 @@ export default function CertificateVerificationPage() {
   return (
     <div className="bg-[#F8F9FA]">
       <PageHero
-        eyebrow="Certificate verification"
+        eyebrow="Xác thực chứng chỉ"
         image="/images/projects/aqua-growth-mindset-kaizen/photo_1.webp"
         title={<>Xác thực <span className="text-[#FF7A30]">chứng chỉ</span></>}
         description="Nhập mã số in trên chứng chỉ để kiểm tra thông tin chứng chỉ do WISE Academy cấp cho học viên."
