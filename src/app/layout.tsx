@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`scroll-smooth ${sans.variable}`}>
+    <html lang="vi" className={`scroll-smooth ${sans.variable}`} suppressHydrationWarning>
       <head>
         {/* The translator rewrites text nodes; keep React's DOM ops from throwing when nodes were swapped. */}
         <script

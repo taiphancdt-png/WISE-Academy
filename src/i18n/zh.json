@@ -14962,5 +14962,29 @@
  "fc76e3b1767acee2": {
   "s": "Xác thực chứng chỉ",
   "t": "证书验证"
+ },
+ "266e9b421af753be": {
+  "s": "Phan Tấn Tài giới thiệu chương trình đào tạo Lean cho đội ngũ Apache Footwear",
+  "t": "Phan Tan Tai 为 Apache Footwear 团队介绍精益培训课程"
+ },
+ "9d9efbb11049f960": {
+  "s": "Hướng dẫn hoạt động thành lập nhóm trong khóa đào tạo Lean tại Apache Footwear",
+  "t": "在 Apache Footwear 精益培训课程中指导组建团队活动"
+ },
+ "16650f3c16d44e5b": {
+  "s": "Lớp Lean Six Sigma Yellow Belt cùng WISE Academy",
+  "t": "与 WISE Academy 一起的 Lean Six Sigma Yellow Belt 班级"
+ },
+ "85819d9c9465e499": {
+  "s": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>Phan Tấn Tài giới thiệu chương trình đào tạo Lean cho đội ngũ Apache Footwear",
+  "t": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>Phan Tan Tai 为 Apache Footwear 团队介绍精益培训课程"
+ },
+ "eaa8917d4493c716": {
+  "s": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>Hướng dẫn hoạt động thành lập nhóm trong khóa đào tạo Lean tại Apache Footwear",
+  "t": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>在 Apache Footwear 精益培训课程中指导组建团队活动"
+ },
+ "eea7b8713dc70e03": {
+  "s": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>Lớp Lean Six Sigma Yellow Belt cùng WISE Academy",
+  "t": "<span aria-hidden=\"true\" class=\"mt-1.5 h-px w-5 shrink-0 bg-[#F76011]\"></span>与 WISE Academy 一起的 Lean Six Sigma Yellow Belt 班级"
  }
 }
