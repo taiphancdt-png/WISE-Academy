@@ -63,12 +63,12 @@ const solutions = [
 ];
 
 const rgpdcaSteps = [
-  { name: "Khảo sát", vn: "Xuống tận hiện trường quan sát" },
-  { name: "Mục tiêu", vn: "Định lượng kết quả cần đạt" },
-  { name: "Kế hoạch", vn: "Lập kế hoạch từng tuần" },
-  { name: "Làm thử", vn: "Thí điểm tại một khu vực trước" },
-  { name: "Đo lường", vn: "So sánh kết quả trước / sau" },
-  { name: "Giữ vững", vn: "Viết thành quy trình chuẩn" },
+  { name: "Khảo sát (Research)", vn: "Xuống tận hiện trường quan sát" },
+  { name: "Đặt mục tiêu (Goals)", vn: "Định lượng kết quả cần đạt" },
+  { name: "Lập kế hoạch (Plan)", vn: "Lập kế hoạch từng tuần" },
+  { name: "Triển khai (Do)", vn: "Thí điểm tại một khu vực trước" },
+  { name: "Kiểm tra và Đo lường kết quả (Check)", vn: "So sánh kết quả trước / sau" },
+  { name: "Điều chỉnh và Chuẩn hóa (Act/ Adjust)", vn: "Viết thành quy trình chuẩn" },
 ];
 
 const whyWise = [
@@ -245,7 +245,9 @@ export default function HomeClient({
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
-              Phương pháp tiếp cận <span className="text-[#F76011]">RGPDCA</span> 6 bước
+              Phương pháp tiếp cận
+              <br />
+              <span className="text-[#F76011]">RGPDCA</span> 6 bước
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
               Là phương pháp tiếp cận và quản lý dự án khoa học, hiệu quả và bám sát vào thực tế vận hành của Doanh
