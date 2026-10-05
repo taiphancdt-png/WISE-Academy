@@ -21,7 +21,8 @@ type Dict = Record<string, Entry>;
 const SEED: Record<Lang, Dict> = { en: seedEn as Dict, zh: seedZh as Dict };
 const memory: Record<Lang, Map<string, string>> = { en: new Map(), zh: new Map() };
 
-export const normalize = (s: string) => s.replace(/[ \s]+/g, " ").trim();
+// React's text separators (<!-- -->) differ between server and client renders, so they are left out of the key
+export const normalize = (s: string) => s.replace(/<!-- -->/g, "").replace(/[\u00a0\s]+/g, " ").trim();
 export const keyOf = (text: string) => createHash("sha1").update(normalize(text)).digest("hex").slice(0, 16);
 
 const MODEL = () => process.env.CLAUDE_TRANSLATE_MODEL || "claude-sonnet-5-5";
@@ -135,11 +136,13 @@ async function claude(lang: Lang, texts: string[]): Promise<string[]> {
 // same tags in the same order, so a translation cannot break the page markup
 const tagsOf = (s: string) => (s.match(/<\/?[a-z][^>]*>/gi) || []).map((t) => t.replace(/\s+/g, " ")).join("");
 
-// Without an API key (local runs), texts still waiting for a translation are listed in src/i18n/pending-<lang>.json.
+// Without an API key (local runs), texts still waiting for a translation are listed in .i18n-pending/pending-<lang>.json.
 async function notePending(lang: Lang, items: { key: string; text: string }[]) {
   if (!DEV || !items.length) return;
   writing = writing.then(async () => {
-    const file = path.join(process.cwd(), "src", "i18n", `pending-${lang}.json`);
+    // kept outside src/ so writing it does not trigger a dev rebuild
+    const file = path.join(process.cwd(), ".i18n-pending", `pending-${lang}.json`);
+    await fs.mkdir(path.dirname(file), { recursive: true });
     const dict: Record<string, string> = JSON.parse(await fs.readFile(file, "utf8").catch(() => "{}"));
     items.forEach((i) => (dict[i.key] = normalize(i.text)));
     await fs.writeFile(file, JSON.stringify(dict, null, 1) + "\n");

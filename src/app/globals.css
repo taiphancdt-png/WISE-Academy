@@ -189,6 +189,10 @@ iframe.skiptranslate,
 body {
   top: 0 !important;
 }
+html.i18n-loading body {
+  visibility: hidden;
+}
+
 .goog-text-highlight,
 font[style] {
   background: none !important;

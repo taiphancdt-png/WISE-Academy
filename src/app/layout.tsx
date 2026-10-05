@@ -70,6 +70,12 @@ export default function RootLayout({
             __html: `(function(){if(typeof Node!=="function")return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(c){if(c.parentNode!==this)return c;return r.apply(this,arguments)};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(n,ref){if(ref&&ref.parentNode!==this)return n;return i.apply(this,arguments)}})();`,
           }}
         />
+        {/* English / Chinese: hide the page until the first translations are in, so Vietnamese does not flash (max 2.5 s) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(/(?:^|;\\s*)wise_lang=(en|zh)/.test(document.cookie)){var d=document.documentElement;d.classList.add("i18n-loading");setTimeout(function(){d.classList.remove("i18n-loading")},2500)}})();`,
+          }}
+        />
       </head>
       <body id="top" className="min-h-screen flex flex-col font-sans bg-white text-[#102A43] antialiased">
         <Header />

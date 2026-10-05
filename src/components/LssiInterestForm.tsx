@@ -119,28 +119,28 @@ export default function LssiInterestForm() {
         </Field>
         <Field id="l-format" label="Hình thức học">
           <select id="l-format" value={form.format} onChange={set("format")} className={inputClass}>
-            <option>Self-paced</option>
-            <option>Face to face</option>
-            <option>Virtual live</option>
-            <option>Chưa xác định</option>
+            <option value="Self-paced">Self-paced</option>
+            <option value="Face to face">Face to face</option>
+            <option value="Virtual live">Virtual live</option>
+            <option value="Chưa xác định">Chưa xác định</option>
           </select>
         </Field>
         <Field id="l-learners" label="Số lượng học viên">
           <select id="l-learners" value={form.learners} onChange={set("learners")} className={inputClass}>
-            <option>1 học viên</option>
-            <option>2-5 học viên</option>
-            <option>6-20 học viên</option>
-            <option>Trên 20 học viên (in-house)</option>
+            <option value="1 học viên">1 học viên</option>
+            <option value="2-5 học viên">2-5 học viên</option>
+            <option value="6-20 học viên">6-20 học viên</option>
+            <option value="Trên 20 học viên (in-house)">Trên 20 học viên (in-house)</option>
           </select>
         </Field>
         <Field id="l-current" label="Chứng nhận Lean Six Sigma hiện có (để tư vấn nâng cấp)">
           <select id="l-current" value={form.current} onChange={set("current")} className={inputClass}>
-            <option>Chưa có chứng nhận</option>
-            <option>Lean Management</option>
-            <option>White Belt</option>
-            <option>Yellow Belt</option>
-            <option>Green Belt</option>
-            <option>Black Belt</option>
+            <option value="Chưa có chứng nhận">Chưa có chứng nhận</option>
+            <option value="Lean Management">Lean Management</option>
+            <option value="White Belt">White Belt</option>
+            <option value="Yellow Belt">Yellow Belt</option>
+            <option value="Green Belt">Green Belt</option>
+            <option value="Black Belt">Black Belt</option>
           </select>
         </Field>
         <Field id="l-location" label="Thành phố / Quốc gia">

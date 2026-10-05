@@ -20,9 +20,6 @@ function rateLimited(ip: string) {
 }
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  if (rateLimited(ip)) return NextResponse.json({ error: "too_many_requests" }, { status: 429 });
-
   const body = (await request.json().catch(() => null)) as { lang?: string; texts?: unknown } | null;
   const lang = body?.lang === "en" || body?.lang === "zh" ? (body.lang as Lang) : null;
   if (!lang || !Array.isArray(body?.texts)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
@@ -36,7 +33,10 @@ export async function POST(request: Request) {
   const byKey = new Map(texts.map((t) => [keyOf(t), t]));
   const found = await lookup(lang, [...byKey.keys()]);
   const missing = [...byKey].filter(([k]) => found[k] === undefined).map(([key, text]) => ({ key, text }));
-  const fresh = await translateMissing(lang, missing);
+  // reading stored translations is free; only requests that would call Claude are rate-limited
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const callsClaude = Boolean(process.env.ANTHROPIC_API_KEY);
+  const fresh = missing.length && !(callsClaude && rateLimited(ip)) ? await translateMissing(lang, missing) : {};
   const all = { ...found, ...fresh };
   // keyed by the (normalized) source text, which is what the page has in hand
   const translations = Object.fromEntries([...byKey].filter(([k]) => all[k] !== undefined).map(([k, t]) => [t, all[k]]));

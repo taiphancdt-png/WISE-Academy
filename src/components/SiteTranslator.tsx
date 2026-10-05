@@ -8,19 +8,21 @@ import { readLang } from "@/components/LanguageSwitcher";
 // so sentences read naturally; text marked translate="no" / .notranslate (names, the language menu) is left alone.
 // Content rendered later (accordions, filters, lookups) is translated as it appears.
 
-const SKIP = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "SVG", "CODE", "PRE", "TEXTAREA", "INPUT", "SELECT", "OPTION", "IFRAME", "CANVAS", "VIDEO"]);
+// <option> labels are translated too: every option carries a value attribute, so what a form submits stays the same
+const SKIP = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "SVG", "CODE", "PRE", "TEXTAREA", "INPUT", "IFRAME", "CANVAS", "VIDEO"]);
 const INLINE = new Set(["STRONG", "EM", "B", "I", "U", "S", "BR", "SPAN", "A", "SMALL", "SUP", "SUB", "MARK", "ABBR", "CITE", "Q", "TIME", "WBR"]);
 const ATTRS = ["placeholder", "title", "alt", "aria-label"];
 const LETTERS = /[A-Za-zÀ-ỹĐđ]/;
 const VIETNAMESE = /[À-ỹĐđ]|\b(và|của|cho|các|những|với|trong|được|là|không|người|này)\b/i;
 
-const norm = (s: string) => s.replace(/[ \s]+/g, " ").trim();
+const norm = (s: string) => s.replace(/<!-- -->/g, "").replace(/[\u00a0\s]+/g, " ").trim();
 const excluded = (el: Element | null) => !el || !!el.closest('[translate="no"], .notranslate, [contenteditable="true"]');
 
 // a paragraph-like element holding only text and inline formatting (no buttons, inputs, lists or blocks)
 function isLeafBlock(el: Element): boolean {
   for (const c of Array.from(el.children)) {
-    if (!INLINE.has(c.tagName) || c.matches('[translate="no"], .notranslate') || !isLeafBlock(c)) return false;
+    // inline styles here are usually measured positions that change with the screen, so keep those parts separate
+    if (!INLINE.has(c.tagName) || c.hasAttribute("style") || c.matches('[translate="no"], .notranslate') || !isLeafBlock(c)) return false;
   }
   return true;
 }
@@ -101,24 +103,31 @@ function apply(u: Unit, out: string) {
 export default function SiteTranslator() {
   useEffect(() => {
     const lang = readLang();
-    if (lang === "vi") return;
+    if (lang === "vi") {
+      document.documentElement.classList.remove("i18n-loading");
+      return;
+    }
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
     const cache = loadCache(lang);
+    // translated strings we already put on the page (names keep their Vietnamese letters, so these must not be resent)
+    const outputs = new Set(Object.values(cache));
     let pending: Unit[] = [];
     let timer = 0;
     let titleSrc = "";
+    let titleOut = "";
 
     const run = async () => {
       timer = 0;
       const units = pending;
       pending = [];
       // the page title is translated like any other text
-      if (document.title && document.title !== titleSrc && VIETNAMESE.test(document.title)) titleSrc = document.title;
+      if (document.title && document.title !== titleSrc && document.title !== titleOut && !outputs.has(document.title) && VIETNAMESE.test(document.title))
+        titleSrc = document.title;
       const need = new Set<string>();
       for (const u of units) {
         const key = norm(u.src);
         if (cache[key] !== undefined) apply(u, cache[key]);
-        else if (VIETNAMESE.test(key)) need.add(key);
+        else if (VIETNAMESE.test(key) && !outputs.has(key)) need.add(key);
       }
       if (titleSrc && cache[norm(titleSrc)] === undefined) need.add(norm(titleSrc));
       const list = [...need];
@@ -133,6 +142,7 @@ export default function SiteTranslator() {
           if (!res.ok) continue;
           const { translations } = (await res.json()) as { translations: Record<string, string> };
           Object.assign(cache, translations);
+          Object.values(translations).forEach((t) => outputs.add(t));
           saveCache(lang, cache);
           for (const u of units) {
             const t = translations[norm(u.src)];
@@ -142,7 +152,8 @@ export default function SiteTranslator() {
           /* offline or server busy: the Vietnamese text stays */
         }
       }
-      if (titleSrc && cache[norm(titleSrc)]) document.title = cache[norm(titleSrc)];
+      if (titleSrc && cache[norm(titleSrc)]) document.title = titleOut = cache[norm(titleSrc)];
+      document.documentElement.classList.remove("i18n-loading");
     };
 
     const queue = (root: Node) => {
