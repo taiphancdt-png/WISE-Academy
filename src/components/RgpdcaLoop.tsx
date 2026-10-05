@@ -31,16 +31,16 @@ const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
   null,
 ];
 
-const TRACK_ROW = 102; // px height of the middle grid row
-const TRACK_Y = 42; // top edge of the road inside that row (room above it for the walker on the far side)
-const TRACK_H = 52; // road loop height (fully rounded ends)
+const TRACK_ROW = 122; // px height of the middle grid row
+const TRACK_Y = 58; // top edge of the road inside that row (room above it for the walker on the far side)
+const TRACK_H = 56; // road loop height (fully rounded ends)
 const GAP_X = 56; // lg:gap-x-14
-const LAP_MS = 24000; // one full lap = six steps, about 4 s each
-const WALKER_H = 36; // px, the walker's height
+const LAP_MS = 36000; // one full lap = six steps, 6 s each
+const WALKER_H = 54; // px, the walker's height
 const SIDE_W = Math.round((WALKER_H * 346) / 596); // side view keeps the Lottie crop's proportions
-const STRIDE_PX = 30; // road length per walk cycle (two steps)
+const STRIDE_PX = 44; // road length per walk cycle (two steps)
 
-// What the walker carries at each step, drawn in the Lottie hand layer's own units (about 10 units per screen px),
+// What the walker carries at each step, drawn in the Lottie hand layer's own units (about 7 units per screen px),
 // held where the trekking pole's grip used to be.
 const HAND = { x: 25, y: 127 };
 function StepTool({ step }: { step: number }) {
