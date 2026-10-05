@@ -22,18 +22,18 @@ const PLACE = [
 ];
 // Arrow toward the next step within the same row (desktop). Row changes are carried by the loop track.
 const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
-  { Icon: ArrowRight, pos: "top-1/2 -translate-y-1/2 -right-[52px]" },
-  { Icon: ArrowRight, pos: "top-1/2 -translate-y-1/2 -right-[52px]" },
+  { Icon: ArrowRight, pos: "top-1/2 -translate-y-1/2 -right-[46px]" },
+  { Icon: ArrowRight, pos: "top-1/2 -translate-y-1/2 -right-[46px]" },
   null,
-  { Icon: ArrowLeft, pos: "top-1/2 -translate-y-1/2 -left-[52px]" },
-  { Icon: ArrowLeft, pos: "top-1/2 -translate-y-1/2 -left-[52px]" },
+  { Icon: ArrowLeft, pos: "top-1/2 -translate-y-1/2 -left-[46px]" },
+  { Icon: ArrowLeft, pos: "top-1/2 -translate-y-1/2 -left-[46px]" },
   null,
 ];
 
-const TRACK_ROW = 120; // px height of the middle grid row
-const TRACK_Y = 24; // top edge of the track inside that row
-const TRACK_H = 72; // track height (fully rounded ends)
-const GAP_X = 64; // lg:gap-x-16
+const TRACK_ROW = 64; // px height of the middle grid row
+const TRACK_Y = 10; // top edge of the track inside that row
+const TRACK_H = 44; // track height (fully rounded ends)
+const GAP_X = 56; // lg:gap-x-14
 const LAP_MS = 9000; // one full lap = six steps
 
 // Rounded-rectangle loop between the two rows of steps. A light runs clockwise around it; whichever step it has
@@ -110,7 +110,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
   const isOn = (i: number) => !animate || i === active;
 
   return (
-    <ol className="relative grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 lg:gap-y-0">
+    <ol className="relative grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-14 lg:gap-y-0">
       {steps.map((item, i) => {
         const step = i + 1;
         const on = isOn(i);
@@ -118,13 +118,14 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
         return (
           <li
             key={item.phase}
-            className={`relative card-soft !transform-none p-7 transition-[box-shadow,outline-color] duration-500 outline outline-2 ${
+            className={`relative card-soft !transform-none p-6 lg:px-6 lg:py-5 transition-[box-shadow,outline-color] duration-500 outline outline-2 ${
               on && animate ? "outline-[#F76011] shadow-[0_18px_40px_-12px_rgba(247,96,17,0.35)]" : "outline-transparent"
             } ${PLACE[i]}`}
           >
             <div className="flex items-center gap-4">
               <span
-                className={`w-14 h-14 rounded-xl text-3xl font-extrabold flex items-center justify-center shrink-0 transition-colors duration-500 ${
+                translate="no"
+                className={`w-14 h-14 lg:w-11 lg:h-11 rounded-xl text-3xl lg:text-2xl font-extrabold flex items-center justify-center shrink-0 transition-colors duration-500 ${
                   on ? "bg-[#F76011] text-white" : "bg-[#002F5B] text-[#FF7A30]"
                 }`}
               >
@@ -138,14 +139,14 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
                 </span>
               </span>
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#002F5B] leading-snug whitespace-pre-line">{item.name}</h3>
-            <p className="mt-2 text-xs font-semibold text-[#C9500E]">{item.action}</p>
-            <p className="mt-3 text-sm text-[#486581] leading-relaxed">{item.content}</p>
+            <h3 className="mt-4 lg:mt-3 text-lg lg:text-base font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
+            <p className="mt-2 lg:mt-1 text-xs font-semibold text-[#C9500E]">{item.action}</p>
+            <p className="mt-3 lg:mt-2 text-sm lg:text-[13px] text-[#486581] leading-relaxed lg:leading-[1.55]">{item.content}</p>
 
             {arrow && (
               <span
                 aria-hidden="true"
-                className={`hidden lg:flex absolute w-10 h-10 rounded-full bg-[#F76011] text-white items-center justify-center shadow-md shadow-[#F76011]/30 ${arrow.pos}`}
+                className={`hidden lg:flex absolute w-9 h-9 rounded-full bg-[#F76011] text-white items-center justify-center shadow-md shadow-[#F76011]/30 ${arrow.pos}`}
               >
                 <arrow.Icon className="w-5 h-5" />
               </span>
@@ -192,7 +193,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
           {steps.map((item, i) => (
             <span
               key={item.phase}
-              className={`text-2xl font-extrabold transition-all duration-500 ${
+              className={`text-xl font-extrabold transition-all duration-500 ${
                 isOn(i) ? "text-[#F76011] scale-125 drop-shadow-[0_0_10px_rgba(247,96,17,0.55)]" : "text-[#002F5B]/30"
               }`}
             >

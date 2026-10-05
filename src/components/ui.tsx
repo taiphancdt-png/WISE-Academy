@@ -5,7 +5,7 @@ import Link from "next/link";
 // Section headers intentionally render no eyebrow label: only page heroes carry one.
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`max-w-6xl mx-auto ${className}`}>{children}</div>;
+  return <div className={`${className.includes("max-w-") ? "" : "max-w-6xl "}mx-auto ${className}`}>{children}</div>;
 }
 
 export function Section({
@@ -13,16 +13,18 @@ export function Section({
   tone = "white",
   className = "",
   id,
+  wide = false,
 }: {
   children: React.ReactNode;
   tone?: "white" | "muted" | "navy";
   className?: string;
   id?: string;
+  wide?: boolean;
 }) {
   const bg = { white: "bg-white", muted: "bg-[#F8F9FA]", navy: "bg-[#001E38] text-white" }[tone];
   return (
     <section id={id} className={`${bg} py-16 lg:py-24 px-4 sm:px-6 ${className}`}>
-      <Container>{children}</Container>
+      <Container className={wide ? "max-w-7xl w-full" : "w-full"}>{children}</Container>
     </section>
   );
 }

@@ -5,7 +5,7 @@ import RgpdcaLoop from "@/components/RgpdcaLoop";
 import CoreValuesBloom from "@/components/CoreValuesBloom";
 import VisionMission from "@/components/VisionMission";
 import PartnerLogos from "@/components/PartnerLogos";
-import { Section, SectionHeader, CtaBand } from "@/components/ui";
+import { Section, CtaBand } from "@/components/ui";
 
 export const metadata = {
   title: "Về Chúng Tôi & Triết Lý RGPDCA | WISE Academy",
@@ -168,21 +168,18 @@ export default function AboutPage() {
         description="Bộ gen định hình cách các chuyên gia WISE Academy tư vấn, tương tác và đồng hành cùng khách hàng."
       />
 
-      {/* RGPDCA */}
-      <Section tone="muted">
-        <SectionHeader
-          eyebrow="Phương pháp luận RGPDCA"
-          title={<>Phương pháp tiếp cận <span className="text-[#F76011]">6 giai đoạn</span></>}
-          description={
-            <>
-              Mỗi doanh nghiệp có một thực trạng vận hành riêng.
-              <br className="hidden sm:block" /> WISE Academy áp dụng phương pháp tiếp cận 6 bước khoa học và thực tế:
-              <br className="hidden sm:block" /> đánh giá, thiết kế, triển khai, đo lường, chuẩn hóa và duy trì,
-              <br className="hidden sm:block" /> từ đó đề xuất lộ trình đồng hành phù hợp
-              <br className="hidden sm:block" /> giữa thực trạng và mục tiêu của doanh nghiệp.
-            </>
-          }
-        />
+      {/* RGPDCA: compact on desktop so the whole loop fits one screen below the sticky header */}
+      <Section tone="muted" wide className="lg:!py-8 lg:min-h-[calc(100vh-81px)] lg:flex lg:flex-col lg:justify-center">
+        <div className="mb-10 lg:mb-5 text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-[34px] font-semibold leading-tight text-[#002F5B]">
+            Phương pháp tiếp cận <span className="text-[#F76011]">6 giai đoạn</span>
+          </h2>
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">
+            Mỗi doanh nghiệp có một thực trạng vận hành riêng. WISE Academy áp dụng phương pháp tiếp cận 6 bước khoa học và thực tế:
+            đánh giá, thiết kế, triển khai, đo lường, chuẩn hóa và duy trì, từ đó đề xuất lộ trình đồng hành phù hợp giữa thực trạng
+            và mục tiêu của doanh nghiệp.
+          </p>
+        </div>
         <RgpdcaLoop steps={rgpdcaDetails} />
       </Section>
 
