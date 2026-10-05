@@ -15014,5 +15014,173 @@
  "9ecbccddfb8a496b": {
   "s": "Đào tạo đi liền thực hành: Lean Simulation Game thay đổi tư duy, rồi chuyên gia cùng đội nòng cốt chạy Dự án thí điểm tại Model Line với 5S, công việc tiêu chuẩn, cân bằng chuyền, SMED, Kanban. Có kết quả trong 60-90 ngày, đội ngũ tự làm được.",
   "t": "Training goes hand in hand with practice: a Lean Simulation Game shifts mindsets, then our experts and your core team run a pilot project on the Model Line with 5S, standard work, line balancing, SMED and Kanban. Results within 60-90 days, and your team can carry on independently."
+ },
+ "e940f8391420687e": {
+  "s": "Gửi thông tin thành công!",
+  "t": "Submitted successfully!"
+ },
+ "748421ccb206fb23": {
+  "s": "Cảm ơn Quý doanh nghiệp. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.",
+  "t": "Thank you. A WISE Academy consultant will call you back within 24 working hours."
+ },
+ "8c208b7d254cc026": {
+  "s": "Gửi thêm yêu cầu khác",
+  "t": "Send another request"
+ },
+ "52aa1e1a89c4f4bf": {
+  "s": "Đã nhận yêu cầu thành công!",
+  "t": "Request received!"
+ },
+ "937c8986d9070cc1": {
+  "s": "Cảm ơn bạn. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.",
+  "t": "Thank you. A WISE Academy consultant will call you back within 24 working hours."
+ },
+ "f04c8be3377a839d": {
+  "s": "Đang gửi…",
+  "t": "Sending…"
+ },
+ "0908afad9fb153ff": {
+  "s": "Cảm ơn bạn đã quan tâm!",
+  "t": "Thank you for your interest!"
+ },
+ "e963bc674d3d8277": {
+  "s": "WISE Academy đã nhận được thông tin và sẽ liên hệ gửi lịch khai giảng cùng chính sách chi phí ưu đãi trong vòng 24 giờ làm việc.",
+  "t": "WISE Academy has received your details and will send you the course schedule and preferential pricing within 24 working hours."
+ },
+ "fd3645aa22f20c92": {
+  "s": "Gửi thêm đăng ký khác",
+  "t": "Submit another registration"
+ },
+ "df3050c39e1ff3d9": {
+  "s": "Chưa gửi được yêu cầu. Vui lòng thử lại hoặc gọi hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a>.",
+  "t": "Your request could not be sent. Please try again or call our hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a>."
+ },
+ "a704e6dcd7b7ec13": {
+  "s": "Chưa gửi được thông tin. Vui lòng thử lại, hoặc liên hệ hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a> / email <a href=\"mailto:contact@wisedemy.com.vn\" class=\"font-semibold underline\">contact@wisedemy.com.vn</a>.",
+  "t": "Your details could not be sent. Please try again, or contact our hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a> / email <a href=\"mailto:contact@wisedemy.com.vn\" class=\"font-semibold underline\">contact@wisedemy.com.vn</a>."
+ },
+ "ab4dc484953b8672": {
+  "s": "Khảo sát & xác định điểm nghẽn tại hiện trường (GEMBA)",
+  "t": "On-site assessment & identifying bottlenecks on the shop floor (GEMBA)"
+ },
+ "eb9bc834c5146506": {
+  "s": "Áp dụng ECRS và cải tiến thao tác chuẩn",
+  "t": "Applying ECRS and improving standard motions"
+ },
+ "f0f7da4cb6c021bb": {
+  "s": "Tối ưu hoá quy trình và cân bằng chuyền bằng Yamazumi",
+  "t": "Optimising processes and balancing lines with Yamazumi"
+ },
+ "b38d8d98ff284a29": {
+  "s": "Rút ngắn thời gian chuyển đổi mã hàng mới (QCO) và chuyển đổi công cụ dụng cụ (SMED)",
+  "t": "Shortening new-style changeovers (QCO) and tool changeovers (SMED)"
+ },
+ "c30af7515a2db11f": {
+  "s": "Áp dụng 5S, Quản lý trực quan và Poka Yoke",
+  "t": "Applying 5S, Visual Management and Poka Yoke"
+ },
+ "d559562a964d7ea8": {
+  "s": "Thiết kế và bố trí chuyền sản xuất theo mô hình Lean (Lean Cell Layout)",
+  "t": "Designing and laying out production lines on the Lean model (Lean Cell Layout)"
+ },
+ "0f2513e0e76db60b": {
+  "s": "Cải tiến máy móc và công cụ dụng cụ theo tư duy Lean",
+  "t": "Improving machines, tools and equipment with Lean thinking"
+ },
+ "dfd1dedf0e16bba2": {
+  "s": "Kết hợp giải pháp Jidoka trong quản lý và cải tiến chất lượng",
+  "t": "Combining Jidoka solutions in quality management and improvement"
+ },
+ "ab5952ea528cc4ad": {
+  "s": "Quản lý dữ liệu vận hành theo thời gian thực",
+  "t": "Real-time operational data management"
+ },
+ "85de0441a63150e0": {
+  "s": "Huấn luyện nâng cao năng lực quản lý cấp trung",
+  "t": "Coaching to strengthen middle management capability"
+ },
+ "60dd0f75b551ab7d": {
+  "s": "Xây dựng văn hoá Lean và cải tiến liên tục (Kaizen)",
+  "t": "Building a Lean and continuous improvement (Kaizen) culture"
+ },
+ "740facf831b0ec69": {
+  "s": "Phương pháp tiếp cận<br><span class=\"text-[#F76011]\">RGPDCA</span> 6 bước",
+  "t": "The 6-step<br><span class=\"text-[#F76011]\">RGPDCA</span> approach"
+ },
+ "24484b8361f210f9": {
+  "s": "Là phương pháp tiếp cận và quản lý dự án khoa học, hiệu quả và bám sát vào thực tế vận hành của Doanh nghiệp. Mọi bước triển khai đều tập trung vào việc giúp đội ngũ nắm bắt được hiện trạng, ý nghĩa và mục tiêu của việc cải tiến; giúp họ cam kết và đồng hành trên hành trình cải tiến.",
+  "t": "A scientific, effective approach to managing improvement projects that stays close to how your business actually operates. Every step helps the team understand the current state, the meaning and the goals of the improvement, so they commit to it and stay with it throughout the journey."
+ },
+ "271750dbec4c66f0": {
+  "s": "Khảo sát (Research)",
+  "t": "Research"
+ },
+ "def28483f36ad7a6": {
+  "s": "Đặt mục tiêu (Goals)",
+  "t": "Set goals"
+ },
+ "18e440d6760c5cdf": {
+  "s": "Lập kế hoạch (Plan)",
+  "t": "Plan"
+ },
+ "7f9efa8e01915f72": {
+  "s": "Triển khai (Do)",
+  "t": "Do"
+ },
+ "fc1eb09af7bf218c": {
+  "s": "Kiểm tra và Đo lường kết quả (Check)",
+  "t": "Check and measure results"
+ },
+ "9aeb499bf1260a37": {
+  "s": "Điều chỉnh và Chuẩn hóa (Act/ Adjust)",
+  "t": "Act / Adjust and standardise"
+ },
+ "7388465b1718ccf3": {
+  "s": "Nguyễn Văn A",
+  "t": "Nguyen Van A"
+ },
+ "bea8a0c6d372b2bb": {
+  "s": "Công ty ABC",
+  "t": "ABC Company"
+ },
+ "5a56f19328e8f4ce": {
+  "s": "Khảo sát & Tìm điểm nghẽn trực tiếp tại hiện trường",
+  "t": "On-site assessment & finding bottlenecks directly on the shop floor"
+ },
+ "1a7f98f2f189a219": {
+  "s": "Tăng năng suất quy trình / dây chuyền",
+  "t": "Increasing process / line productivity"
+ },
+ "1a0ad867a7982e50": {
+  "s": "Giảm tỷ lệ lỗi, phế phẩm",
+  "t": "Reducing defect and scrap rates"
+ },
+ "21e7ca632ef5eb5b": {
+  "s": "Tổ chức buổi trải nghiệm game mô phỏng sản xuất",
+  "t": "Running a production simulation game session"
+ },
+ "8fce113380e4fec8": {
+  "s": "Ví dụ: Công việc hay bị ứ đọng ở một khâu, thời gian xử lý đơn hàng kéo dài, lỗi lặp lại...",
+  "t": "E.g. work often piles up at one step, order processing takes too long, recurring defects..."
+ },
+ "66f47d9743647c46": {
+  "s": "Ví dụ: Tồn kho dở dang cao, tỷ lệ phế phẩm tăng, thời gian đổi mã hàng lâu...",
+  "t": "E.g. high work-in-progress inventory, rising scrap rates, long style changeovers..."
+ },
+ "6afa9fbab5af131d": {
+  "s": "TP. Hồ Chí Minh, Việt Nam",
+  "t": "Ho Chi Minh City, Vietnam"
+ },
+ "295345115842a91b": {
+  "s": "Thời gian mong muốn, mục tiêu học tập...",
+  "t": "Preferred timing, learning goals..."
+ },
+ "d4c194c24e784f73": {
+  "s": "Ví dụ: WISELSSGB-K2501-001-F",
+  "t": "E.g. WISELSSGB-K2501-001-F"
+ },
+ "050bfd234a46eb62": {
+  "s": "Tìm kiếm chuyên đề...",
+  "t": "Search topics..."
  }
 }

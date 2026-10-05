@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// Sends website form submissions (homepage, contact, LSSI interest) straight to WISE's inboxes via SMTP.
-// Configure in the hosting environment (never commit real values): SMTP_HOST, SMTP_PORT, SMTP_USER,
-// SMTP_PASS, optional SMTP_FROM and LEAD_RECIPIENTS (comma-separated).
+// Sends website form submissions (homepage, contact, LSSI interest) straight to WISE's inboxes.
+// Two ways, configured in the hosting environment (never commit real values):
+//   - SMTP: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, optional SMTP_FROM and LEAD_RECIPIENTS (comma-separated);
+//   - otherwise the Google Apps Script web app already used for certificate lookup (CERT_APPS_SCRIPT_URL / _KEY):
+//     it e-mails the lead to its fixed recipients and logs it in the "Leads" tab (docs/certificate-apps-script.gs).
 
 export const runtime = "nodejs";
 
@@ -40,6 +42,8 @@ const escapeHtml = (s: string) =>
 const oneLine = (s: string) => s.replace(/[\r\n]+/g, " ").trim();
 
 const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
+// env values pasted with stray spaces or quotes still work
+const envClean = (v?: string) => (v || "").trim().replace(/^["']|["']$/g, "").trim();
 
 export async function POST(request: Request) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
@@ -79,18 +83,13 @@ export async function POST(request: Request) {
   }
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM, LEAD_RECIPIENTS } = process.env;
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-    console.error("[lead] SMTP is not configured; submission not sent");
+  const scriptUrl = envClean(process.env.CERT_APPS_SCRIPT_URL);
+  const scriptKey = envClean(process.env.CERT_APPS_SCRIPT_KEY);
+  const smtpReady = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
+  if (!smtpReady && !(scriptUrl && scriptKey)) {
+    console.error("[lead] neither SMTP nor the Apps Script is configured; submission not sent");
     return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 });
   }
-
-  const port = Number(SMTP_PORT || 465);
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port,
-    secure: port === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
 
   const title = FORM_TITLES[form];
   const text = [`${title}`, "", ...rows.map((r) => `${r.label}: ${r.value}`), "", `Gửi từ website wisedemy.com.vn`].join("\n");
@@ -108,12 +107,41 @@ export async function POST(request: Request) {
       <p style="color:#829AB1;font-size:12px;margin-top:16px">Gửi từ form trên website wisedemy.com.vn</p>
     </div>`;
 
+  const subject = oneLine(`[Website] ${title} - ${name}`).slice(0, 200);
+  const replyTo = email && EMAIL_RE.test(email) ? email : undefined;
+
+  if (!smtpReady) {
+    try {
+      const res = await fetch(scriptUrl, {
+        method: "POST",
+        headers: { "content-type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ key: scriptKey, action: "lead", form: title, subject, text, html, replyTo, rows }),
+        redirect: "follow",
+        cache: "no-store",
+      });
+      const out = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+      if (!out?.ok) throw new Error(`apps_script_${out?.error || res.status}`);
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error("[lead] send via Apps Script failed", err);
+      return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
+    }
+  }
+
+  const port = Number(SMTP_PORT || 465);
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port,
+    secure: port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+
   try {
     await transporter.sendMail({
       from: SMTP_FROM || `WISE Academy Website <${SMTP_USER}>`,
       to: (LEAD_RECIPIENTS || DEFAULT_RECIPIENTS).split(",").map((s) => s.trim()).filter(Boolean),
-      replyTo: email && EMAIL_RE.test(email) ? email : undefined,
-      subject: oneLine(`[Website] ${title} - ${name}`).slice(0, 200),
+      replyTo,
+      subject,
       text,
       html,
     });

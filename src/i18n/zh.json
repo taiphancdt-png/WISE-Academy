@@ -15014,5 +15014,173 @@
  "9ecbccddfb8a496b": {
   "s": "Đào tạo đi liền thực hành: Lean Simulation Game thay đổi tư duy, rồi chuyên gia cùng đội nòng cốt chạy Dự án thí điểm tại Model Line với 5S, công việc tiêu chuẩn, cân bằng chuyền, SMED, Kanban. Có kết quả trong 60-90 ngày, đội ngũ tự làm được.",
   "t": "培训与实践紧密结合：先通过精益模拟游戏转变思维，再由专家与核心团队在样板线（Model Line）上运用 5S、标准作业、生产线平衡、SMED 和看板开展试点项目。60-90 天内见成效，团队能够独立推进。"
+ },
+ "e940f8391420687e": {
+  "s": "Gửi thông tin thành công!",
+  "t": "提交成功！"
+ },
+ "748421ccb206fb23": {
+  "s": "Cảm ơn Quý doanh nghiệp. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.",
+  "t": "感谢贵企业。WISE Academy 的咨询顾问将在 24 个工作小时内致电与您联系。"
+ },
+ "8c208b7d254cc026": {
+  "s": "Gửi thêm yêu cầu khác",
+  "t": "再提交一个需求"
+ },
+ "52aa1e1a89c4f4bf": {
+  "s": "Đã nhận yêu cầu thành công!",
+  "t": "已成功收到您的需求！"
+ },
+ "937c8986d9070cc1": {
+  "s": "Cảm ơn bạn. Chuyên gia tư vấn của WISE Academy sẽ liên hệ lại qua điện thoại trong vòng 24 giờ làm việc.",
+  "t": "谢谢您。WISE Academy 的咨询顾问将在 24 个工作小时内致电与您联系。"
+ },
+ "f04c8be3377a839d": {
+  "s": "Đang gửi…",
+  "t": "正在发送…"
+ },
+ "0908afad9fb153ff": {
+  "s": "Cảm ơn bạn đã quan tâm!",
+  "t": "感谢您的关注！"
+ },
+ "e963bc674d3d8277": {
+  "s": "WISE Academy đã nhận được thông tin và sẽ liên hệ gửi lịch khai giảng cùng chính sách chi phí ưu đãi trong vòng 24 giờ làm việc.",
+  "t": "WISE Academy 已收到您的信息，将在 24 个工作小时内向您发送开课时间表和优惠价格政策。"
+ },
+ "fd3645aa22f20c92": {
+  "s": "Gửi thêm đăng ký khác",
+  "t": "再提交一份登记"
+ },
+ "df3050c39e1ff3d9": {
+  "s": "Chưa gửi được yêu cầu. Vui lòng thử lại hoặc gọi hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a>.",
+  "t": "需求未能发送。请重试或拨打热线 <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a>。"
+ },
+ "a704e6dcd7b7ec13": {
+  "s": "Chưa gửi được thông tin. Vui lòng thử lại, hoặc liên hệ hotline <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a> / email <a href=\"mailto:contact@wisedemy.com.vn\" class=\"font-semibold underline\">contact@wisedemy.com.vn</a>.",
+  "t": "信息未能发送。请重试，或联系热线 <a href=\"tel:+84989002121\" class=\"font-semibold underline\">0989 002 121</a> / 邮箱 <a href=\"mailto:contact@wisedemy.com.vn\" class=\"font-semibold underline\">contact@wisedemy.com.vn</a>。"
+ },
+ "ab4dc484953b8672": {
+  "s": "Khảo sát & xác định điểm nghẽn tại hiện trường (GEMBA)",
+  "t": "现场调研并识别瓶颈（GEMBA）"
+ },
+ "eb9bc834c5146506": {
+  "s": "Áp dụng ECRS và cải tiến thao tác chuẩn",
+  "t": "应用 ECRS，改进标准动作"
+ },
+ "f0f7da4cb6c021bb": {
+  "s": "Tối ưu hoá quy trình và cân bằng chuyền bằng Yamazumi",
+  "t": "运用 Yamazumi 优化流程、平衡生产线"
+ },
+ "b38d8d98ff284a29": {
+  "s": "Rút ngắn thời gian chuyển đổi mã hàng mới (QCO) và chuyển đổi công cụ dụng cụ (SMED)",
+  "t": "缩短新款换型时间（QCO）和工装换模时间（SMED）"
+ },
+ "c30af7515a2db11f": {
+  "s": "Áp dụng 5S, Quản lý trực quan và Poka Yoke",
+  "t": "应用 5S、目视化管理和防错（Poka Yoke）"
+ },
+ "d559562a964d7ea8": {
+  "s": "Thiết kế và bố trí chuyền sản xuất theo mô hình Lean (Lean Cell Layout)",
+  "t": "按精益模式设计和布置生产线（Lean Cell Layout）"
+ },
+ "0f2513e0e76db60b": {
+  "s": "Cải tiến máy móc và công cụ dụng cụ theo tư duy Lean",
+  "t": "以精益思维改进机器和工装器具"
+ },
+ "dfd1dedf0e16bba2": {
+  "s": "Kết hợp giải pháp Jidoka trong quản lý và cải tiến chất lượng",
+  "t": "在质量管理与改善中结合自働化（Jidoka）方案"
+ },
+ "ab5952ea528cc4ad": {
+  "s": "Quản lý dữ liệu vận hành theo thời gian thực",
+  "t": "实时运营数据管理"
+ },
+ "85de0441a63150e0": {
+  "s": "Huấn luyện nâng cao năng lực quản lý cấp trung",
+  "t": "辅导提升中层管理能力"
+ },
+ "60dd0f75b551ab7d": {
+  "s": "Xây dựng văn hoá Lean và cải tiến liên tục (Kaizen)",
+  "t": "建设精益与持续改善（Kaizen）文化"
+ },
+ "740facf831b0ec69": {
+  "s": "Phương pháp tiếp cận<br><span class=\"text-[#F76011]\">RGPDCA</span> 6 bước",
+  "t": "6 步<br><span class=\"text-[#F76011]\">RGPDCA</span> 方法"
+ },
+ "24484b8361f210f9": {
+  "s": "Là phương pháp tiếp cận và quản lý dự án khoa học, hiệu quả và bám sát vào thực tế vận hành của Doanh nghiệp. Mọi bước triển khai đều tập trung vào việc giúp đội ngũ nắm bắt được hiện trạng, ý nghĩa và mục tiêu của việc cải tiến; giúp họ cam kết và đồng hành trên hành trình cải tiến.",
+  "t": "一种科学、高效且紧贴企业实际运营的改善项目推进与管理方法。每个实施步骤都着眼于帮助团队理解现状、改善的意义和目标，使他们投入并全程参与改善之旅。"
+ },
+ "271750dbec4c66f0": {
+  "s": "Khảo sát (Research)",
+  "t": "调研（Research）"
+ },
+ "def28483f36ad7a6": {
+  "s": "Đặt mục tiêu (Goals)",
+  "t": "设定目标（Goals）"
+ },
+ "18e440d6760c5cdf": {
+  "s": "Lập kế hoạch (Plan)",
+  "t": "制定计划（Plan）"
+ },
+ "7f9efa8e01915f72": {
+  "s": "Triển khai (Do)",
+  "t": "实施（Do）"
+ },
+ "fc1eb09af7bf218c": {
+  "s": "Kiểm tra và Đo lường kết quả (Check)",
+  "t": "检查与衡量结果（Check）"
+ },
+ "9aeb499bf1260a37": {
+  "s": "Điều chỉnh và Chuẩn hóa (Act/ Adjust)",
+  "t": "调整与标准化（Act / Adjust）"
+ },
+ "7388465b1718ccf3": {
+  "s": "Nguyễn Văn A",
+  "t": "Nguyen Van A"
+ },
+ "bea8a0c6d372b2bb": {
+  "s": "Công ty ABC",
+  "t": "ABC 公司"
+ },
+ "5a56f19328e8f4ce": {
+  "s": "Khảo sát & Tìm điểm nghẽn trực tiếp tại hiện trường",
+  "t": "直接到现场调研并找出瓶颈"
+ },
+ "1a7f98f2f189a219": {
+  "s": "Tăng năng suất quy trình / dây chuyền",
+  "t": "提高流程 / 生产线生产率"
+ },
+ "1a0ad867a7982e50": {
+  "s": "Giảm tỷ lệ lỗi, phế phẩm",
+  "t": "降低缺陷率和报废率"
+ },
+ "21e7ca632ef5eb5b": {
+  "s": "Tổ chức buổi trải nghiệm game mô phỏng sản xuất",
+  "t": "组织生产模拟游戏体验课"
+ },
+ "8fce113380e4fec8": {
+  "s": "Ví dụ: Công việc hay bị ứ đọng ở một khâu, thời gian xử lý đơn hàng kéo dài, lỗi lặp lại...",
+  "t": "例如：工作经常堆积在某个环节、订单处理时间过长、缺陷反复出现……"
+ },
+ "66f47d9743647c46": {
+  "s": "Ví dụ: Tồn kho dở dang cao, tỷ lệ phế phẩm tăng, thời gian đổi mã hàng lâu...",
+  "t": "例如：在制品库存高、报废率上升、换款时间长……"
+ },
+ "6afa9fbab5af131d": {
+  "s": "TP. Hồ Chí Minh, Việt Nam",
+  "t": "越南胡志明市"
+ },
+ "295345115842a91b": {
+  "s": "Thời gian mong muốn, mục tiêu học tập...",
+  "t": "期望时间、学习目标……"
+ },
+ "d4c194c24e784f73": {
+  "s": "Ví dụ: WISELSSGB-K2501-001-F",
+  "t": "例如：WISELSSGB-K2501-001-F"
+ },
+ "050bfd234a46eb62": {
+  "s": "Tìm kiếm chuyên đề...",
+  "t": "搜索专题……"
  }
 }

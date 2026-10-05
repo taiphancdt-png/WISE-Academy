@@ -43,11 +43,13 @@ function collect(root: Node, units: Unit[]) {
   }
   if (root.nodeType !== Node.ELEMENT_NODE) return;
   const el = root as Element;
-  if (SKIP.has(el.tagName) || excluded(el)) return;
+  if (excluded(el)) return;
+  // attributes first: form fields keep their content untouched but their placeholder is translated
   for (const a of ATTRS) {
     const v = el.getAttribute(a);
     if (v && LETTERS.test(v) && doneAttr.get(el)?.[a] !== v) units.push({ kind: "attr", el, name: a, src: v });
   }
+  if (SKIP.has(el.tagName)) return;
   // a heading or paragraph made of several inline pieces is translated as one, so the sentence stays whole
   // (a lone link or span is not: its text is translated in place, so links keep working as links)
   const ownText = Array.from(el.childNodes).some((n) => n.nodeType === Node.TEXT_NODE && LETTERS.test(n.nodeValue || ""));
