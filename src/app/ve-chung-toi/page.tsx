@@ -70,9 +70,9 @@ export default function AboutPage() {
     {
       phase: "BƯỚC 04",
       code: "D - DO",
-      name: "Thí điểm tại Model Line, học bằng làm",
-      action: "Kaizen Event & kèm cặp tại hiện trường",
-      content: "Đào tạo đi liền thực hành: Lean Simulation Game thay đổi tư duy, rồi chuyên gia cùng đội nòng cốt chạy Kaizen Event tại Model Line với 5S, công việc tiêu chuẩn, cân bằng chuyền, SMED, Kanban. Có kết quả trong 60-90 ngày, đội ngũ tự làm được."
+      name: "Triển khai thí điểm và học thông qua thực hành",
+      action: "Dự án thí điểm & kèm cặp tại hiện trường",
+      content: "Đào tạo đi liền thực hành: Lean Simulation Game thay đổi tư duy, rồi chuyên gia cùng đội nòng cốt chạy Dự án thí điểm tại Model Line với 5S, công việc tiêu chuẩn, cân bằng chuyền, SMED, Kanban. Có kết quả trong 60-90 ngày, đội ngũ tự làm được."
     },
     {
       phase: "BƯỚC 05",
