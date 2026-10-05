@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "@/components/icons";
+import TrekkerLottie, { BackTrekker, type TrekkerHandle } from "@/components/TrekkerLottie";
 
 export interface RgpdcaStep {
   phase: string;
@@ -30,18 +31,88 @@ const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
   null,
 ];
 
-const TRACK_ROW = 64; // px height of the middle grid row
-const TRACK_Y = 10; // top edge of the track inside that row
-const TRACK_H = 44; // track height (fully rounded ends)
+const TRACK_ROW = 102; // px height of the middle grid row
+const TRACK_Y = 42; // top edge of the road inside that row (room above it for the walker on the far side)
+const TRACK_H = 52; // road loop height (fully rounded ends)
 const GAP_X = 56; // lg:gap-x-14
-const LAP_MS = 9000; // one full lap = six steps
+const LAP_MS = 24000; // one full lap = six steps, about 4 s each
+const WALKER_H = 36; // px, the walker's height
+const SIDE_W = Math.round((WALKER_H * 346) / 596); // side view keeps the Lottie crop's proportions
+const STRIDE_PX = 30; // road length per walk cycle (two steps)
 
-// Rounded-rectangle loop between the two rows of steps. A light runs clockwise around it; whichever step it has
-// most recently passed is "active": its letter lights up in the centre, its connector and its box are highlighted.
+// What the walker carries at each step, drawn in the Lottie hand layer's own units (about 10 units per screen px),
+// held where the trekking pole's grip used to be.
+const HAND = { x: 25, y: 127 };
+function StepTool({ step }: { step: number }) {
+  const { x, y } = HAND;
+  const navy = "#002F5B";
+  const orange = "#F76011";
+  const paper = "#FFF5EC";
+  switch (step) {
+    case 0: // Research: a folded map
+      return (
+        <g transform={`translate(${x - 46} ${y - 70})`}>
+          <path d="M0 8 L30 0 L62 8 L92 0 L92 64 L62 72 L30 64 L0 72 Z" fill={paper} stroke={navy} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M30 0 V64 M62 8 V72" stroke={navy} strokeWidth={4} />
+          <path d="M10 40 Q24 26 40 38 T78 30" stroke="#94A3B8" strokeWidth={5} fill="none" />
+        </g>
+      );
+    case 1: // Goals: a compass
+      return (
+        <g transform={`translate(${x} ${y - 30})`}>
+          <circle r={40} fill="#FFFFFF" stroke={navy} strokeWidth={8} />
+          <path d="M0 -30 L9 0 L0 30 L-9 0 Z" fill={navy} />
+          <path d="M0 -30 L9 0 L-9 0 Z" fill={orange} />
+          <circle r={5} fill={navy} />
+        </g>
+      );
+    case 2: // Plan: the map with the route drawn on it
+      return (
+        <g transform={`translate(${x - 46} ${y - 70})`}>
+          <path d="M0 8 L30 0 L62 8 L92 0 L92 64 L62 72 L30 64 L0 72 Z" fill={paper} stroke={navy} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M12 58 Q30 50 34 34 T70 22" stroke={orange} strokeWidth={6} strokeDasharray="10 7" fill="none" strokeLinecap="round" />
+          <path d="M70 26 V4 L86 10 L70 16" fill={orange} stroke={orange} strokeWidth={3} strokeLinejoin="round" />
+          <circle cx={12} cy={58} r={6} fill={navy} />
+        </g>
+      );
+    case 3: // Do: a wrench
+      return (
+        <g transform={`translate(${x} ${y}) rotate(-35)`}>
+          <rect x={-7} y={-96} width={14} height={86} rx={6} fill={navy} />
+          <path d="M-22 -112 a24 24 0 1 0 44 0 l-10 0 l0 14 l-24 0 l0 -14 Z" fill={navy} />
+        </g>
+      );
+    case 4: // Check: a clipboard with ticks
+      return (
+        <g transform={`translate(${x - 36} ${y - 92})`}>
+          <rect x={0} y={6} width={72} height={92} rx={8} fill={navy} />
+          <rect x={8} y={16} width={56} height={74} rx={4} fill="#FFFFFF" />
+          <rect x={22} y={0} width={28} height={14} rx={5} fill="#94A3B8" />
+          <path d="M16 34 l7 7 l12 -14 M16 62 l7 7 l12 -14" stroke={orange} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M42 36 H56 M42 64 H56" stroke="#94A3B8" strokeWidth={5} strokeLinecap="round" />
+        </g>
+      );
+    default: // Act: the flag that marks the new standard
+      return (
+        <g transform={`translate(${x} ${y})`}>
+          <rect x={-4} y={-150} width={8} height={170} rx={4} fill={navy} />
+          <path d="M4 -148 L74 -128 L4 -106 Z" fill={orange} />
+        </g>
+      );
+  }
+}
+
+// A looping road between the two rows of steps. A walker goes round it clockwise, carrying the tool of the step he has
+// most recently passed (that step is "active": its letter lights up in the centre, its connector and its box are
+// highlighted). He walks in profile along the straights and turns at the bends: towards the viewer at the right end,
+// away from the viewer at the left end.
 export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
   const rowRef = useRef<HTMLLIElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
-  const dotRef = useRef<SVGGElement>(null);
+  const walkerRef = useRef<HTMLDivElement>(null);
+  const sideRef = useRef<TrekkerHandle>(null);
+  const turnRef = useRef<TrekkerHandle>(null);
+  const [leg, setLeg] = useState<"top" | "right" | "bottom" | "left">("top");
   const [w, setW] = useState(0);
   const [active, setActive] = useState(0);
   const [animate, setAnimate] = useState(true);
@@ -95,7 +166,14 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
       const s = (((now - start) % LAP_MS) / LAP_MS) * total;
       if (!pathRef.current) return; // unmounted
       const p = pathRef.current.getPointAtLength(s);
-      dotRef.current?.setAttribute("transform", `translate(${p.x} ${p.y})`);
+      const part = s < topLen ? "top" : s < topLen + arc ? "right" : s < 2 * topLen + arc ? "bottom" : "left";
+      // feet on the road; on the near side he walks back to the left, so the profile is mirrored
+      const flip = part === "bottom" ? " scaleX(-1)" : "";
+      if (walkerRef.current) walkerRef.current.style.transform = `translate(${p.x - SIDE_W / 2}px, ${p.y - WALKER_H}px)${flip}`;
+      setLeg((prev) => (prev === part ? prev : part));
+      const cycles = s / STRIDE_PX;
+      sideRef.current?.setPhase(cycles);
+      turnRef.current?.setPhase(cycles);
       let idx = 5;
       for (let i = 0; i < 6; i++) if (s >= anchors[i]) idx = i;
       if (s < anchors[0]) idx = 5;
@@ -118,7 +196,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
         return (
           <li
             key={item.phase}
-            className={`relative card-soft !transform-none p-6 lg:px-6 lg:py-5 transition-[box-shadow,outline-color] duration-500 outline outline-2 ${
+            className={`relative card-soft !transform-none p-6 lg:px-6 lg:py-4 transition-[box-shadow,outline-color] duration-500 outline outline-2 ${
               on && animate ? "outline-[#F76011] shadow-[0_18px_40px_-12px_rgba(247,96,17,0.35)]" : "outline-transparent"
             } ${PLACE[i]}`}
           >
@@ -177,16 +255,31 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
                 </g>
               );
             })}
-            {/* the loop itself */}
-            <path d={d} fill="#FFF5EC" stroke="#F76011" strokeOpacity={0.35} strokeWidth={3} />
-            <path ref={pathRef} d={d} fill="none" stroke="#F76011" strokeWidth={3} strokeDasharray="14 10" className="rgpdca-dash" />
-            {animate && (
-              <g ref={dotRef} transform={`translate(${x0 + r} ${yTop})`}>
-                <circle r={12} fill="#F76011" fillOpacity={0.25} />
-                <circle r={6} fill="#F76011" />
-              </g>
-            )}
+            {/* the road: asphalt band with a dashed centre line, the inside of the loop left light */}
+            <path d={d} fill="#FFF5EC" stroke="#3E5068" strokeWidth={9} strokeLinejoin="round" />
+            <path ref={pathRef} d={d} fill="none" stroke="#FFFFFF" strokeWidth={1.4} strokeDasharray="7 7" />
           </svg>
+        )}
+        {/* the walker (drawn over the road and the letters); both views stay mounted, only one shows */}
+        {w > 0 && (
+          <div
+            ref={walkerRef}
+            className="absolute left-0 top-0 z-10 will-change-transform"
+            style={{ width: SIDE_W, height: WALKER_H, transform: `translate(${x0 + r - SIDE_W / 2}px, ${yTop - WALKER_H}px)` }}
+          >
+            <TrekkerLottie
+              ref={sideRef}
+              src="/lottie/trekker-walk.json"
+              className={`w-full h-full ${leg === "top" || leg === "bottom" ? "" : "invisible"}`}
+              inHand={<StepTool step={animate ? active : 0} />}
+            />
+            <BackTrekker
+              ref={turnRef}
+              poles={false}
+              facing={leg === "right" ? "front" : "back"}
+              className={`absolute top-0 left-1/2 -translate-x-1/2 h-full ${leg === "top" || leg === "bottom" ? "invisible" : ""}`}
+            />
+          </div>
         )}
         {/* letters light up one by one as the cycle passes each step */}
         <div className="absolute inset-x-0 flex items-center justify-center gap-4" style={{ top: TRACK_Y, height: TRACK_H }}>

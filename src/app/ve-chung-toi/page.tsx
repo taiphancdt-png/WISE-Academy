@@ -169,8 +169,8 @@ export default function AboutPage() {
       />
 
       {/* RGPDCA: compact on desktop so the whole loop fits one screen below the sticky header */}
-      <Section tone="muted" wide className="lg:!py-8 lg:min-h-[calc(100vh-81px)] lg:flex lg:flex-col lg:justify-center">
-        <div className="mb-10 lg:mb-5 text-center max-w-4xl mx-auto">
+      <Section tone="muted" wide className="lg:!py-6 lg:min-h-[calc(100vh-81px)] lg:flex lg:flex-col lg:justify-center">
+        <div className="mb-10 lg:mb-4 text-center max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-[34px] font-semibold leading-tight text-[#002F5B]">
             Phương pháp tiếp cận <span className="text-[#F76011]">6 giai đoạn</span>
           </h2>
