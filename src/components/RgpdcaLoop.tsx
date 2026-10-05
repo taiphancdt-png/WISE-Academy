@@ -48,10 +48,10 @@ export function StepTool({ step, upright = true }: { step: number; upright?: boo
     </g>
   );
 }
-// one road colour per step, R G P D C A: WISE navy tones for the planning steps, WISE orange tones for the doing steps
-export const STEP_COLORS = ["#002F5B", "#1F5A8F", "#4A80BA", "#C9500E", "#F76011", "#FF9A5C"];
+// one road colour per step, R G P D C A: WISE navy and WISE orange tones alternating, so neighbours stand apart
+export const STEP_COLORS = ["#002F5B", "#F76011", "#2F6BA8", "#C9500E", "#163F6B", "#FF8A3D"];
 // the same steps as letter colours, dark enough to read on the light inside of the loop
-const STEP_TEXT = ["#002F5B", "#1F5A8F", "#3A70A8", "#B4470C", "#D9530D", "#E2600F"];
+const STEP_TEXT = ["#002F5B", "#D9530D", "#2A62A0", "#B4470C", "#163F6B", "#D45A12"];
 
 // What the walker carries at each step, drawn in the Lottie hand layer's own units (about 7 units per screen px),
 // held where the trekking pole's grip used to be. The arm is raised, so the drawing is turned back upright.
