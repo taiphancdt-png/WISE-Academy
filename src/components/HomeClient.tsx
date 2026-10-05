@@ -49,14 +49,17 @@ const IMG = {
 
 
 const solutions = [
-  "Khảo sát & tìm điểm nghẽn tại hiện trường",
-  "Sắp xếp & tối ưu lại quy trình",
-  "Nâng năng suất & cân bằng công việc",
-  "Huấn luyện quản lý cấp trung & văn hóa Kaizen",
-  "Thiết kế Lean Cell & Layout chữ U",
-  "Rút ngắn thời gian đổi mã hàng (SMED)",
-  "Quản lý trực quan & 5S hiện trường",
-  "Lean 4.0 & vận hành số",
+  "Khảo sát & xác định điểm nghẽn tại hiện trường (GEMBA)",
+  "Áp dụng ECRS và cải tiến thao tác chuẩn",
+  "Tối ưu hoá quy trình và cân bằng chuyền bằng Yamazumi",
+  "Rút ngắn thời gian chuyển đổi mã hàng mới (QCO) và chuyển đổi công cụ dụng cụ (SMED)",
+  "Áp dụng 5S, Quản lý trực quan và Poka Yoke",
+  "Thiết kế và bố trí chuyền sản xuất theo mô hình Lean (Lean Cell Layout)",
+  "Cải tiến máy móc và công cụ dụng cụ theo tư duy Lean",
+  "Kết hợp giải pháp Jidoka trong quản lý và cải tiến chất lượng",
+  "Quản lý dữ liệu vận hành theo thời gian thực",
+  "Huấn luyện nâng cao năng lực quản lý cấp trung",
+  "Xây dựng văn hoá Lean và cải tiến liên tục (Kaizen)",
 ];
 
 const rgpdcaSteps = [
