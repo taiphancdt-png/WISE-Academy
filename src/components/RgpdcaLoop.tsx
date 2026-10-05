@@ -31,14 +31,15 @@ const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
   null,
 ];
 
-const TRACK_ROW = 140; // px height of the middle grid row
-const TRACK_Y = 58; // top edge of the road inside that row (room above it for the walker on the far side)
-const TRACK_H = 74; // road loop height: tall enough for the walker inside the loop on the near side
+const GAP_Y = 46; // equal room above and below the road (above: the walker on the far side)
+const TRACK_Y = GAP_Y; // top edge of the road inside the middle row
+const TRACK_H = 60; // road loop height: tall enough for the walker inside the loop on the near side
+const TRACK_ROW = GAP_Y + TRACK_H + GAP_Y; // px height of the middle grid row
 const GAP_X = 56; // lg:gap-x-14
 const LAP_MS = 36000; // one full lap = six steps, 6 s each
-const WALKER_H = 54; // px, the walker's height
+const WALKER_H = 48; // px, the walker's height
 const SIDE_W = Math.round((WALKER_H * 346) / 596); // side view keeps the Lottie crop's proportions
-const STRIDE_PX = 44; // road length per walk cycle (two steps)
+const STRIDE_PX = 40; // road length per walk cycle (two steps)
 const ARM = -48; // the front arm is held raised (degrees, set in public/lottie/trekker-walk.json); the tool is turned back upright
 export function StepTool({ step, upright = true }: { step: number; upright?: boolean }) {
   return (
@@ -47,8 +48,10 @@ export function StepTool({ step, upright = true }: { step: number; upright?: boo
     </g>
   );
 }
-// one road colour per step, R G P D C A
-export const STEP_COLORS = ["#1F5FA8", "#0F8A80", "#7B4FC2", "#F76011", "#C98A00", "#2E8B3E"];
+// one road colour per step, R G P D C A: WISE navy tones for the planning steps, WISE orange tones for the doing steps
+export const STEP_COLORS = ["#002F5B", "#1F5A8F", "#4A80BA", "#C9500E", "#F76011", "#FF9A5C"];
+// the same steps as letter colours, dark enough to read on the light inside of the loop
+const STEP_TEXT = ["#002F5B", "#1F5A8F", "#3A70A8", "#B4470C", "#D9530D", "#E2600F"];
 
 // What the walker carries at each step, drawn in the Lottie hand layer's own units (about 7 units per screen px),
 // held where the trekking pole's grip used to be. The arm is raised, so the drawing is turned back upright.
@@ -112,9 +115,9 @@ function ToolArt({ step }: { step: number }) {
   }
 }
 
-// A looping road between the two rows of steps. A walker goes round it clockwise, carrying the tool of the step he has
-// most recently passed (that step is "active": its letter lights up in the centre, its connector and its box are
-// highlighted). He walks in profile along the straights and turns at the bends: towards the viewer at the right end,
+// A looping road between the two rows of steps, one coloured stretch per step. A walker goes round it clockwise,
+// carrying the tool of the stretch he is on (that step is "active": its letter lights up in the centre, its connector
+// and its box are highlighted). He walks in profile along the straights and turns at the bends: towards the viewer at the right end,
 // away from the viewer at the left end.
 export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
   const rowRef = useRef<HTMLLIElement>(null);
@@ -140,8 +143,8 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
   const c1 = (w - 2 * GAP_X) / 6;
   const centers = [c1, w / 2, w - c1];
   const r = TRACK_H / 2;
-  const x0 = c1 - 70;
-  const x1 = w - c1 + 70;
+  const x0 = 8; // the road runs nearly the full width, so the three stretches per row come out about equal
+  const x1 = w - 8;
   const yTop = TRACK_Y;
   const yBot = TRACK_Y + TRACK_H;
   const topLen = x1 - x0 - 2 * r;
@@ -152,22 +155,32 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
     w > 0
       ? `M ${x0 + r} ${yTop} H ${x1 - r} A ${r} ${r} 0 0 1 ${x1 - r} ${yBot} H ${x0 + r} A ${r} ${r} 0 0 1 ${x0 + r} ${yTop} Z`
       : "";
-  // Arc length at which the light reaches each step's connector.
-  const anchors = [
-    centers[0] - (x0 + r),
-    centers[1] - (x0 + r),
-    centers[2] - (x0 + r),
-    topLen + arc + (x1 - r - centers[2]),
-    topLen + arc + (x1 - r - centers[1]),
-    topLen + arc + (x1 - r - centers[0]),
+  // The road is split into one stretch per step: three along the top under steps 1-3, three along the bottom over
+  // steps 4-6, divided at the gaps between the columns; each bend is shared half and half by the steps beside it.
+  // starts[i] = arc length (from the path's start, top left) where step i's stretch begins.
+  const colW = (w - 2 * GAP_X) / 3;
+  const cut1 = colW + GAP_X / 2; // x of the gap between columns 1 and 2
+  const cut2 = 2 * colW + 1.5 * GAP_X; // between columns 2 and 3
+  const onBottom = (x: number) => topLen + arc + (x1 - r - x);
+  const starts = [
+    2 * topLen + 1.5 * arc, // R: from the middle of the left bend
+    cut1 - (x0 + r), // G
+    cut2 - (x0 + r), // P
+    topLen + arc / 2, // D: from the middle of the right bend
+    onBottom(cut2), // C
+    onBottom(cut1), // A
   ];
+  const stepAt = (s: number) => {
+    for (let i = 5; i >= 1; i--) if (s >= starts[i]) return s >= starts[0] ? 0 : i;
+    return 0; // before G's start: still R (its stretch wraps past the path's start)
+  };
 
-  // Coloured stretches of road: step i runs from its connector to the next; the last one wraps past the start.
+  // Coloured stretches; R's wraps past the start, so it is drawn in two pieces.
   const segments = w > 0
     ? [
-        ...anchors.slice(0, 5).map((from, i) => ({ step: i, from, len: anchors[i + 1] - from })),
-        { step: 5, from: anchors[5], len: total - anchors[5] },
-        { step: 5, from: 0, len: anchors[0] },
+        { step: 0, from: starts[0], len: total - starts[0] },
+        { step: 0, from: 0, len: starts[1] },
+        ...[1, 2, 3, 4, 5].map((i) => ({ step: i, from: starts[i], len: (i < 5 ? starts[i + 1] : starts[0]) - starts[i] })),
       ]
     : [];
 
@@ -193,9 +206,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
       const cycles = s / STRIDE_PX;
       sideRef.current?.setPhase(cycles);
       turnRef.current?.setPhase(cycles);
-      let idx = 5;
-      for (let i = 0; i < 6; i++) if (s >= anchors[i]) idx = i;
-      if (s < anchors[0]) idx = 5;
+      const idx = stepAt(s);
       setActive((prev) => (prev === idx ? prev : idx));
       raf = requestAnimationFrame(tick);
     };
@@ -238,7 +249,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
             </div>
             <h3 className="mt-4 lg:mt-3 text-lg lg:text-base font-semibold text-[#002F5B] leading-snug">{item.name}</h3>
             <p className="mt-2 lg:mt-1 text-xs font-semibold text-[#C9500E]">{item.action}</p>
-            <p className="mt-3 lg:mt-2 text-sm lg:text-[13px] text-[#486581] leading-relaxed lg:leading-[1.55]">{item.content}</p>
+            <p className="mt-3 lg:mt-2 text-sm lg:text-[12.5px] text-[#486581] leading-relaxed lg:leading-[1.5]">{item.content}</p>
 
             {arrow && (
               <span
@@ -320,7 +331,7 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
               className={`text-xl font-extrabold transition-all duration-500 ${
                 isOn(i) ? "scale-125" : "text-[#002F5B]/30"
               }`}
-              style={isOn(i) ? { color: STEP_COLORS[i] } : undefined}
+              style={isOn(i) ? { color: STEP_TEXT[i] } : undefined}
             >
               {item.code.charAt(0)}
             </span>
