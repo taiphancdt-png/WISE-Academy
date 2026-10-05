@@ -31,15 +31,15 @@ const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
   null,
 ];
 
-const GAP_Y = 46; // equal room above and below the road (above: the walker on the far side)
+const GAP_Y = 54; // equal room above and below the road: above it, the walker (and what he holds) clears the cards
 const TRACK_Y = GAP_Y; // top edge of the road inside the middle row
-const TRACK_H = 60; // road loop height: tall enough for the walker inside the loop on the near side
+const TRACK_H = 56; // road loop height: tall enough for the walker inside the loop on the near side
 const TRACK_ROW = GAP_Y + TRACK_H + GAP_Y; // px height of the middle grid row
 const GAP_X = 56; // lg:gap-x-14
 const LAP_MS = 36000; // one full lap = six steps, 6 s each
-const WALKER_H = 48; // px, the walker's height
+const WALKER_H = 44; // px, the walker's height
 const SIDE_W = Math.round((WALKER_H * 346) / 596); // side view keeps the Lottie crop's proportions
-const STRIDE_PX = 40; // road length per walk cycle (two steps)
+const STRIDE_PX = 37; // road length per walk cycle (two steps)
 const ARM = -48; // the front arm is held raised (degrees, set in public/lottie/trekker-walk.json); the tool is turned back upright
 export function StepTool({ step, upright = true }: { step: number; upright?: boolean }) {
   return (
@@ -105,11 +105,21 @@ function ToolArt({ step }: { step: number }) {
           <path d="M42 36 H56 M42 64 H56" stroke="#94A3B8" strokeWidth={5} strokeLinecap="round" />
         </g>
       );
-    default: // Act: the flag that marks the new standard
+    default: // Act & adjust: the standard board, with the gear of adjustment on it
       return (
-        <g transform={`translate(${x} ${y})`}>
-          <rect x={-4} y={-150} width={8} height={170} rx={4} fill={navy} />
-          <path d="M4 -148 L74 -128 L4 -106 Z" fill={orange} />
+        <g transform={`translate(${x - 48} ${y - 84})`}>
+          <rect x={0} y={0} width={96} height={80} rx={8} fill={navy} />
+          <rect x={6} y={6} width={84} height={68} rx={4} fill="#FFFFFF" />
+          <rect x={6} y={6} width={84} height={14} rx={4} fill={orange} />
+          <path d="M18 32 H50 M18 45 H46 M18 58 H42" stroke={navy} strokeWidth={5} strokeLinecap="round" />
+          <circle cx={11.5} cy={32} r={2.6} fill={orange} />
+          <circle cx={11.5} cy={45} r={2.6} fill={orange} />
+          <circle cx={11.5} cy={58} r={2.6} fill={orange} />
+          <g transform="translate(70 50)">
+            <circle r={12} fill="none" stroke={orange} strokeWidth={7} strokeDasharray="4.7 4.7" />
+            <circle r={10} fill={orange} />
+            <circle r={4} fill="#FFFFFF" />
+          </g>
         </g>
       );
   }
