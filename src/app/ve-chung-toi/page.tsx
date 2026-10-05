@@ -56,8 +56,8 @@ export default function AboutPage() {
     {
       phase: "BƯỚC 02",
       code: "G - GOALS",
-      name: "Xác định True North & mục tiêu đo được",
-      action: "Từ chiến lược đến chỉ số Q-C-D-S-M",
+      name: "Đặt mục tiêu cải tiến",
+      action: "Các mục tiêu ưu tiên S-Q-D-C-M-E liên kết trực tiếp từ chiến lược vận hành của tổ chức",
       content: "Cùng ban lãnh đạo xác định đích đến dài hạn (True North) và vài chỉ số then chốt: OEE, Lead Time, WIP, tỷ lệ lỗi, năng suất. Mỗi chỉ số có giá trị nền, mục tiêu và giá trị tài chính, gắn cải tiến với kết quả kinh doanh."
     },
     {
