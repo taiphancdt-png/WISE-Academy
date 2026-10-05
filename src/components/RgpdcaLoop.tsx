@@ -31,19 +31,29 @@ const ROW_ARROW: (null | { Icon: typeof ArrowRight; pos: string })[] = [
   null,
 ];
 
-const TRACK_ROW = 122; // px height of the middle grid row
+const TRACK_ROW = 140; // px height of the middle grid row
 const TRACK_Y = 58; // top edge of the road inside that row (room above it for the walker on the far side)
-const TRACK_H = 56; // road loop height (fully rounded ends)
+const TRACK_H = 74; // road loop height: tall enough for the walker inside the loop on the near side
 const GAP_X = 56; // lg:gap-x-14
 const LAP_MS = 36000; // one full lap = six steps, 6 s each
 const WALKER_H = 54; // px, the walker's height
 const SIDE_W = Math.round((WALKER_H * 346) / 596); // side view keeps the Lottie crop's proportions
 const STRIDE_PX = 44; // road length per walk cycle (two steps)
+const ARM = -48; // the front arm is held raised (degrees, set in public/lottie/trekker-walk.json); the tool is turned back upright
+export function StepTool({ step, upright = true }: { step: number; upright?: boolean }) {
+  return (
+    <g transform={upright ? `rotate(${-ARM} ${HAND.x} ${HAND.y})` : undefined}>
+      <ToolArt step={step} />
+    </g>
+  );
+}
+// one road colour per step, R G P D C A
+export const STEP_COLORS = ["#1F5FA8", "#0F8A80", "#7B4FC2", "#F76011", "#C98A00", "#2E8B3E"];
 
 // What the walker carries at each step, drawn in the Lottie hand layer's own units (about 7 units per screen px),
-// held where the trekking pole's grip used to be.
+// held where the trekking pole's grip used to be. The arm is raised, so the drawing is turned back upright.
 const HAND = { x: 25, y: 127 };
-function StepTool({ step }: { step: number }) {
+function ToolArt({ step }: { step: number }) {
   const { x, y } = HAND;
   const navy = "#002F5B";
   const orange = "#F76011";
@@ -152,7 +162,16 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
     topLen + arc + (x1 - r - centers[0]),
   ];
 
-  // Drive the light with requestAnimationFrame; respect reduced motion.
+  // Coloured stretches of road: step i runs from its connector to the next; the last one wraps past the start.
+  const segments = w > 0
+    ? [
+        ...anchors.slice(0, 5).map((from, i) => ({ step: i, from, len: anchors[i + 1] - from })),
+        { step: 5, from: anchors[5], len: total - anchors[5] },
+        { step: 5, from: 0, len: anchors[0] },
+      ]
+    : [];
+
+  // Drive the walker with requestAnimationFrame; respect reduced motion.
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
@@ -255,8 +274,19 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
                 </g>
               );
             })}
-            {/* the road: asphalt band with a dashed centre line, the inside of the loop left light */}
-            <path d={d} fill="#FFF5EC" stroke="#3E5068" strokeWidth={9} strokeLinejoin="round" />
+            {/* the road: one coloured stretch per step (from its connector to the next one) with a dashed centre line */}
+            <path d={d} fill="#FFF5EC" />
+            {segments.map((sg, k) => (
+              <path
+                key={k}
+                d={d}
+                fill="none"
+                stroke={STEP_COLORS[sg.step]}
+                strokeWidth={10}
+                strokeDasharray={`${sg.len} ${total + 10}`}
+                strokeDashoffset={-sg.from}
+              />
+            ))}
             <path ref={pathRef} d={d} fill="none" stroke="#FFFFFF" strokeWidth={1.4} strokeDasharray="7 7" />
           </svg>
         )}
@@ -270,13 +300,14 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
             <TrekkerLottie
               ref={sideRef}
               src="/lottie/trekker-walk.json"
-              className={`w-full h-full ${leg === "top" || leg === "bottom" ? "" : "invisible"}`}
+              className={`w-full h-full [&_svg]:!overflow-visible ${leg === "top" || leg === "bottom" ? "" : "invisible"}`}
               inHand={<StepTool step={animate ? active : 0} />}
             />
             <BackTrekker
               ref={turnRef}
               poles={false}
               facing={leg === "right" ? "front" : "back"}
+              holding={<StepTool step={animate ? active : 0} upright={false} />}
               className={`absolute top-0 left-1/2 -translate-x-1/2 h-full ${leg === "top" || leg === "bottom" ? "invisible" : ""}`}
             />
           </div>
@@ -287,8 +318,9 @@ export default function RgpdcaLoop({ steps }: { steps: RgpdcaStep[] }) {
             <span
               key={item.phase}
               className={`text-xl font-extrabold transition-all duration-500 ${
-                isOn(i) ? "text-[#F76011] scale-125 drop-shadow-[0_0_10px_rgba(247,96,17,0.55)]" : "text-[#002F5B]/30"
+                isOn(i) ? "scale-125" : "text-[#002F5B]/30"
               }`}
+              style={isOn(i) ? { color: STEP_COLORS[i] } : undefined}
             >
               {item.code.charAt(0)}
             </span>

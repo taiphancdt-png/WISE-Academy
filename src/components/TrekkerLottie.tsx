@@ -92,8 +92,10 @@ const BC = {
 // backpack straps instead of the pack).
 export const BackTrekker = forwardRef<
   TrekkerHandle,
-  { className?: string; poles?: boolean; facing?: "back" | "front" }
->(function BackTrekker({ className, poles = true, facing = "back" }, ref) {
+  { className?: string; poles?: boolean; facing?: "back" | "front"; holding?: React.ReactNode }
+>(function BackTrekker({ className, poles = true, facing = "back", holding }, ref) {
+  // facing the viewer with something in hand: both hands bring it in front of the chest
+  const carry = facing === "front" && !!holding;
   const legRefs = useRef<(SVGGElement | null)[]>([]);
   const armRefs = useRef<(SVGGElement | null)[]>([]);
   const bodyRef = useRef<SVGGElement>(null);
@@ -139,8 +141,17 @@ export const BackTrekker = forwardRef<
           <line x1={x + dir * 3.8} y1={48} x2={x + dir * 4.2} y2={55} stroke={BC.boot} strokeWidth={2.8} strokeLinecap="round" />
         </>
       )}
-      <path d={`M ${x} 29 Q ${x + dir * 4.5} 40 ${x + dir * 4} 51`} stroke={BC.shirtDark} strokeWidth={6} strokeLinecap="round" fill="none" />
-      <circle cx={x + dir * 4} cy={52.5} r={2.8} fill={BC.skin} />
+      {carry ? (
+        <>
+          <path d={`M ${x} 29 Q ${x + dir * 2} 42 ${24 + dir * 4} 43`} stroke={BC.shirtDark} strokeWidth={6} strokeLinecap="round" fill="none" />
+          <circle cx={24 + dir * 4} cy={43} r={2.8} fill={BC.skin} />
+        </>
+      ) : (
+        <>
+          <path d={`M ${x} 29 Q ${x + dir * 4.5} 40 ${x + dir * 4} 51`} stroke={BC.shirtDark} strokeWidth={6} strokeLinecap="round" fill="none" />
+          <circle cx={x + dir * 4} cy={52.5} r={2.8} fill={BC.skin} />
+        </>
+      )}
     </g>
   );
 
@@ -181,6 +192,12 @@ export const BackTrekker = forwardRef<
             <circle cx={26.7} cy={12.6} r={0.95} fill={BC.boot} />
             <path d="M 21.8 15.8 Q 24 17.4 26.2 15.8" stroke={BC.ear} strokeWidth={0.9} strokeLinecap="round" fill="none" />
           </>
+        )}
+        {/* the tool held in front of the chest (drawn in the side view's hand units, about 0.3 here) */}
+        {carry && (
+          <g transform="translate(24 40) scale(0.3) translate(-25 -127)">
+            {holding}
+          </g>
         )}
       </g>
     </svg>
