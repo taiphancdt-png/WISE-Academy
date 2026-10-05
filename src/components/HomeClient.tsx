@@ -245,11 +245,12 @@ export default function HomeClient({
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-3xl sm:text-[34px] font-semibold text-[#002F5B] leading-tight">
-              Phương pháp <span className="text-[#F76011]">RGPDCA</span>: 6 bước cải tiến rõ ràng
+              Phương pháp tiếp cận <span className="text-[#F76011]">RGPDCA</span> 6 bước
             </h2>
             <p className="mt-5 text-sm sm:text-base text-[#486581] leading-relaxed">
-              Không mang đến những tập lý thuyết dày cộp. Mọi bước đi đều tập trung vào việc giúp đội ngũ làm việc dễ
-              hơn, năng suất tăng lên và không làm gián đoạn kế hoạch giao hàng.
+              Là phương pháp tiếp cận và quản lý dự án khoa học, hiệu quả và bám sát vào thực tế vận hành của Doanh
+              nghiệp. Mọi bước triển khai đều tập trung vào việc giúp đội ngũ nắm bắt được hiện trạng, ý nghĩa và mục
+              tiêu của việc cải tiến; giúp họ cam kết và đồng hành trên hành trình cải tiến.
             </p>
             <ol className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
               {rgpdcaSteps.map((step, i) => (
