@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import type { Course } from "@/types";
 import LeanHouse from "@/components/LeanHouse";
+import TransformationModel from "@/components/TransformationModel";
 
 // LSSI programs live on their own page (/dao-tao-lean-six-sigma); this page lists WISE Academy's own programs.
 const LSSI_GROUP = "Lean Six Sigma chuẩn quốc tế";
@@ -180,6 +181,7 @@ function PractitionerSection({ courses }: { courses: Course[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
   return (
     <div className="space-y-10">
+      <TransformationModel />
       <LeanHouse />
       {[...PRACTITIONER_TOPICS, "Chương trình khác"].map((topic, ti) => {
         const list = courses.filter((c) => (PRACTITIONER_TOPICS.includes(c.topic || "") ? c.topic : "Chương trình khác") === topic);
