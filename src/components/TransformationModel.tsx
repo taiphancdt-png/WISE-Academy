@@ -117,7 +117,8 @@ export default function TransformationModel() {
       />
 
       <figcaption className="mt-3 text-center text-xs text-[#829AB1]">
-        Mô hình do WISE Academy biên soạn, tham khảo khung chuyển đổi của Lean Six Sigma Institute (LSSI)
+        Mô hình do WISE Academy biên soạn, tham khảo khung chuyển đổi “Lean Six Sigma Company Transformation
+        Model” của Lean Six Sigma Institute (LSSI)
       </figcaption>
     </figure>
   );
