@@ -4,6 +4,7 @@ import LeanRoadmapRace from "@/components/LeanRoadmapRace";
 import ServiceDetails from "@/components/ServiceDetails";
 import ContextCards from "@/components/ContextCards";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
+import { Building2, Cpu, Gauge, ShieldCheck, Target } from "@/components/icons";
 
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
@@ -68,6 +69,7 @@ export default function ConsultingPage() {
   const services = [
     {
       id: "01",
+      icon: Building2,
       part: "Nền móng",
       short: "Nền móng ổn định & chuẩn hóa",
       tag: "FOUNDATION · STABILITY & STANDARDIZATION",
@@ -88,6 +90,7 @@ export default function ConsultingPage() {
     },
     {
       id: "02",
+      icon: Gauge,
       part: "Trụ cột Giao hàng đúng hạn",
       short: "Cải tiến Năng suất & Thời gian giao hàng",
       tag: "PILLAR · JUST-IN-TIME · WORK ENGINEERING",
@@ -114,6 +117,7 @@ export default function ConsultingPage() {
     },
     {
       id: "03",
+      icon: ShieldCheck,
       part: "Trụ cột Chất lượng",
       short: "Chất lượng: Jidoka & Six Sigma",
       tag: "PILLAR · JIDOKA · LEAN SIX SIGMA (LSSI)",
@@ -135,6 +139,7 @@ export default function ConsultingPage() {
     },
     {
       id: "04",
+      icon: Target,
       part: "Mái nhà",
       short: "Chiến lược, văn hóa & sự tham gia",
       tag: "ROOF · LEAN LEADERSHIP · KAIZEN CULTURE",
@@ -156,6 +161,7 @@ export default function ConsultingPage() {
     },
     {
       id: "05",
+      icon: Cpu,
       part: "Số hóa",
       short: "Số hóa vận hành (Lean 4.0)",
       tag: "DIGITAL · LEAN 4.0",
@@ -226,16 +232,21 @@ export default function ConsultingPage() {
 
       {/* quick links to the five services, aligned with the header (1400px) */}
       <div className="bg-white px-4 sm:px-6 pt-14 lg:pt-16">
-        <nav aria-label="Các dịch vụ tư vấn" className="max-w-[1400px] mx-auto sm:px-2 xl:px-6 grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
-          {services.map((p) => (
-            <a
-              key={p.id}
-              href={`#dich-vu-${p.id}`}
-              className="group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]"
-            >
-              <span className="text-[#F76011]">{p.id}</span> {p.short}
-            </a>
-          ))}
+        <nav aria-label="Các dịch vụ tư vấn" className="max-w-[1400px] mx-auto sm:px-2 xl:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-8">
+          {services.map((p) => {
+            const Icon = p.icon;
+            return (
+              <a key={p.id} href={`#dich-vu-${p.id}`} className="group block text-left">
+                <span className="flex w-11 h-11 items-center justify-center rounded-full bg-[#FFF5EC] text-[#F76011] transition-colors group-hover:bg-[#F76011] group-hover:text-white">
+                  <Icon weight="duotone" className="w-6 h-6" />
+                </span>
+                <p className="mt-4 text-base font-bold text-[#002F5B] leading-snug transition-colors group-hover:text-[#C9500E]">
+                  {p.short}
+                </p>
+                <p className="mt-1.5 text-sm text-[#486581] leading-relaxed">{p.subtitle}.</p>
+              </a>
+            );
+          })}
         </nav>
       </div>
 
