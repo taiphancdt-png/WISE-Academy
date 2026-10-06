@@ -127,7 +127,7 @@ export default function ConsultingPage() {
         "Hệ thống kéo (Kanban, siêu thị, FIFO) và rút ngắn thời gian chuyển đổi (SMED, QCO)",
         "Tính toán lợi ích: năng suất tăng, nhân lực tiết kiệm, chi phí giảm, trình bày và bảo vệ phương án cải tiến",
       ],
-      image: P + "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/photo_21.webp",
+      image: "/images/services/productivity.webp",
     },
     {
       id: "03",
@@ -174,7 +174,7 @@ export default function ConsultingPage() {
         "Cấu trúc dự án Kaizen: Project Charter, nguyên tắc 4 Đúng (đúng dự án, đúng đội, đúng phạm vi, đúng kết quả), Kaizen Workbook, chỉ số QCD",
         "Phát triển con người: khung năng lực, hệ thống Đào tạo & Phát triển (L&D), TWI, kỹ năng Coaching, đào tạo giảng viên nội bộ",
       ],
-      image: P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
+      image: "/images/services/leadership.webp",
     },
     {
       id: "05",
@@ -193,7 +193,7 @@ export default function ConsultingPage() {
         "Kỹ thuật hệ thống công nghiệp (ISE) và mô phỏng trước khi đầu tư",
         "Lộ trình chuyển đổi số gắn với ưu tiên vận hành của doanh nghiệp",
       ],
-      image: P + "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/photo_19.webp",
+      image: "/images/services/digital.webp",
     },
   ];
 
