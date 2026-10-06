@@ -15182,5 +15182,353 @@
  "050bfd234a46eb62": {
   "s": "Tìm kiếm chuyên đề...",
   "t": "搜索专题……"
+ },
+ "14a50e721b1a699b": {
+  "s": "Chúng tôi có thể <span class=\"text-[#F76011]\">giúp gì</span> cho doanh nghiệp?",
+  "t": "我们能为企业<span class=\"text-[#F76011]\">提供哪些帮助</span>？"
+ },
+ "7b84b53c837d8a5c": {
+  "s": "Mỗi doanh nghiệp đến với WISE Academy từ một bối cảnh riêng. Chọn tình huống gần với doanh nghiệp của bạn để xem bối cảnh và những dịch vụ phù hợp.",
+  "t": "每家企业都带着各自的情况来到 WISE Academy。请选择与贵企业最接近的情形，查看其背景和适合的服务。"
+ },
+ "fdc28690b1eb0384": {
+  "s": "Xây dựng / chuyển đổi Hệ thống Quản lý Lean",
+  "t": "建立 / 转型精益管理体系"
+ },
+ "c887d0cde6487cea": {
+  "s": "Bối cảnh",
+  "t": "背景"
+ },
+ "125b60bbc81b2725": {
+  "s": "Doanh nghiệp đang vận hành theo mô hình quản lý truyền thống và muốn chuyển sang hệ thống Lean làm nền tảng cho vận hành xuất sắc và tăng trưởng bền vững. Việc chuyển đổi diễn ra trên hai trục: chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức), để Lean trở thành triết lý quản lý dài hạn chứ không chỉ là công cụ.",
+  "t": "企业目前采用传统管理模式，希望转向精益体系，作为卓越运营和可持续增长的基础。转型沿两条主线进行：有形转型（流程、布局、价值流）和思维转型（领导能力、组织文化），使精益成为长期的管理理念，而不仅仅是一套工具。"
+ },
+ "fe17954add9814e0": {
+  "s": "Dịch vụ phù hợp",
+  "t": "适合的服务"
+ },
+ "729fb6ef69c66ab6": {
+  "s": "Thiết kế Nhà máy Lean mới",
+  "t": "设计全新的精益工厂"
+ },
+ "2a7f01743428f96b": {
+  "s": "Doanh nghiệp chuẩn bị xây nhà máy hoặc mở dây chuyền mới và muốn thiết kế đúng ngay từ đầu theo nguyên tắc Lean: dòng chảy tối ưu, dễ mở rộng và hiệu quả từ ngày đầu vận hành, thay vì phải cải tạo tốn kém sau khi đã xây dựng.",
+  "t": "企业正准备新建工厂或开设新生产线，希望从一开始就按精益原则做好设计：流动最优、易于扩展、从投产第一天起就高效，而不是建成后再进行代价高昂的改造。"
+ },
+ "a3a21b0703e3b8fa": {
+  "s": "Tích hợp Lean & Chuyển đổi số",
+  "t": "精益与数字化转型融合"
+ },
+ "8d2c98a1443ffb0a": {
+  "s": "Doanh nghiệp đã hoặc sắp đầu tư công nghệ nhưng chưa thấy hiệu quả tương xứng, thường vì công nghệ được triển khai trên một quy trình chưa tinh gọn. Lean loại bỏ lãng phí và tối ưu quy trình, công nghệ số mang lại tự động hóa, dữ liệu thời gian thực và ra quyết định dựa trên dữ liệu.",
+  "t": "企业已经或即将投资技术，但尚未看到相应的成效，原因往往是技术被部署在尚未精益化的流程上。精益消除浪费、优化流程，数字技术则带来自动化、实时数据和基于数据的决策。"
+ },
+ "48e02bec3e53f374": {
+  "s": "Hệ thống Đào tạo & Phát triển nguồn nhân lực",
+  "t": "人力资源培训与发展体系"
+ },
+ "98a4d876c5df2f5b": {
+  "s": "Trong môi trường biến động, phức tạp và khó đoán định (VUCA), doanh nghiệp cần một hệ thống Đào tạo & Phát triển (L&D) bài bản: năng lực cốt lõi gắn với chiến lược, đội ngũ lãnh đạo kế cận vững vàng, nhân viên gắn kết và một văn hóa cải tiến liên tục.",
+  "t": "在多变、复杂且难以预测（VUCA）的环境中，企业需要一套系统的培训与发展（L&D）体系：与战略挂钩的核心能力、稳固的后备领导梯队、敬业的员工以及持续改善的文化。"
+ },
+ "102a815dd22261f7": {
+  "s": "5 dịch vụ theo <span class=\"text-[#F76011]\">Ngôi nhà Lean</span>",
+  "t": "基于<span class=\"text-[#F76011]\">精益屋</span>的 5 项服务"
+ },
+ "f9f04480a35f8708": {
+  "s": "Phương pháp luận của WISE Academy đi theo Ngôi nhà Lean: nền móng ổn định, hai trụ cột giao hàng đúng hạn và chất lượng, mái nhà là chiến lược và văn hóa, tất cả được kết nối bằng dữ liệu số.",
+  "t": "WISE Academy 的方法论遵循精益屋：稳固的基础，准时交付与质量两大支柱，以战略和文化为屋顶，并通过数字化数据将一切连接起来。"
+ },
+ "4623c8c579a23d89": {
+  "s": "Năm dịch vụ tư vấn theo Ngôi nhà Lean",
+  "t": "基于精益屋的五项咨询服务"
+ },
+ "157ede4730e25fa4": {
+  "s": "Mái nhà",
+  "t": "屋顶"
+ },
+ "dd40dd22c7f6ac4e": {
+  "s": "Chiến lược, văn hóa & sự tham gia",
+  "t": "战略、文化与全员参与"
+ },
+ "2094e3c786bfc36b": {
+  "s": "Lãnh đạo Lean",
+  "t": "精益领导力"
+ },
+ "96f2ab3aa917c63f": {
+  "s": "Trụ cột Giao hàng đúng hạn",
+  "t": "准时交付支柱"
+ },
+ "1dcd46123f51db1b": {
+  "s": "Năng suất & Lead time",
+  "t": "生产率与交付周期"
+ },
+ "e125d8a0ebfe1d6c": {
+  "s": "Con người là trung tâm: mọi người cùng tham gia cải tiến",
+  "t": "以人为本：人人参与改善"
+ },
+ "aa8e1de392537eda": {
+  "s": "Trụ cột Chất lượng",
+  "t": "质量支柱"
+ },
+ "5bff3567b1d0d198": {
+  "s": "Chất lượng: Jidoka & Six Sigma",
+  "t": "质量：自働化与六西格玛"
+ },
+ "849c2d3992e29933": {
+  "s": "Nền móng",
+  "t": "基础"
+ },
+ "a7ef6df36c91b686": {
+  "s": "Nền móng ổn định & chuẩn hóa",
+  "t": "稳固的基础与标准化"
+ },
+ "a9ac4c83104b7bbe": {
+  "s": "Quản lý trực quan",
+  "t": "目视化管理"
+ },
+ "954d98e5215ff3f2": {
+  "s": "Công việc tiêu chuẩn",
+  "t": "标准作业"
+ },
+ "2ed04a6d368b49bc": {
+  "s": "Số hóa",
+  "t": "数字化"
+ },
+ "348c419bdd96ef2e": {
+  "s": "Số hóa vận hành (Lean 4.0)",
+  "t": "运营数字化（Lean 4.0）"
+ },
+ "9443ed6c8090bed4": {
+  "s": "Dữ liệu thời gian thực",
+  "t": "实时数据"
+ },
+ "f42630f1ed4831df": {
+  "s": "Bấm vào từng phần của ngôi nhà để xem chi tiết dịch vụ",
+  "t": "点击屋子的任一部分即可查看服务详情"
+ },
+ "f1d0cb362689d440": {
+  "s": "Xây nền móng ổn định & chuẩn hóa",
+  "t": "打造稳固、标准化的基础"
+ },
+ "7a7a857edd98a46b": {
+  "s": "<strong class=\"text-[#102A43]\">Không có nền móng ổn định thì không trụ cột nào đứng vững.</strong> Trước khi tăng tốc hay nâng chất lượng, quy trình phải ổn định và được chuẩn hóa: nơi làm việc ngăn nắp, mọi bất thường được nhìn thấy ngay, thiết bị luôn sẵn sàng và mỗi người làm việc theo cùng một chuẩn. WISE Academy cùng doanh nghiệp xây nền móng này ngay tại hiện trường, thí điểm ở khu vực mô hình rồi nhân rộng.",
+  "t": "<strong class=\"text-[#102A43]\">没有稳固的基础，任何支柱都无法屹立。</strong>在提速或提升质量之前，流程必须稳定并标准化：工作场所整洁有序，任何异常一目了然，设备随时可用，每个人都按同一标准工作。WISE Academy 与企业一起在现场打造这一基础，先在样板区试点，再全面推广。"
+ },
+ "6660f587fac6c9c0": {
+  "s": "Công cụ & kỹ thuật",
+  "t": "工具与技术"
+ },
+ "7319442453189887": {
+  "s": "Quản lý hằng ngày",
+  "t": "日常管理"
+ },
+ "ab931e4132f78049": {
+  "s": "8 lãng phí",
+  "t": "8 大浪费"
+ },
+ "f3d01daa28cf6cc2": {
+  "s": "5S: tổ chức nơi làm việc ngăn nắp, an toàn và dễ duy trì",
+  "t": "5S：整洁、安全且易于保持的工作场所"
+ },
+ "de87c3e38843b066": {
+  "s": "Quản lý trực quan: bảng hiện trường, tín hiệu bất thường, quản lý bằng mắt",
+  "t": "目视化管理：现场看板、异常信号、一目了然的管理"
+ },
+ "856741926620dffa": {
+  "s": "Công việc tiêu chuẩn (Standardized Work) và hướng dẫn thao tác chuẩn",
+  "t": "标准作业与标准作业指导书"
+ },
+ "11a9220f3b8710f3": {
+  "s": "Bảo trì năng suất toàn diện (TPM), bảo trì tự quản và cải thiện OEE",
+  "t": "全员生产维护（TPM）、自主维护与 OEE 提升"
+ },
+ "3f2f4e75dda6e06e": {
+  "s": "Cân bằng tải và sản xuất đều đặn (Heijunka)",
+  "t": "负荷均衡与平准化生产（Heijunka）"
+ },
+ "bf0466e57c948a1d": {
+  "s": "Hệ thống quản lý hằng ngày: họp đầu ca, bảng KPI, Gemba Walk",
+  "t": "日常管理体系：班前会、KPI 看板、现场巡视（Gemba Walk）"
+ },
+ "27dbb9cb34a9a134": {
+  "s": "Nhận diện và loại bỏ 8 lãng phí, ổn định 4M (con người, máy móc, vật tư, phương pháp)",
+  "t": "识别并消除 8 大浪费，稳定 4M（人、机、料、法）"
+ },
+ "5ad50dd757cc34c5": {
+  "s": "Năng suất & Lead time: giao hàng đúng hạn",
+  "t": "生产率与交付周期：准时交付"
+ },
+ "48cb175620897367": {
+  "s": "<strong class=\"text-[#102A43]\">Làm đúng thứ khách hàng cần, đúng lúc, đúng số lượng, với ít lãng phí nhất.</strong> Trụ cột Just-in-Time giúp vật tư và thông tin chảy liên tục qua chuỗi giá trị. WISE Academy đo lead time thực tế, tìm điểm nghẽn và thiết kế lại dòng chảy để tăng năng suất, giảm tồn kho dở dang và rút ngắn thời gian giao hàng, kể cả cho nhà máy và dây chuyền mới ngay từ khâu thiết kế.",
+  "t": "<strong class=\"text-[#102A43]\">在客户需要的时候，按正确的数量生产客户需要的东西，浪费最少。</strong>准时化（Just-in-Time）支柱让物料和信息在价值流中连续流动。WISE Academy 测量实际交付周期，找出瓶颈并重新设计流动，以提高生产率、减少在制品并缩短交付时间，也包括从设计阶段就着手的新工厂和新生产线。"
+ },
+ "772116a1d2990727": {
+  "s": "Hệ thống kéo",
+  "t": "拉动系统"
+ },
+ "0ac0388ba1b5e546": {
+  "s": "Sơ đồ chuỗi giá trị hiện tại và tương lai (VSM): đo lead time, tồn kho và điểm nghẽn",
+  "t": "现状与未来价值流图（VSM）：测量交付周期、库存和瓶颈"
+ },
+ "55d06f2e6a325ae3": {
+  "s": "Tính nhịp sản xuất (Takt time) và cân bằng chuyền bằng biểu đồ Yamazumi",
+  "t": "计算节拍时间（Takt time），用山积图（Yamazumi）平衡生产线"
+ },
+ "3884ad628b48f2d4": {
+  "s": "Work Engineering: nghiên cứu thao tác, nguyên tắc ECRS, thời gian tiêu chuẩn",
+  "t": "工作研究：动作研究、ECRS 原则、标准工时"
+ },
+ "1c47ce16b9d5672d": {
+  "s": "Thiết kế mặt bằng và chuyền theo dòng chảy: Lean Layout, Lean Cell, dòng một sản phẩm",
+  "t": "按流动设计布局和生产线：精益布局、精益单元、单件流"
+ },
+ "789b373fac764041": {
+  "s": "Hệ thống kéo: Kanban, siêu thị, FIFO",
+  "t": "拉动系统：看板、超市、先进先出（FIFO）"
+ },
+ "2002e2a1da8282bb": {
+  "s": "Rút ngắn thời gian chuyển đổi mã hàng và khuôn, dụng cụ (QCO, SMED)",
+  "t": "缩短换款、换模和换工装时间（QCO、SMED）"
+ },
+ "2b18cc5eeb6a3cc8": {
+  "s": "Thiết kế dòng chảy, luồng vật tư và khả năng mở rộng cho nhà máy, dây chuyền mới",
+  "t": "为新工厂和新生产线设计流动、物料路线和扩展能力"
+ },
+ "c69ae171700b2119": {
+  "s": "Chất lượng ngay tại nguồn với Jidoka & Six Sigma",
+  "t": "以自働化与六西格玛实现源头质量"
+ },
+ "4644e40467532b8a": {
+  "s": "<strong class=\"text-[#102A43]\">Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau.</strong> Trụ cột Jidoka dừng lại khi có bất thường để xử lý tận gốc, kết hợp bộ công cụ Six Sigma để giảm biến động bằng dữ liệu. Đội ngũ được huấn luyện giải quyết vấn đề có cấu trúc và đủ năng lực tự dẫn dắt dự án cải tiến chất lượng, theo chuẩn chứng nhận quốc tế LSSI.",
+  "t": "<strong class=\"text-[#102A43]\">不接受缺陷，不制造缺陷，不传递缺陷。</strong>自働化（Jidoka）支柱在出现异常时停下来从根本上解决问题，并结合六西格玛工具用数据减少波动。团队接受结构化问题解决训练，能够按照 LSSI 国际认证标准自主主导质量改善项目。"
+ },
+ "f89da29ed228d611": {
+  "s": "Jidoka: phát hiện và dừng khi có bất thường, kiểm soát chất lượng tại nguồn",
+  "t": "自働化：发现异常即停止，在源头控制质量"
+ },
+ "feb771fda06421aa": {
+  "s": "Chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
+  "t": "针对工序和产品的防错（Poka-Yoke）"
+ },
+ "7bb9637749c66336": {
+  "s": "Giải quyết vấn đề có cấu trúc: PDCA, A3, 8D, 5 Why, biểu đồ xương cá",
+  "t": "结构化问题解决：PDCA、A3、8D、5 Why、鱼骨图"
+ },
+ "e8d7a2d1ed986b34": {
+  "s": "Dự án Six Sigma theo DMAIC (Yellow, Green, Black Belt chuẩn LSSI)",
+  "t": "按 DMAIC 开展六西格玛项目（LSSI 标准的黄带、绿带、黑带）"
+ },
+ "d087314a34528432": {
+  "s": "Phân tích hệ thống đo (MSA, Gage R&R), năng lực quy trình (Cp, Cpk), kiểm soát quá trình bằng thống kê (SPC)",
+  "t": "测量系统分析（MSA、Gage R&R）、过程能力（Cp、Cpk）、统计过程控制（SPC）"
+ },
+ "0aa88fd72fad8810": {
+  "s": "FMEA, phân tích Pareto, kiểm định giả thuyết, thiết kế thực nghiệm (DOE)",
+  "t": "FMEA、柏拉图分析、假设检验、试验设计（DOE）"
+ },
+ "263fd4035f726ba0": {
+  "s": "Quản lý chất lượng toàn diện (TQM) và hệ thống chỉ số chất lượng (Quality KPIs)",
+  "t": "全面质量管理（TQM）与质量指标体系（Quality KPIs）"
+ },
+ "8eb006a54fa80512": {
+  "s": "Chiến lược, văn hóa & sự tham gia của mọi người",
+  "t": "战略、文化与全员参与"
+ },
+ "e0fc3b9116c25aa9": {
+  "s": "<strong class=\"text-[#102A43]\">Một mục tiêu chung từ lãnh đạo đến hiện trường, và mỗi người đều được trao quyền cải tiến.</strong> Mái nhà là lý do của mọi cải tiến: đáp ứng khách hàng với chất lượng cao nhất, chi phí thấp nhất và thời gian ngắn nhất. WISE Academy giúp lãnh đạo triển khai chiến lược thành mục tiêu cho từng cấp, đồng thời xây dựng cơ chế để mọi nhân viên cùng tham gia (Involvement): đề xuất cải tiến, nhóm Kaizen, chia sẻ và ghi nhận, để cải tiến liên tục trở thành văn hóa.",
+  "t": "<strong class=\"text-[#102A43]\">从领导层到现场的共同目标，人人都被授权去改善。</strong>屋顶是一切改善的意义所在：以最高的质量、最低的成本和最短的时间满足客户。WISE Academy 帮助领导者将战略分解为各层级的目标，同时建立让每位员工都参与（Involvement）的机制：改善提案、改善小组、分享与认可，使持续改善成为企业文化。"
+ },
+ "99796ca7b1035c9c": {
+  "s": "Đề xuất cải tiến",
+  "t": "改善提案"
+ },
+ "40a46069a13c4df5": {
+  "s": "Nhóm Kaizen / QCC",
+  "t": "改善小组 / QCC"
+ },
+ "b684037c35606d74": {
+  "s": "Hoạch định và triển khai chiến lược (Hoshin Kanri), Catch-ball, ma trận X",
+  "t": "方针管理（Hoshin Kanri）、Catch-ball、X 矩阵"
+ },
+ "23c5d6008d3f53bd": {
+  "s": "Lãnh đạo Lean: công việc tiêu chuẩn của lãnh đạo (Leader Standard Work), Gemba Walk",
+  "t": "精益领导力：领导者标准作业（Leader Standard Work）、现场巡视"
+ },
+ "469435dab65339bb": {
+  "s": "Sự tham gia của mọi người (Involvement): hệ thống đề xuất cải tiến, nhóm Kaizen, QCC, ghi nhận và khen thưởng",
+  "t": "全员参与（Involvement）：改善提案制度、改善小组、QCC、认可与奖励"
+ },
+ "618e2ca8520b07c9": {
+  "s": "Kaizen Event và chương trình cải tiến toàn công ty",
+  "t": "改善活动（Kaizen Event）与全公司改善计划"
+ },
+ "de4a256729757f2f": {
+  "s": "Phát triển con người: TWI, Coaching Kata, đào tạo giảng viên nội bộ (Train-the-Trainer)",
+  "t": "人才培养：TWI、改善套路辅导（Coaching Kata）、内部讲师培养（Train-the-Trainer）"
+ },
+ "b1d81cc35bf53eb1": {
+  "s": "Khung năng lực và hệ thống Đào tạo & Phát triển (L&D) gắn với chiến lược",
+  "t": "与战略挂钩的能力框架和培训与发展（L&D）体系"
+ },
+ "c442c8f1e65118b3": {
+  "s": "Lộ trình chuyển đổi Lean 5 giai đoạn và hệ thống chỉ số Lean KPIs",
+  "t": "5 阶段精益转型路线图与精益指标体系（Lean KPIs）"
+ },
+ "811fdb5781884f7f": {
+  "s": "Số hóa vận hành trên nền Lean (Lean 4.0)",
+  "t": "基于精益的运营数字化（Lean 4.0）"
+ },
+ "afdb89ac1649f548": {
+  "s": "<strong class=\"text-[#102A43]\">Tinh gọn trước, số hóa sau, để mỗi khoản đầu tư công nghệ tạo ra giá trị thật.</strong> Công nghệ chỉ phát huy khi được đặt trên một quy trình đã tinh gọn. WISE Academy giúp doanh nghiệp số hóa các thực hành Lean: dữ liệu vận hành theo thời gian thực, quản lý trực quan trên màn hình, cảnh báo bất thường tức thời và ra quyết định dựa trên dữ liệu.",
+  "t": "<strong class=\"text-[#102A43]\">先精益，后数字化，让每一笔技术投资都创造真正的价值。</strong>技术只有建立在已经精益化的流程之上才能发挥作用。WISE Academy 帮助企业将精益实践数字化：实时运营数据、屏幕上的目视化管理、即时异常警报以及基于数据的决策。"
+ },
+ "2a8a2e171e359d09": {
+  "s": "OEE số",
+  "t": "数字化 OEE"
+ },
+ "aaa4ee96f1cd273c": {
+  "s": "Hệ thống quản lý dữ liệu vận hành theo thời gian thực: năng suất, OEE, chất lượng",
+  "t": "实时运营数据管理：生产率、OEE、质量"
+ },
+ "4e9d59a9e5caaa2a": {
+  "s": "Quản lý trực quan số: bảng điều khiển (dashboard) tại hiện trường và cho lãnh đạo",
+  "t": "数字化目视化管理：面向现场和领导层的仪表板（dashboard）"
+ },
+ "288c254079714cff": {
+  "s": "Kết nối máy móc (IoT), thu thập dữ liệu tự động và cảnh báo bất thường",
+  "t": "设备联网（IoT）、自动数据采集与异常警报"
+ },
+ "b326e5a4071730dd": {
+  "s": "Ứng dụng AI và tự động hóa quy trình (RPA) cho các bước lặp lại",
+  "t": "将 AI 和流程自动化（RPA）应用于重复性步骤"
+ },
+ "79ffc96fac0375cf": {
+  "s": "Kỹ thuật hệ thống công nghiệp (ISE) và mô phỏng trước khi đầu tư",
+  "t": "工业与系统工程（ISE）及投资前的仿真模拟"
+ },
+ "0ab414fae7057496": {
+  "s": "Lộ trình chuyển đổi số gắn với ưu tiên vận hành của doanh nghiệp",
+  "t": "与企业运营优先事项挂钩的数字化转型路线图"
+ },
+ "2e0256f2bb9aba4d": {
+  "s": "<a href=\"#dich-vu-01\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">01</span> Nền móng ổn định &amp; chuẩn hóa</a><a href=\"#dich-vu-02\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">02</span> Năng suất &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">03</span> Chất lượng: Jidoka &amp; Six Sigma</a><a href=\"#dich-vu-04\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">04</span> Chiến lược, văn hóa &amp; sự tham gia</a><a href=\"#dich-vu-05\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">05</span> Số hóa vận hành (Lean 4.0)</a>",
+  "t": "<a href=\"#dich-vu-01\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">01</span> 稳固的基础与标准化</a><a href=\"#dich-vu-02\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">02</span> 生产率与交付周期</a><a href=\"#dich-vu-03\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">03</span> 质量：自働化与六西格玛</a><a href=\"#dich-vu-04\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">04</span> 战略、文化与全员参与</a><a href=\"#dich-vu-05\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">05</span> 运营数字化（Lean 4.0）</a>"
+ },
+ "468475f24f02efbe": {
+  "s": "<a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a><a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Năng suất &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Chất lượng</a><a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Chiến lược &amp; Văn hóa</a>",
+  "t": "<a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · 基础</a><a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · 生产率与交付周期</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · 质量</a><a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · 战略与文化</a>"
+ },
+ "7bbfd1fb28e3708a": {
+  "s": "<a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Năng suất &amp; Lead time</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a><a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Số hóa</a>",
+  "t": "<a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · 生产率与交付周期</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · 基础</a><a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · 数字化</a>"
+ },
+ "8aa98269f80fbc81": {
+  "s": "<a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Số hóa</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a>",
+  "t": "<a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · 数字化</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · 基础</a>"
+ },
+ "26208fb86bef442e": {
+  "s": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Chiến lược &amp; Văn hóa</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Chất lượng</a>",
+  "t": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · 战略与文化</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · 质量</a>"
  }
 }

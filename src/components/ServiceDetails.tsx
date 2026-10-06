@@ -17,7 +17,7 @@ export default function ServiceDetails({
   id: string;
   listTitle: string;
   items: string[];
-  brochure: string;
+  brochure?: string;
   col: "lg:col-start-1" | "lg:col-start-2";
   children: React.ReactNode;
 }) {
@@ -39,13 +39,15 @@ export default function ServiceDetails({
           {open ? "Thu gọn" : "Xem chi tiết"}
           <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
         </button>
-        <a
-          href={brochure}
-          download={`WISE-Academy-dich-vu-${id}-brochure.pdf`}
-          className="inline-flex items-center gap-2 rounded-full border-2 border-[#002F5B] px-6 py-2 text-sm font-semibold text-[#002F5B] transition-colors hover:bg-[#002F5B] hover:text-white"
-        >
-          <Download className="w-4 h-4" /> Tải brochure
-        </a>
+        {brochure && (
+          <a
+            href={brochure}
+            download={`WISE-Academy-dich-vu-${id}-brochure.pdf`}
+            className="inline-flex items-center gap-2 rounded-full border-2 border-[#002F5B] px-6 py-2 text-sm font-semibold text-[#002F5B] transition-colors hover:bg-[#002F5B] hover:text-white"
+          >
+            <Download className="w-4 h-4" /> Tải brochure
+          </a>
+        )}
       </div>
     </div>
 

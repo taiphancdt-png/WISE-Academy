@@ -15182,5 +15182,353 @@
  "050bfd234a46eb62": {
   "s": "Tìm kiếm chuyên đề...",
   "t": "Search topics..."
+ },
+ "14a50e721b1a699b": {
+  "s": "Chúng tôi có thể <span class=\"text-[#F76011]\">giúp gì</span> cho doanh nghiệp?",
+  "t": "How can we <span class=\"text-[#F76011]\">help</span> your business?"
+ },
+ "7b84b53c837d8a5c": {
+  "s": "Mỗi doanh nghiệp đến với WISE Academy từ một bối cảnh riêng. Chọn tình huống gần với doanh nghiệp của bạn để xem bối cảnh và những dịch vụ phù hợp.",
+  "t": "Every business comes to WISE Academy from its own situation. Choose the one closest to yours to see the context and the services that fit."
+ },
+ "fdc28690b1eb0384": {
+  "s": "Xây dựng / chuyển đổi Hệ thống Quản lý Lean",
+  "t": "Building / transforming a Lean Management System"
+ },
+ "c887d0cde6487cea": {
+  "s": "Bối cảnh",
+  "t": "Context"
+ },
+ "125b60bbc81b2725": {
+  "s": "Doanh nghiệp đang vận hành theo mô hình quản lý truyền thống và muốn chuyển sang hệ thống Lean làm nền tảng cho vận hành xuất sắc và tăng trưởng bền vững. Việc chuyển đổi diễn ra trên hai trục: chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức), để Lean trở thành triết lý quản lý dài hạn chứ không chỉ là công cụ.",
+  "t": "The business runs on a traditional management model and wants to move to a Lean system as the foundation for operational excellence and sustainable growth. The transformation runs on two axes: tangible transformation (processes, layout, value streams) and mindset transformation (leadership capability, organisational culture), so that Lean becomes a long-term management philosophy rather than just a set of tools."
+ },
+ "fe17954add9814e0": {
+  "s": "Dịch vụ phù hợp",
+  "t": "Services that fit"
+ },
+ "729fb6ef69c66ab6": {
+  "s": "Thiết kế Nhà máy Lean mới",
+  "t": "Designing a new Lean factory"
+ },
+ "2a7f01743428f96b": {
+  "s": "Doanh nghiệp chuẩn bị xây nhà máy hoặc mở dây chuyền mới và muốn thiết kế đúng ngay từ đầu theo nguyên tắc Lean: dòng chảy tối ưu, dễ mở rộng và hiệu quả từ ngày đầu vận hành, thay vì phải cải tạo tốn kém sau khi đã xây dựng.",
+  "t": "The business is preparing to build a factory or open a new line and wants to get the design right from the start on Lean principles: optimal flow, easy to scale and efficient from day one, instead of costly rework after construction."
+ },
+ "a3a21b0703e3b8fa": {
+  "s": "Tích hợp Lean & Chuyển đổi số",
+  "t": "Integrating Lean & digital transformation"
+ },
+ "8d2c98a1443ffb0a": {
+  "s": "Doanh nghiệp đã hoặc sắp đầu tư công nghệ nhưng chưa thấy hiệu quả tương xứng, thường vì công nghệ được triển khai trên một quy trình chưa tinh gọn. Lean loại bỏ lãng phí và tối ưu quy trình, công nghệ số mang lại tự động hóa, dữ liệu thời gian thực và ra quyết định dựa trên dữ liệu.",
+  "t": "The business has invested, or is about to invest, in technology but has not yet seen matching results, often because the technology was deployed on a process that was not yet lean. Lean removes waste and optimises the process; digital technology brings automation, real-time data and data-driven decisions."
+ },
+ "48e02bec3e53f374": {
+  "s": "Hệ thống Đào tạo & Phát triển nguồn nhân lực",
+  "t": "A Learning & Development system for your people"
+ },
+ "98a4d876c5df2f5b": {
+  "s": "Trong môi trường biến động, phức tạp và khó đoán định (VUCA), doanh nghiệp cần một hệ thống Đào tạo & Phát triển (L&D) bài bản: năng lực cốt lõi gắn với chiến lược, đội ngũ lãnh đạo kế cận vững vàng, nhân viên gắn kết và một văn hóa cải tiến liên tục.",
+  "t": "In a volatile, complex and uncertain (VUCA) environment, the business needs a structured Learning & Development (L&D) system: core competencies linked to strategy, a strong succession of leaders, engaged employees and a culture of continuous improvement."
+ },
+ "102a815dd22261f7": {
+  "s": "5 dịch vụ theo <span class=\"text-[#F76011]\">Ngôi nhà Lean</span>",
+  "t": "5 services built on the <span class=\"text-[#F76011]\">Lean House</span>"
+ },
+ "f9f04480a35f8708": {
+  "s": "Phương pháp luận của WISE Academy đi theo Ngôi nhà Lean: nền móng ổn định, hai trụ cột giao hàng đúng hạn và chất lượng, mái nhà là chiến lược và văn hóa, tất cả được kết nối bằng dữ liệu số.",
+  "t": "WISE Academy's methodology follows the Lean House: a stable foundation, two pillars of on-time delivery and quality, and a roof of strategy and culture, all connected by digital data."
+ },
+ "4623c8c579a23d89": {
+  "s": "Năm dịch vụ tư vấn theo Ngôi nhà Lean",
+  "t": "Five consulting services built on the Lean House"
+ },
+ "157ede4730e25fa4": {
+  "s": "Mái nhà",
+  "t": "Roof"
+ },
+ "dd40dd22c7f6ac4e": {
+  "s": "Chiến lược, văn hóa & sự tham gia",
+  "t": "Strategy, culture & involvement"
+ },
+ "2094e3c786bfc36b": {
+  "s": "Lãnh đạo Lean",
+  "t": "Lean leadership"
+ },
+ "96f2ab3aa917c63f": {
+  "s": "Trụ cột Giao hàng đúng hạn",
+  "t": "On-time delivery pillar"
+ },
+ "1dcd46123f51db1b": {
+  "s": "Năng suất & Lead time",
+  "t": "Productivity & Lead time"
+ },
+ "e125d8a0ebfe1d6c": {
+  "s": "Con người là trung tâm: mọi người cùng tham gia cải tiến",
+  "t": "People at the centre: everyone takes part in improvement"
+ },
+ "aa8e1de392537eda": {
+  "s": "Trụ cột Chất lượng",
+  "t": "Quality pillar"
+ },
+ "5bff3567b1d0d198": {
+  "s": "Chất lượng: Jidoka & Six Sigma",
+  "t": "Quality: Jidoka & Six Sigma"
+ },
+ "849c2d3992e29933": {
+  "s": "Nền móng",
+  "t": "Foundation"
+ },
+ "a7ef6df36c91b686": {
+  "s": "Nền móng ổn định & chuẩn hóa",
+  "t": "Stable foundation & standardization"
+ },
+ "a9ac4c83104b7bbe": {
+  "s": "Quản lý trực quan",
+  "t": "Visual management"
+ },
+ "954d98e5215ff3f2": {
+  "s": "Công việc tiêu chuẩn",
+  "t": "Standard work"
+ },
+ "2ed04a6d368b49bc": {
+  "s": "Số hóa",
+  "t": "Digital"
+ },
+ "348c419bdd96ef2e": {
+  "s": "Số hóa vận hành (Lean 4.0)",
+  "t": "Digital operations (Lean 4.0)"
+ },
+ "9443ed6c8090bed4": {
+  "s": "Dữ liệu thời gian thực",
+  "t": "Real-time data"
+ },
+ "f42630f1ed4831df": {
+  "s": "Bấm vào từng phần của ngôi nhà để xem chi tiết dịch vụ",
+  "t": "Click any part of the house to see the service in detail"
+ },
+ "f1d0cb362689d440": {
+  "s": "Xây nền móng ổn định & chuẩn hóa",
+  "t": "Building a stable, standardized foundation"
+ },
+ "7a7a857edd98a46b": {
+  "s": "<strong class=\"text-[#102A43]\">Không có nền móng ổn định thì không trụ cột nào đứng vững.</strong> Trước khi tăng tốc hay nâng chất lượng, quy trình phải ổn định và được chuẩn hóa: nơi làm việc ngăn nắp, mọi bất thường được nhìn thấy ngay, thiết bị luôn sẵn sàng và mỗi người làm việc theo cùng một chuẩn. WISE Academy cùng doanh nghiệp xây nền móng này ngay tại hiện trường, thí điểm ở khu vực mô hình rồi nhân rộng.",
+  "t": "<strong class=\"text-[#102A43]\">Without a stable foundation, no pillar can stand.</strong> Before speeding up or raising quality, processes must be stable and standardized: a tidy workplace, every abnormality visible at once, equipment always ready and everyone working to the same standard. WISE Academy builds this foundation with you on the shop floor, piloting in a model area and then scaling up."
+ },
+ "6660f587fac6c9c0": {
+  "s": "Công cụ & kỹ thuật",
+  "t": "Tools & techniques"
+ },
+ "7319442453189887": {
+  "s": "Quản lý hằng ngày",
+  "t": "Daily management"
+ },
+ "ab931e4132f78049": {
+  "s": "8 lãng phí",
+  "t": "8 wastes"
+ },
+ "f3d01daa28cf6cc2": {
+  "s": "5S: tổ chức nơi làm việc ngăn nắp, an toàn và dễ duy trì",
+  "t": "5S: a tidy, safe workplace that is easy to sustain"
+ },
+ "de87c3e38843b066": {
+  "s": "Quản lý trực quan: bảng hiện trường, tín hiệu bất thường, quản lý bằng mắt",
+  "t": "Visual management: shop-floor boards, abnormality signals, management by sight"
+ },
+ "856741926620dffa": {
+  "s": "Công việc tiêu chuẩn (Standardized Work) và hướng dẫn thao tác chuẩn",
+  "t": "Standardized Work and standard operating instructions"
+ },
+ "11a9220f3b8710f3": {
+  "s": "Bảo trì năng suất toàn diện (TPM), bảo trì tự quản và cải thiện OEE",
+  "t": "Total Productive Maintenance (TPM), autonomous maintenance and OEE improvement"
+ },
+ "3f2f4e75dda6e06e": {
+  "s": "Cân bằng tải và sản xuất đều đặn (Heijunka)",
+  "t": "Load levelling and steady production (Heijunka)"
+ },
+ "bf0466e57c948a1d": {
+  "s": "Hệ thống quản lý hằng ngày: họp đầu ca, bảng KPI, Gemba Walk",
+  "t": "Daily management system: start-of-shift meetings, KPI boards, Gemba Walks"
+ },
+ "27dbb9cb34a9a134": {
+  "s": "Nhận diện và loại bỏ 8 lãng phí, ổn định 4M (con người, máy móc, vật tư, phương pháp)",
+  "t": "Identifying and eliminating the 8 wastes, stabilising the 4Ms (man, machine, material, method)"
+ },
+ "5ad50dd757cc34c5": {
+  "s": "Năng suất & Lead time: giao hàng đúng hạn",
+  "t": "Productivity & lead time: delivering on time"
+ },
+ "48cb175620897367": {
+  "s": "<strong class=\"text-[#102A43]\">Làm đúng thứ khách hàng cần, đúng lúc, đúng số lượng, với ít lãng phí nhất.</strong> Trụ cột Just-in-Time giúp vật tư và thông tin chảy liên tục qua chuỗi giá trị. WISE Academy đo lead time thực tế, tìm điểm nghẽn và thiết kế lại dòng chảy để tăng năng suất, giảm tồn kho dở dang và rút ngắn thời gian giao hàng, kể cả cho nhà máy và dây chuyền mới ngay từ khâu thiết kế.",
+  "t": "<strong class=\"text-[#102A43]\">Make exactly what the customer needs, when they need it, in the right quantity, with the least waste.</strong> The Just-in-Time pillar keeps materials and information flowing continuously through the value stream. WISE Academy measures the real lead time, finds the bottlenecks and redesigns the flow to raise productivity, cut work-in-progress and shorten delivery times, including for new factories and lines right from the design stage."
+ },
+ "772116a1d2990727": {
+  "s": "Hệ thống kéo",
+  "t": "Pull system"
+ },
+ "0ac0388ba1b5e546": {
+  "s": "Sơ đồ chuỗi giá trị hiện tại và tương lai (VSM): đo lead time, tồn kho và điểm nghẽn",
+  "t": "Current- and future-state value stream mapping (VSM): measuring lead time, inventory and bottlenecks"
+ },
+ "55d06f2e6a325ae3": {
+  "s": "Tính nhịp sản xuất (Takt time) và cân bằng chuyền bằng biểu đồ Yamazumi",
+  "t": "Takt time calculation and line balancing with Yamazumi charts"
+ },
+ "3884ad628b48f2d4": {
+  "s": "Work Engineering: nghiên cứu thao tác, nguyên tắc ECRS, thời gian tiêu chuẩn",
+  "t": "Work Engineering: motion study, ECRS principles, standard times"
+ },
+ "1c47ce16b9d5672d": {
+  "s": "Thiết kế mặt bằng và chuyền theo dòng chảy: Lean Layout, Lean Cell, dòng một sản phẩm",
+  "t": "Flow-based layout and line design: Lean Layout, Lean Cell, one-piece flow"
+ },
+ "789b373fac764041": {
+  "s": "Hệ thống kéo: Kanban, siêu thị, FIFO",
+  "t": "Pull systems: Kanban, supermarkets, FIFO"
+ },
+ "2002e2a1da8282bb": {
+  "s": "Rút ngắn thời gian chuyển đổi mã hàng và khuôn, dụng cụ (QCO, SMED)",
+  "t": "Shorter style, die and tool changeovers (QCO, SMED)"
+ },
+ "2b18cc5eeb6a3cc8": {
+  "s": "Thiết kế dòng chảy, luồng vật tư và khả năng mở rộng cho nhà máy, dây chuyền mới",
+  "t": "Flow, material routing and scalability design for new factories and lines"
+ },
+ "c69ae171700b2119": {
+  "s": "Chất lượng ngay tại nguồn với Jidoka & Six Sigma",
+  "t": "Quality at the source with Jidoka & Six Sigma"
+ },
+ "4644e40467532b8a": {
+  "s": "<strong class=\"text-[#102A43]\">Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau.</strong> Trụ cột Jidoka dừng lại khi có bất thường để xử lý tận gốc, kết hợp bộ công cụ Six Sigma để giảm biến động bằng dữ liệu. Đội ngũ được huấn luyện giải quyết vấn đề có cấu trúc và đủ năng lực tự dẫn dắt dự án cải tiến chất lượng, theo chuẩn chứng nhận quốc tế LSSI.",
+  "t": "<strong class=\"text-[#102A43]\">Do not accept defects, do not make defects, do not pass defects on.</strong> The Jidoka pillar stops at any abnormality to fix it at the root, combined with the Six Sigma toolkit to reduce variation with data. Teams are trained in structured problem solving and become able to lead quality improvement projects themselves, to the international LSSI certification standard."
+ },
+ "f89da29ed228d611": {
+  "s": "Jidoka: phát hiện và dừng khi có bất thường, kiểm soát chất lượng tại nguồn",
+  "t": "Jidoka: detect and stop at abnormalities, control quality at the source"
+ },
+ "feb771fda06421aa": {
+  "s": "Chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
+  "t": "Error-proofing (Poka-Yoke) for processes and products"
+ },
+ "7bb9637749c66336": {
+  "s": "Giải quyết vấn đề có cấu trúc: PDCA, A3, 8D, 5 Why, biểu đồ xương cá",
+  "t": "Structured problem solving: PDCA, A3, 8D, 5 Why, fishbone diagrams"
+ },
+ "e8d7a2d1ed986b34": {
+  "s": "Dự án Six Sigma theo DMAIC (Yellow, Green, Black Belt chuẩn LSSI)",
+  "t": "Six Sigma projects using DMAIC (Yellow, Green, Black Belt to the LSSI standard)"
+ },
+ "d087314a34528432": {
+  "s": "Phân tích hệ thống đo (MSA, Gage R&R), năng lực quy trình (Cp, Cpk), kiểm soát quá trình bằng thống kê (SPC)",
+  "t": "Measurement system analysis (MSA, Gage R&R), process capability (Cp, Cpk), statistical process control (SPC)"
+ },
+ "0aa88fd72fad8810": {
+  "s": "FMEA, phân tích Pareto, kiểm định giả thuyết, thiết kế thực nghiệm (DOE)",
+  "t": "FMEA, Pareto analysis, hypothesis testing, design of experiments (DOE)"
+ },
+ "263fd4035f726ba0": {
+  "s": "Quản lý chất lượng toàn diện (TQM) và hệ thống chỉ số chất lượng (Quality KPIs)",
+  "t": "Total Quality Management (TQM) and quality KPI systems"
+ },
+ "8eb006a54fa80512": {
+  "s": "Chiến lược, văn hóa & sự tham gia của mọi người",
+  "t": "Strategy, culture & everyone's involvement"
+ },
+ "e0fc3b9116c25aa9": {
+  "s": "<strong class=\"text-[#102A43]\">Một mục tiêu chung từ lãnh đạo đến hiện trường, và mỗi người đều được trao quyền cải tiến.</strong> Mái nhà là lý do của mọi cải tiến: đáp ứng khách hàng với chất lượng cao nhất, chi phí thấp nhất và thời gian ngắn nhất. WISE Academy giúp lãnh đạo triển khai chiến lược thành mục tiêu cho từng cấp, đồng thời xây dựng cơ chế để mọi nhân viên cùng tham gia (Involvement): đề xuất cải tiến, nhóm Kaizen, chia sẻ và ghi nhận, để cải tiến liên tục trở thành văn hóa.",
+  "t": "<strong class=\"text-[#102A43]\">One shared goal from leadership to the shop floor, with everyone empowered to improve.</strong> The roof is the reason for every improvement: serving customers with the highest quality, the lowest cost and the shortest time. WISE Academy helps leaders deploy strategy into goals for every level, while building the mechanisms for every employee to take part (Involvement): improvement suggestions, Kaizen teams, sharing and recognition, so that continuous improvement becomes the culture."
+ },
+ "99796ca7b1035c9c": {
+  "s": "Đề xuất cải tiến",
+  "t": "Improvement suggestions"
+ },
+ "40a46069a13c4df5": {
+  "s": "Nhóm Kaizen / QCC",
+  "t": "Kaizen teams / QCC"
+ },
+ "b684037c35606d74": {
+  "s": "Hoạch định và triển khai chiến lược (Hoshin Kanri), Catch-ball, ma trận X",
+  "t": "Strategy deployment (Hoshin Kanri), Catch-ball, X-matrix"
+ },
+ "23c5d6008d3f53bd": {
+  "s": "Lãnh đạo Lean: công việc tiêu chuẩn của lãnh đạo (Leader Standard Work), Gemba Walk",
+  "t": "Lean leadership: Leader Standard Work, Gemba Walks"
+ },
+ "469435dab65339bb": {
+  "s": "Sự tham gia của mọi người (Involvement): hệ thống đề xuất cải tiến, nhóm Kaizen, QCC, ghi nhận và khen thưởng",
+  "t": "Everyone's involvement: improvement suggestion systems, Kaizen teams, QCC, recognition and rewards"
+ },
+ "618e2ca8520b07c9": {
+  "s": "Kaizen Event và chương trình cải tiến toàn công ty",
+  "t": "Kaizen Events and company-wide improvement programmes"
+ },
+ "de4a256729757f2f": {
+  "s": "Phát triển con người: TWI, Coaching Kata, đào tạo giảng viên nội bộ (Train-the-Trainer)",
+  "t": "People development: TWI, Coaching Kata, internal trainer development (Train-the-Trainer)"
+ },
+ "b1d81cc35bf53eb1": {
+  "s": "Khung năng lực và hệ thống Đào tạo & Phát triển (L&D) gắn với chiến lược",
+  "t": "Competency frameworks and a Learning & Development (L&D) system linked to strategy"
+ },
+ "c442c8f1e65118b3": {
+  "s": "Lộ trình chuyển đổi Lean 5 giai đoạn và hệ thống chỉ số Lean KPIs",
+  "t": "A 5-stage Lean transformation roadmap and Lean KPI system"
+ },
+ "811fdb5781884f7f": {
+  "s": "Số hóa vận hành trên nền Lean (Lean 4.0)",
+  "t": "Digital operations built on Lean (Lean 4.0)"
+ },
+ "afdb89ac1649f548": {
+  "s": "<strong class=\"text-[#102A43]\">Tinh gọn trước, số hóa sau, để mỗi khoản đầu tư công nghệ tạo ra giá trị thật.</strong> Công nghệ chỉ phát huy khi được đặt trên một quy trình đã tinh gọn. WISE Academy giúp doanh nghiệp số hóa các thực hành Lean: dữ liệu vận hành theo thời gian thực, quản lý trực quan trên màn hình, cảnh báo bất thường tức thời và ra quyết định dựa trên dữ liệu.",
+  "t": "<strong class=\"text-[#102A43]\">Lean first, digital second, so every technology investment creates real value.</strong> Technology only pays off on a process that is already lean. WISE Academy helps businesses digitise their Lean practices: real-time operational data, on-screen visual management, instant abnormality alerts and data-driven decisions."
+ },
+ "2a8a2e171e359d09": {
+  "s": "OEE số",
+  "t": "Digital OEE"
+ },
+ "aaa4ee96f1cd273c": {
+  "s": "Hệ thống quản lý dữ liệu vận hành theo thời gian thực: năng suất, OEE, chất lượng",
+  "t": "Real-time operational data management: productivity, OEE, quality"
+ },
+ "4e9d59a9e5caaa2a": {
+  "s": "Quản lý trực quan số: bảng điều khiển (dashboard) tại hiện trường và cho lãnh đạo",
+  "t": "Digital visual management: dashboards for the shop floor and for leadership"
+ },
+ "288c254079714cff": {
+  "s": "Kết nối máy móc (IoT), thu thập dữ liệu tự động và cảnh báo bất thường",
+  "t": "Machine connectivity (IoT), automatic data collection and abnormality alerts"
+ },
+ "b326e5a4071730dd": {
+  "s": "Ứng dụng AI và tự động hóa quy trình (RPA) cho các bước lặp lại",
+  "t": "AI and robotic process automation (RPA) for repetitive steps"
+ },
+ "79ffc96fac0375cf": {
+  "s": "Kỹ thuật hệ thống công nghiệp (ISE) và mô phỏng trước khi đầu tư",
+  "t": "Industrial and systems engineering (ISE) and simulation before investing"
+ },
+ "0ab414fae7057496": {
+  "s": "Lộ trình chuyển đổi số gắn với ưu tiên vận hành của doanh nghiệp",
+  "t": "A digital transformation roadmap tied to your operational priorities"
+ },
+ "2e0256f2bb9aba4d": {
+  "s": "<a href=\"#dich-vu-01\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">01</span> Nền móng ổn định &amp; chuẩn hóa</a><a href=\"#dich-vu-02\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">02</span> Năng suất &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">03</span> Chất lượng: Jidoka &amp; Six Sigma</a><a href=\"#dich-vu-04\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">04</span> Chiến lược, văn hóa &amp; sự tham gia</a><a href=\"#dich-vu-05\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">05</span> Số hóa vận hành (Lean 4.0)</a>",
+  "t": "<a href=\"#dich-vu-01\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">01</span> Stable foundation &amp; standardization</a><a href=\"#dich-vu-02\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">02</span> Productivity &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">03</span> Quality: Jidoka &amp; Six Sigma</a><a href=\"#dich-vu-04\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">04</span> Strategy, culture &amp; involvement</a><a href=\"#dich-vu-05\" class=\"group flex items-center justify-center gap-2 text-center rounded-2xl border border-[#002F5B]/15 bg-white px-4 py-3.5 text-sm font-semibold leading-snug text-[#002F5B] shadow-[0_6px_18px_-12px_rgba(0,47,91,0.5)] transition-all hover:-translate-y-0.5 hover:border-[#F76011] hover:text-[#C9500E]\"><span class=\"text-[#F76011]\">05</span> Digital operations (Lean 4.0)</a>"
+ },
+ "468475f24f02efbe": {
+  "s": "<a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a><a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Năng suất &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Chất lượng</a><a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Chiến lược &amp; Văn hóa</a>",
+  "t": "<a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Foundation</a><a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Productivity &amp; Lead time</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Quality</a><a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Strategy &amp; Culture</a>"
+ },
+ "7bbfd1fb28e3708a": {
+  "s": "<a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Năng suất &amp; Lead time</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a><a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Số hóa</a>",
+  "t": "<a href=\"#dich-vu-02\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">02 · Productivity &amp; Lead time</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Foundation</a><a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Digital</a>"
+ },
+ "8aa98269f80fbc81": {
+  "s": "<a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Số hóa</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Nền móng</a>",
+  "t": "<a href=\"#dich-vu-05\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">05 · Digital</a><a href=\"#dich-vu-01\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">01 · Foundation</a>"
+ },
+ "26208fb86bef442e": {
+  "s": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Chiến lược &amp; Văn hóa</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Chất lượng</a>",
+  "t": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Strategy &amp; Culture</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Quality</a>"
  }
 }
