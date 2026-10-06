@@ -7,6 +7,7 @@ import { ChevronDown, Download } from "@/components/icons";
 // the services that fit it and the brochure open below.
 export type CustomerContext = {
   title: string;
+  hook: string;
   context: string;
   services: { id: string; name: string }[];
   brochure?: string;
@@ -29,7 +30,10 @@ export default function ContextCards({ items }: { items: CustomerContext[] }) {
               className="w-full flex items-center gap-4 px-6 py-5 text-left"
             >
               <span className="text-2xl font-extrabold text-[#F76011] leading-none">{String(i + 1).padStart(2, "0")}</span>
-              <span className="flex-1 text-base sm:text-lg font-semibold text-[#002F5B] leading-snug">{c.title}</span>
+              <span className="flex-1 min-w-0">
+                <span className="block text-base sm:text-lg font-semibold text-[#002F5B] leading-snug">{c.title}</span>
+                <span className="mt-1 block text-xs sm:text-sm font-medium text-[#C9500E]">{c.hook}</span>
+              </span>
               <ChevronDown className={`w-5 h-5 shrink-0 text-[#002F5B] transition-transform duration-300 ${on ? "rotate-180" : ""}`} />
             </button>
             <div

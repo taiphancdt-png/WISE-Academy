@@ -36,6 +36,7 @@ export default function ConsultingPage() {
   const contexts = [
     {
       title: "Xây dựng / chuyển đổi Hệ thống Quản lý Lean",
+      hook: "Cải tiến rời rạc, hết dự án là hết phong trào?",
       context:
         "Doanh nghiệp đang vận hành theo mô hình quản lý truyền thống và muốn chuyển sang hệ thống Lean làm nền tảng cho vận hành xuất sắc và tăng trưởng bền vững. Việc chuyển đổi diễn ra trên hai trục: chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức), để Lean trở thành triết lý quản lý dài hạn chứ không chỉ là công cụ.",
       services: [
@@ -48,6 +49,7 @@ export default function ConsultingPage() {
     },
     {
       title: "Thiết kế Nhà máy Lean mới",
+      hook: "Xây xong mới sửa thì quá tốn kém, phải đúng ngay từ đầu.",
       context:
         "Doanh nghiệp chuẩn bị xây nhà máy hoặc mở dây chuyền mới và muốn thiết kế đúng ngay từ đầu theo nguyên tắc Lean: dòng chảy tối ưu, dễ mở rộng và hiệu quả từ ngày đầu vận hành, thay vì phải cải tạo tốn kém sau khi đã xây dựng.",
       services: [
@@ -59,6 +61,7 @@ export default function ConsultingPage() {
     },
     {
       title: "Tích hợp Lean & Chuyển đổi số",
+      hook: "Đầu tư công nghệ rồi mà hiệu quả vẫn chưa như kỳ vọng?",
       context:
         "Doanh nghiệp đã hoặc sắp đầu tư công nghệ nhưng chưa thấy hiệu quả tương xứng, thường vì công nghệ được triển khai trên một quy trình chưa tinh gọn. Lean loại bỏ lãng phí và tối ưu quy trình, công nghệ số mang lại tự động hóa, dữ liệu thời gian thực và ra quyết định dựa trên dữ liệu.",
       services: [
@@ -69,6 +72,7 @@ export default function ConsultingPage() {
     },
     {
       title: "Hệ thống Đào tạo & Phát triển nguồn nhân lực",
+      hook: "Thiếu đội ngũ kế cận, nhân sự chưa thực sự gắn kết?",
       context:
         "Trong môi trường biến động, phức tạp và khó đoán định (VUCA), doanh nghiệp cần một hệ thống Đào tạo & Phát triển (L&D) bài bản: năng lực cốt lõi gắn với chiến lược, đội ngũ lãnh đạo kế cận vững vàng, nhân viên gắn kết và một văn hóa cải tiến liên tục.",
       services: [
