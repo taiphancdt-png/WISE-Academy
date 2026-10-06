@@ -119,7 +119,7 @@ export default function ConsultingPage() {
       id: "03",
       icon: ShieldCheck,
       part: "Trụ cột Chất lượng",
-      short: "Chất lượng: Jidoka & Six Sigma",
+      short: "Cải tiến chất lượng với Jidoka và Six Sigma",
       tag: "PILLAR · JIDOKA · LEAN SIX SIGMA (LSSI)",
       title: "Cải tiến chất lượng với Jidoka và Six Sigma",
       subtitle: "Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau",
