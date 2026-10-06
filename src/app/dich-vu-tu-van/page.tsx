@@ -258,7 +258,7 @@ export default function ConsultingPage() {
       <Section className="!pt-14 lg:!pt-16">
         <SectionHeader
           title={<>Chúng tôi có thể <span className="text-[#F76011]">giúp gì</span> cho doanh nghiệp?</>}
-          description="Mỗi doanh nghiệp đến với WISE Academy từ một bối cảnh riêng. Chọn tình huống gần với doanh nghiệp của bạn để xem bối cảnh và những dịch vụ phù hợp."
+          description="Mỗi doanh nghiệp chia sẻ câu chuyện về những thách thức nội tại và ngoại tại của mình với WISE Academy đều rất khác. Tuy nhiên, với cách tiếp cận khoa học, hệ thống RGPDCA, WISE Academy cam kết đồng hành kiến tạo lộ trình sát nhất với nhu cầu và ưu tiên của Doanh nghiệp tại từng giai đoạn phát triển."
         />
         <ContextCards items={contexts} />
       </Section>
