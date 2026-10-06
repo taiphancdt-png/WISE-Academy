@@ -120,7 +120,7 @@ export default function ConsultingPage() {
         { value: "15 - 35%", label: "Giảm tồn kho, WIP" },
       ],
       items: [
-        "Đánh giá hiệu quả theo PQCDSM, nhận diện MUDA, MURA, MURI và 8 lãng phí ngay tại Gemba (quan sát trong vòng tròn Ohno)",
+        "Đánh giá hiệu quả vận hành theo tiêu chí P (Năng suất) - Q (Chất lượng) - C (Chi phí) - D (Giao hàng) - S (An toàn) - M (Môi trường); nhận diện MUDA, MURA, MURI tại hiện trường thông qua kỹ thuật đi quan sát Gemba và quan sát trong vòng tròn Ohno.",
         "Nghiên cứu công việc: nghiên cứu phương pháp và đo lường công việc, biểu đồ quá trình (Flow Process Chart), phân tích thao tác trên chuyền",
         "Cải tiến phương pháp bằng ECRS, nguyên tắc tiết kiệm thao tác và công thái học; giảm di chuyển, vận chuyển bằng biểu đồ Spaghetti",
         "Takt time, Cycle time, Lead time; tìm công đoạn thắt cổ chai (TOC) và cân bằng chuyền bằng biểu đồ Yamazumi",
