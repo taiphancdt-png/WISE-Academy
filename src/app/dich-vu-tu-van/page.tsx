@@ -2,7 +2,6 @@ import React from "react";
 import PageHero from "@/components/PageHero";
 import LeanRoadmapRace from "@/components/LeanRoadmapRace";
 import ServiceDetails from "@/components/ServiceDetails";
-import ServiceHouse from "@/components/ServiceHouse";
 import ContextCards from "@/components/ContextCards";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 
@@ -184,8 +183,6 @@ export default function ConsultingPage() {
       image: P + "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/photo_19.webp",
     },
   ];
-  const svc = (id: string) => services.find((x) => x.id === id)!;
-  const housePart = (id: string, tools: string[]) => ({ id, label: svc(id).part, title: svc(id).short, tools });
 
   const roadmapStages = [
     {
@@ -280,25 +277,9 @@ export default function ConsultingPage() {
         </div>
       </Section>
 
-      {/* The five services as a Lean House */}
-      <Section>
-        <SectionHeader
-          title={<>5 dịch vụ theo <span className="text-[#F76011]">Ngôi nhà Lean</span></>}
-          description="Phương pháp luận của WISE Academy đi theo Ngôi nhà Lean: nền móng ổn định, hai trụ cột giao hàng đúng hạn và chất lượng, mái nhà là chiến lược và văn hóa, tất cả được kết nối bằng dữ liệu số."
-        />
-        <ServiceHouse
-          roof={housePart("04", ["Hoshin Kanri", "Lãnh đạo Lean", "Involvement"])}
-          delivery={housePart("02", ["VSM", "Takt time", "Kanban", "SMED"])}
-          quality={housePart("03", ["Jidoka", "Poka-Yoke", "DMAIC", "SPC"])}
-          foundation={housePart("01", ["5S", "Quản lý trực quan", "Công việc tiêu chuẩn", "TPM"])}
-          digital={housePart("05", ["Dữ liệu thời gian thực", "IoT", "AI"])}
-          centre="Con người là trung tâm: mọi người cùng tham gia cải tiến"
-        />
-      </Section>
-
       {/* The five services in detail: alternating image / text */}
       {services.map((s, idx) => (
-        <section key={s.id} id={`dich-vu-${s.id}`} className={`${idx % 2 ? "bg-white" : "bg-[#F8F9FA]"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
+        <section key={s.id} id={`dich-vu-${s.id}`} className={`${idx % 2 ? "bg-[#F8F9FA]" : "bg-white"} py-16 lg:py-20 px-4 sm:px-6 scroll-mt-24`}>
           <div className={`max-w-[1400px] mx-auto grid grid-cols-1 gap-x-14 sm:px-2 xl:px-6 gap-y-8 lg:gap-y-0 lg:items-center ${idx % 2 ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"}`}>
             {/* shop-floor photo, landscape 4:3 in 5/12 of the width */}
             <div className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 lg:row-start-1 ${idx % 2 ? "lg:col-start-2" : "lg:col-start-1"}`}>
