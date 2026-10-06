@@ -5,8 +5,6 @@ import ServiceDetails from "@/components/ServiceDetails";
 import ContextCards from "@/components/ContextCards";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 
-const P = "/images/projects/";
-
 export const metadata = {
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
   description:
@@ -101,7 +99,7 @@ export default function ConsultingPage() {
         "Hệ thống quản lý hằng ngày: họp đầu ca, bảng KPI, Gemba Walk",
         "Nhận diện và loại bỏ 8 lãng phí, ổn định 4M (con người, máy móc, vật tư, phương pháp)",
       ],
-      image: P + "huali-group-lean-six-sigma-yellow-belt/photo_2.webp",
+      image: "/images/services/foundation.webp",
     },
     {
       id: "02",
