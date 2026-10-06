@@ -234,7 +234,7 @@ export default function ConsultingPage() {
         eyebrow="Dịch vụ tư vấn doanh nghiệp"
         image="/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp"
         title={<>Giải pháp tư vấn <span className="text-[#FF7A30]">vận hành tinh gọn</span> tại hiện trường</>}
-        description="Mọi dự án tư vấn của WISE Academy đều bắt đầu từ bước khảo sát: thấu hiểu nhu cầu và các ưu tiên của doanh nghiệp, cùng xác lập mục tiêu rõ ràng và đánh giá hiện trạng ngay tại hiện trường. Đó là nền tảng để đề xuất giải pháp đúng trọng tâm và đo lường được kết quả."
+        description="Mọi dự án tư vấn của WISE Academy đều bắt đầu với bước khảo sát hiện trạng: trò chuyện với Ban lãnh đạo để thấu hiểu những trăn trở, nhu cầu và những ưu tiên; đi quan sát hiện trường để nắm bắt hiện trạng vận hành; cùng kiến tạo lộ trình triển khai cải tiến với mục tiêu rõ ràng, đúng trọng tâm và đo lường được kết quả đầu ra."
       >
         <ButtonLink href="/lien-he">Đặt lịch khảo sát hiện trạng</ButtonLink>
       </PageHero>
