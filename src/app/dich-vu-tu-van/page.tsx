@@ -107,19 +107,25 @@ export default function ConsultingPage() {
       id: "02",
       part: "Trụ cột Giao hàng đúng hạn",
       short: "Năng suất & Lead time",
-      tag: "PILLAR · JUST-IN-TIME",
+      tag: "PILLAR · JUST-IN-TIME · WORK ENGINEERING",
       title: "Năng suất & Lead time: giao hàng đúng hạn",
       subtitle: "Làm đúng thứ khách hàng cần, đúng lúc, đúng số lượng, với ít lãng phí nhất",
-      desc: "Trụ cột Just-in-Time giúp vật tư và thông tin chảy liên tục qua chuỗi giá trị. WISE Academy đo lead time thực tế, tìm điểm nghẽn và thiết kế lại dòng chảy để tăng năng suất, giảm tồn kho dở dang và rút ngắn thời gian giao hàng, kể cả cho nhà máy và dây chuyền mới ngay từ khâu thiết kế.",
-      tools: ["VSM", "Takt time", "Yamazumi", "ECRS", "Lean Cell", "Kanban", "SMED / QCO", "Hệ thống kéo"],
+      desc: "Nhiều chuyền sản xuất vẫn còn lãng phí, điểm thắt cổ chai, tải công việc không cân bằng và phương pháp làm việc chưa hiệu quả. WISE Academy kết hợp Kỹ thuật công nghiệp (IE) và Lean ngay tại hiện trường: quan sát và đo lường trên chuyền thực tế, cải tiến phương pháp, cân bằng chuyền, thiết kế lại mặt bằng và dòng chảy, rồi tính toán cụ thể năng suất tăng, nhân lực và chi phí tiết kiệm được.",
+      tools: ["PQCDSM", "MUDA · MURA · MURI", "Vòng tròn Ohno", "Nghiên cứu công việc", "ECRS", "Biểu đồ Spaghetti", "Takt time", "Yamazumi", "TOC", "Lean Cell", "VSM", "Kanban", "SMED / QCO"],
+      results: [
+        { value: "15 - 30%", label: "Tăng năng suất" },
+        { value: "20 - 40%", label: "Giảm lead time" },
+        { value: "15 - 35%", label: "Giảm tồn kho, WIP" },
+      ],
       items: [
-        "Sơ đồ chuỗi giá trị hiện tại và tương lai (VSM): đo lead time, tồn kho và điểm nghẽn",
-        "Tính nhịp sản xuất (Takt time) và cân bằng chuyền bằng biểu đồ Yamazumi",
-        "Work Engineering: nghiên cứu thao tác, nguyên tắc ECRS, thời gian tiêu chuẩn",
-        "Thiết kế mặt bằng và chuyền theo dòng chảy: Lean Layout, Lean Cell, dòng một sản phẩm",
-        "Hệ thống kéo: Kanban, siêu thị, FIFO",
-        "Rút ngắn thời gian chuyển đổi mã hàng và khuôn, dụng cụ (QCO, SMED)",
-        "Thiết kế dòng chảy, luồng vật tư và khả năng mở rộng cho nhà máy, dây chuyền mới",
+        "Đánh giá hiệu quả theo PQCDSM, nhận diện MUDA, MURA, MURI và 8 lãng phí ngay tại Gemba (quan sát trong vòng tròn Ohno)",
+        "Nghiên cứu công việc: nghiên cứu phương pháp và đo lường công việc, biểu đồ quá trình (Flow Process Chart), phân tích thao tác trên chuyền",
+        "Cải tiến phương pháp bằng ECRS, nguyên tắc tiết kiệm thao tác và công thái học; giảm di chuyển, vận chuyển bằng biểu đồ Spaghetti",
+        "Takt time, Cycle time, Lead time; tìm công đoạn thắt cổ chai (TOC) và cân bằng chuyền bằng biểu đồ Yamazumi",
+        "Tối ưu nhân lực theo năng lực máy và người, đứng nhiều máy, kết hợp công việc",
+        "Thiết kế mặt bằng và Lean Cell cho dòng một sản phẩm; vẽ chuỗi giá trị (VSM) và quản lý theo dòng giá trị",
+        "Hệ thống kéo (Kanban, siêu thị, FIFO) và rút ngắn thời gian chuyển đổi (SMED, QCO)",
+        "Tính toán lợi ích: năng suất tăng, nhân lực tiết kiệm, chi phí giảm, trình bày và bảo vệ phương án cải tiến",
       ],
       image: P + "chuong-trinh-dao-tao-cong-ty-tnhh-giay-adiana/photo_21.webp",
     },
@@ -127,19 +133,25 @@ export default function ConsultingPage() {
       id: "03",
       part: "Trụ cột Chất lượng",
       short: "Chất lượng: Jidoka & Six Sigma",
-      tag: "PILLAR · JIDOKA & SIX SIGMA",
+      tag: "PILLAR · JIDOKA · LEAN SIX SIGMA (LSSI)",
       title: "Chất lượng ngay tại nguồn với Jidoka & Six Sigma",
       subtitle: "Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau",
-      desc: "Trụ cột Jidoka dừng lại khi có bất thường để xử lý tận gốc, kết hợp bộ công cụ Six Sigma để giảm biến động bằng dữ liệu. Đội ngũ được huấn luyện giải quyết vấn đề có cấu trúc và đủ năng lực tự dẫn dắt dự án cải tiến chất lượng, theo chuẩn chứng nhận quốc tế LSSI.",
-      tools: ["Jidoka", "Poka-Yoke", "A3 / 8D", "5 Why", "DMAIC", "SPC", "MSA", "FMEA", "Cp / Cpk"],
+      desc: "Chất lượng được xây dựng ngay trong từng công đoạn: người vận hành làm chủ chất lượng, bất thường được báo hiệu tức thời (Andon) và xử lý ngay, lỗi được ngăn từ gốc bằng chống sai lỗi. Song song, bộ công cụ Six Sigma giúp giảm biến động và ra quyết định dựa trên dữ liệu. Là đối tác ủy quyền của Lean Six Sigma Institute (LSSI), WISE Academy đào tạo, kèm cặp dự án và cấp chứng nhận quốc tế cho từng vai trò trong tổ chức.",
+      tools: ["Jidoka", "Andon", "Poka-Yoke", "Chất lượng tại công đoạn", "PDCA", "A3 / 8D", "5 Why", "DMAIC", "SPC", "MSA", "FMEA", "Cp / Cpk", "DOE", "TQM"],
+      results: [
+        { value: "10 - 25%", label: "Giảm lỗi và làm lại" },
+        { value: "5 cấp độ", label: "White đến Master Black Belt" },
+        { value: "LSSI", label: "Chứng nhận quốc tế" },
+      ],
       items: [
-        "Jidoka: phát hiện và dừng khi có bất thường, kiểm soát chất lượng tại nguồn",
-        "Chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
-        "Giải quyết vấn đề có cấu trúc: PDCA, A3, 8D, 5 Why, biểu đồ xương cá",
-        "Dự án Six Sigma theo DMAIC (Yellow, Green, Black Belt chuẩn LSSI)",
-        "Phân tích hệ thống đo (MSA, Gage R&R), năng lực quy trình (Cp, Cpk), kiểm soát quá trình bằng thống kê (SPC)",
-        "FMEA, phân tích Pareto, kiểm định giả thuyết, thiết kế thực nghiệm (DOE)",
+        "Chất lượng tại công đoạn (In-Station Quality): người vận hành làm chủ chất lượng, báo hiệu bất thường bằng Andon và xử lý ngay",
+        "Jidoka và chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
+        "Giải quyết vấn đề có cấu trúc theo PDCA: A3, 8D, 5 Why, biểu đồ xương cá, tìm nguyên nhân gốc rễ và duy trì kết quả",
+        "Dự án Six Sigma theo DMAIC, phân vai theo cấp đai: White Belt (16 giờ), Yellow (40), Green (80, quản lý cấp trung), Black (120, chuyên gia), Master Black Belt (160)",
+        "Công cụ thống kê: phân tích hệ thống đo (MSA, Gage R&R), năng lực quy trình (Cp, Cpk), kiểm soát quá trình bằng thống kê (SPC), kiểm định giả thuyết, DOE",
+        "Phân tích rủi ro FMEA và phân tích Pareto để chọn đúng vấn đề ưu tiên",
         "Quản lý chất lượng toàn diện (TQM) và hệ thống chỉ số chất lượng (Quality KPIs)",
+        "Đào tạo, kèm cặp dự án và cấp chứng nhận LSSI & CSSC (LSSI: hơn 25 năm kinh nghiệm, hơn 70.000 học viên trên toàn cầu)",
       ],
       image: P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_10.webp",
     },
@@ -147,19 +159,20 @@ export default function ConsultingPage() {
       id: "04",
       part: "Mái nhà",
       short: "Chiến lược, văn hóa & sự tham gia",
-      tag: "ROOF · STRATEGY, CULTURE & INVOLVEMENT",
-      title: "Chiến lược, văn hóa & sự tham gia của mọi người",
-      subtitle: "Một mục tiêu chung từ lãnh đạo đến hiện trường, và mỗi người đều được trao quyền cải tiến",
-      desc: "Mái nhà là lý do của mọi cải tiến: đáp ứng khách hàng với chất lượng cao nhất, chi phí thấp nhất và thời gian ngắn nhất. WISE Academy giúp lãnh đạo triển khai chiến lược thành mục tiêu cho từng cấp, đồng thời xây dựng cơ chế để mọi nhân viên cùng tham gia (Involvement): đề xuất cải tiến, nhóm Kaizen, chia sẻ và ghi nhận, để cải tiến liên tục trở thành văn hóa.",
-      tools: ["Hoshin Kanri", "Catch-ball", "Lãnh đạo Lean", "Gemba Walk", "Đề xuất cải tiến", "Nhóm Kaizen / QCC", "TWI", "Coaching Kata"],
+      tag: "ROOF · LEAN LEADERSHIP · KAIZEN CULTURE",
+      title: "Lãnh đạo, chiến lược & văn hóa cải tiến",
+      subtitle: "Từ người chữa cháy thành người xây dựng hệ thống, và mỗi nhân viên đều tham gia cải tiến",
+      desc: "Chuyển đổi Lean là một sáng kiến chiến lược, không phải một khóa đào tạo thông thường. WISE Academy cùng ban lãnh đạo trải nghiệm tư duy dòng chảy, nhìn doanh nghiệp qua chuỗi giá trị, phân tích khoảng cách giữa hiện tại và tương lai, chọn sáng kiến ưu tiên và cam kết một lộ trình hành động rõ ràng. Ở cấp giám sát, đội ngũ được rèn tư duy phát triển (Growth mindset) và tư duy Kaizen với ba hành vi cốt lõi: hỏi tại sao, đi quan sát, huấn luyện. Cơ chế để mọi người cùng tham gia (Involvement) biến cải tiến thành thói quen hằng ngày.",
+      tools: ["Hoshin Kanri", "Catch-ball", "A3", "Leader Standard Work", "Gemba Walk", "Ma trận Tác động - Nỗ lực", "Lean KPIs", "Growth mindset", "Kaizen Event", "Nhóm cải tiến (SGA / QCC)", "Kaizen một điểm", "TWI", "Coaching"],
       items: [
-        "Hoạch định và triển khai chiến lược (Hoshin Kanri), Catch-ball, ma trận X",
-        "Lãnh đạo Lean: công việc tiêu chuẩn của lãnh đạo (Leader Standard Work), Gemba Walk",
-        "Sự tham gia của mọi người (Involvement): hệ thống đề xuất cải tiến, nhóm Kaizen, QCC, ghi nhận và khen thưởng",
-        "Kaizen Event và chương trình cải tiến toàn công ty",
-        "Phát triển con người: TWI, Coaching Kata, đào tạo giảng viên nội bộ (Train-the-Trainer)",
-        "Khung năng lực và hệ thống Đào tạo & Phát triển (L&D) gắn với chiến lược",
-        "Lộ trình chuyển đổi Lean 5 giai đoạn và hệ thống chỉ số Lean KPIs",
+        "Workshop Lean Leadership cho CEO, giám đốc nhà máy, trưởng bộ phận: mô phỏng sản xuất theo lô và theo dòng chảy, \"Điều gì xảy ra nếu chúng ta không thay đổi?\"",
+        "Nhìn doanh nghiệp qua chuỗi giá trị (VSM), phân tích khoảng cách hiện tại và tương lai, rà soát cơ cấu tổ chức và hệ thống KPI",
+        "Chọn sáng kiến ưu tiên bằng ma trận Tác động - Nỗ lực, xây lộ trình chuyển đổi 6 - 12 tháng và cam kết hành động của từng lãnh đạo",
+        "Triển khai chiến lược: Hoshin Kanri, Catch-ball, A3, Leader Standard Work, quản lý theo dòng giá trị và Lean KPIs",
+        "Growth mindset và Kaizen mindset cho Senior, Leader, Supervisor: 3 cấp độ Kaizen (sửa, cải tiến, phòng ngừa) theo tiếp cận RG-PDCA",
+        "Sự tham gia của mọi người (Involvement): Kaizen một điểm, nhóm cải tiến (SGA, QCC), Kaizen Event, hệ thống đề xuất và ghi nhận",
+        "Cấu trúc dự án Kaizen: Project Charter, nguyên tắc 4 Đúng (đúng dự án, đúng đội, đúng phạm vi, đúng kết quả), Kaizen Workbook, chỉ số QCD",
+        "Phát triển con người: khung năng lực, hệ thống Đào tạo & Phát triển (L&D), TWI, kỹ năng Coaching, đào tạo giảng viên nội bộ",
       ],
       image: P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_2.webp",
     },
@@ -294,6 +307,20 @@ export default function ConsultingPage() {
               <p className="mt-4 text-sm sm:text-base text-[#486581] leading-relaxed">
                 <strong className="text-[#102A43]">{s.subtitle}.</strong> {s.desc}
               </p>
+              {"results" in s && s.results && (
+                <dl className="mt-5 grid grid-cols-3 gap-3 max-w-lg">
+                  {s.results.map((r) => (
+                    <div key={r.label} className="rounded-xl bg-white border border-[#002F5B]/10 px-3 py-2.5">
+                      <dt className="sr-only">{r.label}</dt>
+                      <dd className="text-lg sm:text-xl font-bold text-[#002F5B] leading-tight">{r.value}</dd>
+                      <dd className="mt-0.5 text-xs text-[#486581] leading-snug">{r.label}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              {"results" in s && s.results && (
+                <p className="mt-1.5 text-[11px] text-[#486581]">Mức cải thiện điển hình tại các doanh nghiệp sản xuất áp dụng Lean, mang tính tham khảo.</p>
+              )}
               <p className="mt-5 text-xs font-bold uppercase tracking-wider text-[#002F5B]">Công cụ & kỹ thuật</p>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {s.tools.map((t) => (

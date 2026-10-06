@@ -15530,5 +15530,173 @@
  "26208fb86bef442e": {
   "s": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Chiến lược &amp; Văn hóa</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Chất lượng</a>",
   "t": "<a href=\"#dich-vu-04\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">04 · Strategy &amp; Culture</a><a href=\"#dich-vu-03\" class=\"rounded-full border border-[#002F5B]/20 px-3 py-1.5 text-xs font-semibold text-[#002F5B] transition-colors hover:border-[#F76011] hover:text-[#C9500E]\">03 · Quality</a>"
+ },
+ "6834334a398460c9": {
+  "s": "<strong class=\"text-[#102A43]\">Làm đúng thứ khách hàng cần, đúng lúc, đúng số lượng, với ít lãng phí nhất.</strong> Nhiều chuyền sản xuất vẫn còn lãng phí, điểm thắt cổ chai, tải công việc không cân bằng và phương pháp làm việc chưa hiệu quả. WISE Academy kết hợp Kỹ thuật công nghiệp (IE) và Lean ngay tại hiện trường: quan sát và đo lường trên chuyền thực tế, cải tiến phương pháp, cân bằng chuyền, thiết kế lại mặt bằng và dòng chảy, rồi tính toán cụ thể năng suất tăng, nhân lực và chi phí tiết kiệm được.",
+  "t": "<strong class=\"text-[#102A43]\">Make exactly what the customer needs, when they need it, in the right quantity, with the least waste.</strong> Many production lines still suffer from waste, bottlenecks, unbalanced workloads and inefficient work methods. WISE Academy combines Industrial Engineering (IE) and Lean on the shop floor: observing and measuring real lines, improving methods, balancing lines, redesigning layout and flow, then calculating the exact productivity gain and the manpower and cost saved."
+ },
+ "4fa398fdde94e2f8": {
+  "s": "Tăng năng suất",
+  "t": "Higher productivity"
+ },
+ "29e327d8e7a32703": {
+  "s": "Giảm lead time",
+  "t": "Shorter lead time"
+ },
+ "487fe6e308ccdef1": {
+  "s": "Giảm tồn kho, WIP",
+  "t": "Less inventory and WIP"
+ },
+ "6a7d7ce819d7d8c9": {
+  "s": "Mức cải thiện điển hình tại các doanh nghiệp sản xuất áp dụng Lean, mang tính tham khảo.",
+  "t": "Typical improvements at manufacturers applying Lean, for reference only."
+ },
+ "f756e0e2071171b1": {
+  "s": "Vòng tròn Ohno",
+  "t": "Ohno circle"
+ },
+ "2657e4baabef1cfe": {
+  "s": "Nghiên cứu công việc",
+  "t": "Work study"
+ },
+ "3ddfedb64a17f8b9": {
+  "s": "Biểu đồ Spaghetti",
+  "t": "Spaghetti diagram"
+ },
+ "aa5249812b10c8f7": {
+  "s": "Đánh giá hiệu quả theo PQCDSM, nhận diện MUDA, MURA, MURI và 8 lãng phí ngay tại Gemba (quan sát trong vòng tròn Ohno)",
+  "t": "Assessing performance through PQCDSM, identifying MUDA, MURA, MURI and the 8 wastes right at the Gemba (observing from the Ohno circle)"
+ },
+ "03c6e8fbb7f20783": {
+  "s": "Nghiên cứu công việc: nghiên cứu phương pháp và đo lường công việc, biểu đồ quá trình (Flow Process Chart), phân tích thao tác trên chuyền",
+  "t": "Work study: method study and work measurement, Flow Process Charts, motion analysis on the line"
+ },
+ "76efabd7fa83c9f0": {
+  "s": "Cải tiến phương pháp bằng ECRS, nguyên tắc tiết kiệm thao tác và công thái học; giảm di chuyển, vận chuyển bằng biểu đồ Spaghetti",
+  "t": "Improving methods with ECRS, motion economy and ergonomics; reducing movement and transport with Spaghetti diagrams"
+ },
+ "27931f0ba6695229": {
+  "s": "Takt time, Cycle time, Lead time; tìm công đoạn thắt cổ chai (TOC) và cân bằng chuyền bằng biểu đồ Yamazumi",
+  "t": "Takt time, Cycle time, Lead time; finding the bottleneck (TOC) and balancing lines with Yamazumi charts"
+ },
+ "ea62fcec55530001": {
+  "s": "Tối ưu nhân lực theo năng lực máy và người, đứng nhiều máy, kết hợp công việc",
+  "t": "Optimising manpower against machine and operator capacity, multi-process handling, combined work"
+ },
+ "8d2a7cfb57a2a36d": {
+  "s": "Thiết kế mặt bằng và Lean Cell cho dòng một sản phẩm; vẽ chuỗi giá trị (VSM) và quản lý theo dòng giá trị",
+  "t": "Layout and Lean Cell design for one-piece flow; value stream mapping (VSM) and value stream management"
+ },
+ "844caac02145066a": {
+  "s": "Hệ thống kéo (Kanban, siêu thị, FIFO) và rút ngắn thời gian chuyển đổi (SMED, QCO)",
+  "t": "Pull systems (Kanban, supermarkets, FIFO) and shorter changeovers (SMED, QCO)"
+ },
+ "fdb3780058680d06": {
+  "s": "Tính toán lợi ích: năng suất tăng, nhân lực tiết kiệm, chi phí giảm, trình bày và bảo vệ phương án cải tiến",
+  "t": "Calculating the benefits: productivity gained, manpower and cost saved, then presenting and defending the improvement plan"
+ },
+ "24cc95cd5db1723b": {
+  "s": "<strong class=\"text-[#102A43]\">Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau.</strong> Chất lượng được xây dựng ngay trong từng công đoạn: người vận hành làm chủ chất lượng, bất thường được báo hiệu tức thời (Andon) và xử lý ngay, lỗi được ngăn từ gốc bằng chống sai lỗi. Song song, bộ công cụ Six Sigma giúp giảm biến động và ra quyết định dựa trên dữ liệu. Là đối tác ủy quyền của Lean Six Sigma Institute (LSSI), WISE Academy đào tạo, kèm cặp dự án và cấp chứng nhận quốc tế cho từng vai trò trong tổ chức.",
+  "t": "<strong class=\"text-[#102A43]\">Do not accept defects, do not make defects, do not pass defects on.</strong> Quality is built into every process step: operators own quality, abnormalities are signalled instantly (Andon) and resolved immediately, and defects are prevented at the source with error-proofing. Alongside this, the Six Sigma toolkit reduces variation and supports data-driven decisions. As an authorised partner of the Lean Six Sigma Institute (LSSI), WISE Academy trains, coaches projects and awards international certification for every role in the organisation."
+ },
+ "bd84dbb523a1e359": {
+  "s": "Giảm lỗi và làm lại",
+  "t": "Fewer defects and rework"
+ },
+ "2f78afc7635cb743": {
+  "s": "White đến Master Black Belt",
+  "t": "White to Master Black Belt"
+ },
+ "f3fb59643214deef": {
+  "s": "5 cấp độ",
+  "t": "5 levels"
+ },
+ "8aad4c4281013b31": {
+  "s": "Chứng nhận quốc tế",
+  "t": "International certification"
+ },
+ "9e28924537ea4a12": {
+  "s": "Chất lượng tại công đoạn",
+  "t": "In-station quality"
+ },
+ "956e1241d8405a30": {
+  "s": "Chất lượng tại công đoạn (In-Station Quality): người vận hành làm chủ chất lượng, báo hiệu bất thường bằng Andon và xử lý ngay",
+  "t": "In-Station Quality: operators own quality, signal abnormalities with Andon and resolve them on the spot"
+ },
+ "7d3f438625b2dfc2": {
+  "s": "Jidoka và chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
+  "t": "Jidoka and error-proofing (Poka-Yoke) for processes and products"
+ },
+ "7776385351559669": {
+  "s": "Giải quyết vấn đề có cấu trúc theo PDCA: A3, 8D, 5 Why, biểu đồ xương cá, tìm nguyên nhân gốc rễ và duy trì kết quả",
+  "t": "Structured problem solving with PDCA: A3, 8D, 5 Why, fishbone diagrams, finding root causes and sustaining results"
+ },
+ "0970af9bdcd98073": {
+  "s": "Dự án Six Sigma theo DMAIC, phân vai theo cấp đai: White Belt (16 giờ), Yellow (40), Green (80, quản lý cấp trung), Black (120, chuyên gia), Master Black Belt (160)",
+  "t": "Six Sigma projects using DMAIC, with roles by belt: White Belt (16 hours), Yellow (40), Green (80, middle management), Black (120, experts), Master Black Belt (160)"
+ },
+ "0f79e9aaff0cacbd": {
+  "s": "Công cụ thống kê: phân tích hệ thống đo (MSA, Gage R&R), năng lực quy trình (Cp, Cpk), kiểm soát quá trình bằng thống kê (SPC), kiểm định giả thuyết, DOE",
+  "t": "Statistical tools: measurement system analysis (MSA, Gage R&R), process capability (Cp, Cpk), statistical process control (SPC), hypothesis testing, DOE"
+ },
+ "22cf46f092e57a35": {
+  "s": "Phân tích rủi ro FMEA và phân tích Pareto để chọn đúng vấn đề ưu tiên",
+  "t": "FMEA risk analysis and Pareto analysis to pick the right priority problems"
+ },
+ "99318a7a3cbfbc42": {
+  "s": "Đào tạo, kèm cặp dự án và cấp chứng nhận LSSI & CSSC (LSSI: hơn 25 năm kinh nghiệm, hơn 70.000 học viên trên toàn cầu)",
+  "t": "Training, project coaching and LSSI & CSSC certification (LSSI: over 25 years of experience, more than 70,000 graduates worldwide)"
+ },
+ "ba1655cbd8b6762f": {
+  "s": "Lãnh đạo, chiến lược & văn hóa cải tiến",
+  "t": "Leadership, strategy & an improvement culture"
+ },
+ "4a26648c6899d3dd": {
+  "s": "<strong class=\"text-[#102A43]\">Từ người chữa cháy thành người xây dựng hệ thống, và mỗi nhân viên đều tham gia cải tiến.</strong> Chuyển đổi Lean là một sáng kiến chiến lược, không phải một khóa đào tạo thông thường. WISE Academy cùng ban lãnh đạo trải nghiệm tư duy dòng chảy, nhìn doanh nghiệp qua chuỗi giá trị, phân tích khoảng cách giữa hiện tại và tương lai, chọn sáng kiến ưu tiên và cam kết một lộ trình hành động rõ ràng. Ở cấp giám sát, đội ngũ được rèn tư duy phát triển (Growth mindset) và tư duy Kaizen với ba hành vi cốt lõi: hỏi tại sao, đi quan sát, huấn luyện. Cơ chế để mọi người cùng tham gia (Involvement) biến cải tiến thành thói quen hằng ngày.",
+  "t": "<strong class=\"text-[#102A43]\">From firefighters to system builders, with every employee taking part in improvement.</strong> A Lean transformation is a strategic initiative, not a typical training course. WISE Academy works with the leadership team to experience flow thinking, view the business through its value streams, analyse the gap between the current and future state, choose priority initiatives and commit to a clear action roadmap. At supervisor level, teams develop a Growth mindset and a Kaizen mindset with three core behaviours: ask why, go and see, coach. Mechanisms for everyone to take part (Involvement) turn improvement into a daily habit."
+ },
+ "7b8193ad864decb1": {
+  "s": "Ma trận Tác động - Nỗ lực",
+  "t": "Impact-Effort matrix"
+ },
+ "16320f7397374efa": {
+  "s": "Nhóm cải tiến (SGA / QCC)",
+  "t": "Improvement teams (SGA / QCC)"
+ },
+ "79160583a3318092": {
+  "s": "Kaizen một điểm",
+  "t": "Single-point Kaizen"
+ },
+ "5482d9c4ab97af89": {
+  "s": "Workshop Lean Leadership cho CEO, giám đốc nhà máy, trưởng bộ phận: mô phỏng sản xuất theo lô và theo dòng chảy, \"Điều gì xảy ra nếu chúng ta không thay đổi?\"",
+  "t": "Lean Leadership workshops for CEOs, plant managers and heads of department: batch versus flow simulation, \"What happens if we do not change?\""
+ },
+ "6356ccb5ecb409e2": {
+  "s": "Nhìn doanh nghiệp qua chuỗi giá trị (VSM), phân tích khoảng cách hiện tại và tương lai, rà soát cơ cấu tổ chức và hệ thống KPI",
+  "t": "Viewing the business through its value streams (VSM), analysing the gap between current and future state, reviewing the organisation structure and KPI system"
+ },
+ "b60e4562744c105b": {
+  "s": "Chọn sáng kiến ưu tiên bằng ma trận Tác động - Nỗ lực, xây lộ trình chuyển đổi 6 - 12 tháng và cam kết hành động của từng lãnh đạo",
+  "t": "Prioritising initiatives with an Impact-Effort matrix, building a 6 - 12 month transformation roadmap and each leader's action commitment"
+ },
+ "68fd6d5ca988815c": {
+  "s": "Triển khai chiến lược: Hoshin Kanri, Catch-ball, A3, Leader Standard Work, quản lý theo dòng giá trị và Lean KPIs",
+  "t": "Strategy deployment: Hoshin Kanri, Catch-ball, A3, Leader Standard Work, value stream management and Lean KPIs"
+ },
+ "3480175a2621c63d": {
+  "s": "Growth mindset và Kaizen mindset cho Senior, Leader, Supervisor: 3 cấp độ Kaizen (sửa, cải tiến, phòng ngừa) theo tiếp cận RG-PDCA",
+  "t": "Growth mindset and Kaizen mindset for senior staff, leaders and supervisors: 3 levels of Kaizen (fix, improve, prevent) with the RG-PDCA approach"
+ },
+ "36b1f8fbe283f7f3": {
+  "s": "Sự tham gia của mọi người (Involvement): Kaizen một điểm, nhóm cải tiến (SGA, QCC), Kaizen Event, hệ thống đề xuất và ghi nhận",
+  "t": "Everyone's involvement: single-point Kaizen, improvement teams (SGA, QCC), Kaizen Events, suggestion and recognition systems"
+ },
+ "8dbaa63f33d50238": {
+  "s": "Cấu trúc dự án Kaizen: Project Charter, nguyên tắc 4 Đúng (đúng dự án, đúng đội, đúng phạm vi, đúng kết quả), Kaizen Workbook, chỉ số QCD",
+  "t": "Kaizen project structure: Project Charter, the 4 Rights (right project, right team, right scope, right result), Kaizen Workbook, QCD metrics"
+ },
+ "d2a2f226c42f6803": {
+  "s": "Phát triển con người: khung năng lực, hệ thống Đào tạo & Phát triển (L&D), TWI, kỹ năng Coaching, đào tạo giảng viên nội bộ",
+  "t": "People development: competency frameworks, a Learning & Development (L&D) system, TWI, coaching skills, internal trainer development"
  }
 }
