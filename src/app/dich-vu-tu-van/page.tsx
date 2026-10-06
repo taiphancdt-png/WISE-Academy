@@ -153,7 +153,7 @@ export default function ConsultingPage() {
         "Quản lý chất lượng toàn diện (TQM) và hệ thống chỉ số chất lượng (Quality KPIs)",
         "Đào tạo, kèm cặp dự án và cấp chứng nhận LSSI & CSSC (LSSI: hơn 25 năm kinh nghiệm, hơn 70.000 học viên trên toàn cầu)",
       ],
-      image: P + "yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_10.webp",
+      image: "/images/services/quality.webp",
     },
     {
       id: "04",
