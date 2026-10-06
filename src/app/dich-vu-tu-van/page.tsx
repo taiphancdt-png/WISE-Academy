@@ -138,11 +138,6 @@ export default function ConsultingPage() {
       subtitle: "Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau",
       desc: "Chất lượng được xây dựng ngay trong từng công đoạn: người vận hành làm chủ chất lượng, bất thường được báo hiệu tức thời (Andon) và xử lý ngay, lỗi được ngăn từ gốc bằng chống sai lỗi. Song song, bộ công cụ Six Sigma giúp giảm biến động và ra quyết định dựa trên dữ liệu. Là đối tác ủy quyền của Lean Six Sigma Institute (LSSI), WISE Academy đào tạo, kèm cặp dự án và cấp chứng nhận quốc tế cho từng vai trò trong tổ chức.",
       tools: ["Jidoka", "Andon", "Poka-Yoke", "Chất lượng tại công đoạn", "PDCA", "A3 / 8D", "5 Why", "DMAIC", "SPC", "MSA", "FMEA", "Cp / Cpk", "DOE", "TQM"],
-      results: [
-        { value: "10 - 25%", label: "Giảm lỗi và làm lại" },
-        { value: "5 cấp độ", label: "White đến Master Black Belt" },
-        { value: "LSSI", label: "Chứng nhận quốc tế" },
-      ],
       items: [
         "Chất lượng tại công đoạn (In-Station Quality): người vận hành làm chủ chất lượng, báo hiệu bất thường bằng Andon và xử lý ngay",
         "Jidoka và chống sai lỗi (Poka-Yoke) cho công đoạn và sản phẩm",
