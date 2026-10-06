@@ -146,7 +146,7 @@ export default function ConsultingPage() {
       title: "Phát triển năng lực lãnh đạo huấn luyện & quản trị chiến lược",
       subtitle: "Từ người chữa cháy thành người xây dựng hệ thống, và mỗi nhân viên đều tham gia cải tiến",
       desc: "Chuyển đổi Lean là một sáng kiến chiến lược, không phải một khóa đào tạo thông thường. WISE Academy cùng ban lãnh đạo trải nghiệm tư duy dòng chảy, nhìn doanh nghiệp qua chuỗi giá trị, phân tích khoảng cách giữa hiện tại và tương lai, chọn sáng kiến ưu tiên và cam kết một lộ trình hành động rõ ràng. Ở cấp giám sát, đội ngũ được rèn tư duy phát triển (Growth mindset) và tư duy Kaizen với ba hành vi cốt lõi: hỏi tại sao, đi quan sát, huấn luyện. Cơ chế để mọi người cùng tham gia (Involvement) biến cải tiến thành thói quen hằng ngày.",
-      tools: ["Hoshin Kanri", "Catch-ball", "A3", "Leader Standard Work", "Gemba Walk", "Ma trận Tác động - Nỗ lực", "Lean KPIs", "Growth mindset", "Kaizen Event", "Nhóm cải tiến (SGA / QCC)", "Kaizen một điểm", "TWI", "Coaching"],
+      tools: ["Hoshin Kanri", "Catch-ball", "A3", "Leader Standard Work", "Gemba Walk", "Ma trận Tác động - Nỗ lực", "Lean KPIs", "Growth mindset", "Kaizen Event", "Nhóm cải tiến (SGA / QCC)", "Kaizen một điểm", "TWI", "Coaching leader", "Coaching Kata"],
       items: [
         "Workshop Lean Leadership cho CEO, giám đốc nhà máy, trưởng bộ phận: mô phỏng sản xuất theo lô và theo dòng chảy, \"Điều gì xảy ra nếu chúng ta không thay đổi?\"",
         "Nhìn doanh nghiệp qua chuỗi giá trị (VSM), phân tích khoảng cách hiện tại và tương lai, rà soát cơ cấu tổ chức và hệ thống KPI",
@@ -225,7 +225,19 @@ export default function ConsultingPage() {
         eyebrow="Dịch vụ tư vấn doanh nghiệp"
         image="/images/projects/yujin-kreves-dao-tao-tu-van-5s-an-toan-quan-ly-truc-quan/photo_1.webp"
         title={<>Giải pháp tư vấn <span className="text-[#FF7A30]">vận hành tinh gọn</span> tại hiện trường</>}
-        description="Mọi dự án tư vấn của WISE Academy đều bắt đầu với bước khảo sát hiện trạng: trò chuyện với Ban lãnh đạo để thấu hiểu những trăn trở, nhu cầu và những ưu tiên; đi quan sát hiện trường để nắm bắt hiện trạng vận hành; cùng kiến tạo lộ trình triển khai cải tiến với mục tiêu rõ ràng, đúng trọng tâm và đo lường được kết quả đầu ra."
+        description={
+          <>
+            Mọi dự án tư vấn của WISE Academy đều bắt đầu với bước khảo sát hiện trạng:
+            <br />
+            trò chuyện với Ban lãnh đạo để thấu hiểu những trăn trở, nhu cầu và những ưu tiên;
+            <br />
+            đi quan sát hiện trường để nắm bắt hiện trạng vận hành;
+            <br />
+            cùng kiến tạo lộ trình triển khai cải tiến với mục tiêu rõ ràng,
+            <br />
+            đúng trọng tâm và đo lường được kết quả đầu ra.
+          </>
+        }
       >
         <ButtonLink href="/lien-he">Đặt lịch khảo sát hiện trạng</ButtonLink>
       </PageHero>
