@@ -13,25 +13,6 @@ export const metadata = {
 };
 
 export default function ConsultingPage() {
-  const surveySteps = [
-    {
-      title: "Thấu hiểu nhu cầu & ưu tiên",
-      desc: "Lắng nghe ban lãnh đạo về bối cảnh, thách thức và những ưu tiên kinh doanh của doanh nghiệp."
-    },
-    {
-      title: "Xác lập mục tiêu",
-      desc: "Cùng thống nhất mục tiêu và chỉ số đo lường cụ thể về năng suất, chất lượng, chi phí và thời gian giao hàng."
-    },
-    {
-      title: "Khảo sát hiện trạng",
-      desc: "Đi Gemba quan sát dòng vật tư, dòng thông tin và cách đội ngũ làm việc để nhận diện lãng phí và cơ hội cải tiến."
-    },
-    {
-      title: "Đề xuất lộ trình",
-      desc: "Đưa ra giải pháp và lộ trình đồng hành phù hợp giữa thực trạng và mục tiêu của doanh nghiệp."
-    }
-  ];
-
   // What customers come to us with (the former four services), shown as situations
   const contexts = [
     {
@@ -265,23 +246,6 @@ export default function ConsultingPage() {
           description="Mỗi doanh nghiệp chia sẻ câu chuyện về những thách thức nội tại và ngoại tại của mình với WISE Academy đều rất khác. Tuy nhiên, với cách tiếp cận khoa học, hệ thống RGPDCA, WISE Academy cam kết đồng hành kiến tạo lộ trình sát nhất với nhu cầu và ưu tiên của Doanh nghiệp tại từng giai đoạn phát triển."
         />
         <ContextCards items={contexts} />
-      </Section>
-
-      {/* Survey first: the four steps every engagement starts with */}
-      <Section tone="muted">
-        <SectionHeader
-          title={<>Thấu hiểu để <span className="text-[#F76011]">đồng hành</span></>}
-          description="Mỗi doanh nghiệp có bối cảnh, ưu tiên và thực trạng vận hành riêng. Vì vậy trước khi đề xuất bất kỳ giải pháp nào, WISE Academy cùng doanh nghiệp đi qua bốn bước sau."
-        />
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {surveySteps.map((step, i) => (
-            <li key={step.title} className="card-soft p-6">
-              <span className="text-3xl font-bold text-[#F76011]">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-3 text-lg font-semibold text-[#002F5B] leading-snug">{step.title}</h3>
-              <p className="mt-2 text-sm text-[#486581] leading-relaxed">{step.desc}</p>
-            </li>
-          ))}
-        </ol>
         <div className="mt-10 text-center">
           <ButtonLink href="/lien-he">Hãy liên hệ với chúng tôi để bắt đầu câu chuyện hành trình cải tiến</ButtonLink>
         </div>
