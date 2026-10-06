@@ -22,7 +22,7 @@ export default function ConsultingPage() {
         "Doanh nghiệp đang vận hành theo mô hình quản lý truyền thống và muốn chuyển sang hệ thống Lean làm nền tảng cho vận hành xuất sắc và tăng trưởng bền vững. Việc chuyển đổi diễn ra trên hai trục: chuyển đổi hữu hình (quy trình, mặt bằng, dòng giá trị) và chuyển đổi tư duy (năng lực lãnh đạo, văn hóa tổ chức), để Lean trở thành triết lý quản lý dài hạn chứ không chỉ là công cụ.",
       services: [
         { id: "01", name: "Nền móng" },
-        { id: "02", name: "Năng suất & Lead time" },
+        { id: "02", name: "Cải tiến Năng suất & Thời gian giao hàng" },
         { id: "03", name: "Chất lượng" },
         { id: "04", name: "Chiến lược & Văn hóa" },
       ],
@@ -34,7 +34,7 @@ export default function ConsultingPage() {
       context:
         "Doanh nghiệp chuẩn bị xây nhà máy hoặc mở dây chuyền mới và muốn thiết kế đúng ngay từ đầu theo nguyên tắc Lean: dòng chảy tối ưu, dễ mở rộng và hiệu quả từ ngày đầu vận hành, thay vì phải cải tạo tốn kém sau khi đã xây dựng.",
       services: [
-        { id: "02", name: "Năng suất & Lead time" },
+        { id: "02", name: "Cải tiến Năng suất & Thời gian giao hàng" },
         { id: "01", name: "Nền móng" },
         { id: "05", name: "Số hóa" },
       ],
@@ -89,7 +89,7 @@ export default function ConsultingPage() {
     {
       id: "02",
       part: "Trụ cột Giao hàng đúng hạn",
-      short: "Năng suất & Lead time",
+      short: "Cải tiến Năng suất & Thời gian giao hàng",
       tag: "PILLAR · JUST-IN-TIME · WORK ENGINEERING",
       title: "Năng suất & Lead time: giao hàng đúng hạn",
       subtitle: "Làm đúng thứ khách hàng cần, đúng lúc, đúng số lượng, với ít lãng phí nhất",
@@ -117,7 +117,7 @@ export default function ConsultingPage() {
       part: "Trụ cột Chất lượng",
       short: "Chất lượng: Jidoka & Six Sigma",
       tag: "PILLAR · JIDOKA · LEAN SIX SIGMA (LSSI)",
-      title: "Chất lượng ngay tại nguồn với Jidoka & Six Sigma",
+      title: "Cải tiến chất lượng với Jidoka và Six Sigma",
       subtitle: "Không nhận lỗi, không làm ra lỗi, không chuyển lỗi cho công đoạn sau",
       desc: "Chất lượng được xây dựng ngay trong từng công đoạn: người vận hành làm chủ chất lượng, bất thường được báo hiệu tức thời (Andon) và xử lý ngay, lỗi được ngăn từ gốc bằng chống sai lỗi. Song song, bộ công cụ Six Sigma giúp giảm biến động và ra quyết định dựa trên dữ liệu. Là đối tác ủy quyền của Lean Six Sigma Institute (LSSI), WISE Academy đào tạo, kèm cặp dự án và cấp chứng nhận quốc tế cho từng vai trò trong tổ chức.",
       tools: ["Jidoka", "Andon", "Poka-Yoke", "Chất lượng tại công đoạn", "PDCA", "A3 / 8D", "5 Why", "DMAIC", "SPC", "MSA", "FMEA", "Cp / Cpk", "DOE", "TQM"],
@@ -138,7 +138,7 @@ export default function ConsultingPage() {
       part: "Mái nhà",
       short: "Chiến lược, văn hóa & sự tham gia",
       tag: "ROOF · LEAN LEADERSHIP · KAIZEN CULTURE",
-      title: "Lãnh đạo, chiến lược & văn hóa cải tiến",
+      title: "Phát triển năng lực lãnh đạo huấn luyện & quản trị chiến lược",
       subtitle: "Từ người chữa cháy thành người xây dựng hệ thống, và mỗi nhân viên đều tham gia cải tiến",
       desc: "Chuyển đổi Lean là một sáng kiến chiến lược, không phải một khóa đào tạo thông thường. WISE Academy cùng ban lãnh đạo trải nghiệm tư duy dòng chảy, nhìn doanh nghiệp qua chuỗi giá trị, phân tích khoảng cách giữa hiện tại và tương lai, chọn sáng kiến ưu tiên và cam kết một lộ trình hành động rõ ràng. Ở cấp giám sát, đội ngũ được rèn tư duy phát triển (Growth mindset) và tư duy Kaizen với ba hành vi cốt lõi: hỏi tại sao, đi quan sát, huấn luyện. Cơ chế để mọi người cùng tham gia (Involvement) biến cải tiến thành thói quen hằng ngày.",
       tools: ["Hoshin Kanri", "Catch-ball", "A3", "Leader Standard Work", "Gemba Walk", "Ma trận Tác động - Nỗ lực", "Lean KPIs", "Growth mindset", "Kaizen Event", "Nhóm cải tiến (SGA / QCC)", "Kaizen một điểm", "TWI", "Coaching"],
