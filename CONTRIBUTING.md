@@ -9,9 +9,11 @@ Yêu cầu: Node.js 20 trở lên, npm.
 ```bash
 git clone https://github.com/taiphancdt-png/WISE-Academy.git
 cd WISE-Academy
-npm install
+npm install        # cũng tự cài bảo vệ git cho máy này (xem mục 7)
 npm run dev        # http://localhost:3000
 ```
+
+Máy đã clone từ trước: chạy `npm run setup:git` một lần.
 
 Kiểm tra trước khi mở PR:
 
@@ -63,7 +65,7 @@ Nếu PR của dev cần sửa vào file nội dung (ví dụ thêm trường m�
 
 ## 5. Quy ước nội dung và giao diện
 
-- Chỉ viết nội dung **tiếng Việt**. Tiếng Anh và tiếng Trung được dịch tự động bằng Google Translate (nút chọn ngôn ngữ trên header).
+- Chỉ viết nội dung **tiếng Việt**. Bản tiếng Anh và tiếng Trung nằm trong `src/i18n/en.json` và `zh.json` (do Claude dịch, không dùng Google Translate). Nội dung mới cần được dịch và lưu vào hai file này trước khi đẩy lên.
 - Màu nhận diện: navy `#002F5B`, cam `#F76011`. Chữ cam nhỏ trên nền trắng dùng `#C9500E` để đủ tương phản.
 - Font: Be Vietnam Pro (qua `next/font`).
 - Không dùng dấu gạch dài `—` hoặc `–` trong nội dung hiển thị; dùng dấu gạch ngắn `-`.
@@ -73,3 +75,19 @@ Nếu PR của dev cần sửa vào file nội dung (ví dụ thêm trường m�
 ## 6. Biến môi trường
 
 Form trên website gửi email qua SMTP. Xem mẫu trong `.env.example`, tạo file `.env.local` khi cần thử gửi email ở máy mình. **Không commit file `.env*` có giá trị thật.** Giá trị thật được cấu hình trên nơi host website, chủ dự án sẽ gửi riêng khi cần.
+
+## 7. Hai máy cùng làm việc: chống ghi đè dữ liệu
+
+Nhiều máy cùng commit lên `main`, nên repo có sẵn các lớp bảo vệ (cài bằng `npm install` hoặc `npm run setup:git`):
+
+- **Không đẩy đè lên commit của máy khác.** Hook `pre-push` từ chối khi trên GitHub có commit mà máy mình chưa có (kể cả khi dùng `git push -f`). Khi gặp thông báo này chỉ cần chạy `git pull --rebase origin main` rồi đẩy lại.
+- **Không commit file đang dở xung đột.** Hook `pre-commit` chặn file còn dấu `<<<<<<<` / `>>>>>>>` và file `.json` hỏng cú pháp.
+- **Bản dịch được gộp theo từng mục.** `src/i18n/en.json` và `zh.json` dùng bộ gộp riêng (`scripts/git/merge-i18n.mjs`): hai máy cùng thêm bản dịch thì giữ cả hai; cùng sửa một mục theo hai cách khác nhau thì giữ bản của máy đang gộp và in cảnh báo. Các mục luôn được sắp xếp theo khoá để hạn chế đụng nhau.
+- **`git pull` tự rebase và tự cất thay đổi chưa commit** (`pull.rebase`, `rebase.autoStash`).
+
+Thói quen nên giữ:
+
+1. Trước khi bắt đầu sửa: `git pull`.
+2. Commit nhỏ và đẩy sớm, không giữ thay đổi trên máy nhiều ngày.
+3. Báo cho người kia khi sắp sửa lớn cùng một trang hoặc một file dữ liệu (`src/data/*.json`).
+4. Không dùng `git push --force` lên `main` (GitHub cũng đã chặn).

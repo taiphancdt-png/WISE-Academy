@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "sh scripts/setup-git.sh",
+    "setup:git": "sh scripts/setup-git.sh"
   },
   "dependencies": {
     "@netlify/blobs": "^8.2.0",

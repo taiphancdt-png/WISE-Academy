@@ -1,0 +1,29 @@
+#!/bin/sh
+# Blocks commits that would publish a half-resolved merge: leftover conflict markers, or JSON data files that no
+# longer parse. Installed for everyone by scripts/setup-git.sh (core.hooksPath = .githooks).
+
+files=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$files" ] && exit 0
+
+bad=0
+for f in $files; do
+  [ -f "$f" ] || continue
+  case "$f" in
+    *.png|*.jpg|*.jpeg|*.webp|*.gif|*.pdf|*.ico|*.woff|*.woff2) continue ;;
+  esac
+  if git show ":$f" | grep -nE '^(<<<<<<<|>>>>>>>)( |$)' >/dev/null 2>&1; then
+    echo "pre-commit: $f still contains merge conflict markers (<<<<<<< or >>>>>>>). Resolve them first."
+    bad=1
+  fi
+  case "$f" in
+    *.json)
+      if ! git show ":$f" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{JSON.parse(s)}catch(e){console.error(e.message);process.exit(1)}})' 2>/dev/null; then
+        echo "pre-commit: $f is not valid JSON (often a merge resolved by hand). Fix it before committing."
+        bad=1
+      fi
+      ;;
+  esac
+done
+
+[ "$bad" -eq 0 ] || { echo "Commit stopped. Nothing was lost; fix the files above and commit again."; exit 1; }
+exit 0

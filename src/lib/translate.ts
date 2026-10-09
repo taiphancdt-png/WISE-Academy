@@ -72,7 +72,9 @@ async function save(lang: Lang, entries: { key: string; source: string; text: st
       const file = path.join(process.cwd(), "src", "i18n", `${lang}.json`);
       const dict: Dict = JSON.parse(await fs.readFile(file, "utf8").catch(() => "{}"));
       entries.forEach((e) => (dict[e.key] = { s: normalize(e.source), t: e.text }));
-      await fs.writeFile(file, JSON.stringify(dict, null, 1) + "\n");
+      // keys kept sorted, so entries added on two machines land in different places of the file (fewer merge clashes)
+      const sorted = Object.fromEntries(Object.keys(dict).sort().map((k) => [k, dict[k]]));
+      await fs.writeFile(file, JSON.stringify(sorted, null, 1) + "\n");
     });
     return writing;
   }

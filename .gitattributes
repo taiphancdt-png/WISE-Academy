@@ -1,0 +1,3 @@
+# Translation dictionaries are merged entry by entry (scripts/git/merge-i18n.mjs, registered by scripts/setup-git.sh)
+src/i18n/en.json merge=i18n-json
+src/i18n/zh.json merge=i18n-json

@@ -1,0 +1,25 @@
+#!/bin/sh
+# Refuses a push that would replace commits someone else already pushed (for example a forced push from a stale
+# copy). The other machine's work must be pulled in first: git pull --rebase origin main
+# Installed for everyone by scripts/setup-git.sh (core.hooksPath = .githooks).
+
+remote="$1"
+zero=0000000000000000000000000000000000000000
+
+# make sure we know the latest state of the remote
+git fetch --quiet "$remote" 2>/dev/null
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue          # deleting a branch: GitHub rules decide
+  [ "$remote_sha" = "$zero" ] && continue         # new branch
+  branch=${remote_ref#refs/heads/}
+  latest=$(git rev-parse --quiet --verify "refs/remotes/$remote/$branch" 2>/dev/null || echo "$remote_sha")
+  for sha in $remote_sha $latest; do
+    if ! git merge-base --is-ancestor "$sha" "$local_sha" 2>/dev/null; then
+      echo "pre-push: $remote/$branch has commits that are not in your copy (pushed from another machine)."
+      echo "Pushing now would overwrite them. Run:  git pull --rebase $remote $branch   then push again."
+      exit 1
+    fi
+  done
+done
+exit 0
