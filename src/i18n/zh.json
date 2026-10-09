@@ -11395,6 +11395,10 @@
   "s": "Công nghệ và nhu cầu của người tiêu dùng đang tạo ra xu hướng sản xuất just in time (sản xuất theo yêu cầu) cần được theo dõi.",
   "t": "技术和消费者需求正在催生值得关注的准时化（just in time，按需）生产趋势。"
  },
+ "b3ebcc507177dc6e": {
+  "s": "Mở toàn màn hình",
+  "t": "全屏打开"
+ },
  "b3edb4fd1806d81b": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Khi thiết kế lại từ đầu hiệu quả hơn cải tiến từng bước</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>从头重新设计比逐步改善更有效时</span>"
@@ -12342,6 +12346,10 @@
  "c329c6a7dd50abc1": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Dự báo ngoài khoảng dữ liệu đã có.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>在已有数据范围之外进行预测。</span>"
+ },
+ "c3314d320dfbd465": {
+  "s": "Mở công cụ →",
+  "t": "打开工具 →"
  },
  "c33a99520033920d": {
   "s": "Cách xây dựng Charter từng bước",
@@ -13831,6 +13839,10 @@
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Chạy hồi quy đơn hoặc hồi quy bội.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>进行简单回归或多元回归。</span>"
  },
+ "dc96b9e1aa4f9f06": {
+  "s": "Mô tả toàn bộ mô hình kinh doanh trên một trang qua 9 thành phần. Công cụ dẫn bạn đi lần lượt từng ô với câu hỏi gợi ý và ví dụ mẫu, kiểm tra sự liên kết giữa các ô, rồi xuất canvas ra PDF hoặc ảnh PNG.",
+  "t": "通过 9 个构成要素，在一页纸上描述完整的商业模式。工具借助引导问题和示例逐一带你完成每个模块，检查各模块之间的衔接，然后将画布导出为 PDF 或 PNG 图片。"
+ },
  "dca1d38ac65b0a7a": {
   "s": "❌ Dự án lớn chỉ dành cho lãnh đạo",
   "t": "❌ 只属于领导的大项目"
@@ -13970,6 +13982,10 @@
  "df090f906a738bf6": {
   "s": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Tham gia cộng đồng Lean Six Sigma Excellence Hub - Join our community</span>",
   "t": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>加入 Lean Six Sigma Excellence Hub 社群 - Join our community</span>"
+ },
+ "df10675e45439e29": {
+  "s": "Chiến lược & Mô hình kinh doanh",
+  "t": "战略与商业模式"
  },
  "df14649b019bc43b": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Nguồn chủ động: phỏng vấn khách hàng, khảo sát, nhóm thảo luận, quan sát khách hàng sử dụng sản phẩm.</span>",

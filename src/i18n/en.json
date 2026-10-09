@@ -11395,6 +11395,10 @@
   "s": "Công nghệ và nhu cầu của người tiêu dùng đang tạo ra xu hướng sản xuất just in time (sản xuất theo yêu cầu) cần được theo dõi.",
   "t": "Technology and consumer demand are creating a just-in-time (on-demand) production trend worth watching."
  },
+ "b3ebcc507177dc6e": {
+  "s": "Mở toàn màn hình",
+  "t": "Open full screen"
+ },
  "b3edb4fd1806d81b": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Khi thiết kế lại từ đầu hiệu quả hơn cải tiến từng bước</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>When redesigning from scratch is more effective than step-by-step improvement</span>"
@@ -12342,6 +12346,10 @@
  "c329c6a7dd50abc1": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Dự báo ngoài khoảng dữ liệu đã có.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Predicting outside the range of the available data.</span>"
+ },
+ "c3314d320dfbd465": {
+  "s": "Mở công cụ →",
+  "t": "Open tool →"
  },
  "c33a99520033920d": {
   "s": "Cách xây dựng Charter từng bước",
@@ -13831,6 +13839,10 @@
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Chạy hồi quy đơn hoặc hồi quy bội.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Run simple or multiple regression.</span>"
  },
+ "dc96b9e1aa4f9f06": {
+  "s": "Mô tả toàn bộ mô hình kinh doanh trên một trang qua 9 thành phần. Công cụ dẫn bạn đi lần lượt từng ô với câu hỏi gợi ý và ví dụ mẫu, kiểm tra sự liên kết giữa các ô, rồi xuất canvas ra PDF hoặc ảnh PNG.",
+  "t": "Describe your whole business model on one page through 9 building blocks. The tool walks you through each block with guiding questions and worked examples, checks how the blocks fit together, then exports the canvas as a PDF or PNG image."
+ },
  "dca1d38ac65b0a7a": {
   "s": "❌ Dự án lớn chỉ dành cho lãnh đạo",
   "t": "❌ A big project reserved for leaders"
@@ -13970,6 +13982,10 @@
  "df090f906a738bf6": {
   "s": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Tham gia cộng đồng Lean Six Sigma Excellence Hub - Join our community</span>",
   "t": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Join the Lean Six Sigma Excellence Hub community - Join our community</span>"
+ },
+ "df10675e45439e29": {
+  "s": "Chiến lược & Mô hình kinh doanh",
+  "t": "Strategy & Business Models"
  },
  "df14649b019bc43b": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Nguồn chủ động: phỏng vấn khách hàng, khảo sát, nhóm thảo luận, quan sát khách hàng sử dụng sản phẩm.</span>",

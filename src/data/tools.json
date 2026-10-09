@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "slug": "business-model-canvas",
+    "title": "Business Model Canvas",
+    "category": "Chiến lược & Mô hình kinh doanh",
+    "summary": "Mô tả toàn bộ mô hình kinh doanh trên một trang qua 9 thành phần. Công cụ dẫn bạn đi lần lượt từng ô với câu hỏi gợi ý và ví dụ mẫu, kiểm tra sự liên kết giữa các ô, rồi xuất canvas ra PDF hoặc ảnh PNG.",
+    "thumbnail": "/tools/business-model-canvas/thumbnail.webp",
+    "file": "/tools/business-model-canvas/index.html",
+    "url": null,
+    "tags": [
+      "Business Model Canvas",
+      "Chiến lược",
+      "Mô hình kinh doanh"
+    ]
+  }
+]
