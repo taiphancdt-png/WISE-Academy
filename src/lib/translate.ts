@@ -63,11 +63,12 @@ export async function lookup(lang: Lang, keys: string[]): Promise<Record<string,
 }
 
 // Locally the new translations are appended to src/i18n/<lang>.json; on Netlify they go to Blobs.
+// Writes are chained one after another; a failed write must not block the ones after it.
 let writing: Promise<void> = Promise.resolve();
 async function save(lang: Lang, entries: { key: string; source: string; text: string }[]) {
   entries.forEach((e) => memory[lang].set(e.key, e.text));
   if (DEV) {
-    writing = writing.then(async () => {
+    writing = writing.catch(() => undefined).then(async () => {
       const file = path.join(process.cwd(), "src", "i18n", `${lang}.json`);
       const dict: Dict = JSON.parse(await fs.readFile(file, "utf8").catch(() => "{}"));
       entries.forEach((e) => (dict[e.key] = { s: normalize(e.source), t: e.text }));
@@ -157,7 +158,7 @@ const tagsOf = (s: string) => (s.match(/<\/?[a-z][^>]*>/gi) || []).map((t) => t.
 // Without an API key (local runs), texts still waiting for a translation are listed in .i18n-pending/pending-<lang>.json.
 async function notePending(lang: Lang, items: { key: string; text: string }[]) {
   if (!DEV || !items.length) return;
-  writing = writing.then(async () => {
+  writing = writing.catch(() => undefined).then(async () => {
     // kept outside src/ so writing it does not trigger a dev rebuild
     const file = path.join(process.cwd(), ".i18n-pending", `pending-${lang}.json`);
     await fs.mkdir(path.dirname(file), { recursive: true });

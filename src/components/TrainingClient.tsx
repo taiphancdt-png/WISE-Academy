@@ -58,7 +58,7 @@ function CourseCard({ course }: { course: Course }) {
             {course.badge}
           </span>
           <h3 className="mt-2 text-lg font-semibold text-[#002F5B] leading-snug">{course.title}</h3>
-          <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{course.summary}</p>
+          {course.summary && <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{course.summary}</p>}
 
           <dl className="mt-4 space-y-3 text-sm">
             <div>
@@ -132,8 +132,8 @@ function CourseAccordionItem({ course, open, onToggle }: { course: Course; open:
         <div className="border-t border-slate-100 px-4 sm:px-5 py-5 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6">
           {course.image && <img src={course.image} alt={course.title} className="w-full aspect-[16/10] rounded-lg object-cover" loading="lazy" />}
           <div>
-            <p className="text-sm text-[#486581] leading-relaxed">{course.summary}</p>
-            <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            {course.summary && <p className="mb-4 text-sm text-[#486581] leading-relaxed">{course.summary}</p>}
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <dt className="text-[11px] font-bold uppercase tracking-wider text-[#002F5B]">Đối tượng</dt>
                 <dd className="mt-1 text-[#486581]">{course.target}</dd>
