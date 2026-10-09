@@ -13,7 +13,7 @@ const SKIP = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "SVG", "CODE", "PRE", "TEXT
 const INLINE = new Set(["STRONG", "EM", "B", "I", "U", "S", "BR", "SPAN", "A", "SMALL", "SUP", "SUB", "MARK", "ABBR", "CITE", "Q", "TIME", "WBR"]);
 const ATTRS = ["placeholder", "title", "alt", "aria-label"];
 const LETTERS = /[A-Za-zÀ-ỹĐđ]/;
-const VIETNAMESE = /[À-ỹĐđ]|\b(và|của|cho|các|những|với|trong|được|là|không|người|này)\b/i;
+const VIETNAMESE = /[À-ỹĐđ]|\b(và|của|cho|các|những|với|trong|được|là|không|người|này|nay)\b/i;
 
 const norm = (s: string) => s.replace(/<!-- -->/g, "").replace(/[\u00a0\s]+/g, " ").trim();
 const excluded = (el: Element | null) => !el || !!el.closest('[translate="no"], .notranslate, [contenteditable="true"]');
