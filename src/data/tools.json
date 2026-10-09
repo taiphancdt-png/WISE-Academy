@@ -12,5 +12,21 @@
       "Chiến lược",
       "Mô hình kinh doanh"
     ]
+  },
+  {
+    "slug": "x-matrix",
+    "title": "Policy Deployment · X-Matrix",
+    "category": "Chiến lược & Mô hình kinh doanh",
+    "summary": "Triển khai chiến lược (Hoshin Kanri) từ đột phá 3-5 năm xuống mục tiêu năm, ưu tiên cải tiến và KPI cho 3 cấp. Ma trận X liên kết các tầng mục tiêu với người phụ trách, bảng theo dõi KPI theo tháng và dashboard tổng hợp tiến độ, xuất ra PDF.",
+    "thumbnail": "/tools/x-matrix/thumbnail.webp",
+    "file": "/tools/x-matrix/index.html",
+    "url": null,
+    "saves": true,
+    "tags": [
+      "Hoshin Kanri",
+      "X-Matrix",
+      "Policy Deployment",
+      "KPI"
+    ]
   }
 ]

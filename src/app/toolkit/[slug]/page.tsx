@@ -56,12 +56,13 @@ export default async function LeanToolPage({ params }: { params: Promise<{ slug:
       <section className="px-4 sm:px-6 py-8">
         <div className="max-w-6xl mx-auto">
           {src ? (
-            // Tools are self-contained HTML; sandboxed without same-origin access to the site.
+            // Tools are self-contained HTML from this repo, sandboxed without same-origin access to the site;
+            // a tool that keeps its data in the browser (saves) gets same-origin so its localStorage works.
             <iframe
               src={src}
               title={tool.title}
               className="w-full h-[80vh] min-h-[600px] bg-white rounded-2xl shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)]"
-              sandbox="allow-scripts allow-forms allow-downloads allow-popups allow-modals"
+              sandbox={`allow-scripts allow-forms allow-downloads allow-popups allow-modals${tool.saves ? " allow-same-origin" : ""}`}
               loading="lazy"
             />
           ) : (

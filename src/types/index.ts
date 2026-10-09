@@ -105,5 +105,7 @@ export interface LeanTool {
   file?: string | null;
   /** External link used instead of an embedded file */
   url?: string | null;
+  /** The tool keeps its data in the browser (localStorage), so its frame needs same-origin access */
+  saves?: boolean;
   tags?: string[];
 }
