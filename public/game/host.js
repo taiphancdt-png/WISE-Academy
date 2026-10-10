@@ -237,7 +237,7 @@ function renderStage(changed) {
         <p>${esc(q.t)}</p>
         ${rev && q.why ? `<div class="why"><b>Vì sao:</b> ${esc(q.why)}</div>` : ''}
       </div>
-      ${barsHtml(rev ? s.dist : H.dist, rev ? q.ans : null)}`;
+      ${barsHtml(rev ? s.dist : null, rev ? q.ans : null)}`; // the answer chart stays empty until the answer is revealed, so the shared screen gives nothing away
     if (changed && !rev) { H.beeped = {}; play(() => music.suspense(left)); }
     if (changed && rev) play(() => music.fanfare());
     return;
@@ -293,14 +293,6 @@ function updateLive() {
   }
   if (s.phase === 'question') {
     const a = $('#answered'); if (a) a.textContent = H.answered;
-    if (H.dist) {
-      const max = Math.max(1, ...WASTES.map((w) => H.dist[w.k] || 0));
-      WASTES.forEach((w) => {
-        const v = H.dist[w.k] || 0;
-        const nb = stageEl.querySelector(`[data-n="${w.k}"]`); const cb = stageEl.querySelector(`[data-c="${w.k}"]`);
-        if (nb) nb.textContent = v; if (cb) cb.style.height = `${Math.round((v / max) * 200) + 4}px`;
-      });
-    }
     if (S.earlyEnd && H.players.length > 0 && H.answered >= H.players.length && !H.auto[s.q]) {
       H.auto[s.q] = true; setTimeout(() => control('reveal'), 900);
     }
