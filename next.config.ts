@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  // "Săn Lãng Phí" game: static pages in public/game, short links for players (QR) and the host
+  async rewrites() {
+    return [
+      { source: "/game", destination: "/game/index.html" },
+      { source: "/game/host", destination: "/game/host.html" },
+    ];
+  },
 };
 
 export default nextConfig;
