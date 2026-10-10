@@ -73,9 +73,10 @@ export default async function LeanToolPage({ params }: { params: Promise<{ slug:
             <iframe
               src={src}
               title={tool.title}
-              className="w-full h-[80vh] min-h-[600px] bg-white rounded-2xl shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)]"
+              className={`w-full ${tool.playerUrl ? "h-[calc(100vh-120px)] min-h-[680px]" : "h-[80vh] min-h-[600px]"} bg-white rounded-2xl shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)]`}
               sandbox={`allow-scripts allow-forms allow-downloads allow-popups allow-modals${tool.saves ? " allow-same-origin" : ""}`}
               allow="autoplay; fullscreen; clipboard-write"
+              allowFullScreen
               loading="lazy"
             />
           ) : (

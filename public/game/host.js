@@ -144,6 +144,24 @@ async function createGame(btn) {
   }
 }
 
+// Full screen for projecting / screen sharing; Safari still uses the webkit-prefixed calls
+function toggleFullscreen() {
+  const d = document, el = d.documentElement;
+  // Inside the Toolkit page the frame is small: open the projector screen in its own tab (same room), where full
+  // screen works everywhere. Done synchronously so the browser does not block the new tab.
+  if (window.self !== window.top && H.pin) {
+    window.open('/game/host?resume=1', '_blank');
+    music.stop(); clearInterval(H.poller); clearInterval(H.timer);
+    stageEl.innerHTML = `<div class="center" style="margin:auto;gap:16px;max-width:560px"><h1 style="margin:0;font-size:34px;line-height:1.2">Màn chiếu đã mở ở tab mới</h1><p class="sub">Chia sẻ hoặc chiếu tab đó, bấm nút toàn màn hình ở góc phải (hoặc phím F11).</p><button class="btn btn-ghost" data-act="here" type="button">Tiếp tục điều khiển ở đây</button></div>`;
+    return;
+  }
+  const on = d.fullscreenElement || d.webkitFullscreenElement;
+  try {
+    const p = on ? (d.exitFullscreen || d.webkitExitFullscreen).call(d) : (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+    if (p && p.catch) p.catch(() => {});
+  } catch (err) { /* not allowed here: the host can use "Mở màn hình người dẫn" instead */ }
+}
+
 // ======================= MÀN CHIẾU =======================
 function enterStage() {
   setupEl.classList.add('hidden'); stageEl.classList.remove('hidden');
@@ -326,7 +344,8 @@ stageEl.addEventListener('click', async (e) => {
   if (act === 'start') return control('start', { q: Number(b.dataset.q) });
   if (['reveal', 'leaderboard', 'final', 'poll', 'end'].includes(act)) { if (act === 'reveal') H.auto[H.s.q] = true; return control(act); }
   if (act === 'mute') { H.musicOn = !H.musicOn; if (!H.musicOn) music.stop(); renderStage(false); return; }
-  if (act === 'fs') { try { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); } catch (err) { /* bỏ qua */ } return; }
+  if (act === 'fs') { toggleFullscreen(); return; }
+  if (act === 'here') { enterStage(); return; }
   if (act === 'lobbyMusic') { H.lobbyMusic = !H.lobbyMusic; if (H.lobbyMusic) play(() => music.lobby()); else music.stop(); renderStage(false); return; }
   if (act === 'csv') return exportCsv();
   // online classes: the join link (PIN included) is pasted into the meeting chat
@@ -374,4 +393,6 @@ async function exportCsv() {
   } catch (err) { alert(err.message); }
 }
 
-renderSetup();
+// /game/host?resume=1 (opened from the Toolkit frame) goes straight to the open room
+const resumeGame = new URLSearchParams(location.search).get('resume') && store('slp-host-game');
+if (resumeGame) { H.pin = resumeGame.pin; H.key = resumeGame.key; enterStage(); } else renderSetup();
