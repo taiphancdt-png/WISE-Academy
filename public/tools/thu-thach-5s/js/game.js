@@ -1329,7 +1329,7 @@
     requestAnimationFrame(loop);
     setTimeout(function () {
       modal('<h3>Giai đoạn 1 · Dọn xưởng</h3><p><b>' + esc(C.workshop) + '</b> đang rất bừa bộn: dụng cụ vứt lung tung, hàng lỗi lẫn hàng tốt, dầu loang, phoi văng, xe nâng đỗ tùy tiện… máy móc, kệ vật tư cũng đặt không theo trình tự.</p>' +
-        '<ul class="intro-list"><li><b>Sàng lọc:</b> giữ cái cần, loại bỏ hoặc dán thẻ đỏ cái không cần.</li><li><b>Sắp xếp:</b> mỗi thứ về đúng chỗ; nút <b>📐 Mặt bằng</b> để kéo thả máy móc, kệ, khu vực theo dòng chảy sản xuất.</li><li><b>Sạch sẽ:</b> lau dầu, quét phoi, phân loại rác đúng 4 thùng; máy chảy dầu thì tìm nguồn gây bẩn và báo cáo bảo trì.</li></ul>' +
+        '<ul class="intro-list"><li><b>Sàng lọc:</b> giữ cái cần, loại bỏ hoặc dán thẻ đỏ cái không cần.</li><li><b>Sắp xếp:</b> mỗi thứ về đúng chỗ.</li><li><b>Sắp xếp layout xưởng:</b> bấm nút <b>📐 Mặt bằng</b> để kéo thả máy móc, kệ, khu vực theo dòng chảy Cửa nhập → Kệ vật tư → Máy tiện → Máy phay → QC → Thành phẩm → Cổng xuất. Đường đứt nét (spaghetti) càng ngắn, càng ít quay đầu thì càng tốt.</li><li><b>Sạch sẽ:</b> lau dầu, quét phoi, phân loại rác đúng 4 thùng; máy chảy dầu thì tìm nguồn gây bẩn và báo cáo bảo trì.</li></ul>' +
         '<p>Bấm vào đồ vật, nhân vật tự chạy tới. Game không gợi ý đúng/sai cho đến khi chấm điểm.</p><div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu dọn!</button></div>');
     }, 450);
   }

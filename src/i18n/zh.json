@@ -4623,6 +4623,10 @@
   "s": "Bệnh viện Thống Nhất, Vinavit (Nam Quốc)",
   "t": "Thong Nhat 医院、Vinavit（Nam Quoc）"
  },
+ "49d64a347bc59ce7": {
+  "s": "Game mô phỏng cải tiến 5S tại một xưởng cơ khí: sàng lọc, sắp xếp layout xưởng theo dòng chảy (kéo thả các trạm, xem sơ đồ spaghetti), lau chùi và báo cáo nguồn gây bẩn, dán băng keo định vị, lập kế hoạch duy trì. Không có gợi ý trong lúc chơi; cuối game chấm điểm từng chữ S và so sánh với xưởng đạt chuẩn.",
+  "t": "模拟机械车间 5S 改善的游戏：整理、按物流重新布置车间布局（拖动各工位，查看意大利面图）、清扫并报告污染源、粘贴地面定位标线、制定维持计划。游戏过程中没有提示；结束时为每个 S 打分，并与达到 5S 标准的车间进行对比。"
+ },
  "49de7177658a9b7b": {
   "s": "Chẩn đoán viên Shindanshi ngành công nghiệp chế biến, chế tạo",
   "t": "加工制造业 Shindanshi 诊断师"
@@ -13742,10 +13746,6 @@
  "da9ff5078ef8d86d": {
   "s": "Tổ chức đồng hành",
   "t": "陪伴的机构"
- },
- "daaa1f3b51ba0460": {
-  "s": "Game mô phỏng cải tiến 5S tại một xưởng cơ khí: sàng lọc, sắp xếp lại mặt bằng theo dòng chảy, lau chùi và báo cáo nguồn gây bẩn, dán băng keo định vị, lập kế hoạch duy trì. Không có gợi ý trong lúc chơi; cuối game chấm điểm từng chữ S và so sánh với xưởng đạt chuẩn.",
-  "t": "模拟机械车间 5S 改善的游戏：整理、按物流重新布置平面、清扫并报告污染源、粘贴地面定位标线、制定维持计划。游戏过程中没有提示；结束时为每个 S 打分，并与达到 5S 标准的车间进行对比。"
  },
  "dab47f3743cdd2a6": {
   "s": "<span class=\"shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]\">04</span><span class=\"text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors\">Kỹ thuật công nghiệp (IE): hoạch định năng lực, mô hình sử dụng lao động, cân bằng chuyền, takt time, hiệu suất thiết bị</span>",

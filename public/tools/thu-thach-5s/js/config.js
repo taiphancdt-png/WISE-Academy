@@ -259,7 +259,7 @@ window.GAME_CONFIG = {
   /* Tóm tắt lý thuyết 5S (nút "Xem bài học 5S") */
   lessons: [
     { s: "Sàng lọc", jp: "Seiri", text: "Phân biệt cái cần và không cần. Bỏ cái không cần; cái chưa chắc thì dán thẻ đỏ, đưa ra khu chờ xử lý để người có trách nhiệm quyết định." },
-    { s: "Sắp xếp", jp: "Seiton", text: "Mỗi thứ một chỗ, mỗi chỗ một thứ. Bố trí mặt bằng theo dòng chảy vật liệu → gia công → kiểm tra → thành phẩm; dùng kệ, bảng hình bóng để lấy nhanh, trả đúng." },
+    { s: "Sắp xếp", jp: "Seiton", text: "Mỗi thứ một chỗ, mỗi chỗ một thứ. Sắp xếp layout xưởng theo dòng chảy: cửa nhập → kệ vật tư → gia công → kiểm tra → thành phẩm → cổng xuất, để lô hàng đi ngắn nhất, không quay đầu, không cắt ngang lối đi (vẽ sơ đồ spaghetti để thấy quãng đường). Dùng kệ, bảng hình bóng để lấy nhanh, trả đúng." },
     { s: "Sạch sẽ", jp: "Seiso", text: "Vệ sinh là kiểm tra. Lau dầu, quét phoi, phân loại rác đúng thùng: kim loại, tái chế, sinh hoạt, chất thải nguy hại." },
     { s: "Săn sóc", jp: "Seiketsu", text: "Tiêu chuẩn hoá để giữ 3S đầu: băng keo định vị theo màu (vàng lối đi, xanh thành phẩm, đỏ hàng lỗi, vàng-đen nguy hiểm), nhãn, hình bóng dụng cụ." },
     { s: "Sẵn sàng", jp: "Shitsuke", text: "Biến 5S thành thói quen: lịch đánh giá định kỳ, chấm chéo theo checklist, công bố xếp hạng, khen thưởng, động viên kịp thời." }
