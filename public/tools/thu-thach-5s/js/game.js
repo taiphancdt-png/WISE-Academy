@@ -214,7 +214,7 @@
   /* ============ 5. VẼ CẢNH ============ */
   function addImg(root, meta, cls, z, dx, dy) {
     dx = dx || 0; dy = dy || 0;
-    var im = new Image(); im.src = meta.src; im.alt = ""; im.draggable = false;
+    var im = new Image(); im.decoding = "async"; im.src = meta.src; im.alt = ""; im.draggable = false;
     im.className = cls || "";
     im.style.left = (meta.x + (dx - dy) * 32) + "px"; im.style.top = (meta.y + (dx + dy) * 16) + "px";
     im.style.width = meta.w + "px"; im.style.height = meta.h + "px";
@@ -269,7 +269,7 @@
   function makeItemEl(model, it, live) {
     var pl = placement(model, it); if (!pl) return null;
     var m = spriteMeta(it.cfg), w = mk("div", "it"), g = new Image(), k = it.cfg.scale || 1;   // scale: drawn bigger to match the machines (forklift)
-    g.src = m.src; g.alt = it.cfg.name; g.className = "gfx"; g.draggable = false;
+    g.decoding = "async"; g.src = m.src; g.alt = it.cfg.name; g.className = "gfx"; g.draggable = false;
     g.style.width = m.w * k + "px"; g.style.height = m.h * k + "px";
     var tagX = 0, tagY = 0;
     if (pl.mode === "flat") {
@@ -391,26 +391,27 @@
   /* ============ 6. NHÂN VẬT, TÌM ĐƯỜNG, HÀNH ĐỘNG ============ */
   var G = null, PLAYER = "", SPEED = 4.6;
 
-  function isFree(x, y) {
+  function blockerSet() {
+    var b = {};
+    G.model.items.forEach(function (it) { if (it.cfg.blocks && it.loc.t === "floor") b[k2(it.loc.tx, it.loc.ty)] = 1; });
+    return b;
+  }
+  /* blk: tập ô có vật cản dựng sẵn (BFS truyền vào để không phải duyệt lại vật dụng ở mỗi ô) */
+  function isFree(x, y, blk) {
     if (x < 0 || y < 0 || x >= GW || y >= GH) return false;
-    if (BLOCKED[k2(x, y)]) return false;
-    if (G.occ[k2(x, y)]) return false;
-    for (var i = 0; i < G.model.items.length; i++) {
-      var it = G.model.items[i];
-      if (it.cfg.blocks && it.loc.t === "floor" && it.loc.tx === x && it.loc.ty === y) return false;
-    }
-    return true;
+    var kk = k2(x, y);
+    return !BLOCKED[kk] && !G.occ[kk] && !(blk || blockerSet())[kk];
   }
 
   function bfs(sx, sy, goal) {
     if (goal(sx, sy)) return [];
-    var q = [[sx, sy]], prev = {}, seen = {}; seen[k2(sx, sy)] = 1;
+    var q = [[sx, sy]], prev = {}, seen = {}, blk = blockerSet(); seen[k2(sx, sy)] = 1;
     var dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]];
     while (q.length) {
       var c = q.shift();
       for (var i = 0; i < 4; i++) {
         var nx = c[0] + dirs[i][0], ny = c[1] + dirs[i][1], kk = k2(nx, ny);
-        if (seen[kk] || !isFree(nx, ny)) continue;
+        if (seen[kk] || !isFree(nx, ny, blk)) continue;
         seen[kk] = 1; prev[kk] = c;
         if (goal(nx, ny)) {
           var path = [[nx, ny]], cur = c;
@@ -471,12 +472,12 @@
       if (dist <= stepLen) {
         p.fx = tx; p.fy = ty; p.x = t[0]; p.y = t[1]; p.path.shift();
         if ((G.steps = (G.steps || 0) + 1) % 2 === 0) Sound.step();
-        if (!p.path.length) arrive(); else refreshNear();
+        if (!p.path.length) { arrive(); updateSbar(); } else refreshNear();
       } else { p.fx += ddx / dist * stepLen; p.fy += ddy / dist * stepLen; }
       placePlayer();
     }
     updateCamera(false);
-    if (!G.lastTimer || ts - G.lastTimer > 250) { G.lastTimer = ts; $("timer").textContent = fmtTime(elapsed()); updateSbar(); }
+    if (!G.lastTimer || ts - G.lastTimer > 500) { G.lastTimer = ts; $("timer").textContent = fmtTime(elapsed()); }
     requestAnimationFrame(loop);
   }
 
@@ -685,7 +686,6 @@
     G.model.items.forEach(function (i) { if (i.loc.t === "floor") o[k2(i.loc.tx, i.loc.ty)] = i.cfg.name; });
     G.model.dirt.forEach(function (d) { if (!d.cleaned) o[k2(d.tx, d.ty)] = d.cfg.name; });
     o[k2(G.player.x, G.player.y)] = "Nhân vật";
-    G.player.path.forEach(function () { });
     return o;
   }
   /* Thả đúng lên một khối cùng kích thước → đổi chỗ hai khối */
@@ -800,7 +800,7 @@
     host.addEventListener("pointerup", onUp);
     host.addEventListener("pointercancel", onUp);
     window.addEventListener("pointerup", onUp);
-    window.addEventListener("mouseup", onUp);
+    onModalClose = function () { window.removeEventListener("pointerup", onUp); };
     $("lyReset").onclick = function () { draft = copyLayout(G.model.layout); drag = null; Sound.click(); draw(); };
     $("lyApply").onclick = function () { closeModal(); applyLayout(draft); };
     draw();
@@ -1163,6 +1163,7 @@
       }
       box.appendChild(grp);
     });
+    if (!G.tapeMode) G.panelH = $("panel").offsetHeight || G.panelH;   // đọc một lần khi nội dung bảng đổi
   }
 
   var HUD_H = 64;    // height kept free for the top bar
@@ -1174,6 +1175,7 @@
     // (a fixed allowance for the panel, so the view does not zoom in and out each time the actions change)
     var fit = Math.min(vw / SW, (vh - HUD_H - PANEL_H - 16) / SH);
     G.vw = vw; G.vh = vh;
+    G.panelH = (G.tapeMode ? $("tapebar") : $("panel")).offsetHeight || 120;
     if (G.zoomAll || fit >= .74) { G.scale = Math.min(fit, 1.7); G.follow = false; }
     else { G.scale = clamp(Math.min(vw / 470, vh / 520), .62, 1.15); G.follow = true; }
     $("btnZoom").innerHTML = G.follow
@@ -1185,7 +1187,7 @@
 
   function updateCamera(snap) {
     var s = G.scale, vw = G.vw, vh = G.vh, tx, ty;
-    var bar = G.tapeMode ? $("tapebar") : $("panel"), panelH = bar.offsetHeight || 120;
+    var panelH = G.panelH || 120;
     if (!G.follow) { tx = (vw - SW * s) / 2; ty = HUD_H + Math.max(0, (vh - HUD_H - Math.max(panelH, PANEL_H) - 16 - SH * s) / 2); }
     else {
       var p = iso(G.player.fx, G.player.fy, 36);
@@ -1195,7 +1197,11 @@
       ty = SH * s > vh - HUD_H - panelH ? clamp(ty, vh - SH * s - panelH - 16, HUD_H) : HUD_H + (vh - HUD_H - panelH - SH * s) / 2;
     }
     if (snap || !G.cam) G.cam = { x: tx, y: ty };
-    else { G.cam.x += (tx - G.cam.x) * .14; G.cam.y += (ty - G.cam.y) * .14; }
+    else {
+      var dx = tx - G.cam.x, dy = ty - G.cam.y;
+      if (Math.abs(dx) < .15 && Math.abs(dy) < .15) return;          // camera đã đứng yên – không vẽ lại
+      G.cam.x += dx * .14; G.cam.y += dy * .14;
+    }
     G.scene.root.style.transform = "translate3d(" + G.cam.x.toFixed(1) + "px," + G.cam.y.toFixed(1) + "px,0) scale(" + s + ")";
   }
 
@@ -1319,8 +1325,12 @@
 
   /* ============ 12. MÀN HÌNH, GIAI ĐOẠN, S5, KẾT QUẢ ============ */
   function show(id) { ["scr-start", "scr-game", "scr-plan", "scr-result"].forEach(function (s) { $(s).classList.toggle("show", s === id); }); }
-  function modal(html) { $("modalCard").className = "modal-card"; $("modalCard").innerHTML = html; $("modal").classList.add("on"); $("modal").setAttribute("aria-hidden", "false"); }
-  function closeModal() { $("modal").classList.remove("on"); $("modal").setAttribute("aria-hidden", "true"); }
+  var onModalClose = null;   // dọn sự kiện của hộp thoại đang mở
+  function modal(html) { if (onModalClose) { onModalClose(); onModalClose = null; } $("modalCard").className = "modal-card"; $("modalCard").innerHTML = html; $("modal").classList.add("on"); $("modal").setAttribute("aria-hidden", "false"); }
+  function closeModal() {
+    $("modal").classList.remove("on"); $("modal").setAttribute("aria-hidden", "true");
+    if (onModalClose) { onModalClose(); onModalClose = null; }
+  }
 
   function lessonHTML() {
     return '<h3>Bài học 5S</h3><p>5 bước tạo nơi làm việc an toàn, hiệu quả, nền tảng của mọi hoạt động cải tiến.</p><div class="lessons">' +
