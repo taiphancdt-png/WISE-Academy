@@ -7,7 +7,7 @@ const WASTES = [
   { k: 'T', name: 'Vận chuyển', en: 'Transportation', color: '#3A86FF', icon: '<path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/>' },
   { k: 'I', name: 'Tồn kho', en: 'Inventory', color: '#8AC926', icon: '<path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8M7 17h10"/>' },
   { k: 'M', name: 'Thao tác thừa', en: 'Motion', color: '#2EC4B6', icon: '<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v4"/><path d="M7 12l3-4h4l3 4"/><path d="M12 14l-1-6"/>' },
-  { k: 'E', name: 'Gia công thừa', en: 'Extra-processing', color: '#FF70A6', icon: '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/>' },
+  { k: 'E', name: 'Công đoạn thừa', en: 'Extra-processing', color: '#FF70A6', icon: '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/>' },
 ];
 const W = Object.fromEntries(WASTES.map((w) => [w.k, w]));
 const wasteLabel = (k) => (W[k] ? `${k} · ${W[k].name}` : '-');
