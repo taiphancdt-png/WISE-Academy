@@ -51,7 +51,7 @@ function renderSetup() {
       </div>
       <div class="panel dark" style="flex:1 1 360px;min-width:0">
         <h2>Cài đặt & mở phòng</h2>
-        <label class="field">Tên phiên (hiện trên màn chiếu)<input id="title" maxlength="80" value="${esc(S.title)}" style="font-size:17px"></label>
+        <label class="field">Tên phiên (hiện trên màn chiếu / màn hình chia sẻ)<input id="title" maxlength="80" value="${esc(S.title)}" style="font-size:17px"></label>
         <label class="field">Thời gian mỗi câu (giây)<input id="duration" type="number" min="5" max="60" value="${S.duration}" style="font-size:17px"></label>
         <label class="toggle" style="color:var(--muted-2)"><input id="autoReveal" type="checkbox" ${S.autoReveal ? 'checked' : ''}> Tự công bố đáp án khi hết giờ</label>
         <label class="toggle" style="color:var(--muted-2)"><input id="earlyEnd" type="checkbox" ${S.earlyEnd ? 'checked' : ''}> Kết thúc sớm khi tất cả đã trả lời</label>

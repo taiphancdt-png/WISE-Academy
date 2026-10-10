@@ -35,7 +35,7 @@ function renderJoin(err) {
       <p class="sub">8 tình huống · trả lời đúng và nhanh để leo hạng.</p>
     </div>
     <form id="joinForm" style="display:flex;flex-direction:column;gap:16px">
-      <label class="field">Mã PIN trên màn chiếu
+      <label class="field">Mã PIN trên màn hình người dẫn
         <input id="pin" inputmode="numeric" autocomplete="off" maxlength="7" value="${esc(urlPin)}" style="letter-spacing:.18em;font-weight:700;font-size:26px" required>
       </label>
       <label class="field">Nickname của bạn
@@ -117,7 +117,7 @@ function renderLobby() {
       ${stripHtml()}
       <h1 class="big-title" style="font-size:34px">Bạn đã vào!</h1>
       <div class="chip" style="background:var(--amber);color:#fff;font-size:20px;padding:8px 18px">${esc(P.nick)}</div>
-      <p class="sub pulse">Nhìn lên màn chiếu, chờ người dẫn bắt đầu…</p>
+      <p class="sub pulse">Theo dõi màn hình người dẫn, chờ bắt đầu…</p>
     </div>
     <div class="card-white" style="margin-top:auto">
       <div class="label-sm">Mẹo nhỏ</div>
@@ -300,7 +300,7 @@ function alertBox(msg) { const n = document.createElement('div'); n.className = 
 
 function renderVoted() {
   setBg();
-  app.innerHTML = `<div class="center" style="margin-top:16vh"><div class="badge" style="background:var(--amber);color:#fff"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h1 class="big-title" style="font-size:32px">Đã ghi nhận!</h1><p class="sub">Kết quả bình chọn sẽ là đề bài Kaizen của lớp. Nhìn lên màn chiếu nhé.</p></div>`;
+  app.innerHTML = `<div class="center" style="margin-top:16vh"><div class="badge" style="background:var(--amber);color:#fff"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h1 class="big-title" style="font-size:32px">Đã ghi nhận!</h1><p class="sub">Kết quả bình chọn sẽ là đề bài Kaizen của lớp. Theo dõi màn hình người dẫn nhé.</p></div>`;
 }
 
 function renderEnd() {
