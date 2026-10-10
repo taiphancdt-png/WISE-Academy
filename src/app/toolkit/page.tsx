@@ -41,7 +41,7 @@ export default function ToolkitPage() {
             categories.map((cat) => (
               <div key={cat} className="mb-14 last:mb-0">
                 <h2 className="text-2xl font-semibold text-[#002F5B] mb-6">{cat}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
                   {tools
                     .filter((t) => t.category === cat)
                     .map((tool) => (
@@ -60,13 +60,13 @@ export default function ToolkitPage() {
                             </div>
                           )}
                         </div>
-                        <div className="p-6 flex flex-col flex-grow">
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9500E]">{tool.category}</span>
-                          <h3 className="mt-2 text-lg font-semibold text-[#102A43] leading-snug group-hover:text-[#C9500E] transition-colors">
+                        <div className="p-4 flex flex-col flex-grow">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#C9500E] line-clamp-1">{tool.category}</span>
+                          <h3 className="mt-1 text-sm sm:text-base font-semibold text-[#102A43] leading-snug group-hover:text-[#C9500E] transition-colors">
                             {tool.title}
                           </h3>
-                          <p className="mt-2 text-sm text-[#486581] leading-relaxed line-clamp-3">{tool.summary}</p>
-                          <span className="mt-auto pt-5 text-sm font-semibold text-[#C9500E]">Mở công cụ →</span>
+                          <p className="mt-1.5 text-xs text-[#486581] leading-relaxed line-clamp-2">{tool.summary}</p>
+                          <span className="mt-auto pt-3 text-xs font-semibold text-[#C9500E]">Mở công cụ →</span>
                         </div>
                       </Link>
                     ))}
