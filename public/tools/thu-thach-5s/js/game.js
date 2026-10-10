@@ -1146,10 +1146,14 @@
     });
   }
 
+  var HUD_H = 64;    // height kept free for the top bar
+  var PANEL_H = 150; // room kept for the action panel at the bottom
   function layout() {
     if (!G) return;
     var vp = $("viewport"), vw = vp.clientWidth, vh = vp.clientHeight;
-    var fit = Math.min(vw / SW, (vh - 40) / SH);
+    // the whole-shop view fits between the top bar and the action panel, so the panel never hides part of the shop
+    // (a fixed allowance for the panel, so the view does not zoom in and out each time the actions change)
+    var fit = Math.min(vw / SW, (vh - HUD_H - PANEL_H - 16) / SH);
     G.vw = vw; G.vh = vh;
     if (G.zoomAll || fit >= .74) { G.scale = Math.min(fit, 1.7); G.follow = false; }
     else { G.scale = clamp(Math.min(vw / 470, vh / 520), .62, 1.15); G.follow = true; }
@@ -1163,12 +1167,13 @@
   function updateCamera(snap) {
     var s = G.scale, vw = G.vw, vh = G.vh, tx, ty;
     var bar = G.tapeMode ? $("tapebar") : $("panel"), panelH = bar.offsetHeight || 120;
-    if (!G.follow) { tx = (vw - SW * s) / 2; ty = Math.max(60, (vh - panelH - SH * s) / 2 + 40); if (SH * s > vh - panelH - 40) ty = (vh - SH * s) / 2 + 10; }
+    if (!G.follow) { tx = (vw - SW * s) / 2; ty = HUD_H + Math.max(0, (vh - HUD_H - Math.max(panelH, PANEL_H) - 16 - SH * s) / 2); }
     else {
       var p = iso(G.player.fx, G.player.fy, 36);
       tx = vw / 2 - p.x * s; ty = (vh - panelH) * .52 - p.y * s + 40;
       tx = SW * s > vw ? clamp(tx, vw - SW * s, 0) : (vw - SW * s) / 2;
-      ty = SH * s > vh ? clamp(ty, vh - SH * s - panelH + 20, 70) : (vh - SH * s) / 2;
+      // following the worker: the shop can scroll until its bottom edge sits above the action panel
+      ty = SH * s > vh - HUD_H - panelH ? clamp(ty, vh - SH * s - panelH - 16, HUD_H) : HUD_H + (vh - HUD_H - panelH - SH * s) / 2;
     }
     if (snap || !G.cam) G.cam = { x: tx, y: ty };
     else { G.cam.x += (tx - G.cam.x) * .14; G.cam.y += (ty - G.cam.y) * .14; }
