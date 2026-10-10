@@ -4875,6 +4875,10 @@
   "s": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Tiêu chuẩn thực tế</span>",
   "t": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Practical benchmarks</span>"
  },
+ "4dae0d78fc9a8e26": {
+  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài",
+  "t": "5S Challenge: Chu Tai Machine Shop"
+ },
  "4db2ad149b818c9f": {
   "s": "📌 5S là gì?",
   "t": "📌 What is 5S?"
@@ -13739,6 +13743,10 @@
   "s": "Tổ chức đồng hành",
   "t": "Organisations supported"
  },
+ "daaa1f3b51ba0460": {
+  "s": "Game mô phỏng cải tiến 5S tại một xưởng cơ khí: sàng lọc, sắp xếp lại mặt bằng theo dòng chảy, lau chùi và báo cáo nguồn gây bẩn, dán băng keo định vị, lập kế hoạch duy trì. Không có gợi ý trong lúc chơi; cuối game chấm điểm từng chữ S và so sánh với xưởng đạt chuẩn.",
+  "t": "A game that simulates a 5S improvement in a machine shop: sort, rearrange the layout along the flow, clean and report the sources of dirt, apply floor marking tape and plan how to sustain it. There are no hints while playing; at the end each S is scored and your shop is compared with one that meets the 5S standard."
+ },
  "dab47f3743cdd2a6": {
   "s": "<span class=\"shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]\">04</span><span class=\"text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors\">Kỹ thuật công nghiệp (IE): hoạch định năng lực, mô hình sử dụng lao động, cân bằng chuyền, takt time, hiệu suất thiết bị</span>",
   "t": "<span class=\"shrink-0 w-8 text-sm font-bold tabular-nums text-[#F76011]\">04</span><span class=\"text-[15px] leading-relaxed text-[#102A43] group-hover:text-[#002F5B] transition-colors\">Industrial Engineering (IE): capacity planning, labour utilisation models, line balancing, takt time, equipment efficiency</span>"
@@ -15150,6 +15158,10 @@
  "f081705fe7e56241": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Mỗi tín hiệu bất thường phải được ghi nguyên nhân và hành động ngay trên biểu đồ - đó là nguồn kiến thức quý của quy trình.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Every abnormal signal must have its cause and action recorded right on the chart - that is valuable process knowledge.</span>"
+ },
+ "f0b7f62e19461c36": {
+  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài | Toolkit | WISE Academy",
+  "t": "5S Challenge: Chu Tai Machine Shop | Toolkit | WISE Academy"
  },
  "f0daa64f5432bd7f": {
   "s": "🏭 Case study: Dell Computer (những năm 2000) áp dụng JIT triệt để trong chuỗi cung ứng. Máy tính chỉ được lắp ráp SAU khi khách hàng đặt hàng. Kết quả:",

@@ -45,5 +45,21 @@
       "Game",
       "Lean"
     ]
+  },
+  {
+    "slug": "thu-thach-5s",
+    "title": "Thử thách 5S: Xưởng Cơ khí Chú Tài",
+    "category": "Trò chơi đào tạo Lean",
+    "summary": "Game mô phỏng cải tiến 5S tại một xưởng cơ khí: sàng lọc, sắp xếp lại mặt bằng theo dòng chảy, lau chùi và báo cáo nguồn gây bẩn, dán băng keo định vị, lập kế hoạch duy trì. Không có gợi ý trong lúc chơi; cuối game chấm điểm từng chữ S và so sánh với xưởng đạt chuẩn.",
+    "thumbnail": "/tools/thu-thach-5s/thumbnail.webp",
+    "file": "/tools/thu-thach-5s/index.html",
+    "url": null,
+    "saves": true,
+    "tags": [
+      "5S",
+      "Game",
+      "Lean",
+      "Visual management"
+    ]
   }
 ]
