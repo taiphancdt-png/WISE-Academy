@@ -82,24 +82,14 @@ window.GAME_CONFIG = {
   items: [
     { id: "wrench", name: "Cờ lê 13", sprite: "wrench", flat: true, correct: "board", slot: "wrench", spawn: ["floor", "lathe"],
       why: "Dụng cụ dùng hằng ngày phải treo đúng ô trên bảng dụng cụ. Nhìn ô trống là biết ngay thiếu cái gì." },
-    { id: "screwdriver", name: "Tua vít", sprite: "screwdriver", flat: true, correct: "board", slot: "screwdriver", spawn: ["floor", "bench"],
-      why: "Mỗi dụng cụ một chỗ cố định, lấy nhanh, trả đúng, không mất thời gian tìm." },
     { id: "caliper", name: "Thước cặp", sprite: "caliper", flat: true, correct: "board", slot: "caliper", spawn: ["mill", "floor"],
       why: "Dụng cụ đo để trên máy dễ rơi, va đập làm sai số. Cất đúng chỗ để giữ độ chính xác." },
-    { id: "micrometer", name: "Panme", sprite: "micrometer", flat: true, correct: "board", slot: "micrometer", spawn: ["floor", "bench"],
-      why: "Panme là dụng cụ đo chính xác, để dưới sàn rất dễ bị dẫm hỏng." },
     { id: "hammer", name: "Búa", sprite: "hammer", flat: true, correct: "board", slot: "hammer", spawn: ["nearMachine", "floor"],
       why: "Búa nằm trên sàn gây vấp ngã. Treo lên bảng để ai cũng biết búa đang ở đâu." },
-    { id: "brokenwrench", name: "Cờ lê bị nứt", sprite: "brokenwrench", flat: true, correct: "redtag", alt: ["binMetal"], spawn: ["bench", "floor"],
-      why: "Dụng cụ hỏng dùng tiếp sẽ gây tai nạn. Dán thẻ đỏ để người có trách nhiệm quyết định sửa hay thanh lý." },
-    { id: "bar1", name: "Phôi thép", sprite: "barstock", correct: "shelf", spawn: ["nearMachine", "floor"],
-      why: "Phôi (nguyên vật liệu) để trên kệ vật tư có nhãn, không rải rác cạnh máy." },
     { id: "bar2", name: "Phôi thép (lẫn trong thành phẩm)", sprite: "barstock", correct: "shelf", spawn: ["finished"],
       why: "Phôi chưa gia công để lẫn vào khu thành phẩm dễ bị giao nhầm cho khách." },
     { id: "crate", name: "Thùng phôi chắn lối đi", sprite: "crate", correct: "shelf", spawn: ["aisle"], blocks: true,
       why: "Thùng phôi chắn lối đi gây nguy hiểm cho người và xe nâng. Vật tư phải về kệ vật tư." },
-    { id: "fin1", name: "Thùng thành phẩm", sprite: "finbox", correct: "finished", spawn: ["floor", "nearMachine"],
-      why: "Hàng đã đạt phải đưa về khu thành phẩm gần cổng xuất, xe container lấy hàng nhanh, không lẫn với hàng chưa kiểm." },
     { id: "fin3", name: "Thùng thành phẩm (để trên kệ vật tư)", sprite: "finbox", correct: "finished", spawn: ["shelfzone"],
       why: "Thành phẩm để trên kệ vật tư sẽ bị lẫn với nguyên liệu và có thể bị đưa ngược vào sản xuất." },
     { id: "defect1", name: "Chi tiết lỗi (bị nứt)", sprite: "defect", correct: "redtag", alt: ["binMetal"], spawn: ["finished"],
@@ -108,8 +98,6 @@ window.GAME_CONFIG = {
       why: "Bản vẽ cũ để ở máy dễ làm sai theo phiên bản cũ. Thu hồi, hủy và đưa giấy vào thùng tái chế." },
     { id: "rag1", name: "Giẻ lau dính dầu", sprite: "rag", flat: true, correct: "binOily", spawn: ["nearMachine"],
       why: "Giẻ dính dầu dễ bắt lửa và là chất thải nguy hại, phải bỏ đúng thùng giẻ dính dầu." },
-    { id: "bottle1", name: "Chai nhựa rỗng", sprite: "bottle", correct: "binRecycle", spawn: ["bench", "nearMachine"],
-      why: "Chai nhựa sạch là rác tái chế, không bỏ lẫn với rác sinh hoạt. Đồ uống không để cạnh máy." },
     { id: "lunch", name: "Hộp cơm đã ăn (còn thức ăn thừa)", sprite: "lunch", correct: "binGeneral", spawn: ["nearMachine", "floor"],
       why: "Hộp cơm dính thức ăn là rác sinh hoạt, không tái chế được. Không ăn uống tại khu vực máy." },
     { id: "scrap1", name: "Mẩu sắt vụn", sprite: "scrap", correct: "binMetal", spawn: ["floor", "nearMachine"],
@@ -117,9 +105,7 @@ window.GAME_CONFIG = {
     { id: "carton1", name: "Thùng carton rỗng (chắn bình chữa cháy)", sprite: "carton", correct: "binRecycle", spawn: ["hatch"], blocks: true,
       why: "Thùng carton chắn bình chữa cháy, khi có cháy sẽ mất thời gian. Carton là rác tái chế; khu trước PCCC luôn phải trống." },
     { id: "forklift", name: "Xe nâng máy", sprite: "forklift", vehicle: true, correct: "park", spawn: ["vehicle"], blocks: true,
-      why: "Xe nâng đỗ tùy tiện, nhất là trên lối đi, gây cản trở và nguy hiểm. Phải đỗ gọn ngoài lối đi, tại vị trí có định vị." },
-    { id: "palletjack", name: "Xe nâng tay", sprite: "palletjack", vehicle: true, correct: "park", spawn: ["vehicle"], blocks: true,
-      why: "Xe nâng tay dùng xong phải trả về chỗ đỗ cố định, ai cũng biết xe ở đâu, không chắn đường." }
+      why: "Xe nâng đỗ tùy tiện, nhất là trên lối đi, gây cản trở và nguy hiểm. Phải đỗ gọn ngoài lối đi, tại vị trí có định vị." }
   ],
   parkName: "Đỗ gọn ngoài lối đi, có băng keo định vị",
 
@@ -185,7 +171,7 @@ window.GAME_CONFIG = {
       right: "Băng vàng-đen bao quanh máy tiện và máy phay",
       why: "Sọc vàng-đen là tín hiệu cảnh báo nguy hiểm (máy quay, phoi văng): người đi ngang tự giữ khoảng cách an toàn." },
     { id: "parking", name: "Chỗ đỗ xe nâng", icon: "🚜", target: "vehicles", colors: ["white", "yellow"],
-      right: "Băng trắng (hoặc vàng) bao quanh chỗ đỗ xe nâng, xe nâng tay",
+      right: "Băng trắng (hoặc vàng) bao quanh chỗ đỗ xe nâng",
       why: "Thiết bị di động cũng cần \"địa chỉ\": ô đỗ định vị giúp trả xe đúng chỗ, không chiếm lối đi." }
   ],
 

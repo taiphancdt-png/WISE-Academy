@@ -43,7 +43,7 @@ window.ASSETS = {
    "h": 120
   },
   "boardFull": {
-   "src": "assets/props/board_full.svg",
+   "src": "assets/props/board_full.svg?v=2",
    "x": 877,
    "y": 142,
    "w": 109,
@@ -389,7 +389,7 @@ window.ASSETS = {
   }
  },
  "board": {
-  "src": "assets/props/board_full.svg",
+  "src": "assets/props/board_full.svg?v=2",
   "x": 877,
   "y": 142,
   "w": 109,
