@@ -3,7 +3,7 @@ const WASTES = [
   { k: 'D', name: 'Lỗi', en: 'Defects', color: '#F25F5C', icon: '<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>' },
   { k: 'O', name: 'Sản xuất thừa', en: 'Overproduction', color: '#FF9F1C', icon: '<rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/><rect x="8" y="3" width="8" height="8" rx="1"/>' },
   { k: 'W', name: 'Chờ đợi', en: 'Waiting', color: '#FFD23F', icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>' },
-  { k: 'N', name: 'Không tận dụng nhân tài', short: 'Nhân tài', en: 'Non-utilized talent', color: '#A06CD5', icon: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>' },
+  { k: 'N', name: 'Không tận dụng năng lực', short: 'Năng lực', en: 'Non-utilized talent', color: '#A06CD5', icon: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>' },
   { k: 'T', name: 'Vận chuyển', en: 'Transportation', color: '#3A86FF', icon: '<path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/>' },
   { k: 'I', name: 'Tồn kho', en: 'Inventory', color: '#8AC926', icon: '<path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8M7 17h10"/>' },
   { k: 'M', name: 'Thao tác thừa', en: 'Motion', color: '#2EC4B6', icon: '<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v4"/><path d="M7 12l3-4h4l3 4"/><path d="M12 14l-1-6"/>' },
