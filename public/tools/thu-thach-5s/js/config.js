@@ -104,7 +104,7 @@ window.GAME_CONFIG = {
       why: "Sắt vụn phân loại riêng vào thùng kim loại vụn để bán phế liệu, không lẫn với rác khác." },
     { id: "carton1", name: "Thùng carton rỗng (chắn bình chữa cháy)", sprite: "carton", correct: "binRecycle", spawn: ["hatch"], blocks: true,
       why: "Thùng carton chắn bình chữa cháy, khi có cháy sẽ mất thời gian. Carton là rác tái chế; khu trước PCCC luôn phải trống." },
-    { id: "forklift", name: "Xe nâng máy", sprite: "forklift", vehicle: true, correct: "park", spawn: ["vehicle"], blocks: true,
+    { id: "forklift", name: "Xe nâng máy", sprite: "forklift", vehicle: true, scale: 1.45, correct: "park", spawn: ["vehicle"], blocks: true,
       why: "Xe nâng đỗ tùy tiện, nhất là trên lối đi, gây cản trở và nguy hiểm. Phải đỗ gọn ngoài lối đi, tại vị trí có định vị." }
   ],
   parkName: "Đỗ gọn ngoài lối đi, có băng keo định vị",

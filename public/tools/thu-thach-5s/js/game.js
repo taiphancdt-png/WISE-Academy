@@ -268,9 +268,9 @@
 
   function makeItemEl(model, it, live) {
     var pl = placement(model, it); if (!pl) return null;
-    var m = spriteMeta(it.cfg), w = mk("div", "it"), g = new Image();
+    var m = spriteMeta(it.cfg), w = mk("div", "it"), g = new Image(), k = it.cfg.scale || 1;   // scale: drawn bigger to match the machines (forklift)
     g.src = m.src; g.alt = it.cfg.name; g.className = "gfx"; g.draggable = false;
-    g.style.width = m.w + "px"; g.style.height = m.h + "px";
+    g.style.width = m.w * k + "px"; g.style.height = m.h * k + "px";
     var tagX = 0, tagY = 0;
     if (pl.mode === "flat") {
       var p = iso(pl.x, pl.y, pl.z);
@@ -280,9 +280,9 @@
     } else if (pl.mode === "iso" || pl.mode === "isoxy") {
       var q = pl.mode === "iso" ? iso(pl.x, pl.y, pl.z) : { x: pl.sx, y: pl.sy };
       w.style.left = q.x + "px"; w.style.top = q.y + "px";
-      g.style.left = (-m.ax) + "px"; g.style.top = (-m.ay) + "px";
-      if (pl.tilt) { g.style.transformOrigin = m.ax + "px " + m.ay + "px"; g.style.transform = "rotate(" + pl.tilt + "deg)"; }
-      tagX = 6; tagY = -m.ay + 4;
+      g.style.left = (-m.ax * k) + "px"; g.style.top = (-m.ay * k) + "px";
+      if (pl.tilt) { g.style.transformOrigin = m.ax * k + "px " + m.ay * k + "px"; g.style.transform = "rotate(" + pl.tilt + "deg)"; }
+      tagX = 6; tagY = -m.ay * k + 4;
     } else {
       w.style.left = pl.sx + "px"; w.style.top = pl.sy + "px";
       var dx = pl.mode === "wallc" ? -m.w / 2 : 0;
@@ -303,12 +303,15 @@
   }
 
   function makeDirtEl(d, live) {
-    var m = A.icons[d.cfg.kind], w = mk("div", "it dirt"), g = new Image(), p = iso(d.x, d.y, 0);
+    var oil = d.cfg.kind === "oil", k = oil ? 1.5 : 1;
+    var m = A.icons[d.cfg.kind], w = mk("div", "it dirt" + (oil ? " oil" : "")), g = new Image(), p = iso(d.x, d.y, 0);
     g.src = m.src; g.className = "gfx"; g.alt = d.cfg.name; g.draggable = false;
-    g.style.width = m.w + "px"; g.style.height = m.h + "px";
-    g.style.transform = "matrix(1,.5,-1,.5,0,0) rotate(" + d.rot + "deg) translate(" + (-m.w / 2) + "px," + (-m.h / 2) + "px)";
-    w.style.left = p.x + "px"; w.style.top = p.y + "px"; w.style.zIndex = 2;
+    g.style.width = m.w * k + "px"; g.style.height = m.h * k + "px";
+    g.style.transform = "matrix(1,.5,-1,.5,0,0) rotate(" + d.rot + "deg) translate(" + (-m.w * k / 2) + "px," + (-m.h * k / 2) + "px)";
+    // an oil puddle sits next to its machine: drawn above the machine's picture so it can be clicked on its own
+    w.style.left = p.x + "px"; w.style.top = p.y + "px"; w.style.zIndex = oil ? depthOf(d.tx, d.ty) + 6 : 2;
     w.appendChild(mk("div", "hit")); w.appendChild(g);
+    if (oil) w.appendChild(mk("div", "drip", "💧"));
     if (live) {
       w.addEventListener("click", function (e) { e.stopPropagation(); onDirtClick(d); });
       w.addEventListener("mouseenter", function (e) { showTip(d.cfg.name, e); });
@@ -317,12 +320,28 @@
     return w;
   }
 
+  /* Mũi tên sơn trên nền lối đi (có ngay từ đầu, để người chơi biết đâu là lối đi) */
+  function aisleArrowsSVG() {
+    var shape = [[-0.6, -0.12], [0.15, -0.12], [0.15, -0.32], [0.6, 0], [0.15, 0.32], [0.15, 0.12], [-0.6, 0.12]], K = 1.35;
+    function arrow(cx, cy, dx, dy) {
+      return '<polygon points="' + shape.map(function (q) {
+        var s = q[0] * K, t = q[1] * K, P = iso(cx + s * dx - t * dy, cy + s * dy + t * dx, 0);
+        return P.x.toFixed(1) + "," + P.y.toFixed(1);
+      }).join(" ") + '"/>';
+    }
+    var o = '<svg width="' + SW + '" height="' + SH + '" viewBox="0 0 ' + SW + ' ' + SH + '" style="position:absolute;left:0;top:0;pointer-events:none"><g fill="rgba(255,255,255,.88)" stroke="rgba(0,47,91,.18)" stroke-width="1">';
+    [2.5, 5.5, 12, 15].forEach(function (y) { o += arrow(4, y, 0, 1); });     // lối đi chính: cửa nhập → cổng xuất
+    [7, 10.5].forEach(function (x) { o += arrow(x, 9, -1, 0); });             // nhánh ngang: về lối đi chính
+    return o + '</g></svg>';
+  }
+
   /* Dựng toàn bộ cảnh. live = có tương tác (màn chơi); false = ảnh tĩnh (nền mở đầu, so sánh) */
   function buildScene(root, model, live) {
     root.innerHTML = "";
     root.style.width = SW + "px"; root.style.height = SH + "px";
     var ctx = { root: root, items: {}, dirt: {}, props: {}, markers: {} };
     addImg(root, A.props.floor, "static", 0);
+    var arrows = mk("div", "aisle-arrows"); arrows.innerHTML = aisleArrowsSVG(); arrows.style.zIndex = 1; root.appendChild(arrows);
     function bind(im, label, onClick) {
       if (!live) return;
       im.className = "prop";
@@ -1575,8 +1594,6 @@
     });
   }
 
-  /* Dùng khi kiểm thử: WISE5S_DEBUG() trả về trạng thái ván chơi hiện tại */
-  window.WISE5S_DEBUG = function () { return G; };
 
   initGlobal();
   initStart();

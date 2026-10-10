@@ -246,8 +246,8 @@ window.ASSETS = {
    "y": 185,
    "w": 54,
    "h": 46,
-   "ax": 24.0,
-   "ay": 27.0
+   "ax": 24,
+   "ay": 27
   },
   "crate": {
    "src": "assets/items/crate.svg",
@@ -255,8 +255,8 @@ window.ASSETS = {
    "y": 162,
    "w": 68,
    "h": 73,
-   "ax": 31.0,
-   "ay": 50.0
+   "ax": 31,
+   "ay": 50
   },
   "finbox": {
    "src": "assets/items/finbox.svg",
@@ -264,8 +264,8 @@ window.ASSETS = {
    "y": 180,
    "w": 61,
    "h": 53,
-   "ax": 28.0,
-   "ay": 32.0
+   "ax": 28,
+   "ay": 32
   },
   "defect": {
    "src": "assets/items/defect.svg",
@@ -273,17 +273,8 @@ window.ASSETS = {
    "y": 184,
    "w": 54,
    "h": 46,
-   "ax": 26.0,
-   "ay": 28.0
-  },
-  "bottle": {
-   "src": "assets/items/bottle.svg",
-   "x": 680,
-   "y": 177,
-   "w": 28,
-   "h": 49,
-   "ax": 10.0,
-   "ay": 35.0
+   "ax": 26,
+   "ay": 28
   },
   "lunch": {
    "src": "assets/items/lunch.svg",
@@ -291,8 +282,8 @@ window.ASSETS = {
    "y": 186,
    "w": 50,
    "h": 44,
-   "ax": 22.0,
-   "ay": 26.0
+   "ax": 22,
+   "ay": 26
   },
   "scrap": {
    "src": "assets/items/scrap.svg",
@@ -300,8 +291,8 @@ window.ASSETS = {
    "y": 190,
    "w": 54,
    "h": 41,
-   "ax": 22.0,
-   "ay": 22.0
+   "ax": 22,
+   "ay": 22
   },
   "carton": {
    "src": "assets/items/carton.svg",
@@ -309,8 +300,8 @@ window.ASSETS = {
    "y": 158,
    "w": 69,
    "h": 76,
-   "ax": 34.0,
-   "ay": 54.0
+   "ax": 34,
+   "ay": 54
   },
   "forklift": {
    "src": "assets/items/forklift.svg",
@@ -318,17 +309,8 @@ window.ASSETS = {
    "y": 141,
    "w": 74,
    "h": 95,
-   "ax": 34.0,
-   "ay": 71.0
-  },
-  "palletjack": {
-   "src": "assets/items/palletjack.svg",
-   "x": 663,
-   "y": 164,
-   "w": 60,
-   "h": 69,
-   "ax": 27.0,
-   "ay": 48.0
+   "ax": 34,
+   "ay": 71
   }
  },
  "icons": {
@@ -337,29 +319,14 @@ window.ASSETS = {
    "w": 10,
    "h": 34
   },
-  "screwdriver": {
-   "src": "assets/items/screwdriver.svg",
-   "w": 8,
-   "h": 34
-  },
   "caliper": {
    "src": "assets/items/caliper.svg",
    "w": 14,
    "h": 40
   },
-  "micrometer": {
-   "src": "assets/items/micrometer.svg",
-   "w": 16,
-   "h": 24
-  },
   "hammer": {
    "src": "assets/items/hammer.svg",
    "w": 12,
-   "h": 34
-  },
-  "brokenwrench": {
-   "src": "assets/items/brokenwrench.svg",
-   "w": 10,
    "h": 34
   },
   "drawing": {
@@ -403,23 +370,11 @@ window.ASSETS = {
     "w": 10,
     "h": 34
    },
-   "screwdriver": {
-    "u": 24,
-    "v": 18,
-    "w": 8,
-    "h": 34
-   },
    "caliper": {
     "u": 38,
     "v": 16,
     "w": 14,
     "h": 40
-   },
-   "micrometer": {
-    "u": 57,
-    "v": 20,
-    "w": 16,
-    "h": 24
    },
    "hammer": {
     "u": 76,
