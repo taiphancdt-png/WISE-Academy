@@ -39,16 +39,28 @@ export default async function LeanToolPage({ params }: { params: Promise<{ slug:
               <h1 className="mt-1 text-2xl sm:text-3xl font-semibold text-[#002F5B]">{tool.title}</h1>
               <p className="mt-2 text-sm sm:text-base text-[#486581] leading-relaxed">{tool.summary}</p>
             </div>
-            {src && (
-              <a
-                href={src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 border border-[#002F5B] text-[#002F5B] hover:bg-[#002F5B] hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
-              >
-                Mở toàn màn hình <ExternalLink className="w-4 h-4" />
-              </a>
-            )}
+            <div className="shrink-0 flex flex-wrap gap-3">
+              {tool.playerUrl && (
+                <a
+                  href={tool.playerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#F76011] hover:bg-[#C9500E] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+                >
+                  Trang học viên <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+              {src && (
+                <a
+                  href={src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-[#002F5B] text-[#002F5B] hover:bg-[#002F5B] hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+                >
+                  {tool.playerUrl ? "Mở màn hình người dẫn" : "Mở toàn màn hình"} <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -63,6 +75,7 @@ export default async function LeanToolPage({ params }: { params: Promise<{ slug:
               title={tool.title}
               className="w-full h-[80vh] min-h-[600px] bg-white rounded-2xl shadow-[0_10px_40px_-8px_rgba(0,30,56,0.10)]"
               sandbox={`allow-scripts allow-forms allow-downloads allow-popups allow-modals${tool.saves ? " allow-same-origin" : ""}`}
+              allow="autoplay; fullscreen; clipboard-write"
               loading="lazy"
             />
           ) : (

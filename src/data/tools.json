@@ -28,5 +28,22 @@
       "Policy Deployment",
       "KPI"
     ]
+  },
+  {
+    "slug": "san-lang-phi",
+    "title": "Săn Lãng Phí 5′",
+    "category": "Trò chơi đào tạo Lean",
+    "summary": "Game nhận diện 8 loại lãng phí (DOWNTIME) trong 5 phút. Người dẫn chọn tình huống và chiếu màn hình; học viên vào phòng bằng QR hoặc link mời, trả lời trên điện thoại hay máy tính. Có bảng xếp hạng, điểm mù của lớp và xuất kết quả ra Excel; chơi được cả lớp trực tiếp lẫn online.",
+    "thumbnail": "/game/thumbnail.webp",
+    "file": "/game/host",
+    "url": null,
+    "saves": true,
+    "playerUrl": "/game",
+    "tags": [
+      "8 loại lãng phí",
+      "DOWNTIME",
+      "Game",
+      "Lean"
+    ]
   }
 ]

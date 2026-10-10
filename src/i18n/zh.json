@@ -143,6 +143,10 @@
   "s": "📐 Process Capability là gì?",
   "t": "📐 什么是过程能力？"
  },
+ "02b683127c9881c9": {
+  "s": "Trang học viên",
+  "t": "学员页面"
+ },
  "02cde2fa3f555b8c": {
   "s": "Phản ứng giận dữ thường là cách để lấy lại cảm giác kiểm soát khi ta cảm thấy bất lực hoặc bị tổn thương. Tuy nhiên, việc bộc phát cảm xúc quá mức dễ làm gián đoạn giao tiếp và làm trầm trọng thêm tình huống.",
   "t": "愤怒往往是我们感到无力或受伤时重新获得控制感的一种方式。然而，过度的情绪爆发容易中断沟通，使情况更加恶化。"
@@ -2218,6 +2222,10 @@
  "2249ead3344118ea": {
   "s": "<span>5S &amp; Quản lý trực quan</span><span class=\"text-xs tabular-nums text-[#486581]\">4</span>",
   "t": "<span>5S 与目视化管理</span><span class=\"text-xs tabular-nums text-[#486581]\">4</span>"
+ },
+ "2250cef602a8973e": {
+  "s": "Game nhận diện 8 loại lãng phí (DOWNTIME) trong 5 phút. Người dẫn chọn tình huống và chiếu màn hình; học viên vào phòng bằng QR hoặc link mời, trả lời trên điện thoại hay máy tính. Có bảng xếp hạng, điểm mù của lớp và xuất kết quả ra Excel; chơi được cả lớp trực tiếp lẫn online.",
+  "t": "5分钟识别8大浪费（DOWNTIME）的互动游戏。主持人选择情景并共享屏幕；学员通过二维码或邀请链接进入房间，用手机或电脑作答。包含排行榜、全班的认知盲点和Excel结果导出，现场课堂和线上课堂均可使用。"
  },
  "22573bacd2cb2d60": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Process: nhận mũ và đế → quét chất xử lý → quét keo → sấy hoạt hoá → ép đế → làm nguội và kiểm tra.</span>",
@@ -5407,6 +5415,10 @@
   "s": "%GRR 10-30% → Cần xem xét",
   "t": "%GRR 10-30% → 需要评估"
  },
+ "55c9de4a4160d7ca": {
+  "s": "Trò chơi đào tạo Lean",
+  "t": "精益培训游戏"
+ },
  "55d06f2e6a325ae3": {
   "s": "Tính nhịp sản xuất (Takt time) và cân bằng chuyền bằng biểu đồ Yamazumi",
   "t": "计算节拍时间（Takt time），用山积图（Yamazumi）平衡生产线"
@@ -5790,6 +5802,10 @@
  "5bb44bbe688b00cf": {
   "s": "Phân tích dữ liệu một cách khoa học để tìm nguyên nhân gốc rễ và triển khai giải pháp phù hợp.",
   "t": "科学分析数据，找出根本原因并实施合适的解决方案。"
+ },
+ "5bcad12d0b3537d7": {
+  "s": "Săn Lãng Phí 5′",
+  "t": "寻找浪费 5′"
  },
  "5bd838750f598491": {
   "s": "Phình phạm vi - kẻ giết dự án thầm lặng",
@@ -7278,6 +7294,10 @@
  "73b7ef211a297cb4": {
   "s": "Một văn phòng đào tạo của General Motors từng áp dụng Kanban cho vật dụng văn phòng - ví dụ dán thẻ báo hiệu khi lọ thuốc vơi còn 1/4 - giúp văn phòng không bao giờ thiếu đồ trong khi vẫn giảm được chi phí tồn kho.",
   "t": "通用汽车的一个培训办公室曾把看板用于办公用品——例如药瓶剩下四分之一时贴上信号卡——使办公室从不缺货，同时降低库存成本。"
+ },
+ "73ec9b095b93e8c9": {
+  "s": "Mở màn hình người dẫn",
+  "t": "打开主持人界面"
  },
  "73f62e0b31801df7": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Chọn một nhu cầu quan trọng từ dữ liệu VOC.</span>",
@@ -10518,6 +10538,10 @@
  "a61d75c4af59e1f0": {
   "s": "3 lý do chính đáng bạn nên áp dụng phương pháp giải quyết vấn đề một cách hệ thống",
   "t": "采用系统化问题解决方法的 3 个正当理由"
+ },
+ "a63b08759c368322": {
+  "s": "Săn Lãng Phí 5′ | Toolkit | WISE Academy",
+  "t": "寻找浪费 5′ | Toolkit | WISE Academy"
  },
  "a670aa1000853340": {
   "s": "Mục tiêu cải tiến: giảm tỷ lệ die yield loss từ 7% xuống còn khoảng 1-2% - cải thiện tưởng nhỏ về phần trăm nhưng có tác động tài chính lớn ở quy mô sản xuất hàng loạt.",

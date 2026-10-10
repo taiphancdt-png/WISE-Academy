@@ -143,6 +143,10 @@
   "s": "📐 Process Capability là gì?",
   "t": "📐 What is Process Capability?"
  },
+ "02b683127c9881c9": {
+  "s": "Trang học viên",
+  "t": "Participant page"
+ },
  "02cde2fa3f555b8c": {
   "s": "Phản ứng giận dữ thường là cách để lấy lại cảm giác kiểm soát khi ta cảm thấy bất lực hoặc bị tổn thương. Tuy nhiên, việc bộc phát cảm xúc quá mức dễ làm gián đoạn giao tiếp và làm trầm trọng thêm tình huống.",
   "t": "An angry reaction is often a way to regain a sense of control when we feel powerless or hurt. However, excessive outbursts easily disrupt communication and make the situation worse."
@@ -2218,6 +2222,10 @@
  "2249ead3344118ea": {
   "s": "<span>5S &amp; Quản lý trực quan</span><span class=\"text-xs tabular-nums text-[#486581]\">4</span>",
   "t": "<span>5S &amp; Visual management</span><span class=\"text-xs tabular-nums text-[#486581]\">4</span>"
+ },
+ "2250cef602a8973e": {
+  "s": "Game nhận diện 8 loại lãng phí (DOWNTIME) trong 5 phút. Người dẫn chọn tình huống và chiếu màn hình; học viên vào phòng bằng QR hoặc link mời, trả lời trên điện thoại hay máy tính. Có bảng xếp hạng, điểm mù của lớp và xuất kết quả ra Excel; chơi được cả lớp trực tiếp lẫn online.",
+  "t": "A 5-minute game for spotting the 8 wastes (DOWNTIME). The facilitator picks the scenarios and shares the screen; participants join with a QR code or invite link and answer on their phone or computer. It includes a leaderboard, the class's blind spots and an Excel export, and works for both in-person and online classes."
  },
  "22573bacd2cb2d60": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Process: nhận mũ và đế → quét chất xử lý → quét keo → sấy hoạt hoá → ép đế → làm nguội và kiểm tra.</span>",
@@ -5407,6 +5415,10 @@
   "s": "%GRR 10-30% → Cần xem xét",
   "t": "%GRR 10-30% → Needs review"
  },
+ "55c9de4a4160d7ca": {
+  "s": "Trò chơi đào tạo Lean",
+  "t": "Lean training games"
+ },
  "55d06f2e6a325ae3": {
   "s": "Tính nhịp sản xuất (Takt time) và cân bằng chuyền bằng biểu đồ Yamazumi",
   "t": "Takt time calculation and line balancing with Yamazumi charts"
@@ -5790,6 +5802,10 @@
  "5bb44bbe688b00cf": {
   "s": "Phân tích dữ liệu một cách khoa học để tìm nguyên nhân gốc rễ và triển khai giải pháp phù hợp.",
   "t": "Analyse data scientifically to find root causes and implement the right solutions."
+ },
+ "5bcad12d0b3537d7": {
+  "s": "Săn Lãng Phí 5′",
+  "t": "Waste Hunt 5′"
  },
  "5bd838750f598491": {
   "s": "Phình phạm vi - kẻ giết dự án thầm lặng",
@@ -7278,6 +7294,10 @@
  "73b7ef211a297cb4": {
   "s": "Một văn phòng đào tạo của General Motors từng áp dụng Kanban cho vật dụng văn phòng - ví dụ dán thẻ báo hiệu khi lọ thuốc vơi còn 1/4 - giúp văn phòng không bao giờ thiếu đồ trong khi vẫn giảm được chi phí tồn kho.",
   "t": "A General Motors training office once applied Kanban to office supplies - for example, attaching a signal card when a medicine bottle was down to a quarter - so the office never ran out of supplies while still cutting inventory costs."
+ },
+ "73ec9b095b93e8c9": {
+  "s": "Mở màn hình người dẫn",
+  "t": "Open facilitator screen"
  },
  "73f62e0b31801df7": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Chọn một nhu cầu quan trọng từ dữ liệu VOC.</span>",
@@ -10518,6 +10538,10 @@
  "a61d75c4af59e1f0": {
   "s": "3 lý do chính đáng bạn nên áp dụng phương pháp giải quyết vấn đề một cách hệ thống",
   "t": "3 good reasons to adopt a systematic problem-solving method"
+ },
+ "a63b08759c368322": {
+  "s": "Săn Lãng Phí 5′ | Toolkit | WISE Academy",
+  "t": "Waste Hunt 5′ | Toolkit | WISE Academy"
  },
  "a670aa1000853340": {
   "s": "Mục tiêu cải tiến: giảm tỷ lệ die yield loss từ 7% xuống còn khoảng 1-2% - cải thiện tưởng nhỏ về phần trăm nhưng có tác động tài chính lớn ở quy mô sản xuất hàng loạt.",

@@ -107,5 +107,7 @@ export interface LeanTool {
   url?: string | null;
   /** The tool keeps its data in the browser (localStorage), so its frame needs same-origin access */
   saves?: boolean;
+  /** Games: the page players open (the embedded file is the host screen) */
+  playerUrl?: string | null;
   tags?: string[];
 }
