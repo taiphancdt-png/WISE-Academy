@@ -193,10 +193,11 @@ function topBar(extraControls) {
     </div></div>`;
 }
 
+// every choice keeps its full colour after the reveal so the class sees how everyone answered; the right one gets a tick
 function barsHtml(dist, correct) {
   const vals = WASTES.map((w) => (dist ? dist[w.k] || 0 : 0));
   const max = Math.max(1, ...vals);
-  return `<div class="bars" id="bars">${WASTES.map((w, i) => `<div class="bar ${correct && correct !== w.k ? 'dim' : ''}"><b data-n="${w.k}">${vals[i]}</b><div class="col" data-c="${w.k}" style="background:${w.color};height:${Math.round((vals[i] / max) * 200) + 4}px"></div><span>${w.k} · ${esc(w.short || w.name)}</span></div>`).join('')}</div>`;
+  return `<div class="bars" id="bars">${WASTES.map((w, i) => `<div class="bar ${correct === w.k ? 'correct' : ''}"><b data-n="${w.k}">${correct === w.k ? '✓ ' : ''}${vals[i]}</b><div class="col" data-c="${w.k}" style="background:${w.color};height:${Math.round((vals[i] / max) * 200) + 4}px"></div><span>${w.k} · ${esc(w.short || w.name)}</span></div>`).join('')}</div>`;
 }
 
 function play(fn) { if (H.musicOn) fn(); }
