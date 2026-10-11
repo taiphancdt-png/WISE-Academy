@@ -141,9 +141,20 @@
       .split('fill="#E0560F"').join('fill="' + brim + '"')
       .split('fill="#FFB36E"').join('fill="' + stripe + '"');
   }
+  /* Tên hiện trên nón: mỗi nhân vật một tên; nhân vật chính mang tên người chơi tự đặt (game gán CHAR_NAMES.worker) */
+  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Sáu Tài", engineer: "Mai", manager: "Tổ trưởng" };
+  var HAT_TEXT = '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="4.6" font-weight="900" fill="#fff" text-anchor="middle">WISE</text></g>';
+  function hatName(name, ink) {
+    var t = String(name).toUpperCase().trim().slice(0, 14), e = t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+    var fs = Math.min(4.6, 21 / (0.72 * Math.max(1, t.length)));       // vừa chiều ngang nón
+    return '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="' + fs.toFixed(2) + '" font-weight="900" fill="' + (ink || "#fff") + '" text-anchor="middle">' + e + '</text></g>';
+  }
   window.createCharacter = function (opts) {
     var role = (opts && opts.role) || "worker";
     var svg = DEFS + '<g class="bob">' + build(false) + build(true) + '</g>';
+    var name = opts && opts.name != null ? opts.name : window.CHAR_NAMES[role];
+    // nón trắng (kỹ sư, tổ trưởng): chữ navy cho dễ đọc
+    if (name) svg = svg.split(HAT_TEXT).join(hatName(name, role === "engineer" || role === "manager" ? "#0E3D70" : "#fff"));
     if (role === "manager") {
       svg = svg.replace(/cBody/g, "mBody").replace(/cHat/g, "mHat")
         .replace('<stop offset="0" stop-color="#1F5C9C"/><stop offset=".6" stop-color="' + NAVY + '"/><stop offset="1" stop-color="' + NAVY_D + '"/>',

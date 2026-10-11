@@ -442,7 +442,7 @@
       var f = D.story[i];
       $("stage").innerHTML = '<div class="story"><div class="story-bg"><div id="storyScene" class="scene"></div></div>' +
         '<div class="story-cast"><div class="cast ' + (f.who === "owner" ? "on" : "") + '" data-char="owner"></div><div class="cast me" data-char="worker"></div><div class="cast ' + (f.who === "engineer" ? "on" : "") + '" data-char="engineer"></div></div>' +
-        '<div class="story-box"><div class="sb-who"><span class="plate">' + esc(WHO[f.who][0]) + '</span><small>' + esc(WHO[f.who][1]) + '</small><em>' + (i + 1) + '/' + D.story.length + '</em></div><p>' + esc(f.text) + '</p>' +
+        '<div class="story-box"><div class="sb-who"><span class="plate">' + esc(WHO[f.who][0]) + '</span><small>' + esc(WHO[f.who][1]) + '</small><em>' + (i + 1) + '/' + D.story.length + '</em></div><p>' + esc(f.text.replace("Chào trưởng nhóm!", "Chào " + PLAYER + ", trưởng nhóm TPM!")) + '</p>' +
         '<div class="sb-btns"><button class="btn btn-ghost" id="stSkip">Bỏ qua</button><button class="btn btn-primary" id="stNext">' + (i < D.story.length - 1 ? "Tiếp →" : "Nhận nhiệm vụ") + '</button></div></div></div>';
       buildWorkshop($("storyScene"), false); fitCover($("storyScene"), $("stage"));
       putChars($("stage"));
@@ -570,7 +570,7 @@
     function upd() { var n = inp.value.trim(); btn.disabled = !n; var best = store(BEST_KEY) || {}; $("bestLine").textContent = n && best[n] ? "Kỷ lục TPM của " + n + ": " + best[n] + "/100" : ""; }
     inp.addEventListener("input", upd); upd();
     inp.addEventListener("keydown", function (e) { if (e.key === "Enter" && !btn.disabled) btn.click(); });
-    btn.addEventListener("click", function () { var n = inp.value.trim(); if (!n) return; store(NAME_KEY, n); PLAYER = n; T.player = n; Sound.click(); startGame(); });
+    btn.addEventListener("click", function () { var n = inp.value.trim(); if (!n) return; store(NAME_KEY, n); PLAYER = n; T.player = n; window.CHAR_NAMES.worker = n; Sound.click(); startGame(); });
     $("btnLessonStart").addEventListener("click", T.library);
     $("btnLib").addEventListener("click", T.library);
     $("btnMap").addEventListener("click", function () { if (!S) return; Sound.click(); if (T.onLeave) { T.onLeave(); T.onLeave = null; } T.map(); });
