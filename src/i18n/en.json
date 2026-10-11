@@ -5315,6 +5315,10 @@
   "s": "Biến ngôn ngữ cảm tính của khách hàng (\"bền\", \"chắc chắn\") thành chỉ tiêu kỹ thuật cụ thể có ngưỡng số.",
   "t": "Turn the customer's subjective language (\"durable\", \"solid\") into specific technical targets with numerical thresholds."
  },
+ "544943c1db704afa": {
+  "s": "Game 2 của chuỗi Xưởng Cơ khí Chú Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
+  "t": "Game 2 of the Chu Tai Machine Shop series: run a CNC lathe and a CNC milling machine through a fast-forwarded 8-hour shift, sort events into planned stops and A, P, Q losses (the Six Big Losses), calculate A, P, Q, OEE and takt time yourself, then read the control dashboard to find the biggest loss and the right improvement. A new scenario every play, with scoring and step-by-step explanations."
+ },
  "547f628d6ce052ec": {
   "s": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | Góc tri thức WISE Academy",
   "t": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | WISE Academy Knowledge Hub"
@@ -6926,6 +6930,10 @@
  "6daaea95e6ce9d49": {
   "s": "Dấu hiệu hệ thống đo có vấn đề",
   "t": "Signs of a measurement system problem"
+ },
+ "6dc2a972c09c4467": {
+  "s": "Thử thách OEE: Đo hiệu suất thiết bị | Toolkit | WISE Academy",
+  "t": "OEE Challenge: Measuring Equipment Effectiveness | Toolkit | WISE Academy"
  },
  "6ddebaa4467003fb": {
   "s": "Đây là một ví dụ về phiếu kiểm tra dùng để ghi nhận lỗi của máy in.",
@@ -10618,6 +10626,10 @@
  "a78818a477a81a61": {
   "s": "Quản lý hiện trường và chuyển đổi Lean: phát triển giám sát, tổ trưởng; triển khai 5S, Kaizen; Lean theo Toyota; phân tích công việc và hướng dẫn công việc; logistics sản xuất.",
   "t": "Shopfloor management and Lean transformation: developing supervisors and team leaders; implementing 5S and Kaizen; Toyota-style Lean; job analysis and job instruction; production logistics."
+ },
+ "a78a6fe342a20ca0": {
+  "s": "Thử thách OEE: Đo hiệu suất thiết bị",
+  "t": "OEE Challenge: Measuring Equipment Effectiveness"
  },
  "a79ed639954f8090": {
   "s": "Huali Industrial Group (华利实业集团) là tập đoàn công nghiệp quy mô lớn chuyên sản xuất giày dép, đối tác chiến lược của nhiều thương hiệu hàng đầu thế giới. Huali đề cao sự tinh xảo trong chế tác, đổi mới công nghệ và chất lượng toàn diện, với tầm nhìn dẫn dắt xu hướng sản xuất thông minh và bền vững.",

@@ -5315,6 +5315,10 @@
   "s": "Biến ngôn ngữ cảm tính của khách hàng (\"bền\", \"chắc chắn\") thành chỉ tiêu kỹ thuật cụ thể có ngưỡng số.",
   "t": "把客户的主观语言（“耐穿”“结实”）转化为具有数值界限的具体技术指标。"
  },
+ "544943c1db704afa": {
+  "s": "Game 2 của chuỗi Xưởng Cơ khí Chú Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
+  "t": "Chu Tai 机械车间系列第 2 款游戏：在快进的 8 小时班次中运行 CNC 车床和 CNC 铣床，将事件归类为计划停机及 A、P、Q 损失（六大损失），亲自计算 A、P、Q、OEE 和节拍时间，再通过控制看板找出最大损失和合适的改善措施。每次游戏生成新情景，并提供评分和逐步讲解。"
+ },
  "547f628d6ce052ec": {
   "s": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | Góc tri thức WISE Academy",
   "t": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | WISE Academy 知识专栏"
@@ -6926,6 +6930,10 @@
  "6daaea95e6ce9d49": {
   "s": "Dấu hiệu hệ thống đo có vấn đề",
   "t": "测量系统有问题的迹象"
+ },
+ "6dc2a972c09c4467": {
+  "s": "Thử thách OEE: Đo hiệu suất thiết bị | Toolkit | WISE Academy",
+  "t": "OEE 挑战：设备综合效率测量 | Toolkit | WISE Academy"
  },
  "6ddebaa4467003fb": {
   "s": "Đây là một ví dụ về phiếu kiểm tra dùng để ghi nhận lỗi của máy in.",
@@ -10618,6 +10626,10 @@
  "a78818a477a81a61": {
   "s": "Quản lý hiện trường và chuyển đổi Lean: phát triển giám sát, tổ trưởng; triển khai 5S, Kaizen; Lean theo Toyota; phân tích công việc và hướng dẫn công việc; logistics sản xuất.",
   "t": "现场管理与精益转型：培养主管和班组长；推行 5S、改善；丰田式精益；工作分析与工作指导；生产物流。"
+ },
+ "a78a6fe342a20ca0": {
+  "s": "Thử thách OEE: Đo hiệu suất thiết bị",
+  "t": "OEE 挑战：设备综合效率测量"
  },
  "a79ed639954f8090": {
   "s": "Huali Industrial Group (华利实业集团) là tập đoàn công nghiệp quy mô lớn chuyên sản xuất giày dép, đối tác chiến lược của nhiều thương hiệu hàng đầu thế giới. Huali đề cao sự tinh xảo trong chế tác, đổi mới công nghệ và chất lượng toàn diện, với tầm nhìn dẫn dắt xu hướng sản xuất thông minh và bền vững.",

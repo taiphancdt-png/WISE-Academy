@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#002F5B">
+<title>Thử thách OEE: Đo hiệu suất thiết bị | WISE Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/oee.css?v=4">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ MỞ ĐẦU ============ -->
+  <section id="scr-start" class="screen show">
+    <div class="start-bg"><div id="startScene" class="scene"></div></div>
+    <div class="start-card">
+      <!-- Logo lấy từ website WISE; chạy riêng thì đặt file logo vào đúng đường dẫn này -->
+      <img class="logo" src="/images/brand/logo-transparent.png" alt="WISE Academy">
+      <div class="series">Game 2 · Chuỗi đào tạo Xưởng Cơ khí Chú Tài</div>
+      <h1 class="title">Thử thách OEE<span>Đo hiệu suất thiết bị</span></h1>
+      <p class="lead">Xưởng Chú Tài đã đạt 5S. Giờ hãy đo xem máy tiện và máy phay CNC thật sự làm ra bao nhiêu phần trăm giá trị, và tổn thất nằm ở đâu.</p>
+      <label class="lbl" for="playerName">Tên người chơi</label>
+      <input id="playerName" type="text" maxlength="40" autocomplete="name" placeholder="VD: Nguyễn Văn An">
+      <button id="btnStart" class="btn btn-primary btn-lg" disabled>Bắt đầu</button>
+      <div class="start-links">
+        <button id="btnLessonStart" class="btn btn-ghost"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4zM20 4.5h-6a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h6z"/></svg>Bài học OEE</button>
+        <a class="btn btn-ghost" href="../thu-thach-5s/index.html"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg>Game 5S</a>
+      </div>
+      <p id="bestLine" class="best"></p>
+    </div>
+  </section>
+
+  <!-- ============ HƯỚNG DẪN ============ -->
+  <section id="scr-guide" class="screen">
+    <div class="page">
+      <div class="eyebrow">Hướng dẫn công việc · HD-OEE-01</div>
+      <h1 class="page-title">4 màn, từ hiểu OEE đến cải tiến</h1>
+      <div class="guide-grid">
+        <div class="gcard"><span class="gno">01</span><div class="gimg" id="gimg1"></div><b>Học nhanh</b><p>Trưởng phòng giải thích OEE, A, P, Q bằng thanh thời gian 480 phút bị “cắt dần”. Trả lời 3 câu hỏi nhanh.</p></div>
+        <div class="gcard"><span class="gno">02</span><div class="gimg" id="gimg2"></div><b>Một ngày vận hành</b><p>Ca 8 giờ chạy tua nhanh. Kéo từng thẻ sự kiện vào đúng giỏ: Dừng có kế hoạch · Tổn thất A · P · Q.</p></div>
+        <div class="gcard"><span class="gno">03</span><div class="gimg" id="gimg3"></div><b>Tính OEE</b><p>Tự tính thời gian SX kế hoạch, thời gian vận hành, A, P, Q, OEE, takt time cho từng máy. Có máy tính bỏ túi.</p></div>
+        <div class="gcard"><span class="gno">04</span><div class="gimg" id="gimg4"></div><b>Phân tích & cải tiến</b><p>Đọc biểu đồ thác nước, so với chuẩn thế giới, tìm tổn thất lớn nhất và chọn giải pháp cải tiến.</p></div>
+      </div>
+      <p class="note">Game không báo đúng/sai ngay khi chơi, chấm điểm và giải thích sau mỗi màn. Tổng 100 điểm, có thưởng thời gian.</p>
+      <div class="page-btns"><button class="btn btn-primary btn-lg" id="btnGuideGo">Vào xưởng</button></div>
+    </div>
+  </section>
+
+  <!-- ============ KHUNG CHƠI (màn 1-4) ============ -->
+  <section id="scr-play" class="screen">
+    <header class="ohud">
+      <div class="steps4" id="steps4"></div>
+      <div class="ohud-r">
+        <div class="pill timer" title="Thời gian chơi"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span id="playTime">00:00</span></div>
+        <button class="icon-btn" id="btnLesson" title="Bài học OEE" aria-label="Bài học OEE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4zM20 4.5h-6a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h6z"/></svg></button>
+        <button class="icon-btn" id="btnSound" aria-label="Bật/tắt âm thanh"></button>
+      </div>
+    </header>
+    <main class="stage" id="stage"></main>
+  </section>
+
+  <!-- ============ KẾT QUẢ ============ -->
+  <section id="scr-result" class="screen">
+    <div class="result" id="result"></div>
+    <div class="confetti" id="confetti"></div>
+  </section>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card" id="modalCard" role="dialog" aria-modal="true"></div></div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script defer src="assets/manifest.js?v=4"></script>
+<script defer src="js/oee-data.js?v=4"></script>
+<script defer src="js/oee-calc.js?v=4"></script>
+<script defer src="js/lms.js?v=4"></script>
+<script defer src="js/character.js?v=4"></script>
+<script defer src="js/oee.js?v=4"></script>
+</body>
+</html>

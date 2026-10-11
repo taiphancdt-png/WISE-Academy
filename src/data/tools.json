@@ -61,5 +61,21 @@
       "Lean",
       "Visual management"
     ]
+  },
+  {
+    "slug": "thu-thach-oee",
+    "title": "Thử thách OEE: Đo hiệu suất thiết bị",
+    "category": "Trò chơi đào tạo Lean",
+    "summary": "Game 2 của chuỗi Xưởng Cơ khí Chú Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
+    "thumbnail": "/tools/thu-thach-oee/thumbnail.webp",
+    "file": "/tools/thu-thach-oee/index.html",
+    "url": null,
+    "saves": true,
+    "tags": [
+      "OEE",
+      "Game",
+      "Lean",
+      "TPM"
+    ]
   }
 ]
