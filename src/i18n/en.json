@@ -2171,6 +2171,10 @@
   "s": "Chuyên gia tư vấn ESG",
   "t": "ESG consultant"
  },
+ "21c291975610a3c1": {
+  "s": "Thử thách TPM: Bảo trì năng suất toàn diện",
+  "t": "TPM Challenge: Total Productive Maintenance"
+ },
  "21d43e878af5cca6": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Xác định nguyên nhân (cause) của từng dạng lỗi; chấm O.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Identify the cause of each failure mode; score O.</span>"
@@ -10399,6 +10403,10 @@
   "s": "Đào tạo Lean Diagnostic & Lean Fundamental, workshop thiết kế bố trí Lean Cell, chương trình đào tạo và tư vấn 5S, An toàn, Quản lý trực quan.",
   "t": "Lean Diagnostic & Lean Fundamental training, a Lean Cell layout design workshop, and 5S, Safety and Visual Management training and consulting."
  },
+ "a39a8cc08e64979e": {
+  "s": "Game 3 của chuỗi Xưởng Cơ Khí Sáu Tài: làm trưởng nhóm TPM cho máy tiện và máy phay CNC, thanh tra AM đầu ca và gắn thẻ xanh/đỏ, lập lịch PM, xử lý sự cố đúng quy trình LOTO, đặt mức Min-Max cho kho phụ tùng, tính MTBF và MTTR, phân tích Why-Why theo PDCA và quản lý một tháng TPM với ngân sách giới hạn. Kịch bản mới mỗi lần chơi, có giải thích và OPL tải về.",
+  "t": "Game 3 of the Sau Tai Machine Shop series: lead the TPM team for a CNC lathe and a CNC milling machine, run start-of-shift AM inspections with green/red tags, build a PM schedule, handle breakdowns with proper LOTO, set Min-Max levels for spare parts, calculate MTBF and MTTR, run Why-Why analysis with PDCA and manage a full TPM month on a limited budget. A new scenario every play, with explanations and a downloadable OPL."
+ },
  "a39b90a0ed7c0431": {
   "s": "Vì sao phải kiểm tra hệ thống đo trước",
   "t": "Why the measurement system must be checked first"
@@ -15602,6 +15610,10 @@
  "f7cf0618536b36ea": {
   "s": "Gửi đăng ký quan tâm",
   "t": "Submit registration of interest"
+ },
+ "f7d69940c730eea2": {
+  "s": "Thử thách TPM: Bảo trì năng suất toàn diện | Toolkit | WISE Academy",
+  "t": "TPM Challenge: Total Productive Maintenance | Toolkit | WISE Academy"
  },
  "f8031092a5e173f3": {
   "s": "Dự án Huali Industrial Group",

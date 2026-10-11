@@ -77,5 +77,21 @@
       "Lean",
       "TPM"
     ]
+  },
+  {
+    "slug": "thu-thach-tpm",
+    "title": "Thử thách TPM: Bảo trì năng suất toàn diện",
+    "category": "Trò chơi đào tạo Lean",
+    "summary": "Game 3 của chuỗi Xưởng Cơ Khí Sáu Tài: làm trưởng nhóm TPM cho máy tiện và máy phay CNC, thanh tra AM đầu ca và gắn thẻ xanh/đỏ, lập lịch PM, xử lý sự cố đúng quy trình LOTO, đặt mức Min-Max cho kho phụ tùng, tính MTBF và MTTR, phân tích Why-Why theo PDCA và quản lý một tháng TPM với ngân sách giới hạn. Kịch bản mới mỗi lần chơi, có giải thích và OPL tải về.",
+    "thumbnail": "/tools/thu-thach-tpm/thumbnail.webp",
+    "file": "/tools/thu-thach-tpm/index.html",
+    "url": null,
+    "saves": true,
+    "tags": [
+      "TPM",
+      "Game",
+      "Lean",
+      "Maintenance"
+    ]
   }
 ]

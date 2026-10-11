@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B2128">
+<title>Thử thách TPM: Bảo trì năng suất toàn diện | WISE Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="css/style.css?v=1">
+<link rel="stylesheet" href="css/xuong.css?v=1">
+<link rel="stylesheet" href="css/tpm.css?v=1">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ MỞ ĐẦU ============ -->
+  <section id="scr-start" class="screen show">
+    <div class="start-bg"><div id="startScene" class="scene"></div></div>
+    <div class="start-card">
+      <!-- Logo lấy từ website WISE; chạy riêng thì đặt file logo vào đúng đường dẫn này -->
+      <img class="logo" src="/images/brand/logo-transparent.png" alt="WISE Academy">
+      <div class="series">Game 3 · Chuỗi đào tạo Xưởng Cơ Khí Sáu Tài</div>
+      <h1 class="title">Thử thách TPM<span>Bảo trì năng suất toàn diện</span></h1>
+      <p class="lead">Máy tiện hỏng vặt liên tục, máy phay hỏng một lần sửa cả ngày. Bạn là trưởng nhóm TPM: thanh tra AM, lập lịch PM, xử lý sự cố, quản lý kho phụ tùng, tính MTBF, MTTR và dẫn dắt Kaizen.</p>
+      <label class="lbl" for="playerName">Tên người chơi</label>
+      <input id="playerName" type="text" maxlength="40" autocomplete="name" placeholder="VD: Nguyễn Văn An">
+      <button id="btnStart" class="btn btn-primary btn-lg" disabled>Bắt đầu</button>
+      <div class="start-links">
+        <button id="btnLessonStart" class="btn btn-ghost"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4zM20 4.5h-6a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h6z"/></svg>Bài học TPM</button>
+        <a class="btn btn-ghost" href="../thu-thach-5s/index.html">Game 5S</a>
+        <a class="btn btn-ghost" href="../thu-thach-oee/index.html">Game OEE</a>
+      </div>
+      <p id="bestLine" class="best"></p>
+    </div>
+  </section>
+
+  <!-- ============ KHUNG CHƠI (cốt truyện, bài học, bản đồ, 7 màn) ============ -->
+  <section id="scr-play" class="screen">
+    <header class="ohud">
+      <div class="ohud-l"><div class="lvltitle" id="lvlTitle"></div><div class="steps4" id="lvlLamps"></div></div>
+      <div class="ohud-r">
+        <div class="pill score" id="scorePill">0 điểm</div>
+        <div class="pill timer" title="Thời gian chơi"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span id="playTime">00:00</span></div>
+        <button class="icon-btn" id="btnMap" title="Bản đồ xưởng" aria-label="Bản đồ xưởng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5l5.5-2.5 6 2.5 5.5-2.5v13.5l-5.5 2.5-6-2.5-5.5 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></button>
+        <button class="icon-btn" id="btnLib" title="Thư viện bài học TPM" aria-label="Thư viện bài học TPM"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4zM20 4.5h-6a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h6z"/></svg></button>
+        <button class="icon-btn" id="btnSound" aria-label="Bật/tắt âm thanh"></button>
+      </div>
+    </header>
+    <main class="stage" id="stage"></main>
+  </section>
+
+  <!-- ============ KẾT QUẢ ============ -->
+  <section id="scr-result" class="screen">
+    <div class="result" id="result"></div>
+    <div class="confetti" id="confetti"></div>
+  </section>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card" id="modalCard" role="dialog" aria-modal="true"></div></div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script defer src="assets/manifest.js?v=1"></script>
+<script defer src="js/tpm-data.js?v=1"></script>
+<script defer src="js/tpm-calc.js?v=1"></script>
+<script defer src="js/lms.js?v=1"></script>
+<script defer src="js/character.js?v=1"></script>
+<script defer src="js/tpm-core.js?v=1"></script>
+<script defer src="js/tpm-am-pm.js?v=1"></script>
+<script defer src="js/tpm-rm-parts.js?v=1"></script>
+<script defer src="js/tpm-mtbf-kaizen.js?v=1"></script>
+<script defer src="js/tpm-month-result.js?v=1"></script>
+</body>
+</html>

@@ -127,11 +127,11 @@ window.ASSETS = {
    "h": 156
   },
   "desk": {
-   "src": "assets/props/desk.svg?v=3",
-   "x": 820,
-   "y": 367,
-   "w": 131,
-   "h": 124
+   "src": "assets/props/desk.svg?v=4",
+   "x": 817,
+   "y": 358,
+   "w": 133,
+   "h": 135
   },
   "truck": {
    "src": "assets/props/truck.svg?v=3",
