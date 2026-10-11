@@ -1,5 +1,5 @@
 /* =====================================================================
-   THỬ THÁCH OEE, XƯỞNG CƠ KHÍ CHÚ TÀI  |  Bộ máy game (JavaScript thuần)
+   THỬ THÁCH OEE, XƯỞNG CƠ KHÍ SÁU TÀI  |  Bộ máy game (JavaScript thuần)
    ---------------------------------------------------------------------
    Luồng chơi: Mở đầu → Hướng dẫn → Màn 1 Học nhanh → Màn 2 Một ngày vận hành
                → Màn 3 Tính OEE → Màn 4 Phân tích & cải tiến → Kết quả
@@ -783,7 +783,7 @@
     function draw() {
       var sub = S.m4.submitted;
       $("stage").innerHTML = '<div class="page wide">' + coach(sub ? "Mỗi máy cần một hướng cải tiến khác nhau, đừng áp một giải pháp cho mọi máy!" : "Đọc bảng điều khiển: kim đồng hồ là OEE, vạch trắng trên mỗi thanh là chuẩn thế giới. Rồi điền phiếu phân tích bên dưới.") +
-        '<section class="dash"><div class="dash-top"><div class="dash-t"><i class="led"></i>Bảng điều khiển OEE<span>Xưởng Cơ khí Chú Tài · Ca 1 · 06:00-14:00</span></div><div class="dash-legend"><span class="lg-good">Đạt chuẩn</span><span class="lg-mid">Cần theo dõi</span><span class="lg-low">Báo động</span></div></div>' +
+        '<section class="dash"><div class="dash-top"><div class="dash-t"><i class="led"></i>Bảng điều khiển OEE<span>Xưởng Cơ Khí Sáu Tài · Ca 1 · 06:00-14:00</span></div><div class="dash-legend"><span class="lg-good">Đạt chuẩn</span><span class="lg-mid">Cần theo dõi</span><span class="lg-low">Báo động</span></div></div>' +
         '<div class="dash-grid">' + MACH.map(panel).join("") + '</div>' +
         '<div class="dash-cmp"><div class="hmi-l">So sánh hai máy với chuẩn thế giới · %</div>' + compareChart() + '</div></section>' +
         '<div class="m4q">' + MACH.map(function (id) {

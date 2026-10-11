@@ -1,5 +1,5 @@
 /* =====================================================================
-   DỮ LIỆU GAME "THỬ THÁCH OEE, XƯỞNG CƠ KHÍ CHÚ TÀI"
+   DỮ LIỆU GAME "THỬ THÁCH OEE, XƯỞNG CƠ KHÍ SÁU TÀI"
    ---------------------------------------------------------------------
    Đội đào tạo/IT có thể sửa:
      - sample   : kịch bản mẫu (lần chơi đầu), số liệu khớp đề bài
@@ -12,7 +12,7 @@
    ===================================================================== */
 window.OEE_DATA = {
   title: "Thử thách OEE",
-  workshop: "Xưởng Cơ khí Chú Tài",
+  workshop: "Xưởng Cơ Khí Sáu Tài",
   shiftStart: 6 * 60,      // 06:00
   shift: 480,
   worldClass: { A: 90, P: 95, Q: 99.9, OEE: 85 },

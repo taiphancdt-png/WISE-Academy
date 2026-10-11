@@ -4755,6 +4755,10 @@
   "s": "Ứng dụng các công cụ cốt lõi: A3, OEE, VSM, FMEA, Kaizen, SMED, TPM, Kanban, Poka Yoke.",
   "t": "Apply the core tools: A3, OEE, VSM, FMEA, Kaizen, SMED, TPM, Kanban, Poka Yoke."
  },
+ "4bd98e5510063e82": {
+  "s": "Thử thách 5S: Xưởng Cơ Khí Sáu Tài | Toolkit | WISE Academy",
+  "t": "5S Challenge: Sau Tai Machine Shop | Toolkit | WISE Academy"
+ },
  "4beca1cd82270de7": {
   "s": "SWOT ANALYSIS - nhìn toàn cảnh trước khi quyết định | Góc tri thức WISE Academy",
   "t": "SWOT ANALYSIS - see the big picture before deciding | WISE Academy Knowledge Hub"
@@ -4878,10 +4882,6 @@
  "4dac947b9dc91d52": {
   "s": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Tiêu chuẩn thực tế</span>",
   "t": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Practical benchmarks</span>"
- },
- "4dae0d78fc9a8e26": {
-  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài",
-  "t": "5S Challenge: Chu Tai Machine Shop"
  },
  "4db2ad149b818c9f": {
   "s": "📌 5S là gì?",
@@ -5314,10 +5314,6 @@
  "542d096816d5a548": {
   "s": "Biến ngôn ngữ cảm tính của khách hàng (\"bền\", \"chắc chắn\") thành chỉ tiêu kỹ thuật cụ thể có ngưỡng số.",
   "t": "Turn the customer's subjective language (\"durable\", \"solid\") into specific technical targets with numerical thresholds."
- },
- "544943c1db704afa": {
-  "s": "Game 2 của chuỗi Xưởng Cơ khí Chú Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
-  "t": "Game 2 of the Chu Tai Machine Shop series: run a CNC lathe and a CNC milling machine through a fast-forwarded 8-hour shift, sort events into planned stops and A, P, Q losses (the Six Big Losses), calculate A, P, Q, OEE and takt time yourself, then read the control dashboard to find the biggest loss and the right improvement. A new scenario every play, with scoring and step-by-step explanations."
  },
  "547f628d6ce052ec": {
   "s": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | Góc tri thức WISE Academy",
@@ -12759,6 +12755,10 @@
   "s": "<span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">5S</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">An toàn</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Quản lý trực quan</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Hiện trường</span>",
   "t": "<span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">5S</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Safety</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Visual management</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Shop floor</span>"
  },
+ "c96967b96af88980": {
+  "s": "Thử thách 5S: Xưởng Cơ Khí Sáu Tài",
+  "t": "5S Challenge: Sau Tai Machine Shop"
+ },
  "c96a80e0642eaa79": {
   "s": "<span class=\"shrink-0 w-7 h-7 rounded-full bg-[#F76011] text-white text-xs font-bold flex items-center justify-center\">V</span><span><strong class=\"text-[#002F5B]\">Vai trò quản lý</strong>: 3 hành vi cốt lõi Ask Why, Go to See (Gemba) và Coaching Kata; chuyển từ Firefighter sang System Builder.</span>",
   "t": "<span class=\"shrink-0 w-7 h-7 rounded-full bg-[#F76011] text-white text-xs font-bold flex items-center justify-center\">V</span><span><strong class=\"text-[#002F5B]\">The manager's role</strong>: <!-- -->3 core behaviours: Ask Why, Go to See (Gemba) and Coaching Kata; moving from Firefighter to System Builder.</span>"
@@ -13734,6 +13734,10 @@
  "da2bede07a7eb624": {
   "s": "Gửi yêu cầu tư vấn",
   "t": "Send consultation request"
+ },
+ "da2c62c13b76297c": {
+  "s": "Game 2 của chuỗi Xưởng Cơ Khí Sáu Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
+  "t": "Game 2 of the Sau Tai Machine Shop series: run a CNC lathe and a CNC milling machine through a fast-forwarded 8-hour shift, sort events into planned stops and A, P, Q losses (the Six Big Losses), calculate A, P, Q, OEE and takt time yourself, then read the control dashboard to find the biggest loss and the right improvement. A new scenario every play, with scoring and step-by-step explanations."
  },
  "da2e403e99a887c2": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Ghi kết quả 5 Why vào báo cáo A3 hoặc 8D để chia sẻ bài học cho các chuyền khác.</span>",
@@ -15170,10 +15174,6 @@
  "f081705fe7e56241": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Mỗi tín hiệu bất thường phải được ghi nguyên nhân và hành động ngay trên biểu đồ - đó là nguồn kiến thức quý của quy trình.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Every abnormal signal must have its cause and action recorded right on the chart - that is valuable process knowledge.</span>"
- },
- "f0b7f62e19461c36": {
-  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài | Toolkit | WISE Academy",
-  "t": "5S Challenge: Chu Tai Machine Shop | Toolkit | WISE Academy"
  },
  "f0daa64f5432bd7f": {
   "s": "🏭 Case study: Dell Computer (những năm 2000) áp dụng JIT triệt để trong chuỗi cung ứng. Máy tính chỉ được lắp ráp SAU khi khách hàng đặt hàng. Kết quả:",

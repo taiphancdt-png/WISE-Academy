@@ -1,5 +1,5 @@
 /* =====================================================================
-   CẤU HÌNH GAME "THỬ THÁCH 5S, XƯỞNG CƠ KHÍ CHÚ TÀI"
+   CẤU HÌNH GAME "THỬ THÁCH 5S, XƯỞNG CƠ KHÍ SÁU TÀI"
    ---------------------------------------------------------------------
    Đội IT/đào tạo chỉ cần sửa file này để thay nội dung:
      - items      : vật dụng (tên, vị trí đúng, lời giải thích)
@@ -11,7 +11,7 @@
    ===================================================================== */
 window.GAME_CONFIG = {
   title: "Thử thách 5S",
-  workshop: "Xưởng Cơ khí Chú Tài",
+  workshop: "Xưởng Cơ Khí Sáu Tài",
   grid: { w: 13, h: 17 },
   playerStart: { x: 6, y: 15 },
 
@@ -28,7 +28,7 @@ window.GAME_CONFIG = {
   layout: {
     /* Kích thước (ô) của từng khối di chuyển được trên sơ đồ mặt bằng */
     foot: { shelf: [2, 3], lathe: [2, 3], mill: [2, 3], qc: [2, 3], finished: [2, 3], redtag: [3, 2], bins: [1, 4], desk: [2, 2] },
-    names: { shelf: "Kệ vật tư", lathe: "Máy tiện", mill: "Máy phay CNC", qc: "Bàn kiểm tra QC", finished: "Khu thành phẩm", redtag: "Khu thẻ đỏ", bins: "Cụm thùng rác", desk: "Bàn làm việc chú Tài" },
+    names: { shelf: "Kệ vật tư", lathe: "Máy tiện", mill: "Máy phay CNC", qc: "Bàn kiểm tra QC", finished: "Khu thành phẩm", redtag: "Khu thẻ đỏ", bins: "Cụm thùng rác", desk: "Bàn làm việc chú Sáu Tài" },
     icons: { shelf: "🗄️", lathe: "⚙️", mill: "🛠️", qc: "🔍", finished: "📦", redtag: "🏷️", bins: "♻️", desk: "🖥️" },
     /* Lúc đầu: các trạm xếp lộn xộn dọc tường dài (ô y 0,3,6,9,12); khu thẻ đỏ & thùng rác ở vị trí sau */
     slotsY: [0, 3, 6, 9, 12],

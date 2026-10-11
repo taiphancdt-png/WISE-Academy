@@ -4755,6 +4755,10 @@
   "s": "Ứng dụng các công cụ cốt lõi: A3, OEE, VSM, FMEA, Kaizen, SMED, TPM, Kanban, Poka Yoke.",
   "t": "应用核心工具：A3、OEE、VSM、FMEA、Kaizen、SMED、TPM、看板、Poka Yoke。"
  },
+ "4bd98e5510063e82": {
+  "s": "Thử thách 5S: Xưởng Cơ Khí Sáu Tài | Toolkit | WISE Academy",
+  "t": "5S 挑战：Sau Tai 机械车间 | Toolkit | WISE Academy"
+ },
  "4beca1cd82270de7": {
   "s": "SWOT ANALYSIS - nhìn toàn cảnh trước khi quyết định | Góc tri thức WISE Academy",
   "t": "SWOT ANALYSIS - 决策前先看全局 | WISE Academy 知识专栏"
@@ -4878,10 +4882,6 @@
  "4dac947b9dc91d52": {
   "s": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>Tiêu chuẩn thực tế</span>",
   "t": "<span class=\"w-2 h-2 rounded-full bg-[#F76011]\"></span><span>实际标准</span>"
- },
- "4dae0d78fc9a8e26": {
-  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài",
-  "t": "5S 挑战：Chu Tai 机械车间"
  },
  "4db2ad149b818c9f": {
   "s": "📌 5S là gì?",
@@ -5314,10 +5314,6 @@
  "542d096816d5a548": {
   "s": "Biến ngôn ngữ cảm tính của khách hàng (\"bền\", \"chắc chắn\") thành chỉ tiêu kỹ thuật cụ thể có ngưỡng số.",
   "t": "把客户的主观语言（“耐穿”“结实”）转化为具有数值界限的具体技术指标。"
- },
- "544943c1db704afa": {
-  "s": "Game 2 của chuỗi Xưởng Cơ khí Chú Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
-  "t": "Chu Tai 机械车间系列第 2 款游戏：在快进的 8 小时班次中运行 CNC 车床和 CNC 铣床，将事件归类为计划停机及 A、P、Q 损失（六大损失），亲自计算 A、P、Q、OEE 和节拍时间，再通过控制看板找出最大损失和合适的改善措施。每次游戏生成新情景，并提供评分和逐步讲解。"
  },
  "547f628d6ce052ec": {
   "s": "WORKSHOP LEAN SIX SIGMA SIMULATION GAME [WISE ACADEMY X LDT GROUP] | Góc tri thức WISE Academy",
@@ -12759,6 +12755,10 @@
   "s": "<span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">5S</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">An toàn</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Quản lý trực quan</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">Hiện trường</span>",
   "t": "<span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">5S</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">安全</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">目视化管理</span><span class=\"text-xs bg-[#EBF3FA] text-[#002F5B] px-3 py-1 rounded-full\">现场</span>"
  },
+ "c96967b96af88980": {
+  "s": "Thử thách 5S: Xưởng Cơ Khí Sáu Tài",
+  "t": "5S 挑战：Sau Tai 机械车间"
+ },
  "c96a80e0642eaa79": {
   "s": "<span class=\"shrink-0 w-7 h-7 rounded-full bg-[#F76011] text-white text-xs font-bold flex items-center justify-center\">V</span><span><strong class=\"text-[#002F5B]\">Vai trò quản lý</strong>: 3 hành vi cốt lõi Ask Why, Go to See (Gemba) và Coaching Kata; chuyển từ Firefighter sang System Builder.</span>",
   "t": "<span class=\"shrink-0 w-7 h-7 rounded-full bg-[#F76011] text-white text-xs font-bold flex items-center justify-center\">V</span><span><strong class=\"text-[#002F5B]\">管理者的角色</strong>: <!-- -->3 个核心行为：Ask Why、Go to See（Gemba）和 Coaching Kata；从救火队员转变为体系建设者。</span>"
@@ -13734,6 +13734,10 @@
  "da2bede07a7eb624": {
   "s": "Gửi yêu cầu tư vấn",
   "t": "提交咨询请求"
+ },
+ "da2c62c13b76297c": {
+  "s": "Game 2 của chuỗi Xưởng Cơ Khí Sáu Tài: vận hành máy tiện và máy phay CNC qua một ca 8 giờ tua nhanh, phân loại sự kiện vào dừng có kế hoạch và tổn thất A, P, Q (6 tổn thất lớn), tự tính A, P, Q, OEE và takt time, rồi đọc bảng điều khiển để tìm tổn thất lớn nhất và giải pháp cải tiến. Kịch bản mới mỗi lần chơi, chấm điểm và giải thích từng bước.",
+  "t": "Sau Tai 机械车间系列第 2 款游戏：在快进的 8 小时班次中运行 CNC 车床和 CNC 铣床，将事件归类为计划停机及 A、P、Q 损失（六大损失），亲自计算 A、P、Q、OEE 和节拍时间，再通过控制看板找出最大损失和合适的改善措施。每次游戏生成新情景，并提供评分和逐步讲解。"
  },
  "da2e403e99a887c2": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Ghi kết quả 5 Why vào báo cáo A3 hoặc 8D để chia sẻ bài học cho các chuyền khác.</span>",
@@ -15170,10 +15174,6 @@
  "f081705fe7e56241": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Mỗi tín hiệu bất thường phải được ghi nguyên nhân và hành động ngay trên biểu đồ - đó là nguồn kiến thức quý của quy trình.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>每个异常信号都必须直接在图上记录原因和措施——这是流程的宝贵知识。</span>"
- },
- "f0b7f62e19461c36": {
-  "s": "Thử thách 5S: Xưởng Cơ khí Chú Tài | Toolkit | WISE Academy",
-  "t": "5S 挑战：Chu Tai 机械车间 | Toolkit | WISE Academy"
  },
  "f0daa64f5432bd7f": {
   "s": "🏭 Case study: Dell Computer (những năm 2000) áp dụng JIT triệt để trong chuỗi cung ứng. Máy tính chỉ được lắp ráp SAU khi khách hàng đặt hàng. Kết quả:",

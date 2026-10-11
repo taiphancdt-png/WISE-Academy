@@ -1,5 +1,5 @@
 /* =====================================================================
-   THỬ THÁCH 5S, XƯỞNG CƠ KHÍ CHÚ TÀI  |  Bộ máy game (JavaScript thuần)
+   THỬ THÁCH 5S, XƯỞNG CƠ KHÍ SÁU TÀI  |  Bộ máy game (JavaScript thuần)
    ---------------------------------------------------------------------
    3 giai đoạn:
      1. Dọn xưởng , S1 Sàng lọc, S2 Sắp xếp (gồm sắp xếp lại mặt bằng), S3 Sạch sẽ
@@ -613,7 +613,7 @@
         return '<button class="opt' + (draft[key] === i ? " sel" : "") + '" data-i="' + i + '"><span class="radio"></span><span>' + esc(o.label) + '</span></button>';
       }).join("") + '</div>';
     }
-    modal('<h3>📋 ' + esc(l.name) + '</h3><p>Phiếu báo cáo bất thường: Xưởng Cơ khí Chú Tài</p>' +
+    modal('<h3>📋 ' + esc(l.name) + '</h3><p>Phiếu báo cáo bất thường: Xưởng Cơ Khí Sáu Tài</p>' +
       grp("src", "1. Nguồn gây bẩn (nguyên nhân dầu chảy ra sàn) là gì?", l.src) +
       grp("act", "2. Hành động xử lý:", l.act) +
       '<div class="modal-btns"><button class="btn btn-ghost" data-close>Để sau</button><button class="btn btn-primary" id="rpSend" disabled>Gửi báo cáo</button></div>');

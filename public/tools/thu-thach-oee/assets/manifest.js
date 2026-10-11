@@ -8,7 +8,7 @@ window.ASSETS = {
  },
  "props": {
   "floor": {
-   "src": "assets/scene/floor.svg",
+   "src": "assets/scene/floor.svg?v=3",
    "x": 0,
    "y": 0,
    "w": 1124,
@@ -127,14 +127,14 @@ window.ASSETS = {
    "h": 156
   },
   "desk": {
-   "src": "assets/props/desk.svg",
+   "src": "assets/props/desk.svg?v=3",
    "x": 820,
    "y": 367,
    "w": 131,
    "h": 124
   },
   "truck": {
-   "src": "assets/props/truck.svg",
+   "src": "assets/props/truck.svg?v=3",
    "x": 36,
    "y": 431,
    "w": 250,
