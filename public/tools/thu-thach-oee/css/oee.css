@@ -512,3 +512,15 @@ details.more summary{cursor:pointer;font-family:var(--cond);font-weight:700;text
   .solgrid{grid-template-columns:1fr}
   .cap{font-size:22px}
 }
+
+/* ---------- Kệ nhỏ Đạt / Lỗi cạnh máy (luồng vật tư) ---------- */
+.rack{position:absolute;pointer-events:none}
+.rack svg{position:absolute;left:0;top:0;overflow:visible}
+.rack-parts{position:absolute;left:var(--px);top:var(--py);transform:translate(-50%,-80%);display:grid;grid-template-columns:repeat(3,11px);gap:1px}
+.rack-parts img{width:11px;height:8px;display:block}
+.rack-tag{position:absolute;transform:translate(0,-100%);display:flex;gap:4px;align-items:center;white-space:nowrap;pointer-events:none;
+  font:700 8px/1 var(--font);padding:2px 5px;border-radius:999px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);border-left:3px solid}
+.rack-tag.pass{border-color:#2E9A57}.rack-tag.fail{border-color:#D9412F}
+.rack-tag.pass b{color:#1E7A43}.rack-tag.fail b{color:#B3261E}
+.rack-tag em{font-style:normal;font-family:var(--mono);color:#002F5B}
+.worker-held img{width:22px;height:16px}

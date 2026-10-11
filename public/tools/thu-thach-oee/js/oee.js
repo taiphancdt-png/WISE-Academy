@@ -209,10 +209,106 @@
         var w = window.createCharacter(), wp = iso(sp.worker[0], sp.worker[1], 0);
         w.style.left = (wp.x - 30) + "px"; w.style.top = (wp.y - 78) + "px"; w.style.zIndex = Math.floor((sp.worker[0] + sp.worker[1]) * 20) + 8;
         w.classList.add("face-back", "mirror"); w.classList.remove("face-front");
-        root.appendChild(w); m.worker = w;
+        root.appendChild(w); m.worker = w; m.home = sp.worker;
       });
+      // kệ nhỏ Đạt / Lỗi của từng máy (mỗi kệ ~1/4 kệ thành phẩm); kệ Đạt của máy tiện cũng là kệ chờ phay
+      ctx.racks = {};
+      RACKS.forEach(function (r) { ctx.racks[r.id] = makeRack(root, r); });
     }
     return ctx;
+  }
+
+  /* ============ 3b. LUỒNG VẬT TƯ: công nhân mang chi tiết giữa máy và kệ ============ */
+  var RACKS = [
+    { id: "F1", x: 2.1, y: 3.1, w: .8, d: .9, pass: false, label: "Lỗi tiện" },
+    { id: "P1", x: 2.1, y: 5.3, w: .8, d: .9, pass: true, label: "Chờ phay" },
+    { id: "F2", x: 2.1, y: 6.45, w: .8, d: .8, pass: false, label: "Lỗi phay" },
+    { id: "P2", x: 2.1, y: 8.1, w: .8, d: .9, pass: true, label: "Đạt phay" }
+  ];
+  var PART = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16"><rect x="2" y="4" width="18" height="8" rx="2" fill="#9AA7B4" stroke="#4A5868"/><rect x="6" y="2.5" width="3" height="11" rx="1" fill="#C9D3DD" stroke="#4A5868"/><rect x="13" y="2.5" width="3" height="11" rx="1" fill="#C9D3DD" stroke="#4A5868"/></svg>');
+  function makeRack(root, r) {
+    var c = [iso(r.x, r.y, 14), iso(r.x + r.w, r.y, 14), iso(r.x + r.w, r.y + r.d, 14), iso(r.x, r.y + r.d, 14)];
+    var f = [iso(r.x + r.w, r.y, 0), iso(r.x + r.w, r.y + r.d, 0), iso(r.x, r.y + r.d, 0)];
+    var xs = c.concat(f).map(function (q) { return q.x; }), ys = c.concat(f).map(function (q) { return q.y; });
+    var L = Math.min.apply(null, xs) - 2, T = Math.min.apply(null, ys) - 2, W = Math.max.apply(null, xs) - L + 2, H = Math.max.apply(null, ys) - T + 2;
+    function P(q) { return (q.x - L).toFixed(1) + "," + (q.y - T).toFixed(1); }
+    var edge = r.pass ? "#2E9A57" : "#D9412F";
+    var svg = '<svg width="' + W + '" height="' + H + '">' +
+      [[c[1], f[0]], [c[2], f[1]], [c[3], f[2]]].map(function (l) { return '<line x1="' + (l[0].x - L) + '" y1="' + (l[0].y - T) + '" x2="' + (l[1].x - L) + '" y2="' + (l[1].y - T) + '" stroke="#4A5868" stroke-width="2"/>'; }).join("") +
+      '<polygon points="' + [c[0], c[1], c[2], c[3]].map(P).join(" ") + '" fill="#DDE4EA" stroke="' + edge + '" stroke-width="2"/>' +
+      '<polygon points="' + [c[3], c[2], iso(r.x + r.w, r.y + r.d, 11), iso(r.x, r.y + r.d, 11)].map(P).join(" ") + '" fill="' + edge + '"/>' +
+      '<polygon points="' + [c[1], c[2], iso(r.x + r.w, r.y + r.d, 11), iso(r.x + r.w, r.y, 11)].map(P).join(" ") + '" fill="' + edge + '" opacity=".75"/></svg>';
+    var el = mk("div", "rack " + (r.pass ? "pass" : "fail"), svg + '<div class="rack-parts"></div>');
+    // nhãn số lượng nằm trên lớp trên cùng, để công nhân đi ngang không che
+    var tag = mk("span", "rack-tag " + (r.pass ? "pass" : "fail"), '<b>' + r.label + '</b><em>0</em>');
+    tag.style.left = (L + W * .62) + "px"; tag.style.top = (T - 4) + "px"; tag.style.zIndex = 9120; root.appendChild(tag);
+    el.style.left = L + "px"; el.style.top = T + "px"; el.style.width = W + "px"; el.style.height = H + "px";
+    el.style.zIndex = depthOf(Math.floor(r.x + r.w), Math.floor(r.y + r.d)) + 3;
+    var top = iso(r.x + r.w / 2, r.y + r.d / 2, 14); el.style.setProperty("--px", (top.x - L) + "px"); el.style.setProperty("--py", (top.y - T) + "px");
+    root.appendChild(el);
+    return { el: el, tag: tag, n: 0, r: r };
+  }
+  function setRack(id, n) {
+    var k = S.ws.racks[id]; k.n = Math.max(0, n);
+    k.tag.querySelector("em").textContent = k.n;
+    var shown = Math.min(6, Math.ceil(k.n / 8)), box = k.el.querySelector(".rack-parts");
+    if (box.children.length !== shown) box.innerHTML = new Array(shown + 1).join('<img alt="" src="' + PART + '">');
+  }
+  function rackSpot(id) { var r = S.ws.racks[id].r; return [r.x + r.w + .35, r.y + r.d / 2]; }   // chỗ đứng cạnh kệ
+  function placeWorker(w, xy) {
+    var p = iso(xy[0], xy[1], 0);
+    w.style.left = (p.x - 30) + "px"; w.style.top = (p.y - 78) + "px"; w.style.zIndex = Math.floor((xy[0] + xy[1]) * 20) + 8;
+  }
+  /* đi qua các điểm; mỗi điểm có thể kèm việc làm khi tới (nhặt / đặt) */
+  function walk(id, steps, done) {
+    var m = S.ws.m[id], w = m.worker, cur = m.pos || m.home, i = 0;
+    function next() {
+      if (!S || !S.ws || (S.flow && S.flow.synced)) return;   // hết ca: dừng các chuyến dở dang
+      if (i >= steps.length) { w.classList.remove("walking"); w.classList.add("face-back"); w.classList.remove("face-front"); if (done) done(); return; }
+      var st = steps[i++], to = st.to, dist = Math.hypot(to[0] - cur[0], to[1] - cur[1]), ms = Math.max(250, dist * 420 / Math.max(1, S.sim.speed));
+      w.classList.toggle("face-front", to[1] > cur[1]); w.classList.toggle("face-back", to[1] <= cur[1]);
+      w.classList.add("walking"); w.style.transition = "left " + ms + "ms linear, top " + ms + "ms linear";
+      placeWorker(w, to); cur = to; m.pos = to;
+      setTimeout(function () {
+        if (S.flow && S.flow.synced) return;
+        w.classList.remove("walking");
+        if (st.act) st.act();
+        setTimeout(next, st.act ? 260 / Math.max(1, S.sim.speed) : 0);
+      }, ms);
+    }
+    next();
+  }
+  function hold(id, on) { var w = S.ws.m[id].worker; w.classList.toggle("carrying", on); w.querySelector(".worker-held").innerHTML = on ? '<img alt="" src="' + PART + '">' : ""; }
+  /* chi tiết lỗi tới thời điểm t (theo các sự kiện Q của kịch bản) */
+  function defectsBy(id, t) { var n = 0; S.cards.forEach(function (c) { if (c.m === id && c.e.cat === "Q" && c.e.t <= t) n += c.e.qty || 0; }); return n; }
+  function initFlow() {
+    var Lr = S.res.lathe, Mr = S.res.mill;
+    // tồn đầu ca trên kệ chờ phay: đủ để máy phay chạy cả ca dù máy tiện làm ít hơn
+    S.flow = { lathe: { busy: false, done: 0, fail: 0 }, mill: { busy: false, done: 0, fail: 0 }, wip0: Math.max(10, Mr.total - Lr.good + 10) };
+    setRack("P1", S.flow.wip0); setRack("F1", 0); setRack("F2", 0); setRack("P2", 0);
+  }
+  function flowTick(id, prod, t, running) {
+    var F = S.flow[id]; if (!F || F.busy || prod <= F.done || !running) return;
+    var fail = Math.min(prod, defectsBy(id, t)), n = prod - F.done, nf = Math.max(0, fail - F.fail), np = Math.max(0, n - nf);
+    F.busy = true;
+    var steps = [], passR = id === "lathe" ? "P1" : "P2", failR = id === "lathe" ? "F1" : "F2";
+    if (id === "mill") {   // lấy chi tiết đã tiện ở kệ chờ phay, đưa vào máy phay
+      steps.push({ to: rackSpot("P1"), act: function () { setRack("P1", S.ws.racks.P1.n - n); hold(id, true); } });
+      steps.push({ to: S.ws.m[id].home, act: function () { hold(id, false); S.ws.m[id].worker.classList.add("bend"); setTimeout(function () { S.ws.m[id].worker.classList.remove("bend"); hold(id, true); }, 220); } });
+    } else hold(id, true);
+    if (nf) steps.push({ to: rackSpot(failR), act: function () { setRack(failR, S.ws.racks[failR].n + nf); if (!np) hold(id, false); } });
+    if (np) steps.push({ to: rackSpot(passR), act: function () { setRack(passR, S.ws.racks[passR].n + np); hold(id, false); } });
+    steps.push({ to: S.ws.m[id].home });
+    walk(id, steps, function () { F.done = prod; F.fail = fail; F.busy = false; hold(id, false); });
+  }
+  /* hết ca (hoặc tua tới cuối): các kệ hiện đúng số cuối, công nhân về chỗ */
+  function syncFlow() {
+    if (!S.flow || !S.ws.racks) return;
+    S.flow.synced = true;
+    var Lr = S.res.lathe, Mr = S.res.mill;
+    setRack("F1", Lr.defects); setRack("F2", Mr.defects); setRack("P2", Mr.good);
+    setRack("P1", S.flow.wip0 + Lr.good - Mr.total);
+    MACH.forEach(function (id) { var m = S.ws.m[id]; m.worker.style.transition = "none"; placeWorker(m.worker, m.home); m.pos = m.home; hold(id, false); m.worker.classList.remove("walking"); S.flow[id].busy = true; });
   }
 
   /* ============ 4. KHUNG CHƠI ============ */
@@ -369,6 +465,7 @@
         '</div>' +
       '</div>';
     S.ws = buildWorkshop($("simScene"), true);
+    initFlow();
     fitSim();
     document.querySelectorAll(".speed button").forEach(function (b) {
       b.onclick = function () {
@@ -427,9 +524,10 @@
       }
       var r = S.res[id], prod = Math.round(r.total * prodFrac(id, t));
       m.tag.querySelector("em").textContent = ("00" + prod).slice(-3);
+      if (!sim.ended) flowTick(id, prod, t, st.color === "g" || st.color === "y");
     });
     updateTray();
-    if (t >= D.shift && !sim.ended) { sim.ended = true; Sound.humOff(); MACH.forEach(function (id) { var m = S.ws.m[id]; m.andon.className = "andon on-b"; m.img.classList.remove("run", "slow"); m.sparks.classList.remove("on"); m.chips.classList.remove("on"); }); toast("Hết ca! Hoàn tất phân loại các thẻ rồi bấm Chấm phân loại."); }
+    if (t >= D.shift && !sim.ended) { sim.ended = true; syncFlow(); Sound.humOff(); MACH.forEach(function (id) { var m = S.ws.m[id]; m.andon.className = "andon on-b"; m.img.classList.remove("run", "slow"); m.sparks.classList.remove("on"); m.chips.classList.remove("on"); }); toast("Hết ca! Hoàn tất phân loại các thẻ rồi bấm Chấm phân loại."); }
     requestAnimationFrame(simLoop);
   }
 
