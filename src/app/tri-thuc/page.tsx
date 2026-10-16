@@ -2,13 +2,14 @@ import KnowledgeClient, { type KnowledgeItem } from "@/components/KnowledgeClien
 import articlesData from "@/data/articles.json";
 import type { Article } from "@/types";
 import { cleanExcerpt, normalize, plainText } from "@/lib/text";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Góc tri thức Lean Six Sigma | WISE Academy",
   description:
     "Hơn 100 bài viết thực tế về Lean Six Sigma, DMAIC, 5S, TPM, công cụ chất lượng, giải quyết vấn đề và case study cải tiến năng suất doanh nghiệp.",
-  alternates: { canonical: "/tri-thuc" },
-};
+  path: "/tri-thuc",
+});
 
 // Server component: sends a slim, pre-normalized list to the client instead of every article's full data.
 export default function KnowledgePage() {

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "@/components/icons";
 import toolsData from "@/data/tools.json";
 import type { LeanTool } from "@/types";
+import { pageMeta, seoTitle } from "@/lib/seo";
 
 const tools = toolsData as LeanTool[];
 
@@ -14,9 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const tool = tools.find((t) => t.slug === slug);
-  return tool
-    ? { title: `${tool.title} | Toolkit | WISE Academy`, description: tool.summary, alternates: { canonical: `/toolkit/${tool.slug}` } }
-    : {};
+  return tool ? pageMeta({ title: seoTitle(tool.title), description: tool.summary, path: `/toolkit/${tool.slug}` }) : {};
 }
 
 export default async function LeanToolPage({ params }: { params: Promise<{ slug: string }> }) {

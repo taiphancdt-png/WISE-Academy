@@ -12,6 +12,7 @@ import {
 import expertsData from "@/data/experts.json";
 import projectsData from "@/data/projects.json";
 import type { Expert, Project } from "@/types";
+import { SITE_URL, jsonLd, metaDescription, pageMeta } from "@/lib/seo";
 
 const experts = expertsData as Expert[];
 const projects = projectsData as Project[];
@@ -28,11 +29,13 @@ export async function generateMetadata({
   const { id } = await params;
   const exp = experts.find((e) => e.id === id);
   if (!exp) return {};
-  return {
+  return pageMeta({
     title: `${exp.name} | Chuyên gia WISE Academy`,
     description: exp.bio,
-    alternates: { canonical: `/chuyen-gia/${exp.id}` },
-  };
+    path: `/chuyen-gia/${exp.id}`,
+    image: exp.image ? { url: exp.image, alt: exp.name } : undefined,
+    type: "profile",
+  });
 }
 
 // One section of the profile body: a sticky left rail with an outlined number and the section name.
@@ -226,6 +229,32 @@ export default async function ExpertPage({
   return (
     // data-no-reveal: the whole profile is shown at once, without the site-wide fade-in on scroll
     <div className="bg-[#F8F9FA]" data-no-reveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              name: exp.name,
+              jobTitle: exp.role,
+              description: metaDescription(exp.bio),
+              image: exp.image ? `${SITE_URL}${exp.image}` : undefined,
+              url: `${SITE_URL}/chuyen-gia/${exp.id}`,
+              worksFor: { "@id": `${SITE_URL}/#organization` },
+              knowsAbout: exp.tags,
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Trang chủ", item: SITE_URL },
+                { "@type": "ListItem", position: 2, name: "Chuyên gia", item: `${SITE_URL}/chuyen-gia` },
+                { "@type": "ListItem", position: 3, name: exp.name, item: `${SITE_URL}/chuyen-gia/${exp.id}` },
+              ],
+            },
+          ],
+        })}
+      />
       {/* Hero: light and playful; copy on the left, an arch portrait with floating stat cards on the right */}
       <section className="relative isolate overflow-hidden bg-[#FFF7F0]">
         <div

@@ -1,11 +1,13 @@
 import PageHero from "@/components/PageHero";
 import CertificateLookup from "@/components/CertificateLookup";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Xác thực chứng chỉ | WISE Academy",
-  description: "Nhập mã chứng chỉ để kiểm tra chứng chỉ do WISE Academy cấp cho học viên.",
-  alternates: { canonical: "/xac-thuc-chung-chi" },
-};
+  description:
+    "Nhập mã chứng chỉ để kiểm tra chứng chỉ đào tạo Lean, Lean Six Sigma do WISE Academy cấp cho học viên và doanh nghiệp: họ tên, khóa học, ngày cấp.",
+  path: "/xac-thuc-chung-chi",
+});
 
 export default function CertificateVerificationPage() {
   return (

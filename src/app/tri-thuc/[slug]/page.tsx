@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { OG_IMAGE, SITE_URL, jsonLd, metaDescription } from "@/lib/seo";
+import { OG_IMAGE, SITE_URL, jsonLd, metaDescription, pageMeta, seoTitle } from "@/lib/seo";
 import { cleanExcerpt, plainText } from "@/lib/text";
 import { 
   Calendar, 
@@ -39,28 +39,26 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  const description = metaDescription(cleanExcerpt(article.title, article.excerpt) || plainText(article.content));
   const url = `/tri-thuc/${article.slug || article.id}`;
+  const base = pageMeta({
+    title: seoTitle(article.title),
+    description: articleDescription(article),
+    path: url,
+    image: article.thumbnail ? { url: article.thumbnail, alt: article.title } : undefined,
+    type: "article",
+  });
   return {
-    title: `${article.title} | Góc tri thức WISE Academy`,
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      type: "article",
-      url,
-      title: article.title,
-      description,
-      publishedTime: article.date,
-      section: article.category,
-      images: article.thumbnail ? [{ url: article.thumbnail, alt: article.title }] : [OG_IMAGE],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.title,
-      description,
-      images: [article.thumbnail || OG_IMAGE.url],
-    },
+    ...base,
+    openGraph: { ...base.openGraph, publishedTime: article.date, section: article.category },
   };
+}
+
+// The excerpt when it says enough; short or missing excerpts fall back to the article body.
+function articleDescription(article: Article) {
+  const excerpt = cleanExcerpt(article.title, article.excerpt || "");
+  if (excerpt.length >= 120) return excerpt;
+  const body = cleanExcerpt(article.title, plainText(article.content));
+  return body.length > excerpt.length ? body : excerpt;
 }
 
 export default async function ArticleDetailPage({ params }: PageProps) {
@@ -91,7 +89,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             {
               "@type": "BlogPosting",
               headline: article.title,
-              description: metaDescription(cleanExcerpt(article.title, article.excerpt) || plainText(article.content)),
+              description: metaDescription(articleDescription(article)),
               image: article.thumbnail ? `${SITE_URL}${article.thumbnail}` : `${SITE_URL}${OG_IMAGE.url}`,
               datePublished: article.date,
               inLanguage: "vi",

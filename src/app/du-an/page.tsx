@@ -4,12 +4,13 @@ import { CtaBand } from "@/components/ui";
 import ProjectDetails from "@/components/ProjectDetails";
 import projectsData from "@/data/projects.json";
 import type { Project } from "@/types";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Dự Án & Câu Chuyện Chuyển Đổi Thực Tế | WISE Academy",
   description: "Tổng hợp các case study dự án tư vấn Lean Six Sigma, chuẩn hóa 5S, Work Engineering và cải tiến năng suất tại các tập đoàn sản xuất và logistics lớn.",
-  alternates: { canonical: "/du-an" },
-};
+  path: "/du-an",
+});
 
 export default function ProjectsPage() {
   // Entries marked "(bỏ)" in the data are retired and must not be shown.

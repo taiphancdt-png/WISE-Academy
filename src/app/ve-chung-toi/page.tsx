@@ -6,12 +6,13 @@ import CoreValuesBloom from "@/components/CoreValuesBloom";
 import VisionMission from "@/components/VisionMission";
 import PartnerLogos from "@/components/PartnerLogos";
 import { Section, CtaBand } from "@/components/ui";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Về Chúng Tôi & Triết Lý RGPDCA | WISE Academy",
   description: "Tìm hiểu tầm nhìn, sứ mệnh, giá trị cốt lõi W-I-S-E và phương pháp luận độc quyền RGPDCA được hướng dẫn bởi MIT chuẩn quốc tế.",
-  alternates: { canonical: "/ve-chung-toi" },
-};
+  path: "/ve-chung-toi",
+});
 
 // W · I · S · E accent colors (brand navy / orange family). Orange shades used here pass contrast for large text.
 

@@ -19,11 +19,11 @@ const sans = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "WISE Academy | Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
+    default: "WISE Academy | Đồng hành tối ưu vận hành, năng suất, chất lượng",
     template: "%s",
   },
   description:
-    "WISE Academy - đối tác ủy quyền của LSSI Global tại Việt Nam: tư vấn tối ưu vận hành, đào tạo Lean Six Sigma, 5S, TPM cho doanh nghiệp sản xuất, logistics và dịch vụ.",
+    "WISE Academy đồng hành cùng doanh nghiệp tối ưu vận hành, tăng năng suất và chất lượng bền vững qua tư vấn hiện trường và đào tạo Lean Six Sigma, 5S, TPM.",
   keywords: [
     "Lean Six Sigma",
     "đào tạo Lean Six Sigma",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   authors: [{ name: "WISE Academy" }],
   openGraph: {
     siteName: SITE_NAME,
-    title: "WISE Academy | Tư vấn & Đào tạo Lean Six Sigma cho doanh nghiệp",
-    description: "Tối ưu vận hành, tăng năng suất bền vững. Đối tác ủy quyền của LSSI Global tại Việt Nam & châu Á.",
+    title: "WISE Academy | Đồng hành tối ưu vận hành, năng suất, chất lượng",
+    description: "WISE Academy đồng hành cùng doanh nghiệp tối ưu vận hành, tăng năng suất và chất lượng bền vững qua tư vấn hiện trường và đào tạo Lean Six Sigma, 5S, TPM.",
     images: [OG_IMAGE],
     locale: "vi_VN",
     type: "website",

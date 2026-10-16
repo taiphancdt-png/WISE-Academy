@@ -5,12 +5,13 @@ import { CtaBand } from "@/components/ui";
 import { ArrowRight } from "@/components/icons";
 import expertsData from "@/data/experts.json";
 import type { Expert } from "@/types";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Đội Ngũ Chuyên Gia Thực Chiến | WISE Academy",
   description: "Đội ngũ chuyên gia Lean Six Sigma, chẩn đoán vận hành doanh nghiệp, tự động hóa và quản lý chất lượng với nhiều năm kinh nghiệm tại các tập đoàn đa quốc gia.",
-  alternates: { canonical: "/chuyen-gia" },
-};
+  path: "/chuyen-gia",
+});
 
 export default function ExpertsPage() {
   const experts: Expert[] = expertsData as Expert[];

@@ -1,14 +1,14 @@
 import TrainingClient from "@/components/TrainingClient";
 import coursesData from "@/data/courses.json";
 import type { Course } from "@/types";
-import { SITE_URL, jsonLd, metaDescription } from "@/lib/seo";
+import { SITE_URL, jsonLd, metaDescription, pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Đào tạo Lean Six Sigma, 5S, TPM thực chiến cho doanh nghiệp | WISE Academy",
+export const metadata = pageMeta({
+  title: "Đào tạo Lean Six Sigma, 5S, TPM | WISE Academy",
   description:
     "Các chương trình đào tạo Lean Six Sigma Yellow Belt, Green Belt, 5S, TPM/OEE, Lean 4.0 và workshop mô phỏng cho lãnh đạo, quản lý và kỹ sư doanh nghiệp.",
-  alternates: { canonical: "/dao-tao" },
-};
+  path: "/dao-tao",
+});
 
 export default function TrainingPage() {
   const courses = coursesData as Course[];

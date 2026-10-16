@@ -134,7 +134,10 @@ export default function SiteTranslator() {
         if (cache[key] !== undefined) apply(u, cache[key]);
         else if (VIETNAMESE.test(key) && !outputs.has(key)) need.add(key);
       }
-      if (titleSrc && cache[norm(titleSrc)] === undefined) need.add(norm(titleSrc));
+      // titles are "Page | WISE Academy": each part is looked up on its own, so a page title reuses the page's own translation
+      const titleParts = titleSrc ? titleSrc.split(" | ").map(norm) : [];
+      if (titleSrc && cache[norm(titleSrc)] === undefined)
+        for (const p of titleParts) if (cache[p] === undefined && VIETNAMESE.test(p) && !outputs.has(p)) need.add(p);
       const list = [...need];
       for (let i = 0; i < list.length; i += 60) {
         const batch = list.slice(i, i + 60);
@@ -157,7 +160,10 @@ export default function SiteTranslator() {
           /* offline or server busy: the Vietnamese text stays */
         }
       }
-      if (titleSrc && cache[norm(titleSrc)]) document.title = titleOut = cache[norm(titleSrc)];
+      if (titleSrc) {
+        const out = cache[norm(titleSrc)] ?? titleParts.map((p) => cache[p] ?? p).join(" | ");
+        if (out !== titleSrc) document.title = titleOut = out;
+      }
       document.documentElement.classList.remove("i18n-loading");
     };
 

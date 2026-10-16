@@ -5,13 +5,14 @@ import ServiceDetails from "@/components/ServiceDetails";
 import ContextCards from "@/components/ContextCards";
 import { ButtonLink, CtaBand, Section, SectionHeader } from "@/components/ui";
 import { Building2, Cpu, Gauge, ShieldCheck, Target } from "@/components/icons";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Dịch Vụ Tư Vấn Tinh Gọn Hiện Trường | WISE Academy",
   description:
-    "5 dịch vụ tư vấn của WISE Academy theo Ngôi nhà Lean: nền móng ổn định & chuẩn hóa, năng suất & lead time, chất lượng với Jidoka & Six Sigma, chiến lược, văn hóa & sự tham gia, số hóa vận hành (Lean 4.0).",
-  alternates: { canonical: "/dich-vu-tu-van" },
-};
+    "5 dịch vụ tư vấn Lean của WISE Academy: chuẩn hóa hiện trường, năng suất & lead time, chất lượng Six Sigma, chiến lược & văn hóa, số hóa vận hành Lean 4.0.",
+  path: "/dich-vu-tu-van",
+});
 
 export default function ConsultingPage() {
   // What customers come to us with (the former four services), shown as situations

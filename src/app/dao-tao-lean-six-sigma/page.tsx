@@ -2,13 +2,14 @@ import PageHero from "@/components/PageHero";
 import { Section, CtaBand } from "@/components/ui";
 import { LssiClients, LssiIncluded, LssiPartnerIntro, LssiPricingCta, LssiProgramGrid } from "@/components/LssiPrograms";
 import LssiInterestForm from "@/components/LssiInterestForm";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Đào Tạo Lean Six Sigma Chuẩn Quốc Tế (Yellow - Master Black Belt) | WISE Academy",
+export const metadata = pageMeta({
+  title: "Lean Six Sigma chuẩn quốc tế LSSI | WISE Academy",
   description:
-    "Chương trình đào tạo Lean Six Sigma chuẩn quốc tế của LSSI Global tại Việt Nam: Yellow Belt, Green Belt, Black Belt, Master Black Belt và bằng thạc sĩ UCAM. Học self-paced, face to face hoặc virtual live.",
-  alternates: { canonical: "/dao-tao-lean-six-sigma" },
-};
+    "Đào tạo Lean Six Sigma chuẩn quốc tế LSSI Global tại Việt Nam: Yellow, Green, Black, Master Black Belt và thạc sĩ UCAM. Học online hoặc trực tiếp.",
+  path: "/dao-tao-lean-six-sigma",
+});
 
 export default function LeanSixSigmaTrainingPage() {
   return (

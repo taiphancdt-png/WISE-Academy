@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import legacyRedirects from "./src/data/legacy-redirects.json";
 
 // Baseline security headers for every route. A strict Content-Security-Policy is not set because
 // the site relies on the Google Translate widget, which injects inline scripts and styles.
@@ -17,6 +18,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
+  },
+  // Old WordPress URLs -> new pages (301); Netlify already sends www to the apex domain
+  async redirects() {
+    return legacyRedirects.map((r) => ({ ...r, statusCode: 301 as const }));
   },
   // "Săn Lãng Phí" game: static pages in public/game, short links for players (QR) and the host
   async rewrites() {

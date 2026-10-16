@@ -5,12 +5,13 @@ import PageHero from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import toolsData from "@/data/tools.json";
 import type { LeanTool } from "@/types";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Toolkit | Công cụ Lean thực hành | WISE Academy",
-  description: "Bộ công cụ Lean tương tác do WISE Academy xây dựng từ các dự án thực tế: tính toán, biểu mẫu và mô phỏng dùng ngay trên trình duyệt.",
-  alternates: { canonical: "/toolkit" },
-};
+  description: "Bộ công cụ và trò chơi đào tạo Lean tương tác do WISE Academy xây dựng từ dự án thực tế: BMC, X-Matrix, 5S, OEE, TPM dùng ngay trên trình duyệt.",
+  path: "/toolkit",
+});
 
 export default function ToolkitPage() {
   const tools = toolsData as LeanTool[];

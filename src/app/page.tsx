@@ -5,10 +5,14 @@ import projectsData from "@/data/projects.json";
 import expertsData from "@/data/experts.json";
 import articlesData from "@/data/articles.json";
 import type { Course, Project, Expert, Article } from "@/types";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/" },
-};
+export const metadata = pageMeta({
+  title: "WISE Academy | Đồng hành tối ưu vận hành, năng suất, chất lượng",
+  description:
+    "WISE Academy đồng hành cùng doanh nghiệp tối ưu vận hành, tăng năng suất và chất lượng bền vững qua tư vấn hiện trường và đào tạo Lean Six Sigma, 5S, TPM.",
+  path: "/",
+});
 
 // Server component: picks the few records the homepage shows, so the full data files never reach the browser.
 export default function HomePage() {
