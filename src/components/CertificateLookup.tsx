@@ -38,16 +38,18 @@ export default function CertificateLookup() {
     return () => document.removeEventListener("keydown", onKey);
   }, [zoom]);
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!code.trim()) return;
+  async function lookup(value: string) {
+    const clean = value.trim();
+    if (!clean) return;
     setLoading(true);
     setError("");
     setCert(null);
+    // keep the code in the address bar, so the result can be shared or printed as a QR code
+    const url = new URL(window.location.href);
+    url.searchParams.set("code", clean);
+    window.history.replaceState(null, "", url);
     try {
-      const res = await fetch(
-        `/api/certificate?code=${encodeURIComponent(code.trim())}`,
-      );
+      const res = await fetch(`/api/certificate?code=${encodeURIComponent(clean)}`);
       const json = await res.json();
       if (json.ok) setCert(json.certificate);
       else setError(ERRORS[json.error] || ERRORS.unavailable);
@@ -56,6 +58,20 @@ export default function CertificateLookup() {
     } finally {
       setLoading(false);
     }
+  }
+
+  // /xac-thuc-chung-chi?code=… (link or QR code on the certificate) looks the code up at once
+  useEffect(() => {
+    const fromLink = new URLSearchParams(window.location.search).get("code");
+    if (fromLink) {
+      setCode(fromLink);
+      lookup(fromLink);
+    }
+  }, []);
+
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    lookup(code);
   }
 
   const rows: [string, string][] = cert
