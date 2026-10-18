@@ -636,7 +636,10 @@
   /* --- Mr. Six: khen, nhắc, động viên, cảm ơn (câu thoại ở js/config.js, mục coach) --- */
   var KEEP_Z = { board: 1, shelf: 1, finished: 1, park: 1 }, BIN_Z = { binMetal: 1, binRecycle: 1, binGeneral: 1, binOily: 1 };
   var coachTimer = null;
-  function fill(t, it) { return String(t).replace(/\{name\}/g, G && G.playerName || "cháu").replace(/\{item\}/g, it ? it.cfg.name.toLowerCase() : "món này"); }
+  function fill(t, it) {
+    return String(t).replace(/\{name\}/g, G && G.playerName || "cháu").replace(/\{item\}/g, it ? it.cfg.name.toLowerCase() : "món này")
+      .replace(/(^|[.!?]\s+)(\p{Ll})/gu, function (m, a, b) { return a + b.toUpperCase(); });      // viết hoa đầu câu
+  }
   // một câu ngẫu nhiên trong nhóm, tránh lặp lại câu vừa nói
   function pickLine(group) {
     var list = (C.coach && C.coach[group]) || [""], last = G && G.lines ? G.lines[group] : -1, i = Math.floor(Math.random() * list.length);
@@ -1140,9 +1143,14 @@
     if (!G.tapped) return acts;                                   // chưa bấm gì: chưa có món nào "trong tầm tay"
     if (p.held && p.held.cfg.vehicle) return [{ label: "Đỗ " + p.held.cfg.name.toLowerCase() + " tại đây", icon: "🅿️", cls: "primary", fn: function () { dropFloor(p.held); } }];
     if (p.held) {
+      // 4 thùng rác và khu thẻ đỏ luôn có sẵn để chọn; kệ, bảng dụng cụ, khu thành phẩm khi đang ở gần hoặc vừa bấm vào
       Object.keys(C.zones).forEach(function (z) {
-        var Z = C.zones[z];
-        if (reachTiles(zoneTiles(G.model, z))) acts.push({ label: Z.put, icon: Z.icon, cls: typeof Z.bin === "number" ? "bin" : (z === "redtag" ? "red" : "primary"), z: z, fn: function () { putZone(p.held, z); } });
+        var Z = C.zones[z], always = typeof Z.bin === "number" || z === "redtag";
+        if (!always && !reachTiles(zoneTiles(G.model, z))) return;
+        acts.push({ label: Z.put, icon: Z.icon, cls: typeof Z.bin === "number" ? "bin" : (z === "redtag" ? "red" : "primary"), z: z, fn: function () {
+          var held = p.held;
+          if (reachTiles(zoneTiles(G.model, z))) putZone(held, z); else goNear(zoneTiles(G.model, z), function () { putZone(held, z); });
+        } });
       });
       if (G.focus && G.focus.type === "zone") acts.sort(function (a, b) { return (b.z === G.focus.id) - (a.z === G.focus.id); });
       acts.push({ label: "Đặt xuống sàn tại đây", icon: "⬇️", cls: "", fn: function () { dropFloor(p.held); } });

@@ -50,7 +50,7 @@ window.GAME_CONFIG = {
     binMetal:   { name: "Thùng kim loại vụn",     put: "Bỏ vào thùng KIM LOẠI VỤN",    bin: 0, icon: "🔩" },
     binRecycle: { name: "Thùng rác tái chế",      put: "Bỏ vào thùng RÁC TÁI CHẾ",     bin: 1, icon: "♻️" },
     binGeneral: { name: "Thùng rác sinh hoạt",    put: "Bỏ vào thùng RÁC SINH HOẠT",   bin: 2, icon: "🗑️" },
-    binOily:    { name: "Thùng giẻ dính dầu",     put: "Bỏ vào thùng GIẺ DÍNH DẦU",    bin: 3, icon: "🛢️" }
+    binOily:    { name: "Thùng chất thải nguy hại (giẻ dính dầu)", put: "Bỏ vào thùng CHẤT THẢI NGUY HẠI", bin: 3, icon: "☣️" }
   },
 
   /* Vị trí hiển thị đồ trong khu vực, toạ độ TƯƠNG ĐỐI so với góc của khối [x, y, độ cao z] */
@@ -97,7 +97,7 @@ window.GAME_CONFIG = {
     { id: "drawing", name: "Bản vẽ cũ (hết hiệu lực)", sprite: "drawing", flat: true, correct: "binRecycle", alt: ["binGeneral", "redtag"], spawn: ["lathe", "floor"],
       why: "Bản vẽ cũ để ở máy dễ làm sai theo phiên bản cũ. Thu hồi, hủy và đưa giấy vào thùng tái chế." },
     { id: "rag1", name: "Giẻ lau dính dầu", sprite: "rag", flat: true, correct: "binOily", spawn: ["nearMachine"],
-      why: "Giẻ dính dầu dễ bắt lửa và là chất thải nguy hại, phải bỏ đúng thùng giẻ dính dầu." },
+      why: "Giẻ dính dầu dễ bắt lửa và là chất thải nguy hại, phải bỏ đúng thùng chất thải nguy hại." },
     { id: "lunch", name: "Hộp cơm đã ăn (còn thức ăn thừa)", sprite: "lunch", correct: "binGeneral", spawn: ["nearMachine", "floor"],
       why: "Hộp cơm dính thức ăn là rác sinh hoạt, không tái chế được. Không ăn uống tại khu vực máy." },
     { id: "scrap1", name: "Mẩu sắt vụn", sprite: "scrap", correct: "binMetal", spawn: ["floor", "nearMachine"],
