@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CheckCircle2 } from "@/components/icons";
 
 interface CertificateData {
@@ -30,6 +30,13 @@ export default function CertificateLookup() {
   const [error, setError] = useState("");
   const [cert, setCert] = useState<CertificateData | null>(null);
   const [zoom, setZoom] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  // on phones the result lands below the fold: bring it into view
+  useEffect(() => {
+    const el = resultRef.current;
+    if (cert && el && el.getBoundingClientRect().top > window.innerHeight * 0.6) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [cert]);
 
   useEffect(() => {
     if (!zoom) return;
@@ -120,14 +127,15 @@ export default function CertificateLookup() {
       </form>
 
       {cert && (
-        <div className="mt-8 overflow-hidden rounded-3xl bg-white shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
+        // data-no-reveal: the result appears below the fold on phones; the scroll fade-in must never hide it
+        <div ref={resultRef} data-no-reveal className="mt-8 scroll-mt-24 overflow-hidden rounded-3xl bg-white shadow-[0_24px_50px_-30px_rgba(0,47,91,0.45)] ring-1 ring-[#002F5B]/[0.06]">
           <div className="flex items-center gap-3 bg-[#EAF7EF] px-6 sm:px-8 py-4">
             <CheckCircle2 weight="fill" className="w-6 h-6 text-[#1E9E5A]" />
             <p className="font-semibold text-[#14713F]">
               Chứng nhận hợp lệ do WISE Academy cấp
             </p>
           </div>
-          {/* details on the left, the certificate image on the right */}
+          {/* details on the left, the certificate image on the right (on phones the image comes first) */}
           <div
             className={`grid grid-cols-1 ${cert.image ? "sm:grid-cols-[minmax(0,1fr)_200px] lg:grid-cols-[minmax(0,1fr)_250px]" : ""} gap-6 lg:gap-8 px-6 sm:px-8 py-6 items-start`}
           >
@@ -150,7 +158,7 @@ export default function CertificateLookup() {
               <button
                 type="button"
                 onClick={() => setZoom(true)}
-                className="group mx-auto block w-full max-w-[250px] cursor-zoom-in"
+                className="group order-first sm:order-none mx-auto block w-full max-w-[230px] sm:max-w-[250px] cursor-zoom-in"
                 aria-label="Xem ảnh chứng chỉ kích thước đầy đủ"
               >
                 <img
