@@ -142,7 +142,7 @@
       .split('fill="#FFB36E"').join('fill="' + stripe + '"');
   }
   /* Tên hiện trên nón: mỗi nhân vật một tên; nhân vật chính mang tên người chơi tự đặt (game gán CHAR_NAMES.worker) */
-  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Sáu Tài", engineer: "Mai", manager: "Tổ trưởng" };
+  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Sáu Tài", engineer: "MiKi", manager: "Tổ trưởng" };
   var HAT_TEXT = '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="4.6" font-weight="900" fill="#fff" text-anchor="middle">WISE</text></g>';
   function hatName(name, ink) {
     var t = String(name).toUpperCase().trim().slice(0, 14), e = t.replace(/&/g, "&amp;").replace(/</g, "&lt;");

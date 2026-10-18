@@ -11,8 +11,8 @@ window.TPM_DATA = {
   workshop: "Xưởng Cơ Khí Sáu Tài",
   owner: "Chú Sáu Tài",
   ownerRole: "Chủ xưởng",
-  engineer: "Chị Mai",
-  engineerRole: "Kỹ sư bảo trì",
+  engineer: "Chị MiKi",
+  engineerRole: "Kỹ sư WISE",
   targets: { latheMTBF: 200, millMTTR: 2 },
   tolerance: { hours: 0.5, pct: 0.5, qty: 0.5 },
   scoring: { am: 15, pm: 15, rm: 15, parts: 15, mtbf: 15, kaizen: 15, month: 10, timeBonus: 5, lotoPenalty: 5 },
@@ -21,7 +21,7 @@ window.TPM_DATA = {
   story: [
     { who: "owner", text: "Chào trưởng nhóm! Xưởng mình đã đạt 5S, tuần trước đo OEE thì thấy máy dừng quá nhiều. Máy tiện 68%, máy phay 74%, còn xa chuẩn 85%." },
     { who: "owner", text: "Máy tiện thì hỏng vặt liên tục: kẹt bàn xe dao, lỏng ốc, đứt curoa… cứ vài hôm lại dừng. Máy phay ít hỏng, nhưng hỏng một lần là sửa cả ngày." },
-    { who: "engineer", text: "Em là Mai, kỹ sư bảo trì. Số liệu tháng rồi: máy tiện MTBF 80 giờ, máy phay MTTR 6 giờ. Hai máy, hai “bệnh” khác nhau, nên thuốc cũng khác nhau." },
+    { who: "engineer", text: "Em là MiKi, kỹ sư WISE phụ trách bảo trì. Số liệu tháng rồi: máy tiện MTBF 80 giờ, máy phay MTTR 6 giờ. Hai máy, hai “bệnh” khác nhau, nên thuốc cũng khác nhau." },
     { who: "owner", text: "Chú giao cho cháu triển khai TPM trong 1 tháng. Mục tiêu: máy tiện MTBF ≥ 200 giờ, máy phay MTTR ≤ 2 giờ, không vượt ngân sách và tuyệt đối không có tai nạn!" }
   ],
 

@@ -249,5 +249,36 @@ window.GAME_CONFIG = {
     { s: "Sạch sẽ", jp: "Seiso", text: "Vệ sinh là kiểm tra. Lau dầu, quét phoi, phân loại rác đúng thùng: kim loại, tái chế, sinh hoạt, chất thải nguy hại." },
     { s: "Săn sóc", jp: "Seiketsu", text: "Tiêu chuẩn hoá để giữ 3S đầu: băng keo định vị theo màu (vàng lối đi, xanh thành phẩm, đỏ hàng lỗi, vàng-đen nguy hiểm), nhãn, hình bóng dụng cụ." },
     { s: "Sẵn sàng", jp: "Shitsuke", text: "Biến 5S thành thói quen: lịch đánh giá định kỳ, chấm chéo theo checklist, công bố xếp hạng, khen thưởng, động viên kịp thời." }
-  ]
+  ],
+
+  /* ---------------- CHÚ SÁU TÀI (khen, nhắc, động viên, cảm ơn) ----------------
+     {name} = tên người chơi · {item} = tên vật vừa xử lý · {n} = số việc còn lại · {m} = số mét rút ngắn */
+  coach: {
+    hello: ["Chào {name}! Xưởng chú bề bộn quá, nhờ cháu dọn giúp một tay nhé.", "{name} tới rồi à? Chú trông cậy cả vào cháu đó, mình bắt đầu thôi!"],
+    praise: ["Chuẩn rồi! {item} để đúng chỗ.", "Giỏi lắm {name}, gọn gàng ghê!", "Đúng ý chú luôn, cảm ơn cháu.", "Vậy là cần tới đâu lấy ngay được rồi.", "Ngon lành! Cứ thế mà phát huy."],
+    streak: ["Liền mấy món đúng rồi đó {name}, chú phục cháu thật!", "Tay nghề 5S lên rồi nha, xưởng sáng hẳn ra!"],
+    half: ["Cũng được, nhưng {item} còn chỗ hợp hơn đó cháu.", "Tạm ổn, nghĩ thêm chút nữa xem {item} để đâu là hay nhất?"],
+    wrong: ["Ơ, {item} để đó chú thấy chưa ổn lắm, cháu nghĩ lại xem.", "Khoan đã {name}, chỗ này chưa hợp với {item} đâu.", "Hmm, {item} ở đây mai mốt ai tìm cho ra?"],
+    thrown: ["Ấy ấy, {item} xưởng mình còn dùng mà cháu!", "Đừng loại {item} vội, cái này còn cần đó {name}."],
+    tagNeeded: ["Dán thẻ đỏ cho {item} à? Cái này xưởng còn dùng hằng ngày đó cháu."],
+    floor: ["Để tạm dưới sàn thôi nhé, nhớ cất {item} về đúng chỗ.", "Ừ, để tạm đó, xong nhớ dọn {item} cho gọn."],
+    aisle: ["Ối, để {item} trên lối đi là người ta vấp đó {name}!", "Lối đi phải thông thoáng cháu ơi, dời {item} ra chỗ khác nhé."],
+    parkBad: ["Xe nâng đỗ vậy là chắn lối đi rồi cháu!", "Chỗ đó chắn đường thoát hiểm đó {name}, đỗ xe chỗ khác nhé."],
+    clean: ["Cảm ơn {name}, sàn sạch bóng rồi!", "Sạch quá! Vệ sinh cũng là kiểm tra đó cháu.", "Chú cảm ơn nha, đi lại an toàn hơn hẳn."],
+    reportOk: ["Báo cáo chuẩn lắm! Sửa tận gốc thì dầu không chảy lại nữa.", "Đúng nguyên nhân rồi, cảm ơn cháu đã để ý kỹ."],
+    reportBad: ["Chú chưa chắc nguyên nhân là vậy đâu, cháu xem lại máy kỹ hơn nhé.", "Phiếu gửi rồi, nhưng biện pháp này liệu có chặn được dầu chảy lại không cháu?"],
+    s4Ok: ["Tiêu chuẩn hay đó!", "Đúng rồi!"],
+    s4Bad: ["Chú thấy tiêu chuẩn này chưa giữ được lâu đâu, cháu cân nhắc lại nha.", "Hmm, làm vậy người mới vào có hiểu ngay không cháu?"],
+    layoutBest: ["Tuyệt! Hàng đi một chiều từ cửa nhập ra cổng xuất, không quay đầu nữa.", "Mặt bằng này chuẩn dòng chảy rồi, quãng đường ngắn hẳn!"],
+    layoutBetter: ["Mỗi lô bớt đi được {m} m rồi đó, còn tối ưu nữa được không cháu?"],
+    layoutWorse: ["Bố trí vầy hàng phải đi vòng xa hơn đó cháu, thử lại xem.", "Đường đi của hàng còn rối, cháu xếp theo trình tự công nghệ thử xem."],
+    layoutAisle: ["Máy lấn ra lối đi rồi {name}, dời vào trong chút nhé!"],
+    blocked: ["Lối tới đó đang bị chắn, dọn vật cản trước đã cháu.", "Kẹt đường rồi {name}, dẹp mấy thứ chắn lối trước nhé."],
+    idle: ["Cố lên {name}! Còn khoảng {n} việc nữa là xưởng gọn rồi.", "Còn {n} chỗ cần xử lý đó cháu, chú tin cháu làm được!"],
+    idleDone: ["Cháu làm tốt lắm, xong thì bấm nút sang giai đoạn sau nhé.", "Nhìn xưởng gọn hẳn rồi, chú vui lắm. Cứ từ từ mà làm cho kỹ nha."],
+    phase2: ["Xưởng gọn hơn hẳn rồi! Giờ mình làm tiêu chuẩn để ai vào cũng giữ được như vầy nhé."],
+    endTop: ["Xuất sắc! Cảm ơn {name} nhiều lắm, xưởng chú chưa bao giờ ngăn nắp như vầy!"],
+    endGood: ["Cảm ơn {name}, xưởng đã khác hẳn. Xem lại vài chỗ chưa ổn là lần sau điểm tuyệt đối!"],
+    endLow: ["Cảm ơn {name} đã xắn tay áo giúp chú. Xem lại bài học rồi mình làm lại lần nữa nhé, chú tin cháu!"]
+  }
 };

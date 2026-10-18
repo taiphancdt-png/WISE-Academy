@@ -11,7 +11,7 @@
      3. Khối di chuyển được        9. Hạng mục S4 dạng lựa chọn & dấu "?"
      4. Tạo ván chơi               10. HUD, bảng hành động, camera
      5. Vẽ cảnh                    11. Chấm điểm
-     6. Nhân vật, hành động        12. Màn hình, giai đoạn, S5, kết quả
+     6. Thao tác, chú Sáu Tài      12. Màn hình, giai đoạn, S5, kết quả
    Nội dung (vật dụng, câu hỏi, giải thích) nằm ở js/config.js.
    ===================================================================== */
 (function () {
@@ -389,7 +389,7 @@
   }
 
   /* ============ 6. NHÂN VẬT, TÌM ĐƯỜNG, HÀNH ĐỘNG ============ */
-  var G = null, PLAYER = "", SPEED = 4.6;
+  var G = null, PLAYER = "";
 
   function blockerSet() {
     var b = {};
@@ -426,11 +426,15 @@
 
   function reachTiles(tiles) { var p = G.player; return tiles.some(function (t) { return cheb(p.x, p.y, t[0], t[1]) <= 1; }); }
 
+  /* Không có nhân vật chạy tới: bấm là thao tác ngay. Vị trí "đứng" (ẩn) vẫn quyết định thao tác nào trong tầm tay */
   function goNear(tiles, then) {
     var path = bfs(G.player.x, G.player.y, function (x, y) { return tiles.some(function (t) { return cheb(x, y, t[0], t[1]) <= 1; }); });
-    if (!path) { toast("Không có đường đi tới đó, hãy dọn vật cản trước nhé."); Sound.deny(); return; }
-    G.player.path = path; G.player.then = then || null;
-    if (!path.length) arrive(); else renderPanel();
+    if (!path) { coachSay(pickLine("blocked"), "remind"); Sound.deny(); return; }
+    var p = G.player, end = path[path.length - 1];
+    if (end) { p.x = end[0]; p.y = end[1]; }
+    G.tapped = true;
+    p.then = then || null;
+    arrive();
   }
 
   function itemTiles(it) {
@@ -441,20 +445,8 @@
     return [];
   }
 
-  function setFace(dx, dy) {
-    var w = G.player.el, back = dx < 0 || dy < 0, mirror = dy > 0 || dx < 0;
-    w.classList.toggle("face-back", back); w.classList.toggle("face-front", !back); w.classList.toggle("mirror", mirror);
-  }
-
-  function placePlayer() {
-    var p = G.player, s = iso(p.fx, p.fy, 0);
-    p.el.style.left = (s.x - 30) + "px"; p.el.style.top = (s.y - 78) + "px";
-    p.el.style.zIndex = Math.floor((p.fx + p.fy) * 20) + 8;
-  }
-
   function arrive() {
     var p = G.player, fn = p.then; p.then = null;
-    p.el.classList.remove("walking");
     refreshNear();
     if (fn) fn();
     renderPanel();
@@ -462,41 +454,20 @@
 
   function loop(ts) {
     if (!G || !G.running) return;
-    var dt = Math.min(.05, (ts - (G.lastTs || ts)) / 1000); G.lastTs = ts;
-    var p = G.player;
-    if (!p.busy && p.path.length) {
-      var t = p.path[0], tx = t[0] + .5, ty = t[1] + .5, ddx = tx - p.fx, ddy = ty - p.fy, dist = Math.sqrt(ddx * ddx + ddy * ddy);
-      if (!p.el.classList.contains("walking")) p.el.classList.add("walking");
-      setFace(Math.sign(Math.round(ddx * 10)), Math.sign(Math.round(ddy * 10)));
-      var stepLen = SPEED * dt;
-      if (dist <= stepLen) {
-        p.fx = tx; p.fy = ty; p.x = t[0]; p.y = t[1]; p.path.shift();
-        if ((G.steps = (G.steps || 0) + 1) % 2 === 0) Sound.step();
-        if (!p.path.length) { arrive(); updateSbar(); } else refreshNear();
-      } else { p.fx += ddx / dist * stepLen; p.fy += ddy / dist * stepLen; }
-      placePlayer();
-    }
-    updateCamera(false);
-    if (!G.lastTimer || ts - G.lastTimer > 500) { G.lastTimer = ts; $("timer").textContent = fmtTime(elapsed()); }
+    if (!G.lastTimer || ts - G.lastTimer > 500) { G.lastTimer = ts; $("timer").textContent = fmtTime(elapsed()); coachIdle(); }
     requestAnimationFrame(loop);
   }
 
   function elapsed() { return G ? ((G.endTime || Date.now()) - G.startTime) / 1000 : 0; }
 
-  function busy(cls, ms, done) {
-    var p = G.player; p.busy = true;
-    if (cls) { p.el.classList.remove(cls); void p.el.offsetWidth; p.el.classList.add(cls); }
+  /* Khoá thao tác trong lúc hiệu ứng chạy (ngắn, chỉ để nhìn thấy đồ bay / vết bẩn tan) */
+  function busy(ms, done) {
+    var p = G.player; p.busy = true; G.lastAct = Date.now();
     renderPanel();
-    setTimeout(function () { if (cls) p.el.classList.remove(cls); p.busy = false; if (done) done(); refreshNear(); renderPanel(); updateSbar(); }, ms);
+    setTimeout(function () { p.busy = false; if (done) done(); refreshNear(); renderPanel(); updateSbar(); }, ms);
   }
 
-  function setHeld(it) {
-    var p = G.player, h = p.el.querySelector(".worker-held");
-    p.held = it;
-    p.el.classList.toggle("carrying", !!it && !it.cfg.vehicle);
-    p.el.classList.toggle("driving", !!it && !!it.cfg.vehicle);
-    h.innerHTML = it ? '<img src="' + spriteMeta(it.cfg).src + '" alt="">' : "";
-  }
+  function setHeld(it) { G.player.held = it; }
 
   function addItemEl(it, pop) {
     var old = G.scene.items[it.id]; if (old) old.remove();
@@ -510,7 +481,7 @@
     var el = G.scene.items[it.id];
     if (it.cfg.vehicle) Sound.engine(); else Sound.pick();
     if (el) el.classList.add("lift");
-    busy(it.cfg.vehicle ? null : "bend", 420, function () {
+    busy(160, function () {
       if (el) { el.remove(); delete G.scene.items[it.id]; }
       it.loc = { t: "held" }; it.moved = true;
       setHeld(it);
@@ -534,8 +505,8 @@
       requestAnimationFrame(function () { fl.style.transform = "translate(" + (target.x - p.x) + "px," + (target.y - p.y) + "px) scale(.4) rotate(160deg)"; fl.style.opacity = ".2"; });
       setHeld(null);
       it.loc = { t: "bin", zone: zone };
-      busy("bend", 450, function () {
-        fl.remove(); Sound.trash();
+      busy(320, function () {
+        fl.remove(); Sound.trash(); judgePlace(it);
         var bp = G.scene.props[zone];
         if (bp) { bp.classList.remove("wobble"); void bp.offsetWidth; bp.classList.add("wobble"); }
       });
@@ -545,7 +516,7 @@
     it.loc = { t: "zone", zone: zone, slot: slot };
     if (zone === "redtag") { it.tagged = true; Sound.tag(); }
     setHeld(null);
-    busy("bend", 380, function () { addItemEl(it, true); Sound.place(); });
+    busy(160, function () { addItemEl(it, true); Sound.place(); judgePlace(it); });
   }
 
   function blockerAt(x, y) { return G.model.items.some(function (o) { return o.cfg.blocks && o.loc.t === "floor" && o.loc.tx === x && o.loc.ty === y; }); }
@@ -561,12 +532,12 @@
     if (!dt) { toast("Chỗ này chật quá, hãy tới chỗ rộng hơn."); Sound.deny(); return; }
     it.loc = { t: "floor", tx: dt[0], ty: dt[1], x: dt[0] + .5 + (v ? 0 : rnd(-.15, .15)), y: dt[1] + .5 + (v ? 0 : rnd(-.15, .15)), rot: rnd(0, 360), tilt: 0 };
     setHeld(null);
-    busy(v ? null : "bend", 380, function () { addItemEl(it, true); Sound.place(); if (G.phase === 2) addMarkers(); });
+    busy(160, function () { addItemEl(it, true); Sound.place(); if (G.phase === 2) addMarkers(); judgeFloor(it); });
   }
 
   function tagHere(it) {
     it.tagged = true; it.moved = true; Sound.tag();
-    busy("bend", 380, function () { addItemEl(it, true); });
+    busy(160, function () { addItemEl(it, true); judgeTag(it); });
   }
 
   function burst(x, y) {
@@ -584,8 +555,8 @@
 
   function clean(d) {
     Sound.wipe();
-    busy("wiping", 1100, function () {
-      d.cleaned = true;
+    busy(420, function () {
+      d.cleaned = true; coachSay(pickLine("clean"), "thanks");
       var e = G.scene.dirt[d.id]; if (e) { e.classList.add("vanish"); setTimeout(function () { e.remove(); }, 700); delete G.scene.dirt[d.id]; }
       var p = iso(d.x, d.y, 4); burst(p.x, p.y); Sound.sparkle();
       if (d.cfg.source && leaksAgain(d.cfg.source)) scheduleReleak(d);
@@ -598,10 +569,10 @@
     setTimeout(function () {
       if (G !== game || !G.running || !d.cleaned || leakFixed(G.model, d.cfg.source)) return;
       var q = leakTile(G.model, d.cfg.source);
-      if (!isFree(q[0], q[1]) || (G.player.x === q[0] && G.player.y === q[1])) { scheduleReleak(d); return; }
+      if (!isFree(q[0], q[1])) { scheduleReleak(d); return; }
       d.cleaned = false; d.tx = q[0]; d.ty = q[1]; d.x = q[0] + .45; d.y = q[1] + .5; d.rot = rnd(0, 360);
       var e = makeDirtEl(d, true); G.scene.root.appendChild(e); G.scene.dirt[d.id] = e; e.classList.add("pop");
-      toast("💧 " + LY.names[d.cfg.source] + " lại chảy dầu ra sàn!"); Sound.deny(); refreshNear(); updateSbar();
+      coachSay("💧 " + LY.names[d.cfg.source] + " lại chảy dầu ra sàn rồi! Lau hoài không hết đâu {name}, phải tìm ra nguồn gây bẩn mà báo cáo.", "remind"); Sound.deny(); refreshNear(); updateSbar();
     }, C.releakSec * 1000);
   }
 
@@ -629,7 +600,11 @@
     $("rpSend").disabled = draft.src == null || draft.act == null;
     $("rpSend").onclick = function () {
       closeModal(); G.model.reports[l.machine] = draft; Sound.tag();
-      busy("bend", 500, function () { rebuildLive(); toast("Đã gửi phiếu: " + l.name.toLowerCase() + "."); });
+      busy(150, function () {
+        rebuildLive();
+        var ok = l.src[draft.src].ok && l.act[draft.act].ok;
+        coachSay(ok ? pickLine("reportOk") : pickLine("reportBad"), ok ? "praise" : "remind");
+      });
     };
   }
 
@@ -656,6 +631,69 @@
     if (!canAct()) return;
     Sound.init(); G.focus = null;
     goNear(tiles); renderPanel();
+  }
+
+  /* --- Chú Sáu Tài: khen, nhắc, động viên, cảm ơn (câu thoại ở js/config.js, mục coach) --- */
+  var KEEP_Z = { board: 1, shelf: 1, finished: 1, park: 1 }, BIN_Z = { binMetal: 1, binRecycle: 1, binGeneral: 1, binOily: 1 };
+  var coachTimer = null;
+  function fill(t, it) { return String(t).replace(/\{name\}/g, G && G.playerName || "cháu").replace(/\{item\}/g, it ? it.cfg.name.toLowerCase() : "món này"); }
+  // một câu ngẫu nhiên trong nhóm, tránh lặp lại câu vừa nói
+  function pickLine(group) {
+    var list = (C.coach && C.coach[group]) || [""], last = G && G.lines ? G.lines[group] : -1, i = Math.floor(Math.random() * list.length);
+    if (list.length > 1 && i === last) i = (i + 1) % list.length;
+    if (G && G.lines) G.lines[group] = i;
+    return list[i];
+  }
+  function coachInit() {
+    var av = $("coachAv"); av.innerHTML = "";
+    av.appendChild(window.createCharacter({ role: "owner" }));
+    $("coach").classList.add("on"); $("coach").classList.remove("talk");
+  }
+  function coachHide() { $("coach").classList.remove("on", "talk"); }
+  // mood: praise (khen, nhảy mừng) · remind (nhắc, gãi đầu) · thanks · cheer (động viên)
+  function coachSay(text, mood, it) {
+    if (!text) return;
+    var box = $("coach"), w = box.querySelector(".worker"), msg = fill(text, it);
+    $("coachText").textContent = msg;
+    box.classList.remove("talk"); void box.offsetWidth; box.classList.add("talk");
+    box.setAttribute("data-mood", mood || "cheer");
+    if (w) { w.classList.remove("celebrate", "scratch"); if (mood === "praise" || mood === "thanks") w.classList.add("celebrate"); else if (mood === "remind") w.classList.add("scratch"); }
+    clearTimeout(coachTimer);
+    coachTimer = setTimeout(function () { box.classList.remove("talk"); if (w) w.classList.remove("celebrate", "scratch"); }, Math.max(3200, msg.length * 60));
+  }
+  function praise(it) {
+    G.streak = (G.streak || 0) + 1;
+    coachSay(G.streak % 4 === 0 ? pickLine("streak") : pickLine("praise"), "praise", it);
+  }
+  function remind(group, it) { G.streak = 0; coachSay(pickLine(group), "remind", it); }
+  // đặt vào kệ / khu vực / thùng rác
+  function judgePlace(it) {
+    var st = statusOf(it), k = placeKey(it);
+    if (st === "bad" && !KEEP_Z[it.cfg.correct] && (BIN_Z[k] || k === "redtag")) st = "half";   // đã loại bỏ được, chỉ chưa đúng chỗ nhất
+    if (st === "ok") praise(it);
+    else if (st === "half") { G.streak = 0; coachSay(pickLine("half"), "cheer", it); }
+    else remind(KEEP_Z[it.cfg.correct] && (BIN_Z[k] || k === "redtag") ? "thrown" : "wrong", it);
+  }
+  function judgeFloor(it) {
+    var L = it.loc, aisle = AISLE[k2(L.tx, L.ty)], et = C.extinguisherTile, fire = L.tx === et[0] && L.ty === et[1];
+    if (it.cfg.vehicle) { if (aisle || fire) remind("parkBad", it); else praise(it); }
+    else if (aisle || fire) remind("aisle", it);
+    else coachSay(pickLine("floor"), "cheer", it);
+  }
+  function judgeTag(it) { if (KEEP_Z[it.cfg.correct]) remind("tagNeeded", it); else praise(it); }
+  function judgeLayout(before) {
+    var now = flowTiles(G.model.layout), blk = blocksOnAisle(G.model);
+    if (blk.length) remind("layoutAisle");
+    else if (now <= FLOW_BEST + 1.5) { G.streak = 0; coachSay(pickLine("layoutBest"), "praise"); }
+    else if (now < before) coachSay(pickLine("layoutBetter").replace("{m}", meters(before - now)), "cheer");
+    else remind("layoutWorse");
+  }
+  // lâu không thao tác: động viên, kèm việc còn lại
+  function coachIdle() {
+    if (!G || !G.running || G.tapeMode || $("modal").classList.contains("on") || Date.now() - G.lastAct < 40000) return;
+    G.lastAct = Date.now();
+    var left = G.model.items.filter(function (i) { return i.start === JSON.stringify(i.loc) && statusOf(i) !== "ok"; }).length + G.model.dirt.filter(function (d) { return !d.cleaned; }).length;
+    coachSay(G.phase === 1 && left ? pickLine("idle").replace("{n}", left) : pickLine("idleDone"), "cheer");
   }
 
   /* ============ 7. SƠ ĐỒ MẶT BẰNG, KÉO THẢ KHỐI, SPAGHETTI ============ */
@@ -685,7 +723,6 @@
     var o = {};
     G.model.items.forEach(function (i) { if (i.loc.t === "floor") o[k2(i.loc.tx, i.loc.ty)] = i.cfg.name; });
     G.model.dirt.forEach(function (d) { if (!d.cleaned) o[k2(d.tx, d.ty)] = d.cfg.name; });
-    o[k2(G.player.x, G.player.y)] = "Nhân vật";
     return o;
   }
   /* Thả đúng lên một khối cùng kích thước → đổi chỗ hai khối */
@@ -810,21 +847,22 @@
     var root = G.scene.root;
     G.occ = blockOccupancy(G.model);
     G.scene = buildScene(root, G.model, true);
-    root.appendChild(G.player.el); placePlayer();
     if (G.phase === 2) addMarkers();
     refreshNear();
   }
 
   function applyLayout(l) {
     var moved = BLOCKS.filter(function (b) { return l[b][0] !== G.model.layout[b][0] || l[b][1] !== G.model.layout[b][1]; });
+    G.prevLayout = G.model.layout;
     G.model.layout = copyLayout(l);
     Sound.move();
     G.scene.root.classList.add("relayout");
-    busy("bend", 600, function () {
-      rebuildLive();
+    var before = flowTiles(G.prevLayout || l);
+    busy(400, function () {
+      rebuildLive(); judgeLayout(before);
       requestAnimationFrame(function () { G.scene.root.classList.remove("relayout"); });
       moved.forEach(function (b) { var c = bcenter(G.model.layout, b), q = iso(c[0], c[1], 40); burst(q.x, q.y); });
-      Sound.sparkle(); toast("Đã sắp xếp lại mặt bằng xưởng.");
+      Sound.sparkle();
     });
   }
 
@@ -932,14 +970,14 @@
   function enterTape(t) {
     if (!G || !G.running || G.player.busy) return;
     if (G.player.held && G.player.held.cfg.vehicle) { toast("Hãy đỗ xe trước khi dán băng keo."); return; }
-    G.tapeMode = true; G.prevZoom = G.zoomAll; G.zoomAll = true; G.player.path = [];
+    G.tapeMode = true; G.prevCam = { x: G.cam.x, y: G.cam.y, s: G.scale };
     $("scr-game").classList.add("taping");
     $("tbTitle").textContent = t ? t.icon + " Dán băng keo: " + t.name : "🩹 Dán băng keo định vị";
     markTapeColor(); layout(); Sound.click(); hideTip();
     if (!G.tapeColor) toast("Chọn màu băng keo, rồi kéo trên nền xưởng.");
   }
   function exitTape() {
-    G.tapeMode = false; G.zoomAll = G.prevZoom; G.drag = null;
+    G.tapeMode = false; G.drag = null;
     $("scr-game").classList.remove("taping");
     drawTapes(); layout(); addMarkers(); renderPanel(); updateSbar();
   }
@@ -1033,8 +1071,9 @@
 
   function applyTask(t, i) {
     Sound.wipe();
-    busy("wiping", 1000, function () {
+    busy(350, function () {
       G.model.s4[t.id] = i;
+      coachSay(t.options[i].ok ? pickLine("s4Ok") + " " + t.why : pickLine("s4Bad"), t.options[i].ok ? "praise" : "remind");
       rebuildLive();
       var tiles = taskTiles(t), q = tiles[Math.floor(tiles.length / 2)], c = iso(q[0] + .5, q[1] + .5, 10);
       burst(c.x, c.y); Sound.sparkle();
@@ -1085,11 +1124,11 @@
     var held = G.player.held;
     G.model.items.forEach(function (it) {
       var e = G.scene.items[it.id]; if (!e) return;
-      var near = !held && reachTiles(itemTiles(it));
+      var near = G.tapped && !held && reachTiles(itemTiles(it));
       e.classList.toggle("near", near);
       e.classList.toggle("focus", near && G.focus && G.focus.type === "item" && G.focus.id === it.id);
     });
-    G.model.dirt.forEach(function (d) { var e = G.scene.dirt[d.id]; if (e) e.classList.toggle("near", !held && reachTiles([[d.tx, d.ty]])); });
+    G.model.dirt.forEach(function (d) { var e = G.scene.dirt[d.id]; if (e) e.classList.toggle("near", G.tapped && !held && reachTiles([[d.tx, d.ty]])); });
     var zp = { board: "board", shelf: "shelf", finished: "finished", redtag: "redtag", binMetal: "binMetal", binRecycle: "binRecycle", binGeneral: "binGeneral", binOily: "binOily" };
     Object.keys(zp).forEach(function (z) {
       var im = G.scene.props[zp[z]]; if (im) im.classList.toggle("near", !!held && !held.cfg.vehicle && reachTiles(zoneTiles(G.model, z)));
@@ -1098,6 +1137,7 @@
 
   function actionsList() {
     var p = G.player, acts = [];
+    if (!G.tapped) return acts;                                   // chưa bấm gì: chưa có món nào "trong tầm tay"
     if (p.held && p.held.cfg.vehicle) return [{ label: "Đỗ " + p.held.cfg.name.toLowerCase() + " tại đây", icon: "🅿️", cls: "primary", fn: function () { dropFloor(p.held); } }];
     if (p.held) {
       Object.keys(C.zones).forEach(function (z) {
@@ -1142,13 +1182,12 @@
     var p = G.player, hb = $("heldBox"), msg = $("panelMsg"), box = $("actions");
     if (p.held) { hb.classList.add("on"); hb.innerHTML = '<span class="th"><img src="' + spriteMeta(p.held.cfg).src + '" alt=""></span><span>' + (p.held.cfg.vehicle ? "Đang lái: " : "Đang cầm: ") + esc(p.held.cfg.name) + '</span>'; }
     else { hb.classList.remove("on"); hb.innerHTML = ""; }
-    currentActs = (p.busy || p.path.length) ? [] : actionsList();
+    currentActs = p.busy ? [] : actionsList();
     if (p.busy) msg.textContent = "Đang thao tác…";
-    else if (p.path.length) msg.textContent = p.held && p.held.cfg.vehicle ? "Đang lái xe…" : "Đang đi tới…";
-    else if (p.held && p.held.cfg.vehicle) msg.textContent = "Bấm vào đồ vật / khu vực gần chỗ muốn đỗ, xe sẽ chạy tới, rồi chọn Đỗ xe.";
-    else if (p.held) msg.textContent = currentActs.length > 1 ? "Chọn nơi đặt, hoặc bấm vào kệ, khu vực, thùng rác khác để mang tới đó." : "Bấm vào kệ / khu vực / thùng rác muốn đặt, nhân vật sẽ tự mang tới.";
+    else if (p.held && p.held.cfg.vehicle) msg.textContent = "Bấm vào chỗ muốn đỗ xe (gần đồ vật / khu vực đó), rồi chọn Đỗ xe.";
+    else if (p.held) msg.textContent = currentActs.length > 1 ? "Chọn nơi đặt, hoặc bấm vào kệ, khu vực, thùng rác khác." : "Bấm vào kệ / khu vực / thùng rác muốn đặt.";
     else if (currentActs.length) msg.textContent = "Chọn hành động:";
-    else msg.textContent = G.phase === 2 ? "Bấm vào các dấu ? để thiết lập tiêu chuẩn; dấu 🩹 hoặc nút Băng keo để dán định vị trên nền." : "Bấm vào đồ vật, vết bẩn, máy hoặc khu vực, nhân vật sẽ tự chạy tới. Nút “Mặt bằng” để sắp xếp lại máy móc, kệ, khu vực.";
+    else msg.textContent = G.phase === 2 ? "Bấm vào các dấu ? để thiết lập tiêu chuẩn; dấu 🩹 hoặc nút Băng keo để dán định vị trên nền." : "Bấm vào đồ vật, vết bẩn, máy hoặc khu vực. Nút “Mặt bằng” để sắp xếp lại máy móc, kệ, khu vực.";
     box.innerHTML = "";
     currentActs.forEach(function (a, i) {
       var grp = mk("div", "act-grp");
@@ -1163,46 +1202,103 @@
       }
       box.appendChild(grp);
     });
-    if (!G.tapeMode) G.panelH = $("panel").offsetHeight || G.panelH;   // đọc một lần khi nội dung bảng đổi
+    if (!G.tapeMode) { G.panelH = $("panel").offsetHeight || G.panelH; $("scr-game").style.setProperty("--panel-h", G.panelH + "px"); }
   }
 
-  var HUD_H = 64;    // height kept free for the top bar
-  var PANEL_H = 150; // room kept for the action panel at the bottom
+  /* ---- Camera: chụm/giãn 2 ngón hoặc lăn chuột để thu phóng, kéo để xem khắp xưởng ---- */
+  var PANEL_H = 150; // chỗ dành sẵn cho bảng hành động, để khung nhìn không co giãn mỗi khi nút thao tác đổi
+  var TOUCH = window.matchMedia && matchMedia("(pointer: coarse)").matches;
   function layout() {
     if (!G) return;
-    var vp = $("viewport"), vw = vp.clientWidth, vh = vp.clientHeight;
-    // the whole-shop view fits between the top bar and the action panel, so the panel never hides part of the shop
-    // (a fixed allowance for the panel, so the view does not zoom in and out each time the actions change)
-    var fit = Math.min(vw / SW, (vh - HUD_H - PANEL_H - 16) / SH);
-    G.vw = vw; G.vh = vh;
+    var vp = $("viewport"), hud = document.querySelector("#scr-game .hud");
+    G.vw = vp.clientWidth; G.vh = vp.clientHeight;
+    G.top = (hud ? hud.offsetTop + hud.offsetHeight : 56) + 8;
     G.panelH = (G.tapeMode ? $("tapebar") : $("panel")).offsetHeight || 120;
-    if (G.zoomAll || fit >= .74) { G.scale = Math.min(fit, 1.7); G.follow = false; }
-    else { G.scale = clamp(Math.min(vw / 470, vh / 520), .62, 1.15); G.follow = true; }
-    $("btnZoom").innerHTML = G.follow
+    var fit = Math.min(G.vw / SW, (G.vh - G.top - Math.max(G.panelH, PANEL_H) - 12) / SH);
+    G.fit = Math.max(.12, Math.min(fit, 1.7));
+    G.maxScale = Math.max(1.6, G.fit);
+    if (G.tapeMode) { G.scale = G.fit; G.cam = { x: 0, y: 0 }; }
+    else if (G.prevCam) { G.scale = G.prevCam.s; G.cam = { x: G.prevCam.x, y: G.prevCam.y }; G.prevCam = null; }
+    else if (!G.cam) {
+      // màn hình đủ rộng: thấy cả xưởng; điện thoại: phóng vừa đủ bấm, giữa xưởng
+      G.scale = G.fit >= .5 ? G.fit : Math.min(.55, G.maxScale);
+      G.cam = { x: (G.vw - SW * G.scale) / 2, y: (G.top + G.vh - G.panelH) / 2 - SH * G.scale / 2 };
+    }
+    G.scale = clamp(G.scale, G.fit, G.maxScale);
+    applyCam();
+  }
+  function bottomEdge() { return G.vh - (G.panelH || 120) - 12; }
+  function applyCam() {
+    var s = G.scale, w = SW * s, h = SH * s, top = G.top, bot = bottomEdge(), m = 40;
+    G.cam.x = w <= G.vw ? (G.vw - w) / 2 : clamp(G.cam.x, G.vw - w - m, m);
+    G.cam.y = h <= bot - top ? top + (bot - top - h) / 2 : clamp(G.cam.y, bot - h - m, top + m);
+    G.scene.root.style.transform = "translate3d(" + G.cam.x.toFixed(1) + "px," + G.cam.y.toFixed(1) + "px,0) scale(" + s + ")";
+    var zoomed = s > G.fit * 1.05;
+    $("btnZoom").innerHTML = zoomed
       ? '<svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>'
       : '<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2.4" fill="none"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
-    $("btnZoom").title = G.follow ? "Xem toàn cảnh" : "Theo nhân vật";
-    updateCamera(true);
+    $("btnZoom").title = zoomed ? "Xem toàn cảnh" : "Phóng to";
   }
-
-  function updateCamera(snap) {
-    var s = G.scale, vw = G.vw, vh = G.vh, tx, ty;
-    var panelH = G.panelH || 120;
-    if (!G.follow) { tx = (vw - SW * s) / 2; ty = HUD_H + Math.max(0, (vh - HUD_H - Math.max(panelH, PANEL_H) - 16 - SH * s) / 2); }
-    else {
-      var p = iso(G.player.fx, G.player.fy, 36);
-      tx = vw / 2 - p.x * s; ty = (vh - panelH) * .52 - p.y * s + 40;
-      tx = SW * s > vw ? clamp(tx, vw - SW * s, 0) : (vw - SW * s) / 2;
-      // following the worker: the shop can scroll until its bottom edge sits above the action panel
-      ty = SH * s > vh - HUD_H - panelH ? clamp(ty, vh - SH * s - panelH - 16, HUD_H) : HUD_H + (vh - HUD_H - panelH - SH * s) / 2;
+  // đổi tỉ lệ mà giữ nguyên điểm (px, py) trên màn hình
+  function zoomAt(s, px, py) {
+    s = clamp(s, G.fit, G.maxScale);
+    var wx = (px - G.cam.x) / G.scale, wy = (py - G.cam.y) / G.scale;
+    G.scale = s; G.cam.x = px - wx * s; G.cam.y = py - wy * s;
+    applyCam();
+  }
+  function toggleZoom() {
+    if (!G || G.tapeMode) return;
+    Sound.click();
+    var cx = G.vw / 2, cy = (G.top + bottomEdge()) / 2;
+    zoomAt(G.scale > G.fit * 1.05 ? G.fit : Math.min(G.maxScale, Math.max(G.fit * 2, .9)), cx, cy);
+  }
+  function initCameraInput() {
+    var vp = $("viewport"), pts = {}, start = null, moved = false;
+    function ids() { return Object.keys(pts); }
+    function anchor() {
+      var k = ids();
+      if (k.length === 1) { var a = pts[k[0]]; start = { x: a.x, y: a.y, cx: G.cam.x, cy: G.cam.y }; }
+      else if (k.length >= 2) {
+        var p = pts[k[0]], q = pts[k[1]], mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2;
+        start = { d: Math.hypot(p.x - q.x, p.y - q.y) || 1, s: G.scale, wx: (mx - G.cam.x) / G.scale, wy: (my - G.cam.y) / G.scale };
+      } else start = null;
     }
-    if (snap || !G.cam) G.cam = { x: tx, y: ty };
-    else {
-      var dx = tx - G.cam.x, dy = ty - G.cam.y;
-      if (Math.abs(dx) < .15 && Math.abs(dy) < .15) return;          // camera đã đứng yên – không vẽ lại
-      G.cam.x += dx * .14; G.cam.y += dy * .14;
+    vp.addEventListener("pointerdown", function (e) {
+      if (!G || !G.running || G.tapeMode) return;
+      pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      if (ids().length === 1) moved = false;
+      anchor();
+    });
+    vp.addEventListener("pointermove", function (e) {
+      if (!G || G.tapeMode || !pts[e.pointerId] || !start) return;
+      pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var k = ids();
+      if (k.length >= 2) {
+        var p = pts[k[0]], q = pts[k[1]], s = clamp(start.s * Math.hypot(p.x - q.x, p.y - q.y) / start.d, G.fit, G.maxScale);
+        G.scale = s; G.cam.x = (p.x + q.x) / 2 - start.wx * s; G.cam.y = (p.y + q.y) / 2 - start.wy * s;
+        moved = true; applyCam(); hideTip();
+      } else {
+        var dx = e.clientX - start.x, dy = e.clientY - start.y;
+        if (!moved && Math.hypot(dx, dy) < 8) return;              // chạm nhẹ = bấm, không phải kéo
+        if (!moved) { moved = true; try { vp.setPointerCapture(e.pointerId); } catch (er) { } }
+        G.cam.x = start.cx + dx; G.cam.y = start.cy + dy; applyCam(); hideTip();
+      }
+    });
+    function up(e) {
+      if (!pts[e.pointerId]) return;
+      delete pts[e.pointerId];
+      if (moved) G.dragEnd = Date.now();
+      anchor();
     }
-    G.scene.root.style.transform = "translate3d(" + G.cam.x.toFixed(1) + "px," + G.cam.y.toFixed(1) + "px,0) scale(" + s + ")";
+    vp.addEventListener("pointerup", up);
+    vp.addEventListener("pointercancel", up);
+    // vừa kéo / chụm xong thì không tính là bấm vào đồ vật
+    vp.addEventListener("click", function (e) { if (G && G.dragEnd && Date.now() - G.dragEnd < 300) { e.stopPropagation(); e.preventDefault(); } }, true);
+    vp.addEventListener("wheel", function (e) {
+      if (!G || !G.running || G.tapeMode) return;
+      e.preventDefault();
+      zoomAt(G.scale * Math.exp(-e.deltaY * (e.ctrlKey ? .01 : .0015)), e.clientX, e.clientY);
+    }, { passive: false });
   }
 
   var tipTimer = null;
@@ -1344,14 +1440,13 @@
   function startGame() {
     Sound.init();
     var model = newModel();
-    G = { model: model, running: true, startTime: Date.now(), focus: null, zoomAll: false, playerName: PLAYER, phase: 1, tapeMode: false, tapeColor: null };
+    G = { model: model, running: true, startTime: Date.now(), focus: null, playerName: PLAYER, phase: 1, tapeMode: false, tapeColor: null };
     G.occ = blockOccupancy(model);
     G.scene = buildScene($("scene"), model, true);
-    var w = window.createCharacter();
-    G.player = { x: C.playerStart.x, y: C.playerStart.y, fx: C.playerStart.x + .5, fy: C.playerStart.y + .5, path: [], held: null, busy: false, el: w };
-    G.scene.root.appendChild(w);
+    G.player = { x: C.playerStart.x, y: C.playerStart.y, path: [], held: null, busy: false };
+    G.lastAct = Date.now(); G.streak = 0; G.lines = {};
     $("scr-game").classList.remove("taping");
-    setFace(0, -1); placePlayer();
+    coachInit();
     setPhaseUI();
     show("scr-game");
     layout(); refreshNear(); renderPanel(); updateSbar();
@@ -1359,7 +1454,8 @@
     setTimeout(function () {
       modal('<h3>Giai đoạn 1 · Dọn xưởng</h3><p><b>' + esc(C.workshop) + '</b> đang rất bừa bộn: dụng cụ vứt lung tung, hàng lỗi lẫn hàng tốt, dầu loang, phoi văng, xe nâng đỗ tùy tiện… máy móc, kệ vật tư cũng đặt không theo trình tự.</p>' +
         '<ul class="intro-list"><li><b>Sàng lọc:</b> giữ cái cần, loại bỏ hoặc dán thẻ đỏ cái không cần.</li><li><b>Sắp xếp:</b> mỗi thứ về đúng chỗ.</li><li><b>Sắp xếp layout xưởng:</b> bấm nút <b>📐 Mặt bằng</b> để kéo thả máy móc, kệ, khu vực theo dòng chảy Cửa nhập → Kệ vật tư → Máy tiện → Máy phay → QC → Thành phẩm → Cổng xuất. Đường đứt nét (spaghetti) càng ngắn, càng ít quay đầu thì càng tốt.</li><li><b>Sạch sẽ:</b> lau dầu, quét phoi, phân loại rác đúng 4 thùng; máy chảy dầu thì tìm nguồn gây bẩn và báo cáo bảo trì.</li></ul>' +
-        '<p>Bấm vào đồ vật, nhân vật tự chạy tới. Game không gợi ý đúng/sai cho đến khi chấm điểm.</p><div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu dọn!</button></div>');
+        '<p>Bấm vào đồ vật, vết bẩn, máy hay khu vực rồi chọn thao tác. Chú Sáu Tài đứng góc xưởng sẽ khen, nhắc và động viên bạn.' + (TOUCH ? ' <b>Chụm / giãn 2 ngón</b> để thu phóng, <b>kéo 1 ngón</b> để xem khắp xưởng.' : ' Lăn chuột để thu phóng, kéo để xem khắp xưởng.') + '</p><div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu dọn!</button></div>');
+      onModalClose = function () { coachSay(pickLine("hello"), "cheer"); };
     }, 450);
   }
 
@@ -1389,12 +1485,13 @@
     G.phase = 2; setPhaseUI(); addMarkers(); renderPanel(); Sound.phase();
     modal('<h3>Giai đoạn 2 · Săn sóc: Tiêu chuẩn hoá</h3><p>Xưởng đã gọn hơn, nhưng <b>chưa có tiêu chuẩn</b> để giữ thành quả: chưa có vạch lối đi, chưa định vị khu vực và chỗ đỗ xe, chưa có nhãn, bảng dụng cụ chưa có hình bóng…</p>' +
       '<p><b>🩹 Băng keo định vị:</b> chọn màu rồi <b>kéo trên nền xưởng</b> để dán, băng keo tự canh thẳng theo trục dọc/ngang và bám theo lưới ô sàn.</p>' +
-      '<p>Các dấu <span class="q-dot">?</span> khác: nhân vật chạy tới, bạn chọn tiêu chuẩn phù hợp.</p>' +
+      '<p>Các dấu <span class="q-dot">?</span> khác: bấm vào để chọn tiêu chuẩn phù hợp.</p>' +
       '<div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu</button></div>');
+    onModalClose = function () { coachSay(pickLine("phase2"), "cheer"); };
   }
 
   function enterPhase3() {
-    G.phase = 3; G.running = false; G.player.path = [];
+    G.phase = 3; G.running = false; coachHide();
     Sound.phase();
     renderPlan(); show("scr-plan");
     $("timer2").textContent = fmtTime(elapsed());
@@ -1514,8 +1611,9 @@
       '<div class="card"><h2>Giai đoạn 3 · Sẵn sàng: Duy trì</h2><div class="ilist">' + sec5 + '</div></div>' +
       '<div class="res-actions"><button class="btn btn-primary btn-lg" id="btnAgain">Chơi lại</button><button class="btn btn-dark btn-lg" id="btnLesson2">Xem bài học 5S</button></div>';
 
-    var w = window.createCharacter(); w.classList.add(R.total >= 60 ? "celebrate" : "scratch");
+    var w = window.createCharacter({ role: "owner" }); w.classList.add(R.total >= 60 ? "celebrate" : "scratch");
     $("resChar").appendChild(w);
+    document.querySelector("#result .res-main").insertAdjacentHTML("beforeend", '<p class="res-say">“' + esc(fill(pickLine(R.total >= 80 ? "endTop" : R.total >= 60 ? "endGood" : "endLow"))) + '” <b>Chú Sáu Tài</b></p>');
     renderMini($("miniYou"), M);
     renderMini($("miniGood"), idealModel(M));
     $("btnAgain").onclick = function () { Sound.click(); startGame(); };
@@ -1582,11 +1680,11 @@
   }
 
   function initGlobal() {
-    buildSbar(); soundIcon(); buildTapebar(); initTapeInput();
+    buildSbar(); soundIcon(); buildTapebar(); initTapeInput(); initCameraInput();
     function toggleSound() { Sound.on = !Sound.on; store(SOUND_KEY, Sound.on); soundIcon(); Sound.init(); Sound.click(); }
     $("btnSound").addEventListener("click", toggleSound);
     $("btnSound2").addEventListener("click", toggleSound);
-    $("btnZoom").addEventListener("click", function () { if (!G || G.tapeMode) return; G.zoomAll = !G.zoomAll; Sound.click(); layout(); });
+    $("btnZoom").addEventListener("click", toggleZoom);
     $("btnLayout").addEventListener("click", openLayout);
     $("btnDone").addEventListener("click", onDone);
     $("btnFinish").addEventListener("click", function () { Sound.click(); finish(); });

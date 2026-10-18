@@ -125,13 +125,67 @@
     '<linearGradient id="cHat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC07A"/><stop offset=".45" stop-color="#FF8A2B"/><stop offset="1" stop-color="#D9500C"/></linearGradient>' +
     '</defs>';
 
-  window.createCharacter = function () {
+  /* role: "worker" (mặc định) · "manager", Trưởng phòng sản xuất (mũ trắng, sơ mi xanh nhạt, cà vạt cam)
+           "owner" , chú Sáu Tài, chủ xưởng (tóc muối tiêu, ria mép, áo khoác kaki, mũ xanh navy)
+           "engineer", Chị kỹ sư bảo trì (tóc dài, mũ trắng, áo xanh ngọc, bút trên túi áo) */
+  function noStripes(s) {
+    return s.split('<path d="M19.2,52.2 H40.8 V56 H19.2 Z" fill="' + ORANGE + '"/>').join('')
+      .split('<path d="M19.2,52.9 H40.8 M19.2,55.3 H40.8" stroke="#E9EEF2" stroke-width=".9"/>').join('');
+  }
+  function recolor(s, pre, body, hatC, brim, stripe) {
+    return s.replace(/cBody/g, pre + "Body").replace(/cHat/g, pre + "Hat")
+      .replace('<stop offset="0" stop-color="#1F5C9C"/><stop offset=".6" stop-color="' + NAVY + '"/><stop offset="1" stop-color="' + NAVY_D + '"/>',
+               '<stop offset="0" stop-color="' + body[0] + '"/><stop offset=".6" stop-color="' + body[1] + '"/><stop offset="1" stop-color="' + body[2] + '"/>')
+      .replace('<stop offset="0" stop-color="#FFC07A"/><stop offset=".45" stop-color="#FF8A2B"/><stop offset="1" stop-color="#D9500C"/>',
+               '<stop offset="0" stop-color="' + hatC[0] + '"/><stop offset=".5" stop-color="' + hatC[1] + '"/><stop offset="1" stop-color="' + hatC[2] + '"/>')
+      .split('fill="#E0560F"').join('fill="' + brim + '"')
+      .split('fill="#FFB36E"').join('fill="' + stripe + '"');
+  }
+  /* Tên hiện trên nón: mỗi nhân vật một tên; nhân vật chính mang tên người chơi tự đặt (game gán CHAR_NAMES.worker) */
+  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Sáu Tài", engineer: "MiKi", manager: "Tổ trưởng" };
+  var HAT_TEXT = '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="4.6" font-weight="900" fill="#fff" text-anchor="middle">WISE</text></g>';
+  function hatName(name, ink) {
+    var t = String(name).toUpperCase().trim().slice(0, 14), e = t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+    var fs = Math.min(4.6, 21 / (0.72 * Math.max(1, t.length)));       // vừa chiều ngang nón
+    return '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="' + fs.toFixed(2) + '" font-weight="900" fill="' + (ink || "#fff") + '" text-anchor="middle">' + e + '</text></g>';
+  }
+  window.createCharacter = function (opts) {
+    var role = (opts && opts.role) || "worker";
+    var svg = DEFS + '<g class="bob">' + build(false) + build(true) + '</g>';
+    var name = opts && opts.name != null ? opts.name : window.CHAR_NAMES[role];
+    // nón trắng (kỹ sư, tổ trưởng): chữ navy cho dễ đọc
+    if (name) svg = svg.split(HAT_TEXT).join(hatName(name, role === "engineer" || role === "manager" ? "#0E3D70" : "#fff"));
+    if (role === "manager") {
+      svg = svg.replace(/cBody/g, "mBody").replace(/cHat/g, "mHat")
+        .replace('<stop offset="0" stop-color="#1F5C9C"/><stop offset=".6" stop-color="' + NAVY + '"/><stop offset="1" stop-color="' + NAVY_D + '"/>',
+                 '<stop offset="0" stop-color="#CFE3F7"/><stop offset=".6" stop-color="#9CC3EA"/><stop offset="1" stop-color="#6F9FD0"/>')
+        .replace('<stop offset="0" stop-color="#FFC07A"/><stop offset=".45" stop-color="#FF8A2B"/><stop offset="1" stop-color="#D9500C"/>',
+                 '<stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#EEF2F6"/><stop offset="1" stop-color="#B9C6D3"/>')
+        .split('fill="#E0560F"').join('fill="#C9D3DD"')
+        .split('fill="#FFB36E"').join('fill="#FFFFFF"')
+        .split('<path d="M19.2,52.2 H40.8 V56 H19.2 Z" fill="' + ORANGE + '"/>').join('')
+        .split('<path d="M19.2,52.9 H40.8 M19.2,55.3 H40.8" stroke="#E9EEF2" stroke-width=".9"/>').join('')
+        .replace('<path d="M30,44.5 V51.8" stroke="' + NAVY_D + '" stroke-width="1"/>',
+                 '<path d="M30,44 l-1.8,2.2 1.8,8.6 1.8,-8.6 Z" fill="' + ORANGE + '" stroke="' + OUT + '" stroke-width=".6"/>');
+    }
+    if (role === "owner") {
+      svg = noStripes(recolor(svg, "o", ["#C8A976", "#9C7E50", "#6E5634"], ["#3C5D86", "#1E3F66", "#102A47"], "#16314F", "#5B7EA8"))
+        .split('fill="' + HAIR + '"').join('fill="#9AA0A6"')
+        .split('stroke="' + HAIR + '"').join('stroke="#8A9096"')
+        .split('<path class="mouth mouth-smile"').join('<path d="M25.8,34.6 q4.4,-2.6 8.8,0 q-4.4,1.6 -8.8,0 Z" fill="#8A9096" stroke="#5E646A" stroke-width=".5"/><path class="mouth mouth-smile"')
+        .replace('<path d="M30,44.5 V51.8" stroke="' + NAVY_D + '" stroke-width="1"/>', '<path d="M30,44.5 V60" stroke="#5A4528" stroke-width="1"/><circle cx="30" cy="48" r=".9" fill="#E9DCC0"/><circle cx="30" cy="53" r=".9" fill="#E9DCC0"/>');
+    } else if (role === "engineer") {
+      svg = noStripes(recolor(svg, "e", ["#7FD3C8", "#2FA394", "#1C7468"], ["#FFFFFF", "#EEF2F6", "#B9C6D3"], "#C9D3DD", "#FFFFFF"))
+        .split('<path d="M16.2,22.4 C16.8,25.6').join('<path d="M15.8,23 C14.2,30 14.6,37 17.6,42.5 L21,41.6 C19,36 18.8,29.5 19.8,24.2 Z M44.2,23 C45.8,30 45.4,37 42.4,42.5 L39,41.6 C41,36 41.2,29.5 40.2,24.2 Z" fill="' + HAIR + '"/><path d="M16.2,22.4 C16.8,25.6')
+        .split('<path d="M22,36 q8,3.4 16,0"').join('<path d="M22,30 C21,40 24,46 30,47 C36,46 39,40 38,30 Z" fill="' + HAIR + '" stroke="' + OUT + '" stroke-width="1"/><path d="M22,36 q8,3.4 16,0"')
+        .replace('<rect x="21.6" y="45.6" width="5.4" height="4.6" rx="1" fill="' + NAVY_D + '" opacity=".6"/>', '<rect x="21.6" y="45.6" width="5.4" height="4.6" rx="1" fill="#1C7468" opacity=".7"/><path d="M23,43.6 V47" stroke="#F76011" stroke-width="1.2" stroke-linecap="round"/><path d="M25.2,43.6 V47" stroke="#1E3F66" stroke-width="1.2" stroke-linecap="round"/>')
+        .replace('<path d="M30,44.5 V51.8" stroke="' + NAVY_D + '" stroke-width="1"/>', '');
+    }
     var el = document.createElement("div");
-    el.className = "worker face-front";
+    el.className = "worker face-front" + (role !== "worker" ? " " + role : "");
     el.innerHTML =
       '<div class="worker-shadow"></div>' +
-      '<svg class="worker-svg" viewBox="0 0 60 82" width="60" height="82" aria-hidden="true">' + DEFS +
-      '<g class="bob">' + build(false) + build(true) + '</g></svg>' +
+      '<svg class="worker-svg" viewBox="0 0 60 82" width="60" height="82" aria-hidden="true">' + svg + '</svg>' +
       '<div class="worker-held"></div>';
     return el;
   };
