@@ -28,7 +28,7 @@ window.GAME_CONFIG = {
   layout: {
     /* Kích thước (ô) của từng khối di chuyển được trên sơ đồ mặt bằng */
     foot: { shelf: [2, 3], lathe: [2, 3], mill: [2, 3], qc: [2, 3], finished: [2, 3], redtag: [3, 2], bins: [1, 4], desk: [2, 2] },
-    names: { shelf: "Kệ vật tư", lathe: "Máy tiện", mill: "Máy phay CNC", qc: "Bàn kiểm tra QC", finished: "Khu thành phẩm", redtag: "Khu thẻ đỏ", bins: "Cụm thùng rác", desk: "Bàn làm việc chú Sáu Tài" },
+    names: { shelf: "Kệ vật tư", lathe: "Máy tiện", mill: "Máy phay CNC", qc: "Bàn kiểm tra QC", finished: "Khu thành phẩm", redtag: "Khu thẻ đỏ", bins: "Cụm thùng rác", desk: "Bàn làm việc Mr. Six" },
     icons: { shelf: "🗄️", lathe: "⚙️", mill: "🛠️", qc: "🔍", finished: "📦", redtag: "🏷️", bins: "♻️", desk: "🖥️" },
     /* Lúc đầu: các trạm xếp lộn xộn dọc tường dài (ô y 0,3,6,9,12); khu thẻ đỏ & thùng rác ở vị trí sau */
     slotsY: [0, 3, 6, 9, 12],
@@ -251,7 +251,7 @@ window.GAME_CONFIG = {
     { s: "Sẵn sàng", jp: "Shitsuke", text: "Biến 5S thành thói quen: lịch đánh giá định kỳ, chấm chéo theo checklist, công bố xếp hạng, khen thưởng, động viên kịp thời." }
   ],
 
-  /* ---------------- CHÚ SÁU TÀI (khen, nhắc, động viên, cảm ơn) ----------------
+  /* ---------------- MR. SIX (khen, nhắc, động viên, cảm ơn) ----------------
      {name} = tên người chơi · {item} = tên vật vừa xử lý · {n} = số việc còn lại · {m} = số mét rút ngắn */
   coach: {
     hello: ["Chào {name}! Xưởng chú bề bộn quá, nhờ cháu dọn giúp một tay nhé.", "{name} tới rồi à? Chú trông cậy cả vào cháu đó, mình bắt đầu thôi!"],

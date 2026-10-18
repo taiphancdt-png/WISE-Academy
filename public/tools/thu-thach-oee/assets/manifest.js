@@ -127,7 +127,7 @@ window.ASSETS = {
    "h": 156
   },
   "desk": {
-   "src": "assets/props/desk.svg?v=4",
+   "src": "assets/props/desk.svg?v=5",
    "x": 817,
    "y": 358,
    "w": 133,

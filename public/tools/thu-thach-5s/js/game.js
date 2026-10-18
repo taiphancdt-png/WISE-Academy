@@ -11,7 +11,7 @@
      3. Khối di chuyển được        9. Hạng mục S4 dạng lựa chọn & dấu "?"
      4. Tạo ván chơi               10. HUD, bảng hành động, camera
      5. Vẽ cảnh                    11. Chấm điểm
-     6. Thao tác, chú Sáu Tài      12. Màn hình, giai đoạn, S5, kết quả
+     6. Thao tác, Mr. Six      12. Màn hình, giai đoạn, S5, kết quả
    Nội dung (vật dụng, câu hỏi, giải thích) nằm ở js/config.js.
    ===================================================================== */
 (function () {
@@ -633,7 +633,7 @@
     goNear(tiles); renderPanel();
   }
 
-  /* --- Chú Sáu Tài: khen, nhắc, động viên, cảm ơn (câu thoại ở js/config.js, mục coach) --- */
+  /* --- Mr. Six: khen, nhắc, động viên, cảm ơn (câu thoại ở js/config.js, mục coach) --- */
   var KEEP_Z = { board: 1, shelf: 1, finished: 1, park: 1 }, BIN_Z = { binMetal: 1, binRecycle: 1, binGeneral: 1, binOily: 1 };
   var coachTimer = null;
   function fill(t, it) { return String(t).replace(/\{name\}/g, G && G.playerName || "cháu").replace(/\{item\}/g, it ? it.cfg.name.toLowerCase() : "món này"); }
@@ -1454,7 +1454,7 @@
     setTimeout(function () {
       modal('<h3>Giai đoạn 1 · Dọn xưởng</h3><p><b>' + esc(C.workshop) + '</b> đang rất bừa bộn: dụng cụ vứt lung tung, hàng lỗi lẫn hàng tốt, dầu loang, phoi văng, xe nâng đỗ tùy tiện… máy móc, kệ vật tư cũng đặt không theo trình tự.</p>' +
         '<ul class="intro-list"><li><b>Sàng lọc:</b> giữ cái cần, loại bỏ hoặc dán thẻ đỏ cái không cần.</li><li><b>Sắp xếp:</b> mỗi thứ về đúng chỗ.</li><li><b>Sắp xếp layout xưởng:</b> bấm nút <b>📐 Mặt bằng</b> để kéo thả máy móc, kệ, khu vực theo dòng chảy Cửa nhập → Kệ vật tư → Máy tiện → Máy phay → QC → Thành phẩm → Cổng xuất. Đường đứt nét (spaghetti) càng ngắn, càng ít quay đầu thì càng tốt.</li><li><b>Sạch sẽ:</b> lau dầu, quét phoi, phân loại rác đúng 4 thùng; máy chảy dầu thì tìm nguồn gây bẩn và báo cáo bảo trì.</li></ul>' +
-        '<p>Bấm vào đồ vật, vết bẩn, máy hay khu vực rồi chọn thao tác. Chú Sáu Tài đứng góc xưởng sẽ khen, nhắc và động viên bạn.' + (TOUCH ? ' <b>Chụm / giãn 2 ngón</b> để thu phóng, <b>kéo 1 ngón</b> để xem khắp xưởng.' : ' Lăn chuột để thu phóng, kéo để xem khắp xưởng.') + '</p><div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu dọn!</button></div>');
+        '<p>Bấm vào đồ vật, vết bẩn, máy hay khu vực rồi chọn thao tác. Mr. Six đứng góc xưởng sẽ khen, nhắc và động viên bạn.' + (TOUCH ? ' <b>Chụm / giãn 2 ngón</b> để thu phóng, <b>kéo 1 ngón</b> để xem khắp xưởng.' : ' Lăn chuột để thu phóng, kéo để xem khắp xưởng.') + '</p><div class="modal-btns"><button class="btn btn-primary" data-close>Bắt đầu dọn!</button></div>');
       onModalClose = function () { coachSay(pickLine("hello"), "cheer"); };
     }, 450);
   }
@@ -1613,7 +1613,7 @@
 
     var w = window.createCharacter({ role: "owner" }); w.classList.add(R.total >= 60 ? "celebrate" : "scratch");
     $("resChar").appendChild(w);
-    document.querySelector("#result .res-main").insertAdjacentHTML("beforeend", '<p class="res-say">“' + esc(fill(pickLine(R.total >= 80 ? "endTop" : R.total >= 60 ? "endGood" : "endLow"))) + '” <b>Chú Sáu Tài</b></p>');
+    document.querySelector("#result .res-main").insertAdjacentHTML("beforeend", '<p class="res-say">“' + esc(fill(pickLine(R.total >= 80 ? "endTop" : R.total >= 60 ? "endGood" : "endLow"))) + '” <b>Mr. Six</b></p>');
     renderMini($("miniYou"), M);
     renderMini($("miniGood"), idealModel(M));
     $("btnAgain").onclick = function () { Sound.click(); startGame(); };

@@ -9,7 +9,7 @@ window.TPM_DATA = {
   title: "Thử thách TPM",
   subtitle: "Bảo trì năng suất toàn diện",
   workshop: "Xưởng Cơ Khí Sáu Tài",
-  owner: "Chú Sáu Tài",
+  owner: "Mr. Six",
   ownerRole: "Chủ xưởng",
   engineer: "Chị MiKi",
   engineerRole: "Kỹ sư WISE",

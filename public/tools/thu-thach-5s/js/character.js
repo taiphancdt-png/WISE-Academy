@@ -126,7 +126,7 @@
     '</defs>';
 
   /* role: "worker" (mặc định) · "manager", Trưởng phòng sản xuất (mũ trắng, sơ mi xanh nhạt, cà vạt cam)
-           "owner" , chú Sáu Tài, chủ xưởng (tóc muối tiêu, ria mép, áo khoác kaki, mũ xanh navy)
+           "owner" , Mr. Six, chủ xưởng (tóc muối tiêu, ria mép, áo khoác kaki, mũ xanh navy)
            "engineer", Chị kỹ sư bảo trì (tóc dài, mũ trắng, áo xanh ngọc, bút trên túi áo) */
   function noStripes(s) {
     return s.split('<path d="M19.2,52.2 H40.8 V56 H19.2 Z" fill="' + ORANGE + '"/>').join('')
@@ -142,7 +142,7 @@
       .split('fill="#FFB36E"').join('fill="' + stripe + '"');
   }
   /* Tên hiện trên nón: mỗi nhân vật một tên; nhân vật chính mang tên người chơi tự đặt (game gán CHAR_NAMES.worker) */
-  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Sáu Tài", engineer: "MiKi", manager: "Tổ trưởng" };
+  window.CHAR_NAMES = window.CHAR_NAMES || { owner: "Mr. Six", engineer: "MiKi", manager: "Tổ trưởng" };
   var HAT_TEXT = '<g class="nf"><text x="30" y="17.6" font-family="Arial Black,Arial,sans-serif" font-size="4.6" font-weight="900" fill="#fff" text-anchor="middle">WISE</text></g>';
   function hatName(name, ink) {
     var t = String(name).toUpperCase().trim().slice(0, 14), e = t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
