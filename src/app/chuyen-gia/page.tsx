@@ -44,7 +44,7 @@ export default function ExpertsPage() {
       <PageHero
         eyebrow="Đội ngũ chuyên gia thực chiến"
         image="/images/projects/huali-group-khoa-dao-tao-tu-duy-va-ky-thuat-cai-tien-nang-suat-chuyen/photo_11.webp"
-        title={<>Chuyên gia đồng hành: <span className="text-[#FF7A30]">người thật,</span> kinh nghiệm vận hành thật</>}
+        title={<>Chuyên gia đồng hành: <span className="text-[#FF7A30] whitespace-nowrap">người thật,</span> kinh nghiệm vận hành thật</>}
         description="Các chuyên gia của WISE Academy không giảng lý thuyết sách vở. Họ từng trực tiếp làm Giám đốc Nhà máy, Quản lý Sản xuất nhiều năm tại các tập đoàn lớn như Nike, Pou Chen, AG Samho, Dean Shoes."
       />
 

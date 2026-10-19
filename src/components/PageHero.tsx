@@ -17,7 +17,7 @@ export default function PageHero({ eyebrow, title, description, image, children 
       <div className="absolute inset-0 -z-10 bg-[#001E38]/80" />
       <div className="hero-enter max-w-4xl mx-auto px-4 sm:px-6 py-20 sm:py-24 text-center">
         {eyebrow && <SectionBadge title={eyebrow} light />}
-        <h1 className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight">{title}</h1>
+        <h1 className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight text-balance">{title}</h1>
         {description && (
           <p className="mt-5 text-base sm:text-lg text-white/85 leading-relaxed max-w-2xl mx-auto">{description}</p>
         )}
