@@ -1,6 +1,7 @@
 // API of the "Săn Lãng Phí" game (public/game): one room per 6-digit PIN, state kept in Netlify Blobs.
 // Locally (npm run dev) the rooms live in memory and disappear when the server restarts.
 import { handle } from "@/lib/san-lang-phi.mjs";
+import { rateLimited } from "@/lib/rate-limit";
 
 type Store = {
   get(key: string, opts?: { type?: "json" }): Promise<unknown>;
@@ -34,6 +35,9 @@ async function store(): Promise<Store> {
 export const dynamic = "force-dynamic";
 
 async function run(req: Request) {
+  // a host opens a few rooms per class; more than that from one address is a script filling storage
+  if (req.method === "POST" && new URL(req.url).pathname.endsWith("/create") && (await rateLimited("game-create", req, 20, 60 * 60 * 1000)))
+    return Response.json({ error: "Tạo phòng quá nhiều lần, vui lòng thử lại sau." }, { status: 429 });
   return handle(req, await store());
 }
 

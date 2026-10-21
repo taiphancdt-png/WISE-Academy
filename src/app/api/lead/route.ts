@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { rateLimited } from "@/lib/rate-limit";
 
 // Sends website form submissions (homepage, contact, LSSI interest) straight to WISE's inboxes.
 // Two ways, configured in the hosting environment (never commit real values):
@@ -21,19 +22,9 @@ const MAX_FIELDS = 20;
 const MAX_LABEL = 80;
 const MAX_VALUE = 2000;
 
-// Simple per-IP rate limit (per server instance): 5 submissions per 10 minutes.
+// Per-IP rate limit shared by all server instances: 5 submissions per 10 minutes.
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
-const hits = new Map<string, number[]>();
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
-  recent.push(now);
-  hits.set(ip, recent);
-  if (hits.size > 5000) hits.clear();
-  return recent.length > MAX_PER_WINDOW;
-}
 
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
@@ -46,8 +37,7 @@ const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 const envClean = (v?: string) => (v || "").trim().replace(/^["']|["']$/g, "").trim();
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  if (rateLimited(ip)) {
+  if (await rateLimited("lead", request, MAX_PER_WINDOW, WINDOW_MS)) {
     return NextResponse.json({ ok: false, error: "too_many_requests" }, { status: 429 });
   }
 

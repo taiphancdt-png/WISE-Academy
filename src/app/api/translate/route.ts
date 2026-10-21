@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { keyOf, lookup, normalize, translateMissing, type Lang } from "@/lib/translate";
+import { rateLimited } from "@/lib/rate-limit";
 
 // Translations for the page the visitor is reading: stored ones are returned at once, new ones are written by Claude
 // and stored. The client sends the page's texts; the reply maps each text to its translation.
@@ -8,16 +9,6 @@ export const maxDuration = 60;
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 120;
-const hits = new Map<string, number[]>();
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
-  recent.push(now);
-  hits.set(ip, recent);
-  if (hits.size > 5000) hits.clear();
-  return recent.length > MAX_PER_WINDOW;
-}
 
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => null)) as { lang?: string; texts?: unknown } | null;
@@ -34,9 +25,11 @@ export async function POST(request: Request) {
   const found = await lookup(lang, [...byKey.keys()]);
   const missing = [...byKey].filter(([k]) => found[k] === undefined).map(([key, text]) => ({ key, text }));
   // reading stored translations is free; only requests that would call Claude are rate-limited
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   const callsClaude = Boolean(process.env.ANTHROPIC_API_KEY);
-  const fresh = missing.length && !(callsClaude && rateLimited(ip)) ? await translateMissing(lang, missing) : {};
+  const fresh =
+    missing.length && !(callsClaude && (await rateLimited("translate", request, MAX_PER_WINDOW, WINDOW_MS)))
+      ? await translateMissing(lang, missing)
+      : {};
   const all = { ...found, ...fresh };
   // keyed by the (normalized) source text, which is what the page has in hand
   const translations = Object.fromEntries([...byKey].filter(([k]) => all[k] !== undefined).map(([k, t]) => [t, all[k]]));
