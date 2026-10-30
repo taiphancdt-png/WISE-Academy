@@ -84,12 +84,22 @@ button,select,input{font:inherit;color:inherit}
 @media (max-width:480px){.scen{grid-template-columns:minmax(0,1fr) 92px 92px}.field{grid-template-columns:minmax(0,1fr) 120px}}
 
 /* results */
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 @media (max-width:640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.kpi{background:var(--paper);padding:10px 12px;display:grid;gap:2px}
-.kpi .k{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.kpi .v{font-family:var(--mono);font-size:1.12rem;font-weight:600;font-variant-numeric:tabular-nums}
-.kpi .s{font-size:.76rem;color:var(--faint)}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kpi .k{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.kpi .v{font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:800;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--navy);overflow-wrap:anywhere}
+.kpi .s{font-size:.8rem;color:var(--muted);margin-top:auto}
+.kpi .s b{font-weight:800;color:var(--ink)}
+/* the number to report: navy card */
+.kpi.hero{background:var(--navy);border-color:var(--navy);box-shadow:0 10px 24px -14px rgba(0,47,91,.7)}
+.kpi.hero .k{color:#C9DAEA}
+.kpi.hero .v,.kpi.hero .v.pos,.kpi.hero .v.neg{color:#fff}
+.kpi.hero .s{color:#C9DAEA}
+.kpi.hero .s b{color:#FFB27A;font-size:1rem}
+/* secondary highlight */
+.kpi.accent{background:var(--orange-soft);border-color:#FBD3B8}
+.kpi.accent .s b{color:var(--orange-ink)}
 .pos{color:var(--good)} .neg{color:var(--bad)}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
 table{border-collapse:collapse;width:100%;font-size:.88rem}
@@ -167,6 +177,7 @@ svg{display:block;width:100%;height:auto}
       <p>Nhập số liệu của một kỳ (ngày, tuần hoặc tháng) trước và sau cải tiến. Công cụ tính lợi nhuận mỗi kỳ, quy ra năm, và tách phần lợi nhuận tăng thêm theo từng đòn bẩy.</p></div>
     <div class="acts"><button class="btn" data-copy="be">Sao chép Trước → Sau</button><button class="btn" data-sample="be">Điền ví dụ khóa học</button><button class="btn" data-clear="be">Xoá số</button></div>
   </div>
+  <div class="kpis" id="be-kpis"></div>
   <div class="grid-calc">
     <div class="card">
       <h3>Số liệu đầu vào</h3>
@@ -178,7 +189,6 @@ svg{display:block;width:100%;height:auto}
       </div>
     </div>
     <div style="display:grid;gap:12px;min-width:0">
-      <div class="kpis" id="be-kpis"></div>
       <div class="card" style="padding:12px">
         <svg id="be-chart" viewBox="0 0 640 380" role="img" aria-label="Biểu đồ hòa vốn sau dự án, so với trước dự án"></svg>
         <div class="legend"><span><i style="background:var(--rev)"></i>Doanh thu</span><span><i style="background:var(--cost)"></i>Tổng chi phí</span><span><i style="background:var(--fixed)"></i>CP chuyển đổi</span><span style="color:var(--faint)"><i class="dash"></i>Trước dự án</span><span><i style="background:var(--good-fill);height:9px"></i>Vùng lãi</span><span><i style="background:var(--bad-fill);height:9px"></i>Vùng lỗ</span></div>
@@ -304,10 +314,10 @@ svg{display:block;width:100%;height:auto}
       <p>ROI = biên lợi nhuận × vòng quay vốn. Nhập báo cáo của một năm, rồi nhập tác động dự kiến của dự án lên lợi nhuận và tồn kho để xem ROI thay đổi.</p></div>
     <div class="acts"><button class="btn" data-sample="roi">Điền ví dụ khóa học</button><button class="btn" data-clear="roi">Xoá số</button></div>
   </div>
+  <div class="kpis" id="roi-kpis"></div>
   <div class="grid-calc">
     <div class="card"><div class="fields" id="roi-form"></div></div>
     <div style="display:grid;gap:12px;min-width:0">
-      <div class="kpis" id="roi-kpis"></div>
       <div class="tbl"><table id="roi-table"></table></div>
       <div id="roi-notes"></div>
     </div>
@@ -407,7 +417,7 @@ svg{display:block;width:100%;height:auto}
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   function kpis(el, items) {
     el.innerHTML = items.map(function (k) {
-      return '<div class="kpi"><span class="k">' + k[0] + '</span><span class="v ' + (k[2] || "") + '">' + k[1] + '</span>' + (k[3] ? '<span class="s">' + k[3] + '</span>' : "") + "</div>";
+      return '<div class="kpi ' + (k[4] || "") + '"><span class="k">' + k[0] + '</span><span class="v ' + (k[2] || "") + '">' + k[1] + '</span>' + (k[3] ? '<span class="s">' + k[3] + '</span>' : "") + "</div>";
     }).join("");
   }
 
@@ -452,11 +462,12 @@ svg{display:block;width:100%;height:auto}
   function calcBe() {
     var B = model(S.be.before), A = model(S.be.after), per = S.be.period, ppy = num(S.be.ppy);
     var d = A.profit - B.profit;
+    var hardK = (B.c - A.c) + (B.v - A.v) * B.q;
     kpis($("be-kpis"), [
-      ["Lợi nhuận / " + per + " (sau)", money(A.profit), cls(A.profit), "trước: " + money(B.profit)],
-      ["Cost saving (tiết kiệm cứng)", money((B.c - A.c) + (B.v - A.v) * B.q), cls((B.c - A.c) + (B.v - A.v) * B.q), ppy ? money(((B.c - A.c) + (B.v - A.v) * B.q) * ppy) + " / năm" : "nhập số kỳ trong năm"],
-      ["Điểm hòa vốn (sau)", isFinite(A.bep) ? fmtN(A.bep, 1) + " đv" : "không hòa vốn", isFinite(A.bep) ? "" : "neg", "trước: " + (isFinite(B.bep) ? fmtN(B.bep, 1) + " đv" : "không")],
-      ["Lợi nhuận tăng thêm", money(d), cls(d), ppy ? money(d * ppy) + " / năm" : "gồm cả tăng giá, bán thêm"]]);
+      ["Cost saving (tiết kiệm cứng) / " + per, money(hardK), "", ppy ? "<b>" + money(hardK * ppy) + "</b> / năm" : "nhập số kỳ trong năm", "hero"],
+      ["Lợi nhuận tăng thêm / " + per, money(d), cls(d), ppy ? "<b>" + money(d * ppy) + "</b> / năm" : "gồm cả tăng giá, bán thêm", "accent"],
+      ["Lợi nhuận / " + per + " sau dự án", money(A.profit), cls(A.profit), "trước: <b>" + money(B.profit) + "</b>"],
+      ["Điểm hòa vốn sau dự án", isFinite(A.bep) ? fmtN(A.bep, 1) + " đv" : "Không hòa vốn", isFinite(A.bep) ? "" : "neg", "trước: <b>" + (isFinite(B.bep) ? fmtN(B.bep, 1) + " đv" : "không") + "</b>"]]);
     var rows = [
       ["Sản lượng bán / " + per, fmtN(B.q, 2), fmtN(A.q, 2), A.q - B.q, "n"],
       ["Doanh thu", money(B.rev), money(A.rev), A.rev - B.rev, "m"],
@@ -571,7 +582,7 @@ svg{display:block;width:100%;height:auto}
     kpis($("toc-kpis"), [
       ["Lợi nhuận: ưu tiên theo nút thắt", money(A.profit), cls(A.profit)],
       ["Lợi nhuận: ưu tiên theo biên/đv", money(Bm.profit), cls(Bm.profit)],
-      ["Chênh lệch mỗi kỳ", money(gain), cls(gain)],
+      ["Chênh lệch mỗi kỳ", money(gain), cls(gain), "nhờ xếp theo nút thắt", "hero"],
       ["Phút nút thắt còn dư", fmtN(A.idle, 1), "", "theo phương án nút thắt"]]);
     $("toc-rank").innerHTML = "<thead><tr><th>Sản phẩm</th><th class='n'>Throughput / đv</th><th class='n'>Throughput / phút</th><th class='n'>Thứ tự</th></tr></thead><tbody>" +
       byToc.map(function (i, k) { return "<tr" + (k === 0 ? " class='hl'" : "") + "><td>" + nm(i) + "</td><td class='n'>" + money(tp[i]) + "</td><td class='n'>" + (isFinite(rate[i]) ? money(rate[i]) : "∞") + "</td><td class='n'>" + (k + 1) + "</td></tr>"; }).join("") + "</tbody>";
@@ -594,10 +605,10 @@ svg{display:block;width:100%;height:auto}
     var st = C.rows.map(function (r) { var tot = num(r.conv) + num(r.mat); return { name: r.name, tot: tot, diff: tot - target, gap: (tot - target) * demand, margin: price ? (price - tot) / price : NaN }; });
     var last = st[st.length - 1] || { tot: 0, diff: 0, gap: 0, margin: 0 }, first = st[0] || last;
     kpis($("tc-kpis"), [
-      ["Chi phí mục tiêu / đv", money(target), "", "giá × (1 − " + fmtN(m * 100, 1) + "%)"],
+      ["Chi phí mục tiêu / đv", money(target), "", "giá × (1 − " + fmtN(m * 100, 1) + "%)", "accent"],
       ["Chi phí hiện tại / đv", money(first.tot), "", "biên " + pct(first.margin)],
       ["Sau giai đoạn cuối / đv", money(last.tot), last.diff <= 1e-9 ? "pos" : "neg", "biên " + pct(last.margin)],
-      ["Còn phải cắt", last.diff > 1e-9 ? money(last.gap) : "Đạt mục tiêu", last.diff > 1e-9 ? "neg" : "pos", last.diff > 1e-9 ? money(last.diff) + " / đv" : ""]]);
+      ["Còn phải cắt", last.diff > 1e-9 ? money(last.gap) : "Đạt mục tiêu", "", last.diff > 1e-9 ? "<b>" + money(last.diff) + "</b> / đv" : "chi phí đã về mức mục tiêu", "hero"]]);
     $("tc-table").innerHTML = "<thead><tr><th>Giai đoạn</th><th class='n'>Tổng CP / đv</th><th class='n'>Chênh mục tiêu / đv</th><th class='n'>Khoảng cách × sản lượng</th><th class='n'>Biên lợi nhuận</th></tr></thead><tbody>" +
       st.map(function (s, i) { var ok = s.diff <= 1e-9; return "<tr" + (i === st.length - 1 ? " class='hl'" : "") + "><td>" + esc(s.name || "Giai đoạn " + (i + 1)) + "</td><td class='n'>" + money(s.tot) + "</td><td class='n " + (ok ? "good" : "bad") + "'>" + money(Math.max(0, s.diff)) + "</td><td class='n'>" + money(Math.max(0, s.gap)) + "</td><td class='n'>" + pct(s.margin) + "</td></tr>"; }).join("") + "</tbody>";
     // bars: conversion + material per stage against the target line
@@ -643,8 +654,8 @@ svg{display:block;width:100%;height:auto}
     var d = S.roi, B = roiOf(d, 0, 0), A = roiOf(d, num(d.dProfit), num(d.dInv)), dr = A.roi - B.roi;
     var hasProject = num(d.dProfit) !== 0 || num(d.dInv) !== 0;
     kpis($("roi-kpis"), [
-      ["ROI hiện tại", pct(B.roi, 2), cls(B.roi)],
-      ["ROI sau dự án", hasProject ? pct(A.roi, 2) : "-", hasProject ? cls(A.roi) : "", hasProject ? (dr >= 0 ? "+" : "") + fmtN(dr * 100, 2) + " điểm %" : "nhập tác động dự án"],
+      ["ROI hiện tại", pct(B.roi, 2), "", "", "accent"],
+      ["ROI sau dự án", hasProject ? pct(A.roi, 2) : "-", "", hasProject ? "<b>" + (dr >= 0 ? "+" : "") + fmtN(dr * 100, 2) + " điểm %</b>" : "nhập tác động dự án", "hero"],
       ["Biên lợi nhuận", pct(B.margin, 2), "", "LN ÷ doanh thu"],
       ["Vòng quay vốn", isFinite(B.turn) ? fmtN(B.turn, 3) + " lần" : "-", "", "doanh thu ÷ vốn thuần"]]);
     var row = function (k, b, a, hl) { return "<tr" + (hl ? " class='hl'" : "") + "><td>" + k + "</td><td class='n'>" + b + "</td><td class='n'>" + a + "</td></tr>"; };
