@@ -1341,25 +1341,206 @@
   {
     "id": "tu-ngoc-tung",
     "name": "Từ Ngọc Tùng",
-    "role": "Chuyên gia Đào tạo · Lean Six Sigma Consultant & Trainer",
-    "title": "Hơn 13 năm kinh nghiệm trong Lean & Tối ưu Quy trình",
-    "bio": "Chuyên gia giảng dạy Lean Six Sigma Green Belt, phương pháp giải quyết vấn đề 8D/A3 Thinking và ứng dụng công cụ kiểm soát quá trình bằng thống kê (SPC).",
+    "role": "Chuyên gia Lean Six Sigma Master Black Belt · Giảng viên & Tư vấn",
+    "title": "Lean Six Sigma Master Black Belt (EALSS) · Lean Six Sigma Black Belt (SSMI) · Lead Auditor ISO 9001 (BSI)",
+    "bio": "Hơn 14 năm làm việc tại các tập đoàn đa quốc gia như Canon, LG Electronics, Denka, Premo và iFIT ở các vị trí quản lý sản xuất, cải tiến liên tục và chất lượng. Anh từng dẫn dắt các dự án Lean Six Sigma tiết kiệm hàng trăm nghìn USD mỗi năm và quản lý chất lượng cho các khách hàng ô tô như Continental, Valeo, Volkswagen, General Motors. Song song, anh đào tạo và tư vấn Lean Six Sigma, 5 Core Tools, 8D, PFMEA cho nhiều doanh nghiệp sản xuất tại Việt Nam.",
     "tags": [
-      "SPC",
-      "A3 Problem Solving",
-      "8D",
-      "Process Optimization"
+      "Lean Six Sigma MBB",
+      "5 Core Tools / IATF 16949",
+      "8D / FMEA",
+      "SPC / MSA / DOE"
     ],
-    "image": "/images/experts/tu-ngoc-tung.webp",
+    "image": "/images/experts/tu-ngoc-tung-v2.webp",
     "group": "vietnam",
-    "cutout": "/images/experts/tu-ngoc-tung-cutout.webp",
+    "highlights": [
+      {
+        "value": "14+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "14+",
+        "label": "Doanh nghiệp đã đào tạo và tư vấn"
+      },
+      {
+        "value": "245.000+",
+        "label": "USD tiết kiệm mỗi năm từ dự án cải tiến"
+      },
+      {
+        "value": "700",
+        "label": "Công nhân mỗi ca từng quản lý"
+      },
+      {
+        "value": "55",
+        "label": "Nhân sự chất lượng từng dẫn dắt"
+      },
+      {
+        "value": "3",
+        "label": "Ngoại ngữ: Anh, Nhật, Trung"
+      }
+    ],
+    "expertise": [
+      "Lean Six Sigma, DMAIC, Kaizen, 5S, A3, RCA và Monozukuri",
+      "Hệ thống quản lý chất lượng ISO 9001/14001, IATF 16949 và QRQC",
+      "5 Core Tools: APQP, PPAP, FMEA, Control Plan, SPC, MSA",
+      "Giải quyết vấn đề 8D, 5 Why, SCAR và 7 QC Tools",
+      "Chất lượng nhà cung cấp, đánh giá quá trình theo VDA 6.3 và phát triển nhà cung cấp",
+      "Phân tích dữ liệu chất lượng, năng lực quá trình và DOE bằng Minitab",
+      "Giảm chi phí chất lượng kém và hàng làm lại",
+      "Đào tạo và coaching dự án Yellow Belt, Green Belt tại doanh nghiệp",
+      "Ngành ép nhựa, sơn phủ, dập, cán, hàn, SMT, lắp ráp linh kiện điện tử và ô tô"
+    ],
     "career": [
       {
         "period": "Hiện nay",
         "org": "WISE Academy",
-        "role": "Chuyên gia tư vấn / đào tạo"
+        "role": "Chuyên gia tư vấn và đào tạo Lean Six Sigma"
+      },
+      {
+        "period": "2025 - nay",
+        "org": "iFIT Health & Fitness Inc.",
+        "role": "Advanced Manufacturing Engineer Manager"
+      },
+      {
+        "period": "2024 - 2025",
+        "org": "Premo Vietnam",
+        "role": "Trưởng phòng Đảm bảo chất lượng"
+      },
+      {
+        "period": "2023 - 2024",
+        "org": "Tenma (HCM) Vietnam, chi nhánh Hà Nội",
+        "role": "Trưởng phòng Đảm bảo chất lượng"
+      },
+      {
+        "period": "2019 - 2023",
+        "org": "Denka Advanced Vietnam",
+        "role": "Quản lý chất lượng"
+      },
+      {
+        "period": "2016 - 2019",
+        "org": "LG Electronics",
+        "role": "Kỹ sư đảm bảo chất lượng"
+      },
+      {
+        "period": "2012 - 2016",
+        "org": "Canon Vietnam",
+        "role": "Trưởng ca sản xuất"
+      },
+      {
+        "period": "Song song",
+        "org": "VJIP, P&Q Solution, VICO",
+        "role": "Chuyên gia, giảng viên và tư vấn Lean Six Sigma"
       }
-    ]
+    ],
+    "experience": [
+      {
+        "client": "Denka Advanced Vietnam",
+        "period": "2019 - 2023",
+        "text": "Dự án Lean Six Sigma nâng hiệu suất thông suốt (RTY) từ 91,2% lên 98,16%, tiết kiệm khoảng 135.000 USD mỗi năm; dự án Kaizen tối ưu sử dụng pallet tiết kiệm khoảng 24.000 USD mỗi năm; giảm khoảng 30 phút cho mỗi lần chuyển đổi mã hàng (SMED).",
+        "metric": "91,2% → 98,16%"
+      },
+      {
+        "client": "Tenma (HCM) Vietnam",
+        "period": "2023 - 2024",
+        "text": "Dự án Lean Six Sigma giảm tỷ lệ lỗi chấm bạc, chấm đen trên sản phẩm nhựa GPPS từ 49% xuống 10%, tiết kiệm khoảng 86.000 USD mỗi năm; tự động hóa khâu đếm thành phẩm bằng cân, giải phóng 12 lao động đếm thủ công.",
+        "metric": "49% → 10%"
+      },
+      {
+        "client": "Premo Vietnam",
+        "period": "2024 - 2025",
+        "text": "Quản lý chất lượng linh kiện điện tử ô tô cho Continental, Valeo, HKMC, BYD, Aptiv, VinFast: giảm khiếu nại khách hàng từ 20 xuống 12 vụ mỗi năm, điểm đánh giá của khách hàng đạt 90% đến 100%.",
+        "metric": "20 → 12"
+      },
+      {
+        "client": "iFIT Health & Fitness",
+        "period": "2025 - nay",
+        "text": "Xây dựng phương pháp giải quyết vấn đề 8D (mẫu báo cáo, quy trình, đào tạo nhà cung cấp), khởi xướng Reverse FMEA để kiểm chứng hiệu lực biện pháp khắc phục và bộ checklist đánh giá Bill of Process cho linh kiện trọng yếu tại các nhà sản xuất ở Việt Nam."
+      },
+      {
+        "client": "Madin Vietnam",
+        "period": "",
+        "text": "Tư vấn chuẩn bị hồ sơ APQP, PPAP cho đợt đánh giá nhà cung cấp tiềm năng của Ford."
+      },
+      {
+        "client": "Đào tạo doanh nghiệp",
+        "period": "",
+        "text": "Lean Six Sigma Yellow Belt, Green Belt cho Sekonix, Cơ khí Thanh Long, Leili Vietnam, Seojin Vietnam; 5 Core Tools cho SHOGO, FARADAY, Eway, Madin Vietnam; PFMEA cho Vinataba, Sunhouse, SML Vietnam, MPC Vietnam; 7 QC Tools cho Jinko Solar, Leili Vietnam; phát triển năng lực nhà cung cấp cho MPC Vietnam."
+      },
+      {
+        "client": "Hòa Phát",
+        "period": "",
+        "text": "Tư vấn tối ưu hiệu suất thông qua chuẩn hóa quy trình công việc."
+      },
+      {
+        "client": "Canon Vietnam",
+        "period": "2012 - 2016",
+        "text": "Trưởng ca quản lý khoảng 700 công nhân lắp ráp máy in; xây dựng tiêu chuẩn 5S chi tiết kèm video đào tạo; giải Nhất cuộc thi Kaizen của Canon về giảm nhân lực và cải thiện đường cong hiệu suất trên một model máy in."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Lean Six Sigma Master Black Belt",
+        "org": "EALSS Academy",
+        "core": true
+      },
+      {
+        "name": "Lean Six Sigma Black Belt",
+        "org": "Six Sigma Management Institute (SSMI)",
+        "core": true
+      },
+      {
+        "name": "Lead Auditor ISO 9001:2026",
+        "org": "BSI",
+        "core": true
+      },
+      {
+        "name": "IPC-A-610: tiêu chuẩn chấp nhận bo mạch điện tử",
+        "org": "IPC",
+        "group": "Chất lượng & Đánh giá"
+      },
+      {
+        "name": "ANSI/ESD S20.20:2021: kiểm soát phóng tĩnh điện",
+        "org": "ZCT Vietnam",
+        "group": "Chất lượng & Đánh giá"
+      },
+      {
+        "name": "Đánh giá viên nội bộ ISO 14001, ISO 19011, IATF 16949, ISO 50001, VDA 6.3",
+        "org": "Hệ thống quản lý ISO, IATF, VDA",
+        "group": "Chất lượng & Đánh giá"
+      },
+      {
+        "name": "TOEIC 920/990",
+        "org": "ETS",
+        "group": "Ngoại ngữ"
+      },
+      {
+        "name": "JLPT N3",
+        "org": "Japan Foundation",
+        "group": "Ngoại ngữ"
+      },
+      {
+        "name": "HSK 4",
+        "org": "Chinese Testing International",
+        "group": "Ngoại ngữ"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Đào tạo và chứng nhận Lean Six Sigma Black Belt (BoK cập nhật theo ISO 13053-1, ISO 13053-2)",
+        "school": "Dr. Mikel J. Harry Six Sigma Management Institute Asia"
+      }
+    ],
+    "regions": [
+      {
+        "country": "Việt Nam",
+        "text": "Quản lý chất lượng, cải tiến và đào tạo Lean Six Sigma tại các nhà máy FDI điện tử, ô tô, nhựa"
+      },
+      {
+        "country": "Nhật Bản & Singapore",
+        "text": "Công tác và làm việc với khách hàng, nhà cung cấp quốc tế trong thời gian ở Denka"
+      }
+    ],
+    "languages": "Tiếng Việt, Tiếng Anh (TOEIC 920), Tiếng Nhật (JLPT N3), Tiếng Trung (HSK 4)",
+    "cutout": "/images/experts/tu-ngoc-tung-cutout-v2.webp"
   },
   {
     "id": "do-tan-khoa",
