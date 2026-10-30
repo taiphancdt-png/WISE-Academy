@@ -13123,6 +13123,10 @@
   "s": "Vina Kyoei Steel, POSCO Việt Nam, VNSTEEL, VN Mold",
   "t": "Vina Kyoei Steel、POSCO Viet Nam、VNSTEEL、VN Mold"
  },
+ "cca9f30240f83885": {
+  "s": "Đánh giá tài chính dự án",
+  "t": "项目财务评估"
+ },
  "ccd0981d88b7460d": {
   "s": "Hình ảnh dự án An Giang Samho",
   "t": "An Giang Samho 项目图片"
@@ -14311,6 +14315,10 @@
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: Ký hiệu của hệ số tương quan Pearson. Giá trị của r nằm trong khoảng từ -1 đến 1.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r：Pearson 相关系数的符号。r 的取值在 -1 到 1 之间。</span>"
  },
+ "dfa7599f01e04ffd": {
+  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ của khóa Black Belt.",
+  "t": "输入企业数据，结果自动计算：盈亏平衡点、项目前后利润、与收入增长和释放产能分开列示的成本节约（硬节约）、瓶颈下的产品优先级、目标成本和 ROI。附有使用说明和黑带课程示例。"
+ },
  "dfac17829d31e5dc": {
   "s": "Biểu đồ xương cá (Fishbone): Tìm đúng nguyên nhân gốc rễ | Góc tri thức WISE Academy",
   "t": "鱼骨图：找准根本原因 | WISE Academy 知识专栏"
@@ -15434,6 +15442,10 @@
  "f16eb03dea4775b7": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Focused Improvement (Kobetsu Kaizen) - Cải tiến tập trung</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Focused Improvement（Kobetsu Kaizen）——重点改善</span>"
+ },
+ "f1a39746c365b56a": {
+  "s": "Tài chính dự án Lean Six Sigma",
+  "t": "精益六西格玛项目财务"
  },
  "f1a499ee23cd61af": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Design: Thiết kế chi tiết sản phẩm/quy trình</span>",

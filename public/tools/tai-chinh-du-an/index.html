@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#002F5B">
+<title>Đánh giá tài chính dự án | WISE Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;600&display=swap">
+<style>
+/* Calculator app for project financial evaluation (Lean Six Sigma Black Belt): the user types their own
+   numbers, every result updates at once; each calculator has its how-to below it. WISE Academy colours. */
+:root{
+  --bg:#F8F9FA; --paper:#FFFFFF; --ink:#102A43; --muted:#486581; --faint:#829AB1; --line:#E2E8F0;
+  --navy:#002F5B; --navy-soft:#EBF3FA; --orange:#F76011; --orange-ink:#C9500E; --orange-soft:#FFF5EC;
+  --rev:#1F5FA8; --cost:#F76011; --fixed:#7A6A9E;
+  --good:#1E8A4F; --bad:#C0392B; --good-fill:rgba(30,138,79,.15); --bad-fill:rgba(192,57,43,.11);
+  --sans:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"Roboto Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1100px;margin:0 auto}
+h1,h2,h3,h4{line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+button,select,input{font:inherit;color:inherit}
+
+/* header */
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.brand img{height:30px;width:auto;display:block}
+.brand span{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero{padding:28px 0 20px;display:grid;gap:10px}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-ink)}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:800;color:var(--navy)}
+.hero p{max-width:70ch;color:var(--muted)}
+.settings{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:.9rem;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.settings label{display:flex;gap:8px;align-items:center;font-weight:600}
+.settings select{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--bg)}
+
+/* tabs */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:12px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.tab:hover{border-color:var(--navy)}
+.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.panel{display:none;padding-top:22px}
+.panel.on{display:grid;gap:18px}
+.panel-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end;justify-content:space-between}
+.panel-head h2{font-size:1.45rem;font-weight:800;color:var(--navy)}
+.panel-head p{color:var(--muted);max-width:66ch;margin-top:4px}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:7px 12px;font-size:.86rem;font-weight:600;cursor:pointer}
+.btn:hover{border-color:var(--navy)}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn.primary:hover{background:var(--orange-ink);border-color:var(--orange-ink)}
+.btn.small{padding:4px 9px;font-size:.8rem}
+
+/* cards */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid-calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:start}
+@media (max-width:860px){.grid-calc,.grid2{grid-template-columns:1fr}}
+
+/* inputs */
+.fields{display:grid;gap:8px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:10px;align-items:center}
+.field label{font-size:.88rem;font-weight:600}
+.field label small{display:block;font-weight:400;color:var(--faint);font-size:.76rem}
+.field input,.in{width:100%;border:1px solid var(--line);border-radius:8px;padding:7px 9px;background:#fff;font-family:var(--mono);font-size:.92rem;text-align:right}
+.field input:hover,.in:hover{border-color:#B8C6D6}
+.field input:focus,.in:focus{border-color:var(--navy);outline:none;box-shadow:0 0 0 3px var(--navy-soft)}
+.scen{display:grid;grid-template-columns:minmax(0,1fr) 120px 120px;gap:8px 10px;align-items:center}
+.scen .h{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right}
+.scen .h.after{color:var(--orange-ink)}
+.scen label{font-size:.88rem;font-weight:600}
+.scen label small{display:block;font-weight:400;color:var(--faint);font-size:.76rem}
+@media (max-width:480px){.scen{grid-template-columns:minmax(0,1fr) 92px 92px}.field{grid-template-columns:minmax(0,1fr) 120px}}
+
+/* results */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--paper);padding:10px 12px;display:grid;gap:2px}
+.kpi .k{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font-family:var(--mono);font-size:1.12rem;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:.76rem;color:var(--faint)}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+th{font-weight:700;font-size:.8rem;background:var(--bg);color:var(--navy)}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr.hl td{font-weight:700;background:var(--navy-soft)}
+td.good{color:var(--good);font-weight:600} td.bad{color:var(--bad);font-weight:600}
+.callout{border-left:4px solid var(--orange);background:var(--orange-soft);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.92rem}
+.callout.ok{border-color:var(--good);background:#E8F5EE}
+.callout b{color:var(--navy)}
+svg{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px}
+.legend i.dash{background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 7px)}
+.rows-table input{min-width:84px}
+.rows-table input.name{text-align:left;font-family:var(--sans);min-width:120px}
+.x{border:0;background:none;color:var(--faint);cursor:pointer;font-size:1.1rem;padding:2px 6px}
+.x:hover{color:var(--bad)}
+
+/* guides */
+.guide{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px}
+.guide h3{font-size:1.05rem;font-weight:800;color:var(--navy);display:flex;gap:8px;align-items:center}
+.guide h3::before{content:"";width:6px;height:18px;border-radius:3px;background:var(--orange)}
+.guide h4{font-size:.92rem;font-weight:700;color:var(--navy);margin-top:4px}
+.guide ol,.guide ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:.93rem}
+.guide p{font-size:.93rem}
+.formula{font-family:var(--mono);background:var(--navy-soft);border-left:3px solid var(--navy);padding:9px 12px;font-size:.84rem;border-radius:0 8px 8px 0;overflow-x:auto}
+.formula b{color:var(--orange-ink)}
+.lesson{padding-top:40px;display:grid;gap:16px}
+.lesson>h2{font-size:1.45rem;font-weight:800;color:var(--navy)}
+.levers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.lever{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.lever .tag{font-family:var(--mono);font-size:.7rem;color:var(--orange-ink);text-transform:uppercase;letter-spacing:.06em}
+.lever h4{font-size:1rem;color:var(--navy)}
+.lever p{font-size:.88rem}
+.lever .moves{font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:6px}
+.sheet{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sheet div{background:var(--paper);padding:12px 14px;display:grid;gap:3px}
+.sheet .t{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.sheet .f{font-family:var(--mono);font-size:.82rem}
+.credit{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;font-size:.84rem;color:var(--muted)}
+.credit b{color:var(--navy)}
+@media print{.tabs,.acts,.settings{display:none}.panel{display:grid!important;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><img src="/images/brand/logo.webp" alt="WISE Academy"><span>Toolkit</span></div>
+
+<header class="hero">
+  <h1>Đánh giá tài chính dự án</h1>
+  <p>Nhập số liệu của doanh nghiệp bạn, kết quả tự tính ngay: điểm hòa vốn, lợi nhuận trước và sau dự án, phần lợi nhuận đến từ từng đòn bẩy, thứ tự ưu tiên sản phẩm khi có nút thắt, chi phí mục tiêu và ROI. Mỗi phần có hướng dẫn ngay bên dưới. Số liệu mặc định là ví dụ của khóa học; số bạn nhập được lưu trên trình duyệt này.</p>
+  <div class="settings">
+    <label for="cur">Đơn vị tiền
+      <select id="cur"><option value="USD">USD ($)</option><option value="VND">VNĐ (₫)</option></select>
+    </label>
+    <span class="muted">Đổi đơn vị chỉ đổi cách hiển thị, không quy đổi tỷ giá.</span>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Các máy tính">
+  <button class="tab" role="tab" data-tab="be" aria-selected="true">1. Hòa vốn &amp; lợi nhuận</button>
+  <button class="tab" role="tab" data-tab="toc">2. Ưu tiên theo nút thắt</button>
+  <button class="tab" role="tab" data-tab="tc">3. Chi phí mục tiêu</button>
+  <button class="tab" role="tab" data-tab="roi">4. ROI &amp; vốn</button>
+  <button class="tab" role="tab" data-tab="learn">Kiến thức nền</button>
+</nav>
+
+<!-- ============ 1. BREAK-EVEN & PROFIT, BEFORE / AFTER ============ -->
+<section class="panel on" id="p-be" role="tabpanel">
+  <div class="panel-head">
+    <div><h2>Hòa vốn &amp; lợi nhuận: trước và sau dự án</h2>
+      <p>Nhập số liệu của một kỳ (ngày, tuần hoặc tháng) trước và sau cải tiến. Công cụ tính lợi nhuận mỗi kỳ, quy ra năm, và tách phần lợi nhuận tăng thêm theo từng đòn bẩy.</p></div>
+    <div class="acts"><button class="btn" data-copy="be">Sao chép Trước → Sau</button><button class="btn" data-sample="be">Điền ví dụ khóa học</button><button class="btn" data-clear="be">Xoá số</button></div>
+  </div>
+  <div class="grid-calc">
+    <div class="card">
+      <h3>Số liệu đầu vào</h3>
+      <div class="field" style="margin-bottom:10px"><label for="be-period">Kỳ tính<small>tất cả số bên dưới cùng một kỳ</small></label>
+        <select id="be-period" class="in" style="text-align:left;font-family:var(--sans)"><option value="ngày">Ngày</option><option value="tuần">Tuần</option><option value="tháng">Tháng</option></select></div>
+      <div class="field" style="margin-bottom:14px"><label for="be-ppy">Số kỳ trong năm<small>ví dụ 25 ngày/tháng → 300 ngày</small></label><input id="be-ppy" type="number" inputmode="decimal" step="any" min="0"></div>
+      <div class="scen" id="be-form">
+        <span></span><span class="h">Trước</span><span class="h after">Sau</span>
+      </div>
+    </div>
+    <div style="display:grid;gap:12px;min-width:0">
+      <div class="kpis" id="be-kpis"></div>
+      <div class="card" style="padding:12px">
+        <svg id="be-chart" viewBox="0 0 640 380" role="img" aria-label="Biểu đồ hòa vốn sau dự án, so với trước dự án"></svg>
+        <div class="legend"><span><i style="background:var(--rev)"></i>Doanh thu</span><span><i style="background:var(--cost)"></i>Tổng chi phí</span><span><i style="background:var(--fixed)"></i>CP chuyển đổi</span><span style="color:var(--faint)"><i class="dash"></i>Trước dự án</span><span><i style="background:var(--good-fill);height:9px"></i>Vùng lãi</span><span><i style="background:var(--bad-fill);height:9px"></i>Vùng lỗ</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="tbl"><table id="be-table"></table></div>
+    <div style="display:grid;gap:12px;align-content:start">
+      <div class="tbl"><table id="be-levers"></table></div>
+      <div id="be-notes" style="display:grid;gap:8px"></div>
+    </div>
+  </div>
+  <div class="guide">
+    <h3>Hướng dẫn sử dụng</h3>
+    <ol>
+      <li><b>Chọn kỳ tính</b> (ngày, tuần, tháng) và nhập <b>số kỳ trong năm</b> để công cụ quy lợi nhuận ra năm. Mọi con số phía dưới phải cùng một kỳ: nếu tính theo ngày thì chi phí chuyển đổi cũng là chi phí mỗi ngày.</li>
+      <li><b>Cột Trước</b>: số liệu hiện tại. <b>Cột Sau</b>: số liệu dự kiến hoặc đã đạt sau dự án. Bấm "Sao chép Trước → Sau" rồi chỉ sửa những dòng dự án làm thay đổi.</li>
+      <li><b>Giá bán / đv</b>: giá bình quân một sản phẩm. <b>CP biến đổi / đv</b>: chi phí tăng theo từng sản phẩm bán ra (nguyên vật liệu, bao bì, vận chuyển, hoa hồng).</li>
+      <li><b>CP chuyển đổi / kỳ</b>: chi phí không đổi theo sản lượng: tiền thuê, lương, khấu hao, điện nước, bảo trì. Ví dụ 50.625/tháng ÷ 25 ngày = 2.025/ngày.</li>
+      <li><b>Công suất</b> là số sản phẩm làm được, <b>nhu cầu</b> là số khách mua. Sản lượng bán = số nhỏ hơn trong hai số.</li>
+    </ol>
+    <h4>Đọc kết quả</h4>
+    <ul>
+      <li><b>Điểm hòa vốn</b>: sản lượng tối thiểu để không lỗ. Thấp hơn là tốt.</li>
+      <li><b>Báo cáo tài chính của dự án</b> tách lợi nhuận tăng thêm thành: giảm CP chuyển đổi, giảm CP biến đổi, tăng giá, bán thêm. Bốn phần cộng lại đúng bằng chênh lệch lợi nhuận.</li>
+      <li>Nếu công suất tăng mà nhu cầu không tăng, công cụ báo <b>công suất giải phóng</b>: có giá trị nhưng chưa thành tiền, không được báo cáo như tiết kiệm.</li>
+    </ul>
+    <h4>Nên dùng con số nào để báo cáo cost saving?</h4>
+    <ul>
+      <li><b>Cost saving (tiết kiệm cứng)</b> = CP chuyển đổi giảm + (CP biến đổi/đv giảm × sản lượng <i>trước</i> dự án). Đây là chi phí công ty không còn phải trả, kiểm chứng được trên hóa đơn, bảng lương, báo cáo chi phí. Dùng sản lượng trước dự án để không lẫn hiệu ứng bán thêm.</li>
+      <li><b>Tăng giá bán</b> và <b>bán thêm sản lượng</b> là <b>tăng lợi nhuận</b>, báo cáo riêng, không gọi là tiết kiệm chi phí.</li>
+      <li><b>Công suất giải phóng</b> (giảm setup, giảm lỗi, thu gọn layout mà nhu cầu không đổi) là <b>tiết kiệm mềm</b>: ghi số giờ máy, giờ người, m² giải phóng kèm kế hoạch biến thành tiền; chỉ cộng vào cost saving khi đã bán thêm, không tuyển thay người nghỉ, hoặc trả bớt mặt bằng.</li>
+      <li>Quy ra năm bằng <b>số kỳ trong năm</b>, và nên để phòng tài chính xác nhận số liệu trước dự án (baseline) ngay từ đầu.</li>
+    </ul>
+    <div class="formula">Biên đóng góp/đv = <b>Giá − CP biến đổi</b> · Hòa vốn (đv) = <b>CP chuyển đổi ÷ Biên đóng góp/đv</b> · Lợi nhuận = <b>Q × Biên đóng góp − CP chuyển đổi</b>, Q = min(công suất, nhu cầu)</div>
+    <p class="muted">Ví dụ khóa học: giá 65, vật liệu 50, CP chuyển đổi 2.025/ngày, 239 đv/ngày → hòa vốn 135 đv, lãi 1.560/ngày. Sau ba dự án (tiết kiệm điện và bảo trì, Kaizen setup lên 272 đv, giảm vật liệu xuống 43) → lãi 4.079/ngày, gấp 2,6 lần.</p>
+  </div>
+</section>
+
+<!-- ============ 2. PRODUCT MIX ON THE BOTTLENECK ============ -->
+<section class="panel" id="p-toc" role="tabpanel">
+  <div class="panel-head">
+    <div><h2>Ưu tiên sản phẩm theo nút thắt (TOC)</h2>
+      <p>Khi một nguồn lực là nút thắt, sản phẩm nào nên làm trước? Nhập các sản phẩm và thời gian chúng dùng nút thắt, công cụ so sánh hai cách ưu tiên.</p></div>
+    <div class="acts"><button class="btn" data-add="toc">+ Thêm sản phẩm</button><button class="btn" data-sample="toc">Điền ví dụ khóa học</button><button class="btn" data-clear="toc">Xoá số</button></div>
+  </div>
+  <div class="card">
+    <div class="grid2" style="margin-bottom:12px">
+      <div class="field"><label for="toc-time">Thời gian nút thắt khả dụng / kỳ<small>phút, ví dụ 5 ngày × 8 giờ = 2.400</small></label><input id="toc-time" type="number" inputmode="decimal" step="any" min="0"></div>
+      <div class="field"><label for="toc-conv">CP chuyển đổi / kỳ<small>cùng kỳ với thời gian nút thắt</small></label><input id="toc-conv" type="number" inputmode="decimal" step="any" min="0"></div>
+    </div>
+    <div class="tbl rows-table"><table id="toc-rows"></table></div>
+  </div>
+  <div class="kpis" id="toc-kpis"></div>
+  <div class="grid2">
+    <div class="tbl"><table id="toc-rank"></table></div>
+    <div class="tbl"><table id="toc-plans"></table></div>
+  </div>
+  <div id="toc-notes"></div>
+  <div class="guide">
+    <h3>Hướng dẫn sử dụng</h3>
+    <ol>
+      <li>Xác định <b>nút thắt</b>: nguồn lực có tải cao nhất, quyết định sản lượng cả hệ thống (máy, công đoạn, tổ, kiểm tra...).</li>
+      <li>Nhập <b>thời gian nút thắt khả dụng</b> trong kỳ (phút) và <b>CP chuyển đổi</b> của cả hệ thống trong kỳ đó.</li>
+      <li>Với mỗi sản phẩm, nhập giá bán, CP vật liệu/đv (gồm cả linh kiện mua ngoài), nhu cầu trong kỳ và <b>số phút dùng nút thắt</b> cho một đơn vị.</li>
+    </ol>
+    <h4>Đọc kết quả</h4>
+    <ul>
+      <li><b>Throughput / phút nút thắt</b> = (Giá − Vật liệu) ÷ phút nút thắt. Sản phẩm có chỉ số cao hơn được làm trước, đến khi hết nhu cầu, rồi tới sản phẩm tiếp theo.</li>
+      <li>Bảng phương án so sánh <b>ưu tiên theo nút thắt</b> với <b>ưu tiên theo biên đóng góp/đv</b> (cách hay làm theo thói quen). Chênh lệch là số tiền mất đi nếu xếp sai thứ tự.</li>
+      <li>Nút thắt còn dư phút nghĩa là nhu cầu đã được đáp ứng hết; khi đó nút thắt thật đang nằm ở thị trường.</li>
+    </ul>
+    <div class="formula">Ưu tiên = <b>(Giá − Vật liệu) ÷ phút dùng nút thắt</b> · Lợi nhuận = Doanh thu − Vật liệu − CP chuyển đổi</div>
+    <p class="muted">Ví dụ khóa học: P giá 90, Q giá 100. Nhìn biên đóng góp thì Q thắng (60 so với 45), nhưng P chỉ dùng 15 phút nút thắt B so với 30 phút của Q. Ưu tiên P lãi 300/tuần, ưu tiên Q lỗ 300/tuần.</p>
+  </div>
+</section>
+
+<!-- ============ 3. TARGET COST ============ -->
+<section class="panel" id="p-tc" role="tabpanel">
+  <div class="panel-head">
+    <div><h2>Chi phí mục tiêu (Target cost)</h2>
+      <p>Thị trường quyết định giá, công ty quyết định biên lợi nhuận cần đạt; phần còn lại là chi phí được phép. Nhập chi phí hiện tại và từng bước cải tiến để xem khoảng cách còn bao nhiêu.</p></div>
+    <div class="acts"><button class="btn" data-add="tc">+ Thêm giai đoạn</button><button class="btn" data-sample="tc">Điền ví dụ khóa học</button><button class="btn" data-clear="tc">Xoá số</button></div>
+  </div>
+  <div class="card">
+    <div class="grid2" style="margin-bottom:12px">
+      <div class="fields">
+        <div class="field"><label for="tc-price">Giá bán thị trường / đv</label><input id="tc-price" type="number" inputmode="decimal" step="any" min="0"></div>
+        <div class="field"><label for="tc-margin">Biên lợi nhuận yêu cầu (%)</label><input id="tc-margin" type="number" inputmode="decimal" step="any" min="0" max="100"></div>
+      </div>
+      <div class="fields">
+        <div class="field"><label for="tc-demand">Sản lượng<small>để tính khoảng cách bằng tiền</small></label><input id="tc-demand" type="number" inputmode="decimal" step="any" min="0"></div>
+      </div>
+    </div>
+    <div class="tbl rows-table"><table id="tc-rows"></table></div>
+  </div>
+  <div class="kpis" id="tc-kpis"></div>
+  <div class="card" style="padding:12px"><svg id="tc-chart" viewBox="0 0 640 260" role="img" aria-label="Chi phí mỗi giai đoạn so với chi phí mục tiêu"></svg></div>
+  <div class="tbl"><table id="tc-table"></table></div>
+  <div class="guide">
+    <h3>Hướng dẫn sử dụng</h3>
+    <ol>
+      <li>Nhập <b>giá bán</b> khách hàng chấp nhận và <b>biên lợi nhuận</b> công ty yêu cầu, công cụ tính ngay chi phí mục tiêu.</li>
+      <li>Dòng đầu tiên là <b>chi phí hiện tại</b> (CP chuyển đổi/đv và CP vật liệu/đv). Mỗi dòng sau là một bước cải tiến, nhập chi phí <b>sau</b> bước đó (đã cộng dồn các bước trước).</li>
+      <li>Nhập <b>sản lượng</b> để quy khoảng cách mỗi đơn vị ra tổng số tiền cần cắt giảm.</li>
+    </ol>
+    <h4>Gợi ý các tầng cải tiến</h4>
+    <ul>
+      <li><b>Product Kaikaku</b>: thiết kế lại sản phẩm, Value Engineering, DFSS/DFM để giảm vật liệu.</li>
+      <li><b>Procurement Kaizen</b>: hợp tác và đàm phán với nhà cung cấp, chuẩn hóa linh kiện.</li>
+      <li><b>Process Kaizen</b>: giảm lãng phí trong quy trình để hạ CP chuyển đổi/đv.</li>
+    </ul>
+    <div class="formula">Chi phí mục tiêu = <b>Giá × (1 − Biên lợi nhuận yêu cầu)</b> · Khoảng cách = (Chi phí/đv − Mục tiêu) × Sản lượng</div>
+    <p class="muted">Ví dụ khóa học, sản phẩm ZX12: giá 400, biên yêu cầu 57% → mục tiêu 172/đv. Hiện tại 205,84 (thiếu 16.920 cho 500 đv); sau ba tầng cải tiến đạt đúng 172.</p>
+  </div>
+</section>
+
+<!-- ============ 4. ROI ============ -->
+<section class="panel" id="p-roi" role="tabpanel">
+  <div class="panel-head">
+    <div><h2>ROI &amp; vốn (cây DuPont)</h2>
+      <p>ROI = biên lợi nhuận × vòng quay vốn. Nhập báo cáo của một năm, rồi nhập tác động dự kiến của dự án lên lợi nhuận và tồn kho để xem ROI thay đổi.</p></div>
+    <div class="acts"><button class="btn" data-sample="roi">Điền ví dụ khóa học</button><button class="btn" data-clear="roi">Xoá số</button></div>
+  </div>
+  <div class="grid-calc">
+    <div class="card"><div class="fields" id="roi-form"></div></div>
+    <div style="display:grid;gap:12px;min-width:0">
+      <div class="kpis" id="roi-kpis"></div>
+      <div class="tbl"><table id="roi-table"></table></div>
+      <div id="roi-notes"></div>
+    </div>
+  </div>
+  <div class="guide">
+    <h3>Hướng dẫn sử dụng</h3>
+    <ol>
+      <li>Lấy số từ <b>báo cáo kết quả kinh doanh</b> (doanh thu, chi phí) và <b>bảng cân đối kế toán</b> (tồn kho, phải thu, tiền, nợ ngắn hạn, đầu tư dài hạn) của cùng một năm.</li>
+      <li>Ở phần <b>Tác động của dự án</b>, nhập lợi nhuận tăng thêm mỗi năm (có thể lấy từ máy tính 1) và số tồn kho giảm được nhờ Kanban, 5S, WIP ổn định.</li>
+    </ol>
+    <h4>Đọc kết quả</h4>
+    <ul>
+      <li><b>Biên lợi nhuận</b> = Lợi nhuận ÷ Doanh thu: bốn đòn bẩy đầu (giảm chi phí, tăng công suất, tăng nhu cầu, tăng biên đóng góp) tác động vào đây.</li>
+      <li><b>Vòng quay vốn</b> = Doanh thu ÷ Vốn đầu tư thuần: đòn bẩy thứ năm (cấu trúc vốn) tác động vào đây, ví dụ giảm tồn kho, thu tiền nhanh hơn.</li>
+      <li>Giảm tồn kho làm ROI tăng dù lợi nhuận không đổi, vì cùng một lợi nhuận được tạo ra từ ít vốn hơn.</li>
+    </ul>
+    <div class="formula">ROI = <b>(LN ÷ DT) × (DT ÷ Vốn thuần)</b> · Vốn thuần = (Tồn kho + Phải thu + Tiền − Nợ ngắn hạn) + Đầu tư dài hạn − Nợ ban đầu</div>
+    <p class="muted">Ví dụ khóa học: lợi nhuận 1.180.000, vốn thuần 17.356.000 → ROI 6,80%. Tồn kho 15 triệu chiếm gần 87% vốn, nên giảm tồn kho là đòn bẩy ROI mạnh nhất ở đây. Trong bảng tính gốc, ô "RONA" thực ra là vòng quay vốn.</p>
+  </div>
+</section>
+
+<!-- ============ BACKGROUND KNOWLEDGE ============ -->
+<section class="panel" id="p-learn" role="tabpanel">
+  <div class="lesson" style="padding-top:0">
+    <div class="guide">
+      <h3>Mô hình lợi nhuận (Profit Model)</h3>
+      <p>Trục ngang là <b>sản lượng</b>, trục dọc là <b>tiền</b>. <b style="color:var(--fixed)">Chi phí chuyển đổi</b> là đường nằm ngang (không đổi theo sản lượng). <b style="color:var(--cost)">Tổng chi phí</b> = CP chuyển đổi + CP biến đổi, dốc lên theo từng đơn vị bán ra. <b style="color:var(--rev)">Doanh thu</b> = giá × sản lượng. Chỗ doanh thu cắt tổng chi phí là <b>điểm hòa vốn</b>: bên trái lỗ, bên phải lãi.</p>
+      <p>Một dự án Lean Six Sigma chỉ thuyết phục được lãnh đạo khi nói rõ nó kéo đường nào trên biểu đồ này.</p>
+    </div>
+    <h2>Năm đòn bẩy tài chính của dự án</h2>
+    <div class="levers">
+      <div class="lever"><span class="tag">1 · Giảm chi phí</span><h4>Cost reduction</h4><p>Loại bỏ chi phí công ty <b>thực sự không còn phải trả</b>: phí trả chậm, vật liệu sửa hàng lỗi, vận chuyển hàng trả về, tăng ca, thuê mặt bằng, năng lượng (thường 10-20% tổng chi phí).</p><p class="moves">Đường CP chuyển đổi hạ xuống, hòa vốn dịch sang trái.</p></div>
+      <div class="lever"><span class="tag">2 · Tăng công suất</span><h4>Increase in capacity</h4><p>Giảm thời gian setup, giảm diện tích, giảm lỗi và làm lại, cắt hoạt động không tạo giá trị.</p><p class="moves">Chỉ thành tiền khi có thêm nhu cầu để lấp vào, hoặc khi cắt bớt nguồn lực.</p></div>
+      <div class="lever"><span class="tag">3 · Tăng nhu cầu</span><h4>Increase in demand</h4><p>Giao nhanh, chất lượng, cá nhân hóa, dịch vụ, giá tốt, uy tín. Ví dụ: nhà cung cấp bao bì giảm lead time từ 42-45 ngày xuống 12 ngày.</p><p class="moves">Sản lượng bán dịch sang phải, vùng lãi rộng ra.</p></div>
+      <div class="lever"><span class="tag">4 · Tăng biên đóng góp</span><h4>Contribution margin</h4><p>Tăng giá nhờ giá trị, giảm lượng vật liệu, hợp tác nhà cung cấp, Value Engineering, DFSS/DFM, giảm hoa hồng và vận chuyển.</p><p class="moves">Đường tổng chi phí thoải hơn, khoảng lãi mở nhanh hơn.</p></div>
+      <div class="lever"><span class="tag">5 · Cấu trúc vốn</span><h4>Capital structure</h4><p>Tài sản cố định vừa đủ dùng; tồn kho thấp nhờ Kanban, 5S, WIP ổn định; phải thu nhanh nhờ xuất hóa đơn khi giao, Poka-Yoke trên hóa đơn, chiết khấu trả sớm.</p><p class="moves">Tác động vào mẫu số của ROI (máy tính 4).</p></div>
+    </div>
+    <div class="callout"><b>Sai lầm hay gặp: tăng công suất không phải là giảm chi phí.</b> Giảm setup hay thu gọn layout tạo năng lực dư, nhưng tự nó không làm hóa đơn nào biến mất: công nhân vẫn nhận lương, nhà xưởng vẫn trả tiền thuê. Hãy báo cáo tách hai dòng: <b>tiết kiệm cứng</b> (chi phí đã mất hẳn) và <b>công suất giải phóng</b> (giờ máy, giờ người, m²) kèm kế hoạch biến nó thành tiền: bán thêm, không tuyển thay người nghỉ, trả bớt mặt bằng, không phải đầu tư xưởng mới.</div>
+    <h2>Bảng công thức</h2>
+    <div class="sheet">
+      <div><span class="t">Biên đóng góp</span><span class="f">Giá − CP biến đổi</span><span class="f">% = (Giá − CP biến đổi) ÷ Giá</span></div>
+      <div><span class="t">Điểm hòa vốn</span><span class="f">đv = CP chuyển đổi ÷ biên/đv</span><span class="f">tiền = CP chuyển đổi ÷ biên %</span></div>
+      <div><span class="t">CP chuyển đổi / đv</span><span class="f">CP chuyển đổi kỳ ÷ sản lượng kỳ</span></div>
+      <div><span class="t">Lợi nhuận</span><span class="f">Q × (Giá − CP biến đổi) − CP chuyển đổi</span><span class="f">Q = min(công suất, nhu cầu)</span></div>
+      <div><span class="t">Ưu tiên khi có nút thắt</span><span class="f">Throughput ÷ phút dùng nút thắt</span></div>
+      <div><span class="t">Chi phí mục tiêu</span><span class="f">Giá × (1 − biên LN yêu cầu)</span></div>
+      <div><span class="t">Vốn đầu tư</span><span class="f">TS cố định + Tồn kho + Phải thu</span></div>
+      <div><span class="t">ROI (DuPont)</span><span class="f">(LN ÷ DT) × (DT ÷ Vốn) = LN ÷ Vốn</span></div>
+    </div>
+    <p class="muted" style="font-size:.85rem">Nguồn: giáo trình Lean Six Sigma Black Belt của Lean Six Sigma Institute (LSSI); khung năm đòn bẩy theo sách The Value Add Accountant (Jean Cunningham).</p>
+  </div>
+</section>
+
+<footer class="credit"><span>Công cụ đào tạo của <b>WISE Academy</b>, đối tác ủy quyền của LSSI Global tại Việt Nam</span><span>wisedemy.com.vn</span></footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var STORE = "wise-fin-v1";
+
+  /* ---------- course examples (LSSI Black Belt 5.4) ---------- */
+  var SAMPLE = {
+    be: { period: "ngày", ppy: 300,
+      before: { price: 65, vc: 50, conv: 2025, cap: 239, dem: 239 },
+      after: { price: 65, vc: 43, conv: 1905, cap: 272, dem: 272 } },
+    toc: { time: 2400, conv: 6000, rows: [
+      { name: "P", price: 90, mat: 45, dem: 100, min: 15 },
+      { name: "Q", price: 100, mat: 40, dem: 50, min: 30 }] },
+    tc: { price: 400, margin: 57, demand: 500, rows: [
+      { name: "Hiện tại", conv: 50.84, mat: 155 },
+      { name: "Product Kaikaku", conv: 49.12, mat: 135 },
+      { name: "Procurement Kaizen", conv: 49.12, mat: 128.25 },
+      { name: "Process Kaizen", conv: 43.75, mat: 128.25 }] },
+    roi: { sales: 5000000, mat: 2000000, labor: 250000, oh: 800000, sell: 180000, admin: 500000, tax: 90000,
+      inv: 15000000, ar: 90000, cash: 4000, cl: 4000, perm: 2300000, debt: 34000, dProfit: 0, dInv: 0 }
+  };
+  var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
+  var S = (function () {
+    try { var s = JSON.parse(localStorage.getItem(STORE) || "null"); if (s && s.be && s.toc && s.tc && s.roi) return s; } catch (e) { }
+    var d = clone(SAMPLE); d.cur = "USD"; return d;
+  })();
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) { } }
+
+  /* ---------- formatting ---------- */
+  var num = function (v) { var n = parseFloat(v); return isFinite(n) ? n : 0; };
+  function fmtN(n, d) { if (!isFinite(n)) return "∞"; return n.toLocaleString("vi-VN", { maximumFractionDigits: d == null ? 0 : d, minimumFractionDigits: 0 }); }
+  function money(n, d) {
+    if (!isFinite(n)) return "∞";
+    var neg = n < 0, a = Math.abs(n);
+    var s = S.cur === "USD" ? "$" + a.toLocaleString("vi-VN", { maximumFractionDigits: d == null ? 2 : d }) : a.toLocaleString("vi-VN", { maximumFractionDigits: d == null ? 0 : d }) + " ₫";
+    return (neg ? "−" : "") + s;
+  }
+  var pct = function (x, d) { return isFinite(x) ? (x * 100).toLocaleString("vi-VN", { maximumFractionDigits: d == null ? 1 : d, minimumFractionDigits: d == null ? 1 : d }) + "%" : "-"; };
+  var cls = function (n) { return n > 0 ? "pos" : n < 0 ? "neg" : ""; };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  function kpis(el, items) {
+    el.innerHTML = items.map(function (k) {
+      return '<div class="kpi"><span class="k">' + k[0] + '</span><span class="v ' + (k[2] || "") + '">' + k[1] + '</span>' + (k[3] ? '<span class="s">' + k[3] + '</span>' : "") + "</div>";
+    }).join("");
+  }
+
+  /* ---------- tabs ---------- */
+  document.querySelectorAll(".tab").forEach(function (t) {
+    t.addEventListener("click", function () {
+      document.querySelectorAll(".tab").forEach(function (x) { x.setAttribute("aria-selected", String(x === t)); });
+      document.querySelectorAll(".panel").forEach(function (p) { p.classList.toggle("on", p.id === "p-" + t.dataset.tab); });
+    });
+  });
+
+  /* ============ 1. break-even & profit ============ */
+  var BE_FIELDS = [
+    ["price", "Giá bán / đv", ""],
+    ["vc", "CP biến đổi / đv", "vật liệu, bao bì, vận chuyển"],
+    ["conv", "CP chuyển đổi / kỳ", "thuê, lương, điện, bảo trì"],
+    ["cap", "Công suất / kỳ", "số đv làm được"],
+    ["dem", "Nhu cầu / kỳ", "số đv khách mua"]];
+  (function buildBe() {
+    var f = $("be-form");
+    BE_FIELDS.forEach(function (r) {
+      f.insertAdjacentHTML("beforeend", '<label for="be-b-' + r[0] + '">' + r[1] + (r[2] ? "<small>" + r[2] + "</small>" : "") + "</label>" +
+        '<input class="in" id="be-b-' + r[0] + '" data-k="' + r[0] + '" data-s="before" type="number" inputmode="decimal" step="any" min="0" aria-label="' + r[1] + ', trước dự án">' +
+        '<input class="in" id="be-a-' + r[0] + '" data-k="' + r[0] + '" data-s="after" type="number" inputmode="decimal" step="any" min="0" aria-label="' + r[1] + ', sau dự án">');
+    });
+    f.querySelectorAll("input").forEach(function (i) {
+      i.addEventListener("input", function () { S.be[i.dataset.s][i.dataset.k] = i.value === "" ? "" : num(i.value); save(); calcBe(); });
+    });
+    $("be-period").addEventListener("change", function () { S.be.period = this.value; save(); calcBe(); });
+    $("be-ppy").addEventListener("input", function () { S.be.ppy = this.value === "" ? "" : num(this.value); save(); calcBe(); });
+  })();
+  function fillBe() {
+    BE_FIELDS.forEach(function (r) { $("be-b-" + r[0]).value = S.be.before[r[0]]; $("be-a-" + r[0]).value = S.be.after[r[0]]; });
+    $("be-period").value = S.be.period; $("be-ppy").value = S.be.ppy;
+  }
+  function model(s) {
+    var p = num(s.price), v = num(s.vc), c = num(s.conv), cap = num(s.cap), dem = num(s.dem);
+    var q = Math.min(cap, dem), cm = p - v, rev = q * p, profit = q * cm - c;
+    return { p: p, v: v, c: c, cap: cap, dem: dem, q: q, cm: cm, cmPct: p ? cm / p : NaN, rev: rev, mat: q * v, profit: profit,
+      pos: rev ? profit / rev : NaN, bep: cm > 0 ? c / cm : Infinity, bepMoney: cm > 0 && p ? c / (cm / p) : Infinity, cpu: q ? c / q : NaN, spare: Math.max(0, cap - dem) };
+  }
+  function calcBe() {
+    var B = model(S.be.before), A = model(S.be.after), per = S.be.period, ppy = num(S.be.ppy);
+    var d = A.profit - B.profit;
+    kpis($("be-kpis"), [
+      ["Lợi nhuận / " + per + " (sau)", money(A.profit), cls(A.profit), "trước: " + money(B.profit)],
+      ["Cost saving (tiết kiệm cứng)", money((B.c - A.c) + (B.v - A.v) * B.q), cls((B.c - A.c) + (B.v - A.v) * B.q), ppy ? money(((B.c - A.c) + (B.v - A.v) * B.q) * ppy) + " / năm" : "nhập số kỳ trong năm"],
+      ["Điểm hòa vốn (sau)", isFinite(A.bep) ? fmtN(A.bep, 1) + " đv" : "không hòa vốn", isFinite(A.bep) ? "" : "neg", "trước: " + (isFinite(B.bep) ? fmtN(B.bep, 1) + " đv" : "không")],
+      ["Lợi nhuận tăng thêm", money(d), cls(d), ppy ? money(d * ppy) + " / năm" : "gồm cả tăng giá, bán thêm"]]);
+    var rows = [
+      ["Sản lượng bán / " + per, fmtN(B.q, 2), fmtN(A.q, 2), A.q - B.q, "n"],
+      ["Doanh thu", money(B.rev), money(A.rev), A.rev - B.rev, "m"],
+      ["CP biến đổi", money(B.mat), money(A.mat), A.mat - B.mat, "m-"],
+      ["CP chuyển đổi", money(B.c), money(A.c), A.c - B.c, "m-"],
+      ["Lợi nhuận", money(B.profit), money(A.profit), d, "m", true],
+      ["Lợi nhuận / doanh thu", pct(B.pos), pct(A.pos), A.pos - B.pos, "p", true],
+      ["Biên đóng góp / đv", money(B.cm), money(A.cm), A.cm - B.cm, "m"],
+      ["Biên đóng góp %", pct(B.cmPct), pct(A.cmPct), A.cmPct - B.cmPct, "p"],
+      ["Điểm hòa vốn (đv)", fmtN(B.bep, 1), fmtN(A.bep, 1), A.bep - B.bep, "n-"],
+      ["Điểm hòa vốn (doanh thu)", money(B.bepMoney, 0), money(A.bepMoney, 0), A.bepMoney - B.bepMoney, "m-"],
+      ["CP chuyển đổi / đv", money(B.cpu), money(A.cpu), A.cpu - B.cpu, "m-"],
+      ["Công suất chưa có nhu cầu", fmtN(B.spare, 2), fmtN(A.spare, 2), A.spare - B.spare, "n0"]];
+    $("be-table").innerHTML = "<thead><tr><th>Chỉ tiêu</th><th class='n'>Trước</th><th class='n'>Sau</th><th class='n'>Chênh lệch</th></tr></thead><tbody>" +
+      rows.map(function (r) {
+        var dv = r[3], good = /-$/.test(r[4]) ? -dv : dv, txt;
+        if (!isFinite(dv)) txt = "-"; else if (r[4][0] === "m") txt = money(dv); else if (r[4][0] === "p") txt = (dv * 100 >= 0 ? "+" : "") + fmtN(dv * 100, 1) + " điểm %"; else txt = (dv > 0 ? "+" : "") + fmtN(dv, 2);
+        var c = r[4] === "n0" || !isFinite(dv) || Math.abs(dv) < 1e-9 ? "" : good > 0 ? "good" : "bad";
+        return "<tr" + (r[5] ? " class='hl'" : "") + "><td>" + r[0] + "</td><td class='n'>" + r[1] + "</td><td class='n'>" + r[2] + "</td><td class='n " + c + "'>" + txt + "</td></tr>";
+      }).join("") + "</tbody>";
+    // what to report: hard savings vs revenue growth vs freed capacity (the four money lines add up to the profit change)
+    var conv = B.c - A.c, varSave = (B.v - A.v) * B.q, priceUp = (A.p - B.p) * B.q, volume = (A.q - B.q) * A.cm;
+    var hard = conv + varSave, freed = Math.max(0, A.cap - B.cap - Math.max(0, A.q - B.q)), freedVal = freed * (B.q ? B.c / B.q : 0);
+    var line = function (k, v, note, hl) {
+      return "<tr" + (hl ? " class='hl'" : "") + "><td>" + k + (note ? "<br><small class='muted' style='white-space:normal'>" + note + "</small>" : "") + "</td><td class='n " + (v > 0 ? "good" : v < 0 ? "bad" : "") + "'>" + money(v) + "</td><td class='n'>" + (ppy ? money(v * ppy) : "-") + "</td></tr>";
+    };
+    $("be-levers").innerHTML = "<thead><tr><th>Báo cáo tài chính của dự án</th><th class='n'>/ " + per + "</th><th class='n'>/ năm</th></tr></thead><tbody>" +
+      line("Giảm CP chuyển đổi", conv, "điện, bảo trì, tăng ca, thuê mặt bằng... đã giảm thật") +
+      line("Giảm CP biến đổi", varSave, "(CP biến đổi trước − sau) × sản lượng trước") +
+      line("COST SAVING (tiết kiệm cứng)", hard, "con số dùng để báo cáo tiết kiệm chi phí", true) +
+      line("Tăng giá bán", priceUp, "tăng doanh thu, không phải tiết kiệm") +
+      line("Bán thêm sản lượng", volume, "chỉ tính khi nhu cầu thật sự tăng") +
+      line("Tổng lợi nhuận tăng thêm", d, "", true) + "</tbody>";
+    var notes = [];
+    if (freed > 0) notes.push('<div class="callout"><b>Công suất giải phóng: ' + fmtN(freed, 2) + " đv/" + per + "</b>, tương đương khoảng " + money(freedVal) + "/" + per + " CP chuyển đổi (theo chi phí/đv trước dự án). Đây là <b>tiết kiệm mềm</b>: ghi riêng, không cộng vào cost saving cho đến khi bán thêm được hoặc cắt bớt nguồn lực tương ứng.</div>");
+    else if (A.spare > 0) notes.push('<div class="callout">Còn <b>' + fmtN(A.spare, 2) + " đv/" + per + "</b> công suất chưa có nhu cầu. Mỗi đv bán thêm mang về " + money(A.cm) + " lợi nhuận.</div>");
+    if (A.cm <= 0) notes.push('<div class="callout">Biên đóng góp bằng 0 hoặc âm: bán càng nhiều càng lỗ, không có điểm hòa vốn.</div>');
+    $("be-notes").innerHTML = notes.join("");
+    drawBe(B, A);
+  }
+  function drawBe(B, A) {
+    var svg = $("be-chart"), NS = "http://www.w3.org/2000/svg", W = 640, H = 380, Lm = 70, R = 16, T = 18, Bm = 44;
+    var xMax = Math.max(A.cap, A.dem, B.cap, B.dem, isFinite(A.bep) ? A.bep : 0, isFinite(B.bep) ? B.bep : 0, 1) * 1.15;
+    var yMax = Math.max(A.p * xMax, A.c + A.v * xMax, B.p * xMax, B.c + B.v * xMax, 1) * 1.05;
+    var X = function (q) { return Lm + q / xMax * (W - Lm - R); }, Y = function (y) { return T + (1 - y / yMax) * (H - T - Bm); };
+    svg.innerHTML = "";
+    function el(n, a, txt) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+    function nice(m) { var p = Math.pow(10, Math.floor(Math.log10(m))), f = m / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p; }
+    var ys = nice(yMax / 5), xs = nice(xMax / 6);
+    var short = function (v) { var a = Math.abs(v); return a >= 1e9 ? fmtN(v / 1e9, 1) + " tỷ" : a >= 1e6 ? fmtN(v / 1e6, 1) + "tr" : a >= 1e3 ? fmtN(v / 1e3, 1) + "k" : fmtN(v); };
+    for (var y = 0; y <= yMax; y += ys) { el("line", { x1: Lm, x2: W - R, y1: Y(y), y2: Y(y), stroke: "var(--line)" }); el("text", { x: Lm - 8, y: Y(y) + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)" }, short(y)); }
+    for (var x = 0; x <= xMax; x += xs) el("text", { x: X(x), y: H - Bm + 18, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)" }, short(x));
+    el("text", { x: (Lm + W - R) / 2, y: H - 6, "text-anchor": "middle", "font-size": 12, fill: "var(--muted)" }, "Sản lượng (đv/" + S.be.period + ")");
+    // before: faint dashed lines
+    el("line", { x1: X(0), x2: X(xMax), y1: Y(B.c), y2: Y(B.c + B.v * xMax), stroke: "var(--cost)", "stroke-width": 1.5, "stroke-dasharray": "5 5", opacity: .45 });
+    el("line", { x1: X(0), x2: X(xMax), y1: Y(0), y2: Y(B.p * xMax), stroke: "var(--rev)", "stroke-width": 1.5, "stroke-dasharray": "5 5", opacity: .45 });
+    // after: zones and lines
+    var b = Math.min(A.bep, A.q);
+    if (A.q > 0) el("polygon", { points: X(0) + "," + Y(A.c) + " " + X(b) + "," + Y(A.c + A.v * b) + " " + X(b) + "," + Y(A.p * b) + " " + X(0) + "," + Y(0), fill: "var(--bad-fill)" });
+    if (A.bep < A.q) el("polygon", { points: X(A.bep) + "," + Y(A.p * A.bep) + " " + X(A.q) + "," + Y(A.p * A.q) + " " + X(A.q) + "," + Y(A.c + A.v * A.q), fill: "var(--good-fill)" });
+    el("line", { x1: X(0), x2: X(xMax), y1: Y(A.c), y2: Y(A.c), stroke: "var(--fixed)", "stroke-width": 2, "stroke-dasharray": "6 4" });
+    el("line", { x1: X(0), x2: X(xMax), y1: Y(A.c), y2: Y(A.c + A.v * xMax), stroke: "var(--cost)", "stroke-width": 2.5 });
+    el("line", { x1: X(0), x2: X(xMax), y1: Y(0), y2: Y(A.p * xMax), stroke: "var(--rev)", "stroke-width": 2.5 });
+    el("line", { x1: X(A.cap), x2: X(A.cap), y1: T, y2: H - Bm, stroke: "var(--muted)", "stroke-dasharray": "2 4" });
+    el("text", { x: X(A.cap) + 4, y: T + 12, "font-size": 11, fill: "var(--muted)" }, "công suất " + fmtN(A.cap));
+    if (A.q > 0) {
+      var col = A.profit >= 0 ? "var(--good)" : "var(--bad)";
+      el("line", { x1: X(A.q), x2: X(A.q), y1: Y(A.c + A.v * A.q), y2: Y(A.rev), stroke: col, "stroke-width": 3 });
+      el("text", { x: X(A.q) - 6, y: Math.max(T + 12, Math.min(Y(A.rev), Y(A.c + A.v * A.q)) - 8), "text-anchor": "end", "font-size": 12, "font-weight": 700, fill: col, "font-family": "var(--mono)" }, "LN " + money(A.profit, 0));
+    }
+    if (isFinite(A.bep) && A.bep <= xMax) {
+      el("circle", { cx: X(A.bep), cy: Y(A.p * A.bep), r: 5, fill: "#fff", stroke: "var(--navy)", "stroke-width": 2 });
+      el("text", { x: X(A.bep) + 8, y: Y(A.p * A.bep) + 18, "font-size": 11, fill: "var(--navy)", "font-family": "var(--mono)" }, "hòa vốn " + fmtN(A.bep, 1));
+    }
+    el("line", { x1: Lm, x2: W - R, y1: Y(0), y2: Y(0), stroke: "var(--ink)" });
+  }
+
+  /* ============ 2. product mix on the bottleneck ============ */
+  var TOC_COLS = [["name", "Sản phẩm", "name"], ["price", "Giá bán / đv"], ["mat", "CP vật liệu / đv"], ["dem", "Nhu cầu / kỳ"], ["min", "Phút nút thắt / đv"]];
+  function rowsTable(id, cols, rows, onChange, canRemove) {
+    var t = $(id);
+    t.innerHTML = "<thead><tr>" + cols.map(function (c) { return "<th" + (c[2] ? "" : " class='n'") + ">" + c[1] + "</th>"; }).join("") + "<th></th></tr></thead><tbody>" +
+      rows.map(function (r, i) {
+        return "<tr>" + cols.map(function (c) {
+          return "<td><input class='in" + (c[2] ? " name" : "") + "' data-i='" + i + "' data-k='" + c[0] + "' " + (c[2] ? "type='text'" : "type='number' inputmode='decimal' step='any' min='0'") + " value='" + esc(r[c[0]]) + "' aria-label='" + c[1] + " dòng " + (i + 1) + "'></td>";
+        }).join("") + "<td>" + (canRemove ? "<button class='x' data-del='" + i + "' title='Xoá dòng' aria-label='Xoá dòng " + (i + 1) + "'>×</button>" : "") + "</td></tr>";
+      }).join("") + "</tbody>";
+    t.querySelectorAll("input").forEach(function (inp) {
+      inp.addEventListener("input", function () { var r = rows[+inp.dataset.i]; r[inp.dataset.k] = inp.type === "text" ? inp.value : (inp.value === "" ? "" : num(inp.value)); onChange(false); });
+    });
+    t.querySelectorAll("[data-del]").forEach(function (b) { b.addEventListener("click", function () { rows.splice(+b.dataset.del, 1); onChange(true); }); });
+  }
+  function mix(time, conv, prods, order) {
+    var left = time, sales = 0, mat = 0, plan = {};
+    order.forEach(function (i) {
+      var p = prods[i], m = num(p.min), q = m > 0 ? Math.min(num(p.dem), Math.floor(left / m)) : num(p.dem);
+      q = Math.max(0, q); plan[i] = q; left -= q * m; sales += q * num(p.price); mat += q * num(p.mat);
+    });
+    return { plan: plan, sales: sales, mat: mat, profit: sales - mat - conv, idle: left };
+  }
+  function calcToc(rebuild) {
+    var T = S.toc;
+    if (rebuild) rowsTable("toc-rows", TOC_COLS, T.rows, function (r) { save(); calcToc(r); }, T.rows.length > 1);
+    var time = num(T.time), conv = num(T.conv), P = T.rows;
+    var tp = P.map(function (p) { return num(p.price) - num(p.mat); });
+    var rate = P.map(function (p, i) { return num(p.min) > 0 ? tp[i] / num(p.min) : Infinity; });
+    var idx = P.map(function (_, i) { return i; });
+    var byToc = idx.slice().sort(function (a, b) { return rate[b] - rate[a]; });
+    var byCm = idx.slice().sort(function (a, b) { return tp[b] - tp[a]; });
+    var A = mix(time, conv, P, byToc), Bm = mix(time, conv, P, byCm), gain = A.profit - Bm.profit;
+    var nm = function (i) { return esc(P[i].name || "SP " + (i + 1)); };
+    kpis($("toc-kpis"), [
+      ["Lợi nhuận: ưu tiên theo nút thắt", money(A.profit), cls(A.profit)],
+      ["Lợi nhuận: ưu tiên theo biên/đv", money(Bm.profit), cls(Bm.profit)],
+      ["Chênh lệch mỗi kỳ", money(gain), cls(gain)],
+      ["Phút nút thắt còn dư", fmtN(A.idle, 1), "", "theo phương án nút thắt"]]);
+    $("toc-rank").innerHTML = "<thead><tr><th>Sản phẩm</th><th class='n'>Throughput / đv</th><th class='n'>Throughput / phút</th><th class='n'>Thứ tự</th></tr></thead><tbody>" +
+      byToc.map(function (i, k) { return "<tr" + (k === 0 ? " class='hl'" : "") + "><td>" + nm(i) + "</td><td class='n'>" + money(tp[i]) + "</td><td class='n'>" + (isFinite(rate[i]) ? money(rate[i]) : "∞") + "</td><td class='n'>" + (k + 1) + "</td></tr>"; }).join("") + "</tbody>";
+    var plan = function (title, R, order) {
+      return "<tr><th colspan='2'>" + title + "</th></tr>" + order.map(function (i) { return "<tr><td>" + nm(i) + ": " + fmtN(R.plan[i]) + " đv (" + fmtN(R.plan[i] * num(P[i].min)) + " phút)</td><td class='n'>" + money(R.plan[i] * num(P[i].price)) + "</td></tr>"; }).join("") +
+        "<tr><td>Vật liệu</td><td class='n'>" + money(-R.mat) + "</td></tr><tr><td>CP chuyển đổi</td><td class='n'>" + money(-conv) + "</td></tr>" +
+        "<tr class='hl'><td>Lợi nhuận</td><td class='n " + (R.profit >= 0 ? "good" : "bad") + "'>" + money(R.profit) + "</td></tr>";
+    };
+    $("toc-plans").innerHTML = "<tbody>" + plan("Ưu tiên theo nút thắt", A, byToc) + plan("Ưu tiên theo biên đóng góp / đv", Bm, byCm) + "</tbody>";
+    $("toc-notes").innerHTML = gain > 0 ? '<div class="callout"><b>Xếp theo biên đóng góp/đv làm mất ' + money(gain) + " mỗi kỳ.</b> Khi có nút thắt, hãy ưu tiên " + nm(byToc[0]) + ", sản phẩm tạo nhiều throughput nhất trên mỗi phút nút thắt.</div>"
+      : '<div class="callout ok">Hai cách ưu tiên cho cùng kết quả với số liệu này (nút thắt đủ phút cho toàn bộ nhu cầu, hoặc hai cách xếp trùng nhau).</div>';
+  }
+
+  /* ============ 3. target cost ============ */
+  var TC_COLS = [["name", "Giai đoạn", "name"], ["conv", "CP chuyển đổi / đv"], ["mat", "CP vật liệu / đv"]];
+  function calcTc(rebuild) {
+    var C = S.tc;
+    if (rebuild) rowsTable("tc-rows", TC_COLS, C.rows, function (r) { save(); calcTc(r); }, C.rows.length > 1);
+    var price = num(C.price), m = num(C.margin) / 100, demand = num(C.demand), target = price * (1 - m);
+    var st = C.rows.map(function (r) { var tot = num(r.conv) + num(r.mat); return { name: r.name, tot: tot, diff: tot - target, gap: (tot - target) * demand, margin: price ? (price - tot) / price : NaN }; });
+    var last = st[st.length - 1] || { tot: 0, diff: 0, gap: 0, margin: 0 }, first = st[0] || last;
+    kpis($("tc-kpis"), [
+      ["Chi phí mục tiêu / đv", money(target), "", "giá × (1 − " + fmtN(m * 100, 1) + "%)"],
+      ["Chi phí hiện tại / đv", money(first.tot), "", "biên " + pct(first.margin)],
+      ["Sau giai đoạn cuối / đv", money(last.tot), last.diff <= 1e-9 ? "pos" : "neg", "biên " + pct(last.margin)],
+      ["Còn phải cắt", last.diff > 1e-9 ? money(last.gap) : "Đạt mục tiêu", last.diff > 1e-9 ? "neg" : "pos", last.diff > 1e-9 ? money(last.diff) + " / đv" : ""]]);
+    $("tc-table").innerHTML = "<thead><tr><th>Giai đoạn</th><th class='n'>Tổng CP / đv</th><th class='n'>Chênh mục tiêu / đv</th><th class='n'>Khoảng cách × sản lượng</th><th class='n'>Biên lợi nhuận</th></tr></thead><tbody>" +
+      st.map(function (s, i) { var ok = s.diff <= 1e-9; return "<tr" + (i === st.length - 1 ? " class='hl'" : "") + "><td>" + esc(s.name || "Giai đoạn " + (i + 1)) + "</td><td class='n'>" + money(s.tot) + "</td><td class='n " + (ok ? "good" : "bad") + "'>" + money(Math.max(0, s.diff)) + "</td><td class='n'>" + money(Math.max(0, s.gap)) + "</td><td class='n'>" + pct(s.margin) + "</td></tr>"; }).join("") + "</tbody>";
+    // bars: conversion + material per stage against the target line
+    var svg = $("tc-chart"), NS = "http://www.w3.org/2000/svg", W = 640, H = 260, L = 14, R = 14, T = 16, B = 46;
+    svg.innerHTML = "";
+    function el(n, a, txt) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+    var max = Math.max(target, 1); st.forEach(function (s) { max = Math.max(max, s.tot); }); max *= 1.12;
+    var n = Math.max(st.length, 1), bw = Math.min(90, (W - L - R) / n * .55), Y = function (v) { return T + (1 - v / max) * (H - T - B); };
+    C.rows.forEach(function (r, i) {
+      var cx = L + (i + .5) * (W - L - R) / n, x = cx - bw / 2, mt = num(r.mat), cv = num(r.conv);
+      el("rect", { x: x, y: Y(mt), width: bw, height: Y(0) - Y(mt), fill: "var(--navy)", rx: 3 });
+      el("rect", { x: x, y: Y(mt + cv), width: bw, height: Y(mt) - Y(mt + cv), fill: "#7FA6CC", rx: 3 });
+      el("text", { x: cx, y: Y(mt + cv) - 6, "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: "var(--ink)", "font-family": "var(--mono)" }, money(mt + cv));
+      el("text", { x: cx, y: H - B + 18, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)" }, (r.name || "GĐ " + (i + 1)).slice(0, 22));
+    });
+    el("line", { x1: L, x2: W - R, y1: Y(target), y2: Y(target), stroke: "var(--orange)", "stroke-width": 2, "stroke-dasharray": "6 4" });
+    el("text", { x: W - R, y: Y(target) - 6, "text-anchor": "end", "font-size": 12, "font-weight": 700, fill: "var(--orange-ink)" }, "mục tiêu " + money(target));
+    el("text", { x: L, y: H - 6, "font-size": 11, fill: "var(--muted)" }, "■ vật liệu (đậm) · CP chuyển đổi (nhạt)");
+  }
+
+  /* ============ 4. ROI ============ */
+  var ROI_FIELDS = [
+    ["Kết quả kinh doanh (năm)"], ["sales", "Doanh thu"], ["mat", "CP sản xuất: vật liệu"], ["labor", "CP sản xuất: nhân công"], ["oh", "CP sản xuất: chi phí chung"],
+    ["sell", "Chi phí bán hàng"], ["admin", "Chi phí quản lý"], ["tax", "Thuế"],
+    ["Vốn lưu động"], ["inv", "Tồn kho"], ["ar", "Phải thu"], ["cash", "Tiền mặt"], ["cl", "Nợ ngắn hạn"],
+    ["Vốn dài hạn"], ["perm", "Đầu tư dài hạn (tài sản cố định)"], ["debt", "Nợ ban đầu"],
+    ["Tác động của dự án"], ["dProfit", "Lợi nhuận tăng thêm / năm"], ["dInv", "Tồn kho giảm được"]];
+  (function buildRoi() {
+    var f = $("roi-form");
+    ROI_FIELDS.forEach(function (r) {
+      if (r.length === 1) { f.insertAdjacentHTML("beforeend", "<h3 style='margin:8px 0 2px'>" + r[0] + "</h3>"); return; }
+      f.insertAdjacentHTML("beforeend", '<div class="field"><label for="roi-' + r[0] + '">' + r[1] + '</label><input id="roi-' + r[0] + '" data-k="' + r[0] + '" type="number" inputmode="decimal" step="any"></div>');
+    });
+    f.querySelectorAll("input").forEach(function (i) { i.addEventListener("input", function () { S.roi[i.dataset.k] = i.value === "" ? "" : num(i.value); save(); calcRoi(); }); });
+  })();
+  function roiOf(d, dProfit, dInv) {
+    var production = num(d.mat) + num(d.labor) + num(d.oh), cost = production + num(d.sell) + num(d.admin) + num(d.tax);
+    var profit = num(d.sales) - cost + dProfit, wc = num(d.inv) - dInv + num(d.ar) + num(d.cash) - num(d.cl);
+    var ni = wc + num(d.perm) - num(d.debt), margin = num(d.sales) ? profit / num(d.sales) : NaN, turn = ni ? num(d.sales) / ni : NaN;
+    return { production: production, cost: cost, profit: profit, wc: wc, ni: ni, margin: margin, turn: turn, roi: margin * turn };
+  }
+  function calcRoi() {
+    var d = S.roi, B = roiOf(d, 0, 0), A = roiOf(d, num(d.dProfit), num(d.dInv)), dr = A.roi - B.roi;
+    var hasProject = num(d.dProfit) !== 0 || num(d.dInv) !== 0;
+    kpis($("roi-kpis"), [
+      ["ROI hiện tại", pct(B.roi, 2), cls(B.roi)],
+      ["ROI sau dự án", hasProject ? pct(A.roi, 2) : "-", hasProject ? cls(A.roi) : "", hasProject ? (dr >= 0 ? "+" : "") + fmtN(dr * 100, 2) + " điểm %" : "nhập tác động dự án"],
+      ["Biên lợi nhuận", pct(B.margin, 2), "", "LN ÷ doanh thu"],
+      ["Vòng quay vốn", isFinite(B.turn) ? fmtN(B.turn, 3) + " lần" : "-", "", "doanh thu ÷ vốn thuần"]]);
+    var row = function (k, b, a, hl) { return "<tr" + (hl ? " class='hl'" : "") + "><td>" + k + "</td><td class='n'>" + b + "</td><td class='n'>" + a + "</td></tr>"; };
+    $("roi-table").innerHTML = "<thead><tr><th></th><th class='n'>Hiện tại</th><th class='n'>Sau dự án</th></tr></thead><tbody>" +
+      row("Tổng chi phí", money(B.cost, 0), money(A.cost, 0)) +
+      row("Lợi nhuận", money(B.profit, 0), money(A.profit, 0), true) +
+      row("Vốn lưu động", money(B.wc, 0), money(A.wc, 0)) +
+      row("Vốn đầu tư thuần", money(B.ni, 0), money(A.ni, 0)) +
+      row("Biên lợi nhuận", pct(B.margin, 2), pct(A.margin, 2)) +
+      row("Vòng quay vốn", fmtN(B.turn, 3), fmtN(A.turn, 3)) +
+      row("ROI", pct(B.roi, 2), pct(A.roi, 2), true) + "</tbody>";
+    var share = B.ni ? num(d.inv) / B.ni : 0;
+    $("roi-notes").innerHTML = share > .4 ? '<div class="callout"><b>Tồn kho chiếm ' + pct(share, 0) + " vốn đầu tư thuần.</b> Giảm tồn kho (Kanban, 5S, WIP ổn định) là đòn bẩy ROI mạnh: thử nhập số tồn kho giảm được ở phần Tác động của dự án.</div>" : "";
+  }
+
+  /* ---------- toolbar buttons ---------- */
+  var CALC = { be: function () { calcBe(); }, toc: function () { calcToc(true); }, tc: function () { calcTc(true); }, roi: function () { calcRoi(); } };
+  function fillAll() {
+    $("cur").value = S.cur || "USD"; fillBe();
+    ["toc-time", "toc-conv"].forEach(function (id) { $(id).value = S.toc[id.split("-")[1]]; });
+    ["tc-price", "tc-margin", "tc-demand"].forEach(function (id) { $(id).value = S.tc[id.split("-")[1]]; });
+    ROI_FIELDS.forEach(function (r) { if (r.length > 1) $("roi-" + r[0]).value = S.roi[r[0]]; });
+  }
+  document.querySelectorAll("[data-sample]").forEach(function (b) { b.addEventListener("click", function () { var k = b.dataset.sample; S[k] = clone(SAMPLE[k]); save(); fillAll(); CALC[k](); }); });
+  document.querySelectorAll("[data-clear]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.dataset.clear, blank = function (o) { for (var x in o) { if (typeof o[x] === "number") o[x] = ""; else if (o[x] && typeof o[x] === "object") blank(o[x]); } };
+      blank(S[k]); if (k === "toc" || k === "tc") S[k].rows.forEach(function (r) { r.name = ""; });
+      if (k === "be") { S.be.period = S.be.period || "ngày"; }
+      save(); fillAll(); CALC[k]();
+    });
+  });
+  document.querySelectorAll("[data-add]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.dataset.add, rows = S[k].rows; if (rows.length >= 10) return;
+      rows.push(k === "toc" ? { name: "", price: "", mat: "", dem: "", min: "" } : { name: "", conv: "", mat: "" }); save(); CALC[k]();
+    });
+  });
+  $("be-form").closest(".panel").querySelector("[data-copy]").addEventListener("click", function () { S.be.after = clone(S.be.before); save(); fillBe(); calcBe(); });
+  ["toc-time", "toc-conv"].forEach(function (id) { $(id).addEventListener("input", function () { S.toc[id.split("-")[1]] = this.value === "" ? "" : num(this.value); save(); calcToc(false); }); });
+  ["tc-price", "tc-margin", "tc-demand"].forEach(function (id) { $(id).addEventListener("input", function () { S.tc[id.split("-")[1]] = this.value === "" ? "" : num(this.value); save(); calcTc(false); }); });
+  $("cur").addEventListener("change", function () { S.cur = this.value; save(); calcBe(); calcToc(false); calcTc(false); calcRoi(); });
+
+  fillAll(); calcBe(); calcToc(true); calcTc(true); calcRoi();
+})();
+</script>
+</body>
+</html>

@@ -13123,6 +13123,10 @@
   "s": "Vina Kyoei Steel, POSCO Việt Nam, VNSTEEL, VN Mold",
   "t": "Vina Kyoei Steel, POSCO Viet Nam, VNSTEEL, VN Mold"
  },
+ "cca9f30240f83885": {
+  "s": "Đánh giá tài chính dự án",
+  "t": "Project Financial Evaluation"
+ },
  "ccd0981d88b7460d": {
   "s": "Hình ảnh dự án An Giang Samho",
   "t": "An Giang Samho project photos"
@@ -14311,6 +14315,10 @@
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: Ký hiệu của hệ số tương quan Pearson. Giá trị của r nằm trong khoảng từ -1 đến 1.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: the symbol for the Pearson correlation coefficient. The value of r lies between -1 and 1.</span>"
  },
+ "dfa7599f01e04ffd": {
+  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ của khóa Black Belt.",
+  "t": "Enter your company's figures and the results calculate themselves: break-even point, profit before and after the project, cost savings (hard savings) kept separate from revenue growth and freed capacity, product priority at the bottleneck, target cost and ROI. Includes guidance and Black Belt course examples."
+ },
  "dfac17829d31e5dc": {
   "s": "Biểu đồ xương cá (Fishbone): Tìm đúng nguyên nhân gốc rễ | Góc tri thức WISE Academy",
   "t": "Fishbone Diagram: finding the true root cause | WISE Academy Knowledge Hub"
@@ -15434,6 +15442,10 @@
  "f16eb03dea4775b7": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Focused Improvement (Kobetsu Kaizen) - Cải tiến tập trung</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Focused Improvement (Kobetsu Kaizen) - targeted improvement</span>"
+ },
+ "f1a39746c365b56a": {
+  "s": "Tài chính dự án Lean Six Sigma",
+  "t": "Lean Six Sigma Project Finance"
  },
  "f1a499ee23cd61af": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>Design: Thiết kế chi tiết sản phẩm/quy trình</span>",

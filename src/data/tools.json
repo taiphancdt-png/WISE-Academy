@@ -30,6 +30,22 @@
     ]
   },
   {
+    "slug": "tai-chinh-du-an",
+    "title": "Đánh giá tài chính dự án",
+    "category": "Tài chính dự án Lean Six Sigma",
+    "summary": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ của khóa Black Belt.",
+    "thumbnail": "/tools/tai-chinh-du-an/thumbnail.webp",
+    "file": "/tools/tai-chinh-du-an/index.html",
+    "url": null,
+    "saves": true,
+    "tags": [
+      "Cost saving",
+      "Điểm hòa vốn",
+      "ROI",
+      "Black Belt"
+    ]
+  },
+  {
     "slug": "san-lang-phi",
     "title": "Săn Lãng Phí 5′",
     "category": "Trò chơi đào tạo Lean",
