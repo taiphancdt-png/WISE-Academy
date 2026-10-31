@@ -378,7 +378,7 @@ svg{display:block;width:100%;height:auto}
 (function () {
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
-  var STORE = "wise-fin-v1";
+  var STORE = "wise-fin-v2";
 
   /* ---------- course examples (LSSI Black Belt 5.4) ---------- */
   var SAMPLE = {
@@ -502,6 +502,8 @@ svg{display:block;width:100%;height:auto}
       line("Bán thêm sản lượng", volume, "chỉ tính khi nhu cầu thật sự tăng") +
       line("Tổng lợi nhuận tăng thêm", d, "", true) + "</tbody>";
     var notes = [];
+    var same = BE_FIELDS.every(function (r) { return num(S.be.before[r[0]]) === num(S.be.after[r[0]]); });
+    if (same) notes.push('<div class="callout"><b>Cột Sau đang giống hệt cột Trước</b>, nên chênh lệch bằng 0. Hãy nhập số liệu sau dự án vào cột Sau (chỉ sửa những dòng dự án làm thay đổi), hoặc bấm "Điền ví dụ khóa học" để xem cách tính.</div>');
     if (freed > 0) notes.push('<div class="callout"><b>Công suất giải phóng: ' + fmtN(freed, 2) + " đv/" + per + "</b>, tương đương khoảng " + money(freedVal) + "/" + per + " CP chuyển đổi (theo chi phí/đv trước dự án). Đây là <b>tiết kiệm mềm</b>: ghi riêng, không cộng vào cost saving cho đến khi bán thêm được hoặc cắt bớt nguồn lực tương ứng.</div>");
     else if (A.spare > 0) notes.push('<div class="callout">Còn <b>' + fmtN(A.spare, 2) + " đv/" + per + "</b> công suất chưa có nhu cầu. Mỗi đv bán thêm mang về " + money(A.cm) + " lợi nhuận.</div>");
     if (A.cm <= 0) notes.push('<div class="callout">Biên đóng góp bằng 0 hoặc âm: bán càng nhiều càng lỗ, không có điểm hòa vốn.</div>');
