@@ -142,12 +142,6 @@ svg{display:block;width:100%;height:auto}
 .sheet div{background:var(--paper);padding:12px 14px;display:grid;gap:3px}
 .sheet .t{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .sheet .f{font-family:var(--mono);font-size:.82rem}
-.case{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:14px;padding:16px 18px;display:grid;gap:12px}
-.case h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-top:4px}
-.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
-.case-grid div{background:var(--bg);border-radius:10px;padding:10px 12px;display:grid;gap:3px;font-size:.88rem}
-.case-grid b{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--orange-ink)}
-.case-note{font-size:.9rem}
 .credit{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;font-size:.84rem;color:var(--muted)}
 .credit b{color:var(--navy)}
 @media print{.tabs,.acts,.settings{display:none}.panel{display:grid!important;break-inside:avoid}}
@@ -181,18 +175,7 @@ svg{display:block;width:100%;height:auto}
   <div class="panel-head">
     <div><h2>Hòa vốn &amp; lợi nhuận: trước và sau dự án</h2>
       <p>Nhập số liệu của một kỳ (ngày, tuần hoặc tháng) trước và sau cải tiến. Công cụ tính lợi nhuận mỗi kỳ, quy ra năm, và tách phần lợi nhuận tăng thêm theo từng đòn bẩy.</p></div>
-    <div class="acts"><button class="btn" data-copy="be">Sao chép Trước → Sau</button><button class="btn primary" id="be-case-btn">Ví dụ: dự án giảm downtime</button><button class="btn" data-sample="be">Điền ví dụ khóa học</button><button class="btn" data-clear="be">Xoá số</button></div>
-  </div>
-  <div class="case" id="be-case" hidden>
-    <div class="case-head"><span class="eyebrow">Ví dụ dự án Black Belt · tên công ty giả định</span><h3>Giảm 30% downtime toàn khu Stitch-to-Box tại Công ty Giày Hưng Phát</h3></div>
-    <div class="case-grid">
-      <div><b>Phạm vi</b><span>Toàn khu Stitch-to-Box của nhà máy: May (CS) → Đế → Gò ráp → Đóng hộp, 26 chuyền × 95 công nhân. Cycle time 23,5 giây, 480 phút/ngày → tối đa 31.864 đôi/ngày nếu không dừng; đơn hàng 28.000 đôi/ngày.</span></div>
-      <div><b>Baseline &amp; mục tiêu</b><span>Trước dự án chưa đo downtime; baseline lấy từ 3 tuần đầu đo được: 18%. Mục tiêu giảm 30%, còn 12,6%.</span></div>
-      <div><b>Trước dự án</b><span>Downtime 18% → giờ chính làm được 26.128 đôi/ngày, thiếu 1.872 đôi → tăng ca 14,9 giờ chuyền/ngày (≈ 0,6 giờ mỗi chuyền) ≈ 3.223 USD/ngày.</span></div>
-      <div><b>Sau dự án</b><span>Downtime 12,6% → 27.849 đôi/ngày trong giờ chính; tăng ca còn 1,1 giờ chuyền ≈ 244 USD/ngày. Vẫn giao đủ 28.000 đôi.</span></div>
-    </div>
-    <p class="case-note"><b>Đọc kết quả:</b> với 26 chuyền và cycle time 23,5 giây, downtime vượt <b>12,1%</b> là giờ chính không đủ đơn và phải tăng ca. Đơn hàng cố định nên dự án không tăng doanh thu; giá trị nằm ở <b>tăng ca giảm</b>, đó là cost saving (tiết kiệm cứng) ≈ 2.978 USD/ngày ≈ 929.136 USD/năm (312 ngày). Giảm downtime thêm dưới 12,1% sẽ tạo <b>công suất giải phóng</b> (tiết kiệm mềm): chỉ thành tiền khi nhận thêm đơn hoặc bớt nguồn lực.</p>
-    <p class="case-note muted" style="font-size:.84rem"><b>Giả định tính toán:</b> giá FOB 19,5 USD/đôi; vật liệu 60% = 11,7 USD/đôi (các nguồn tham khảo về giày thể thao cho 40-80%). Tăng ca: lương bình quân 7 triệu ₫/tháng (208 giờ), trả 150% theo Bộ luật Lao động, cộng suất ăn, điện, giám sát ≈ 2,28 USD/người/giờ; giờ tăng ca cũng chịu cùng tỷ lệ downtime. CP chuyển đổi chỉ tính cho khu Stitch-to-Box: lương 2.470 công nhân (26 ngày/tháng) + 14.000 USD/ngày chi phí chung phân bổ + tăng ca; tăng ca bình quân ≈ 15 giờ/người/tháng, dưới mức trần 40 giờ. Tỷ giá 26.200 ₫/USD.</p>
+    <div class="acts"><button class="btn" data-copy="be">Sao chép Trước → Sau</button><button class="btn" data-sample="be">Điền ví dụ khóa học</button><button class="btn" data-clear="be">Xoá số</button></div>
   </div>
   <div class="kpis" id="be-kpis"></div>
   <div class="grid-calc">
@@ -402,9 +385,6 @@ svg{display:block;width:100%;height:auto}
     be: { period: "ngày", ppy: 300,
       before: { price: 65, vc: 50, conv: 2025, cap: 239, dem: 239 },
       after: { price: 65, vc: 43, conv: 1905, cap: 272, dem: 272 } },
-    beCase: { period: "ngày", ppy: 312, caseOn: true,
-      before: { price: 19.5, vc: 11.7, conv: 42604, cap: 28000, dem: 28000 },
-      after: { price: 19.5, vc: 11.7, conv: 39626, cap: 28000, dem: 28000 } },
     toc: { time: 2400, conv: 6000, rows: [
       { name: "P", price: 90, mat: 45, dem: 100, min: 15 },
       { name: "Q", price: 100, mat: 40, dem: 50, min: 30 }] },
@@ -480,7 +460,6 @@ svg{display:block;width:100%;height:auto}
       pos: rev ? profit / rev : NaN, bep: cm > 0 ? c / cm : Infinity, bepMoney: cm > 0 && p ? c / (cm / p) : Infinity, cpu: q ? c / q : NaN, spare: Math.max(0, cap - dem) };
   }
   function calcBe() {
-    $("be-case").hidden = !S.be.caseOn;
     var B = model(S.be.before), A = model(S.be.after), per = S.be.period, ppy = num(S.be.ppy);
     var d = A.profit - B.profit;
     var hardK = (B.c - A.c) + (B.v - A.v) * B.q;
@@ -705,7 +684,7 @@ svg{display:block;width:100%;height:auto}
     b.addEventListener("click", function () {
       var k = b.dataset.clear, blank = function (o) { for (var x in o) { if (typeof o[x] === "number") o[x] = ""; else if (o[x] && typeof o[x] === "object") blank(o[x]); } };
       blank(S[k]); if (k === "toc" || k === "tc") S[k].rows.forEach(function (r) { r.name = ""; });
-      if (k === "be") { S.be.period = S.be.period || "ngày"; S.be.caseOn = false; }
+      if (k === "be") { S.be.period = S.be.period || "ngày"; }
       save(); fillAll(); CALC[k]();
     });
   });
@@ -715,7 +694,6 @@ svg{display:block;width:100%;height:auto}
       rows.push(k === "toc" ? { name: "", price: "", mat: "", dem: "", min: "" } : { name: "", conv: "", mat: "" }); save(); CALC[k]();
     });
   });
-  $("be-case-btn").addEventListener("click", function () { S.be = clone(SAMPLE.beCase); S.cur = "USD"; save(); fillAll(); calcBe(); });
   $("be-form").closest(".panel").querySelector("[data-copy]").addEventListener("click", function () { S.be.after = clone(S.be.before); save(); fillBe(); calcBe(); });
   ["toc-time", "toc-conv"].forEach(function (id) { $(id).addEventListener("input", function () { S.toc[id.split("-")[1]] = this.value === "" ? "" : num(this.value); save(); calcToc(false); }); });
   ["tc-price", "tc-margin", "tc-demand"].forEach(function (id) { $(id).addEventListener("input", function () { S.tc[id.split("-")[1]] = this.value === "" ? "" : num(this.value); save(); calcTc(false); }); });
