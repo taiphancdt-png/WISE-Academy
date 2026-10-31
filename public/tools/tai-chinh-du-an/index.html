@@ -186,12 +186,13 @@ svg{display:block;width:100%;height:auto}
   <div class="case" id="be-case" hidden>
     <div class="case-head"><span class="eyebrow">Ví dụ dự án Black Belt · tên công ty giả định</span><h3>Giảm 30% downtime toàn chuyền Stitch-to-Box tại Công ty Giày Hưng Phát</h3></div>
     <div class="case-grid">
-      <div><b>Phạm vi</b><span>Chuyền thí điểm C16, từ May đến Đóng hộp: May (CS) → Đế → Gò ráp → Đóng hộp, 1 model; 1 ca 480 phút, takt 23,5 giây ≈ 1.225 đôi/ngày lý thuyết.</span></div>
-      <div><b>Mục tiêu</b><span>Tỷ lệ downtime giảm 30%: từ 12% xuống 8,4% (theo dõi trung bình trượt 3 tuần), thời gian 9 tháng.</span></div>
-      <div><b>Trước dự án</b><span>Sản lượng giờ chính 1.078 đôi/ngày, thiếu so với đơn hàng 1.150 đôi; bù bằng tăng ca, tốn khoảng 95 USD/ngày.</span></div>
-      <div><b>Sau dự án</b><span>Downtime 8,4% → 1.122 đôi/ngày trong giờ chính; tăng ca còn khoảng 35 USD/ngày; giao thêm 44 đôi/ngày cho đơn đang thiếu.</span></div>
+      <div><b>Phạm vi</b><span>Chuyền thí điểm C16, từ May đến Đóng hộp: May (CS) → Đế → Gò ráp → Đóng hộp, 1 model, 95 công nhân. Takt 23,5 giây, tính từ đơn hàng 28.000 đôi/tháng (khoảng 23 ngày × 480 phút).</span></div>
+      <div><b>Baseline &amp; mục tiêu</b><span>Trước dự án chưa đo downtime; baseline lấy từ 3 tuần đầu đo được: 12%. Mục tiêu giảm 30%, còn 8,4%.</span></div>
+      <div><b>Trước dự án</b><span>Giờ chính chỉ làm được 24.640 đôi (thiếu 3.360 đôi) → tăng ca 24,9 giờ chuyền/tháng ≈ 5.391 USD.</span></div>
+      <div><b>Sau dự án</b><span>Downtime 8,4% → 25.648 đôi trong giờ chính; tăng ca còn 16,8 giờ ≈ 3.625 USD/tháng. Vẫn giao đủ 28.000 đôi.</span></div>
     </div>
-    <p class="case-note"><b>Đọc kết quả:</b> chỉ phần <b>tăng ca giảm</b> là cost saving (tiết kiệm cứng). Phần 44 đôi giao thêm là <b>lợi nhuận tăng thêm</b>, chỉ tính được khi đơn hàng thật sự có. Nếu không có thêm đơn, đó là công suất giải phóng (tiết kiệm mềm). Các số giá bán, vật liệu, chi phí là giả định để minh họa: hãy thay bằng số của doanh nghiệp bạn.</p>
+    <p class="case-note"><b>Đọc kết quả:</b> đơn hàng cố định 28.000 đôi nên dự án không làm tăng doanh thu; giá trị nằm ở <b>tăng ca giảm</b>, đó là cost saving (tiết kiệm cứng) ≈ 1.766 USD/tháng ≈ 21.192 USD/năm cho một chuyền. 16,8 giờ tăng ca còn lại cho thấy dư địa của giai đoạn tiếp theo và khi nhân rộng sang các chuyền khác.</p>
+    <p class="case-note muted" style="font-size:.84rem"><b>Giả định tính toán:</b> giá FOB 19,5 USD/đôi; vật liệu 60% = 11,7 USD/đôi (các nguồn tham khảo về giày thể thao cho 40-80%). Tăng ca: lương bình quân 7 triệu ₫/tháng (208 giờ), trả 150% theo Bộ luật Lao động, cộng suất ăn, điện, giám sát ≈ 2,28 USD/người/giờ; giờ tăng ca cũng chịu cùng tỷ lệ downtime. CP chuyển đổi chỉ tính cho chuyền thí điểm: lương 95 công nhân + 14.000 USD chi phí chung phân bổ + tăng ca. Tỷ giá 26.200 ₫/USD.</p>
   </div>
   <div class="kpis" id="be-kpis"></div>
   <div class="grid-calc">
@@ -401,9 +402,9 @@ svg{display:block;width:100%;height:auto}
     be: { period: "ngày", ppy: 300,
       before: { price: 65, vc: 50, conv: 2025, cap: 239, dem: 239 },
       after: { price: 65, vc: 43, conv: 1905, cap: 272, dem: 272 } },
-    beCase: { period: "ngày", ppy: 312, caseOn: true,
-      before: { price: 22, vc: 14.5, conv: 1197, cap: 1078, dem: 1150 },
-      after: { price: 22, vc: 14.5, conv: 1137, cap: 1122, dem: 1150 } },
+    beCase: { period: "tháng", ppy: 12, caseOn: true,
+      before: { price: 19.5, vc: 11.7, conv: 44773, cap: 28000, dem: 28000 },
+      after: { price: 19.5, vc: 11.7, conv: 43007, cap: 28000, dem: 28000 } },
     toc: { time: 2400, conv: 6000, rows: [
       { name: "P", price: 90, mat: 45, dem: 100, min: 15 },
       { name: "Q", price: 100, mat: 40, dem: 50, min: 30 }] },
