@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     images: [OG_IMAGE.url],
   },
   robots: { index: true, follow: true },
+  icons: { apple: "/apple-touch-icon.png" },
   formatDetection: { telephone: false },
 };
 
