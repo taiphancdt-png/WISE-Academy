@@ -3979,6 +3979,10 @@
   "s": "Phó Tổng Giám đốc CITARES",
   "t": "CITARES 副总经理"
  },
+ "3d2ebf2ba6cca420": {
+  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ minh họa.",
+  "t": "输入企业数据，结果自动计算：盈亏平衡点、项目前后利润、与收入增长和释放产能分开列示的成本节约（硬节约）、瓶颈下的产品优先级、目标成本和 ROI。附有使用说明和示例。"
+ },
  "3d45f1befac9ab1c": {
   "s": "Case study: Nâng một mức Sigma tại xưởng dệt Pakistan",
   "t": "案例研究：巴基斯坦织造厂提升一个西格玛水平"
@@ -14314,10 +14318,6 @@
  "df910f57a2a8f86d": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: Ký hiệu của hệ số tương quan Pearson. Giá trị của r nằm trong khoảng từ -1 đến 1.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r：Pearson 相关系数的符号。r 的取值在 -1 到 1 之间。</span>"
- },
- "dfa7599f01e04ffd": {
-  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ của khóa Black Belt.",
-  "t": "输入企业数据，结果自动计算：盈亏平衡点、项目前后利润、与收入增长和释放产能分开列示的成本节约（硬节约）、瓶颈下的产品优先级、目标成本和 ROI。附有使用说明和黑带课程示例。"
  },
  "dfac17829d31e5dc": {
   "s": "Biểu đồ xương cá (Fishbone): Tìm đúng nguyên nhân gốc rễ | Góc tri thức WISE Academy",

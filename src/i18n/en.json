@@ -3979,6 +3979,10 @@
   "s": "Phó Tổng Giám đốc CITARES",
   "t": "Deputy General Director of CITARES"
  },
+ "3d2ebf2ba6cca420": {
+  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ minh họa.",
+  "t": "Enter your company's figures and the results calculate themselves: break-even point, profit before and after the project, cost savings (hard savings) kept separate from revenue growth and freed capacity, product priority at the bottleneck, target cost and ROI. Includes guidance and worked examples."
+ },
  "3d45f1befac9ab1c": {
   "s": "Case study: Nâng một mức Sigma tại xưởng dệt Pakistan",
   "t": "Case study: raising one Sigma level at a Pakistani weaving mill"
@@ -14314,10 +14318,6 @@
  "df910f57a2a8f86d": {
   "s": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: Ký hiệu của hệ số tương quan Pearson. Giá trị của r nằm trong khoảng từ -1 đến 1.</span>",
   "t": "<span class=\"w-1.5 h-1.5 rounded-full bg-[#F76011] mt-2.5 shrink-0\"></span><span>r: the symbol for the Pearson correlation coefficient. The value of r lies between -1 and 1.</span>"
- },
- "dfa7599f01e04ffd": {
-  "s": "Nhập số liệu doanh nghiệp, kết quả tự tính: điểm hòa vốn, lợi nhuận trước và sau dự án, cost saving (tiết kiệm cứng) tách riêng khỏi tăng doanh thu và công suất giải phóng, ưu tiên sản phẩm theo nút thắt, chi phí mục tiêu, ROI. Có hướng dẫn và ví dụ của khóa Black Belt.",
-  "t": "Enter your company's figures and the results calculate themselves: break-even point, profit before and after the project, cost savings (hard savings) kept separate from revenue growth and freed capacity, product priority at the bottleneck, target cost and ROI. Includes guidance and Black Belt course examples."
  },
  "dfac17829d31e5dc": {
   "s": "Biểu đồ xương cá (Fishbone): Tìm đúng nguyên nhân gốc rễ | Góc tri thức WISE Academy",
