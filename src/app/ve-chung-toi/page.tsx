@@ -162,7 +162,7 @@ export default function AboutPage() {
         />
       </Section>
 
-      {/* Core values: four petals reading W I S E open into the four values as you scroll, then close again */}
+      {/* Core values: four petals reading W I S E open into the four values as you scroll */}
       <CoreValuesBloom
         values={values}
         title={<>Bốn giá trị cốt lõi <span className="block text-[#F76011]">W · I · S · E</span></>}

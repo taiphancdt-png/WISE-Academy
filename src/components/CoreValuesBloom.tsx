@@ -18,7 +18,6 @@ const PETAL_INK = ["#001A33", "#A93D06", "#0F3F6E", "#B35E0A"];
 const CLOSED_ANGLE = [-18, -6, 6, 18];
 const OPEN_ANGLE = [-74, -25, 25, 74];
 const PETAL_W = 124;
-const OPEN_MS = 800; // the flower opens in this time while the page holds still
 const PETAL_L = 300;
 const LETTER_CLOSED = 0.6; // letter size in the closed bud, relative to the open flower, so the letters fit the narrow petals
 // Value cards around the open flower: top-left corner of each card, in px from the flower base
@@ -68,13 +67,12 @@ export default function CoreValuesBloom({
     const header = document.querySelector("header");
     const setTop = () => {
       const h = header?.getBoundingClientRect().height ?? 0;
-      sticky.style.top = `${h}px`; // header height, used to line the section up under it
+      sticky.style.top = `${h}px`; // pinned just under the header
       sticky.style.height = `calc(100dvh - ${h}px)`;
     };
     setTop();
     window.addEventListener("resize", setTop);
 
-    // openness follows the scroll through the pinned section: closed -> open -> closed again
     const apply = (t: number) => {
       petalRefs.current.forEach((g, i) => {
         if (!g) return;
@@ -83,96 +81,37 @@ export default function CoreValuesBloom({
         // keep each letter upright; as the flower closes it slides towards the tip and shrinks so letters never touch
         letterRefs.current[i]?.setAttribute("transform", `translate(0 ${(-PETAL_L * (0.9 - 0.3 * t)).toFixed(1)}) rotate(${(-a).toFixed(2)}) scale(${(LETTER_CLOSED + (1 - LETTER_CLOSED) * t).toFixed(3)})`);
       });
-      const show = smooth(0.55, 0.95, t);
       cardRefs.current.forEach((c, i) => {
         if (!c) return;
+        // the four cards follow the petals, one shortly after another
+        const show = smooth(0.5 + i * 0.06, 0.82 + i * 0.06, t);
         c.style.opacity = String(show);
         c.style.transform = `translateY(${((1 - show) * 24).toFixed(1)}px) scale(${(0.96 + 0.04 * show).toFixed(3)})`;
-        c.style.transitionDelay = `${i * 40}ms`;
       });
     };
     if (r) {
       apply(1);
       return () => window.removeEventListener("resize", setTop);
     }
-    // Scrolling down, the page holds still for a moment while the flower opens (constant speed), then lets go.
-    // Further down, once the flower rises above the middle of the screen, it closes again with the scroll.
-    // Coming back up past the section resets it, so the next pass opens it again.
-    let raf = 0;
-    let last = 0;
-    let openT = 0; // 0..1, time-based opening
-    let t = 0; // what is drawn
-    let opened = false;
-    let locked = false;
-    let lockY = 0;
-    let lastScroll = window.scrollY;
-    const flowerSvg = wrap.querySelector("svg");
-    const block = (e: Event) => {
-      if (locked) e.preventDefault();
+    // The section is taller than the screen and its content stays pinned while it scrolls past:
+    // the first part of that stretch opens the flower, the rest keeps it open. Scrolling never stops or jumps;
+    // the flower simply follows the scroll position, closing again when the reader scrolls back up.
+    // updated straight from the scroll event (browsers fire it once per frame), so the flower never lags the page
+    let t = -1;
+    const update = () => {
+      const rect = wrap.getBoundingClientRect();
+      const travel = Math.max(1, rect.height - sticky.offsetHeight);
+      const top = parseFloat(sticky.style.top) || 0;
+      const p = Math.max(0, Math.min(1, (top - rect.top) / travel));
+      const next = smooth(0, 0.6, p);
+      if (Math.abs(next - t) > 0.0005) apply((t = next));
     };
-    const blockKeys = (e: KeyboardEvent) => {
-      if (locked && ["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Space", " ", "Home", "End"].includes(e.key)) e.preventDefault();
-    };
-    const holdScroll = () => {
-      if (locked && Math.abs(window.scrollY - lockY) > 1) window.scrollTo(0, lockY);
-    };
-    window.addEventListener("wheel", block, { passive: false });
-    window.addEventListener("touchmove", block, { passive: false });
-    window.addEventListener("keydown", blockKeys);
-    window.addEventListener("scroll", holdScroll);
-    const frame = (now: number) => {
-      const dt = last ? Math.min(50, now - last) : 16;
-      last = now;
-      const fr = flowerSvg?.getBoundingClientRect();
-      const y = fr ? (fr.top + fr.height / 2) / window.innerHeight : 1;
-      const down = window.scrollY > lastScroll;
-      lastScroll = window.scrollY;
-      if (!opened && !locked && down && y <= 0.72 && y > 0.3) {
-        locked = true;
-        lockY = window.scrollY;
-      }
-      if (locked) {
-        openT = Math.min(1, openT + dt / OPEN_MS);
-        if (openT >= 1) {
-          locked = false;
-          opened = true;
-        }
-      } else if (!opened && y < 0.3) {
-        // jumped past (e.g. an anchor link): just show it open
-        openT = 1;
-        opened = true;
-      }
-      if (y > 0.98) {
-        // the section is back below the fold: reset for the next pass
-        opened = false;
-        openT = 0;
-      }
-      const target = openT * (1 - smooth(0.5, 0.25, y));
-      t += (target - t) * (locked ? 1 : 0.2);
-      apply(t);
-      raf = requestAnimationFrame(frame);
-    };
-    const io = new IntersectionObserver(([e]) => {
-      cancelAnimationFrame(raf);
-      last = 0;
-      if (e.isIntersecting) raf = requestAnimationFrame(frame);
-      else {
-        locked = false;
-        if (e.boundingClientRect.top > 0) {
-          opened = false;
-          openT = 0;
-          apply((t = 0));
-        }
-      }
-    });
-    io.observe(wrap);
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
     return () => {
-      io.disconnect();
-      cancelAnimationFrame(raf);
-      window.removeEventListener("wheel", block);
-      window.removeEventListener("touchmove", block);
-      window.removeEventListener("keydown", blockKeys);
-      window.removeEventListener("scroll", holdScroll);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
       window.removeEventListener("resize", setTop);
     };
   }, []);
@@ -227,10 +166,11 @@ export default function CoreValuesBloom({
   );
 
   return (
-    <section className="relative bg-white">
-      {/* desktop: one screen; the flower opens and closes with the scroll */}
-      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative pb-20`}>
-        <div ref={stickyRef} className="relative h-[100dvh] flex flex-col items-center px-8 pt-12">
+    // data-no-reveal: this section animates with the scroll itself; the site-wide fade-in must not move it as well
+    <section className="relative bg-white" data-no-reveal>
+      {/* desktop: the content stays pinned for a while; the flower opens as the page scrolls through it */}
+      <div ref={wrapRef} className={`${reduce ? "" : "lg:block"} hidden relative h-[180vh]`}>
+        <div ref={stickyRef} className="sticky h-[100dvh] flex flex-col items-center px-8 pt-12">
           <div className="max-w-3xl text-center">
             <h2 className="text-3xl sm:text-[34px] font-semibold leading-tight text-[#002F5B]">{title}</h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#486581]">{description}</p>
@@ -246,7 +186,7 @@ export default function CoreValuesBloom({
                     ref={(el) => {
                       cardRefs.current[i] = el;
                     }}
-                    className="absolute transition-[opacity,transform] duration-300"
+                    className="absolute will-change-[opacity,transform]"
                     style={{ left: BASE.x + pos.x, top: BASE.y + pos.y, width: CARD_W, height: CARD_H, opacity: 0 }}
                   >
                     {card(v, i, "h-full")}
